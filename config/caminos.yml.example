@@ -1,0 +1,14 @@
+development: &app_config
+
+  allowed_origins:
+    - 'localhost:3300'
+
+  hostname: 'localhost'
+
+  ssl_enabled: false
+
+production:
+  <<: *app_config
+
+test:
+  <<: *app_config
