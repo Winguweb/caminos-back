@@ -1,1 +1,10 @@
 @import 'globals';
+
+/* ===========================
+  LAYOUT & PARTIAL SCSS FILES
+=========================== */
+// LAYOUT STUFF
+@import 'layout/application';
+
+// VIEWS & PARTIALS
+@import 'views/**/*';

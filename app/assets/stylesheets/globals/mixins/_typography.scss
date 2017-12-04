@@ -1,0 +1,75 @@
+$base-font-size: 1rem !default;
+$font-ms-ratio: 1.25 !default;
+$base-line-height: ($base-font-size * 1.4) !default;
+
+// Based on https://unindented.org/articles/trigonometry-in-sass/
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  }
+  @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+  @return $value;
+}
+// For the negative settings we are calculating the $font-ms-ratio as:
+// -1 : pow($font-ms-ratio, -0.7) = 0.817746879247927
+// -2 : pow($font-ms-ratio, -1.4) = 0.6687099585197237
+$type-settings: (
+  -2: (
+    font-size: $base-font-size * 0.70,
+    line-height: $base-line-height
+  ),
+  -1: (
+    font-size: $base-font-size * 0.85,
+    line-height: $base-line-height
+  ),
+  0: (
+    font-size: $base-font-size,
+    line-height: $base-line-height
+  ),
+  1: (
+    font-size: $base-font-size * $font-ms-ratio,
+    line-height: $base-line-height * 1.125
+  ),
+  2: (
+    font-size: $base-font-size * pow($font-ms-ratio, 2),
+    line-height: $base-line-height * 1.625
+  ),
+  3: (
+    font-size: $base-font-size * pow($font-ms-ratio, 3),
+    line-height: $base-line-height * 2.125
+  ),
+  4: (
+    font-size: $base-font-size * pow($font-ms-ratio, 4),
+    line-height: $base-line-height * 2.625
+  ),
+  5: (
+    font-size: $base-font-size * pow($font-ms-ratio, 5),
+    line-height: $base-line-height * 3.125
+  ),
+  6: (
+    font-size: $base-font-size * pow($font-ms-ratio, 6),
+    line-height: $base-line-height * 4.125
+  )
+);
+
+@function type-scale($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'font-size');
+}
+
+@function line-height($level) {
+  @return map-get(
+    map-get($type-settings, $level), 'line-height');
+}
+
+@mixin type-setting($level: 0) {
+  font-size: type-scale($level);
+  line-height: line-height($level);
+}

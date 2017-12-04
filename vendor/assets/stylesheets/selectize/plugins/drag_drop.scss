@@ -1,0 +1,13 @@
+.selectize-control.plugin-drag_drop {
+	&.multi > .selectize-input > div.ui-sortable-placeholder {
+		visibility: visible !important;
+		background: #f2f2f2 !important;
+		background: rgba(black, 0.06) !important;
+		border: 0 none !important;
+	}
+	.ui-sortable-placeholder::after {
+		content: '!';
+		visibility: hidden;
+	}
+	.ui-sortable-helper {}
+}

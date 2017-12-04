@@ -1,0 +1,31 @@
+html,body{
+  height:100%;
+  width:100%;
+  margin:0;
+  padding:0;
+  -webkit-font-smoothing: antialiased;
+  font: $font-sans;
+  a {
+    text-decoration: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: $font-heading;
+}
+
+
+main{
+  @include grid-container;
+}
+
+section {
+  position: relative;
+}
+

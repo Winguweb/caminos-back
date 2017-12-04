@@ -1,11 +1,24 @@
 /* ====================
-1. CSS RESET - MEYERWEB
+  CSS RESET - MEYERWEB
 ==================== */
 @import 'globals/reset';
 
 /* ===============================
-2. BOURBON & NEAT STYLES
+  BOURBON & NEAT STYLES
 =============================== */
 @import 'bourbon';
+@import 'globals/variables';
 @import 'neat';
-@import 'normalize';
+@import 'normalize'; // vendor library
+
+/* ===============================
+  CUSTOM MIXIN LIBRARIES & HELPERS
+=============================== */
+@import 'globals/mixins/typography';
+@import 'globals/mixins/helpers';
+@import 'globals/mixins/flex-grids';
+
+/* ===============================
+  OTHER VENDORS STUFF
+=============================== */
+// @import 'selectize/base';

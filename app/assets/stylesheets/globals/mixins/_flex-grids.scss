@@ -1,0 +1,32 @@
+// Taken from https://gist.github.com/alexgleason/382560042f94c6d25056
+
+/*
+  Based on code by Kevin Lamping
+  source: http://codepen.io/klamping/pen/waMOeX
+*/
+
+@mixin flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter;
+  margin-top: -$gutter;
+}
+
+@mixin flex-item($min-width, $max-cols) {
+  flex: 1 0 $min-width;
+  margin-left: $gutter;
+  margin-top: $gutter;
+  box-sizing: border-box;
+
+  @for $i from 2 through $max-cols {
+    $screen-width: ($min-width*$i)+($gutter*$i);
+    $column-width: (100%/$i);
+    @media (min-width: $screen-width) {
+      max-width: calc(#{$column-width} - #{$gutter});
+    }
+  }
+  $column-width: (100%/$max-cols);
+  @media (min-width: $min-width*$max-cols) {
+      min-width: calc(#{$column-width} - #{$gutter});
+  }
+}
