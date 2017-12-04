@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'authlogic' # For User Authentication
+gem 'bourbon' # A Lightweight Sass Tool Set
 gem 'browser' # Do some browser detection with Ruby
 gem 'activerecord-postgis-adapter'
 gem 'bcrypt' # Ruby binding for the OpenBSD bcrypt() password hashing algorithm
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
+gem 'neat' # A lightweight and flexible Sass grid
 gem 'oj' # A fast JSON parser and Object marshaller.
 gem 'pg' # The PostgreSQL Adapter
 gem 'puma', '~> 3.0' # Use Puma as the app server

@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  scope protocol: SECURE_PROTOCOL do
+  # ╭─ Public Accesible URL's / Path's
+    root to: 'home#show'
+  # ╰─ End of Public Accesible URL's / Path's
+  end
 end
