@@ -1,3 +1,4 @@
-header
-  .content
-    = link_to 'Salir', signout_path, method: :post
+- if current_user
+  header
+    .content
+      = link_to 'Salir', signout_path, method: :post

@@ -11,6 +11,8 @@ class UserSessionsController < ActionController::Base
 
   around_action :set_time_zone
 
+  layout 'application'
+
   def new
     redirect_to root_path and return if current_user.present?
 

@@ -1,0 +1,19 @@
+@mixin input($bordercolor: rgba(#333333, .2), $padding: $gutter/2) {
+  @include box-sizing(border-box);
+  outline: none;
+  -webkit-appearance: none;
+  border-radius: 2px;
+  border: 1px solid $bordercolor;
+  padding: $padding;
+  box-shadow: 0em 0em 0em 0em transparent inset;
+  -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+  transition: color 0.1s ease, border-color 0.1s ease;
+  vertical-align: middle;
+  height: auto;
+  width:100%;
+  &.disabled{
+    background-color: darken($bordercolor, 5%);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

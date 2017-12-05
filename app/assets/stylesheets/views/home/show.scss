@@ -1,8 +1,4 @@
 #home-show{
-  .hero{
-
-  }
-
   section {
     @include grid-column(6);
     @include grid-push(3);

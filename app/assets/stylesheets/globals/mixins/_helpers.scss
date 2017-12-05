@@ -1,31 +1,9 @@
-@mixin centerer($from_top: 50%, $from_left: 50%, $position: absolute) {
-  position: $position;
-  @if $from_top > 0 {
-    top: $from_top;
-  }
-  @if $from_left > 0 {
-    left: $from_left;
-  }
-  -ms-transform: translate(-($from_left), -($from_top));
-  -webkit-transform: translate(-($from_left), -($from_top));
-  -moz-transform: translate(-($from_left), -($from_top));
-  -o-transform: translate(-($from_left), -($from_top));
-  transform: translate(-($from_left), -($from_top));
-}
-
 @mixin ellipsis {
   padding-right: $small-spacing;
   white-space: nowrap;
   overflow: hidden !important;
   @include prefixer(text-overflow, ellipsis, o ms spec);
   -moz-binding: url("/xml/ellipsis.xml#ellipsis");
-}
-
-@mixin margin-collapse {
-  float: none !important;
-  &::after {
-    content: none !important;
-  }
 }
 
 @mixin placeholder {
