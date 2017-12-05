@@ -1,2 +1,9 @@
 section
-  h1 Hey there
+  h1 Caminos de la Villa
+
+  h3 Usuarios
+  .users-list
+    - @users.each do |user|
+      .user-data
+        .name= user.name
+        .email= user.email
