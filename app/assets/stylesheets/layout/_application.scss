@@ -20,12 +20,21 @@ h1, h2 {
   font-family: $font-heading;
 }
 
+body{
+}
 
 main{
   @include grid-container;
-}
+  @if $development { @include grid-visual; }
 
-section {
-  position: relative;
+  @include grid-media($wide-grid) {
+    @if $development { @include grid-visual };
+  }
+  @include grid-media($tablet-grid) {
+    @if $development { @include grid-visual };
+  }
+  @include grid-media($mobile-grid) {
+    @if $development { @include grid-visual };
+  }
 }
 

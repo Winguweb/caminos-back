@@ -1,0 +1,14 @@
+#home-show{
+  .hero{
+
+  }
+
+  section {
+    @include grid-column(6);
+    @include grid-push(3);
+
+    @include grid-media($tablet-grid) {
+      @include grid-column(8);
+    }
+  }
+}

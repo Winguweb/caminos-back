@@ -3,21 +3,31 @@ $small-screen: em(640);
 $medium-screen: em(860);
 $large-screen: em(1016);
 $xlarge-screen: em(1200);
+$gutter: 1rem;
 
-$small-screen-up: new-breakpoint(min-width $small-screen 12);
-$medium-screen-up: new-breakpoint(min-width $medium-screen 12);
-$large-screen-up: new-breakpoint(min-width $large-screen 12);
-$xlarge-screen-up: new-breakpoint(min-width $xlarge-screen 16);
+// Neat configs
+$mobile-grid:(
+  columns: 4,
+  gutter: $gutter,
+  media: "(max-width: #{$small-screen})",
+);
+$tablet-grid:(
+  columns: 8,
+  gutter: $gutter,
+  media: "(max-width: #{$medium-screen})",
+);
+$desktop-grid:(
+  columns: 12,
+  gutter: $gutter,
+  media: "(max-width: #{$large-screen})",
+);
+$wide-grid:(
+  columns: 16,
+  gutter: $gutter,
+  media: $xlarge-screen,
+);
 
-$small-screen-down: new-breakpoint(max-width $small-screen 12);
-$medium-screen-down: new-breakpoint(max-width $medium-screen 12);
-$large-screen-down: new-breakpoint(max-width $large-screen 12);
-$xlarge-screen-down: new-breakpoint(max-width $xlarge-screen 16);
-
-$mobile: $small-screen-down;
-$tablet: $medium-screen-down;
-$desktop: $large-screen-up;
-$wide: $xlarge-screen-up;
+$neat-grid: $desktop-grid;
 
 // Typography
 $font-sans: Helvetica, Arial, sans-serif;
@@ -29,6 +39,4 @@ $font-code: "Lucida Console", Monaco, monospace;
 // Colors
 @import "./colors";
 
-// Animations
-$base-duration: 150ms;
-$base-timing: ease;
+$development: true !default;
