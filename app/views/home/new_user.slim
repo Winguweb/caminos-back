@@ -1,0 +1,25 @@
+.jumbotron
+  = form_for :user, :url => { :action => :create_user } do |f|
+    div.field
+      = f.label :username
+      br
+      = f.text_field :username
+    div.field
+      = f.label :email
+      br
+      = f.text_field :email
+    div.field
+      = f.label :password
+      br
+      = f.password_field :password
+    div.field
+      = f.label :active
+      br
+      = f.check_box :active
+    div.field
+      = f.label :first_name
+      br  
+      = f.text_field :first_name
+    div.actions
+      = f.submit
+
