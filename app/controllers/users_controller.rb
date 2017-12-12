@@ -10,17 +10,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    
-    # data = user_params
-    # data.merge!(profile: Profile.new(first_name:user_params[:first_name]),active: true, approved: true, confirmed: true, roles: [:ambassador])
-    # data.delete(:first_name)
-    # @user = User.new(data)
-    # if @user.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
-    
     service = CreateUser.call(user_params)
     if service.success?
       redirect_to root_path
@@ -31,11 +20,9 @@ class UsersController < ApplicationController
 
   def edit;end
 
-  def update
-    data = user_params
-    @user.profile.update(first_name: user_params[:first_name])
-    data.delete(:first_name)
-    if @user.update(data)
+  def update 
+    service = UpdateUser.call(@user,user_params)
+    if service
       redirect_to @user
     else
       render :edit 
