@@ -2,10 +2,8 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  def show
-  end
+  def show;end
 
-  
   def new
     @user = User.new
     @user.profile = Profile.new
@@ -25,8 +23,7 @@ class UsersController < ApplicationController
 
   end
 
-  def edit
-  end
+  def edit;end
 
   def update
     data = user_params
