@@ -5,8 +5,7 @@ Rails.application.routes.draw do
     get  '/signin',   action: :new,     controller: :user_sessions
     post '/signin',   action: :create,  controller: :user_sessions
     post '/signout',  action: :destroy, controller: :user_sessions
-    get '/user/new',  action: :new, controller: :user
-    post '/user/new',  action: :create, controller: :user
+    resources :users
   # ╰─ End of Public Accesible URL's / Path's
 
   # ╭─ Private Accesible URL's / Path's
