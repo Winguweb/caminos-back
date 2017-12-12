@@ -27,14 +27,16 @@ class UsersController < ApplicationController
     else
       render :edit 
     end
-
   end
 
   def destroy
-    DestroyUser.call(@user)
-    redirect_to root_path
+    service = DestroyUser.call(@user)
+    if service
+      redirect_to root_path
+    else
+      redirect_to @user
+    end
   end
-
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :first_name)
