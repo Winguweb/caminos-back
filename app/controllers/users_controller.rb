@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update 
     service = UpdateUser.call(@user,user_params)
-    if service
+    if service.success?
       redirect_to @user
     else
       render :edit 
