@@ -28,8 +28,7 @@ class CreateUser
       user_params[key] = value if  permitted_params.include? key
     end
     user_params.merge!(active: true, approved: true, confirmed: true, roles: [:ambassador],profile: Profile.new(get_profile_params))
-    return user_params
-  
+   
   end
 
   def get_profile_params
