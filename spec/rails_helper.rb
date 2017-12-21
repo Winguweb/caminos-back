@@ -34,7 +34,7 @@ ActiveRecord::Migration.maintain_test_schema!
 require 'support/shoulda_matchers'
 require 'support/factory_bot'
 require 'support/database_cleaner'
-require 'support/request_helpers'
+# require 'support/request_helpers'
 
 
 RSpec.configure do |config|
