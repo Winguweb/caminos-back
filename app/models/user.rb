@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   attribute :settings, :jsonb, default: {}
 
+  validates_presence_of :password, :email, :username
   has_one :profile, dependent: :destroy
 
   roles AVAILABLE_ROLES
