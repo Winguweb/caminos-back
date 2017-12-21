@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   describe 'associations' do
     it { is_expected.to have_one(:profile) }
   end
@@ -25,4 +26,5 @@ RSpec.describe User, type: :model do
     it('check ambassador role') { expect(ambassador.roles).to contain_exactly(:ambassador) }
     it('check admin role') { expect(admin.roles).to contain_exactly(:admin) }
   end
+
 end
