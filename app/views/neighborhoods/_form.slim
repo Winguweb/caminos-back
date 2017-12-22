@@ -1,0 +1,20 @@
+
+= form_for @neighborhood do |f|
+  div.field
+    = f.label :name
+    br  
+    = f.text_field :name
+  div.field
+    = f.label :description
+    br
+    = f.text_field :description
+  div.field
+    = f.label :manager
+    br
+    = f.text_field :manager
+  div.field
+    = f.label :location
+    br
+    = f.text_field :location
+  div.actions
+    = f.submit
