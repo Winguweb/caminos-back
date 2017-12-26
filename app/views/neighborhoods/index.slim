@@ -1,4 +1,9 @@
- - @neighborhoods.each do |neighborhood|
- 	=neighborhood.name
- 	-neighborhood.works.each do |work|
- 		= work.address
+section
+  h1  Barrios 
+  .neighborhoods-list
+    - @neighborhoods.each do |neighborhood|
+      .neighborhood-data
+        =neighborhood.name
+        -neighborhood.works.each do |work|
+          = work.name
+        
