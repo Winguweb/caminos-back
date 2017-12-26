@@ -12,7 +12,8 @@ class DestroyUser
   private
 
   def destroy_user
-    return  @user.destroy
+    return @user if @user.destroy
+    errors.add_multiple_errors(@user.errors.messages) && nil
   end
 
 end

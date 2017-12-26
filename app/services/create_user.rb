@@ -1,8 +1,14 @@
 class CreateUser 
   prepend Service::Base
+
+  USER_PARAMS = %w(username email password).freeze
+  private_constant :USER_PARAMS
+  PROFILE_PARAMS = %w(first_name last_name).freeze
+  private_constant :PROFILE_PARAMS
  
   def initialize(allowed_params)
     @allowed_params = allowed_params
+
   end
 
   def call
@@ -13,33 +19,28 @@ class CreateUser
 
   def create_user
 
-    data =  get_user_params
-    @user = User.new(data)
+    @user = User.new(user_params)
     return @user if @user.save
     errors.add_multiple_errors(@user.errors.messages) && nil
   
   end
 
-  def get_user_params
-  
-    permitted_params = ["username", "email", "password"]
-    user_params = {}
-    @allowed_params.each do |key ,value| 
-      user_params[key] = value if  permitted_params.include? key
-    end
-    user_params.merge!(active: true, approved: true, confirmed: true, roles: [:ambassador],profile: Profile.new(get_profile_params))
-   
+  def user_params
+    @allowed_params.select do |key, value|
+    USER_PARAMS.include?(key.to_s)
+    end.merge({
+      active: true, 
+      approved: true, 
+      confirmed: true,
+      roles: [ :ambassador ],
+      profile: Profile.new( profile_params )
+    })
   end
 
-  def get_profile_params
-
-    permitted_params = ["first_name"]
-    profile_params = {}
-    @allowed_params.each do |key ,value| 
-      profile_params[key] = value if  permitted_params.include? key
+  def profile_params
+    @allowed_params.select do |key, value|
+      PROFILE_PARAMS.include?(key.to_s)
     end
-    return profile_params
-
   end
 
 end
