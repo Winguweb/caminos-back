@@ -7,7 +7,12 @@ class NeighborhoodsController < ApplicationController
   end
 
   def create
-  	raise
+    service = CreateNeighborhood.call(neighborhood_params)
+    if service.success?
+      redirect_to neighborhoods_path
+    else
+      render :new
+    end
   end
 
   def index
@@ -15,7 +20,7 @@ class NeighborhoodsController < ApplicationController
   end
 
   def neighborhood_params
-    params.require(:neighborhood).permit(:description, :location, :name, :manager)
+    params.require(:neighborhood).permit(:description, :location, :name, :manager,:ambassador)
   end
 
 
