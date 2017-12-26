@@ -1,3 +1,3 @@
 class Neighborhood < ApplicationRecord
-	has_many :works
+	has_many :works, dependent: :destroy
 end
