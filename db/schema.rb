@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226153146) do
+ActiveRecord::Schema.define(version: 20171226200921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 20171226153146) do
     t.uuid "neighborhood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "status"
     t.index ["neighborhood_id"], name: "index_works_on_neighborhood_id"
   end
 
