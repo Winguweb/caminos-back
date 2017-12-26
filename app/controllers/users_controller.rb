@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   def destroy
     load_user
     service = DestroyUser.call(@user)
-    if service
+    if service.success?
       redirect_to root_path
     else
       redirect_to @user
