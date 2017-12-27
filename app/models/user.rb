@@ -34,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def color
-    FALLBACK_COLORS[id % FALLBACK_COLORS.length]
+    FALLBACK_COLORS[id.to_i % FALLBACK_COLORS.length]
   end
 
   def soft_destroy?
