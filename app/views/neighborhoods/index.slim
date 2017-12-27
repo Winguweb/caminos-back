@@ -3,7 +3,8 @@ section
   .neighborhoods-list
     - @neighborhoods.each do |neighborhood|
       .neighborhood-data
-        =neighborhood.name
-        -neighborhood.works.each do |work|
-          = work.name
+        h3
+        	.name= neighborhood.name
+        .works= " Obras #{neighborhood.works.count} - "  + "Reuniones #{@meetings}" 
+        = link_to 'Ver', neighborhood
         
