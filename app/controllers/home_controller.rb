@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def show
-    @users = User.all
+    @users = User.preload(:profile).all
   end
 end

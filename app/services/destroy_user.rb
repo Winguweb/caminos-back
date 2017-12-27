@@ -1,6 +1,6 @@
-class DestroyUser 
+class DestroyUser
   prepend Service::Base
- 
+
   def initialize(user)
     @user = user
   end
@@ -13,6 +13,7 @@ class DestroyUser
 
   def destroy_user
     return @user if @user.destroy
+
     errors.add_multiple_errors(@user.errors.messages) && nil
   end
 

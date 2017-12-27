@@ -5,11 +5,12 @@ Rails.application.routes.draw do
     get  '/signin',   action: :new,     controller: :user_sessions
     post '/signin',   action: :create,  controller: :user_sessions
     post '/signout',  action: :destroy, controller: :user_sessions
-    resources :users
   # ╰─ End of Public Accesible URL's / Path's
 
   # ╭─ Private Accesible URL's / Path's
     root to: 'home#show'
+
+    resources :users, except: [ :index ]
   # ╰─ End of Private Accesible URL's / Path's
   end
 end

@@ -5,16 +5,16 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
-    @user.profile = Profile.new
+    @user = User.new(profile: Profile.new)
   end
 
   def create
     service = CreateUser.call(user_params)
+
     if service.success?
       redirect_to root_path
     else
-      render :new
+      redirect_to new_user_path
     end
   end
 
@@ -22,35 +22,43 @@ class UsersController < ApplicationController
     load_user
   end
 
-  def update 
+  def update
     load_user
-    service = UpdateUser.call(@user,user_params)
+
+    service = UpdateUser.call(@user, user_params)
+
     if service.success?
-      redirect_to @user
+      redirect_to user_path(@user)
     else
-      render :edit 
+      redirect_to edit_user_path(@user)
     end
   end
 
   def destroy
     load_user
+
     service = DestroyUser.call(@user)
+
     if service.success?
       redirect_to root_path
     else
-      redirect_to @user
+      redirect_to user_path(@user)
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password, :first_name)
+    params.require(:user).permit(
+      :username,
+      :email,
+      :password,
+      profile: {}
+    )
   end
 
   def load_user
     @user = User.find(params[:id])
   end
 
-  
 end

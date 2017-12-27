@@ -26,7 +26,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
 
-
 group :development do
   gem "better_errors"
   gem "binding_of_caller"
