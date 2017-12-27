@@ -10,12 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171226200921) do
+ActiveRecord::Schema.define(version: 20171227143607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
   enable_extension "pgcrypto"
+
+  create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.date "date"
+    t.text "topics"
+    t.string "convener"
+    t.text "objective"
+    t.string "participant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meetings_works", id: false, force: :cascade do |t|
+    t.uuid "work_id"
+    t.uuid "meeting_id"
+    t.index ["meeting_id"], name: "index_meetings_works_on_meeting_id"
+    t.index ["work_id"], name: "index_meetings_works_on_work_id"
+  end
 
   create_table "neighborhoods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
@@ -69,6 +86,8 @@ ActiveRecord::Schema.define(version: 20171226200921) do
   end
 
   create_table "works", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "status"
     t.date "start_date"
     t.date "end_date"
     t.string "address"
@@ -80,8 +99,6 @@ ActiveRecord::Schema.define(version: 20171226200921) do
     t.uuid "neighborhood_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "status"
     t.index ["neighborhood_id"], name: "index_works_on_neighborhood_id"
   end
 
