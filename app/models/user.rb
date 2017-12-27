@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   attribute :settings, :jsonb, default: {}
 
+  validates_presence_of :password, :email, :username
   has_one :profile, dependent: :destroy
 
   roles AVAILABLE_ROLES
@@ -33,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def color
-    FALLBACK_COLORS[id % FALLBACK_COLORS.length]
+    FALLBACK_COLORS[id.to_i % FALLBACK_COLORS.length]
   end
 
   def soft_destroy?
