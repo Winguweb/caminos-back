@@ -1,0 +1,9 @@
+section
+  h1 Caminos de la Villa
+  .users-list
+    .user-data
+      .name= @user.name
+      .email= @user.email
+      = link_to 'Editar', edit_user_path(@user)
+      = link_to 'Eliminar', @user, :data => { confirm: 'Are you sure?' }, :method => :delete
+
