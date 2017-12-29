@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'associations' do
     it { is_expected.to have_one(:profile) }
+    it { is_expected.to have_many(:responsabilities) }
+    it { is_expected.to have_many(:neighborhoods) }
   end
 
   describe 'validations' do
