@@ -2,11 +2,12 @@ class NeighborhoodsController < ApplicationController
 
   def show
     load_neighborhood
-
+    
   end
   
   def new
     @neighborhood = Neighborhood.new
+    @ambassadors = User.all
   end
 
   def create
@@ -14,7 +15,7 @@ class NeighborhoodsController < ApplicationController
     if service.success?
       redirect_to neighborhoods_path
     else
-      render :new
+      redirect_to new_neighborhood_path
     end
   end
 
@@ -37,7 +38,8 @@ class NeighborhoodsController < ApplicationController
 
  
   def neighborhood_params
-    params.require(:neighborhood).permit(:description, :location, :name, :manager,:ambassador)
+    params[:neighborhood][:ambassadors] ||= []
+    params.require(:neighborhood).permit(:description, :location, :name ,  ambassadors: [])
   end
 
   def load_neighborhood

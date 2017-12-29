@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20171227143607) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "meetings_works", id: false, force: :cascade do |t|
+  create_table "meetings_works", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "work_id"
     t.uuid "meeting_id"
     t.index ["meeting_id"], name: "index_meetings_works_on_meeting_id"
@@ -37,8 +37,6 @@ ActiveRecord::Schema.define(version: 20171227143607) do
   create_table "neighborhoods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "ambassador"
-    t.string "manager"
     t.geometry "location", limit: {:srid=>0, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,6 +49,15 @@ ActiveRecord::Schema.define(version: 20171227143607) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "responsibles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id"
+    t.uuid "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["neighborhood_id"], name: "index_responsibles_on_neighborhood_id"
+    t.index ["user_id"], name: "index_responsibles_on_user_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

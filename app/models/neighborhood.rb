@@ -3,10 +3,14 @@ class Neighborhood < ApplicationRecord
   has_many :ambassadors, class_name: 'Responsible'
   has_many :users, through: :responsibles
   validates_presence_of :name, :description, :ambassadors
-  # validate :is_ambassador?
+  validate :is_ambassador?
 
-  # def is_ambassador?
-  # 	errors.add(:role, "no ambassador ") if !User.first.roles.include?(:ambassador)
-  # end
+  def is_ambassador?
+    
+    self.ambassadors.each do |ambassador|
+      return errors.add(:role, "no ambassador ") if !ambassador.user.roles.include?(:ambassador)
+    end
+    
+  end
 
 end

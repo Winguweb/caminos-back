@@ -1,6 +1,13 @@
 
 section
   h1 =@neighborhood.name
+  h3 = "Embajadores:"
+  .ambassadors-list
+    - @neighborhood.ambassadors.each do |ambassador|
+      .neighborhood-data
+        h4
+        	.name= ambassador.user.username
+  h3 = "Obras:"
   .neighborhoods-list
     - @neighborhood.works.each do |work|
       .neighborhood-data
