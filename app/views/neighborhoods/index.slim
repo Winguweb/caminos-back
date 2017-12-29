@@ -5,7 +5,7 @@ section
     - @neighborhoods.each do |neighborhood|
       .neighborhood-data
         h3
-        	.name= neighborhood.name
+          .name= neighborhood.name
         .works= " Embajadores #{neighborhood.ambassadors.all.count} - " + " Obras #{neighborhood.works.count} - "  + "Reuniones #{@meetings}" 
         = link_to 'Ver', neighborhood
         
