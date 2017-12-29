@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   validates_presence_of :password, :email, :username
   has_one :profile, dependent: :destroy
+  has_many :responsabilities, class_name: 'Responsible'
+  has_many :neighborhoods, through: :responsabilities
 
   roles AVAILABLE_ROLES
 
