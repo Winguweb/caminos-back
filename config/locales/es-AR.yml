@@ -1,2 +1,8 @@
 es-AR:
-
+  activerecord:
+    errors:
+      models:
+        work:
+          attributes:
+            neighborhood:
+              required: "Este campo es requerido"
