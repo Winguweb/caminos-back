@@ -2,7 +2,6 @@ class WorksController < ApplicationController
 
   def show
     load_work
-
   end
   
   def new
@@ -20,7 +19,8 @@ class WorksController < ApplicationController
   end
 
   def index
-    @works = Work.all
+    load_neighborhood
+    @works = @neighborhood.works
   end
  
   private 
