@@ -1,5 +1,4 @@
 class Neighborhood < ApplicationRecord
-  has_many :works, dependent: :destroy
   has_many :ambassadors, class_name: 'Responsible'
   has_many :users, through: :ambassadors
   validates_presence_of :name, :description, :ambassadors

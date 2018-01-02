@@ -6,6 +6,6 @@ section
       .neighborhood-data
         h3
           .name= neighborhood.name
-        .works= " Embajadores #{neighborhood.ambassadors.all.count} - " + " Obras #{neighborhood.works.count} - "  + "Reuniones #{@meetings}" 
+        .ambassadors= " Embajadores #{neighborhood.ambassadors.all.count} "
         = link_to 'Ver', neighborhood
         

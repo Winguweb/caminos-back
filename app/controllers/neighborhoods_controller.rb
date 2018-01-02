@@ -2,7 +2,7 @@ class NeighborhoodsController < ApplicationController
 
   def show
     load_neighborhood
-    
+
   end
   
   def new
@@ -21,19 +21,8 @@ class NeighborhoodsController < ApplicationController
 
   def index
     @neighborhoods = Neighborhood.all
-    meetings_works
-  end
-
-  def meetings_works
-    @meetings = 0 
-    @neighborhoods.each do |neighborhood|
-      neighborhood.works.each do |work|
-        @meetings += work.meetings.count
-      end
-    end
 
   end
-
   private 
 
  
