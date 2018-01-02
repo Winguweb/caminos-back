@@ -27,7 +27,6 @@ class NeighborhoodsController < ApplicationController
 
  
   def neighborhood_params
-    params[:neighborhood][:ambassadors] ||= []
     params.require(:neighborhood).permit(:description, :location, :name ,  ambassadors: [])
   end
 
