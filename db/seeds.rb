@@ -1,3 +1,6 @@
+#
+wingu = Organization.new(name: "wingu", topics: "tencnología sin fines de lucro")
+wingu.save
 # Users
 USERS = [
   { username: 'cavi', email: 'agustin@winguweb.org', password: 'nadanada', first_name: 'Agustin', active: true, approved: true, confirmed: true, roles: [:admin] },
