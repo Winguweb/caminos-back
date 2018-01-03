@@ -29,7 +29,7 @@ class WorksController < ApplicationController
     params.require(:work).permit(:name, :status, :start_date, :end_date, :address, :location, :description, :budget, :manager, :execution_plan)
   end
 
-  def load_meeting
+  def load_work
     @work = Work.find(params[:id])
   end
 
