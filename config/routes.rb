@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   # ╰─ End of Public Accesible URL's / Path's
 
   # ╭─ Private Accesible URL's / Path's
+    resources :users
+    
+    resources :organizations, only: [:show, :new, :create, :index]
+    
+    resources :neighborhoods, only: [:show, :new, :create, :index] do 
+      resources :works, only: [:show, :new, :create, :index]
+    end
+    
     root to: 'home#show'
 
     resources :users, except: [ :index ]

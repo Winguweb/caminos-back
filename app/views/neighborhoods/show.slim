@@ -1,0 +1,10 @@
+
+section
+  h1 = "Obra #{@neighborhood.name}"
+  = link_to 'Nueva Obra',  new_neighborhood_work_path(@neighborhood)
+  h3 = "Embajadores:"
+  .ambassadors-list
+    - @neighborhood.users.each do |ambassador|
+      .neighborhood-data
+        h4
+          .name= ambassador.username

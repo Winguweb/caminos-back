@@ -1,0 +1,11 @@
+section
+  h1  Barrios 
+  = link_to 'Nuevo Barrio', new_neighborhood_path
+  .neighborhoods-list
+    - @neighborhoods.each do |neighborhood|
+      .neighborhood-data
+        h3
+          .name= neighborhood.name
+        .ambassadors= " Embajadores #{neighborhood.users.all.count} "
+        = link_to 'Ver', neighborhood
+        

@@ -42,6 +42,8 @@ class CreateUserAndProfile < ActiveRecord::Migration[5.1]
 
       t.datetime :deleted_at
 
+      t.references :entity, type: :uuid, polymorphic: true
+
       t.timestamps
     end
     add_index  :users, :settings, using: :gin
