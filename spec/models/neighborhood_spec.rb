@@ -9,7 +9,6 @@ RSpec.describe Neighborhood, type: :model do
   end
 
   describe 'associations' do
-    it { is_expected.to have_many(:ambassadors) }
     it { is_expected.to have_many(:users) }
   end
 
