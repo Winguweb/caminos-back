@@ -2,6 +2,9 @@ class User < ApplicationRecord
   include SoftDestroy
   include RoleModel
 
+  has_one :profile, dependent: :destroy
+  belongs_to :entity, polymorphic: true, optional: true
+
   AVAILABLE_ROLES = [:admin, :ambassador].freeze
   private_constant :AVAILABLE_ROLES
 
@@ -14,14 +17,11 @@ class User < ApplicationRecord
   attribute :settings, :jsonb, default: {}
 
   validates_presence_of :password, :email, :username
-  has_one :profile, dependent: :destroy
 
   roles AVAILABLE_ROLES
 
   alias_attribute :name, :first_name
   delegate :first_name, :last_name, :full_name, :initials, to: :profile
-
-  belongs_to :entity, polymorphic: true, optional: true
 
   acts_as_authentic do |authlogic|
     authlogic.login_field = :email

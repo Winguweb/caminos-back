@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20180103174223) do
 
   # These are extensions that must be enabled in order to support this database
@@ -18,36 +17,37 @@ ActiveRecord::Schema.define(version: 20180103174223) do
   enable_extension "postgis"
   enable_extension "pgcrypto"
 
-  create_table "calendars", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "work_id"
-    t.uuid "meeting_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["meeting_id"], name: "index_calendars_on_meeting_id"
-    t.index ["work_id"], name: "index_calendars_on_work_id"
-  end
-
   create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
     t.date "date"
-    t.text "topics"
-    t.string "conveners"
+    t.string "lookup_address"
+    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.text "objectives"
+    t.text "minute"
+    t.string "organizer"
     t.string "participants"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lookup_coordinates"], name: "index_meetings_on_lookup_coordinates", using: :gist
+    t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
   end
 
   create_table "neighborhoods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
+    t.string "lookup_address"
+    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.text "description"
-    t.geometry "location", limit: {:srid=>0, :type=>"geometry"}
+    t.geography "geo_polygon", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "polygon", limit: {:srid=>0, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
+    t.index ["polygon"], name: "index_neighborhoods_on_polygon", using: :gist
   end
 
   create_table "organizations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
-    t.text "topics"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 20180103174223) do
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "username"
     t.string "email"
+    t.string "entity_type"
+    t.uuid "entity_id"
+    t.integer "roles_mask"
+    t.jsonb "settings", default: {}, null: false
     t.string "crypted_password"
     t.string "password_salt"
     t.string "persistence_token"
@@ -79,11 +83,7 @@ ActiveRecord::Schema.define(version: 20180103174223) do
     t.boolean "active", default: false
     t.boolean "approved", default: false
     t.boolean "confirmed", default: false
-    t.integer "roles_mask"
-    t.jsonb "settings", default: {}, null: false
     t.datetime "deleted_at"
-    t.string "entity_type"
-    t.uuid "entity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -97,19 +97,25 @@ ActiveRecord::Schema.define(version: 20180103174223) do
   end
 
   create_table "works", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
     t.string "name"
+    t.text "description"
     t.string "status"
     t.date "start_date"
+    t.date "estimated_end_date"
     t.date "end_date"
-    t.string "address"
-    t.geometry "location", limit: {:srid=>0, :type=>"geometry"}
-    t.string "description"
+    t.string "lookup_address"
+    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.string "budget"
     t.string "manager"
-    t.string "execution_plan"
-    t.uuid "neighborhood_id", null: false
+    t.text "execution_plan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["geo_geometry"], name: "index_works_on_geo_geometry", using: :gist
+    t.index ["geometry"], name: "index_works_on_geometry", using: :gist
+    t.index ["lookup_coordinates"], name: "index_works_on_lookup_coordinates", using: :gist
     t.index ["neighborhood_id"], name: "index_works_on_neighborhood_id"
   end
 

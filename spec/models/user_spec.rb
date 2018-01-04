@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
   describe 'associations' do
     it { is_expected.to have_one(:profile) }
     it { is_expected.to belong_to(:entity) }
-   
   end
 
   describe 'validations' do

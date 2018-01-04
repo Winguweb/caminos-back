@@ -1,6 +1,9 @@
 class Meeting < ApplicationRecord
-  has_many :public_works, class_name: 'Calendar'
-  has_many :works, through: :public_works
+  belongs_to :neighborhood
 
-  validates_presence_of :public_works,:date,:topics,:conveners,:objectives,:participants
+  validates_presence_of :date,
+    :lookup_coordinates,
+    :objectives,
+    :organizer,
+    :participants
 end
