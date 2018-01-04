@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
   # ╭─ Private Accesible URL's / Path's
     resources :users
-    resources :neighborhoods
+    resources :organizations, only: [:show, :new, :create, :index]
+    resources :neighborhoods, only: [:show, :new, :create, :index]
     root to: 'home#show'
 
     resources :users, except: [ :index ]

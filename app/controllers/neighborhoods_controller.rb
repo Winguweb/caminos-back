@@ -7,7 +7,6 @@ class NeighborhoodsController < ApplicationController
   
   def new
     @neighborhood = Neighborhood.new
-    @ambassadors = User.all
   end
 
   def create
@@ -27,7 +26,7 @@ class NeighborhoodsController < ApplicationController
 
  
   def neighborhood_params
-    params.require(:neighborhood).permit(:description, :location, :name ,  ambassadors: [])
+    params.require(:neighborhood).permit(:description, :location, :name)
   end
 
   def load_neighborhood

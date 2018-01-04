@@ -12,12 +12,5 @@
     = f.label :location
     br
     = f.text_field :location
-  div.field
-    -unless @ambassadors.nil?
-      - @ambassadors.each do |ambassador|
-        
-        =check_box_tag "neighborhood[ambassadors][]", ambassador.id
-        
-        =ambassador.username
   div.actions
     = f.submit
