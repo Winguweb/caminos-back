@@ -54,6 +54,7 @@ class UsersController < ApplicationController
       :username,
       :email,
       :password,
+      :entity,
       profile: {}
     )
   end

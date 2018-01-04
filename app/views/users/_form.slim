@@ -26,9 +26,9 @@
     br
     -unless @entities.nil?
       - @entities.each do |entity|
-        
-        = form.radio_button :entity, entity.id
-        =  entity.name
+      
+        = form.radio_button :entity, [entity.id, entity.class]
+        =  "#{entity.class.name} #{entity.name}"
        
         
   div.actions
