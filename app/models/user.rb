@@ -21,8 +21,8 @@ class User < ApplicationRecord
   alias_attribute :name, :first_name
   delegate :first_name, :last_name, :full_name, :initials, to: :profile
 
-  belongs_to :entity, polymorphic: true
-  
+  belongs_to :entity, polymorphic: true, optional: true
+
   acts_as_authentic do |authlogic|
     authlogic.login_field = :email
     authlogic.ignore_blank_passwords = true
