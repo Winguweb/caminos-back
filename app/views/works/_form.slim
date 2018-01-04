@@ -1,0 +1,48 @@
+
+= form_for @work, url: neighborhood_works_path do |f|
+  div.field
+    = f.label :name
+    br  
+    = f.text_field :name
+  div.field
+    = f.label :status
+    br
+    = f.text_field :status
+  div.field
+    = f.label :start_date
+    br
+    = f.date_field :start_date
+  div.field
+    = f.label :end_date
+    br
+    = f.date_field :end_date
+  div.field
+    = f.label :address
+    br
+    = f.text_field :address
+  div.field
+    = f.label :location
+    br
+    = f.text_field :location
+  div.field
+    = f.label :description
+    br
+    = f.text_field :description
+  div.field
+    = f.label :budget
+    br
+    = f.text_field :budget
+  div.field
+    = f.label :manager
+    br
+    = f.text_field :manager
+  div.field
+    = f.label :execution_plan
+    br
+    = f.text_field :execution_plan
+
+  div.actions
+    = f.submit
+
+
+

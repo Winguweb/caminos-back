@@ -1,0 +1,6 @@
+h1 Obras del barrio #{@neighborhood.name}
+
+section
+    - @works.each do |work|
+      h3
+        .name= work.name
