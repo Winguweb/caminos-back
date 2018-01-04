@@ -1,5 +1,8 @@
 class Work < ApplicationRecord
   belongs_to :neighborhood
+  has_many :events, class_name: 'Calendar'
+  has_many :meetings, through: :events
+
   validates_presence_of :name, :address, :start_date, :end_date,:status,:description,:budget,:manager,:execution_plan
 
   validate :valid_dates
