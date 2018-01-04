@@ -1,0 +1,9 @@
+
+section
+  h1 = @organization.name
+  h3 = "Embajadores:"
+  .ambassadors-list
+    - @organization.users.each do |ambassador|
+      .neighborhood-data
+        h4
+          .name= ambassador.username

@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new(profile: Profile.new)
+    @entities = Organization.all + Neighborhood.all
   end
 
   def create
@@ -53,6 +54,7 @@ class UsersController < ApplicationController
       :username,
       :email,
       :password,
+      :entity,
       profile: {}
     )
   end

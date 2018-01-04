@@ -3,6 +3,7 @@ class CreateUser
 
   def initialize(allowed_params)
     @allowed_params = allowed_params
+    
   end
 
   def call
@@ -25,8 +26,11 @@ class CreateUser
       approved: true,
       confirmed: true,
       roles: [ :ambassador ],
+      entity_id: @allowed_params['entity'].strip.split(/\s+/)[0],
+      entity_type: @allowed_params.delete('entity').strip.split(/\s+/)[1],
       profile: Profile.new( profile_params )
     })
+  
   end
 
   def profile_params

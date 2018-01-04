@@ -1,0 +1,12 @@
+
+= form_for @organization do |f|
+  div.field
+    = f.label :name
+    br  
+    = f.text_field :name
+  div.field
+    = f.label :topics
+    br
+    = f.text_field :topics
+  div.actions
+    = f.submit

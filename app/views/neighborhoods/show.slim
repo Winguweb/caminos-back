@@ -4,7 +4,7 @@ section
   = link_to 'Nueva Obra',  new_neighborhood_work_path(@neighborhood)
   h3 = "Embajadores:"
   .ambassadors-list
-    - @neighborhood.ambassadors.each do |ambassador|
+    - @neighborhood.users.each do |ambassador|
       .neighborhood-data
         h4
-          .name= ambassador.user.username
+          .name= ambassador.username
