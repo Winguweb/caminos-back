@@ -21,5 +21,15 @@
     = form.label :password
     br
     = form.password_field :password
+  div.field
+    = "Seleccione relacion" 
+    br
+    -unless @entities.nil?
+      - @entities.each do |entity|
+        
+        = form.radio_button :entity, entity.id
+        =  entity.name
+       
+        
   div.actions
     = form.submit
