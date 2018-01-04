@@ -26,8 +26,22 @@ class WorksController < ApplicationController
   private 
  
   def work_params
-    params.require(:work).permit(:name, :status, :start_date, :end_date, :address, :location, :description, :budget, :manager, :execution_plan)
-  end
+    params.require(:work).permit(
+      :budget,
+      :description,
+      :end_date,
+      :estimated_end_date,
+      :execution_plan,
+      :geometry,
+      :geo_geometry,
+      :lookup_address,
+      :lookup_coordinates,
+      :manager,
+      :name,
+      :status,
+      :start_date
+    )
+    end
 
   def load_work
     @work = Work.find(params[:id])

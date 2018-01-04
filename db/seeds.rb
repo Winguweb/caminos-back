@@ -1,5 +1,5 @@
 #
-wingu = Organization.new(name: "wingu", topics: "tencnología sin fines de lucro")
+wingu = Organization.new(name: "wingu", description: "tencnología sin fines de lucro")
 wingu.save
 # Users
 USERS = [

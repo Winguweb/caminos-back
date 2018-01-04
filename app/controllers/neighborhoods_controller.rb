@@ -26,7 +26,14 @@ class NeighborhoodsController < ApplicationController
 
  
   def neighborhood_params
-    params.require(:neighborhood).permit(:description, :location, :name)
+    params.require(:neighborhood).permit(
+      :description,
+      :geo_polygon,
+      :lookup_address,
+      :lookup_coordinates,
+      :name,
+      :polygon
+     )
   end
 
   def load_neighborhood

@@ -13,17 +13,21 @@
     br
     = f.date_field :start_date
   div.field
+    = f.label :estimated_end_date
+    br
+    = f.date_field :estimated_end_date
+  div.field
     = f.label :end_date
     br
     = f.date_field :end_date
   div.field
-    = f.label :address
+    = f.label :lookup_address
     br
-    = f.text_field :address
+    = f.text_field :lookup_address
   div.field
-    = f.label :location
+    = f.label :geo_geometry
     br
-    = f.text_field :location
+    = f.text_field :geo_geometry
   div.field
     = f.label :description
     br
