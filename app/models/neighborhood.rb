@@ -1,6 +1,5 @@
 class Neighborhood < ApplicationRecord
-
-  validates_presence_of :name, :description
- 
   has_many :users, as: :entity
+  
+  validates_presence_of :name, :description
 end
