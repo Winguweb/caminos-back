@@ -1,0 +1,31 @@
+
+= form_for @meeting, url: neighborhood_meetings_path do |f|
+  div.field
+
+  div.field
+    = f.label :date
+    br
+    = f.date_field :date
+  div.field
+    = f.label :minute
+    br
+    = f.text_field :minute
+  div.field
+    = f.label :organizer
+    br
+    = f.text_field :organizer
+  div.field
+    = f.label :objectives
+    br
+    = f.text_field :objectives
+  div.field
+    = f.label :participants
+    br
+    = f.text_field :participants
+
+
+  div.actions
+    = f.submit
+
+
+

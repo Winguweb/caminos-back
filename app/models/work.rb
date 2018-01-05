@@ -1,14 +1,15 @@
 class Work < ApplicationRecord
   belongs_to :neighborhood
+  has_and_belongs_to_many :meetings
 
   validates_presence_of :name,
     :description,
     :status,
     :start_date,
     :estimated_end_date,
-    :lookup_coordinates,
     :budget,
     :manager,
+    :name,
     :execution_plan
 
   validate :valid_dates
