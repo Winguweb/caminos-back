@@ -1,0 +1,9 @@
+h1 "Obra #{@work.name}"
+p
+=@work.description
+p
+h2 Reuniones
+p
+-@work.meetings.each do |meeting|
+  =meeting.date
+  p

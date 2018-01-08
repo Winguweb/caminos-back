@@ -1,0 +1,11 @@
+= "Reunión"
+p
+=@meeting.date
+p
+=@meeting.objectives
+
+h2 Obras relacionadas
+p
+-@meeting.works.each do |work|
+  =work.name
+  p

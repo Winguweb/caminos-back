@@ -1,10 +1,29 @@
 
 section
-  h1 = "Obra #{@neighborhood.name}"
+  h1 = "Barrio #{@neighborhood.name}"
+  = @neighborhood.description
+  p
+  h3 = "Obras:"
   = link_to 'Nueva Obra',  new_neighborhood_work_path(@neighborhood)
+  .works-list
+    - @neighborhood.works.each do |work|
+      .work-data
+        h4
+          .name= work.name
+
+  
   h3 = "Embajadores:"
   .ambassadors-list
     - @neighborhood.users.each do |ambassador|
       .neighborhood-data
         h4
           .name= ambassador.username
+
+  
+  h3 = "Reuniones:"
+  .meetings-list
+	= link_to 'Nueva Reunión',  new_neighborhood_meeting_path(@neighborhood)
+    - @neighborhood.meetings.each do |meeting|
+      .meeting-data
+        h4
+          .name= meeting.date

@@ -15,7 +15,7 @@ class MeetingsController < ApplicationController
     if service.success?
       redirect_to neighborhood_meetings_path
     else
-      redirect_to  new_neighborhood_meetings_path(@neighborhood)
+      redirect_to  new_neighborhood_meeting_path(@neighborhood)
     end
   end
 
@@ -31,7 +31,7 @@ class MeetingsController < ApplicationController
     params.require(:meeting).permit(
       :date,
       :minute,
-      :objective,
+      :objectives,
       :organizer,
       :participants,
       :lookup_address
