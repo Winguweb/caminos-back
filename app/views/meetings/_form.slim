@@ -23,7 +23,14 @@
     br
     = f.text_field :participants
 
-
+  div.field
+    = "Seleccione Obras Relacionadas" 
+    br
+    -unless @neighborhood.works.nil?
+      - @neighborhood.works.each do |work|
+        = check_box_tag "meeting[works][]", work.id
+        = work.name
+        
   div.actions
     = f.submit
 

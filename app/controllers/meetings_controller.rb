@@ -6,6 +6,7 @@ class MeetingsController < ApplicationController
   end
   
   def new
+    load_neighborhood
     @meeting = Meeting.new
   end
 
@@ -34,7 +35,8 @@ class MeetingsController < ApplicationController
       :objectives,
       :organizer,
       :participants,
-      :lookup_address
+      :lookup_address, 
+      works: []
      )
   end
 
