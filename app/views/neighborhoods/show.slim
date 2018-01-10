@@ -1,29 +1,29 @@
 
 section
-  h1 = "Barrio #{@neighborhood.name}"
+  
+
+  h1 = @neighborhood.name
+
+  h4 = t('.about_neighborhood', neighborhood: @neighborhood.name )
+  p
   = @neighborhood.description
   p
-  h3 = "Obras:"
-  = link_to 'Nueva Obra',  new_neighborhood_work_path(@neighborhood)
-  .works-list
-    - @neighborhood.works.each do |work|
-      .work-data
-        h4
-          .name= work.name
 
-  
-  h3 = "Embajadores:"
+  h3 = t('.ambassadors')
   .ambassadors-list
     - @neighborhood.users.each do |ambassador|
       .neighborhood-data
         h4
-          .name= ambassador.username
+          .name= link_to ambassador.username, ambassador
 
-  
-  h3 = "Reuniones:"
+  p
+  h3 = t('.works')
+  = link_to 'Nueva Obra',  new_neighborhood_work_path(@neighborhood)
+  .works-list
+    = render partial: "neighborhoods/partials/works_list", locals: { works: @neighborhood.works }
+  p
+  h3 = t('.meetings')
   .meetings-list
 	= link_to 'Nueva Reunión',  new_neighborhood_meeting_path(@neighborhood)
-    - @neighborhood.meetings.each do |meeting|
-      .meeting-data
-        h4
-          .name= meeting.date
+    =render partial: "/partials/meetings", locals: { meetings: @neighborhood.meetings }
+   

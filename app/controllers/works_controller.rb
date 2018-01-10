@@ -1,6 +1,7 @@
 class WorksController < ApplicationController
 
   def show
+    load_neighborhood
     load_work
   end
   

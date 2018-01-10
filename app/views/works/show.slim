@@ -1,9 +1,25 @@
-h1 "Obra #{@work.name}"
+
+h1 =@work.name
+p
+h2= t(".description")
 p
 =@work.description
 p
-h2 Reuniones
+=@work.start_date
 p
--@work.meetings.each do |meeting|
-  =meeting.date
-  p
+=@work.end_date
+p
+=@work.estimated_end_date
+p
+=@work.budget
+p
+=@work.manager
+p
+=@work.execution_plan
+p
+h2= t(".location")
+
+p
+h2= t(".meetings")
+p
+=render partial: "/partials/meetings", locals: { meetings: @work.meetings }

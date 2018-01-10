@@ -5,4 +5,11 @@ es-AR:
         work:
           attributes:
             neighborhood:
-              required: "Este campo es requerido"
+              required: Este campo es requerido
+  neighborhoods:
+    index:
+      neighborhoods: Barrios
+      new_neighborhood: Nuevo Barrio
+    show:
+      about_neighborhood: Sobre la villa %{neighborhood}
+      ambassadors: Embajadores

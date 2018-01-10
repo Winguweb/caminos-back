@@ -1,0 +1,12 @@
+- works.each do |work|
+  = link_to neighborhood_work_path(@neighborhood, work) do 
+    .work_data
+      h2 = work.name
+      p
+      = work.lookup_address
+      p
+      = work.status
+      p
+      = "Actualizado: #{work.updated_at.to_date.to_s}"
+    
+

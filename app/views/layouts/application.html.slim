@@ -15,8 +15,12 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     / = render partial: 'partials/javascripts/services'
 
   body id=body_id class=body_class
+
     = render partial: 'partials/header'
     main
+      - unless flash.empty?
+        - flash.each do |name, msg|
+          = msg
       = yield
     = render partial: 'partials/footer'
 
