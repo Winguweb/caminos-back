@@ -18,6 +18,19 @@ class NeighborhoodsController < ApplicationController
     end
   end
 
+  def edit
+    load_neighborhood
+  end
+
+  def update 
+    load_neighborhood
+    service = UpdateNeighborhood.call(@neighborhood,neighborhood_params)
+    if service.success?
+      redirect_to neighborhood_path
+    else
+      redirect_to edit_neighborhood_path
+    end
+  end
   def index
     @neighborhoods = Neighborhood.all
   end

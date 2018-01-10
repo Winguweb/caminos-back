@@ -4,11 +4,14 @@ section
 
   h1 = @neighborhood.name
 
-  h4 = t('.about_neighborhood', neighborhood: @neighborhood.name )
+  h3 = t('.about_neighborhood', neighborhood: @neighborhood.name )
   p
   = @neighborhood.description
   p
-
+  h3 = t('.address')
+  p
+  = @neighborhood.lookup_address
+  p
   h3 = t('.ambassadors')
   .ambassadors-list
     - @neighborhood.users.each do |ambassador|
@@ -23,7 +26,7 @@ section
     = render partial: "neighborhoods/partials/works_list", locals: { works: @neighborhood.works }
   p
   h3 = t('.meetings')
+  = link_to 'Nueva Reunión',  new_neighborhood_meeting_path(@neighborhood)
   .meetings-list
-	= link_to 'Nueva Reunión',  new_neighborhood_meeting_path(@neighborhood)
-    =render partial: "/partials/meetings", locals: { meetings: @neighborhood.meetings }
+      =render partial: "/partials/meetings", locals: { meetings: @neighborhood.meetings }
    

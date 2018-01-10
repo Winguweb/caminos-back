@@ -12,4 +12,7 @@ es-AR:
       new_neighborhood: Nuevo Barrio
     show:
       about_neighborhood: Sobre la villa %{neighborhood}
+      address: Dirección
       ambassadors: Embajadores
+      meetings: Reuniones
+      works: Obras
