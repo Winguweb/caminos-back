@@ -6,6 +6,7 @@ class WorksController < ApplicationController
   end
   
   def new
+    load_neighborhood
     @work = Work.new
   end
 
@@ -22,6 +23,21 @@ class WorksController < ApplicationController
   def index
     load_neighborhood
     @works = @neighborhood.works
+  end
+
+  def edit
+    load_neighborhood
+    load_work
+  end
+
+  def update
+    load_neighborhood
+    service = UpdateWork.call(load_work,work_params)
+    if service.success?
+      redirect_to neighborhood_work_path
+    else
+      redirect_to edit_neighborhood_work_path
+    end
   end
  
   private 
