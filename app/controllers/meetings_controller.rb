@@ -1,6 +1,7 @@
 class MeetingsController < ApplicationController
 
   def show
+    load_neighborhood
     load_meeting
 
   end
@@ -20,6 +21,21 @@ class MeetingsController < ApplicationController
     end
   end
 
+  def edit
+    load_neighborhood
+    load_meeting
+  end
+
+  def update
+    load_neighborhood
+    service = UpdateMeeting.call(load_meeting,meeting_params)
+    if service.success?
+      redirect_to neighborhood_meeting_path
+    else
+      redirect_to edit_neighborhood_meeting_path
+    end
+  end
+  
   def index
     load_neighborhood
     @meetings = Meeting.all

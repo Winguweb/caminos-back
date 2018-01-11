@@ -6,6 +6,9 @@ es-AR:
           attributes:
             neighborhood:
               required: Este campo es requerido
+  meetings:
+    show:
+      meeting_date: Reunión %{date}
   neighborhoods:
     index:
       neighborhoods: Barrios

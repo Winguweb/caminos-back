@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     
     resources :neighborhoods, only: [:show, :new, :create, :index, :update,:edit] do 
       resources :works, only: [:show, :new, :create, :index, :update,:edit]
-      resources :meetings, only: [:show, :new, :create, :index]
+      resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
     end
     
     root to: 'home#show'

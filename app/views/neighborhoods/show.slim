@@ -4,6 +4,8 @@ section
 
   h1 = @neighborhood.name
   = link_to "Editar", edit_neighborhood_path
+  = link_to t('.works'), neighborhood_works_path(@neighborhood)
+  = link_to t('.meetings'), neighborhood_meetings_path(@neighborhood)
   h3 = t('.about_neighborhood', neighborhood: @neighborhood.name )
   p
   = @neighborhood.description
@@ -14,16 +16,13 @@ section
   p
   h3 = t('.ambassadors')
   .ambassadors-list
-    - @neighborhood.users.each do |ambassador|
-      .neighborhood-data
-        h4
-          .name= link_to ambassador.username, ambassador
-
+    = render partial: "neighborhoods/partials/ambassadors_list", locals: { ambassadors: @neighborhood.users }
+       
   p
   h3 = t('.works')
   = link_to t('.new_work'),  new_neighborhood_work_path(@neighborhood)
   .works-list
-    = render partial: "neighborhoods/partials/works_list", locals: { works: @neighborhood.works }
+    = render partial: "/partials/works_list", locals: { works: @neighborhood.works }
   p
   h3 = t('.meetings')
   = link_to t('.new_meeting'),  new_neighborhood_meeting_path(@neighborhood)
