@@ -1,0 +1,13 @@
+div.user-button-component
+  a href=""
+    img src="http://i.pravatar.cc/45"
+    span
+  ul
+    li
+      a href="#" = "Perfil"
+    li
+      = link_to 'Nuevo Usuario', new_user_path
+    li
+      hr
+    li
+      = link_to 'Salir', signout_path, method: :post

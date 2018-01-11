@@ -1,0 +1,20 @@
+@mixin add-button() {
+  display: inline-block;
+  position: relative;
+  width: 61px;
+  height: 45px;
+  > a {
+    display: block;
+    text-align: left;
+    margin: 0 0 8px 0;
+
+    > img {
+      @include shadow($normal-shadow, 1);
+      vertical-align: top;
+      margin-right: 8px;
+      border-radius: 100%;
+      overflow: hidden;
+    }
+
+  }
+}

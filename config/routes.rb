@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # ╭─ Private Accesible URL's / Path's
     root to: 'home#show'
+    get  '/components',   action: :index,     controller: :ui_components
 
     resources :users, except: [ :index ]
   # ╰─ End of Private Accesible URL's / Path's
