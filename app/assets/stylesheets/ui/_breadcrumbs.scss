@@ -1,0 +1,11 @@
+@mixin breadcrumbs() {
+  > ul {
+    @include grid-column(16 of 16);
+    > li {
+      @include type-setting(-1);
+      @include text-color($text-grey, 1);
+      display: inline-block;
+      padding-right: $gutter / 2;
+    }
+  }
+}

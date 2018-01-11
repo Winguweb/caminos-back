@@ -1,0 +1,12 @@
+header.page-header-component
+  .content
+    = render partial: 'partials/components/breadcrumbs'
+    .page-title
+      h1
+        = "Perfil usuario"
+    - unless @links.nil?
+      .page-links
+        ul
+          - for link in @links
+            li
+              a href=link[:href] = link[:title]

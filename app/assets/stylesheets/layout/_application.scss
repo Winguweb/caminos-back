@@ -1,10 +1,10 @@
-html,body{
+html , body {
   height:100%;
   width:100%;
   margin:0;
   padding:0;
   -webkit-font-smoothing: antialiased;
-  font: $font-sans;
+  font-family: $font-sans;
   a {
     text-decoration: none;
   }
@@ -20,8 +20,8 @@ h1, h2 {
   font-family: $font-heading;
 }
 
-header, main, footer{
-  @include grid-container;
+body{
+  @include grid-collapse;
   @if $development { @include grid-visual; }
 
   @include grid-media($wide-grid) {

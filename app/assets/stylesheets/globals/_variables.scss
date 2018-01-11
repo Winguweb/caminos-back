@@ -4,6 +4,7 @@ $medium-screen: em(860);
 $large-screen: em(1016);
 $xlarge-screen: em(1200);
 $gutter: 1rem;
+$vgutter: 0.5rem;
 
 // Neat configs
 $mobile-grid:(
@@ -30,9 +31,9 @@ $wide-grid:(
 $neat-grid: $desktop-grid;
 
 // Typography
-$font-sans: Helvetica, Arial, sans-serif;
+$font-sans: "Roboto", Helvetica, Arial, sans-serif;
 $font-serif: serif;
-$font-heading: $font-serif;
+$font-heading: $font-sans;
 $font-heading-sans: Arial, sans-serif;
 $font-code: "Lucida Console", Monaco, monospace;
 

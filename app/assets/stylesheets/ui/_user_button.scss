@@ -2,11 +2,11 @@
   display: inline-block;
   position: relative;
   width: 61px;
-  height: calc(45px + 8px);
+  height: calc(45px + $vgutter);
   > a {
     display: block;
     text-align: left;
-    margin: 0 0 8px 0;
+    margin: 0 0 $vgutter 0;
 
     > img {
       @include shadow($normal-shadow, 1);
@@ -32,7 +32,7 @@
     @include shadow($normal-shadow, 1);
     @include z-level(1);
     position: absolute;
-    top: calc(45px + 8px);
+    top: calc(45px + $vgutter);
     right: 0;
     display: none;
     text-align: left;
@@ -44,7 +44,7 @@
         @include text-color($text-grey, 1);
         display: block;
         margin: 0; // Todos los a tienen margin right, por que?
-        padding: 8px;
+        padding: $vgutter $gutter/2;
         white-space: nowrap;
 
         &:hover {
@@ -58,7 +58,6 @@
         border: none;
         border-top: 1px solid color($text-grey, 0.2);
         margin: 0;
-        padding: 0 8px;
       }
     }
   }

@@ -1,0 +1,39 @@
+.page-header-component {
+  @include shadow-down($light-shadow, 1);
+  margin-bottom: $vgutter;
+  padding-bottom: 0;
+  .content {
+    @include grid-column(8);
+    @include grid-push(2);
+    text-align: left;
+    .page-title {
+      @include grid-container;
+      > h1 {
+        @include grid-column(16 of 16);
+        @include type-setting(3);
+        @include text-color($text-black, 1);
+        margin-top: 0;
+        margin-bottom: $vgutter;
+      }
+    }
+    .page-links {
+      > ul {
+        margin-top: $vgutter;
+        > li {
+          display: inline-block;
+          > a {
+            @include text-color($text-grey, 1);
+            border-bottom: 2px solid transparent;
+            display: block;
+            padding: $vgutter $gutter;
+            &.active,
+            &:hover {
+              @include text-color($text-blue, 1);
+              border-bottom-color: color($text-blue, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
