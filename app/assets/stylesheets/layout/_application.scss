@@ -21,11 +21,8 @@ h1, h2 {
 }
 
 body{
-  @include grid-collapse;
-  @if $development { @include grid-visual; }
-
+  @if $development { @include grid-visual };
   @include grid-media($wide-grid) {
-    @if $development { @include grid-visual };
   }
   @include grid-media($tablet-grid) {
     @if $development { @include grid-visual };
@@ -33,6 +30,11 @@ body{
   @include grid-media($mobile-grid) {
     @if $development { @include grid-visual };
   }
+
+}
+
+main {
+  @include grid-collapse;
 }
 
 a {

@@ -1,6 +1,8 @@
 @mixin breadcrumbs() {
   > ul {
-    @include grid-column(16 of 16);
+    @include grid-shift(3);
+    @include grid-column(10);
+    margin-bottom: $vgutter;
     > li {
       @include type-setting(-1);
       @include text-color($text-grey, 1);

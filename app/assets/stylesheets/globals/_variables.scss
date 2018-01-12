@@ -6,6 +6,8 @@ $xlarge-screen: em(1200);
 $gutter: 1rem;
 $vgutter: 0.5rem;
 
+
+
 // Neat configs
 $mobile-grid:(
   columns: 4,
@@ -28,7 +30,7 @@ $wide-grid:(
   media: $xlarge-screen,
 );
 
-$neat-grid: $desktop-grid;
+$neat-grid: $wide-grid;
 
 // Typography
 $font-sans: "Roboto", Helvetica, Arial, sans-serif;
@@ -40,4 +42,4 @@ $font-code: "Lucida Console", Monaco, monospace;
 // Colors
 @import "./colors";
 
-$development: false !default;
+$development: true !default;

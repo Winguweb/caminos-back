@@ -1,6 +1,6 @@
 @mixin user-button() {
   display: inline-block;
-  position: relative;
+  // position: relative;
   width: 61px;
   height: calc(45px + $vgutter);
   > a {
@@ -31,13 +31,14 @@
   > ul {
     @include shadow($normal-shadow, 1);
     @include z-level(1);
+    @include grid-column(3);
+    background-color: $background-white;
     position: absolute;
-    top: calc(45px + $vgutter);
-    right: 0;
+    top: calc(45px + #{$vgutter*3});
+    right: $gutter;
     display: none;
     text-align: left;
     margin: 0;
-    min-width: 100px;
     > li {
       > a {
         @include type-setting(0);
