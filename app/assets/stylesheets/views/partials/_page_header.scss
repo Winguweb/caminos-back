@@ -19,13 +19,16 @@
     .page-links {
       > ul {
         margin-top: $vgutter;
+        display: flex;
         > li {
           display: inline-block;
+          flex-grow: 1;
           > a {
             @include text-color($text-grey, 1);
             border-bottom: 2px solid transparent;
             display: block;
             padding: $vgutter $gutter;
+            text-align: center;
             &.active,
             &:hover {
               @include text-color($text-blue, 1);
