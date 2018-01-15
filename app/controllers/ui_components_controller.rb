@@ -28,5 +28,14 @@ class UiComponentsController < ApplicationController
       :type => 'Vecino',
       :image_url => 'http://i.pravatar.cc/45',
     }
+    @documents_list = [
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+    ]
+    @documents_list_button = [
+      {:title => 'Cargar Documento'},
+    ]
   end
 end

@@ -1,6 +1,4 @@
 @mixin description-text() {
-  border-top: 1px solid $light-grey;
-  padding-top: $vgutter*3;
   @include grid-column(16);
   & + & {
     border-top: none;

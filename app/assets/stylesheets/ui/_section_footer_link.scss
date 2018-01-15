@@ -1,5 +1,6 @@
 @mixin section-footer-link() {
   text-align: left;
+  margin-bottom: $vgutter;
   .right-link & {
     text-align: right;
   }

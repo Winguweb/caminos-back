@@ -4,6 +4,7 @@
   > section {
     @include grid-column(10);
     @include grid-shift(3);
+    border-bottom: 1px solid $light-grey;
     margin-bottom: $vgutter*4;
     > header {
       @include grid-collapse;
@@ -46,6 +47,14 @@
       }
     }
     > main {
+    }
+    &.with-border {
+      > main {
+        > div:first-of-type {
+          padding-top: $vgutter*3;
+          border-top: 1px solid $light-grey;
+        }
+      }
     }
   }
 }
