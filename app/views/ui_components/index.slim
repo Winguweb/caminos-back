@@ -21,3 +21,8 @@ div.page-section-component
         li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
     footer
       = render partial: 'partials/components/section_footer_link', locals: {link: @section_footer_link_left}
+  section
+    = render partial: 'partials/components/section_header', locals: {section: "Texto de Descripción", links: @section_header_links}
+    main
+      = render partial: 'partials/components/description_text', locals: {text: @description_text}
+      = render partial: 'partials/components/description_text', locals: {text: @description_text}
