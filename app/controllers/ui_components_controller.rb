@@ -23,5 +23,10 @@ class UiComponentsController < ApplicationController
     @section_header_buttons = [
       {:title => 'Cargar Documento'},
     ]
+    @person_card = {
+      :name => 'Gustavo Pavone',
+      :type => 'Vecino',
+      :image_url => 'http://i.pravatar.cc/45',
+    }
   end
 end

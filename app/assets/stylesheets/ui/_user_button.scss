@@ -1,6 +1,5 @@
 @mixin user-button() {
   display: inline-block;
-  // position: relative;
   width: 61px;
   height: calc(45px + $vgutter);
   > a {

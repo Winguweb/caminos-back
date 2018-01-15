@@ -26,3 +26,11 @@ div.page-section-component
     main
       = render partial: 'partials/components/description_text', locals: {text: @description_text}
       = render partial: 'partials/components/description_text', locals: {text: @description_text}
+  section#home
+    = render partial: 'partials/components/section_header', locals: {section: "Tarjetas de personas", links: @section_header_links}
+    main
+      ul.person-cards
+        li = render partial: 'partials/components/person_card', locals: {person: @person_card}
+        li = render partial: 'partials/components/person_card', locals: {person: @person_card}
+        li = render partial: 'partials/components/person_card', locals: {person: @person_card}
+        li = render partial: 'partials/components/person_card', locals: {person: @person_card}

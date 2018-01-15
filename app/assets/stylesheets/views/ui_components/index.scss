@@ -7,12 +7,12 @@
         @include grid-container;
         > li {
           @include grid-column(5 of 10);
-          .neighbor-card-component {
-            @include grid-container;
-            margin-bottom: $vgutter*2;
-            > article {
-            }
-          }
+        }
+      }
+      .person-cards {
+        @include grid-container;
+        > li {
+          @include grid-column(1 of 3);
         }
       }
     }
