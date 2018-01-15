@@ -44,12 +44,6 @@ div.page-section-component
         li = render partial: 'partials/components/person_card', locals: {person: @person_card}
 
   section
-    = render partial: 'partials/components/section_header', locals: {section: "Lista de ítems"}
-    main
-      ul.person-cards
-        li = render partial: 'partials/components/person_card', locals: {person: @person_card}
-
-  section
     = render partial: 'partials/components/section_header', locals: {section: "Lista de documentos", buttons: @documents_list_button}
     main
       = render partial: 'partials/components/documents_list', locals: {documents: @documents_list}
