@@ -4,11 +4,13 @@
   > section {
     @include grid-column(10);
     @include grid-shift(3);
-    > div {
+    margin-bottom: $vgutter*4;
+    > header {
       @include grid-collapse;
       @include grid-container;
       @include display(flex);
       @include align-items(flex-end);
+      margin-bottom: $vgutter;
       > h1 {
         @include grid-column(7 of 10);
         @include type-setting(1);
@@ -38,6 +40,8 @@
           }
         }
       }
+    }
+    > main {
     }
   }
 }

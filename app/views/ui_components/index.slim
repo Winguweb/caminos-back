@@ -1,3 +1,19 @@
-= render partial: 'partials/components/page_header', links: @links
-= render partial: 'partials/components/page_section', section: @section
-= render partial: 'partials/components/page_section', section: @section
+= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: "Componentes", breadcrumbs: @section_header_breadcrumbs}
+div.page-section-component
+  section#home
+    = render partial: 'partials/components/section_header', locals: {section: "Tarjetas de barrio", links: @section_header_links}
+    main
+      ul.neighbor-cards
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+
+  section
+    = render partial: 'partials/components/section_header', locals: {section: "Tarjetas de barrio", links: @section_header_links}
+    main
+      ul.neighbor-cards
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}

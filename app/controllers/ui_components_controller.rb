@@ -1,12 +1,21 @@
 class UiComponentsController < ApplicationController
 
   def index
-    @links = [
-      {:title => 'Información', :href => '#'},
-      {:title => 'Obras', :href => '#'},
-      {:title => 'Reuniones', :href => '#'},
-      {:title => 'Acuerdo', :href => '#'},
-      {:title => 'Actividad reciente', :href => '#'},
+    @page_header_links = [
+      {:title => 'Home', :href => '#home'},
     ]
+    @section_header_breadcrumbs = [
+      "Home",
+      "Componentes",
+    ]
+    @section_header_links = [
+      {:title => 'Cancelar', :href => '#'},
+      {:title => 'Guardar Cambios', :href => '#'},
+    ]
+    @neighbor_card = {
+      :name => 'Villa 20',
+      :updated => '27/12/2017',
+      :completed => '20',
+    }
   end
 end

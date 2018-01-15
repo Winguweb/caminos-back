@@ -1,5 +1,7 @@
+- breadcrumbs ||= nil
 div.breadcrumbs-component
-  ul
-    li = "Home"
-    li = ">"
-    li = "Usuarios"
+  - unless breadcrumbs.nil?
+    ul
+      - for breadcrumb in breadcrumbs
+        li = breadcrumb
+        li = ">"

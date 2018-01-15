@@ -1,0 +1,20 @@
+.page-section-component {
+  > section {
+    > main {
+      @include grid-column(16);
+      @include grid-collapse;
+      .neighbor-cards {
+        @include grid-container;
+        > li {
+          @include grid-column(5 of 10);
+          .neighbor-card-component {
+            @include grid-container;
+            margin-bottom: $vgutter*2;
+            > article {
+            }
+          }
+        }
+      }
+    }
+  }
+}

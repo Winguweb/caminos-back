@@ -1,0 +1,8 @@
+- section ||= nil
+- link ||= nil
+header
+  h1 = section
+  ul
+    - for link in links
+      li
+        a href=link[:href] = link[:title]
