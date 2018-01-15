@@ -1,0 +1,16 @@
+@mixin button-default() {
+  display: inline-block;
+  border: 1px solid $blue;
+  border-radius: 6px;
+  padding: $vgutter $gutter;
+  @include text-color($text-blue, 1);
+  @include type-setting(0);
+  &:hover {
+    @include text-color($text-white, 1);
+    background-color: $blue;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}

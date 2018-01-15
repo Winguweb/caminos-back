@@ -40,6 +40,12 @@
           }
         }
       }
+      > div {
+        @include grid-column(3 of 10);
+        text-align: right;
+        > button.button-default-component {
+        }
+      }
     }
     > main {
     }
