@@ -8,6 +8,8 @@ div.page-section-component
         li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
         li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
         li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+    footer.right-link
+      = render partial: 'partials/components/section_footer_link', locals: {link: @section_footer_link_right}
 
   section
     = render partial: 'partials/components/section_header', locals: {section: "Tarjetas de barrio", links: @section_header_links}
@@ -17,3 +19,5 @@ div.page-section-component
         li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
         li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
         li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+    footer
+      = render partial: 'partials/components/section_footer_link', locals: {link: @section_footer_link_left}

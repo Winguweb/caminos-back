@@ -17,5 +17,7 @@ class UiComponentsController < ApplicationController
       :updated => '27/12/2017',
       :completed => '20',
     }
+    @section_footer_link_left = {:title => 'Link a la izquierda', :href => '#'}
+    @section_footer_link_right = {:title => 'Link a la derecha', :href => '#'}
   end
 end
