@@ -34,13 +34,14 @@ ActiveRecord::Schema.define(version: 20180103174223) do
 
   create_table "neighborhoods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
+    t.text "description"
     t.string "lookup_address"
     t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
-    t.text "description"
     t.geography "geo_polygon", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
     t.geometry "polygon", limit: {:srid=>0, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["geo_polygon"], name: "index_neighborhoods_on_geo_polygon", using: :gist
     t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
     t.index ["polygon"], name: "index_neighborhoods_on_polygon", using: :gist
   end
