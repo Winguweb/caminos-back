@@ -5,10 +5,10 @@ header
   h1 = section
   - unless links.nil?
     ul
-      - for link in links
+      - links.each do |link|
         li
           a href=link[:href] = link[:title]
   - unless buttons.nil?
     div
-      - for button in buttons
+      - buttons.each do |button|
         button.button-default-component = button[:title]

@@ -7,6 +7,7 @@
   padding: $vgutter $gutter;
   margin: 0;
   cursor: pointer;
+  background: transparent;
   @include user-select(none);
   &:hover {
     @include text-color($text-white, 1);
