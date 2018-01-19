@@ -35,7 +35,7 @@ body{
 
 }
 
-main {
+body > main {
   @include grid-collapse;
 }
 

@@ -1,0 +1,19 @@
+.neighbor-card-component
+  article
+    header
+      h1
+        span = neighbor[:name]
+      p
+        span
+          = "Actualizado en "
+        time
+          = neighbor[:updated]
+    main
+      p
+        span
+          = "Proceso de urbanización "
+        span
+          = "#{neighbor[:completed]}%"
+      div
+        div
+        div style="width:#{neighbor[:completed]}%;"

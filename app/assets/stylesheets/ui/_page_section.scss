@@ -4,11 +4,14 @@
   > section {
     @include grid-column(10);
     @include grid-shift(3);
-    > div {
+    border-bottom: 1px solid $light-grey;
+    margin-bottom: $vgutter*4;
+    > header {
       @include grid-collapse;
       @include grid-container;
       @include display(flex);
       @include align-items(flex-end);
+      margin-bottom: $vgutter;
       > h1 {
         @include grid-column(7 of 10);
         @include type-setting(1);
@@ -36,6 +39,20 @@
           a {
             @include text-color($text-blue, 1);
           }
+        }
+      }
+      > div {
+        @include grid-column(3 of 10);
+        text-align: right;
+      }
+    }
+    > main {
+    }
+    &.with-border {
+      > main {
+        > div:first-of-type {
+          padding-top: $vgutter*3;
+          border-top: 1px solid $light-grey;
         }
       }
     }
