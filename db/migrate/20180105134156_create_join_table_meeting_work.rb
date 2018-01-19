@@ -1,6 +1,6 @@
 class CreateJoinTableMeetingWork < ActiveRecord::Migration[5.1]
   def change
-    create_table :meetings_works do |t|
+    create_table :meetings_works, id: false do |t|
       t.uuid :meeting_id
       t.uuid :work_id
     end

@@ -1,8 +1,8 @@
-h1 Obras del barrio #{@neighborhood.name}
+h1 Obras del barrio #{current_neighborhood.name}
 
 section
     - @works.each do |work|
       h3
         .name= work.name
-        = link_to 'Ver',neighborhood_work_path(@neighborhood, work)
+        = link_to 'Ver',neighborhood_work_path(current_neighborhood, work)
 

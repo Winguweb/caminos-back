@@ -1,9 +1,9 @@
 class CreateWork
   prepend Service::Base
- 
-  def initialize(allowed_params,neighborhood)
-    @allowed_params = allowed_params
+
+  def initialize(neighborhood, allowed_params)
     @neighborhood = neighborhood
+    @allowed_params = allowed_params
   end
 
   def call
@@ -18,7 +18,7 @@ class CreateWork
     @work.neighborhood = @neighborhood
     return @work if @work.save
     errors.add_multiple_errors(@work.errors.messages) && nil
-  
+
   end
 
   def work_params

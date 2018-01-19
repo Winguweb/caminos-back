@@ -1,16 +1,16 @@
 class NeighborhoodsController < ApplicationController
 
   def show
-    load_neighborhood
-
+    @neighborhood = Neighborhood.find(params[:id])
   end
-  
+
   def new
     @neighborhood = Neighborhood.new
   end
 
   def create
     service = CreateNeighborhood.call(neighborhood_params)
+
     if service.success?
       redirect_to neighborhoods_path
     else
@@ -21,10 +21,9 @@ class NeighborhoodsController < ApplicationController
   def index
     @neighborhoods = Neighborhood.all
   end
- 
-  private 
 
- 
+  private
+
   def neighborhood_params
     params.require(:neighborhood).permit(
       :description,
@@ -35,9 +34,4 @@ class NeighborhoodsController < ApplicationController
       :polygon
      )
   end
-
-  def load_neighborhood
-    @neighborhood = Neighborhood.find(params[:id])
-  end
-
 end

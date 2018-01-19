@@ -1,8 +1,8 @@
-h1 Reuniones del barrio #{@neighborhood.name}
+h1 Reuniones del barrio #{current_neighborhood.name}
 
 section
     - @meetings.each do |meeting|
       h3
-        .date= meeting.date 
-        = link_to 'Ver',neighborhood_meeting_path(@neighborhood, meeting)
+        .date= meeting.date
+        = link_to 'Ver', neighborhood_meeting_path(current_neighborhood, meeting)
 

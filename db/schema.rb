@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180105134156) do
     t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
   end
 
-  create_table "meetings_works", force: :cascade do |t|
+  create_table "meetings_works", id: false, force: :cascade do |t|
     t.uuid "meeting_id"
     t.uuid "work_id"
     t.index ["meeting_id", "work_id"], name: "index_meetings_works_on_meeting_id_and_work_id"
