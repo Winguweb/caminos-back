@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  
+
   def show
     load_user
   end
 
   def new
     @user = User.new(profile: Profile.new)
+    @entities = Organization.all + Neighborhood.all
   end
 
   def create
@@ -16,6 +17,10 @@ class UsersController < ApplicationController
     else
       redirect_to new_user_path
     end
+  end
+
+  def index
+    @users = User.preload(:profile).all
   end
 
   def edit
@@ -53,6 +58,7 @@ class UsersController < ApplicationController
       :username,
       :email,
       :password,
+      :entity,
       profile: {}
     )
   end

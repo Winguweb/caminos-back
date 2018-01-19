@@ -1,0 +1,32 @@
+#neighborhoods-index{
+  .title {
+    @include grid-column(8);
+    @include grid-push(2);
+  }
+
+  section {
+    @include grid-column(8);
+    @include grid-push(2);
+
+    $neighborhood-grid: (
+      columns: 2,
+      gutter: 90px,
+      
+    );
+
+    .custom-grid {
+      @include grid-container;
+    }
+
+    .custom-grid__a-single-column {
+      @include grid-column(1, $neighborhood-grid);
+      margin-bottom: $gutter;
+      padding: $gutter/1.5;
+      border: 2px solid blue;
+      border-radius: 6px;
+      background-color: white;
+    }
+  }
+
+  
+}

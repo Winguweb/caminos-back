@@ -1,0 +1,8 @@
+h1.title = t('.neighborhoods')
+
+section
+    
+  .custom-grid
+   = render partial: "neighborhoods/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
+
+  = link_to t('.new_neighborhood'), new_neighborhood_path

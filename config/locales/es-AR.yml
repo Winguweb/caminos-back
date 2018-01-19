@@ -1,2 +1,21 @@
 es-AR:
-
+  activerecord:
+    errors:
+      models:
+        work:
+          attributes:
+            neighborhood:
+              required: Este campo es requerido
+  meetings:
+    show:
+      meeting_date: Reunión %{date}
+  neighborhoods:
+    index:
+      neighborhoods: Barrios
+      new_neighborhood: Nuevo Barrio
+    show:
+      about_neighborhood: Sobre la barrio %{neighborhood}
+      address: Dirección
+      ambassadors: Embajadores
+      meetings: Reuniones
+      works: Obras

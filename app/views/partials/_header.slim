@@ -5,9 +5,9 @@
         = render partial: 'partials/components/site_logo'
         ul
           li
-            a href="" = "Villas"
+            = link_to t('.neighborhoods'), neighborhoods_path
           li
-            a href="" = "Usuarios"
+            = link_to t('.users'), users_path
         ul
           li = render partial: 'partials/components/add_button'
           li = render partial: 'partials/components/user_button'

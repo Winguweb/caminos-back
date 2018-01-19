@@ -10,12 +10,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205151351) do
+ActiveRecord::Schema.define(version: 20180105134156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
   enable_extension "pgcrypto"
+
+  create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
+    t.date "date"
+    t.string "lookup_address"
+    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.text "objectives"
+    t.text "minute"
+    t.string "organizer"
+    t.string "participants"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lookup_coordinates"], name: "index_meetings_on_lookup_coordinates", using: :gist
+    t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
+  end
+
+  create_table "meetings_works", id: false, force: :cascade do |t|
+    t.uuid "meeting_id"
+    t.uuid "work_id"
+    t.index ["meeting_id", "work_id"], name: "index_meetings_works_on_meeting_id_and_work_id"
+    t.index ["meeting_id"], name: "index_meetings_works_on_meeting_id"
+    t.index ["work_id"], name: "index_meetings_works_on_work_id"
+  end
+
+  create_table "neighborhoods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "lookup_address"
+    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.geography "geo_polygon", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "polygon", limit: {:srid=>0, :type=>"geometry"}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["geo_polygon"], name: "index_neighborhoods_on_geo_polygon", using: :gist
+    t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
+    t.index ["polygon"], name: "index_neighborhoods_on_polygon", using: :gist
+  end
+
+  create_table "organizations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "profiles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "first_name"
@@ -29,6 +73,10 @@ ActiveRecord::Schema.define(version: 20171205151351) do
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "username"
     t.string "email"
+    t.string "entity_type"
+    t.uuid "entity_id"
+    t.integer "roles_mask"
+    t.jsonb "settings", default: {}, null: false
     t.string "crypted_password"
     t.string "password_salt"
     t.string "persistence_token"
@@ -44,18 +92,40 @@ ActiveRecord::Schema.define(version: 20171205151351) do
     t.boolean "active", default: false
     t.boolean "approved", default: false
     t.boolean "confirmed", default: false
-    t.integer "roles_mask"
-    t.jsonb "settings", default: {}, null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["entity_type", "entity_id"], name: "index_users_on_entity_type_and_entity_id"
     t.index ["perishable_token"], name: "index_users_on_perishable_token", unique: true
     t.index ["persistence_token"], name: "index_users_on_persistence_token", unique: true
     t.index ["roles_mask"], name: "index_users_on_roles_mask"
     t.index ["settings"], name: "index_users_on_settings", using: :gin
     t.index ["single_access_token"], name: "index_users_on_single_access_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
+  end
+
+  create_table "works", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
+    t.string "name"
+    t.text "description"
+    t.string "status"
+    t.date "start_date"
+    t.date "estimated_end_date"
+    t.date "end_date"
+    t.string "lookup_address"
+    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.string "budget"
+    t.string "manager"
+    t.text "execution_plan"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["geo_geometry"], name: "index_works_on_geo_geometry", using: :gist
+    t.index ["geometry"], name: "index_works_on_geometry", using: :gist
+    t.index ["lookup_coordinates"], name: "index_works_on_lookup_coordinates", using: :gist
+    t.index ["neighborhood_id"], name: "index_works_on_neighborhood_id"
   end
 
 end
