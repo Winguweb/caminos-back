@@ -6,7 +6,7 @@ class WorksController < ApplicationController
   def show
     ensure_neighborhood; return if performed?
 
-    @meeting = current_neighborhood.works.find(params[:id])
+    load_work
   end
 
   def new
@@ -33,7 +33,31 @@ class WorksController < ApplicationController
     @works = current_neighborhood.works
   end
 
+  def edit
+    ensure_neighborhood; return if performed?
+
+    load_work
+  end
+
+  def update
+    ensure_neighborhood; return if performed?
+
+    load_work
+
+    service = UpdateWork.call(@work, work_params)
+
+    if service.success?
+      redirect_to neighborhood_work_path(@work)
+    else
+      redirect_to edit_neighborhood_work_path(@work)
+    end
+  end
+
   private
+
+  def load_work
+    @work = current_neighborhood.works.find(params[:id])
+  end
 
   def work_params
     params.require(:work).permit(

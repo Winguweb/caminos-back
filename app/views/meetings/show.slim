@@ -1,6 +1,6 @@
-= "Reunión"
+h1 = t('.meeting_date', date: @meeting.date)
 p
-=@meeting.date
+= link_to t('.edit'), edit_neighborhood_meeting_path
 p
 =@meeting.objectives
 
@@ -15,6 +15,6 @@ p
 
 h2 Obras relacionadas
 p
--@meeting.works.each do |work|
-  =work.name
-  p
+.works-list
+  = render partial: "/partials/works_list", locals: { works: @meeting.works }
+

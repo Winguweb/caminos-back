@@ -1,23 +1,32 @@
 #neighborhoods-index{
+  .title {
+    @include grid-column(8);
+    @include grid-push(2);
+  }
+
   section {
-    @include grid-column(6);
-    @include grid-push(3);
+    @include grid-column(8);
+    @include grid-push(2);
 
-    @include grid-media($tablet-grid) {
-      @include grid-column(1 of 1);
+    $neighborhood-grid: (
+      columns: 2,
+      gutter: 90px,
+      
+    );
+
+    .custom-grid {
+      @include grid-container;
     }
 
-    h3{
-      @include type-setting(1)
-    }
-
-    .neighborhoods-list{
-      margin-top: $gutter;
-      .neighborhood-data{
-        margin-bottom: $gutter;
-        padding-bottom: $gutter;
-        border-bottom: 1px dashed #cdcdcd;
-      }
+    .custom-grid__a-single-column {
+      @include grid-column(1, $neighborhood-grid);
+      margin-bottom: $gutter;
+      padding: $gutter/1.5;
+      border: 2px solid blue;
+      border-radius: 6px;
+      background-color: white;
     }
   }
+
+  
 }

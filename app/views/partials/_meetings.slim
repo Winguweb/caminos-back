@@ -1,0 +1,7 @@
+- meetings.each do |meeting|
+  = link_to neighborhood_meeting_path(neighborhood, meeting) do
+    .meeting_data
+      h2 = meeting.date
+      p
+      = meeting.lookup_address
+

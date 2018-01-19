@@ -1,7 +1,5 @@
 
-= form_for @meeting, url: neighborhood_meetings_path do |f|
-  div.field
-
+= form_for [@neighborhood,@meeting] do |f|
   div.field
     = f.label :date
     br

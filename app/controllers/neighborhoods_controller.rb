@@ -1,7 +1,7 @@
 class NeighborhoodsController < ApplicationController
 
   def show
-    @neighborhood = Neighborhood.find(params[:id])
+    load_neighborhood
   end
 
   def new
@@ -18,11 +18,31 @@ class NeighborhoodsController < ApplicationController
     end
   end
 
+  def edit
+    load_neighborhood
+  end
+
+  def update
+    load_neighborhood
+
+    service = UpdateNeighborhood.call(@neighborhood, neighborhood_params)
+
+    if service.success?
+      redirect_to neighborhood_path(@neighborhood)
+    else
+      redirect_to edit_neighborhood_path(@neighborhood)
+    end
+  end
+
   def index
     @neighborhoods = Neighborhood.all
   end
 
   private
+
+  def load_neighborhood
+    @neighborhood = Neighborhood.find(params[:id])
+  end
 
   def neighborhood_params
     params.require(:neighborhood).permit(

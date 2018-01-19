@@ -1,11 +1,8 @@
+h1.title = t('.neighborhoods')
+
 section
-  h1  Barrios 
-  = link_to 'Nuevo Barrio', new_neighborhood_path
-  .neighborhoods-list
-    - @neighborhoods.each do |neighborhood|
-      .neighborhood-data
-        h3
-          .name= neighborhood.name
-        .ambassadors= " Embajadores #{neighborhood.users.all.count} "
-        = link_to 'Ver', neighborhood
-        
+    
+  .custom-grid
+   = render partial: "neighborhoods/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
+
+  = link_to t('.new_neighborhood'), new_neighborhood_path

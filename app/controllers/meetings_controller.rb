@@ -6,7 +6,7 @@ class MeetingsController < ApplicationController
   def show
     ensure_neighborhood; return if performed?
 
-    @meeting = current_neighborhood.meetings.find(params[:id])
+    load_meeting
   end
 
   def new
@@ -34,7 +34,31 @@ class MeetingsController < ApplicationController
     @meetings = current_neighborhood.meetings
   end
 
+  def edit
+    ensure_neighborhood; return if performed?
+
+    load_meeting
+  end
+
+  def update
+    ensure_neighborhood; return if performed?
+
+    load_meeting
+
+    service = UpdateMeeting.call(@meeting, meeting_params)
+
+    if service.success?
+      redirect_to neighborhood_meeting_path(@meeting)
+    else
+      redirect_to edit_neighborhood_meeting_path(@meeting)
+    end
+  end
+
   private
+
+  def load_meeting
+    @meeting = current_neighborhood.meetings.find(params[:id])
+  end
 
   def meeting_params
     params.require(:meeting).permit(
