@@ -1,0 +1,20 @@
+h1 = t('.meeting_date', date: @meeting.date)
+p
+= link_to t('.edit'), edit_neighborhood_meeting_path
+p
+=@meeting.objectives
+
+p
+=@meeting.minute
+
+p
+=@meeting.organizer
+p
+=@meeting.participants
+
+
+h2 Obras relacionadas
+p
+.works-list
+  = render partial: "/partials/works_list", locals: { works: @meeting.works }
+

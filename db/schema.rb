@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180103174223) do
+ActiveRecord::Schema.define(version: 20180105134156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20180103174223) do
     t.datetime "updated_at", null: false
     t.index ["lookup_coordinates"], name: "index_meetings_on_lookup_coordinates", using: :gist
     t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
+  end
+
+  create_table "meetings_works", id: false, force: :cascade do |t|
+    t.uuid "meeting_id"
+    t.uuid "work_id"
+    t.index ["meeting_id", "work_id"], name: "index_meetings_works_on_meeting_id_and_work_id"
+    t.index ["meeting_id"], name: "index_meetings_works_on_meeting_id"
+    t.index ["work_id"], name: "index_meetings_works_on_work_id"
   end
 
   create_table "neighborhoods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

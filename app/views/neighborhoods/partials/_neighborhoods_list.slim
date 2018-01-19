@@ -1,0 +1,7 @@
+- neighborhoods.each do |neighborhood|
+  = link_to neighborhood do
+    .custom-grid__a-single-column
+        h1 = neighborhood.name
+        = "Actualizado: #{neighborhood.updated_at.to_date.to_s}"
+    
+

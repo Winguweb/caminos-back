@@ -1,9 +1,8 @@
 class CreateNeighborhood
   prepend Service::Base
- 
+
   def initialize(allowed_params)
     @allowed_params = allowed_params
-    
   end
 
   def call
@@ -13,11 +12,11 @@ class CreateNeighborhood
   private
 
   def create_neighborhood
+    neighborhood = Neighborhood.new(@allowed_params)
 
-    @neighborhood = Neighborhood.new(@allowed_params)
-    return @neighborhood if @neighborhood.save
-    errors.add_multiple_errors(@neighborhood.errors.messages) && nil
-  
+    return neighborhood if neighborhood.save
+
+    errors.add_multiple_errors(neighborhood.errors.messages) && nil
   end
 
 end

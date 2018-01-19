@@ -1,0 +1,27 @@
+
+h1 =@work.name
+p
+= link_to t('.edit'), edit_neighborhood_work_path
+p
+h2= t(".description")
+p
+=@work.description
+p
+=@work.start_date
+p
+=@work.end_date
+p
+=@work.estimated_end_date
+p
+=@work.budget
+p
+=@work.manager
+p
+=@work.execution_plan
+p
+h2= t(".location")
+
+p
+h2= t(".meetings")
+p
+=render partial: "/partials/meetings", locals: { meetings: @work.meetings }

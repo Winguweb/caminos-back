@@ -1,5 +1,5 @@
 
-= form_for @work, url: neighborhood_works_path do |f|
+= form_for [@neighborhood,@work] do |f|
   div.field
     = f.label :name
     br  

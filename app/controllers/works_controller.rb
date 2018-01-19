@@ -1,30 +1,64 @@
 class WorksController < ApplicationController
+  include CurrentAndEnsureDependencyLoader
+
+  helper_method :current_neighborhood
 
   def show
+    ensure_neighborhood; return if performed?
+
     load_work
   end
-  
+
   def new
-    @work = Work.new
+    ensure_neighborhood; return if performed?
+
+    @work = current_neighborhood.works.new
   end
 
   def create
-    load_neighborhood
-    service = CreateWork.call(work_params,@neighborhood)
+    ensure_neighborhood; return if performed?
+
+    service = CreateWork.call(current_neighborhood, work_params)
+
     if service.success?
       redirect_to neighborhood_works_path
     else
-      redirect_to  new_neighborhood_work_path(@neighborhood)
+      redirect_to  new_neighborhood_work_path(current_neighborhood)
     end
   end
 
   def index
-    load_neighborhood
-    @works = @neighborhood.works
+    ensure_neighborhood; return if performed?
+
+    @works = current_neighborhood.works
   end
- 
-  private 
- 
+
+  def edit
+    ensure_neighborhood; return if performed?
+
+    load_work
+  end
+
+  def update
+    ensure_neighborhood; return if performed?
+
+    load_work
+
+    service = UpdateWork.call(@work, work_params)
+
+    if service.success?
+      redirect_to neighborhood_work_path(@work)
+    else
+      redirect_to edit_neighborhood_work_path(@work)
+    end
+  end
+
+  private
+
+  def load_work
+    @work = current_neighborhood.works.find(params[:id])
+  end
+
   def work_params
     params.require(:work).permit(
       :budget,
@@ -41,14 +75,6 @@ class WorksController < ApplicationController
       :status,
       :start_date
     )
-    end
-
-  def load_work
-    @work = Work.find(params[:id])
-  end
-
-  def load_neighborhood
-    @neighborhood = Neighborhood.find(params[:neighborhood_id])
   end
 
 end
