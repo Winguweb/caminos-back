@@ -1,49 +1,65 @@
 class MeetingsController < ApplicationController
+  include CurrentAndEnsureDependencyLoader
+
+  helper_method :current_neighborhood
 
   def show
-    load_neighborhood
-    load_meeting
+    ensure_neighborhood; return if performed?
 
+    load_meeting
   end
-  
+
   def new
-    load_neighborhood
-    @meeting = Meeting.new
+    ensure_neighborhood; return if performed?
+
+    @meeting = current_neighborhood.meetings.new
+    @works = current_neighborhood.works
   end
 
   def create
-    load_neighborhood
-    service = CreateMeeting.call(meeting_params,@neighborhood)
+    ensure_neighborhood; return if performed?
+
+    service = CreateMeeting.call(current_neighborhood. meeting_params)
+
     if service.success?
       redirect_to neighborhood_meetings_path
     else
-      redirect_to  new_neighborhood_meeting_path(@neighborhood)
+      redirect_to new_neighborhood_meeting_path(current_neighborhood)
     end
   end
 
+  def index
+    ensure_neighborhood; return if performed?
+
+    @meetings = current_neighborhood.meetings
+  end
+
   def edit
-    load_neighborhood
+    ensure_neighborhood; return if performed?
+
     load_meeting
   end
 
   def update
-    load_neighborhood
-    service = UpdateMeeting.call(load_meeting,meeting_params)
+    ensure_neighborhood; return if performed?
+
+    load_meeting
+
+    service = UpdateMeeting.call(@meeting, meeting_params)
+
     if service.success?
-      redirect_to neighborhood_meeting_path
+      redirect_to neighborhood_meeting_path(@meeting)
     else
-      redirect_to edit_neighborhood_meeting_path
+      redirect_to edit_neighborhood_meeting_path(@meeting)
     end
   end
-  
-  def index
-    load_neighborhood
-    @meetings = Meeting.all
-  end
- 
-  private 
 
- 
+  private
+
+  def load_meeting
+    @meeting = current_neighborhood.meetings.find(params[:id])
+  end
+
   def meeting_params
     params.require(:meeting).permit(
       :date,
@@ -51,16 +67,8 @@ class MeetingsController < ApplicationController
       :objectives,
       :organizer,
       :participants,
-      :lookup_address, 
+      :lookup_address,
       works: []
      )
-  end
-
-  def load_meeting
-    @meeting = Meeting.find(params[:id])
-  end
-
-  def load_neighborhood
-    @neighborhood = Neighborhood.find(params[:neighborhood_id])
   end
 end

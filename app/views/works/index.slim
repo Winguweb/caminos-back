@@ -1,6 +1,5 @@
-h1 Obras del barrio #{@neighborhood.name}
+h1 Obras del barrio #{current_neighborhood.name}
 
 section
-    
   .works-list
-    = render partial: "/partials/works_list", locals: { works: @works }
+    = render partial: "/partials/works_list", locals: { works: @works, neighborhood: current_neighborhood }
