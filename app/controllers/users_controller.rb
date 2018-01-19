@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.preload(:profile).all
+  end
+
   def edit
     load_user
   end
