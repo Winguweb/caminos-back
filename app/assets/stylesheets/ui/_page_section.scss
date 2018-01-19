@@ -1,0 +1,43 @@
+@mixin page-section() {
+  @include grid-column(16 of 16);
+  margin-bottom: $vgutter;
+  > section {
+    @include grid-column(10);
+    @include grid-shift(3);
+    > div {
+      @include grid-collapse;
+      @include grid-container;
+      @include display(flex);
+      @include align-items(flex-end);
+      > h1 {
+        @include grid-column(7 of 10);
+        @include type-setting(1);
+        @include text-color($text-black, 1);
+        margin-top: 0;
+        margin-bottom: $vgutter;
+      }
+      > ul {
+        @include grid-column(3 of 10);
+        @include display(flex);
+        margin-bottom: $vgutter;
+        > li {
+          @include flex-grow(1);
+          text-align: right;
+          > a {
+            @include text-color($text-grey, 1);
+            @include type-setting(0);
+            margin-right: 0;
+            &:hover {
+              @include text-color($text-blue, 1);
+            }
+          }
+        }
+        > li + li {
+          a {
+            @include text-color($text-blue, 1);
+          }
+        }
+      }
+    }
+  }
+}

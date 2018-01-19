@@ -1,0 +1,13 @@
+@mixin breadcrumbs() {
+  > ul {
+    @include grid-shift(3);
+    @include grid-column(10);
+    margin-bottom: $vgutter;
+    > li {
+      @include type-setting(-1);
+      @include text-color($text-grey, 1);
+      display: inline-block;
+      padding-right: $gutter / 2;
+    }
+  }
+}

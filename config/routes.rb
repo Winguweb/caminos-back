@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     end
     
     root to: 'home#show'
+    get  '/components',   action: :index,     controller: :ui_components
 
     resources :users, except: [ :index ]
   # ╰─ End of Private Accesible URL's / Path's

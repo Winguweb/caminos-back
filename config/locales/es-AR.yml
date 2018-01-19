@@ -14,7 +14,7 @@ es-AR:
       neighborhoods: Barrios
       new_neighborhood: Nuevo Barrio
     show:
-      about_neighborhood: Sobre la villa %{neighborhood}
+      about_neighborhood: Sobre la barrio %{neighborhood}
       address: Dirección
       ambassadors: Embajadores
       meetings: Reuniones
