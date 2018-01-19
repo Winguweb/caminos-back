@@ -1,0 +1,5 @@
+h1 Reuniones del barrio #{current_neighborhood.name}
+
+section
+  .meetings-list
+    =render partial: "/partials/meetings", locals: { meetings: @meetings, neighborhood: current_neighborhood }

@@ -2,6 +2,7 @@ section
   h1 Caminos de la Villa
 
   h3 Usuarios
+  = link_to 'Nuevo Embajador', new_user_path
   .users-list
     - @users.each do |user|
       .user-data
