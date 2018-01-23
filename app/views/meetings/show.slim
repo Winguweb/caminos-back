@@ -16,5 +16,4 @@ p
 h2 Obras relacionadas
 p
 .works-list
-  = render partial: "/partials/works_list", locals: { works: @meeting.works }
-
+  = render partial: "/partials/works_list", locals: { works: @meeting.works, neighborhood: current_neighborhood}
