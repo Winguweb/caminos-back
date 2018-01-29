@@ -1,5 +1,3 @@
-- ambassadors.each do |ambassador|
-  = link_to user_path(ambassador) do 
-    .ambassador_data
-      h2 = ambassador.username
-     
+ul.person-cards
+  - ambassadors.each do |ambassador|
+    li = render partial: 'partials/components/person_card', locals: {person: ambassador} 

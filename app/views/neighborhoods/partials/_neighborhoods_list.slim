@@ -1,7 +1,6 @@
-- neighborhoods.each do |neighborhood|
-  = link_to neighborhood do
-    .custom-grid__a-single-column
-        h1 = neighborhood.name
-        = "Actualizado: #{neighborhood.updated_at.to_date.to_s}"
-    
-
+main
+  ul.neighbor-cards
+    - neighborhoods.each do |neighborhood|
+      li
+        = link_to neighborhood do
+          = render partial: 'partials/components/neighbor_card', locals: {neighborhood: neighborhood}
