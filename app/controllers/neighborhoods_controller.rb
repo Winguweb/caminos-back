@@ -56,7 +56,8 @@ class NeighborhoodsController < ApplicationController
   end
 
   def index
-    @neighborhoods = Neighborhood.all
+    @neighborhoods = Neighborhood.order('name ASC' )
+    
   end
 
   private

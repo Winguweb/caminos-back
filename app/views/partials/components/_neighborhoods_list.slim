@@ -2,15 +2,15 @@
   table style="width:100%"
     thead
       tr
-        th
-          select
-            option value="up"  A-Z
-            option value="down"  Z-A
+        th.sortable_name
+          select#name_neighborhood onchange="neighborhoodChange()" 
+            option value="asc"  A-Z
+            option value="desc"  Z-A
       
-        th
-          select
-            option value="up"  Orden ascendente
-            option value="down" Orden descendente
+        th.sortable_progress
+          select#progress onchange="progressChange()" 
+            option value="asc"  Orden ascendente
+            option value="desc" Orden descendente
         
 
     tbody
@@ -32,9 +32,9 @@
                 p
                   span
                     = "Proceso de urbanización "
-                  span
-                    = "30%"
+                  percent
+                    
+                    = "#{Random.rand(100)}%"
                 div
                   div
                   div style="width:30%;"
-          
