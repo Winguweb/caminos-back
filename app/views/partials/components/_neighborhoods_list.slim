@@ -1,5 +1,18 @@
 .neighborhoods-list-component
   table style="width:100%"
+    thead
+      tr
+        th
+          select
+            option value="up"  A-Z
+            option value="down"  Z-A
+      
+        th
+          select
+            option value="up"  Orden ascendente
+            option value="down" Orden descendente
+        
+
     tbody
       - for neighborhood in neighborhoods
         tr 

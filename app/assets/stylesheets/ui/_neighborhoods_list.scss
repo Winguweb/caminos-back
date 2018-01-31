@@ -1,6 +1,35 @@
 @mixin neighborhoods-list() {
   @include grid-column(16);
   > table {
+    > thead{
+      > tr { 
+        > th{
+          > select{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: white;
+            border-color: white;
+            background-image: url(/assets/icons/down-arrow.svg); 
+            cursor: pointer; 
+            font-weight: bold; 
+            background-repeat: no-repeat; 
+            background-position: center right; 
+            padding-right: 25px;
+            
+          }
+
+          &:nth-of-type(1) { 
+            @include grid-column(6);
+          }
+          &:nth-of-type(2) { 
+            @include grid-column(10);
+           
+          }
+        }
+      }
+
+      
+    }
     > tbody {
       padding-top: 10px;
       > tr {
