@@ -2,6 +2,7 @@
   @include grid-column(16);
   > table {
     > tbody {
+      padding-top: 10px;
       > tr {
         border-bottom: 1px solid $light-grey;
         &:first-of-type {
@@ -11,9 +12,8 @@
           border-bottom: none;
         }
         > td {
-
           padding: $vgutter*2 0;
-          @include text-color($text-grey, 1);
+          @include text-color($text-black, 1);
           @include type-setting(0);
           &:nth-of-type(1) {
             @include grid-column(1);
@@ -30,6 +30,10 @@
 
           &:nth-of-type(2) { 
             @include grid-column(7);
+            @include text-color($text-black,1);
+            >name{
+              font-weight: bold;
+            }
             > category{
               @include text-color($category-green,1);
             }

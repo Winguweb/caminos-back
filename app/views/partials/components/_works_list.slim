@@ -7,11 +7,11 @@
             image
               img src='/assets/icons/category.svg'
           td
-            
             category
               = "Categoría"
-            p
-              span = work.name
+            p 
+            name
+                = work.name
             p 
               span  = work.lookup_address
 
@@ -19,4 +19,6 @@
             span  = work.status
          
           td
-            span = "Fecha de acutalización : #{work.updated_at.to_date.to_s}"
+            span 
+              = "Actualizado en:" 
+              p = work.updated_at.to_date.to_s
