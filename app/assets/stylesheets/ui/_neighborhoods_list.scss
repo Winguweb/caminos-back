@@ -18,18 +18,21 @@
           &:nth-of-type(1) {
             @include grid-column(6);
              @include text-color($text-black,1);
-            >name{
-              font-weight: bold;
-            }
-            > date{
-              @include text-color($light-grey,1);
-            }
+            >a{
+              >name{
+                font-weight: bold;
+                @include text-color($text-black,1);
+              }
+              > date{
+                @include text-color($text-grey,1);
+              }
+            } 
             
           }
 
           &:nth-of-type(2) { 
             @include grid-column(10);
-            > main {
+            > a > main {
               > p {
                 @include text-color($text-grey, 1);
                 @include type-setting(-1);

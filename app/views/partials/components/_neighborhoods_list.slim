@@ -2,23 +2,26 @@
   table style="width:100%"
     tbody
       - for neighborhood in neighborhoods
-        tr
+        tr 
           
           td
-            
-            name
+            a href=neighborhood_path(neighborhood)
+              p
+              name
                 = neighborhood.name
-            p 
-              span 
+              br
+              date
                 = "Actualizado en: #{neighborhood.updated_at.to_date.to_s}"
    
           td
-            main
-              p
-                span
-                  = "Proceso de urbanización "
-                span
-                  = "30%"
-              div
+            a href=neighborhood_path(neighborhood)
+              main
+                p
+                  span
+                    = "Proceso de urbanización "
+                  span
+                    = "30%"
                 div
-                div style="width:30%;"
+                  div
+                  div style="width:30%;"
+          
