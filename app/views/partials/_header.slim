@@ -5,6 +5,8 @@
         = render partial: 'partials/components/site_logo'
         ul
           li
+            = link_to t('.home'), root_path
+          li
             = link_to t('.neighborhoods'), neighborhoods_path
           li
             = link_to t('.users'), users_path
