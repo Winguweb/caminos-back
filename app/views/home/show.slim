@@ -1,14 +1,6 @@
-section
-  h1 Caminos de la Villa
-
-  h3 Usuarios
-  = link_to 'Nuevo Embajador', new_user_path
-  .users-list
-    - @users.each do |user|
-      .user-data
-        .name= user.name
-        .email= user.email
-        = link_to 'Ver', user
-        = link_to 'Editar', edit_user_path(user)
-        = link_to 'Eliminar', user, :data => { confirm: 'Are you sure?' }, :method => :delete
-
+div.page-section-component
+  section
+    = render partial: 'partials/components/section_header', locals: {section: t('.neighborhoods')}
+    = render partial: "neighborhoods/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
+    footer.right-link
+      = render partial: 'partials/components/section_footer_link', locals: {link: {:title => t('.new_neighborhood'), :href => new_neighborhood_path}}

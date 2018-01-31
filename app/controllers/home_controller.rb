@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def show
-    @users = User.preload(:profile).all
+  	@neighborhoods = Neighborhood.all
   end
 end
