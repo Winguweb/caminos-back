@@ -23,3 +23,9 @@ es-AR:
       information: Información
       meetings: Reuniones
       works: Obras
+  works:
+    show:
+      about_work: Sobre la obra
+      edit: Editar
+      title: Título 
+      description: Descripción

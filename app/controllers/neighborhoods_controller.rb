@@ -4,8 +4,8 @@ class NeighborhoodsController < ApplicationController
     load_neighborhood
     @page_header_links = [
       {:title => t('.information'), :href => '#information'},
-      {:title => t('.works'), :href => '#works'},
-      {:title => t('.meetings'), :href => '#meetings'},
+      {:title => t('.works'), :href => neighborhood_works_path(@neighborhood)},
+      {:title => t('.meetings'), :href => neighborhood_meetings_path(@neighborhood)},
       {:title => t('.agreement'), :href => '#agreement'},
       {:title => t('.activity'), :href => '#activity'},
     ]

@@ -1,5 +1,5 @@
 h1 Obras del barrio #{current_neighborhood.name}
-
-section
-  .works-list
-    = render partial: "/partials/works_list", locals: { works: @works, neighborhood: current_neighborhood }
+div.page-section-component
+  section
+  	main
+		= render partial: "/partials/components/works_list", locals: { works: @works, neighborhood: current_neighborhood }

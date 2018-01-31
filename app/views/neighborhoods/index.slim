@@ -4,3 +4,5 @@ div.page-section-component
     = render partial: "neighborhoods/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
     footer.right-link
       = render partial: 'partials/components/section_footer_link', locals: {link: {:title => t('.new_neighborhood'), :href => new_neighborhood_path}}
+
+  = render partial: 'partials/components/section_footer_link', locals: {link: {:title => t('.new_neighborhood'), :href => new_neighborhood_path}}

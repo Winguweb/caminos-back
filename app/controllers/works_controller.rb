@@ -7,6 +7,11 @@ class WorksController < ApplicationController
     ensure_neighborhood; return if performed?
 
     load_work
+    @section_header_breadcrumbs = [
+      "Home",current_neighborhood.name, "Obras"
+    ]
+    @section_header_links = [{:title => t('.edit'), :href => edit_neighborhood_work_path}]
+
   end
 
   def new
