@@ -1,0 +1,71 @@
+@mixin neighborhoods-list() {
+  @include grid-column(16);
+  > table {
+    > tbody {
+      padding-top: 10px;
+      > tr {
+        border-bottom: 1px solid $light-grey;
+        &:first-of-type {
+          border-top: 1px solid $light-grey;
+        }
+        &:last-of-type {
+          border-bottom: none;
+        }
+        > td {
+          padding: $vgutter*2 0;
+          @include text-color($text-black, 1);
+          @include type-setting(0);
+          &:nth-of-type(1) {
+            @include grid-column(6);
+             @include text-color($text-black,1);
+            >name{
+              font-weight: bold;
+            }
+            > date{
+              @include text-color($light-grey,1);
+            }
+            
+          }
+
+          &:nth-of-type(2) { 
+            @include grid-column(10);
+            > main {
+              > p {
+                @include text-color($text-grey, 1);
+                @include type-setting(-1);
+                margin-bottom: $vgutter;
+              }
+              > div {
+                height: 7px;
+                width: 100%;
+                position: relative;
+                border-radius: 3px;
+                overflow: hidden;
+                > div {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 7px;
+                  width: 100%;
+                }
+                > div:nth-of-type(1) {
+                  background-color: $light-grey;
+                }
+                > div:nth-of-type(2) {
+                  background-color: $blue;
+                  border-radius: 3px;
+                }
+              }
+            }
+                   
+          }
+
+          > a, > span, > i{
+            @include grid-collapse;
+          }
+        }
+
+      }
+    }
+  }
+}

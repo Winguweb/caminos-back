@@ -1,0 +1,24 @@
+.neighborhoods-list-component
+  table style="width:100%"
+    tbody
+      - for neighborhood in neighborhoods
+        tr
+          
+          td
+            
+            name
+                = neighborhood.name
+            p 
+              span 
+                = "Actualizado en: #{neighborhood.updated_at.to_date.to_s}"
+   
+          td
+            main
+              p
+                span
+                  = "Proceso de urbanización "
+                span
+                  = "30%"
+              div
+                div
+                div style="width:30%;"
