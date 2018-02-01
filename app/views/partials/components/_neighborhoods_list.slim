@@ -37,4 +37,6 @@
                     = "#{Random.rand(100)}%"
                 div
                   div
-                  div style="width:30%;"
+                  div style="width:#{Random.rand(100)}%;"
+footer.right-link
+  = render partial: 'partials/components/section_footer_link', locals: {link: {:title => t('.new_neighborhood'), :href => new_neighborhood_path}}
