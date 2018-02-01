@@ -1,5 +1,5 @@
 module Admin
-  class DashboardController < ApplicationController
+  class DashboardsController < ApplicationController
     def show
       @users = User.preload(:profile).all
     end

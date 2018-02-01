@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def show
     if current_user
-      redirect_to admin_dashboard_path(current_user)
+      redirect_to admin_dashboard_path
     end
   end
 
