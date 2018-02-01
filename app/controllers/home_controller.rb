@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
   def show
-  	@neighborhoods = Neighborhood.all
+    @neighborhoods = Neighborhood.all
   end
 end
