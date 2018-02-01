@@ -1,0 +1,15 @@
+doctype html
+html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#" xml:lang=I18n.locale.to_s
+  head
+    title
+      - unless yield(:head_title).empty?
+        = yield(:head_title)
+      - else
+        = "Caminos de la villa"
+    meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
+    meta name="locale" content=I18n.locale.to_s
+    = csrf_meta_tags
+    body 
+      main
+        =yield
+

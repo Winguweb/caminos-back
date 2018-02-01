@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   scope protocol: SECURE_PROTOCOL do
 
+    root to: 'home#show'
+
   # ╭─ Public Accesible URL's / Path's
     get  '/signin',   action: :new,     controller: :user_sessions
     post '/signin',   action: :create,  controller: :user_sessions
@@ -8,19 +10,24 @@ Rails.application.routes.draw do
   # ╰─ End of Public Accesible URL's / Path's
 
   # ╭─ Private Accesible URL's / Path's
-    resources :users
 
-    resources :organizations, only: [:show, :new, :create, :index]
+		namespace :admin do 
 
-    resources :neighborhoods, only: [:show, :new, :create, :index, :update,:edit] do
-      resources :works, only: [:show, :new, :create, :index, :update,:edit]
-      resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
-    end
+    	resources :users
 
-    root to: 'home#show'
-    get  '/components', action: :index, controller: :ui_components
+    	resources :dashboard, only: [:show]
 
-    resources :users, except: [ :index ]
+    	resources :organizations, only: [:show, :new, :create, :index]
+
+    	resources :neighborhoods, only: [:show, :new, :create, :index, :update,:edit] do
+      	resources :works, only: [:show, :new, :create, :index, :update,:edit]
+      	resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
+    	end
+
+    	get  '/components', action: :index, controller: :ui_components
+
+    	resources :users, except: [ :index ]
+		end
   # ╰─ End of Private Accesible URL's / Path's
   end
 end

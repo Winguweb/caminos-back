@@ -1,5 +1,5 @@
 
-= form_for @user do |form|
+= form_for admin_user_path(@user) do |form|
   = form.fields_for @user.profile do |profile|
     div.field
       = profile.label :first_name

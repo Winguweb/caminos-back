@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
+  layout 'public'
 
   def show
-    @users = User.preload(:profile).all
+    if current_user
+      redirect_to admin_dashboard_path(current_user)
+    end
   end
+
 end
