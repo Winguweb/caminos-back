@@ -26,8 +26,6 @@
           }
         }
       }
-
-      
     }
     > tbody {
       padding-top: 10px;
@@ -46,12 +44,12 @@
           &:nth-of-type(1) {
             @include grid-column(6);
              @include text-color($text-black,1);
-            > a {
-              #name{
+            > a > p{
+              &:nth-of-type(1){
                 font-weight: bold;
                 @include text-color($text-black,1);
               }
-              #date{
+              &:nth-of-type(2){
                 @include text-color($text-grey,1);
               }
             } 
@@ -66,7 +64,7 @@
                 @include type-setting(-1);
                 margin-bottom: $vgutter;
               }
-              #percent{
+              &:nth-of-type(1){
                 @include text-color($text-grey,1);
               }
               > div {

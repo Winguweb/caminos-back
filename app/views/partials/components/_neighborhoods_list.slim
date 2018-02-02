@@ -18,12 +18,12 @@
         tr 
           td
             a href=neighborhood_path(neighborhood)
-              p
-              #name
+              p#name
+                
                 = neighborhood.name
-              #date
+              p#date 
                 = "Actualizado en: #{neighborhood.updated_at.to_date.to_s}"
-   
+     
           td
             a href=neighborhood_path(neighborhood)
               main
