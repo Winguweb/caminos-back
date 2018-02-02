@@ -8,9 +8,8 @@ function neighborhoodChange(){
   var rows = tbod.find("tr");
  
   rows.sort(function(a,b){
-    var A = $(a).find("td").find("name").eq(colIndex).text();
-    console.log(A);
-    var B = $(b).find("td").find("name").eq(colIndex).text();
+    var A = $(a).find("td").find("#name").eq(colIndex).text();
+    var B = $(b).find("td").find("#name").eq(colIndex).text();
 
     if (!isNaN(A)) A = Number(A);
     if (!isNaN(B)) B = Number(B);
@@ -31,8 +30,9 @@ function progressChange(){
   var rows = tbod.find("tr");
    
   rows.sort(function(a,b){
-    var A =  parseInt($(a).find("td").eq(colIndex).find("percent").text()); 
-    var B =  parseInt($(b).find("td").eq(colIndex).find("percent").text());
+    var A =  parseInt($(a).find("td").eq(colIndex).find("#percent").text()); 
+    console.log($(a).find("td").eq(colIndex).find("#percent").text());
+    var B =  parseInt($(b).find("td").eq(colIndex).find("#percent").text());
     if (!isNaN(A)) A = Number(A);
     if (!isNaN(B)) B = Number(B);
       

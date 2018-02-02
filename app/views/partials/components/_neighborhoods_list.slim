@@ -16,14 +16,12 @@
     tbody
       - for neighborhood in neighborhoods
         tr 
-          
           td
             a href=neighborhood_path(neighborhood)
               p
-              name
+              #name
                 = neighborhood.name
-              br
-              date
+              #date
                 = "Actualizado en: #{neighborhood.updated_at.to_date.to_s}"
    
           td
@@ -32,8 +30,7 @@
                 p
                   span
                     = "Proceso de urbanización "
-                  percent
-                    
+                  span#percent
                     = "#{Random.rand(100)}%"
                 div
                   div
