@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.preload(:profile).all
+    
   end
 
   def edit
