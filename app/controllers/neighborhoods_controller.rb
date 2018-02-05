@@ -2,6 +2,27 @@ class NeighborhoodsController < ApplicationController
 
   def show
     load_neighborhood
+    @page_header_links = [
+      {:title => t('.information'), :href => '#information'},
+      {:title => t('.works'), :href => '#works'},
+      {:title => t('.meetings'), :href => '#meetings'},
+      {:title => t('.agreement'), :href => '#agreement'},
+      {:title => t('.activity'), :href => '#activity'},
+    ]
+    @section_header_breadcrumbs = [
+      "Home",
+    ]
+
+    @section_header_links = [{:title => t('.edit'), :href => edit_neighborhood_path}]
+    @documents_list = [
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+    ]
+    @documents_list_button = [
+      {:title => 'Cargar Documento'},
+    ]
   end
 
   def new

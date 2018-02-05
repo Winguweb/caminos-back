@@ -1,19 +1,20 @@
 .neighbor-card-component
   article
     header
-      h1
-        span = neighbor[:name]
+      h1      
+        span = neighborhood.name
       p
         span
           = "Actualizado en "
         time
-          = neighbor[:updated]
+          = neighborhood.updated_at.to_date.to_s
+
     main
       p
         span
           = "Proceso de urbanización "
         span
-          = "#{neighbor[:completed]}%"
+          = "30%"
       div
         div
-        div style="width:#{neighbor[:completed]}%;"
+        div style="width:30%;"

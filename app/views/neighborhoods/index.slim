@@ -1,8 +1,6 @@
-h1.title = t('.neighborhoods')
-
-section
-    
-  .custom-grid
-   = render partial: "neighborhoods/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
-
-  = link_to t('.new_neighborhood'), new_neighborhood_path
+div.page-section-component
+  section
+    = render partial: 'partials/components/section_header', locals: {section: t('.neighborhoods')}
+    = render partial: "neighborhoods/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
+    footer.right-link
+      = render partial: 'partials/components/section_footer_link', locals: {link: {:title => t('.new_neighborhood'), :href => new_neighborhood_path}}
