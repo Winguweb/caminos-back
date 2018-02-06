@@ -15,10 +15,11 @@
 config/database.yml
 config/caminos.yml
 /lib/tasks/log/*
+*.local.*
 
 # General private stuff
-*.local.*
 /config/deploy/files/**/*
+!/config/deploy/files/maintenance.erb.html
 /config/deploy/production.rb
 
 # OS generated files #
@@ -32,8 +33,13 @@ dump.rdb
 ehthumbs.db
 Thumbs.db
 
-# Other stuff
+# GS folder for managing the Gemset
 .gs/
-coverage
-.idea
-*.swp
+
+# Rails assets
+/public/assets/**/*
+/public/javascripts/**/*
+
+# Test & Audit Suite stuff
+/coverage/**/*
+brakeman.*
