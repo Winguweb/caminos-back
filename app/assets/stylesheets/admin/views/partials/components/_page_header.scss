@@ -1,6 +1,6 @@
 .page-header-component {
   @include shadow-down($light-shadow, 1);
-  @include grid-column(16 of 16);
+  @include grid-container;
   margin-bottom: $vgutter*5;
   padding-bottom: 0;
   .content {

@@ -1,5 +1,5 @@
 module Admin
-  class NeighborhoodsController < ApplicationController
+  class NeighborhoodsController < BaseController
 
     def show
       load_neighborhood

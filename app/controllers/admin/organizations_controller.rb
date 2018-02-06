@@ -1,14 +1,14 @@
 module Admin
-  class OrganizationsController < ApplicationController
+  class OrganizationsController < BaseController
 
     def show
       load_organization
 
     end
-    
+
     def new
       @organization = Organization.new
-    
+
     end
 
     def create
@@ -24,9 +24,9 @@ module Admin
       @organizations = Organization.all
 
     end
-    private 
+    private
 
-   
+
     def organization_params
       params.require(:organization).permit(
         :description,

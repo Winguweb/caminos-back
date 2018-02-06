@@ -4,14 +4,16 @@ Rails.application.routes.draw do
     root to: 'home#show'
 
   # ╭─ Public Accesible URL's / Path's
-    get  '/signin',   action: :new,     controller: :user_sessions
-    post '/signin',   action: :create,  controller: :user_sessions
-    post '/signout',  action: :destroy, controller: :user_sessions
-  # e─ End of Public Accesible URL's / Path's
+    get  '/components', action: :index, controller: :kitchen_sink
+    get '/admin', to: redirect('/admin/dashboard')
+  # ╰─  End of Public Accesible URL's / Path's
+
 
   # ╭─ Private Accesible URL's / Path's
-
-    namespace :admin do 
+    namespace :admin do
+      get  '/signin',   action: :new,     controller: :user_sessions
+      post '/signin',   action: :create,  controller: :user_sessions
+      post '/signout',  action: :destroy, controller: :user_sessions
 
       resources :users
 
@@ -23,8 +25,6 @@ Rails.application.routes.draw do
         resources :works, only: [:show, :new, :create, :index, :update,:edit]
         resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
       end
-
-      get  '/components', action: :index, controller: :ui_components
 
       resources :users, except: [ :index ]
     end

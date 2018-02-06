@@ -3,7 +3,7 @@
     > main {
       @include grid-column(16);
       @include grid-collapse;
-      .neighbor-cards {
+      .neighborhood-cards {
         @include grid-container;
         > li {
           @include grid-column(5 of 10);

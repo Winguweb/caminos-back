@@ -8,8 +8,16 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
         = "Caminos de la villa"
     meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     meta name="locale" content=I18n.locale.to_s
+
+    = stylesheet_link_tag 'public', media: 'all'
+    = yield :css
     = csrf_meta_tags
-    body 
+
+    body
       main
         =yield
+
+      = yield :before_js
+      = javascript_include_tag 'admin/application'
+      = yield :js
 

@@ -1,5 +1,5 @@
 module Admin
-  class MeetingsController < ApplicationController
+  class MeetingsController < BaseController
     include CurrentAndEnsureDependencyLoader
 
     helper_method :current_neighborhood

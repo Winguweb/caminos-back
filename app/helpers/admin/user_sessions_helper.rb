@@ -1,3 +1,5 @@
-module UserSessionsHelper
-  include LayoutHelper
+module Admin
+  module UserSessionsHelper
+    include LayoutHelper
+  end
 end

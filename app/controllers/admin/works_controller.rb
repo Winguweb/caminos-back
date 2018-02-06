@@ -1,5 +1,5 @@
 module Admin
-  class WorksController < ApplicationController
+  class WorksController < BaseController
     include CurrentAndEnsureDependencyLoader
 
     helper_method :current_neighborhood
