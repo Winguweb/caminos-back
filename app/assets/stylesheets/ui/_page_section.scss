@@ -1,0 +1,60 @@
+@mixin page-section() {
+  @include grid-column(16 of 16);
+  margin-bottom: $vgutter;
+  > section {
+    @include grid-column(10);
+    @include grid-shift(3);
+    border-bottom: 1px solid $light-grey;
+    margin-bottom: $vgutter*4;
+    > header {
+      @include grid-collapse;
+      @include grid-container;
+      @include display(flex);
+      @include align-items(flex-end);
+      margin-bottom: $vgutter;
+      > h1 {
+        @include grid-column(7 of 10);
+        @include type-setting(1);
+        @include text-color($text-black, 1);
+        margin-top: 0;
+        margin-bottom: $vgutter;
+      }
+      > ul {
+        @include grid-column(3 of 10);
+        @include display(flex);
+        margin-bottom: $vgutter;
+        > li {
+          @include flex-grow(1);
+          text-align: right;
+          > a {
+            @include text-color($text-grey, 1);
+            @include type-setting(0);
+            margin-right: 0;
+            &:hover {
+              @include text-color($text-blue, 1);
+            }
+          }
+        }
+        > li + li {
+          a {
+            @include text-color($text-blue, 1);
+          }
+        }
+      }
+      > div {
+        @include grid-column(3 of 10);
+        text-align: right;
+      }
+    }
+    > main {
+    }
+    &.with-border {
+      > main {
+        > div:first-of-type {
+          padding-top: $vgutter*3;
+          border-top: 1px solid $light-grey;
+        }
+      }
+    }
+  }
+}

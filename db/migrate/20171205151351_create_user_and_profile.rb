@@ -6,6 +6,13 @@ class CreateUserAndProfile < ActiveRecord::Migration[5.1]
       t.string    :email
       t.index     :email, unique: true
 
+      t.string :entity_type
+      t.uuid :entity_id
+
+      t.integer :roles_mask, index: true
+
+      t.jsonb :settings, null: false, default: {}
+
       # Authlogic::ActsAsAuthentic::Password
       t.string    :crypted_password
       t.string    :password_salt
@@ -36,15 +43,12 @@ class CreateUserAndProfile < ActiveRecord::Migration[5.1]
       t.boolean   :approved, default: false
       t.boolean   :confirmed, default: false
 
-      t.integer :roles_mask, index: true
-
-      t.jsonb :settings, null: false, default: {}
-
       t.datetime :deleted_at
 
       t.timestamps
     end
     add_index  :users, :settings, using: :gin
+    add_index  :users, [:entity_type, :entity_id]
 
     create_table :profiles, id: :uuid do |t|
       t.string :first_name

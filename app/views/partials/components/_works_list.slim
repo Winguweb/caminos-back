@@ -1,0 +1,25 @@
+.works-list-component
+  table style="width:100%"
+    tbody
+      - for work in works
+        tr
+          td
+            a href=neighborhood_work_path(current_neighborhood,work)
+              img src='/assets/icons/category.svg'
+          td
+            a href=neighborhood_work_path(current_neighborhood,work)
+              p = "Categoría"
+              
+              p = work.name
+               
+              p = work.lookup_address
+
+          td
+            a href=neighborhood_work_path(current_neighborhood,work)
+              span  = work.status
+         
+          td
+            a href=neighborhood_work_path(current_neighborhood,work)
+              span 
+                = "Actualizado en:" 
+                p = work.updated_at.to_date.to_s

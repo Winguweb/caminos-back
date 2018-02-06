@@ -1,6 +1,0 @@
-es-AR:
-  user_sessions:
-    new:
-      email_label: Email
-      enter: Ingresar
-      password_label: Contraseña

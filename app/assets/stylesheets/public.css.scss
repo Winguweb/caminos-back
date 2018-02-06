@@ -1,0 +1,12 @@
+@import 'globals';
+
+/* ===========================
+  LAYOUT & PARTIAL SCSS FILES
+=========================== */
+// LAYOUT STUFF
+@import 'layout/application';
+
+// VIEWS & PARTIALS
+@import 'admin/views/partials/**/*';
+@import 'views/home/*';
+@import 'views/kitchen_sink/*';

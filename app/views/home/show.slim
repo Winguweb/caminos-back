@@ -1,13 +1,1 @@
-section
-  h1 Caminos de la Villa
-
-  h3 Usuarios
-  .users-list
-    - @users.each do |user|
-      .user-data
-        .name= user.name
-        .email= user.email
-        = link_to 'Ver', user
-        = link_to 'Editar', edit_user_path(user)
-        = link_to 'Eliminar', user, :data => { confirm: 'Are you sure?' }, :method => :delete
-
+h1="Caminos de la Villa"

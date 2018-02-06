@@ -1,0 +1,35 @@
+
+= form_for [current_neighborhood, @meeting] do |f|
+  div.field
+    = f.label :date
+    br
+    = f.date_field :date
+  div.field
+    = f.label :minute
+    br
+    = f.text_field :minute
+  div.field
+    = f.label :organizer
+    br
+    = f.text_field :organizer
+  div.field
+    = f.label :objectives
+    br
+    = f.text_field :objectives
+  div.field
+    = f.label :participants
+    br
+    = f.text_field :participants
+
+  div.field
+    = "Seleccione Obras Relacionadas"
+    br
+    - @works.each do |work|
+      = check_box_tag "meeting[works][]", work.id
+      = work.name
+
+  div.actions
+    = f.submit
+
+
+

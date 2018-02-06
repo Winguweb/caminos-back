@@ -1,0 +1,22 @@
+- title ||= nil
+- subtitle ||= nil
+- links ||= nil
+- breadcrumbs ||= nil
+header.page-header-component
+  .content
+    = render partial: 'partials/components/breadcrumbs', locals: {breadcrumbs: breadcrumbs}
+    .page-title
+      - unless title.nil?
+        h1
+          span
+            = title
+      - unless subtitle.nil?
+        div
+          span
+            = subtitle
+    - unless links.nil?
+      .page-links
+        ul
+          - for link in links
+            li
+              a href=link[:href] = link[:title]

@@ -1,0 +1,3 @@
+ul.person-cards
+  - ambassadors.each do |ambassador|
+    li = render partial: 'partials/components/person_card', locals: {person: ambassador} 

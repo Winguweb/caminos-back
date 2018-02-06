@@ -1,0 +1,13 @@
+.person-card-component
+  article
+    header
+      figure
+        img src='http://i.pravatar.cc/45'
+      h1
+        span = person.first_name
+      p
+        span
+          -if !person.entity.nil?
+            = person.entity.name
+      a
+        i

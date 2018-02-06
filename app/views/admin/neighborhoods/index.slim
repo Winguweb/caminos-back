@@ -1,0 +1,5 @@
+div.page-section-component
+  section
+    = render partial: 'partials/components/section_header', locals: {section: t('.neighborhoods')}
+    = render partial: "partials/components/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
+   

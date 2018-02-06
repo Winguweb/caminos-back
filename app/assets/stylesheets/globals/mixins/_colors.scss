@@ -1,0 +1,19 @@
+@mixin background-color($color, $alpha) {
+  background-color: color($color, $alpha);
+}
+
+@mixin text-color($color, $alpha) {
+  color: color($color, $alpha);
+}
+
+@mixin shadow($color, $size) {
+  box-shadow: 0 0 8px $color;
+}
+
+@mixin shadow-down($color, $size) {
+  box-shadow: 0 $vgutter/2 8px $color;
+}
+
+@function color($color, $alpha){
+  @return rgba($color, $alpha);
+}
