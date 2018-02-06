@@ -16,7 +16,21 @@ class WorksController < ApplicationController
 
   def new
     ensure_neighborhood; return if performed?
-
+    @section_header_breadcrumbs = [
+      "Home",
+      current_neighborhood.name,
+      t(".works")
+    ]
+    @categories = ["Agua", "Luz", "Drenaje"]
+    @documents_list = [
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+    ]
+    @documents_list_button = [
+      {:title => 'Cargar Documento'},
+    ]
     @work = current_neighborhood.works.new
   end
 
@@ -40,7 +54,21 @@ class WorksController < ApplicationController
 
   def edit
     ensure_neighborhood; return if performed?
-
+    @section_header_breadcrumbs = [
+      "Home",
+      current_neighborhood.name,
+      t(".works")
+    ]
+    @categories = ["Agua", "Luz", "Drenaje"]
+    @documents_list = [
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+      {:title => 'Anteproyecto Hidraulico ultimo-A1. 11-13', :author => 'Guadalupe Moreira', :date => '24/10/2017'},
+    ]
+    @documents_list_button = [
+      {:title => 'Cargar Documento'},
+    ]
     load_work
   end
 
@@ -52,9 +80,9 @@ class WorksController < ApplicationController
     service = UpdateWork.call(@work, work_params)
 
     if service.success?
-      redirect_to neighborhood_work_path(@work)
+      redirect_to neighborhood_work_path()
     else
-      redirect_to edit_neighborhood_work_path(@work)
+      redirect_to edit_neighborhood_work_path()
     end
   end
 
