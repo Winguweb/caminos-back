@@ -1,0 +1,19 @@
+es-AR:
+  admin:
+    meetings:
+      show:
+        meeting_date: Reunión %{date}
+    neighborhoods:
+      index:
+        neighborhoods: Barrios
+        new_neighborhood: Nuevo Barrio
+      show:
+        about_neighborhood: Sobre la barrio %{neighborhood}
+        activity: Actividad reciente
+        address: Dirección
+        agreement: Acuerdo
+        ambassadors: Embajadores
+        edit: Editar
+        information: Información
+        meetings: Reuniones
+        works: Obras

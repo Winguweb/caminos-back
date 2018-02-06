@@ -1,0 +1,20 @@
+.neighborhood-card-component
+  article
+    header
+      h1
+        span = neighborhood.name
+      p
+        span
+          = "Actualizado en "
+        time
+          = neighborhood.updated_at.to_date.to_s
+
+    main
+      p
+        span
+          = "Proceso de urbanización "
+        span
+          = "30%"
+      div
+        div
+        div style="width:30%;"

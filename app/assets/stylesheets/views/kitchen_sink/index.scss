@@ -1,0 +1,20 @@
+.page-section-component {
+  > section {
+    > main {
+      @include grid-column(16);
+      @include grid-collapse;
+      .neighborhood-cards {
+        @include grid-container;
+        > li {
+          @include grid-column(5 of 10);
+        }
+      }
+      .person-cards {
+        @include grid-container;
+        > li {
+          @include grid-column(1 of 3);
+        }
+      }
+    }
+  }
+}

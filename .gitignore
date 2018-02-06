@@ -36,3 +36,4 @@ Thumbs.db
 .gs/
 coverage
 .idea
+*.swp

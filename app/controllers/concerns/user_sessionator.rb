@@ -12,7 +12,7 @@ module UserSessionator
   def handle_unverified_request
     current_user_session.destroy if current_user_session
 
-    redirect_to signin_path
+    redirect_to admin_signin_path
   end
 
   # This method is intended to be used on a before_action
