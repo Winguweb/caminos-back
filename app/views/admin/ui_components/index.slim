@@ -1,4 +1,4 @@
-= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: "Componentes", breadcrumbs: @section_header_breadcrumbs}
+= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: "Componentesss", breadcrumbs: @section_header_breadcrumbs}
 div.page-section-component
   section#home
     = render partial: 'partials/components/section_header', locals: {section: "Header"}
@@ -23,10 +23,10 @@ div.page-section-component
     = render partial: 'partials/components/section_header', locals: {section: "Tarjetas de barrio"}
     main
       ul.neighbor-cards
-        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
-        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
-        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
-        li = render partial: 'partials/components/neighbor_card', locals: {neighbor: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighborhood: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighborhood: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighborhood: @neighbor_card}
+        li = render partial: 'partials/components/neighbor_card', locals: {neighborhood: @neighbor_card}
 
   section.with-border
     = render partial: 'partials/components/section_header', locals: {section: "Texto de Descripción"}

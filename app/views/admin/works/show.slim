@@ -24,4 +24,4 @@ h2= t(".location")
 p
 h2= t(".meetings")
 p
-=render partial: "/partials/meetings", locals: { meetings: @work.meetings }
+=render partial: "/partials/meetings", locals: { meetings: @work.meetings, neighborhood: current_neighborhood }

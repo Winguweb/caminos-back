@@ -2,11 +2,12 @@
   article
     header
       figure
-        img src=person[:image_url]
+        img src='http://i.pravatar.cc/45'
       h1
-        span = person[:name]
+        span = person.first_name
       p
         span
-          = person[:type]
+          -if !person.entity.nil?
+            = person.entity.name
       a
         i

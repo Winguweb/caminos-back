@@ -1,0 +1,24 @@
+.works-list-component
+  table style="width:100%"
+    tbody
+      - for work in works
+        tr
+          td
+            image
+              img src='/assets/icons/category.svg'
+          td
+            category
+              = "Categoría"
+            p 
+            name
+                = work.name
+            p 
+              span  = work.lookup_address
+
+          td
+            span  = work.status
+         
+          td
+            span 
+              = "Actualizado en:" 
+              p = work.updated_at.to_date.to_s

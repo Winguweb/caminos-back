@@ -20,7 +20,7 @@ module Admin
     def create
       ensure_neighborhood; return if performed?
 
-      service = CreateMeeting.call(current_neighborhood. meeting_params)
+      service = CreateMeeting.call(current_neighborhood, meeting_params)
 
       if service.success?
         redirect_to neighborhood_meetings_path
