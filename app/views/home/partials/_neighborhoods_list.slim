@@ -1,6 +1,0 @@
-main
-  ul.neighbor-cards
-    - neighborhoods.each do |neighborhood|
-      li
-        = link_to neighborhood do
-          = render partial: 'partials/components/neighbor_card', locals: {neighborhood: neighborhood}

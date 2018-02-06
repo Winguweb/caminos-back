@@ -1,0 +1,41 @@
+body > header {
+  padding: $gutter 0;
+  @include grid-column(16 of 16);
+
+  @include grid-media($tablet-grid) {
+    @include grid-column(1 of 1);
+  }
+  .content {
+    text-align: right;
+    > nav {
+      @include grid-collapse;
+      > ul {
+        @include grid-column(13 of 16);
+        > li {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+      /* Logo */
+      > div {
+        @include grid-column(1 of 16);
+      }
+      /* Links */
+      > ul:nth-of-type(1) {
+        text-align: left;
+        li {
+          > a {
+            @include type-setting(0);
+            @include text-color($text-grey, 1);
+            display: inline-block;
+            padding: 14px;
+          }
+        }
+      }
+      /* Actions */
+      > ul:nth-of-type(2) {
+          @include grid-column(2 of 16);
+      }
+    }
+  }
+}
