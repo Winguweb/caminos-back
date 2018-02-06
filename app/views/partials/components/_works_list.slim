@@ -5,17 +5,14 @@
         tr
           td
             a href=neighborhood_work_path(current_neighborhood,work)
-              image
-                img src='/assets/icons/category.svg'
+              img src='/assets/icons/category.svg'
           td
             a href=neighborhood_work_path(current_neighborhood,work)
-              category
-                = "Categoría"
-              br
-              name
-                = work.name
-              p 
-                span  = work.lookup_address
+              p = "Categoría"
+              
+              p = work.name
+               
+              p = work.lookup_address
 
           td
             a href=neighborhood_work_path(current_neighborhood,work)

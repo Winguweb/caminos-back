@@ -15,7 +15,7 @@
     padding-right: 25px;
 
   }
-  @mixin custom-imput(){
+  @mixin custom-input(){
     margin-top: 8px;
     margin-bottom:  8px;
     @include box-sizing(border-box);
@@ -29,7 +29,7 @@
     transition: color 0.1s ease, border-color 0.1s ease;
     vertical-align: middle;
     height: auto;
-    width:100%;
+    width: 100%;
     &.disabled{
       background-color: darken(blue, 5%);
       opacity: 0.5;
@@ -69,7 +69,7 @@
     @include text-color($text-grey, 1);
     margin-left: 0px;
     >input[type=text], >textarea {
-      @include custom-imput;
+      @include custom-input;
     }
     >elements {
       margin-left: 0px;  
@@ -105,8 +105,8 @@
         }
         margin-bottom: 10px;
         margin-right: 18px;
-        >input[type=text], >input[type=date] {
-          @include custom-imput;
+        > input[type=text], > input[type=date] {
+          @include custom-input;
         }
 
       }
@@ -115,8 +115,8 @@
         @include grid-media($elements-layout-grid--tablet-up-10) {
           @include grid-column(4);
         } 
-        >input[type=text], >input[type=date] {
-          @include custom-imput;
+        > input[type=text], > input[type=date] {
+          @include custom-input;
         }
       }
       .first-large{
@@ -127,8 +127,8 @@
         }
         margin-bottom: 10px;
         margin-right: 18px;
-        >input[type=text], >input[type=date] {
-          @include custom-imput;
+        > input[type=text], > input[type=date] {
+          @include custom-input;
         }
 
       }
@@ -137,8 +137,8 @@
         @include grid-media($elements-layout-grid--tablet-up-10) {
           @include grid-column(5);
         } 
-        >input[type=text], >input[type=date] {
-          @include custom-imput;
+        > input[type=text],  >input[type=date] {
+          @include custom-input;
         }
       }
     }
