@@ -7,6 +7,7 @@ set :user,        "deploy"
 
 set :pty,             true
 set :use_sudo,        false
+set :stage,           :production
 set :deploy_via,      :remote_cache
 set :deploy_to,       "/data/#{fetch(:application)}"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
@@ -31,6 +32,9 @@ set :puma_init_active_record, false
 
 set :linked_files, %w{config/database.yml config/caminos.yml config/secrets.yml config/puma.rb}
 set :linked_dirs,  %w{bundle lib/tasks/log log public/system tmp/cache tmp/pids tmp/sockets}
+
+set :assets_roles, [ :app ]
+set :keep_assets, 5
 
 set :maintenance_template_path, File.expand_path("../deploy/files/maintenance.erb.html", __FILE__)
 
