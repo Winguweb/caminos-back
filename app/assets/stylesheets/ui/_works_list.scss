@@ -18,29 +18,34 @@
           &:nth-of-type(1) {
             @include grid-column(1);
             display: table-cell; vertical-align: middle;
-            > image {
-              display: block;
-              width: 36px;
-              height: 36px;
-              background-repeat: no-repeat;
-              background-size: cover;
-              background-position: center;
+            > a  {
+               &:nth-of-type(1) {
+                display: block;
+                width: 48px;
+                height: 48px;
+                margin-top: 35px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+              }
             }
+            
           }
 
           &:nth-of-type(2) { 
             @include grid-column(7);
-            @include text-color($text-black,1);
-            >name{
-              font-weight: bold;
-            }
-            > category{
-              @include text-color($category-green,1);
+            > a > p {
+              @include text-color($text-black,1);
+              padding-left: 0px;
+              margin-left: 0px;
+              
+              &:nth-of-type(1){ @include text-color($category-green,1); }
+              &:nth-of-type(2){ font-weight: bold; }
             }
           }
 
-          &:nth-of-type(3) { padding-bottom: 0px;@include grid-column(3); display: table-cell; vertical-align: middle; }
-          &:nth-of-type(4) { margin-bottom: 0px; @include grid-column(5); text-align: right;display: table-cell; vertical-align: middle; }
+          &:nth-of-type(3) { padding-bottom: 0px;@include grid-column(3); display: table-cell; vertical-align: middle; > a{@include text-color($text-grey, 1);}}
+          &:nth-of-type(4) { margin-bottom: 0px; @include grid-column(5); text-align: right;display: table-cell; vertical-align: middle; > a{@include text-color($text-grey, 1);}}
           > a, > span, > i{
             @include grid-collapse;
           }

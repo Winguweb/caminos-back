@@ -1,7 +1,7 @@
 module Admin
   class DashboardsController < BaseController
     def show
-      @users = User.preload(:profile).all
+      @neighborhoods = Neighborhood.all
     end
   end
 end

@@ -1,52 +1,75 @@
 
+= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: "Nueva Obras", breadcrumbs: @section_header_breadcrumbs}
 = form_for [current_neighborhood,@work] do |f|
-  div.field
-    = f.label :name
-    br  
-    = f.text_field :name
-  div.field
-    = f.label :status
-    br
-    = f.text_field :status
-  div.field
-    = f.label :start_date
-    br
-    = f.date_field :start_date
-  div.field
-    = f.label :estimated_end_date
-    br
-    = f.date_field :estimated_end_date
-  div.field
-    = f.label :end_date
-    br
-    = f.date_field :end_date
-  div.field
-    = f.label :lookup_address
-    br
-    = f.text_field :lookup_address
-  div.field
-    = f.label :geo_geometry
-    br
-    = f.text_field :geo_geometry
-  div.field
-    = f.label :description
-    br
-    = f.text_field :description
-  div.field
-    = f.label :budget
-    br
-    = f.text_field :budget
-  div.field
-    = f.label :manager
-    br
-    = f.text_field :manager
-  div.field
-    = f.label :execution_plan
-    br
-    = f.text_field :execution_plan
+  work  
+    div.page-section-component
+      section
+        = render partial: 'partials/components/section_header', locals: {section: t(".about_work"), links: [ {:title => 'Cancelar', :href => neighborhood_works_path(current_neighborhood)} ]}
+        div
+          = t(".title")
+          br
+          = f.text_field :name
 
-  div.actions
-    = f.submit
+        div
+          = f.label :description
+          br
+          = f.text_area :description
+        div
+          elements
+            .category
+              =t(".category")
+              = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
+            .status 
+              =t(".status") 
+              = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
+        div
+          elements
+            .first-short
+              = f.label :manager
+              br
+              = f.text_field :manager
+            .last-large
+              = f.label :budget
+              br
+              = f.text_field :budget
+        div
+          elements
+            .first-short
+              = f.label :start_date
+              br
+              = f.date_field :start_date
+            .last-large
+              = f.label :estimated_end_date
+              br
+              = f.date_field :estimated_end_date
+        div
+          elements
+            .first-large
+              = f.label :execution_plan
+              br
+              = f.text_field :execution_plan
+            .last-short
+              = f.label :lookup_address
+              br
+              = f.text_field :lookup_address
+      section
+        = render partial: 'partials/components/section_header', locals: {section: "Ubicación en el mapa"}
+        div 
+          #map-container
+            #map-canvas
+          = f.label :geo_geometry
+          br
+          = f.text_field :geo_geometry
 
+      section
+        = render partial: 'partials/components/section_header', locals: {section: "Lista de documentos", buttons: @documents_list_button}
+        main
+          = render partial: 'partials/components/documents_list', locals: {documents: @documents_list}
 
+        div
+          = f.hidden_field :end_date
 
+       
+      
+        div.actions
+          = f.submit
