@@ -37,5 +37,18 @@ module CaminosBack
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.cells.with_assets = %w(
+      elements/add_button_cell
+      elements/breadcrumbs_cell
+      elements/description_cell
+      elements/documents_table_cell
+      elements/neighborhood_card_cell
+      elements/neighborhoods_list_cell
+      elements/person_card_cell
+      elements/works_table_cell
+      page/header_cell
+      section/footer_link_cell
+    )
   end
 end

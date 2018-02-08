@@ -1,0 +1,44 @@
+== cell('page/header', "Componentes", links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
+div.page-section-component
+  section#home
+    == cell('section/header', "Header")
+  section
+    == cell('section/header', "Header con links", links: @section_header_links)
+  section
+    == cell('section/header', "Header con botón", buttons: @section_header_buttons)
+  section
+    == cell('section/header', "Header con link en Footer a la derecha")
+    == cell('section/footer_link', @section_footer_link_right, extra_classes: 'right')
+
+  section
+    == cell('section/header', "Header con link en Footer a la izquierda")
+    == cell('section/footer_link', @section_footer_link_left)
+
+  section
+    == cell('section/header', "Tarjetas de barrio")
+    main
+      ul.neighborhood-cards
+        li == cell('elements/neighborhood_card', @neighborhood_card)
+        li == cell('elements/neighborhood_card', @neighborhood_card)
+        li == cell('elements/neighborhood_card', @neighborhood_card)
+        li == cell('elements/neighborhood_card', @neighborhood_card)
+
+  section.with-border
+    == cell('section/header', "Texto de Descripción")
+    main
+      == cell('elements/description', text: @description_text)
+      == cell('elements/description', text: @description_text)
+
+  section
+    == cell('section/header', "Tarjetas de personas")
+    main
+      ul.person-cards
+        li == cell('elements/person_card', @person_card)
+        li == cell('elements/person_card', @person_card)
+        li == cell('elements/person_card', @person_card)
+        li == cell('elements/person_card', @person_card)
+
+  section
+    == cell('section/header', "Lista de documentos", buttons: @documents_list_button)
+    main
+      == cell('elements/documents_table', documents: @documents_list)

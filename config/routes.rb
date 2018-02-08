@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     root to: 'home#show'
 
   # ╭─ Public Accesible URL's / Path's
-    get  '/components', action: :index, controller: :kitchen_sink
+    get '/components', action: :index, controller: :components
     get '/admin', to: redirect('/admin/dashboard')
   # ╰─  End of Public Accesible URL's / Path's
 
@@ -25,8 +25,6 @@ Rails.application.routes.draw do
         resources :works, only: [:show, :new, :create, :index, :update,:edit]
         resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
       end
-
-      resources :users, except: [ :index ]
     end
   # ╰─ End of Private Accesible URL's / Path's
   end

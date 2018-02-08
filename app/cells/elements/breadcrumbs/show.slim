@@ -1,0 +1,6 @@
+div.breadcrumbs-cell
+  - unless crumbs.nil?
+    ul
+      - crumbs.each do |crumb|
+        li = crumb
+        li = ">"

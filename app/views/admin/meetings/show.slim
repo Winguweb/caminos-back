@@ -14,6 +14,4 @@ p
 
 
 h2 Obras relacionadas
-p
-.works-list
-  = render partial: "/partials/components/works_list", locals: { works: @meeting.works, neighborhood: current_neighborhood}
+== cell('elements/works_table', @meeting.works, neighborhood: current_neighborhood)

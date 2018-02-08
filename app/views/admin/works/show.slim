@@ -1,8 +1,8 @@
-= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: @work.name, breadcrumbs: @section_header_breadcrumbs}
+== cell('page/header', @work.name, links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
 div.page-section-component
   section
-    = render partial: 'partials/components/section_header', locals: {section: t(".about_work"), links: @section_header_links}
- 
+    == cell('section/header', t(".about_work"), links: @section_header_links)
+
     h2= t(".title")
     p
     =@work.name

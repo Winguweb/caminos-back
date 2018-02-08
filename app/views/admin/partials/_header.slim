@@ -2,12 +2,27 @@
   header
     .content
       nav
-        = render partial: 'partials/components/site_logo'
+        div.site-logo
+          figure
+            img src="http://via.placeholder.com/45x45"
         ul
           li
             = link_to t('.neighborhoods'), admin_neighborhoods_path
           li
             = link_to t('.users'), admin_users_path
         ul
-          li = render partial: 'partials/components/add_button'
-          li = render partial: 'partials/components/user_button'
+          li == cell('elements/add_button', link: "")
+          li
+            div.user-button
+              a href=""
+                img src="http://i.pravatar.cc/45"
+                span
+              ul
+                li
+                  a href="#" = "Perfil"
+                li
+                  = link_to 'Nuevo Usuario', new_admin_user_path
+                li
+                  hr
+                li
+                  = link_to 'Salir', admin_signout_path, method: :post

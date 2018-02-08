@@ -1,10 +1,9 @@
-
-= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: "Nueva Obras", breadcrumbs: @section_header_breadcrumbs}
+== cell('page/header', "Nueva Obras", links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
 = form_for [current_neighborhood,@work] do |f|
-  work  
+  work
     div.page-section-component
       section
-        = render partial: 'partials/components/section_header', locals: {section: t(".about_work"), links: [ {:title => 'Cancelar', :href => neighborhood_works_path(current_neighborhood)} ]}
+        == cell('section/header', t(".about_work"), links: [ {:title => 'Cancelar', :href => neighborhood_works_path(current_neighborhood)} ])
         div
           = t(".title")
           br
@@ -19,8 +18,8 @@
             .category
               =t(".category")
               = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
-            .status 
-              =t(".status") 
+            .status
+              =t(".status")
               = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
         div
           elements
@@ -53,8 +52,8 @@
               br
               = f.text_field :lookup_address
       section
-        = render partial: 'partials/components/section_header', locals: {section: "Ubicación en el mapa"}
-        div 
+        == cell('section/header', "Ubicación en el mapa")
+        div
           #map-container
             #map-canvas
           = f.label :geo_geometry
@@ -62,14 +61,14 @@
           = f.text_field :geo_geometry
 
       section
-        = render partial: 'partials/components/section_header', locals: {section: "Lista de documentos", buttons: @documents_list_button}
+        == cell('section/header', "Lista de documentos", buttons: @documents_list_button)
         main
-          = render partial: 'partials/components/documents_list', locals: {documents: @documents_list}
+          == cell('elements/documents_table', documents: @documents_list)
 
         div
           = f.hidden_field :end_date
 
-       
-      
+
+
         div.actions
           = f.submit
