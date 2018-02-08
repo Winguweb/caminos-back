@@ -5,6 +5,8 @@ gem 'bourbon' # A Lightweight Sass Tool Set
 gem 'browser' # Do some browser detection with Ruby
 gem 'activerecord-postgis-adapter'
 gem 'bcrypt' # Ruby binding for the OpenBSD bcrypt() password hashing algorithm
+gem 'cells-rails'
+gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
 gem 'neat' # A lightweight and flexible Sass grid
 gem 'oj' # A fast JSON parser and Object marshaller.

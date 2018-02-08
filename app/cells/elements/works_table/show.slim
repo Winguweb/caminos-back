@@ -1,0 +1,25 @@
+.works-table-cell
+  table style="width:100%"
+    tbody
+      - works.each do |work|
+        tr
+          td
+            a href=neighborhood_work_path(neighborhood, work)
+              img src='/assets/icons/category.svg'
+          td
+            a href=neighborhood_work_path(neighborhood, work)
+              p = "Categoría"
+
+              p = work.name
+
+              p = work.lookup_address
+
+          td
+            a href=neighborhood_work_path(neighborhood, work)
+              span  = work.status
+
+          td
+            a href=neighborhood_work_path(neighborhood, work)
+              span
+                = "Actualizado en:"
+                p = work.updated_at.to_date.to_s

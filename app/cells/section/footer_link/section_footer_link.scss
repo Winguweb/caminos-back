@@ -1,0 +1,14 @@
+@mixin section-footer-link() {
+  text-align: left;
+  margin-bottom: $vgutter;
+  &.right {
+    text-align: right;
+  }
+  > a {
+    @include text-color($text-blue, 1);
+    @include type-setting(0);
+  }
+}
+.section-footer-link-cell{
+  @include section-footer-link;
+}

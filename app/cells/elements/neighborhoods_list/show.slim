@@ -1,0 +1,37 @@
+.neighborhoods-list-cell
+  table style="width:100%"
+    thead
+      tr
+        th.sortable_name
+          select#name_neighborhood onchange="neighborhoodChange()"
+            option value="asc"  A-Z
+            option value="desc"  Z-A
+
+        th.sortable_progress
+          select#progress onchange="progressChange()"
+            option value="asc"  Orden ascendente
+            option value="desc" Orden descendente
+
+
+    tbody
+      - for neighborhood in neighborhoods
+        tr
+          td
+            a href=neighborhood_path(neighborhood)
+              p#name
+
+                = neighborhood.name
+              p#date
+                = "Actualizado en: #{neighborhood.updated_at.to_date.to_s}"
+
+          td
+            a href=neighborhood_path(neighborhood)
+              main
+                p
+                  span
+                    = "Proceso de urbanización "
+                  span#percent
+                    = "#{Random.rand(100)}%"
+                div
+                  div
+                  div style="width:#{Random.rand(100)}%;"

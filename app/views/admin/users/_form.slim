@@ -1,5 +1,5 @@
-
-= form_for admin_user_path(@user) do |form|
+- from_action_url = @user.persisted? ? admin_user_path(@user) : admin_users_path
+= form_for @user, url: from_action_url do |form|
   = form.fields_for @user.profile do |profile|
     div.field
       = profile.label :first_name
@@ -22,14 +22,12 @@
     br
     = form.password_field :password
   div.field
-    = "Seleccione relacion" 
+    = "Seleccione relacion"
     br
     -unless @entities.nil?
       - @entities.each do |entity|
-      
         = form.radio_button :entity, [entity.id, entity.class]
         =  "#{entity.class.name} #{entity.name}"
-       
-        
+
   div.actions
-    = form.submit
+    = form.submit 'Enviar'

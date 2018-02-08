@@ -1,0 +1,13 @@
+.documents-table-cell
+  table style="width:100%"
+    tbody
+      - documents.each do |document|
+        tr
+          td
+            i
+          td
+            a href=document[:href] = document[:title]
+          td
+            a href=document[:href] = document[:author]
+          td
+            a href=document[:href] = document[:date]

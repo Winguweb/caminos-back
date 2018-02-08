@@ -1,6 +1,5 @@
 div.page-section-component
   section
-    = render partial: 'partials/components/section_header', locals: { section: t('.neighborhoods') }
-    = render partial: "admin/dashboards/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
-    footer.right-link
-      = render partial: 'partials/components/section_footer_link', locals: { link: { title: t('.neighborhoods'), href: admin_neighborhoods_path } }
+    == cell('section/header', t('.neighborhoods') )
+    == cell('elements/neighborhoods_list', neighborhoods: @neighborhoods )
+    == cell('section/footer_link', { title: t('.neighborhoods'), href: admin_neighborhoods_path }, extra_classes: 'right')

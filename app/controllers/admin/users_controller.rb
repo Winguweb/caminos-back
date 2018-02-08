@@ -1,6 +1,10 @@
 module Admin
   class UsersController < BaseController
 
+    def index
+      @users = User.preload(:profile).all
+    end
+
     def show
       load_user
     end
@@ -18,10 +22,6 @@ module Admin
       else
         redirect_to new_user_path
       end
-    end
-
-    def index
-      @users = User.preload(:profile).all
     end
 
     def edit
