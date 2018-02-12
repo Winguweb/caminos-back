@@ -6,9 +6,15 @@ class Elements::WorksTableCell < Cell::ViewModel
     @works ||= model[:works]
   end
 
+  def filters
+   @filters ||= model[:filters]
+  end
+
   def neighborhood
     @neighborhood ||= options[:neighborhood]
   end
 
 end
   
+
+

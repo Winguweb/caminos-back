@@ -46,6 +46,11 @@ class ComponentsController < ApplicationController
       OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
       OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
     ]
+    @works_header_buttons = [
+      OpenStruct.new(title: 'Cargar Obra'),
+    ]
+
+
   end
 
   private
