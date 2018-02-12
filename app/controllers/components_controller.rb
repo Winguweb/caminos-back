@@ -46,6 +46,11 @@ class ComponentsController < ApplicationController
       OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
       OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
     ]
+    @neighborhoods=[
+      OpenStruct.new(name: 'Villa 31', percent: Random.rand(100), date: '24/10/2017'),
+      OpenStruct.new(name: 'Villa 11', percent: Random.rand(100), date: '24/10/2017'),
+      OpenStruct.new(name: 'Villa 2', percent: Random.rand(100), date: '24/10/2017'),
+    ]
   end
 
   private
