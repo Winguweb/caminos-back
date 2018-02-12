@@ -42,3 +42,7 @@ div.page-section-component
     == cell('section/header', "Lista de documentos", buttons: @documents_list_button)
     main
       == cell('elements/documents_table', documents: @documents_list)
+  section 
+    == cell('section/header', "Lista de Obras")
+    main
+      == cell('elements/works_table', works: @works_list)
