@@ -39,6 +39,10 @@ class ComponentsController < ApplicationController
     @documents_list_button = [
       OpenStruct.new(title: 'Cargar Documento'),
     ]
+    @section_header_subtitle = "Subido por Mirta Fernandez el día 11.12.12"
+    @section_header_download_buttons = [
+      OpenStruct.new(title: 'Descargar Documento'),
+    ]
   end
 
   private
