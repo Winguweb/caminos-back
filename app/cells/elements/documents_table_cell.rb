@@ -5,5 +5,8 @@ class Elements::DocumentsTableCell < Cell::ViewModel
   def documents
     @documents ||= model[:documents]
   end
-
+  
+  def filters
+    @filters ||= model[:filters]
+  end
 end
