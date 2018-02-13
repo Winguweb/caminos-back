@@ -39,6 +39,10 @@ class ComponentsController < ApplicationController
     @documents_list_button = [
       OpenStruct.new(title: 'Cargar Documento'),
     ]
+    @meeting_card = OpenStruct.new(
+      date: 'Miercoles 16 ',
+      address: 'San Luis Potosí 178',
+    )
   end
 
   private

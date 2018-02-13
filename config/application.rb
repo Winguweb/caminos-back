@@ -49,6 +49,7 @@ module CaminosBack
       elements/works_table_cell
       page/header_cell
       section/footer_link_cell
+      elements/meeting_card_cell
     )
   end
 end
