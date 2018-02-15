@@ -1,0 +1,5 @@
+.meetings-carousel-cell
+  section.autoplay.slider
+    - meetings.each do |meeting|
+      div
+        == cell('elements/meeting_card', meeting)  
