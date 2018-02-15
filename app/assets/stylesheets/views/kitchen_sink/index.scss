@@ -15,6 +15,12 @@
           @include grid-column(1 of 3);
         }
       }
+      .meetings-cards {
+        @include grid-container;
+        > li {
+          @include grid-column(1 of 3);
+        }
+      }
     }
   }
 }

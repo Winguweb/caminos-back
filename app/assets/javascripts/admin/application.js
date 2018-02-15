@@ -12,3 +12,7 @@
 //
 //= require rails-ujs
 //= require_tree .
+//= require jquery-3.3.1.min
+//= requiere jquery-migrate-1.4.1.min
+//= require meetings_carousel
+//= require slick.min

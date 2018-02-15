@@ -12,6 +12,7 @@
 @import 'neat';
 @import 'normalize'; // vendor library
 
+
 /* ===============================
   CUSTOM MIXIN LIBRARIES & HELPERS
 =============================== */
@@ -35,6 +36,8 @@
 @import "breadcrumbs";
 @import "description";
 @import "documents_table";
+@import "meeting_card";
+@import "meetings_carousel";
 @import "neighborhood_card";
 @import "neighborhoods_list";
 @import "person_card";
@@ -47,3 +50,5 @@
   OTHER VENDORS STUFF
 =============================== */
 // @import 'selectize/base';
+@import 'slick/slick';
+@import 'slick/slick-theme';

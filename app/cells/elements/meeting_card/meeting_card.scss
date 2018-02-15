@@ -1,0 +1,35 @@
+@mixin meeting-card() {
+  position: relative;
+  border: 2px solid $light-grey;
+  border-radius: 6px;
+  padding: $vgutter*2 $gutter;
+  margin-bottom: $vgutter*2;
+  > main {
+
+    > header {
+      
+      > h1 {
+        margin: 0;
+        @include text-color($text-black, 1);
+        @include type-setting(-1);
+        line-height: 18px;
+      }
+      > p {
+        @include text-color($text-grey, 1);
+        @include type-setting(-1);
+        line-height: 18px;
+      }
+    
+    }
+  }
+  &:hover {
+    border-color: color($text-blue, 1);
+    > main > header > h1 {
+        @include text-color($text-blue, 1);
+    }
+  }
+}
+
+.meeting-card-cell{
+  @include meeting-card;
+}
