@@ -50,3 +50,7 @@ div.page-section-component
     == cell('section/header', "Lista de Obras sin filtros", buttons: @works_header_buttons)
     main
       == cell('elements/works_table', works: @works_list, filters: false)
+  section 
+      == cell('section/header', "Lista de villas")
+      main
+        == cell('elements/neighborhoods_list', neighborhoods: @neighborhoods)
