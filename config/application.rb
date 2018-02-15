@@ -43,13 +43,14 @@ module CaminosBack
       elements/breadcrumbs_cell
       elements/description_cell
       elements/documents_table_cell
+      elements/meeting_card_cell
+      elements/meetings_carousel_cell
       elements/neighborhood_card_cell
       elements/neighborhoods_list_cell
       elements/person_card_cell
       elements/works_table_cell
       page/header_cell
-      section/footer_link_cell
-      elements/meeting_card_cell
+      section/footer_link_cell      
     )
   end
 end

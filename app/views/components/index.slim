@@ -47,3 +47,9 @@ div.page-section-component
     main
       ul.meeting-cards
         li == cell('elements/meeting_card', @meeting_card)
+  
+  section
+    == cell('section/header', "Reuniones")
+    main
+      == cell('elements/meetings_carousel', meetings: @meetings_card)
+  
