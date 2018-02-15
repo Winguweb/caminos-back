@@ -1,6 +1,21 @@
-
 .works-table-cell
   table style="width:100%"
+    - if filters
+      thead
+          tr
+            th.sortable_name
+              select#name_neighborhood onchange="neighborhoodChange()"
+                option value="asc"  A-Z
+                option value="desc"  Z-A
+
+            th.sortable_status
+              select#status onchange="statusChange()"
+                option value="asc"  Proyectadas
+                option value="desc" En Proceso
+            th.sortable_date
+              select#date onchange="dateChange()"
+                option value="asc"  Orden ascendente
+                option value="desc" Orden descendente
     tbody
       - works.each do |work|
         tr
