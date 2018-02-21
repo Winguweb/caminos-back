@@ -39,6 +39,20 @@ class ComponentsController < ApplicationController
     @documents_list_button = [
       OpenStruct.new(title: 'Cargar Documento'),
     ]
+
+    @work = OpenStruct.new(
+      name: 'Reparación de tuberias',
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore repellendus voluptatem nobis vel quo a fugit rerum velit obcaecati officia necessitatibus, aspernatur pariatur repudiandae saepe neque non blanditiis. Omnis, reprehenderit!",
+      status: 'en proceso',
+      start_date: "10/10/2017",
+      estimated_end_date: "10/10/2017",
+      end_date: "10/10/2017",
+      lookup_address: "AV  del taller 123",
+      budget: "100",
+      manager: "AGU ",
+      execution_plan: "blah ",
+      category: "luz"
+    )
   end
 
   private

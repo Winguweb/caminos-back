@@ -46,6 +46,7 @@ module CaminosBack
       elements/neighborhood_card_cell
       elements/neighborhoods_list_cell
       elements/person_card_cell
+      elements/work_details_cell
       elements/works_table_cell
       page/header_cell
       section/footer_link_cell

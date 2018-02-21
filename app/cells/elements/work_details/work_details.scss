@@ -1,0 +1,112 @@
+@mixin work-details() {
+  @include grid-column(16);
+  $elements-layout-grid: (
+    columns: 1,
+    gutter: 2rem,
+  );
+
+  $elements-layout-grid--tablet-up-10: (
+    columns: 10,
+    gutter: 0rem,
+    margin-left:0px,
+    media: "(min-width: 768px)",
+  );
+
+  $elements-layout-grid--tablet-up-8: (
+    columns: 10,
+    gutter: 0rem,
+    margin-left:0px,
+    media: "(min-width: 768px)",
+  );
+
+  
+  .elements-layout {
+    @include grid-container;
+  }
+
+  > main {
+    @include text-color($text-grey, 1);
+    padding: $vgutter*2 $gutter;
+    margin-bottom: $vgutter*2;
+
+    > p {
+      @include text-color($text-grey, 1);
+      @include type-setting(-1);
+      margin-bottom: $vgutter;
+      
+    }
+    > div {
+      >p{
+          margin-top: 1rem;
+          margin-bottom: $vgutter*2;
+          @include text-color($text-black, 1);
+        }
+      >span{
+
+        @include grid-column(16);
+        
+        >p{
+          margin-top: 1rem;
+          margin-bottom: $vgutter*2;
+          @include text-color($text-black, 1);
+        }
+        &:nth-of-type(1) {
+          @include grid-column(1, $elements-layout-grid);
+          @include grid-media($elements-layout-grid--tablet-up-10) {
+          @include grid-column(5);
+         
+        }
+        
+         }
+        
+        &:nth-of-type(2) {
+           @include grid-column(1, $elements-layout-grid);
+          @include grid-media($elements-layout-grid--tablet-up-8) {
+            @include grid-column(5);
+          }
+        
+         
+        }
+      }
+
+      &:nth-of-type(1) {
+      
+        margin-bottom: $vgutter*2;
+      }
+
+      &:nth-of-type(2) {
+      
+       
+      margin-bottom: $vgutter*2;
+      }
+    /*  &:nth-of-type(3) {
+
+        background-color: red;
+        border-radius: 3px;
+      }
+*/
+     /* &:nth-of-type(4) {
+        
+        background-color: yellow;
+        border-radius: 3px;
+      }
+
+      &:nth-of-type(5) {
+        
+        background-color: orange;
+        border-radius: 3px;
+      }
+
+      &:nth-of-type(6) {
+        
+        background-color: purple;
+        border-radius: 3px;
+      }*/
+    }
+  }
+}
+
+
+.work-details-cell{
+  @include work-details;
+}
