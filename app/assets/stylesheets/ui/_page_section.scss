@@ -12,12 +12,28 @@
       @include display(flex);
       @include align-items(flex-end);
       margin-bottom: $vgutter;
-      > h1 {
-        @include grid-column(7 of 10);
-        @include type-setting(1);
-        @include text-color($text-black, 1);
-        margin-top: 0;
-        margin-bottom: $vgutter;
+      > article{
+          @include grid-column(7 of 10);
+         
+        
+        > h1 {
+          @include text-color($text-black, 1);
+        
+          @include type-setting(1);
+          margin-top: 0;
+          margin-bottom: $vgutter;
+        }
+
+        > div {
+          
+          @include grid-collapse;
+          @include grid-container;
+          @include text-color($text-grey, 1);
+          @include type-setting(0);
+           > span {
+            @include grid-column(6 of 10);
+           }
+        }
       }
       > ul {
         @include grid-column(3 of 10);

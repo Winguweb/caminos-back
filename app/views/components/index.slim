@@ -13,7 +13,8 @@ div.page-section-component
   section
     == cell('section/header', "Header con link en Footer a la izquierda")
     == cell('section/footer_link', @section_footer_link_left)
-
+  section
+    == cell('section/header',"", buttons: @section_header_download_buttons, subtitle: @section_header_subtitle)
   section
     == cell('section/header', "Tarjetas de barrio")
     main

@@ -11,6 +11,10 @@ class Section::HeaderCell < Cell::ViewModel
     @section ||= model
   end
 
+  def subtitle
+    options[:subtitle]
+  end
+
   def links
     options[:links]
   end

@@ -40,6 +40,11 @@ class ComponentsController < ApplicationController
       OpenStruct.new(title: 'Cargar Documento'),
     ]
 
+    @section_header_subtitle = "Subido por Mirta Fernandez el día 11.12.12"
+    @section_header_download_buttons = [
+      OpenStruct.new(title: 'Descargar Documento'),
+    ]
+
     @works_list = [
       OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
       OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
