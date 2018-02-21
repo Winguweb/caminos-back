@@ -13,7 +13,8 @@ div.page-section-component
   section
     == cell('section/header', "Header con link en Footer a la izquierda")
     == cell('section/footer_link', @section_footer_link_left)
-
+  section
+    == cell('section/header',"", buttons: @section_header_download_buttons, subtitle: @section_header_subtitle)
   section
     == cell('section/header', "Tarjetas de barrio")
     main
@@ -42,8 +43,23 @@ div.page-section-component
     == cell('section/header', "Lista de documentos", buttons: @documents_list_button)
     main
       == cell('elements/documents_table', documents: @documents_list)
-
+  section
+    == cell('section/header', "Lista de documentos con filtros", buttons: @documents_list_button)
+    main
+      == cell('elements/documents_table', documents: @documents_list, filters: true)
   section
     == cell('section/header', "Detalles de la obra")
     main
       == cell('elements/work_details', @work)
+  section 
+    == cell('section/header', "Lista de Obras", buttons: @works_header_buttons )
+    main
+      == cell('elements/works_table', works: @works_list, filters: true)
+  section 
+    == cell('section/header', "Lista de Obras sin filtros", buttons: @works_header_buttons)
+    main
+      == cell('elements/works_table', works: @works_list, filters: false)
+  section 
+      == cell('section/header', "Lista de villas")
+      main
+        == cell('elements/neighborhoods_list', neighborhoods: @neighborhoods)

@@ -17,21 +17,21 @@
       - for neighborhood in neighborhoods
         tr
           td
-            a href=neighborhood_path(neighborhood)
+            a href="#"
               p#name
 
                 = neighborhood.name
               p#date
-                = "Actualizado en: #{neighborhood.updated_at.to_date.to_s}"
+                = "Actualizado en: #{neighborhood.date.to_date.to_s}"
 
           td
-            a href=neighborhood_path(neighborhood)
+            a href="#"
               main
                 p
                   span
                     = "Proceso de urbanización "
                   span#percent
-                    = "#{Random.rand(100)}%"
+                    = "#{neighborhood.percent}%"
                 div
                   div
-                  div style="width:#{Random.rand(100)}%;"
+                  div style="width:#{neighborhood.percent}%;"
