@@ -39,6 +39,23 @@ class ComponentsController < ApplicationController
     @documents_list_button = [
       OpenStruct.new(title: 'Cargar Documento'),
     ]
+
+    @works_list = [
+      OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
+      OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
+      OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
+      OpenStruct.new(name: 'Reparación de baches', lookup_address: 'Av. Avila Camacho 123, CDMX', status: 'proyectadas', category: "Agua", category_icon:"/assets/icons/category.svg", updated_at: '24/10/2017'),
+    ]
+    
+    @works_header_buttons = [
+      OpenStruct.new(title: 'Cargar Obra'),
+    ]
+    
+    @neighborhoods=[
+      OpenStruct.new(name: 'Villa 31', percent: Random.rand(100), date: '24/10/2017'),
+      OpenStruct.new(name: 'Villa 11', percent: Random.rand(100), date: '24/10/2017'),
+      OpenStruct.new(name: 'Villa 2', percent: Random.rand(100), date: '24/10/2017'),
+    ]
   end
 
   private

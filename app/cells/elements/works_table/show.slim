@@ -1,25 +1,40 @@
 .works-table-cell
   table style="width:100%"
+    - if filters
+      thead
+          tr
+            th.sortable_name
+              select#name_neighborhood onchange="neighborhoodChange()"
+                option value="asc"  A-Z
+                option value="desc"  Z-A
+
+            th.sortable_status
+              select#status onchange="statusChange()"
+                option value="asc"  Proyectadas
+                option value="desc" En Proceso
+            th.sortable_date
+              select#date onchange="dateChange()"
+                option value="asc"  Orden ascendente
+                option value="desc" Orden descendente
     tbody
       - works.each do |work|
         tr
           td
-            a href=neighborhood_work_path(neighborhood, work)
-              img src='/assets/icons/category.svg'
+            a href='#'
+              img src= work[:category_icon]
           td
-            a href=neighborhood_work_path(neighborhood, work)
-              p = "Categoría"
-
-              p = work.name
-
-              p = work.lookup_address
-
-          td
-            a href=neighborhood_work_path(neighborhood, work)
-              span  = work.status
+            a href='#'
+              p= work[:category]
+              p= work[:name]
+              p= work[:lookup_address]
+           
 
           td
-            a href=neighborhood_work_path(neighborhood, work)
+            a href='#'
+              span  
+                p = work[:status]
+
+          td
+            a href='#'
               span
-                = "Actualizado en:"
-                p = work.updated_at.to_date.to_s
+                p = work[:updated_at]
