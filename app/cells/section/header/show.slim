@@ -1,5 +1,11 @@
 header
-  h1 = section
+  article 
+    - unless section.nil?
+      h1= section
+    - unless subtitle.nil?
+      div 
+        span
+          = subtitle
   - unless links.nil?
     ul
       - links.each do |link|
