@@ -40,6 +40,20 @@ class ComponentsController < ApplicationController
       OpenStruct.new(title: 'Cargar Documento'),
     ]
 
+    @work = OpenStruct.new(
+      name: 'Reparación de tuberias',
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore repellendus voluptatem nobis vel quo a fugit rerum velit obcaecati officia necessitatibus, aspernatur pariatur repudiandae saepe neque non blanditiis. Omnis, reprehenderit!",
+      status: 'en proceso',
+      start_date: "10/10/2017",
+      estimated_end_date: "10/10/2017",
+      end_date: "10/10/2017",
+      lookup_address: "AV  del taller 123",
+      budget: "100",
+      manager: "AGU ",
+      execution_plan: "blah ",
+      category: "luz"
+    )
+    
     @section_header_subtitle = "Subido por Mirta Fernandez el día 11.12.12"
     @section_header_download_buttons = [
       OpenStruct.new(title: 'Descargar Documento'),
