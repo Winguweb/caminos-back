@@ -43,6 +43,7 @@ module CaminosBack
       elements/breadcrumbs_cell
       elements/description_cell
       elements/documents_table_cell
+      elements/meeting_details_cell
       elements/neighborhood_card_cell
       elements/neighborhoods_list_cell
       elements/person_card_cell
