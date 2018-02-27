@@ -5,7 +5,7 @@
     @include grid-column(10);
     // border-bottom: 1px solid $light-grey;
     margin-bottom: $vgutter*4;
-    > header {
+    header {
       @include grid-collapse;
       @include grid-container;
       @include display(flex);

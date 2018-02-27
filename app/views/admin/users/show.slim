@@ -5,12 +5,12 @@
 
 div.page-section
   section
-    == cell('section/header', t('.general'), buttons: [{title: t('.edit'), url: edit_admin_user_path(@user) }])
+    == cell('section/header', t('.general'), buttons: [{ title: t('.edit'), url: edit_admin_user_path(@user) }])
     .user-info
       .user-avatar
         == cell('elements/avatar', @user)
       .information
-        h1= @user.name
+        h1= @user.full_name
         - if @user.entity
           .entity= @user.entity.name
         .attributes

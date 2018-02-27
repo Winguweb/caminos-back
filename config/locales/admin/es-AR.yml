@@ -11,6 +11,9 @@ es-AR:
     meetings:
       show:
         meeting_date: Reunión %{date}
+    roles:
+      admin: Administrador
+      ambassador: Embajador
     sections:
       dashboard: Escritorio
       neighborhoods: Barrios

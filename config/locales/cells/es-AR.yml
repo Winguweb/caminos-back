@@ -2,3 +2,15 @@ es-AR:
   elements:
     users_table:
       permissions: "Permisos: %{roles}"
+  forms:
+    user:
+      create: Crear Usuario
+      email: Dirección de correo electrónico
+      first_name: Nombre/s
+      last_name: Apellido/s
+      password: Contraseña
+      personal_information: Información Personal
+      roles: Roles / Permisos
+      update: Actualizar Usuario
+      user_information: Información del Usuario
+      username: Nombre de Usuario

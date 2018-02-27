@@ -1,0 +1,34 @@
+.form-user-cell
+  = form_for user, url: url, html: { class: 'form' } do |form|
+    == cell('section/header', t('.personal_information'))
+    .fields.personal-information
+      = form.fields_for user.profile do |profile|
+        .field.first_name
+          = profile.label :first_name, t('.first_name')
+          = profile.text_field :first_name
+        .field.last_name
+          = profile.label :last_name, t('.last_name')
+          = profile.text_field :last_name
+    == cell('section/header', t('.user_information'))
+    .fields.user-information
+      .field
+        = form.label :username, t('.username')
+        = form.text_field :username
+      .field
+        = form.label :email, t('.email')
+        = form.text_field :email
+      .field
+        = form.label :password, t('.password')
+        = form.password_field :password
+      .field
+        label= t('.roles')
+        - User.available_roles.each do |role|
+          .role
+            .checkbox
+              = hidden_field_tag "roles[#{role}]", 0, id: "roles_role_hidden"
+              = check_box_tag "roles[#{role}]", "1", user.has_role?(role)
+              label for="roles_#{role}" class="check-label"
+            label.role-name for="roles_#{role}"
+              = t("admin.roles.#{role}")
+    .actions
+      = form.submit t(".#{action}")

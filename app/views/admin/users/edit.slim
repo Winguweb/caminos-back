@@ -1,6 +1,6 @@
 = content_for :main_header do
   == cell('page/header', t('.user_profile'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.users') ] )
 
-div.page-section
+.page-section
   section
-    == cell('section/header', t('.general'), links: [{title: t('.cancel'), url: admin_user_path(@user) }, {title: t('.save'), url: admin_user_path(@user) }])
+    == cell('forms/user', @user, url: admin_user_path(@user), action: 'update')
