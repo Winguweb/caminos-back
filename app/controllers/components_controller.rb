@@ -75,6 +75,12 @@ class ComponentsController < ApplicationController
       OpenStruct.new(name: 'Villa 11', percent: Random.rand(100), date: '24/10/2017'),
       OpenStruct.new(name: 'Villa 2', percent: Random.rand(100), date: '24/10/2017'),
     ]
+    @meeting = OpenStruct.new(
+      objectives: 'Reparación de tuberias',
+      lookup_address: "Avenida Isabela Catolica #34",
+      date: "16-10-2018"
+    )
+
   end
 
   private

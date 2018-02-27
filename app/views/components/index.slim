@@ -63,3 +63,7 @@ div.page-section
       == cell('section/header', "Lista de villas")
       main
         == cell('elements/neighborhoods_list', neighborhoods: @neighborhoods)
+  section
+    == cell('section/header', "Detalles de reunión")
+    main
+      == cell('elements/meeting_details', @meeting)
