@@ -1,0 +1,12 @@
+#neighborhoods-show{
+  section{
+    > header {
+      h1{
+        color: $grey;
+        font-weight: 400;
+        text-transform: uppercase;
+        @include type-setting(0);
+      }
+    }
+  }
+}

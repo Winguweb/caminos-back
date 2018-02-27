@@ -1,7 +1,7 @@
 == cell('page/header', "Nueva Obras", links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
 = form_for [current_neighborhood,@work] do |f|
   work
-    div.page-section-component
+    div.page-section
       section
         == cell('section/header', t(".about_work"), links: [ {:title => 'Cancelar', :href => neighborhood_works_path(current_neighborhood)} ])
         div

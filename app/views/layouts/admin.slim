@@ -11,19 +11,26 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     = yield :css
     = csrf_meta_tags
 
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+
   body id=body_id class=body_class
 
-    = render partial: 'admin/partials/header'
+    - if current_user
+      = render partial: 'admin/partials/header'
 
     main
+      - if content_for?(:main_header)
+        .main-header
+          = content_for(:main_header)
       - unless flash.empty?
-        - flash.each do |name, msg|
-          = msg
-      = yield
+        .main-messages
+          - flash.each do |name, msg|
+            = msg
+      .main-section
+        = yield
 
     = render partial: 'admin/partials/footer'
 
     = yield :before_js
     = javascript_include_tag 'admin/application'
     = yield :js
-

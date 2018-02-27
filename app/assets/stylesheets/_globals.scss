@@ -22,26 +22,30 @@
 @import 'globals/mixins/flex-grids';
 
 /* ===================
-  GENERAL UI ELEMENTS
+  CELLS UI
 =================== */
-@import "ui/button";
-@import "ui/buttons";
-@import "ui/form";
-
-/* ===================
-  CELLS UI COMPONENTS
-=================== */
+// ELEMENTS
 @import "add_button";
+@import "avatar";
 @import "breadcrumbs";
+@import "button";
 @import "description";
 @import "documents_table";
 @import "neighborhood_card";
 @import "neighborhoods_list";
 @import "person_card";
-@import "page_header";
-@import "section_footer_link";
+@import "users_table";
 @import "work_details";
 @import "works_table";
+// PAGE
+@import "page__header";
+// SECTION
+@import "section__footer_link";
+
+/* ===================
+  GENERAL UI STUFF
+=================== */
+@import "ui/form";
 @import "ui/page_section";
 
 /* ===============================

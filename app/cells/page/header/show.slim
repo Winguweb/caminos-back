@@ -1,16 +1,16 @@
-header.page-header-cell
+.page-header-cell class="#{'without-links' unless links}"
   .content
     == cell('elements/breadcrumbs', crumbs: breadcrumbs)
     .page-title
-      - unless title.nil?
+      - if title
         h1
           span
             = title
-      - unless subtitle.nil?
-        div
+      - if subtitle
+        div.subtitle
           span
             = subtitle
-    - unless links.nil?
+    - if links
       .page-links
         ul
           - for link in links

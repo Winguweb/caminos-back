@@ -1,8 +1,8 @@
-@mixin background-color($color, $alpha) {
+@mixin background-color($color, $alpha: 1) {
   background-color: color($color, $alpha);
 }
 
-@mixin text-color($color, $alpha) {
+@mixin text-color($color, $alpha: 1) {
   color: color($color, $alpha);
 }
 
@@ -11,9 +11,9 @@
 }
 
 @mixin shadow-down($color, $size) {
-  box-shadow: 0 $vgutter/2 8px $color;
+  box-shadow: 0 2px 11px 1px $color;
 }
 
-@function color($color, $alpha){
+@function color($color, $alpha: 1){
   @return rgba($color, $alpha);
 }

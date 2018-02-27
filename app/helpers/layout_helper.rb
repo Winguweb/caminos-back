@@ -8,11 +8,12 @@ module LayoutHelper
   end
 
   def body_class
+    class_name = controller.controller_name
     if content_for?(:body_class)
-      content_for(:body_class)
-    else
-      controller.controller_name
+      class_name = "#{class_name} #{content_for(:body_class)}"
     end
+
+    class_name
   end
 
   def partial_exist?(partial_path)

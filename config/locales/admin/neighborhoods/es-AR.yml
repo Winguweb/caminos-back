@@ -1,0 +1,29 @@
+es-AR:
+  admin:
+    neighborhoods:
+      index:
+        neighborhoods: Barrios
+        neighborhoods_subtitle: Listado de todos los barrios cargados
+        new_neighborhood: Nuevo Barrio
+      new:
+        create: Crear Barrio
+        description: Sobre el Barrio
+        information: Información
+        lookup_address: Ubicación del Barrio
+        name: Nombre del Barrio
+        new_neighborhood: Nuevo Barrio
+      show:
+        about_neighborhood: Sobre la barrio %{neighborhood}
+        activity: Actividad reciente
+        address: Ubicación en el mapa
+        agreement: Acuerdo
+        ambassadors: Embajadores
+        documents: Documentos
+        edit: Editar
+        information: Información
+        meetings: Reuniones
+        pictures: Fotos
+        works: Obras
+        upload_document: Cargar Documento
+        add_new_ambassador: Agregar Nuevo
+        add_new_picture: Agregar Nueva

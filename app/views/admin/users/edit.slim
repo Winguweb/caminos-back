@@ -1,3 +1,6 @@
-section
-  h1 Editar usuario
-  = render 'form'
+= content_for :main_header do
+  == cell('page/header', t('.user_profile'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.users') ] )
+
+div.page-section
+  section
+    == cell('section/header', t('.general'), links: [{title: t('.cancel'), url: admin_user_path(@user) }, {title: t('.save'), url: admin_user_path(@user) }])

@@ -17,7 +17,7 @@
       margin-top: $gutter;
       @include grid-column(2 of 4);
       @include grid-push(1 of 4);
-      @include button('blue');
+      @include button();
     }
   }
   .email-input, .password-input{
@@ -25,8 +25,7 @@
       display: block;
       @include type-setting(-1);
     }
-    input{
-      @include input;
-    }
+
+    @include inputs;
   }
 }

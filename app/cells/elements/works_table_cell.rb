@@ -15,6 +15,3 @@ class Elements::WorksTableCell < Cell::ViewModel
   end
 
 end
-  
-
-

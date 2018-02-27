@@ -3,10 +3,10 @@ class Elements::DocumentsTableCell < Cell::ViewModel
   private
 
   def documents
-    @documents ||= model[:documents]
+    model || []
   end
-  
+
   def filters
-    @filters ||= model[:filters]
+    @filters ||= options[:filters]
   end
 end

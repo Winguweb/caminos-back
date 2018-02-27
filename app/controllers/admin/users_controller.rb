@@ -2,7 +2,7 @@ module Admin
   class UsersController < BaseController
 
     def index
-      @users = User.preload(:profile).all
+      @users = User.preload(:profile, :entity).all
     end
 
     def show

@@ -1,4 +1,20 @@
-section
-  h1 Crear nuevo Barrio
-  = render 'form'
+= content_for :main_header do
+  == cell('page/header', t('.new_neighborhood'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+
+div.page-section
+  section
+    == cell('section/header', t('.information'))
+    = form_for @neighborhood, url: admin_neighborhoods_path, html: { class: 'form' } do |form|
+      .fields
+        .field.name
+          = form.label :name, t('.name')
+          = form.text_field :name, class: 'require'
+        .field.description
+          = form.label :description, t('.description')
+          = form.text_area :description, class: 'require', rows: 6
+        .field.lookup_address
+          = form.label :lookup_address, t('.lookup_address')
+          = form.text_field :lookup_address
+      .actions
+        = form.submit t('.create')
 

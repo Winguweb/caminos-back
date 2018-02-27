@@ -181,8 +181,8 @@ p {
       <td>5.1.4</td>
       <td>4.0.1
       <td>
-        2017-12-01 15:35:23 -0300<br><br>
-        0.111077 seconds
+        2018-02-21 11:20:54 -0300<br><br>
+        1.060476 seconds
       </td>
       <td>BasicAuth, BasicAuthTimingAttack, ContentTag, CreateWith, CrossSiteScripting, DefaultRoutes, Deserialize, DetailedExceptions, DigestDoS, DynamicFinders, EscapeFunction, Evaluation, Execute, FileAccess, FileDisclosure, FilterSkipping, ForgerySetting, HeaderDoS, I18nXSS, JRubyXML, JSONEncoding, JSONParsing, LinkTo, LinkToHref, MailTo, MassAssignment, MimeTypeDoS, ModelAttrAccessible, ModelAttributes, ModelSerialize, NestedAttributes, NestedAttributesBypass, NumberToCurrency, QuoteTableName, Redirect, RegexDoS, Render, RenderDoS, RenderInline, ResponseSplitting, RouteDoS, SQL, SQLCVEs, SSLVerify, SafeBufferManipulation, SanitizeMethods, SelectTag, SelectVulnerability, Send, SendFile, SessionManipulation, SessionSettings, SimpleFormat, SingleQuotes, SkipBeforeFilter, StripTags, SymbolDoSCVE, TranslateBug, UnsafeReflection, ValidationRegex, WithoutProtection, XMLDoS, YAMLParsing</td>
     </tr>
@@ -200,15 +200,15 @@ p {
   <tbody>
     <tr>
       <td>Controllers</td>
-      <td>1</td>
+      <td>11</td>
     </tr>
     <tr>
       <td>Models</td>
-      <td>1</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>Templates</td>
-      <td>2</td>
+      <td>37</td>
     </tr>
     <tr>
       <td>Errors</td>
@@ -216,15 +216,154 @@ p {
     </tr>
     <tr>
       <td>Security Warnings</td>
-      <td>0 <span class='high-confidence'>(0)</span></td>
+      <td>2 <span class='high-confidence'>(0)</span></td>
     </tr>
-  
+
     <tr>
       <td>Ignored Warnings</td>
       <td>0</td>
     </tr>
-  
+
   </tbody>
 </table>
 <br>
+<table>
+  <thead>
+    <tr>
+      <th>Warning Type</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td>Cross-Site Scripting</td>
+      <td>2</td>
+    </tr>
+
+  </tbody>
+</table>
+<br>
+<p>View Warnings</p>
+<table>
+  <thead>
+    <tr>
+      <th>Confidence</th>
+      <th>Template</th>
+      <th>Warning Type</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td><span class='weak-confidence'>Weak</span></td>
+      <td>
+
+          admin/dashboards/show (Admin::DashboardsController#show)
+
+      </td>
+      <td><a rel="no-referrer" href="http://brakemanscanner.org/docs/warning_types/cross_site_scripting">Cross-Site Scripting</a></td>
+      <td><div class='warning_message' onClick="toggle('context1');toggle('message1');toggle('full_message1')" ><span id='message1' style='display:block' >Unescaped model attribute near line 4: cell(&quot;elements/neighborhoods_list&quot;, :neighborhoods =&gt; Neighbor...</span><span id='full_message1' style='display:none'>Unescaped model attribute near line 4: cell(&quot;elements/neighborhoods_list&quot;, :neighborhoods =&gt; <span class="user_input">Neighborhood.all</span>)</span><table id='context1' class='context' style='display:none'><caption>app/views/admin/dashboards/show.slim</caption>      <thead style='display:none'>
+        <tr>
+          <th>line number</th>
+          <th>line content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>1</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>div.page-section</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>2</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  section</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>3</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    == cell(&#39;section/header&#39;, t(&#39;.neighborhoods&#39;) )</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>4</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    == cell(&#39;elements/neighborhoods_list&#39;, neighborhoods: @neighborhoods )</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>5</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    == cell(&#39;section/footer_link&#39;, { title: t(&#39;.neighborhoods&#39;), href: admin_neighborhoods_path }, extra_classes: &#39;right&#39;)</pre>
+            </td>
+          </tr>
+</tbody></table></div></td>
+    </tr>
+
+    <tr>
+      <td><span class='weak-confidence'>Weak</span></td>
+      <td>
+
+          admin/neighborhoods/index (Admin::NeighborhoodsController#index)
+
+      </td>
+      <td><a rel="no-referrer" href="http://brakemanscanner.org/docs/warning_types/cross_site_scripting">Cross-Site Scripting</a></td>
+      <td><div class='warning_message' onClick="toggle('context2');toggle('message2');toggle('full_message2')" ><span id='message2' style='display:block' >Unescaped model attribute near line 4: cell(&quot;elements/neighborhoods_list&quot;, :neighborhoods =&gt; Neighbor...</span><span id='full_message2' style='display:none'>Unescaped model attribute near line 4: cell(&quot;elements/neighborhoods_list&quot;, :neighborhoods =&gt; <span class="user_input">Neighborhood.all</span>)</span><table id='context2' class='context' style='display:none'><caption>app/views/admin/neighborhoods/index.slim</caption>      <thead style='display:none'>
+        <tr>
+          <th>line number</th>
+          <th>line content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class='context first'>
+          <td class='context_line'>
+            <pre class='context'>1</pre>
+          </td>
+          <td class='context'>
+            <pre class='context'>div.page-section</pre>
+          </td>
+        </tr>
+          <tr class='context alt'>
+            <td class='context_line'>
+              <pre class='context'>2</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>  section</pre>
+            </td>
+          </tr>
+          <tr class='context near_error'>
+            <td class='context_line'>
+              <pre class='context'>3</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    == cell(&#39;section/header&#39;, t(&#39;.neighborhoods&#39;) )</pre>
+            </td>
+          </tr>
+          <tr class='context alt error'>
+            <td class='context_line'>
+              <pre class='context'>4</pre>
+            </td>
+            <td class='context'>
+              <pre class='context'>    == cell(&#39;elements/neighborhoods_list&#39;, neighborhoods: @neighborhoods )</pre>
+            </td>
+          </tr>
+</tbody></table></div></td>
+    </tr>
+
+  </tbody>
+</table>
 </body></html>

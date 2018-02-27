@@ -3,6 +3,7 @@ module Admin
 
     def show
       load_neighborhood
+      # @documents = @neighborhood.document
     end
 
     def new
@@ -13,9 +14,9 @@ module Admin
       service = CreateNeighborhood.call(neighborhood_params)
 
       if service.success?
-        redirect_to neighborhoods_path
+        redirect_to admin_neighborhoods_path
       else
-        redirect_to new_neighborhood_path
+        redirect_to new_admin_neighborhood_path
       end
     end
 

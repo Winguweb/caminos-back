@@ -7,8 +7,5 @@
 @import '../layout/application';
 
 // VIEWS & PARTIALS
-@import 'views/partials/**/*';
-@import 'views/meetings/*';
-@import 'views/neighborhoods/*';
-@import 'views/user_sessions/*';
-@import 'views/works/*';
+@import 'partials/**/*';
+@import 'views/**/*';

@@ -6,3 +6,10 @@ es-AR:
           attributes:
             neighborhood:
               required: Este campo es requerido
+  entities:
+    organization: Organización
+    neighborhood: Barrio
+  user:
+    roles:
+      ambassador: Embajador
+      admin: Administrador

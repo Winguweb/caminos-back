@@ -1,0 +1,4 @@
+es-AR:
+  elements:
+    users_table:
+      permissions: "Permisos: %{roles}"

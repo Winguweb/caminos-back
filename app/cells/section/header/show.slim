@@ -1,17 +1,16 @@
 header
-  article 
-    - unless section.nil?
+  article
+    - if section
       h1= section
-    - unless subtitle.nil?
-      div 
+    - if subtitle
+      div
         span
           = subtitle
-  - unless links.nil?
-    ul
+  - if links
+    ul.links
       - links.each do |link|
         li
-          a href=link[:href] = link[:title]
-  - unless buttons.nil?
-    div
-      - buttons.each do |button|
-        button.button-default-component = button[:title]
+          = link_to link[:title], link[:url]
+  - if buttons
+    div.buttons
+      == cell('elements/button', collection: buttons)

@@ -23,6 +23,9 @@ h1, h2 {
 }
 
 body{
+  @include type-setting(0);
+  @include text-color($text-black);
+
   @if $development { @include grid-visual };
 
   @include grid-media($wide-grid) {
@@ -40,8 +43,17 @@ body{
 
 body > main {
   @include grid-container;
+  z-index: 10;
 }
 
-a {
-  margin-right: $gutter/2;
+main {
+  .main-header, .main-section{
+    @include grid-column(16 of 16);
+    @include grid-collapse;
+  }
+  .main-header{
+    @include shadow-down($light-shadow, 1);
+    padding: $gutter*1.5 0 0;
+    margin-bottom: $gutter*3;
+  }
 }

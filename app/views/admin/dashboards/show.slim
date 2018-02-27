@@ -1,5 +1,11 @@
-div.page-section-component
+= content_for :body_class do
+  = 'single-header'
+
+div.page-section
   section
-    == cell('section/header', t('.neighborhoods') )
-    == cell('elements/neighborhoods_list', neighborhoods: @neighborhoods )
-    == cell('section/footer_link', { title: t('.neighborhoods'), href: admin_neighborhoods_path }, extra_classes: 'right')
+    ul.neighborhood-cards
+      - @neighborhoods.each do |neighborhood|
+        li
+          = link_to admin_neighborhood_path(neighborhood) do
+            == cell('elements/neighborhood_card', neighborhood)
+    == cell('section/footer_link', { title: t('.check_all_neighborhoods'), href: admin_neighborhoods_path }, extra_classes: 'right')
