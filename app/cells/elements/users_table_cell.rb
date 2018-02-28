@@ -1,8 +1,5 @@
-require 'cell/translation'
-
 class Elements::UsersTableCell < Cell::ViewModel
   include ::Cell::Translation
-  include ActionView::Helpers::TranslationHelper
 
   private
 

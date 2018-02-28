@@ -1,9 +1,5 @@
-require 'cell/translation'
-
 class Forms::UserCell < Cell::ViewModel
   include ::Cell::Translation
-  include ActionView::Helpers::TranslationHelper
-  include ActionView::Helpers::FormHelper
 
   private
 
