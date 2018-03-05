@@ -1,1 +1,3 @@
 .meetings-list-cell
+  - meetings.each do |meeting|
+    == cell('elements/meeting_card', meeting)

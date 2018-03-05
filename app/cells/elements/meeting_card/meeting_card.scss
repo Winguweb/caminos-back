@@ -5,7 +5,6 @@
   margin-bottom: $vgutter*2;
   > article {
     > header {
-      margin-bottom: $vgutter;
       > h1 {
         margin: 0;
         @include text-color($text-black, 1);
@@ -14,33 +13,18 @@
       > p {
         @include text-color($text-black, 1);
         @include type-setting(-1);
-      }
-    }
-    > main {
-      > p {
-        @include text-color($text-grey, 1);
-        @include type-setting(-1);
-        margin-bottom: $vgutter;
-      }
-      > div {
-        height: 7px;
-        width: 100%;
-        position: relative;
-        border-radius: 3px;
-        overflow: hidden;
-        > div {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 7px;
-          width: 100%;
-        }
-        > div:nth-of-type(1) {
-          background-color: $light-grey;
-        }
-        > div:nth-of-type(2) {
-          background-color: $blue;
-          border-radius: 3px;
+
+        &:before {
+          content: '';
+          position: relative;
+          top: 4px;
+          margin-right: $gutter;
+          background-image: url(/assets/icons/marker.svg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          width: 13px;
+          height: 17px;
+          display: inline-block;
         }
       }
     }
