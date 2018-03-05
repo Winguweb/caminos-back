@@ -1,5 +1,8 @@
-h1 Obras del barrio #{current_neighborhood.name}
+= content_for :main_header do
+  == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+
 div.page-section
   section
-    main
-      == cell('elements/works_table', @works, neighborhood: current_neighborhood)
+    == cell('elements/works_table', @works, neighborhood: current_neighborhood)
+
+

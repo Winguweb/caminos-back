@@ -2,6 +2,10 @@ class Work < ApplicationRecord
   belongs_to :neighborhood
   has_and_belongs_to_many :meetings
 
+  # TO-DO: Remove this after tags implementation
+  attribute :category
+  attribute :category_icon
+
   validates_presence_of :name,
     :description,
     :status,
@@ -19,5 +23,10 @@ class Work < ApplicationRecord
       errors.add(:invalid_dates, "invalid_dates please check now")
     end
   end
+
+  #TO-DO: replace this when feature is implemented
+  # def category
+  #   'sdsdf'
+  # end
 
 end
