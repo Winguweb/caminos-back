@@ -31,13 +31,7 @@ module Admin
     def index
       ensure_neighborhood; return if performed?
 
-      # TO-DO: Remove this after tags implementation ======
-      @works = current_neighborhood.works.map do |work|
-        work[:category] = "AGUA"
-        work[:category_icon] = "/assets/icons/category.svg"
-        work
-      end
-      # ===================================================
+      @works = current_neighborhood.works
     end
 
     def edit
