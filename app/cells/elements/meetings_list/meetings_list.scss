@@ -1,0 +1,106 @@
+@mixin meetings-list() {
+  @include grid-column(16);
+  > table {
+    > thead {
+      > tr {
+        > th {
+          margin-bottom: 15px;
+          > select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: white;
+            border-color: white;
+            background-image: url(/assets/icons/down-arrow.svg);
+            cursor: pointer;
+            font-weight: bold;
+            background-repeat: no-repeat;
+            background-position: center right;
+            padding-right: 25px;
+          }
+
+          &:nth-of-type(1) {
+            @include grid-column(6);
+          }
+          &:nth-of-type(2) {
+            @include grid-column(10);
+
+          }
+        }
+      }
+    }
+    > tbody {
+      padding-top: 10px;
+      > tr {
+        border-bottom: 1px solid $light-grey;
+        &:first-of-type {
+          border-top: 1px solid $light-grey;
+        }
+        &:last-of-type {
+          border-bottom: none;
+        }
+        > td {
+          padding: $vgutter*2 0;
+          @include text-color($text-black, 1);
+          &:nth-of-type(1) {
+            @include grid-column(6);
+             @include text-color($text-black,1);
+            > a > p{
+              &:nth-of-type(1){
+                font-weight: bold;
+                @include text-color($text-black,1);
+              }
+              &:nth-of-type(2){
+                @include text-color($text-grey,1);
+              }
+            }
+
+          }
+
+          &:nth-of-type(2) {
+            @include grid-column(10);
+            > a > main {
+              > p {
+                @include text-color($text-grey, 1);
+                @include type-setting(-1);
+                margin-bottom: $vgutter;
+              }
+              &:nth-of-type(1){
+                @include text-color($text-grey,1);
+              }
+              > div {
+                height: 7px;
+                width: 100%;
+                position: relative;
+                border-radius: 3px;
+                overflow: hidden;
+                > div {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  height: 7px;
+                  width: 100%;
+                }
+                > div:nth-of-type(1) {
+                  background-color: $light-grey;
+                }
+                > div:nth-of-type(2) {
+                  background-color: $blue;
+                  border-radius: 3px;
+                }
+              }
+            }
+
+          }
+
+          > a, > span, > i{
+            @include grid-collapse;
+          }
+        }
+
+      }
+    }
+  }
+}
+.meetings-list-cell{
+  @include meetings-list;
+}

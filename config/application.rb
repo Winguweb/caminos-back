@@ -48,6 +48,8 @@ module CaminosBack
       elements/meeting_details_cell
       elements/neighborhood_card_cell
       elements/neighborhoods_list_cell
+      elements/meeting_card_cell
+      elements/meetings_list_cell
       elements/person_card_cell
       elements/users_table_cell
       elements/work_details_cell

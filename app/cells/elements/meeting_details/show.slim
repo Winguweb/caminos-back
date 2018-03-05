@@ -1,12 +1,12 @@
 .meeting-details-cell
   main
-    div  
-      = "Objectivos:"
-      p= meeting.objectives
-    div  
+    div
+      = "Objetivos:"
+      p= @meeting.objectives
+    div
       span
         = "Fecha de inicio:"
-        p= meeting.date
-      span  
+        p= @meeting.date
+      span
         = "Dirección:"
-        p= meeting.lookup_address
+        p= @meeting.lookup_address
