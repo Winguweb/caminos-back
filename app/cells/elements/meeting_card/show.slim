@@ -2,7 +2,7 @@
   article
     header
       h1
-        time = meeting.date
+        time = l(meeting.date, format: :day_and_day_of_week).titleize
       p
         span
           = meeting.lookup_address

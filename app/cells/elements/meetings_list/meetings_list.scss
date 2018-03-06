@@ -1,6 +1,11 @@
 @mixin meetings-list() {
   @include grid-collapse;
-  div {
+  > h2 {
+    @include grid-column(16);
+    @include type-setting(1);
+    margin-bottom: $vgutter;
+  }
+  > div {
     @include grid-column(1 of 3);
   }
 }

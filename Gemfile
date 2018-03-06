@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'activerecord-postgis-adapter'
 gem 'authlogic' # For User Authentication
+gem 'bcrypt' # Ruby binding for the OpenBSD bcrypt() password hashing algorithm
 gem 'bourbon' # A Lightweight Sass Tool Set
 gem 'browser' # Do some browser detection with Ruby
-gem 'activerecord-postgis-adapter'
-gem 'bcrypt' # Ruby binding for the OpenBSD bcrypt() password hashing algorithm
 gem 'cells-rails'
 gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
@@ -15,8 +15,9 @@ gem 'puma', '~> 3.0' # Use Puma as the app server
 gem 'rack-attack'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 5.0'
-gem 'redis-rails' # Use Redis for session and other stuff
+gem 'rails-i18n', '~> 5.1'
 gem 'redis-namespace' # Use Redis with namespace, like with Sidekiq
+gem 'redis-rails' # Use Redis for session and other stuff
 gem 'rgeo-geojson'
 gem 'role_model' # In order to use for Authorization
 gem 'sass-rails'

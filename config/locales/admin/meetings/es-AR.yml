@@ -1,0 +1,5 @@
+es-AR:
+  admin:
+    meetings:
+      index:
+        new_meeting: Nueva Reunión

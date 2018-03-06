@@ -13,3 +13,7 @@ es-AR:
     roles:
       ambassador: Embajador
       admin: Administrador
+  date:
+    formats:
+      period: "%B"
+      day_and_day_of_week: "%A %d"
