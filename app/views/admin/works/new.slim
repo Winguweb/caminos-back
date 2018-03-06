@@ -1,2 +1,54 @@
-.work_form
-  = render 'form'
+= content_for :main_header do
+  == cell('page/header', "Nueva Obra", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.works') ])
+= form_for ['admin', current_neighborhood, @work], html: { class: 'form' } do |f|
+
+  .page-section
+    section
+      == cell('section/header', t(".about_work"), links: [ {:title => t(".cancel"), :url => admin_neighborhood_works_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
+      .field
+        = f.label :name, t('.title')
+        = f.text_field :name
+      .field
+        = f.label :description, t('.description')
+        = f.text_area :description
+      .no-grid
+        .field
+          = f.label :name, t('.category')
+          = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
+        .field
+          = f.label :name, t('.status')
+          = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
+
+      .half-input
+        .field
+          = f.label :manager, t('.manager')
+          = f.text_field :manager
+
+        .field
+          = f.label :budget, t('.budget')
+          = f.text_field :budget
+
+        .field
+          = f.label :start_date, t('.start_date')
+          = f.date_field :start_date
+
+        .field
+          = f.label :estimated_end_date, t('.estimated_end_date')
+          = f.date_field :estimated_end_date
+
+      .two-thirds-one-third-input
+        .field
+          = f.label :execution_plan, t('.execution_plan')
+          = f.text_field :execution_plan
+
+        .field
+          = f.label :lookup_address, t('.lookup_address')
+          = f.text_field :lookup_address
+
+    section
+      == cell('section/header', "Ubicación en el mapa")
+
+    section
+      == cell('section/header', "Lista de documentos", buttons: @documents_list_button)
+      main
+        == cell('elements/documents_table', @documents_list)

@@ -30,9 +30,12 @@
         > li {
           @include flex-grow(1);
           text-align: right;
-          > a {
+          > a, > button {
             @include text-color($text-blue);
             margin-right: 0;
+            background: none;
+            border: none;
+            padding: 0;
             &:hover {
               @include text-color($text-blue);
             }

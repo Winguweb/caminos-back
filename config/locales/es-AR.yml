@@ -17,3 +17,7 @@ es-AR:
     formats:
       period: "%B"
       day_and_day_of_week: "%A %d"
+      slashes: "%d/%m/%y"
+  time:
+    formats:
+      slashes: "%d/%m/%y"

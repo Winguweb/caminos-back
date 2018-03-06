@@ -10,7 +10,11 @@ header
     ul.links
       - links.each do |link|
         li
-          = link_to link[:title], link[:url]
+          - if link[:url]
+            = link_to link[:title], link[:url]
+          - else
+            button
+              = link[:title]
   - if buttons
     div.buttons
       == cell('elements/button', collection: buttons)

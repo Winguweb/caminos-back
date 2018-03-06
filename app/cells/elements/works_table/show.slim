@@ -24,16 +24,15 @@
               img src= work.category_icon
           td
             a href='#'
-              p= work.category
-              p= work.name
-              p= work.lookup_address
+              span= work.category
+              span= work.name
+              span= work.lookup_address
 
           td
             a href='#'
-              span
-                p = work.status
+              span = work.status
 
           td
             a href='#'
-              span
-                p = work.updated_at
+              span= t('admin.works.index.updated_at')
+              span= l(work.updated_at, format: :slashes)

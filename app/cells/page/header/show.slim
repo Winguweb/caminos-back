@@ -10,9 +10,9 @@
         div.subtitle
           span
             = subtitle
-    - if links
-      .page-links
-        ul
-          - for link in links
-            li
-              a href=link[:href] = link[:title]
+  - if links
+    .page-links
+      ul
+        - for link in links
+          li
+            a href=link[:href] = link[:title]
