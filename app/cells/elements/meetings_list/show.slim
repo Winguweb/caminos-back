@@ -1,6 +1,8 @@
 .meetings-list-cell
   - meetings_by_months = meetings.group_by{ |meeting| meeting.date.beginning_of_month }
   - meetings_by_months.each do |beginning_of_month, period_meetings|
-    h2=l(beginning_of_month, format: :period).titleize
-    - period_meetings.each do |meeting|
-      == cell('elements/meeting_card', meeting)
+    section
+      div
+        h2=l(beginning_of_month, format: :period).titleize
+        - period_meetings.each do |meeting|
+          == cell('elements/meeting_card', meeting)
