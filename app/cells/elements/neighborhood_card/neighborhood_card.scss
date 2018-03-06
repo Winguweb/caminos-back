@@ -1,4 +1,5 @@
 @mixin neighborhood-card() {
+  @include grid-container;
   border: 2px solid $light-grey;
   border-radius: 6px;
   padding: $vgutter*2 $gutter;
@@ -46,6 +47,6 @@
     }
   }
 }
-.neighborhood-card-cell{
+.neighborhood-card-cell {
   @include neighborhood-card;
 }

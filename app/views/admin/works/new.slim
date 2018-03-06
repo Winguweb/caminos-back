@@ -46,9 +46,14 @@
           = f.text_field :lookup_address
 
     section
-      == cell('section/header', "Ubicación en el mapa")
+      == cell('section/header', t('.map_location'))
 
     section
-      == cell('section/header', "Lista de documentos", buttons: @documents_list_button)
-      main
-        == cell('elements/documents_table', @documents_list)
+      == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
+      == cell('elements/documents_table', [{title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'},])
+      a href='#' = t('.view_more')
+
+    section
+      == cell('section/header', t('.related_meetings'))
+      == cell('elements/meetings_list', [Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),], neighborhood: current_neighborhood)
+      a href='#' = t('.view_more')
