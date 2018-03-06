@@ -1,19 +1,17 @@
 @mixin meetings-list() {
+  @include grid-container;
+  border-bottom: 1px solid $light-grey;
+  padding-bottom: $vgutter * 2;
 
-  > section {
-    @include grid-container;
-    border-bottom: 1px solid $light-grey;
-    padding-bottom: $vgutter * 2;
+  > div {
+    @include grid-collapse;
+    > h2 {
+      @include grid-column(16);
+      @include type-setting(1);
+      margin-bottom: $vgutter;
+    }
     > div {
-      @include grid-collapse;
-      > h2 {
-        @include grid-column(16);
-        @include type-setting(1);
-        margin-bottom: $vgutter;
-      }
-      > div {
-        @include grid-column(1 of 3);
-      }
+      @include grid-column(1 of 3);
     }
   }
 }
