@@ -1,9 +1,9 @@
 @mixin meeting-card() {
-  border: 2px solid $light-grey;
-  border-radius: 6px;
-  padding: $vgutter*2 $gutter;
   margin-bottom: $vgutter*2;
   > article {
+    border: 2px solid $light-grey;
+    border-radius: 6px;
+    padding: $vgutter*2 $gutter;
     > header {
       > h1 {
         margin: 0;

@@ -3,11 +3,9 @@
   > section {
     @include grid-shift(3);
     @include grid-column(10);
-    // border-bottom: 1px solid $light-grey;
     margin-bottom: $vgutter*4;
     > header {
       @include grid-collapse;
-      @include grid-container;
       @include display(flex);
       @include align-items(flex-end);
       margin-bottom: $gutter;
@@ -16,7 +14,6 @@
         > h1 {
           @include type-setting(1);
           margin-top: 0;
-          // margin-bottom: $vgutter;
         }
         > div {
           @include grid-collapse;
@@ -30,7 +27,6 @@
       > ul {
         @include grid-column(3 of 10);
         @include display(flex);
-        // margin-bottom: $vgutter;
         > li {
           @include flex-grow(1);
           text-align: right;

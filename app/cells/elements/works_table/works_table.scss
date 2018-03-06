@@ -1,5 +1,5 @@
 @mixin works-table() {
-  @include grid-column(16);
+
   > table {
     > thead {
       > tr {

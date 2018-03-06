@@ -47,8 +47,8 @@ body > main {
 }
 
 main {
+  @include grid-column(16 of 16);
   .main-header, .main-section{
-    @include grid-column(16 of 16);
     @include grid-collapse;
   }
   .main-header{

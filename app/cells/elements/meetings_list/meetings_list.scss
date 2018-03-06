@@ -1,10 +1,9 @@
 @mixin meetings-list() {
-  @include grid-column(16);
+  @include grid-collapse;
+  div {
+    @include grid-column(1 of 3);
+  }
 }
 .meetings-list-cell {
   @include meetings-list;
-
-  & > div {
-    @include grid-column(1 of 3);
-  }
 }
