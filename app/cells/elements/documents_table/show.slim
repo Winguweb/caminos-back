@@ -16,7 +16,7 @@
                 option value="desc" Z-A
             th.sortable_author
               select#date onchange="authorChange()"
-                option value="" Subido por
+                option value="" Descripción
                 option value="asc"  Orden ascendente
                 option value="desc" Orden descendente
             th.sortable_date
@@ -30,8 +30,8 @@
           td
             i
           td
-            a href=document[:href] = document[:title]
+            a href=document[:href] = document[:name]
           td
-            a href=document[:href] = document[:author]
+            a href=document[:href] = document[:description]
           td
-            a href=document[:href] = document[:date]
+            a href=document[:href] = document[:created_at]

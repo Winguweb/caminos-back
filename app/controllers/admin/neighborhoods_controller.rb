@@ -3,7 +3,7 @@ module Admin
 
     def show
       load_neighborhood
-      # @documents = @neighborhood.document
+      @documents = @neighborhood.documents.all
     end
 
     def new

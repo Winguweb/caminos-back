@@ -15,8 +15,5 @@ class CreateDocuments < ActiveRecord::Migration[5.1]
     end
 
     add_index :documents, [:holder_type, :holder_id]
-
-    # doc = Document.create(name: 'Papeles barrio azul', description: 'Estos son los papeles del barrio azul', attachment_type: 'asset', attachment_source: 'http://lorempixel.com/400/200/cats', filetype: 'image/jpeg')
-
   end
 end
