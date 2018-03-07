@@ -1,0 +1,13 @@
+@mixin map() {
+  height: 400px;
+  > div {
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+.map-cell{
+  @include map();
+}
+
