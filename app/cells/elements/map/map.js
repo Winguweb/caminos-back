@@ -6,7 +6,10 @@ CDLV.Components['map'] = Backbone.View.extend({
     var map = L.mapbox.map(mapContainer[0], 'mapbox.streets')
 
     new L.Polygon(options.polygon).addTo(map)
-    new L.Marker(options.marker, {icon: L.mapbox.marker.icon({'marker-color': '#f86767'})}).addTo(map)
+
+    if (options.marker) {
+      new L.Marker(options.marker, {icon: L.mapbox.marker.icon({'marker-color': '#f86767'})}).addTo(map)
+    }
 
     var points = options.polygon.map(function(point) {
       return new L.Point(point[0], point[1])
@@ -16,6 +19,5 @@ CDLV.Components['map'] = Backbone.View.extend({
     var center = bounds.getCenter()
 
     map.setView([center.x, center.y], 14);
-    console.log(options.marker);
   }
 })

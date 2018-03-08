@@ -15,11 +15,11 @@ class Elements::MapCell < Cell::ViewModel
   end
 
   def marker
-    options[:work].geometry.coordinates
+    options[:work] ? options[:work].geometry.coordinates : 'null'
   end
 
   def geo_marker
-    options[:work].geo_geometry.coordinates
+    options[:work] ? options[:work].geo_geometry.coordinates : 'null'
   end
 
 end
