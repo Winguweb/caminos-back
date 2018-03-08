@@ -1,1 +1,76 @@
-h1="Caminos de la Villa"
+nav
+  .logo-usuario
+  .menu
+
+
+aside
+  div
+    section
+      header
+        h1="Elegí tu barrio"
+      section
+        header
+          h2="Barrios en proceso de urbanización"
+        nav
+          ol
+            li
+              p.number
+                span
+              div.content
+                h3="Villa 20"
+                span="Proceso de urbanización"
+                span="5%"
+                div.bar
+                  div style="width:5%;"
+            li
+              p.number
+                span
+              div.content
+                h3="Villa 31"
+                span="Proceso de urbanización"
+                span="52%"
+                div.bar
+                  div style="width:52%;"
+            li
+              p.number
+                span
+              div.content
+                h3="Villa Rodrigo Bueno"
+                span="Proceso de urbanización"
+                span="15%"
+                div.bar
+                  div style="width:15%;"
+            li
+              p.number
+                span
+              div.content
+                h3="Villa Playón Chacarita"
+                span="Proceso de urbanización"
+                span="20%"
+                div.bar
+                  div style="width:20%;"
+
+      section
+        header
+          h2="Otros barrios"
+        nav
+          ul
+            li
+              div
+                p="Calacita"
+            li
+              div
+                p="Villa 16"
+            li
+              div
+                p="Los Piletones"
+            li
+              div
+                p="Villa 17"
+            li
+              div
+                p="Ramón Carrillo"
+
+main
+  section
+    == cell('elements/map', @neighborhood)

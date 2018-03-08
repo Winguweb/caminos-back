@@ -9,11 +9,17 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     meta name="locale" content=I18n.locale.to_s
 
+
+
     = stylesheet_link_tag 'public', media: 'all'
+    = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css'
     = yield :css
     = csrf_meta_tags
 
-    body
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    = javascript_include_tag "https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js"
+
+    body id=body_id class=body_class
       main
         =yield
 
