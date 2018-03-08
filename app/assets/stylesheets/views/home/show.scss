@@ -166,7 +166,10 @@
                     > h3 {
                       @include text-color($text-black, 1);
                       @include type-setting(0);
+                      white-space: nowrap;
                       font-weight: bold;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
                     }
                     > span {
                       @include text-color($text-grey, 1);
