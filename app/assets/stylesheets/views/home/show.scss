@@ -1,9 +1,74 @@
 @mixin home() {
-  $navbar-height: 64px;
+  $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
   > main {
     height: 100%;
     > nav {
+      @include grid-container;
       height: $navbar-height;
+      overflow: auto;
+      > div:first-of-type {
+        @include grid-column(4);
+        padding: $vgutter 0;
+        > a {
+          display: inline-block;
+          width: 44px;
+          height: 35px;
+          background: transparent image-url("admin-logo.svg") no-repeat;
+          background-size: 100%;
+          margin: 0;
+          padding: 0px;
+          overflow: hidden;
+          span{
+            display: inline-block;
+            @include hide-text;
+          }
+        }
+      }
+      > ul {
+        @include grid-column(10);
+        @include grid-push(1);
+        text-align: center;
+        > li {
+          display: inline-block;
+          > a {
+            @include text-color($text-grey, 1);
+            @include type-setting(0);
+            display: block;
+            padding: $gutter $gutter*2;
+            border-bottom: 2px solid transparent;
+            text-align: center;
+            margin-right: 0;
+            &.active,
+            &:hover {
+              @include text-color($text-blue, 1);
+              border-bottom-color: color($text-blue, 1);
+            }
+          }
+        }
+      }
+      > div:nth-of-type(2) {
+        @include grid-column(1);
+        text-align: right;
+        > button {
+          @include grid-collapse;
+          width: auto;
+          padding: calc(#{$gutter} + 1px) $gutter ;
+          background: none;
+          border: none;
+          height: 100%;
+          span {
+            display: inline-block;
+            cursor: pointer;
+            background-image: url(/assets/icons/menu.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            width: 24px;
+            height: 14px;
+          }
+        }
+      }
     }
     > aside {
       @include grid-column(4, $no-gutter);
