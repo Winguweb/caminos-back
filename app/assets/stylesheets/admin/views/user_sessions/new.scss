@@ -1,4 +1,4 @@
-#user_sessions-new{
+#user_sessions-new {
   section {
     @include grid-column(8);
     @include grid-push(4);
@@ -7,21 +7,21 @@
       @include grid-column(1 of 1);
     }
   }
-  .signin-content{
+  .signin-content {
     @include grid-collapse;
     @include grid-container;
-    .email-input, .password-input{
+    .email-input, .password-input {
       @include grid-column(2 of 4);
     }
-    button{
+    button {
       margin-top: $gutter;
       @include grid-column(2 of 4);
       @include grid-push(1 of 4);
       @include button();
     }
   }
-  .email-input, .password-input{
-    label{
+  .email-input, .password-input {
+    label {
       display: block;
       @include type-setting(-1);
     }
