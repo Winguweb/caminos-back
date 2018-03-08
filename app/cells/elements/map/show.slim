@@ -1,0 +1,10 @@
+.map-cell
+  #map-container
+
+javascript:
+  $(function() {
+    new CDLV.Components['map']({
+      el: $('.map-cell'),
+      polygon: #{polygon}
+    })
+  });
