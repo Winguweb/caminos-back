@@ -106,7 +106,7 @@
                   position: relative;
                   $border: 2px;
                   $outer-diameter: 31px;
-                  $inner-diameter: $outer-diameter * 0.75;
+                  $inner-diameter: round($outer-diameter * 0.75);
                   counter-increment: step-counter;
                   &:hover {
                     background-color: color($light-grey, 0.3);
@@ -126,7 +126,7 @@
                     top: auto;
                     bottom: 0;
                   }
-                  > p.number {
+                  > p {
                     display: inline-block;
                     position: relative;
                     border-radius: 100%;
@@ -158,7 +158,7 @@
                       left: 50%;
                     }
                   }
-                  > div.content {
+                  > div {
                     display: inline-block;
                     width: calc(100% - #{$gutter*3} - #{$outer-diameter + $border*2});
                     padding: $gutter 0;
@@ -180,7 +180,7 @@
                       font-weight: bold;
                       float: right;
                     }
-                    > div.bar {
+                    > div {
                       width: 100%;
                       height: 4px;
                       border-radius: 4px;
