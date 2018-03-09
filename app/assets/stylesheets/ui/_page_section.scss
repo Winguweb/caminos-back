@@ -4,9 +4,8 @@
     @include grid-shift(3);
     @include grid-column(10);
     margin-bottom: $vgutter*4;
-    header {
+    > header {
       @include grid-collapse;
-      @include grid-container;
       @include display(flex);
       @include align-items(flex-end);
       margin-bottom: $gutter;
@@ -31,9 +30,12 @@
         > li {
           @include flex-grow(1);
           text-align: right;
-          > a {
+          > a, > button {
             @include text-color($text-blue);
             margin-right: 0;
+            background: none;
+            border: none;
+            padding: 0;
             &:hover {
               @include text-color($text-blue);
             }

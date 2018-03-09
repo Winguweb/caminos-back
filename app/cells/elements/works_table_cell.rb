@@ -3,11 +3,11 @@ class Elements::WorksTableCell < Cell::ViewModel
   private
 
   def works
-    @works ||= model[:works]
+    @works ||= model
   end
 
   def filters
-   @filters ||= model[:filters]
+   @filters ||= options[:filters]
   end
 
   def neighborhood

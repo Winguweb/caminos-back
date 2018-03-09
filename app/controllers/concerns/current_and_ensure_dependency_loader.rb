@@ -27,7 +27,7 @@ module CurrentAndEnsureDependencyLoader
           flash[:error] = I18n.t("errors.missing.#{model_name}")
         end
         flash.keep
-        redirect_to redirect_back(fallback_location: root_path) and return
+        redirect_back(fallback_location: root_path) and return
       end
     end
   end

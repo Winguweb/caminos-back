@@ -1,5 +1,7 @@
-h1 Reuniones del barrio #{current_neighborhood.name}
+= content_for :main_header do
+  == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
 
-section
-  .meetings-list
-    =render partial: "/partials/meetings", locals: { meetings: @meetings, neighborhood: current_neighborhood }
+div.page-section
+  section
+    == cell('section/header', "2017", buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_path }])
+    == cell('elements/meetings_list', @meetings, neighborhood: current_neighborhood)
