@@ -1,5 +1,7 @@
 .map-cell
   #map-container
+    input type="hidden" name="work[geometry]" class="geometry"
+    input type="hidden" name="work[geo_geometry]" class="geo_geometry"
 
 javascript:
   $(function() {
@@ -7,5 +9,6 @@ javascript:
       el: $('.map-cell'),
       polygon: #{polygon},
       marker: #{marker},
+      set_marker: #{set_marker},
     })
   });

@@ -23,9 +23,9 @@ module Admin
       service = CreateWork.call(current_neighborhood, work_params)
 
       if service.success?
-        redirect_to neighborhood_works_path
+        redirect_to admin_neighborhood_works_path
       else
-        redirect_to  new_neighborhood_work_path(current_neighborhood)
+        redirect_to new_admin_neighborhood_work_path(current_neighborhood)
       end
     end
 

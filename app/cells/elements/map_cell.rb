@@ -18,6 +18,10 @@ class Elements::MapCell < Cell::ViewModel
     options[:work] ? options[:work].geometry.coordinates : 'null'
   end
 
+  def set_marker
+    options[:set_marker] ? true : false
+  end
+
   def geo_marker
     options[:work] ? options[:work].geo_geometry.coordinates : 'null'
   end
