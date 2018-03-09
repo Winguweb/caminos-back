@@ -6,12 +6,14 @@ CDLV.Components['map'] = Backbone.View.extend({
     var map = L.mapbox.map(mapContainer[0], 'mapbox.streets')
     var input_geometry = this.$el.find('.geometry')
     var input_geo_geometry = this.$el.find('.geo_geometry')
-
+    var markers = options.markers
     new L.Polygon(options.polygon).addTo(map)
 
-    if (options.marker) {
-      new L.Marker(options.marker, {icon: L.mapbox.marker.icon({'marker-color': '#f86767'})}).addTo(map)
+
+    for (var marker of markers) {
+      new L.Marker(marker, {icon: L.mapbox.marker.icon({'marker-color': '#f86767'})}).addTo(map)
     }
+
 
     var points = options.polygon.map(function(point) {
       return new L.Point(point[0], point[1])
