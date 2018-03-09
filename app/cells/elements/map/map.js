@@ -10,7 +10,8 @@ CDLV.Components['map'] = Backbone.View.extend({
     new L.Polygon(options.polygon).addTo(map)
 
 
-    for (var marker of markers) {
+    for (var index in markers) {
+      var marker = markers[index]
       new L.Marker(marker, {icon: L.mapbox.marker.icon({'marker-color': '#f86767'})}).addTo(map)
     }
 
