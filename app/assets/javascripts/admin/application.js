@@ -3,6 +3,7 @@
 //
 // CELLS
 //= require users_table.js
+//= require map.js
 //
 // VIEWS
 //= require_tree ./views
