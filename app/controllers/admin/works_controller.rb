@@ -13,6 +13,7 @@ module Admin
     def new
       ensure_neighborhood; return if performed?
 
+      @categories = ['En proceso', 'Pendiente']
       @work = current_neighborhood.works.new
     end
 

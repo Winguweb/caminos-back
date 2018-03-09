@@ -1,0 +1,35 @@
+@mixin meeting-card() {
+  margin-bottom: $vgutter*2;
+  > article {
+    border: 2px solid $light-grey;
+    border-radius: 6px;
+    padding: $vgutter*2 $gutter;
+    > header {
+      > h1 {
+        margin: 0;
+        @include text-color($text-black, 1);
+        @include type-setting(1);
+      }
+      > p {
+        @include text-color($text-black, 1);
+        @include type-setting(-1);
+
+        &:before {
+          content: '';
+          position: relative;
+          top: 4px;
+          margin-right: $gutter;
+          background-image: url(/assets/icons/marker.svg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          width: 13px;
+          height: 17px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+.meeting-card-cell{
+  @include meeting-card;
+}

@@ -1,4 +1,31 @@
 @mixin inputs($color: $text-black, $bgcolor: $white, $bordercolor: rgba($grey, .8), $height: auto, $padding: $gutter/1.2 $gutter){
+  select {
+    @include box-sizing(border-box);
+    outline: none;
+    -webkit-appearance: none;
+    line-height: 1.2142em;
+    background: $bgcolor;
+    border: none;
+    border-bottom: 1px solid $light-grey;
+    color: $color;
+    border-radius: 0;
+    box-shadow: 0em 0em 0em 0em transparent inset;
+    -webkit-transition: color 0.1s ease, border-color 0.1s ease;
+    transition: color 0.1s ease, border-color 0.1s ease;
+    vertical-align: top;
+    background-image: url(/assets/icons/down-arrow.svg);
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center right;
+    &:focus{
+      border-color: $blue;
+    }
+    &.disabled{
+      background-color: lighten($light-grey, 5%);
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
   input {
     &:not([type]),
     &[type="date"],
@@ -19,7 +46,7 @@
       padding: $padding;
       font-size: 1em;
       background: $bgcolor;
-      border: 1px solid $bordercolor;
+      border: 1px solid $light-grey;
       color: $color;
       border-radius: 0.28571429rem;
       box-shadow: 0em 0em 0em 0em transparent inset;
@@ -38,7 +65,7 @@
       }
     }
   }
-  textarea{
+  textarea {
     @include box-sizing(border-box);
     margin: 0em;
     outline: none;
@@ -47,7 +74,7 @@
     padding: $padding;
     font-size: 1em;
     background: $bgcolor;
-    border: 1px solid $bordercolor;
+    border: 1px solid $light-grey;
     color: $color;
     border-radius: 0.28571429rem;
     box-shadow: 0em 0em 0em 0em transparent inset;
@@ -108,7 +135,7 @@
   }
   #{$selector}field {
     @include label;
-    margin-bottom: $gutter/2;
+    margin-bottom: $gutter;
   }
 }
 @mixin fields {

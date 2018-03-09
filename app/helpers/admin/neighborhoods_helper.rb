@@ -1,17 +1,16 @@
 module Admin
   module NeighborhoodsHelper
-
-    def header_links
+    def header_links(neighborhood)
       [
         {
           title: t('admin.links.neighborhoods.show.information'),
-          href: '#'
+          href: admin_neighborhood_path(neighborhood)
         },{
           title: t('admin.links.neighborhoods.show.works'),
-          href: '#'
+          href: admin_neighborhood_works_path(neighborhood)
         },{
           title: t('admin.links.neighborhoods.show.meetings'),
-          href: '#'
+          href: admin_neighborhood_meetings_path(neighborhood)
         },{
           title: t('admin.links.neighborhoods.show.agreement'),
           href: '#'

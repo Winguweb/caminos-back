@@ -1,5 +1,6 @@
 @mixin documents-table() {
-  @include grid-column(16);
+  margin-bottom: $gutter*2;
+  border-bottom: 1px solid $light-grey;
   > table {
     > thead {
       > tr {
