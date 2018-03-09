@@ -43,12 +43,7 @@ body{
 }
 
 body > main {
-  @include grid-container;
-  z-index: 10;
-}
-
-main {
-  @include grid-column(16 of 16);
+  @include grid-column(16);
   .main-header, .main-section{
     @include grid-collapse;
   }

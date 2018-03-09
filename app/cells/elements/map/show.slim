@@ -1,11 +1,14 @@
 .map-cell
   #map-container
+    input type="hidden" name="work[geometry]" class="geometry"
+    input type="hidden" name="work[geo_geometry]" class="geo_geometry"
 
 javascript:
   $(function() {
     new CDLV.Components['map']({
       el: $('.map-cell'),
       polygon: #{polygon},
-      marker: #{marker},
+      markers: #{markers},
+      set_marker: #{set_marker},
     })
   });
