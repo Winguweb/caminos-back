@@ -19,6 +19,21 @@
             }
           }
         }
+        &.half-input {
+          @include grid-collapse;
+          > div {
+            @include grid-column(1 of 2);
+          }
+        }
+        &.two-thirds-one-third-input {
+          @include grid-collapse;
+          > div {
+            @include grid-column(2 of 3);
+            & + div {
+              @include grid-column(1 of 3);
+            }
+          }
+        }
       }
     }
   }
