@@ -1,31 +1,58 @@
-== cell('page/header', @work.name, links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
-div.page-section
-  section
-    == cell('section/header', t(".about_work"), links: @section_header_links)
+= content_for :main_header do
+  == cell('page/header', "Nueva Obra", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.works') ])
+= form_for ['admin', current_neighborhood, @work], html: { class: 'form' } do |f|
 
-    h2= t(".title")
-    p
-    =@work.name
-    p
-    h2= t(".description")
-    p
-    =@work.description
-    p
-    =@work.start_date
-    p
-    =@work.end_date
-    p
-    =@work.estimated_end_date
-    p
-    =@work.budget
-    p
-    =@work.manager
-    p
-    =@work.execution_plan
-    p
-    h2= t(".location")
+  .page-section
+    section
+      == cell('section/header', t(".about_work"))
+      div
+        span = t('.title')
+        span = @work.name
+      div
+        span = t('.description')
+        span = @work.description
+      .half-input
+        div
+          span = t('.category')
+          span = @work.category
+        div
+          span = t('.status')
+          span = @work.status
+        div
+          span = t('.manager')
+          span = @work.manager
 
-    p
-    h2= t(".meetings")
-    p
-    =render partial: "/partials/meetings", locals: { meetings: @work.meetings, neighborhood: current_neighborhood }
+        div
+          span = t('.budget')
+          span = @work.budget
+
+        div
+          span = t('.start_date')
+          span = @work.start_date
+
+        div
+          span = t('.estimated_end_date')
+          span = @work.estimated_end_date
+
+      .two-thirds-one-third-input
+        div
+          span = t('.execution_plan')
+          span = @work.execution_plan
+
+        div
+          span = t('.lookup_address')
+          span = @work.lookup_address
+
+    section
+      == cell('section/header', t('.map_location'))
+      == cell('elements/map', current_neighborhood, work: @work)
+
+    section
+      == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
+      == cell('elements/documents_table', [{title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'},])
+      a href='#' = t('.view_more')
+
+    section
+      == cell('section/header', t('.related_meetings'))
+      == cell('elements/meetings_list', [Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),], neighborhood: current_neighborhood)
+      a href='#' = t('.view_more')

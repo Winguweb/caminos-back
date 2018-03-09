@@ -14,4 +14,12 @@ class Elements::MapCell < Cell::ViewModel
     model[:geo_polygon]
   end
 
+  def marker
+    options[:work] ? options[:work].geometry.coordinates : 'null'
+  end
+
+  def geo_marker
+    options[:work] ? options[:work].geo_geometry.coordinates : 'null'
+  end
+
 end

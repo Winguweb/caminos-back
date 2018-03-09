@@ -7,6 +7,10 @@ CDLV.Components['map'] = Backbone.View.extend({
 
     new L.Polygon(options.polygon).addTo(map)
 
+    if (options.marker) {
+      new L.Marker(options.marker, {icon: L.mapbox.marker.icon({'marker-color': '#f86767'})}).addTo(map)
+    }
+
     var points = options.polygon.map(function(point) {
       return new L.Point(point[0], point[1])
     })

@@ -20,19 +20,19 @@
       - works.each do |work|
         tr
           td
-            a href='#'
+            = link_to admin_neighborhood_work_path(id: work.id) do
               img src= work.category_icon
           td
-            a href='#'
+            = link_to admin_neighborhood_work_path(id: work.id) do
               span= work.category
               span= work.name
               span= work.lookup_address
 
           td
-            a href='#'
+            = link_to admin_neighborhood_work_path(id: work.id) do
               span = work.status
 
           td
-            a href='#'
+            = link_to admin_neighborhood_work_path(id: work.id) do
               span= t('admin.works.index.updated_at')
               span= l(work.updated_at, format: :slashes)

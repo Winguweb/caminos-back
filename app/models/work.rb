@@ -4,6 +4,7 @@ class Work < ApplicationRecord
   has_many :documents, as: :holder
 
 
+
   validates_presence_of :name,
     :description,
     :status,
