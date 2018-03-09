@@ -1,3 +1,265 @@
-#home-show{
-  
+@mixin home() {
+  $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+  > main {
+    height: 100%;
+    > nav {
+      @include grid-container;
+      height: $navbar-height;
+      overflow: auto;
+      > div:first-of-type {
+        @include grid-column(4);
+        padding: $vgutter 0;
+        > a {
+          display: inline-block;
+          width: 44px;
+          height: 35px;
+          background: transparent image-url("admin-logo.svg") no-repeat;
+          background-size: 100%;
+          margin: 0;
+          padding: 0px;
+          overflow: hidden;
+          span{
+            display: inline-block;
+            @include hide-text;
+          }
+        }
+      }
+      > ul {
+        @include grid-column(10);
+        @include grid-push(1);
+        text-align: center;
+        > li {
+          display: inline-block;
+          > a {
+            @include text-color($text-grey, 1);
+            @include type-setting(0);
+            display: block;
+            padding: $gutter $gutter*2;
+            border-bottom: 2px solid transparent;
+            text-align: center;
+            margin-right: 0;
+            &.active,
+            &:hover {
+              @include text-color($text-blue, 1);
+              border-bottom-color: color($text-blue, 1);
+            }
+          }
+        }
+      }
+      > div:nth-of-type(2) {
+        @include grid-column(1);
+        text-align: right;
+        > button {
+          @include grid-collapse;
+          width: auto;
+          padding: calc(#{$gutter} + 1px) $gutter ;
+          background: none;
+          border: none;
+          height: 100%;
+          span {
+            display: inline-block;
+            cursor: pointer;
+            background-image: url(/assets/icons/menu.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin: 0;
+            width: 24px;
+            height: 14px;
+          }
+        }
+      }
+    }
+    > aside {
+      @include grid-column(4, $no-gutter);
+      position: relative;
+      z-index: 1;
+      box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
+      height: calc(100% - #{$navbar-height});
+      border-right: 1px solid color($black, 0.1);
+      @include box-sizing(border-box);
+      > div {
+        @include grid-column(16);
+        > section {
+          > header {
+            h1 {
+              @include text-color($text-black, 1);
+              @include type-setting(1);
+              margin-bottom: $vgutter;
+              font-weight: 800;
+            }
+          }
+          > section:first-of-type {
+            > header {
+              h2 {
+                @include text-color($text-grey, 1);
+                @include type-setting(-1);
+                text-transform: uppercase;
+              }
+            }
+            > nav {
+              @include grid-collapse;
+              > ol {
+                cursor: pointer;
+                margin-bottom: $vgutter*4;
+                > li {
+                  position: relative;
+                  $border: 2px;
+                  $outer-diameter: 31px;
+                  $inner-diameter: round($outer-diameter * 0.75);
+                  counter-increment: step-counter;
+                  &:hover {
+                    background-color: color($light-grey, 0.3);
+                  }
+                  &::before,
+                  &::after {
+                    @include background-color($grey, 0.3);
+                    content: '';
+                    position: absolute;
+                    height: 1px;
+                    left: 0;
+                    right: 0;
+                    margin: 0 $gutter;
+                    top: 0;
+                  }
+                  &::after {
+                    top: auto;
+                    bottom: 0;
+                  }
+                  > p {
+                    display: inline-block;
+                    position: relative;
+                    border-radius: 100%;
+                    border: $border solid $blue;
+                    width: $outer-diameter;
+                    height: $outer-diameter;
+                    margin: $gutter;
+                    vertical-align: middle;
+                    &::before {
+                      content: '';
+                      display: block;
+                      border-radius: 100%;
+                      width: $inner-diameter;
+                      height: $inner-diameter;
+                      background-color: $blue;
+                      position: relative;
+                      top: #{($outer-diameter - $inner-diameter)/2};
+                      left: #{($outer-diameter - $inner-diameter)/2};
+                    }
+                    > span {
+                      &::before {
+                        content: counter(step-counter);
+                      }
+                      @include transform(translate3d(-50%, -50%, 0));
+                      @include text-color($white, 1);
+                      font-weight: bold;
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                    }
+                  }
+                  > div {
+                    display: inline-block;
+                    width: calc(100% - #{$gutter*3} - #{$outer-diameter + $border*2});
+                    padding: $gutter 0;
+                    vertical-align: middle;
+                    > h3 {
+                      @include text-color($text-black, 1);
+                      @include type-setting(0);
+                      white-space: nowrap;
+                      font-weight: bold;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }
+                    > span {
+                      @include text-color($text-grey, 1);
+                      @include type-setting(-1);
+                      margin-bottom: $vgutter/2;
+                    }
+                    > span + span {
+                      font-weight: bold;
+                      float: right;
+                    }
+                    > div {
+                      width: 100%;
+                      height: 4px;
+                      border-radius: 4px;
+                      background-color: $light-grey;
+                      overflow: hidden;
+                      > div {
+                        height: 100%;
+                        background-color: $blue;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+          > section + section {
+            > header {
+              > h2 {
+                @include text-color($text-grey, 1);
+                @include type-setting(-1);
+                border-bottom: 1px solid color($grey, 0.3);
+                text-transform: uppercase;
+                margin-bottom: $vgutter*2;
+              }
+            }
+            > nav {
+              > ul {
+                @include grid-collapse;
+                > li {
+                  cursor: pointer;
+                  margin: $vgutter/2 0;
+                  @include grid-column(1 of 2);
+                  > div {
+
+                    > p {
+                      @include type-setting(-1);
+                      white-space: nowrap;
+                      font-weight: bold;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    main {
+      @include grid-column(12, $no-gutter);
+      position: relative;
+      height: calc(100% - #{$navbar-height});
+      &::before {
+        @include box-sizing(border-box);
+        content: '';
+        position: absolute;
+        top:0;
+        width: 100%;
+        height: 20px;
+        box-shadow: inset 0 4px 4px color($light-shadow, 0.1);
+        border-top: 1px solid color($black, 0.1);
+        pointer-events: none;
+        z-index: 1;
+      }
+      section {
+        height: 100%;
+        .map-cell {
+          height: 100%;
+          > div {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+#home-show {
+  @include home();
 }
