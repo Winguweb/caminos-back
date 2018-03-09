@@ -1,6 +1,7 @@
 class Work < ApplicationRecord
   belongs_to :neighborhood
   has_and_belongs_to_many :meetings
+  has_many :documents, as: :holder
 
 
   validates_presence_of :name,
