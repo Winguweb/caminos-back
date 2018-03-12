@@ -1,5 +1,18 @@
 es-AR:
   admin:
     meetings:
+      form:
+        address: Dirección
+        cancel: Cancelar
+        date: Fecha
+        day_order: Orden del día
+        documents: Documentos
+        load_document: Cargar Documentos
+        load_user: Agregar Usuario
+        participantas: Participantes
+        save_changes: Guardar Cambios
+        works_relation: Obras Relacionadas
       index:
+        new_meeting: Cargar Reunión
+      new:
         new_meeting: Nueva Reunión

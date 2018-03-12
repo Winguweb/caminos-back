@@ -3,5 +3,5 @@
 
 div.page-section
   section
-    == cell('section/header', "2017", buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_path }])
+    == cell('section/header', "2017", buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_meeting_path }])
     == cell('elements/meetings_list', @meetings, neighborhood: current_neighborhood)
