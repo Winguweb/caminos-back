@@ -1,0 +1,16 @@
+nav.navbar-cell
+  div
+    button.should-hide type="button"
+      span
+    button.should-show type="button"
+      span
+  ul.should-show
+    li
+      = link_to admin_dashboard_path do
+        span="Obras"
+    li
+      = link_to admin_dashboard_path do
+        span="Acuerdo"
+    li
+      = link_to admin_dashboard_path do
+        span="Información"

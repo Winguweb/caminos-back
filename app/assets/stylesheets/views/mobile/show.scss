@@ -1,14 +1,25 @@
+// Rules for show/hide elements when menu is opened
+.opened {
+  overflow: hidden;
+  .should-show {
+    display: block !important;
+  }
+  .should-hide {
+    display: none !important;
+  }
+}
+
 @mixin mobile() {
   @include grid-column(16);
   > main {
     @include grid-collapse;
     height: 100%;
-    $aside-height: 200px;
     > div {
       height: 100%;
       main {
         @include grid-column(16, $no-gutter);
         position: relative;
+        // $aside-heigth defined at _variables.scss
         height: calc(100% - #{$aside-height});
         margin-bottom: $gutter*4;
         &::before {
@@ -29,61 +40,6 @@
             height: 100%;
             > div {
               border-radius: 0;
-            }
-          }
-        }
-      }
-      > nav {
-        @include grid-container;
-        height: $aside-height;
-        overflow: auto;
-        @include background-color($blue);
-        > div:first-of-type {
-          @include grid-column(16);
-          text-align: right;
-          > button {
-            @include grid-collapse;
-            width: auto;
-            padding: calc(#{$gutter} + 1px) $gutter ;
-            background: none;
-            border: none;
-            height: 100%;
-            span {
-              display: inline-block;
-              cursor: pointer;
-              background-image: url(/assets/icons/menu-white.svg);
-              background-repeat: no-repeat;
-              background-position: center;
-              background-size: cover;
-              margin: 0;
-              width: 24px;
-              height: 14px;
-            }
-          }
-        }
-        > ul {
-          @include background-color($white, 0.95);
-          display: none;
-          position: absolute;
-          left: 0;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          z-index: 2000;
-          padding-top: $gutter*4;
-          > li {
-            > a {
-              @include text-color($text-black, 1);
-              @include type-setting(0);
-              display: block;
-              padding: $gutter $gutter*2;
-              border-bottom: 2px solid transparent;
-              margin-right: 0;
-              &.active,
-              &:hover {
-                @include text-color($text-blue, 1);
-                border-bottom-color: color($text-blue, 1);
-              }
             }
           }
         }

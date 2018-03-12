@@ -1,18 +1,5 @@
 div
-  nav
-    div
-      button type="button"
-        span
-    ul
-      li
-        = link_to admin_dashboard_path do
-          span="Obras"
-      li
-        = link_to admin_dashboard_path do
-          span="Acuerdo"
-      li
-        = link_to admin_dashboard_path do
-          span="Información"
+  == cell('mobile_elements/navbar')
 
   main
     section
