@@ -1,8 +1,8 @@
 div
   nav
     div
-      = link_to admin_dashboard_path do
-        span 'Caminos de la Villa'
+      button type="button"
+        span
     ul
       li
         = link_to admin_dashboard_path do
@@ -13,10 +13,10 @@ div
       li
         = link_to admin_dashboard_path do
           span="Información"
-    div
-      button type="button"
-        span
 
+  main
+    section
+      == cell('elements/map', @neighborhoods.first, works: @neighborhoods.first.works)
   aside
     div
       section
@@ -54,6 +54,3 @@ div
                   div
                     p=neighborhood.name
 
-  main
-    section
-      == cell('elements/map', @neighborhoods.first, works: @neighborhoods.first.works)

@@ -1,18 +1,17 @@
 class HomeController < ApplicationController
 
   def show
-    load_works
-    load_neighborhood
+    load_neighborhoods
+  end
+
+  def mobile
+    load_neighborhoods
   end
 
   private
 
-  def load_neighborhood
-    @neighborhood = Neighborhood.first
-  end
-
-  def load_works
-    @works = Work.all
+  def load_neighborhoods
+    @neighborhoods = Neighborhood.all
   end
 
 end
