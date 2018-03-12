@@ -56,5 +56,5 @@
 
     section
       == cell('section/header', t('.related_meetings'))
-      == cell('elements/meetings_list', [Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),Meeting.new({date: Date.new, lookup_address: 'Av. Rivadavia 1234'}),], neighborhood: current_neighborhood)
+      == cell('elements/meetings_list', current_neighborhood.meetings, neighborhood: current_neighborhood)
       a href='#' = t('.view_more')
