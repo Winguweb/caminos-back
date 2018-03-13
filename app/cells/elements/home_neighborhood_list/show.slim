@@ -1,0 +1,13 @@
+.home-neighborhood-list-cell
+  ol
+    - neighborhoods.each do |neighborhood|
+      li
+        a href="?neighborhood=#{neighborhood.id}"
+          p
+            span
+          div 
+            h3=neighborhood.name
+            span="Proceso de urbanización"
+            span="#{Random.rand(100)}%"
+            div
+              div style="width:#{Random.rand(100)}%;"

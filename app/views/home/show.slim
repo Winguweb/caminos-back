@@ -26,18 +26,7 @@ div
           header
             h2="Barrios en proceso de urbanización"
           nav
-            ol
-              - @neighborhoods.each do |neighborhood|
-                li
-                  a href="?neighborhood=#{neighborhood.id}"
-                    p
-                      span
-                    div 
-                      h3=neighborhood.name
-                      span="Proceso de urbanización"
-                      span="#{Random.rand(100)}%"
-                      div
-                        div style="width:#{Random.rand(100)}%;"
+            == cell('elements/home_neighborhood_list', @neighborhoods)
         section
           header
             h2="Otros barrios"
