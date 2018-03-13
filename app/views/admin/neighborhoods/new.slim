@@ -15,6 +15,9 @@
         .field.lookup_address
           = form.label :lookup_address, t('.lookup_address')
           = form.text_field :lookup_address
+        .field.map
+          == cell('section/header', t('.map_location'))
+          == cell('elements/map', {} ,set_polygon: true)
       .actions
         = form.submit t('.create')
 

@@ -1,7 +1,7 @@
 .map-cell
   #map-container
-    input type="hidden" name="work[geometry]" class="geometry"
-    input type="hidden" name="work[geo_geometry]" class="geo_geometry"
+    input type="hidden" name="#{object_to_set}[#{map_property}]" class="geometry"
+    input type="hidden" name="#{object_to_set}[#{map_geo_property}]" class="geo_geometry"
 
 javascript:
   $(function() {
@@ -10,5 +10,6 @@ javascript:
       polygon: #{polygon},
       markers: #{markers},
       set_marker: #{set_marker},
+      set_polygon: #{set_polygon},
     })
   });
