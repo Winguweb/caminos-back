@@ -1,6 +1,8 @@
 es-AR:
   admin:
     meetings:
+      edit: 
+        edit_meeting: Editar Reunión
       form:
         address: Dirección
         cancel: Cancelar
