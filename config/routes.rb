@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
     root to: 'home#show'
 
+    get '/mobile', action: :mobile, controller: :home
+
+
   # ╭─ Public Accesible URL's / Path's
     get '/components', action: :index, controller: :components
     get '/admin', to: redirect('/admin/dashboard')

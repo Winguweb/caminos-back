@@ -7,14 +7,17 @@ CDLV.Components['map'] = Backbone.View.extend({
     var input_geometry = this.$el.find('.geometry')
     var input_geo_geometry = this.$el.find('.geo_geometry')
     var markers = options.markers
-    new L.Polygon(options.polygon).addTo(map)
 
+    /*Esto deshabilita el pan en el mapa
+    si el dispositivo cuenta con el evento touch*/
+    if ($('html').hasClass('touchevents')) {map.dragging.disable()}
+
+    new L.Polygon(options.polygon).addTo(map)
 
     for (var index in markers) {
       var marker = markers[index]
       new L.Marker(marker, {icon: L.mapbox.marker.icon({'marker-color': '#f86767'})}).addTo(map)
     }
-
 
     var points = options.polygon.map(function(point) {
       return new L.Point(point[0], point[1])
@@ -33,7 +36,7 @@ CDLV.Components['map'] = Backbone.View.extend({
     var bounds = new L.Bounds(points)
     var center = bounds.getCenter()
 
-    map.setView([center.x, center.y], 14);
+    map.setView([center.x, center.y], 14)
   }
 })
 

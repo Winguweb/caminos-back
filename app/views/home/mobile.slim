@@ -1,22 +1,9 @@
 div
-  nav
-    div
-      = link_to admin_dashboard_path do
-        span 'Caminos de la Villa'
-    ul
-      li
-        = link_to admin_dashboard_path do
-          span="Obras"
-      li
-        = link_to admin_dashboard_path do
-          span="Acuerdo"
-      li
-        = link_to admin_dashboard_path do
-          span="Información"
-    div
-      button type="button"
-        span
+  == cell('mobile_elements/navbar')
 
+  main
+    section
+      == cell('elements/map', @neighborhoods.first, works: @neighborhoods.first.works)
   aside
     div
       section
@@ -54,6 +41,3 @@ div
                   div
                     p=neighborhood.name
 
-  main
-    section
-      == cell('elements/map', @neighborhoods.first, works: @neighborhoods.first.works)
