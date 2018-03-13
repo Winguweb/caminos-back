@@ -16,3 +16,9 @@ es-AR:
         new_meeting: Cargar Reunión
       new:
         new_meeting: Nueva Reunión
+      show:
+        download_minute: Descargar Minuta
+        edit: Editar
+        meeting: Reunión %{date}
+        meetings: Reuniones
+        upload_by: Subido por %{user} el %{date}
