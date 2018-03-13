@@ -132,7 +132,7 @@
                       top: auto;
                       bottom: 0;
                     }
-                    > p {
+                    >a > p {
                       display: inline-block;
                       position: relative;
                       border-radius: 100%;
@@ -164,7 +164,7 @@
                         left: 50%;
                       }
                     }
-                    > div {
+                    > a > div {
                       display: inline-block;
                       width: calc(100% - #{$gutter*3} - #{$outer-diameter + $border*2});
                       padding: $gutter 0;
