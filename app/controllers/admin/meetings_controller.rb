@@ -15,6 +15,7 @@ module Admin
 
       @meeting = current_neighborhood.meetings.new
       @works = current_neighborhood.works
+      @users = User.all
     end
 
     def create
@@ -69,6 +70,7 @@ module Admin
         :organizer,
         :participants,
         :lookup_address,
+        users: [], 
         works: []
        )
     end

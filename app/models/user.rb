@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   belongs_to :entity, polymorphic: true, optional: true
+  has_and_belongs_to_many :meetings
 
   AVAILABLE_ROLES = [:admin, :ambassador].freeze
   private_constant :AVAILABLE_ROLES
