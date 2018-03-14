@@ -4,9 +4,7 @@ class Meeting < ApplicationRecord
   has_many :documents, as: :holder
 
   validates_presence_of :date,
-    :objectives,
-    :organizer,
-    :participants
+    :objectives
 end
 
 

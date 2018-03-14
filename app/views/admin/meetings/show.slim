@@ -1,17 +1,10 @@
-h1 = t('.meeting_date', date: @meeting.date)
-p
-= link_to t('.edit'), edit_neighborhood_meeting_path
-p
-=@meeting.objectives
+= content_for :main_header do
+  == cell('page/header', "Nueva Obra", breadcrumbs: [ current_neighborhood.name, t('.meetings') ])
 
-p
-=@meeting.minute
-
-p
-=@meeting.organizer
-p
-=@meeting.participants
-
-
-h2 Obras relacionadas
-== cell('elements/works_table', @meeting.works, neighborhood: current_neighborhood)
+.page-section
+  section
+    == cell('section/header', t('.meeting', date: @meeting.date.to_date),  subtitle: t('.upload_by',user: "Facundo Pérez" ,date: @meeting.created_at.to_date), links: [ {:title => t(".download_minute"), :url => edit_admin_neighborhood_meeting_path}])
+    main
+      section
+        == cell('elements/map', current_neighborhood)
+    == cell('section/header',"", links: [ {:title => t(".edit"), :url => edit_admin_neighborhood_meeting_path},])

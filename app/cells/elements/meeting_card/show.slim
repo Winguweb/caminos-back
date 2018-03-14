@@ -1,8 +1,9 @@
 .meeting-card-cell
-  article
-    header
-      h1
-        time = l(meeting.date, format: :day_and_day_of_week).titleize
-      p
-        span
-          = meeting.lookup_address
+  a href=admin_neighborhood_meeting_path(meeting.neighborhood, meeting)
+    article
+      header
+        h1
+          time = l(meeting.date, format: :day_and_day_of_week).titleize
+        p
+          span
+            = meeting.lookup_address
