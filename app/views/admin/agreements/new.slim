@@ -1,11 +1,10 @@
 = content_for :main_header do
   == cell('page/header', "", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
 
-= form_for ['admin', current_neighborhood, @agreement], html: { class: 'form' } do |f|
-  
+= form_for @agreement, url: admin_neighborhood_agreement_path, html: { class: 'form' } do |f| 
   .page-section
     section
-      == cell('section/header', t(".indicators"), links: [ {:title => t(".cancel"), :url => admin_neighborhood_agreements_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
+      == cell('section/header', t(".indicators"), links: [ {:title => t(".cancel"), :url => admin_neighborhood_agreement_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
       - @indicators.keys.each do |indicator|
         .field
           h1=@indicators[indicator][:title]
@@ -16,6 +15,3 @@
            
             .field
               =select("data[#{indicator}]", "questions[#{question}]", @indicators[indicator][:questions][question][:answers], {include_blank: true})
-
-          
-

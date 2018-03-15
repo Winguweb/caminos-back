@@ -13,7 +13,7 @@ module Admin
           href: admin_neighborhood_meetings_path(neighborhood)
         },{
           title: t('admin.links.neighborhoods.show.agreement'),
-          href: '#'
+          href: admin_neighborhood_agreement_path(neighborhood)
         },{
           title: t('admin.links.neighborhoods.show.activity'),
           href: '#'

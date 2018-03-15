@@ -1,13 +1,12 @@
 module Admin
   class AgreementsController < BaseController
     include CurrentAndEnsureDependencyLoader
-
     helper_method :current_neighborhood
 
     def show
       ensure_neighborhood; return if performed?
       load_agreement
-      @data = eval(@agreement.data)
+      @data = eval(@agreement.data) if !@agreement.nil?
     end
 
     def new
@@ -21,9 +20,9 @@ module Admin
       service = CreateAgreement.call(current_neighborhood, params[:data])
 
       if service.success?
-        redirect_to admin_neighborhood_agreements_path
+        redirect_to admin_neighborhood_agreement_path
       else
-        redirect_to new_admin_neighborhood_agreement_path(current_neighborhood)
+        redirect_to admin_neighborhood_agreement_new_path(current_neighborhood)
       end
     end
 
@@ -31,7 +30,8 @@ module Admin
       ensure_neighborhood; return if performed?
 
       @agreement = current_neighborhood.agreement
-      @data = eval(@agreement.data)
+      @data = eval(@agreement.data) if !@agreement.nil?
+
     end
 
 
