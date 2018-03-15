@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20180315160126) do
   create_table "agreements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
     t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["neighborhood_id"], name: "index_agreements_on_neighborhood_id"
   end
 
