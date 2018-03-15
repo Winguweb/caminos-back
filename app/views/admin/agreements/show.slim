@@ -1,0 +1,15 @@
+= content_for :main_header do
+  == cell('page/header', current_neighborhood.name, breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+
+div.page-section
+  section
+    - @data.keys.each do |indicator|
+      div
+        h1= Agreement.indicators[indicator][:title]
+        =@data[indicator][:score]
+        -@data[indicator][:answers].keys.each do |question|
+          div
+            = Agreement.indicators[indicator][:questions][question][:title]
+            div
+              =@data[indicator][:answers][question]
+           
