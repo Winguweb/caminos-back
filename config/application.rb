@@ -45,7 +45,6 @@ module CaminosBack
       elements/button_cell
       elements/description_cell
       elements/documents_table_cell
-      elements/home_neighborhood_list_cell
       elements/map_cell
       elements/meeting_details_cell
       elements/neighborhood_card_cell
