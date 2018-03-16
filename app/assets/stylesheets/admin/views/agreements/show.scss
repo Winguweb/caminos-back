@@ -62,18 +62,30 @@
       }
     
       > aside  {
-        .two-thirds-one-third-input > div {
-          @include grid-container;
-          margin-bottom: $vgutter*2;
-          > span:first-of-type {
-            @include type-setting(-1);
-            display: block;
-            color: $grey;
-            margin-bottom: $gutter/7;
-            text-transform: none;
+        @include grid-container;
+       
+        .two-thirds-one-third-input {
+          > div:nth-of-type(1) {
+            color: $text-black;
           }
-          > span + span {
-            display: block;
+          > div:nth-of-type(2) {
+            color: $text-grey;
+          }
+          > div {
+            @include grid-container;
+            color: $text-black;
+            margin-bottom: $vgutter*2;
+            > span:first-of-type {
+              @include type-setting(-1);
+              display: block;
+              
+              margin-bottom: $gutter/7;
+              text-transform: none;
+            }
+            
+            > span + span {
+              display: block;
+            }
           }
         }
       }
