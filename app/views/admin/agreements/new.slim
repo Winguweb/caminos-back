@@ -6,12 +6,19 @@
     section
       == cell('section/header', t(".indicators"), links: [ {:title => t(".cancel"), :url => admin_neighborhood_agreement_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
       - @indicators.keys.each do |indicator|
-        .field
-          h1=@indicators[indicator][:title]
-          .field
-            input type="text" name="data[#{indicator}]score"
-          -@indicators[indicator][:questions].keys.each do |question|
-            = @indicators[indicator][:questions][question][:title]
-           
-            .field
-              =select("data[#{indicator}]", "questions[#{question}]", @indicators[indicator][:questions][question][:answers], {include_blank: true})
+        article
+          header
+            h1=@indicators[indicator][:title]
+          main
+            input type="number" name="data[#{indicator}]score" required="true" min="0" max="100"
+          aside
+            -@indicators[indicator][:questions].keys.each do |question|
+              .two-thirds-one-third-input
+                div
+                  = @indicators[indicator][:questions][question][:title]
+                div
+                  select name="data[#{indicator}[questions[#{question}]]]" required="true" 
+                    option value=""
+                    -@indicators[indicator][:questions][question][:answers].each do |answer|
+                      option value="#{answer}" = answer
+         

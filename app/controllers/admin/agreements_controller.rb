@@ -22,7 +22,7 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_agreement_path
       else
-        redirect_to admin_neighborhood_agreement_new_path(current_neighborhood)
+        redirect_to new_admin_neighborhood_agreement_path
       end
     end
 

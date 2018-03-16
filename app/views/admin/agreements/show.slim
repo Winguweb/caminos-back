@@ -16,13 +16,6 @@ div.page-section
               div
               div style="width:#{@data[indicator][:score]}%;"
             div
-          / -@data[indicator][:answers].keys.each do |question|
-          /   aside
-              
-          /     div 
-          /       = Agreement.indicators[indicator][:questions][question][:title]
-          /     div
-          /       = @data[indicator][:answers][question]
           aside
             -@data[indicator][:answers].keys.each do |question|
               .two-thirds-one-third-input
@@ -31,13 +24,3 @@ div.page-section
 
                 div
                   span = @data[indicator][:answers][question] 
-
-        /     aside
-        /       .two-thirds-one-third-input
-        /         div
-        /           = Agreement.indicators[indicator][:questions][question][:title]
-        /         div
-        /           =@data[indicator][:answers][question]
-        /     br
-        /   br
-        / br
