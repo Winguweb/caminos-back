@@ -5,11 +5,23 @@ div.page-section
     == cell('section/header', t('.agreement'), buttons: [{title: t('.new_agreement'), url: admin_neighborhood_agreement_new_path }])
     - if !@agreement.nil?
       - @data.keys.each do |indicator|
-        div
-          h1= Agreement.indicators[indicator][:title]
-          =@data[indicator][:score]
-          -@data[indicator][:answers].keys.each do |question|
+        article
+          header
+            h1= Agreement.indicators[indicator][:title]
+          main
+            p
+              span
+                = "#{@data[indicator][:score]}/100"
             div
-              = Agreement.indicators[indicator][:questions][question][:title]
               div
-                =@data[indicator][:answers][question]
+              div style="width:#{@data[indicator][:score]}%;"
+            div
+          -@data[indicator][:answers].keys.each do |question|
+            aside
+              .two-thirds-one-third-input
+                div
+                  = Agreement.indicators[indicator][:questions][question][:title]
+                div
+                  =@data[indicator][:answers][question]
+            br
+          br

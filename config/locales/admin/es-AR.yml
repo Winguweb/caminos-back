@@ -24,3 +24,6 @@ es-AR:
         edit: Editar
         title: Título
         description: Descripción
+    agreements:
+      show:
+        agreement: Indicadores para la medición del Acuerdo de Urbanización
