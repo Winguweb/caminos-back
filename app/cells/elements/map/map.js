@@ -5,7 +5,7 @@ CDLV.Components['map'] = Backbone.View.extend({
     var center = {x: -34.6083, y: -58.3712}
     var default_zoom = 10
     var mapContainer = this.$el.find('#map-container')
-    var map = L.mapbox.map(mapContainer[0], 'mapbox.streets', /*{drawControl: true}*/)
+    var map = L.mapbox.map(mapContainer[0], 'mapbox.streets')
     var input_geometry = this.$el.find('.geometry')
     var input_geo_geometry = this.$el.find('.geo_geometry')
     var markers = options.markers
@@ -39,7 +39,7 @@ CDLV.Components['map'] = Backbone.View.extend({
           marker: false
         },
       };
-    
+
       var drawControl = new L.Control.Draw(controls);
       map.addControl(drawControl);
 
@@ -71,17 +71,17 @@ CDLV.Components['map'] = Backbone.View.extend({
       new L.Polygon(options.polygon).addTo(map)
       var copypoint = options.polygon;
       var new_polygon_points = []
-      
+
       for (var i in copypoint) {
         var point = copypoint[i];
         new_polygon_points.push(point[1] + " " + point[0]);
 
       }
       var new_polygon_points_string =  new_polygon_points.join(', ');
-      
+
       new_polygon_string = "POLYGON" + " ((" + new_polygon_points_string +  "))"
       console.log(new_polygon_string);
-     
+
 
       input_geometry.val(new_polygon_string)
       input_geo_geometry.val(new_polygon_string)
