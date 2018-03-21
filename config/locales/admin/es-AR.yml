@@ -25,5 +25,15 @@ es-AR:
         title: Título
         description: Descripción
     agreements:
+      edit:
+        cancel: Cancelar
+        indicators: Indicadores
+        save_changes: Guardar Cambios
+      new:
+        cancel: Cancelar
+        indicators: Indicadores
+        save_changes: Guardar Cambios
       show:
         agreement: Indicadores para la medición del Acuerdo de Urbanización
+        new_agreement: Crear Acuerdo
+        edit_agreement: Editar Acuerdo
