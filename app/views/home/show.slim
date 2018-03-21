@@ -27,43 +27,17 @@ div
             h2="Barrios en proceso de urbanización"
           nav
             ol
-              li
-                p
-                  span
-                div
-                  h3="Villa 20"
-                  span="Proceso de urbanización"
-                  span="5%"
-                  div
-                    div style="width:5%;"
-              li
-                p
-                  span
-                div
-                  h3="Villa 31"
-                  span="Proceso de urbanización"
-                  span="52%"
-                  div
-                    div style="width:52%;"
-              li
-                p
-                  span
-                div
-                  h3="Villa Rodrigo Bueno"
-                  span="Proceso de urbanización"
-                  span="15%"
-                  div
-                    div style="width:15%;"
-              li
-                p
-                  span
-                div
-                  h3="Villa Playón Chacarita"
-                  span="Proceso de urbanización"
-                  span="20%"
-                  div
-                    div style="width:20%;"
-
+              - @neighborhoods.each do |neighborhood|
+                li
+                  a href="?neighborhood=#{neighborhood.id}"
+                    p
+                      span
+                    div 
+                      h3=neighborhood.name
+                      span="Proceso de urbanización"
+                      span="#{Random.rand(100)}%"
+                      div
+                        div style="width:#{Random.rand(100)}%;"
         section
           header
             h2="Otros barrios"

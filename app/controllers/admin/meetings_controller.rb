@@ -23,9 +23,9 @@ module Admin
       service = CreateMeeting.call(current_neighborhood, meeting_params)
 
       if service.success?
-        redirect_to neighborhood_meetings_path
+        redirect_to admin_neighborhood_meetings_path
       else
-        redirect_to new_neighborhood_meeting_path(current_neighborhood)
+        redirect_to new_admin_neighborhood_meeting_path(current_neighborhood)
       end
     end
 
