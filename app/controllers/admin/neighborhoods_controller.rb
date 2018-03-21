@@ -30,9 +30,9 @@ module Admin
       service = UpdateNeighborhood.call(@neighborhood, neighborhood_params)
 
       if service.success?
-        redirect_to neighborhood_path(@neighborhood)
+        redirect_to admin_neighborhood_path(@neighborhood)
       else
-        redirect_to edit_neighborhood_path(@neighborhood)
+        redirect_to edit_admin_neighborhood_path(@neighborhood)
       end
     end
 
