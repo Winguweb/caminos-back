@@ -45,21 +45,22 @@ CDLV.Components['map'] = Backbone.View.extend({
 
     if (options.polygon.length > 0) {
       new L.Polygon(options.polygon).addTo(map)
-      // var copypoint = option.polygon;
-      // var x;
-      // for(x = 0; x < copypoint.length; x++)
-      // {
-      //     vertices[x].replace(', ', ' ');
-      // }
+      var copypoint = options.polygon;
+      var new_polygon_points = []
+      
+      for (var i in copypoint) {
+          var point = copypoint[i];
+          new_polygon_points.push(point[1] + " " + point[0]);
 
-      // var new_polygon_points_string = options.polygon.join(', ')
-      //     new_polygon_string = "POLYGON" + " ((" + new_polygon_points_string +  "))"
-      // console.log(new_polygon_string);
-      // console.log(copypoint);
-      // console.log(new_polygon_points_string);
+      }
+      var new_polygon_points_string =  new_polygon_points.join(', ');
+      
+      new_polygon_string = "POLYGON" + " ((" + new_polygon_points_string +  "))"
+      console.log(new_polygon_string);
+     
 
-      // input_geometry.val(new_polygon_string)
-      // input_geo_geometry.val(new_polygon_string)
+      input_geometry.val(new_polygon_string)
+      input_geo_geometry.val(new_polygon_string)
       var points = options.polygon.map(function(point) {
         return new L.Point(point[0], point[1])
       })

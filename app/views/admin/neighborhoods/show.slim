@@ -3,7 +3,7 @@
 
 div.page-section
   section.with-border
-    == cell('section/header', t('.about_neighborhood', neighborhood: @neighborhood.name ), links: [{title:t('.edit'), href:'#'}])
+    == cell('section/header', t('.about_neighborhood', neighborhood: @neighborhood.name ), links: [{title:t('.edit'), href:edit_admin_neighborhood_path(@neighborhood)}])
     .content
       == cell('elements/description', text: @neighborhood.description)
 
