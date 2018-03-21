@@ -50,9 +50,9 @@ module Admin
       service = UpdateWork.call(@work, work_params)
 
       if service.success?
-        redirect_to neighborhood_work_path(@work)
+        redirect_to admin_neighborhood_work_path
       else
-        redirect_to edit_neighborhood_work_path(@work)
+        redirect_to edit_admin_neighborhood_work_path(@work)
       end
     end
 
