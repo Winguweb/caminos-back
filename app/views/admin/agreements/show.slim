@@ -1,0 +1,26 @@
+= content_for :main_header do
+  == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+div.page-section
+  section
+    == cell('section/header', t('.agreement'), buttons: [{title: t('.new_agreement'), url: new_admin_neighborhood_agreement_path }])
+    - if !@agreement.nil?
+      - @data.keys.each do |indicator|
+        article
+          header
+            h1= Agreement.indicators[indicator][:title]
+          main
+            p
+              span
+                = "#{@data[indicator][:score]}/100"
+            div
+              div
+              div style="width:#{@data[indicator][:score]}%;"
+            div
+          aside
+            -@data[indicator][:answers].keys.each do |question|
+              .two-thirds-one-third-input
+                div
+                  span  = Agreement.indicators[indicator][:questions][question][:title]
+
+                div
+                  span = @data[indicator][:answers][question] 

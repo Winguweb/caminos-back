@@ -3,6 +3,6 @@ class Neighborhood < ApplicationRecord
   has_many :users, as: :entity
   has_many :works
   has_many :documents, as: :holder
-
+  has_one :agreement
   validates_presence_of :name, :description
 end
