@@ -3,10 +3,34 @@ module Admin
     include CurrentAndEnsureDependencyLoader
     helper_method :current_neighborhood
 
+    def edit
+      ensure_neighborhood; return if performed?
+      load_agreement
+      @indicators = Agreement.indicators
+      
+      @data = eval(@agreement.data) if !@agreement.data.nil?
+      
+
+    end
+
+    def update
+      ensure_neighborhood; return if performed?
+      load_agreement
+      service = UpdateAgreement.call(current_neighborhood, params[:data],@agreement)
+      if service.success?
+        redirect_to admin_neighborhood_agreement_path
+      else
+        redirect_to edit_admin_neighborhood_agreement_path
+      end
+    end
+
     def show
       ensure_neighborhood; return if performed?
       load_agreement
-      @data = eval(@agreement.data) if !@agreement.nil?
+      if !@agreement.nil?
+        @data = eval(@agreement.data) if !@agreement.data.nil?
+      end
+
     end
 
     def new
