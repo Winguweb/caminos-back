@@ -13,7 +13,6 @@ class UpdateMeeting
   private
 
   def update_meeting
-    
     @meeting.update(meeting_params)
     return @meeting if @meeting.save
     errors.add_multiple_errors(@meeting.errors.messages) && nil
@@ -28,5 +27,3 @@ class UpdateMeeting
   end
 
 end
-
-

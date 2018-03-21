@@ -13,7 +13,7 @@ class CreateNeighborhood
 
   def create_neighborhood
     neighborhood = Neighborhood.new(@allowed_params)
-
+    neighborhood.agreement = Agreement.new
     return neighborhood if neighborhood.save
 
     errors.add_multiple_errors(neighborhood.errors.messages) && nil

@@ -2,8 +2,8 @@
   == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
 div.page-section
   section
-    == cell('section/header', t('.agreement'), buttons: [{title: t('.new_agreement'), url: new_admin_neighborhood_agreement_path }])
-    - if !@agreement.nil?
+    == cell('section/header', t('.agreement'), buttons: [{title: @agreement.nil? ? t('.new_agreement') : t('.edit_agreement'), url: @agreement.nil? ?  new_admin_neighborhood_agreement_path : edit_admin_neighborhood_agreement_path }])
+    - if !@data.nil?
       - @data.keys.each do |indicator|
         article
           header
