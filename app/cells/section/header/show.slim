@@ -14,7 +14,7 @@ header
             = link_to link[:title], link[:url]
           - else
             button
-              = link[:title]
+              = link_to link[:title], link[:href]
   - if buttons
     div.buttons
       == cell('elements/button', collection: buttons)

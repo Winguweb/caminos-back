@@ -27,3 +27,5 @@ es-AR:
         upload_document: Cargar Documento
         add_new_ambassador: Agregar Nuevo
         add_new_picture: Agregar Nueva
+      edit:
+        update_neighborhood: Actualizar

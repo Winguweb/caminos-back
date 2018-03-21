@@ -9,11 +9,13 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
 
     = stylesheet_link_tag 'admin/application', media: 'all'
     = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css'
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css'
     = yield :css
     = csrf_meta_tags
 
     = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
     = javascript_include_tag "https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"
 
   body id=body_id class=body_class
 
