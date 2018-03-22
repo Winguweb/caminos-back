@@ -8,6 +8,7 @@ gem 'browser' # Do some browser detection with Ruby
 gem 'carrierwave', '~> 1.0' # provides a simple and extremely flexible way to upload files from Ruby applications
 gem 'cells-rails'
 gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
+gem "fog-aws"
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
 gem 'mini_magick' #gem for resize images  
 gem 'neat' # A lightweight and flexible Sass grid
