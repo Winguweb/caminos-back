@@ -1,0 +1,11 @@
+es-AR:
+  neighborhoods:
+    partials:
+      nav:
+        works: Obras
+        agreement: Acuerdo
+        about: Información
+    works:
+      no_works: No se encontraron obras en este barrio
+    agreement:
+      no_agreement: No se encontró información
