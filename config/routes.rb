@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   scope protocol: SECURE_PROTOCOL do
 
     root to: 'home#show'
-
+    get '/neighborhoods/:id', action: :works, controller: :neighborhoods
+    get '/neighborhoods/:id/agreement', action: :agreement, controller: :neighborhoods
+    get '/neighborhoods/:id/about', action: :about, controller: :neighborhoods
   # ╭─ Public Accesible URL's / Path's
     get '/components', action: :index, controller: :components
     get '/admin', to: redirect('/admin/dashboard')

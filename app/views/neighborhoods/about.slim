@@ -1,0 +1,20 @@
+div
+  = render('neighborhoods/partials/nav')
+  div.page-section
+    section.with-border
+      == cell('elements/map', @neighborhood)
+    section.with-border
+      == cell('section/header', t('.description'))
+      .content
+        == cell('elements/description', text: @neighborhood.description)
+
+    section.with-border
+      == cell('section/header', t('.documents'))
+      .content
+        == cell('elements/documents_table', @documents)
+
+    section
+      == cell('section/header', t('.ambassadors'))
+
+    section
+      == cell('section/header', t('.pictures'))

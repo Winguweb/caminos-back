@@ -1,0 +1,16 @@
+@mixin about() {
+  @include grid-column(16);
+  > main {
+    @include grid-collapse;
+    height: 100%;
+    $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+    > div {
+      height: 100%;
+      @include navbar();
+    }
+  }
+}
+
+#neighborhoods-about {
+  @include about();
+}

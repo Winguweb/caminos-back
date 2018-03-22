@@ -3,16 +3,7 @@ div
     div
       = link_to admin_dashboard_path do
         span 'Caminos de la Villa'
-    ul
-      li
-        = link_to admin_dashboard_path do
-          span="Obras"
-      li
-        = link_to admin_dashboard_path do
-          span="Acuerdo"
-      li
-        = link_to admin_dashboard_path do
-          span="Información"
+    
     div
       button type="button"
         span
@@ -29,7 +20,7 @@ div
             ol
               - @neighborhoods.each do |neighborhood|
                 li
-                  a href="?neighborhood=#{neighborhood.id}"
+                  a href="/neighborhoods/#{neighborhood.id}"
                     p
                       span
                     div 
