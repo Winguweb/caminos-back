@@ -13,7 +13,6 @@ class UpdateWork
   private
 
   def update_work
-    
     @work.update(@allowed_params)
     return @work if @work.save
     errors.add_multiple_errors(@work.errors.messages) && nil

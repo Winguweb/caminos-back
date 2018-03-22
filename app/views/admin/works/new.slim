@@ -17,7 +17,7 @@
           = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
         .field
           = f.label :name, t('.status')
-          = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
+          = f.select :status, @status.collect { |c| [ c, c ] }, include_blank: true
 
       .half-input
         .field
