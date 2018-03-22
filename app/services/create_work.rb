@@ -24,4 +24,7 @@ class CreateWork
   def work_params
     @allowed_params
   end
+
 end
+
+

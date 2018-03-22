@@ -15,13 +15,13 @@ module Admin
       @categories = Work.categories
       @status = Work.status
       @work = current_neighborhood.works.new
-      @work.photos.build
+      @work.photos.build()
     end
 
     def create
-      raise
+      
       ensure_neighborhood; return if performed?
-
+      
       service = CreateWork.call(current_neighborhood, work_params)
 
       if service.success?
@@ -78,8 +78,7 @@ module Admin
         :manager,
         :name,
         :status,
-        :start_date,
-        photos_attributes: [:picture]
+        :start_date
       )  
     end
 
