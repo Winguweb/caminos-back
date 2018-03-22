@@ -44,7 +44,12 @@
         .field
           = f.label :lookup_address, t('.lookup_address')
           = f.text_field :lookup_address
-
+      .field
+        = "Foto 1"
+        = f.file_field name="photos[]picture"
+      .field
+        = "Foto 2"
+        = f.file_field name="photos[]picture"
     section
       == cell('section/header', t('.map_location'))
       == cell('elements/map', current_neighborhood, set_marker: true)

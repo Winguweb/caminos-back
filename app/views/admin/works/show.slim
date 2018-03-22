@@ -42,7 +42,6 @@
         div
           span = t('.lookup_address')
           span = @work.lookup_address
-
     section
       == cell('section/header', t('.map_location'))
       == cell('elements/map', current_neighborhood, works: [@work])
@@ -56,3 +55,8 @@
       == cell('section/header', t('.related_meetings'))
       == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
       a href='#' = t('.view_more')
+
+    section
+      div
+        -@work.photos.each do |photo|
+          = image_tag(photo.picture.url, alt: 'Image') 

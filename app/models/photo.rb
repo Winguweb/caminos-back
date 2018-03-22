@@ -1,4 +1,5 @@
 class Photo < ApplicationRecord
-	belongs_to :owner, polymorphic: true
-	mount_uploader :picture, PhotoUploader
+  mount_uploader :picture, PhotoUploader
+  belongs_to :owner, polymorphic: true
+
 end
