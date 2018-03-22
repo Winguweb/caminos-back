@@ -1,0 +1,18 @@
+@mixin home() {
+  @include grid-column(16);
+  > main {
+    @include grid-collapse;
+    height: 100%;
+    $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+    > div {
+      height: 100%;
+      > nav {
+        @include navbar();
+      }
+    }
+  }
+}
+
+#neighborhoods-about {
+  @include home();
+}

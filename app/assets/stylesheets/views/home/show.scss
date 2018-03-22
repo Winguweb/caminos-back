@@ -51,6 +51,8 @@
           }
         }
         > div:nth-of-type(2) {
+          position: absolute;
+          right: 20px;
           @include grid-column(1);
           text-align: right;
           > button {

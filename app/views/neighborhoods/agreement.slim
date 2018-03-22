@@ -1,0 +1,28 @@
+div 
+  = render('neighborhoods/partials/nav')
+  div.page-section
+    section
+      - if !@data.nil?
+          - @data.keys.each do |indicator|
+            article
+              header
+                h1= Agreement.indicators[indicator][:title]
+              main
+                p
+                  span
+                    = "#{@data[indicator][:score]}/100"
+                div
+                  div
+                  div style="width:#{@data[indicator][:score]}%;"
+                div
+              aside
+                -@data[indicator][:answers].keys.each do |question|
+                  .two-thirds-one-third-input
+                    div
+                      span  = Agreement.indicators[indicator][:questions][question][:title]
+
+                    div
+                      span = @data[indicator][:answers][question]
+      -else
+        div 
+          = t('.no_agreement')
