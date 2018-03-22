@@ -9,6 +9,7 @@ gem 'carrierwave', '~> 1.0' # provides a simple and extremely flexible way to up
 gem 'cells-rails'
 gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
+gem 'mini_magick' #gem for resize images  
 gem 'neat' # A lightweight and flexible Sass grid
 gem 'oj' # A fast JSON parser and Object marshaller.
 gem 'pg' # The PostgreSQL Adapter

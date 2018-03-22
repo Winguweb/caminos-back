@@ -59,4 +59,4 @@
     section
       div
         -@work.photos.each do |photo|
-          = image_tag(photo.picture.url, alt: 'Image') 
+          = image_tag(photo.picture.thumb.url, alt: 'Image') 
