@@ -1,4 +1,4 @@
-@mixin home() {
+@mixin agreement() {
   @include grid-column(16);
   > main {
     @include grid-collapse;
@@ -6,26 +6,57 @@
     $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
     > div {
       height: 100%;
-      > nav {
-        @include navbar();
-      }
+      @include navbar();
+      
       section{
-        > header {
-          h1{
-            color: $text-black;
-            font-weight: 600;
-            @include type-setting(0);
-            font-size: 1.5em;
-          }
-          div{
-            color: $black;
-            font-weight: 200;
-            @include type-setting(0);
+        > div {
+          position: relative;
+          align-items: center;
+          margin-top: 100px;
+          text-align: center;
+        }
+        .transition, aside {
+          transition: all 0.25s ease-in-out;
+        }
+
+        ul li i {
+          &:before, &:after {
+            transition: all 0.25s ease-in-out;
           }
         }
-       
-        > article {
-          border-top: 1px solid $light-grey;
+
+        .flipIn, h1, ul li {
+          animation: flipdown 0.5s ease both;
+        }
+
+        .no-select, section {
+          -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+
+        @media (max-width: 550px) {
+          body {
+            box-sizing: border-box;
+            transform: translate(0, 0);
+            max-width: 100%;
+            min-height: 100%;
+            margin: 0;
+            left: 0;
+          }
+        }
+
+        section {
+         
+          letter-spacing: 1px;
+          display: block;
+          background-color: #fefffa;
+          margin: 0;
+          cursor: pointer;
           > header {
             margin-top: $vgutter*2;
             margin-bottom: $vgutter;
@@ -70,41 +101,147 @@
               }
             }
           }
-        
-          > aside  {
-            @include grid-container;
-           
-            .two-thirds-one-third-input {
-              > div:nth-of-type(1) {
-                color: $text-black;
-              }
-              > div:nth-of-type(2) {
-                color: $text-grey;
-              }
-              > div {
-                @include grid-container;
-                color: $text-black;
-                margin-bottom: $vgutter*2;
-                > span:first-of-type {
-                  @include type-setting(-1);
-                  display: block;
-                  
-                  margin-bottom: $gutter/7;
-                  text-transform: none;
-                }
+
+        }
+
+        aside {
+          color: rgba(48, 69, 92, 0.8);
+          font-size: 17px;
+          line-height: 26px;
+          letter-spacing: 1px;
+          position: relative;
+          overflow: hidden;
+          max-height: 800px;
+          opacity: 1;
+          transform: translate(0, 0);
+          margin-top: 14px;
+          z-index: 2;
+          
+          @include grid-container;
+         
+          .two-thirds-one-third-input {
+            > div:nth-of-type(1) {
+              color: $text-black;
+            }
+            > div:nth-of-type(2) {
+              color: $text-grey;
+            }
+            > div {
+              @include grid-container;
+              color: $text-black;
+              margin-bottom: $vgutter*2;
+              > span:first-of-type {
+                @include type-setting(-1);
+                display: block;
                 
-                > span + span {
-                  display: block;
+                margin-bottom: $gutter/7;
+                text-transform: none;
+              }
+              
+              > span + span {
+                display: block;
+              }
+            }
+          }
+        }
+
+        ul {
+          list-style: none;
+          perspective: 900;
+          padding: 0;
+          margin: 0;
+          li {
+            position: relative;
+            padding: 0;
+            margin: 0;
+            padding-bottom: 4px;
+            padding-top: 18px;
+            border-top: 1px dotted #dce7eb;
+            &:nth-of-type(1) {
+              animation-delay: 0.5s;
+            }
+            &:nth-of-type(2) {
+              animation-delay: 0.75s;
+            }
+            &:nth-of-type(3) {
+              animation-delay: 1s;
+            }
+            &:last-of-type {
+              padding-bottom: 0;
+            }
+            i {
+              position: absolute;
+              transform: translate(-6px, 0);
+              margin-top: 16px;
+              right: 0;
+              &:before, &:after {
+                content: "";
+                position: absolute;
+                background-color: $text-blue;
+                width: 3px;
+                height: 9px;
+              }
+              &:before {
+                transform: translate(-2px, 0) rotate(45deg);
+              }
+              &:after {
+                transform: translate(2px, 0) rotate(-45deg);
+              }
+            }
+            input[type=checkbox] {
+              position: absolute;
+              cursor: pointer;
+              width: 100%;
+              height: 100%;
+              z-index: 1;
+              opacity: 0;
+              &:checked ~ {
+                aside {
+                  margin-top: 0;
+                  max-height: 0;
+                  opacity: 0;
+                  transform: translate(0, 50%);
+                }
+                i {
+                  &:before {
+                    transform: translate(2px, 0) rotate(45deg);
+                  }
+                  &:after {
+                    transform: translate(-2px, 0) rotate(-45deg);
+                  }
                 }
               }
             }
           }
         }
-        >div{
-          position: relative;
-          align-items: center;
-          margin-top: 100px;
-          text-align: center;
+
+        @keyframes flipdown {
+          0% {
+            opacity: 0;
+            transform-origin: top center;
+            transform: rotateX(-90deg);
+          }
+
+          5% {
+            opacity: 1;
+          }
+
+          80% {
+            transform: rotateX(8deg);
+          }
+
+          83% {
+            transform: rotateX(6deg);
+          }
+
+          92% {
+            transform: rotateX(-3deg);
+          }
+
+          100% {
+            transform-origin: top center;
+            transform: rotateX(0deg);
+          }
         }
       }
     }
@@ -112,5 +249,5 @@
 }
 
 #neighborhoods-agreement {
-  @include home();
+  @include agreement();
 }

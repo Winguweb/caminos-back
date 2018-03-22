@@ -1,4 +1,4 @@
-@mixin home() {
+@mixin works() {
   @include grid-column(16);
   > main {
     @include grid-collapse;
@@ -6,9 +6,9 @@
     $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
     > div {
       height: 100%;
-      > nav {
-        @include navbar();
-      }
+      
+      @include navbar();
+      
       > aside {
         @include grid-column(4, $no-gutter);
         @include box-sizing(border-box);
@@ -209,5 +209,5 @@
 }
 
 #neighborhoods-works {
-  @include home();
+  @include works();
 }
