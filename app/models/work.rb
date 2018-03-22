@@ -2,8 +2,8 @@ class Work < ApplicationRecord
   belongs_to :neighborhood
   has_and_belongs_to_many :meetings
   has_many :documents, as: :holder
-
-
+  has_many :photos, as: :owner
+  accepts_nested_attributes_for :photos
 
   validates_presence_of :name,
     :description,

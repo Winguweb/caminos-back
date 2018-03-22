@@ -6,6 +6,10 @@
     section
       == cell('section/header', t(".about_work"), links: [ {:title => t(".cancel"), :url => admin_neighborhood_works_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
       .field
+        = f.fields_for :photos do |h|
+          = "foto link"
+          = h.text_field :picture
+      .field
         = f.label :name, t('.title')
         = f.text_field :name
       .field

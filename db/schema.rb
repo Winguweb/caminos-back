@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180315160126) do
+ActiveRecord::Schema.define(version: 20180321235454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,14 @@ ActiveRecord::Schema.define(version: 20180315160126) do
     t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
   end
 
+  create_table "meetings_users", id: false, force: :cascade do |t|
+    t.uuid "meeting_id"
+    t.uuid "user_id"
+    t.index ["meeting_id", "user_id"], name: "index_meetings_users_on_meeting_id_and_user_id"
+    t.index ["meeting_id"], name: "index_meetings_users_on_meeting_id"
+    t.index ["user_id"], name: "index_meetings_users_on_user_id"
+  end
+
   create_table "meetings_works", id: false, force: :cascade do |t|
     t.uuid "meeting_id"
     t.uuid "work_id"
@@ -81,6 +89,15 @@ ActiveRecord::Schema.define(version: 20180315160126) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", id: false, force: :cascade do |t|
+    t.string "picture"
+    t.string "owner_type", null: false
+    t.uuid "owner_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_type", "owner_id"], name: "index_photos_on_owner_type_and_owner_id"
   end
 
   create_table "profiles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
