@@ -5,9 +5,12 @@ gem 'authlogic' # For User Authentication
 gem 'bcrypt' # Ruby binding for the OpenBSD bcrypt() password hashing algorithm
 gem 'bourbon' # A Lightweight Sass Tool Set
 gem 'browser' # Do some browser detection with Ruby
+gem 'carrierwave', '~> 1.0' # provides a simple and extremely flexible way to upload files from Ruby applications
 gem 'cells-rails'
 gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
+gem "fog-aws"
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
+gem 'mini_magick' #gem for resize images  
 gem 'neat' # A lightweight and flexible Sass grid
 gem 'oj' # A fast JSON parser and Object marshaller.
 gem 'pg' # The PostgreSQL Adapter

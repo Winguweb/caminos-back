@@ -43,3 +43,6 @@ Thumbs.db
 # Test & Audit Suite stuff
 /coverage/**/*
 brakeman.*
+
+#igonere local photos
+public/uploads
