@@ -19,10 +19,9 @@ class CreateWork
 
      if !photo_params.nil? 
       photo_params.each do |photo|
-       a =  @work.photos.new(photo)
-       a.owner = @work
+        photo =  @work.photos.new(photo)
+        photo.owner = @work
       end
-      
       return @work if @work.save
       errors.add_multiple_errors(@work.errors.messages) && nil
       
@@ -30,16 +29,7 @@ class CreateWork
       return @work if @work.save
       errors.add_multiple_errors(@work.errors.messages) && nil
     end
-
-    #TO-DO Refactor method for save photos
-    # if !photo_params.nil? && @work.save
-    #   service = CreatePhoto.call(@work, photo_params)
-    #   return @work if service.success?
-    #   errors.add_multiple_errors(service.errors) && nil
-    # else
-    #   return @work if @work.save
-    #   errors.add_multiple_errors(@work.errors.messages) && nil
-    # end
+   
   end
 
   def work_params
@@ -62,4 +52,3 @@ class CreateWork
     @allowed_params[:photos]
   end
 end
-
