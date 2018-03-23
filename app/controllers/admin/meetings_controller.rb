@@ -32,7 +32,11 @@ module Admin
     def index
       ensure_neighborhood; return if performed?
 
-      @meetings = current_neighborhood.meetings
+      @meetings = current_neighborhood.meetings.order(date: :desc)
+
+      @meetings_years = @meetings.group_by { |x| x.date.year }
+
+      
     end
 
     def edit
