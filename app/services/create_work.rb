@@ -16,22 +16,30 @@ class CreateWork
     
     @work = Work.new(work_params)
     @work.neighborhood = @neighborhood
-    #TO-DO Refactor method for save photos
-    if !photo_params.nil?
-      @work.save
-      save_photos(@work)
+
+     if !photo_params.nil? 
+      photo_params.each do |photo|
+       a =  @work.photos.new(photo)
+       a.owner = @work
+      end
+      
       return @work if @work.save
       errors.add_multiple_errors(@work.errors.messages) && nil
+      
     else
       return @work if @work.save
       errors.add_multiple_errors(@work.errors.messages) && nil
     end
-  end
 
-  def save_photos(work)
-    photo_params.each do |photo|
-      @work.photos.new(photo)
-    end
+    #TO-DO Refactor method for save photos
+    # if !photo_params.nil? && @work.save
+    #   service = CreatePhoto.call(@work, photo_params)
+    #   return @work if service.success?
+    #   errors.add_multiple_errors(service.errors) && nil
+    # else
+    #   return @work if @work.save
+    #   errors.add_multiple_errors(@work.errors.messages) && nil
+    # end
   end
 
   def work_params
