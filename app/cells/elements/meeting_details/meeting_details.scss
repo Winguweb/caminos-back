@@ -1,6 +1,7 @@
 @mixin meeting-details() {
-
-    @include grid-column(16);
+  margin-left: 0px !important;
+  
+  @include grid-column(16);
   $elements-layout-grid: (
     columns: 1,
     gutter: 2rem,
@@ -25,15 +26,16 @@
   }
 
   > main {
-    @include text-color($text-light-grey, 1);
-    padding: $vgutter*2 $gutter;
+
+    @include text-color($text-grey, 1);
+
     margin-bottom: $vgutter*2;
 
     > div {
       > p {
         margin-top: 1rem;
         margin-bottom: $vgutter*2;
-        @include text-color($text-grey, 1);
+        @include text-color($text-black, 1);
       }
 
       > span {
@@ -43,7 +45,7 @@
         > p {
           margin-top: 1rem;
           margin-bottom: $vgutter*2;
-          @include text-color($text-grey, 1);
+          @include text-color($text-black, 1);
         }
 
         &:nth-of-type(1) {

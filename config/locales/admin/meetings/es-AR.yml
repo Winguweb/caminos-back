@@ -19,8 +19,13 @@ es-AR:
       new:
         new_meeting: Nueva Reunión
       show:
+        documents: Documentos
         download_minute: Descargar Minuta
         edit: Editar
+        load_document: Cargar Documento
         meeting: Reunión %{date}
         meetings: Reuniones
+        order_day: Orden del día
+        participants: Participantes
         upload_by: Subido por %{user} el %{date}
+        works_relation: Obras Relacionadas

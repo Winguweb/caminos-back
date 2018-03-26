@@ -1,10 +1,17 @@
 = content_for :main_header do
-  == cell('page/header', "Nueva Obra", breadcrumbs: [ current_neighborhood.name, t('.meetings') ])
+  == cell('page/header',  t('.meeting', date: @meeting.date.to_date), breadcrumbs: [ current_neighborhood.name, t('.meetings') ],  subtitle: t('.upload_by',user: "Facundo Pérez" ,date: @meeting.created_at.to_date))
 
 .page-section
+  
   section
-    == cell('section/header', t('.meeting', date: @meeting.date.to_date),  subtitle: t('.upload_by',user: "Facundo Pérez" ,date: @meeting.created_at.to_date), links: [ {:title => t(".download_minute"), :url => edit_admin_neighborhood_meeting_path}])
+    == cell('section/header',t(".order_day"), buttons: [{title: "editar", url:  edit_admin_neighborhood_meeting_path(current_neighborhood,@meeting) }])
     main
-      section
-        == cell('elements/map', current_neighborhood)
-    == cell('section/header',"", links: [ {:title => t(".edit"), :url => edit_admin_neighborhood_meeting_path},])
+      == cell('elements/meeting_details', @meeting)
+  section
+    == cell('section/header',t(".documents"), buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
+  section
+    == cell('section/header',t(".works_relation"))
+    main
+      == cell('elements/works_table', @meeting.works, filters: false)
+  section
+    == cell('section/header',t(".participants"))
