@@ -3,5 +3,5 @@
   - meetings_by_months.each do |beginning_of_month, period_meetings|
     div
       h2=l(beginning_of_month, format: :period).titleize
-      - period_meetings.each do |meeting|
+      - period_meetings.reverse.each do |meeting|
         == cell('elements/meeting_card', meeting)
