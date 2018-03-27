@@ -18,13 +18,15 @@
         .field.map
           == cell('section/header', t('.map_location'))
           == cell('elements/map', {} ,set_polygon: true)
+        .field.docs
+          == cell('elements/document_form')
 
-        .field
-          = "Link del documento"
-          input type="text" name="neighborhood[documents][]link"
-          = "Nombre del documeto"
-          input type="text" name="neighborhood[documents][]name"
-          = "Descripcion a document"
-          input type="text" name="neighborhood[documents][]description"
+        / .field
+        /   = "Link del documento"
+        /   input type="text" name="neighborhood[documents][]link"
+        /   = "Nombre del documeto"
+        /   input type="text" name="neighborhood[documents][]name"
+        /   = "Descripcion a document"
+        /   input type="text" name="neighborhood[documents][]description"
       .actions
         = form.submit t('.create')
