@@ -12,6 +12,13 @@ require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+require 'google/apis/drive_v2'
+require 'googleauth'
+require 'googleauth/stores/file_token_store'
+
+require 'fileutils'
+
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

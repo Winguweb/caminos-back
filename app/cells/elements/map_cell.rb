@@ -3,10 +3,14 @@ class Elements::MapCell < Cell::ViewModel
   private
 
   def polygon
-    if polygon = model[:polygon]
+    
+    if !model[:polygon].nil? && model[:polygon].present?
+      polygon = model[:polygon]
       polygon.coordinates.first.map do |coords|
         coords.reverse
       end
+    else
+      []
     end
   end
 

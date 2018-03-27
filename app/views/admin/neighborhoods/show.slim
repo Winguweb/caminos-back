@@ -15,7 +15,6 @@ div.page-section
     == cell('section/header', t('.documents'), buttons: [{title: t('.upload_document'), url: new_admin_user_path }])
     .content
       == cell('elements/documents_table', @documents)
-
   section
     == cell('section/header', t('.ambassadors'), buttons: [{title: t('.add_new_ambassador'), url: '#', extra_classes:'add-new-ambassador' }])
 

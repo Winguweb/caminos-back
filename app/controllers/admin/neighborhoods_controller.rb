@@ -12,7 +12,6 @@ module Admin
 
     def create
       service = CreateNeighborhood.call(neighborhood_params)
-
       if service.success?
         redirect_to admin_neighborhoods_path
       else
@@ -53,7 +52,8 @@ module Admin
         :lookup_address,
         :lookup_coordinates,
         :name,
-        :polygon
+        :polygon,
+        documents: [[:link,:name,:description]]
        )
     end
   end
