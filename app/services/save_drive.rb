@@ -1,24 +1,28 @@
 class SaveDrive
   prepend Service::Base
 
-  def initialize(link)
+  def initialize(link,name)
     @link = link
-    
+    @name = name
   end
 
   def call
-    SaveDrive(@link)
+    SaveDrive(@link,@name)
   end
 
   private
 
-  def SaveDrive(link)
+  def SaveDrive(link,name)
     drive = Google::Apis::DriveV2::DriveService.new
     drive.authorization = authorize
     #TO-DO ver permisos del doc
     #
+    
     begin
-      file = drive.update_file(link.split('/').last,add_parents: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ',fields: 'id, parents')
+      #hace un shortcut
+      #file = drive.update_file(link.split('/').last,add_parents: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ',fields: 'id, parents')
+      #hace una copia del doc
+      file =  drive.copy_file(link.split('/').last,{ title: name, parents: [ id: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ' ] } , fields: 'parents, title')
       return file
     rescue
       return errors.add(:messages, "Invalid credentials") && nil
