@@ -51,6 +51,7 @@ module CaminosBack
       elements/breadcrumbs_cell
       elements/button_cell
       elements/description_cell
+      elements/document_form_cell
       elements/documents_table_cell
       elements/map_cell
       elements/meeting_details_cell
