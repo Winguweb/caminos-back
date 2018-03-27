@@ -16,8 +16,14 @@ class SaveDrive
     drive = Google::Apis::DriveV2::DriveService.new
     drive.authorization = authorize
     #TO-DO ver permisos del doc
-    file = drive.update_file(link.split('/').last,add_parents: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ',fields: 'id, parents')
-    return file
+    #
+    begin
+      file = drive.update_file(link.split('/').last,add_parents: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ',fields: 'id, parents')
+      return file
+    rescue
+      return errors.add(:messages, "Invalid credentials") && nil
+    end
+    
   end
 
   def authorize

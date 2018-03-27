@@ -18,7 +18,7 @@ class CreateNeighborhood
     if documents_params.present? 
       documents_params.each do |document|
         service_document = SaveDrive.call(document[:link])
-        if (service_document != nil)
+        if (service_document.success?)
           document =  @neighborhood.documents.new(name:document[:name], description:document[:description], attachment_source:"https://www.googleapis.com/drive/v2/files/#{service_document.result.id}")
           document.holder = @neighborhood
         end
