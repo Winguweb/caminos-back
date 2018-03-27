@@ -14,9 +14,9 @@ class CreateNeighborhood
   def create_neighborhood
     @neighborhood = Neighborhood.new(neighborhood_params)
     @neighborhood.agreement = Agreement.new
-
-    if !document_param.nil? 
-      document_param.each do |document|
+    
+    if documents_params.present? 
+      documents_params.each do |document|
         service_document = SaveDrive.call(document[:link])
         if (service_document != nil)
           document =  @neighborhood.documents.new(name:document[:name], description:document[:description], attachment_source:"https://www.googleapis.com/drive/v2/files/#{service_document.result.id}")
@@ -46,7 +46,11 @@ class CreateNeighborhood
     }
   end
 
-  def document_param
-    @allowed_params[:documents]
+  def documents_params
+    documents = []
+    @allowed_params[:documents].each do |doc|
+      documents.push(doc) if !doc[:link].blank?
+    end
+    documents
   end
 end
