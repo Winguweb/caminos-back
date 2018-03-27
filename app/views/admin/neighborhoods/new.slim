@@ -18,6 +18,7 @@
         .field.map
           == cell('section/header', t('.map_location'))
           == cell('elements/map', {} ,set_polygon: true)
+
         .field
           = "Link del documento"
           input type="text" name="neighborhood[documents][]link"
