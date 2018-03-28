@@ -16,20 +16,35 @@ class CreateWork
     
     @work = Work.new(work_params)
     @work.neighborhood = @neighborhood
-
-     if !photo_params.nil? 
-      photo_params.each do |photo|
-        photo =  @work.photos.new(photo)
-        photo.owner = @work
-      end
+    
+    if documents_params.present? || !photo_params.nil?
+      raise
+      save_photos(@work) if !photo_params.nil?
+      save_documents(@work) if documents_params.present?
       return @work if @work.save
       errors.add_multiple_errors(@work.errors.messages) && nil
-      
+
     else
       return @work if @work.save
       errors.add_multiple_errors(@work.errors.messages) && nil
     end
-   
+  end
+
+  def save_photos(work)
+    photo_params.each do |photo|
+      photo =  work.photos.new(photo)
+      photo.owner = work
+    end
+  end
+
+  def save_documents(work)
+   documents_params.each do |document|
+      service_document = SaveDrive.call(document[:link],document[:name])
+      if (service_document.success?)
+        document =  work.documents.new(name:document[:name], description:document[:description], attachment_source:service_document.result. alternate_link)
+        document.holder = work
+      end
+    end
   end
 
   def work_params
@@ -50,5 +65,13 @@ class CreateWork
 
   def photo_params
     @allowed_params[:photos]
+  end
+
+  def documents_params
+    documents = []
+    @allowed_params[:documents].each do |doc|
+      documents.push(doc) if !doc[:link].blank?
+    end
+    documents
   end
 end

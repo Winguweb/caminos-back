@@ -11,7 +11,8 @@ div
     section.with-border
       == cell('section/header', t('.documents'))
       .content
-        == cell('elements/documents_table', @documents)
+        == cell('elements/documents_table', @neighborhood.documents)
+
 
     section
       == cell('section/header', t('.ambassadors'))
