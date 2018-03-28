@@ -48,7 +48,7 @@
 
     section
       == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
-      == cell('elements/documents_table', [{title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'},])
+      == cell('elements/documents_table',@work.documents)
       a href='#' = t('.view_more')
 
     section

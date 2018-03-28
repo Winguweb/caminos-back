@@ -2,8 +2,8 @@ class Elements::DocumentFormCell < Cell::ViewModel
 
   private
 
-  def document
-    @document ||= model
+  def owner
+    return model   
   end
 
 end
