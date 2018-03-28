@@ -18,7 +18,6 @@ class CreateWork
     @work.neighborhood = @neighborhood
     
     if documents_params.present? || !photo_params.nil?
-      raise
       save_photos(@work) if !photo_params.nil?
       save_documents(@work) if documents_params.present?
       return @work if @work.save
@@ -64,10 +63,12 @@ class CreateWork
   end
 
   def photo_params
+    return  [] if @allowed_params[:photos].blank?
     @allowed_params[:photos]
   end
 
   def documents_params
+    return  [] if @allowed_params[:documents].blank?
     documents = []
     @allowed_params[:documents].each do |doc|
       documents.push(doc) if !doc[:link].blank?
