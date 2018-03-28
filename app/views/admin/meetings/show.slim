@@ -9,6 +9,8 @@
       == cell('elements/meeting_details', @meeting)
   section
     == cell('section/header',t(".documents"), buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
+
+    == cell('elements/documents_table', @meeting.documents)
   section
     == cell('section/header',t(".works_relation"))
     main
