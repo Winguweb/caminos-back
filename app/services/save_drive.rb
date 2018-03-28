@@ -17,12 +17,11 @@ class SaveDrive
     drive.authorization = authorize
     #TO-DO ver permisos del doc
     #
-    
     begin
       #hace un shortcut
       #file = drive.update_file(link.split('/').last,add_parents: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ',fields: 'id, parents')
       #hace una copia del doc
-      file =  drive.copy_file(link.split('/').last,{ title: name, parents: [ id: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ' ] } , fields: 'parents, title')
+      file =  drive.copy_file(link.split('/').last,{ title: name, parents: [ id: '1GbnOmGFwblF0Wc3NuUnSetaus_1T38nZ' ] } , fields: 'parents, title,id,alternate_link')
       return file
     rescue
       return errors.add(:messages, "Invalid credentials") && nil

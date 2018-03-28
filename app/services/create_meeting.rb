@@ -19,7 +19,7 @@ class CreateMeeting
       documents_params.each do |document|
         service_document = SaveDrive.call(document[:link],document[:name])
         if (service_document.success?)
-          document =  meeting.documents.new(name:document[:name], description:document[:description], attachment_source:"https://www.googleapis.com/drive/v2/files/#{service_document.result.id}")
+          document =  meeting.documents.new(name:document[:name], description:document[:description], attachment_source:service_document.result. alternate_link)
           document.holder = meeting
         end
       end

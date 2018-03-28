@@ -28,22 +28,6 @@ class CreateWork
       return @work if @work.save
       errors.add_multiple_errors(@work.errors.messages) && nil
     end
-
-    # if !photo_params.nil? || 
-    #   photo_params.each do |photo|
-    #     photo =  @work.photos.new(photo)
-    #     photo.owner = @work
-    #   end
-    #   return @work if @work.save
-    #   errors.add_multiple_errors(@work.errors.messages) && nil
-      
-    # else
-    #   return @work if @work.save
-    #   errors.add_multiple_errors(@work.errors.messages) && nil
-    # end
-
-
-   
   end
 
   def save_photos(work)
@@ -57,7 +41,7 @@ class CreateWork
    documents_params.each do |document|
       service_document = SaveDrive.call(document[:link],document[:name])
       if (service_document.success?)
-        document =  work.documents.new(name:document[:name], description:document[:description], attachment_source:"https://www.googleapis.com/drive/v2/files/#{service_document.result.id}")
+        document =  work.documents.new(name:document[:name], description:document[:description], attachment_source:service_document.result. alternate_link)
         document.holder = work
       end
     end
