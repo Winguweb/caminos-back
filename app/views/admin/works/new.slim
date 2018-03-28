@@ -44,24 +44,24 @@
         .field
           = f.label :lookup_address, t('.lookup_address')
           = f.text_field :lookup_address
-      .field
-        = "Foto 1"
-        = f.file_field name="photos[]picture"
-      .field
-        = "Foto 2"
-        = f.file_field name="photos[]picture"
-      .field.docs
-        == cell('elements/document_form',"work")
+
     section
       == cell('section/header', t('.map_location'))
       == cell('elements/map', current_neighborhood, set_marker: true)
 
     section
+      == cell('section/header',"Fotos")
+      = "Foto 1"
+      = f.file_field name="photos[]picture"
+    
+      == cell('elements/photo_form',"work")
+    section
       == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
-      == cell('elements/documents_table', [{title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'}, {title: 'Anteproyecto Hidraulico ultimo-A1. 11-13', author: 'Guadalupe Moreira', date: '24/10/2017'},])
-      a href='#' = t('.view_more')
-
+    
+      == cell('elements/document_form',"work")
     section
       == cell('section/header', t('.related_meetings'))
       == cell('elements/meetings_list', current_neighborhood.meetings, neighborhood: current_neighborhood)
       a href='#' = t('.view_more')
+
+    

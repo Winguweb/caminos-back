@@ -1,0 +1,11 @@
+.form_photo
+  a id="btnAdd" Agregar Foto
+  #photos
+
+javascript:
+  $(function() {
+      new CDLV.Components['photos']({
+      el: $('.form_photo'), 
+      owner: '#{owner}'
+    })
+  });

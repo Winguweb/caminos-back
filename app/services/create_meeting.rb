@@ -59,6 +59,7 @@ class CreateMeeting
   end
 
   def documents_params
+    return  [] if @allowed_params[:documents].blank?
     documents = []
     @allowed_params[:documents].each do |doc|
       documents.push(doc) if !doc[:link].blank?
