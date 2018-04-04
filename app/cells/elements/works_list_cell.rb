@@ -7,12 +7,4 @@ class Elements::WorksListCell < Cell::ViewModel
     @works ||= model
   end
 
-  def filters
-   @filters ||= options[:filters]
-  end
-
-  def neighborhood
-    @neighborhood ||= options[:neighborhood]
-  end
-
 end
