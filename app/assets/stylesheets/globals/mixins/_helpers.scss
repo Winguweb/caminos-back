@@ -1,5 +1,5 @@
 @mixin ellipsis {
-  padding-right: $small-spacing;
+  padding-right: $gutter/2;
   white-space: nowrap;
   overflow: hidden !important;
   @include prefixer(text-overflow, ellipsis, o ms spec);

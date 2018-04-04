@@ -8,9 +8,10 @@
     > header {
       margin-bottom: $vgutter;
       > h1 {
-        margin: 0;
         @include text-color($text-black, 1);
         @include type-setting(1);
+        @include ellipsis;
+        margin: 0;
       }
       > p {
         @include text-color($text-black, 1);
