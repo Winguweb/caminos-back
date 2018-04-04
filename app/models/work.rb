@@ -3,7 +3,7 @@ class Work < ApplicationRecord
   has_and_belongs_to_many :meetings
   has_many :documents, as: :holder
   has_many :photos, as: :owner
-  
+
   validates_presence_of :name,
     :description,
     :status,
@@ -35,11 +35,11 @@ class Work < ApplicationRecord
 
   # TO-DO: Remove this after tags implementation
   def category
-    "Agua"
+    ["water", "trash", "public", "health", "energy", "sewer", "infrastructure"][rand(7)]
   end
 
   def category_icon
-    "/assets/icons/category.svg"
+    "/assets/icons/category-#{["water", "trash", "public", "health", "energy", "sewer", "infrastructure"][rand(7)]}.svg"
   end
 
 

@@ -1,23 +1,15 @@
-div 
+div
   = render('neighborhoods/partials/nav')
   aside
       div
         section
           nav
-            
             -if !@neighborhood.works.empty?
-              ol
-                - @neighborhood.works.each do |neighborhood|
-                  li
-                    a href="#"
-                      p
-                        span
-                      div 
-                        h3=neighborhood.name
+              == cell('elements/works_list', @neighborhood.works)
             -else
               div
                 = t('.no_works')
-                        
+
   main
     section
       == cell('elements/map', @neighborhood, works: @neighborhood.works)

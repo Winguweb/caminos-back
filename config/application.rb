@@ -64,6 +64,7 @@ module CaminosBack
       elements/users_table_cell
       elements/work_details_cell
       elements/works_table_cell
+      elements/works_list_cell
       forms/user_cell
       page/header_cell
       section/footer_link_cell

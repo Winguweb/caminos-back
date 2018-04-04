@@ -2,6 +2,24 @@ es-AR:
   elements:
     users_table:
       permissions: "Permisos: %{roles}"
+    works_list:
+      status: "Estado"
+      water: "Agua"
+      trash: "Basura"
+      public: "Calles / Plazas"
+      health: "Salud"
+      energy: "Luz / Electricidad"
+      sewer: "Cloacas"
+      infrastructure: "Infraestructura"
+    works_table:
+      water: "Agua"
+      trash: "Basura"
+      public: "Calles / Plazas"
+      health: "Salud"
+      energy: "Luz / Electricidad"
+      sewer: "Cloacas"
+      infrastructure: "Infraestructura"
+
   forms:
     user:
       create: Crear Usuario
