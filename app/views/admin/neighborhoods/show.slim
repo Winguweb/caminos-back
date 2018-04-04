@@ -8,7 +8,7 @@ div.page-section
       == cell('elements/description', text: @neighborhood.description)
 
   section.with-border
-    == cell('section/header', t('.address'), links: [{title:t('.edit'), href:'#'}])
+    == cell('section/header', t('.address'))
     == cell('elements/map', @neighborhood)
 
   section.with-border
