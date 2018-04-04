@@ -28,6 +28,8 @@ class CreateWorks < ActiveRecord::Migration[5.1]
 
       t.string :budget
       t.string :manager
+      t.string :category
+      t.string :organization
 
       t.text :execution_plan, limit: TEXT_BYTES
 
