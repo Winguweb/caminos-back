@@ -10,7 +10,7 @@
             -moz-appearance: none;
             background-color: white;
             border-color: white;
-            background-image: url(/assets/icons/down-arrow.svg);
+            background-image: image-url("icons/down-arrow.svg");
             cursor: pointer;
             font-weight: bold;
             background-repeat: no-repeat;
@@ -55,7 +55,7 @@
               display: block;
               width: 31px;
               height: 37px;
-              background-image: url(/assets/icons/file-icon.svg);
+              background-image: image-url("icons/file-icon.svg");
               background-repeat: no-repeat;
               background-size: cover;
               background-position: center;
