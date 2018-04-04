@@ -24,7 +24,8 @@
               img src= work.category_icon
           td
             = link_to admin_neighborhood_work_path(id: work.id) do
-              span= work.category
+              span class=work.category
+                = t(".#{work.category}").upcase
               span= work.name
               span= work.lookup_address
 

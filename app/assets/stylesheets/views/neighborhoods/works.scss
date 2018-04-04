@@ -6,9 +6,9 @@
     $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
     > div {
       height: 100%;
-      
+
       @include navbar();
-      
+
       > aside {
         @include grid-column(4, $no-gutter);
         @include box-sizing(border-box);
@@ -21,7 +21,7 @@
         overflow: auto;
         > div {
           @include grid-column(16);
-        
+
           > header {
             h1 {
               @include text-color($text-black, 1);
@@ -135,11 +135,8 @@
                   }
                 }
               }
-              >div{
+              > div{
                 position: relative;
-                align-items: center;
-                margin-top: 100px;
-                text-align: center;
               }
             }
 
@@ -175,7 +172,7 @@
               }
             }
           }
-        
+
         }
       }
       main {

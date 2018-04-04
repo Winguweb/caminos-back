@@ -1,4 +1,4 @@
-class Elements::WorksTableCell < Cell::ViewModel
+class Elements::WorksListCell < Cell::ViewModel
   include ::Cell::Translation
 
   private
