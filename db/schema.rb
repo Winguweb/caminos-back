@@ -143,7 +143,6 @@ ActiveRecord::Schema.define(version: 20180404181207) do
     t.uuid "neighborhood_id", null: false
     t.string "name"
     t.text "description"
-    t.string "category"
     t.string "status"
     t.date "start_date"
     t.date "estimated_end_date"
