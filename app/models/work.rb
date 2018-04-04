@@ -39,7 +39,7 @@ class Work < ApplicationRecord
   end
 
   def category_icon
-    "/assets/icons/category-#{["water", "trash", "public", "health", "energy", "sewer", "infrastructure"][rand(7)]}.svg"
+    "icons/category-#{["water", "trash", "public", "health", "energy", "sewer", "infrastructure"][rand(7)]}.svg"
   end
 
 

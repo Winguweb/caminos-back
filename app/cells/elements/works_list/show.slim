@@ -4,7 +4,7 @@
       li
         div
           div
-            img src= image_url(work.category_icon)
+            =image_tag work.category_icon
           div
             span class=work.category
               = t(".#{work.category}").upcase
