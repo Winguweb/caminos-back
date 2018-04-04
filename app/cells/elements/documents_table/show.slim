@@ -34,4 +34,4 @@
           td
             a href=document[:attachment_source] = document[:description]
           td
-            a href=document[:attachment_source] = document[:created_at]
+            a href=document[:attachment_source] = l(document[:created_at], format: :slashes)
