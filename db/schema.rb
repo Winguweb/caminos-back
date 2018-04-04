@@ -65,9 +65,6 @@ ActiveRecord::Schema.define(version: 20180321235454) do
   create_table "neighborhoods", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.boolean "urbanization", default: false
-    t.text "delegates"
-    t.float "urbanization_score"
     t.string "lookup_address"
     t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.geography "geo_polygon", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
@@ -86,7 +83,7 @@ ActiveRecord::Schema.define(version: 20180321235454) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "photos", id: false, force: :cascade do |t|
     t.string "picture"
     t.string "owner_type", null: false
     t.uuid "owner_id", null: false
@@ -153,8 +150,6 @@ ActiveRecord::Schema.define(version: 20180321235454) do
     t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.string "budget"
     t.string "manager"
-    t.string "category"
-    t.string "organization"
     t.text "execution_plan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
