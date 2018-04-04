@@ -54,14 +54,6 @@ ActiveRecord::Schema.define(version: 20180321235454) do
     t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
   end
 
-  create_table "meetings_users", id: false, force: :cascade do |t|
-    t.uuid "meeting_id"
-    t.uuid "user_id"
-    t.index ["meeting_id", "user_id"], name: "index_meetings_users_on_meeting_id_and_user_id"
-    t.index ["meeting_id"], name: "index_meetings_users_on_meeting_id"
-    t.index ["user_id"], name: "index_meetings_users_on_user_id"
-  end
-
   create_table "meetings_works", id: false, force: :cascade do |t|
     t.uuid "meeting_id"
     t.uuid "work_id"
