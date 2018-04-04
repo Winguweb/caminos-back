@@ -4,7 +4,7 @@
 
   .page-section
     section
-      == cell('section/header', t(".about_work"))
+      == cell('section/header', t(".about_work"), links: [{title:t('.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
       div
         span = t('.title')
         span = @work.name
@@ -59,4 +59,4 @@
     section
       div
         -@work.photos.each do |photo|
-          = image_tag(photo.picture.thumb.url, alt: 'Image') 
+          = image_tag(photo.picture.thumb.url, alt: 'Image')
