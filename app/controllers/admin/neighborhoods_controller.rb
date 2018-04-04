@@ -49,7 +49,6 @@ module Admin
       params.require(:neighborhood).permit(
         :description,
         :geo_polygon,
-        :lookup_address,
         :lookup_coordinates,
         :name,
         :polygon,
