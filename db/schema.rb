@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321235454) do
+ActiveRecord::Schema.define(version: 20180404181207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 20180321235454) do
     t.geometry "polygon", limit: {:srid=>0, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "urbanization", default: false
+    t.text "delegates"
+    t.float "urbanization_score"
     t.index ["geo_polygon"], name: "index_neighborhoods_on_geo_polygon", using: :gist
     t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
     t.index ["polygon"], name: "index_neighborhoods_on_polygon", using: :gist
@@ -140,6 +143,7 @@ ActiveRecord::Schema.define(version: 20180321235454) do
     t.uuid "neighborhood_id", null: false
     t.string "name"
     t.text "description"
+    t.string "category"
     t.string "status"
     t.date "start_date"
     t.date "estimated_end_date"
