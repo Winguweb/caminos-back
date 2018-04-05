@@ -3,37 +3,16 @@ class Elements::MapEditCell < Cell::ViewModel
   private
 
   def polygon
-
-    if !model[:polygon].nil? && model[:polygon].present?
-      polygon = model[:polygon]
-      polygon.coordinates.first.map do |coords|
-        coords.reverse
-      end
-    else
-      []
-    end
+    return [] if model[:polygon].blank?
+    model[:polygon].coordinates.first.map(&:reverse)
   end
 
-  def geo_polygon
-    geo_polygon = model[:geo_polygon]
-    return [] if geo_polygon.nil?
-    geo_polygon.coordinates.first.map do |coords|
-      coords.reverse
-    end
-  end
-
-  def markers
-    options[:works] ? options[:works].map do |work|
-      work.geometry.coordinates
-    end : []
-  end
-
-  def set_marker
-    options[:set_marker] ? true : false
-  end
-
-  def set_polygon
-    options[:set_polygon] ? true : false
+  def marker
+    return [] if options[:work].blank?
+    {
+      coordinates: options[:work].geometry.coordinates,
+      icon: image_path(options[:work].category_icon)
+    }.to_json
   end
 
   def object_to_set
@@ -55,6 +34,21 @@ class Elements::MapEditCell < Cell::ViewModel
     options[:works] ? options[:works].map do |work|
       work.geo_geometry.coordinates
     end : []
+  end
+
+  def edit
+    options[:edit] || false
+  end
+
+  def controls
+    {
+      polygon: options[:controls].include?('polygon'),
+      marker: options[:controls].include?('marker'),
+      polyline: options[:controls].include?('polyline'),
+      circlemarker: options[:controls].include?('circlemarker'),
+      rectangle: options[:controls].include?('rectangle'),
+      circle: options[:controls].include?('circle')
+    }
   end
 
 end

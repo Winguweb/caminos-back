@@ -9,7 +9,7 @@ div.page-section
 
   section.with-border
     == cell('section/header', t('.address'))
-    == cell('elements/map', @neighborhood)
+    == cell('elements/map_show', @neighborhood)
 
   section.with-border
     == cell('section/header', t('.documents'), buttons: [{title: t('.upload_document'), url: new_admin_user_path }])

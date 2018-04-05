@@ -18,7 +18,7 @@
           = form.text_area :description, class: 'require', rows: 6
         .field.map
           == cell('section/header', t('.map_location'))
-          == cell('elements/map', @neighborhood ,set_polygon: true)
+          == cell('elements/map_edit', @neighborhood, edit: true, controls: ['polygon'], set_polygon: true)
 
       .actions
         = form.submit t('.update_neighborhood')

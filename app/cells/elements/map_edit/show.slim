@@ -10,8 +10,15 @@ javascript:
       defaults: #{MAP.to_json},
       token: '#{MAPBOX_TOKEN}',
       polygon: #{polygon},
-      markers: #{markers},
-      set_marker: #{set_marker},
-      set_polygon: #{set_polygon},
+      marker: #{marker},
+      edit: #{edit},
+      controls: {
+        polygon: #{controls[:polygon]},
+        marker: #{controls[:marker]},
+        polyline: #{controls[:polyline]},
+        circlemarker: #{controls[:circlemarker]},
+        rectangle: #{controls[:rectangle]},
+        circle: #{controls[:circle]},
+      }
     })
   });

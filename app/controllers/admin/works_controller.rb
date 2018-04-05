@@ -19,11 +19,11 @@ module Admin
     end
 
     def create
-      
+
       ensure_neighborhood; return if performed?
-      
+
       service = CreateWork.call(current_neighborhood, work_params)
-      
+
       if service.success?
         redirect_to admin_neighborhood_works_path
       else
@@ -81,7 +81,7 @@ module Admin
         :start_date,
         photos: [[:picture]],
         documents: [[:link,:name,:description]]
-      )  
+      )
     end
 
   end

@@ -2,5 +2,38 @@ center:
   x: -34.6083
   y: -58.3712
 zoom: 10
-marker_shadow_url: '/assets/icons/category-shadow.svg'
-style: 'mapbox.streets'
+marker_shadow_url: "/assets/icons/category-shadow.svg"
+marker_editable_url: "/assets/icons/category-editable.svg"
+style: "mapbox.streets"
+geometry_styles:
+  polyline:
+    shapeOptions:
+      clickable: false
+      color: "#3388ff"
+      weight: 10
+  polygon:
+    allowIntersection: false
+    drawError:
+      color: "#3388ff"
+      message: "<strong>Oh snap!<strong> you can't draw that!"
+    shapeOptions:
+      clickable: false
+      color: "#3388ff"
+  rectangle:
+    shapeOptions:
+      clickable: false
+  circle:
+    shapeOptions:
+      clickable: false
+  marker:
+      shapeOptions:
+      clickable: false
+      icon:
+        iconSize: [40, 40]
+        iconAnchor: [20, 30]
+        className: "marker"
+        shadowSize: [40, 40]
+        shadowAnchor: [19, 29]
+  circlemarker:
+      shapeOptions:
+        clickable: false
