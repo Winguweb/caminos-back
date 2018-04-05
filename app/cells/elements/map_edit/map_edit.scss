@@ -1,4 +1,4 @@
-@mixin map() {
+@mixin map-edit() {
   height: 400px;
   > div {
     height: 100%;
@@ -7,7 +7,7 @@
   }
 }
 
-.map-cell{
-  @include map();
+.map-edit-cell{
+  @include map-edit();
 }
 

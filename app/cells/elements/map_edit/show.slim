@@ -1,12 +1,14 @@
-.map-cell
+.map-edit-cell
   #map-container
     input type="hidden" name="#{object_to_set}[#{map_property}]" class="geometry"
     input type="hidden" name="#{object_to_set}[#{map_geo_property}]" class="geo_geometry"
 
 javascript:
   $(function() {
-    new CDLV.Components['map']({
-      el: $('.map-cell'),
+    new CDLV.Components['map_edit']({
+      el: $('.map-edit-cell'),
+      defaults: #{MAP.to_json},
+      token: '#{MAPBOX_TOKEN}',
       polygon: #{polygon},
       markers: #{markers},
       set_marker: #{set_marker},

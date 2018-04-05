@@ -1,14 +1,16 @@
-CDLV.Components['map'] = Backbone.View.extend({
+CDLV.Components['map_edit'] = Backbone.View.extend({
   initialize: function(options){
-    L.mapbox.accessToken = 'pk.eyJ1IjoianVhbmxhY3VldmEiLCJhIjoiRFh4T2xVZyJ9.EUqU8kwG9NutFNdVdL2JdQ'
-
-    var center = {x: -34.6083, y: -58.3712}
-    var default_zoom = 10
     var mapContainer = this.$el.find('#map-container')
-    var map = L.mapbox.map(mapContainer[0], 'mapbox.streets')
     var input_geometry = this.$el.find('.geometry')
     var input_geo_geometry = this.$el.find('.geo_geometry')
+
+    L.mapbox.accessToken = options.token
+
+    var center = options.defaults.center
+    var zoom = options.defaults.zoom
     var markers = options.markers
+
+    var map = L.mapbox.map(mapContainer[0], 'mapbox.streets')
 
     if (options.set_polygon) {
       var controls = {
@@ -47,9 +49,6 @@ CDLV.Components['map'] = Backbone.View.extend({
         map.addLayer(e.layer);
         var latLngs = e.layer.getLatLngs()
         var new_polygon = new L.Polygon(latLngs)
-        // var coordinates = evt.latlng
-        // var point = new L.Point(coordinates.lat, coordinates.lng)
-        // set_marker(map, coordinates)
         var new_polygon_geojson = new_polygon.toGeoJSON()
         var new_polygon_type = new_polygon_geojson.geometry.type.toUpperCase()
         var new_polygon_points = []
@@ -80,8 +79,6 @@ CDLV.Components['map'] = Backbone.View.extend({
       var new_polygon_points_string =  new_polygon_points.join(', ');
 
       new_polygon_string = "POLYGON" + " ((" + new_polygon_points_string +  "))"
-      console.log(new_polygon_string);
-
 
       input_geometry.val(new_polygon_string)
       input_geo_geometry.val(new_polygon_string)
@@ -90,7 +87,7 @@ CDLV.Components['map'] = Backbone.View.extend({
       })
       var bounds = new L.Bounds(points)
       center = bounds.getCenter()
-      default_zoom = 14
+      zoom = 14
     }
 
     for (var index in markers) {
@@ -108,7 +105,7 @@ CDLV.Components['map'] = Backbone.View.extend({
       })
     }
 
-    map.setView([center.x, center.y], default_zoom);
+    map.setView([center.x, center.y], zoom);
   }
 })
 

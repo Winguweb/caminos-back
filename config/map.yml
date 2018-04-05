@@ -1,0 +1,6 @@
+center:
+  x: -34.6083
+  y: -58.3712
+zoom: 10
+marker_shadow_url: '/assets/icons/category-shadow.svg'
+style: 'mapbox.streets'

@@ -1,9 +1,9 @@
-class Elements::MapCell < Cell::ViewModel
+class Elements::MapEditCell < Cell::ViewModel
 
   private
 
   def polygon
-    
+
     if !model[:polygon].nil? && model[:polygon].present?
       polygon = model[:polygon]
       polygon.coordinates.first.map do |coords|

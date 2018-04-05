@@ -1,0 +1,19 @@
+@mixin map-show() {
+  height: 100%;
+  > div {
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .leaflet-tile-pane {
+    opacity: 0.6;
+  }
+  .leaflet-shadow-pane {
+    opacity: 0.2;
+  }
+}
+
+.map-show-cell{
+  @include map-show();
+}
+
