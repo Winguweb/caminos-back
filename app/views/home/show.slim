@@ -1,1 +1,55 @@
-h1="Caminos de la Villa"
+div
+  nav
+    div
+      = link_to admin_dashboard_path do
+        span 'Caminos de la Villa'
+    
+    div
+      button type="button"
+        span
+
+  aside
+    div
+      section
+        header
+          h1="Elegí tu barrio"
+        section
+          header
+            h2="Barrios en proceso de urbanización"
+          nav
+            ol
+              - @neighborhoods.each do |neighborhood|
+                li
+                  a href="/neighborhoods/#{neighborhood.id}"
+                    p
+                      span
+                    div 
+                      h3=neighborhood.name
+                      span="Proceso de urbanización"
+                      span="#{Random.rand(100)}%"
+                      div
+                        div style="width:#{Random.rand(100)}%;"
+        section
+          header
+            h2="Otros barrios"
+          nav
+            ul
+              li
+                div
+                  p="Calacita"
+              li
+                div
+                  p="Villa 16"
+              li
+                div
+                  p="Los Piletones"
+              li
+                div
+                  p="Villa 17"
+              li
+                div
+                  p="Ramón Carrillo"
+
+  main
+    section
+      == cell('elements/map', @neighborhood, works: @works)

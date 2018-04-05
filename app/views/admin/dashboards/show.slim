@@ -1,6 +1,11 @@
-div.page-section-component
+= content_for :body_class do
+  = 'single-header'
+
+div.page-section
   section
-    = render partial: 'partials/components/section_header', locals: {section: t('.neighborhoods')}
-    = render partial: "admin/dashboards/partials/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
-    footer.right-link
-      = render partial: 'partials/components/section_footer_link', locals: {link: {:title => t('.neighborhoods'), :href => neighborhoods_path}}
+    ul.neighborhood-cards
+      - @neighborhoods.each do |neighborhood|
+        li
+          = link_to admin_neighborhood_path(neighborhood) do
+            == cell('elements/neighborhood_card', neighborhood)
+    == cell('section/footer_link', { title: t('.check_all_neighborhoods'), href: admin_neighborhoods_path }, extra_classes: 'right')

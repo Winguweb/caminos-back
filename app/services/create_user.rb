@@ -1,9 +1,10 @@
 class CreateUser
   prepend Service::Base
+  include Service::Support::User
 
-  def initialize(allowed_params)
+  def initialize(allowed_params, roles_params)
     @allowed_params = allowed_params
-    
+    @roles = roles_params[:roles].to_h
   end
 
   def call
@@ -14,6 +15,7 @@ class CreateUser
 
   def create_user
     @user = User.new(user_params)
+    @user.profile = Profile.new(profile_params)
 
     return @user if @user.save
 
@@ -21,20 +23,19 @@ class CreateUser
   end
 
   def user_params
-    @user_params ||= @allowed_params.merge({
+    {
+      username: @allowed_params[:username],
+      email: @allowed_params[:email],
+      password: @allowed_params[:password],
       active: true,
       approved: true,
       confirmed: true,
-      roles: [ :ambassador ],
-      entity_id: @allowed_params['entity'].strip.split(/\s+/)[0],
-      entity_type: @allowed_params.delete('entity').strip.split(/\s+/)[1],
-      profile: Profile.new( profile_params )
-    })
-  
+      roles: roles(@roles)
+    }
   end
 
   def profile_params
-    @profile_params ||= @allowed_params.delete('profile')
+    @allowed_params.delete('profile') || {}
   end
 
 end

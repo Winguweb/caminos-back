@@ -6,3 +6,18 @@ es-AR:
           attributes:
             neighborhood:
               required: Este campo es requerido
+  entities:
+    organization: Organización
+    neighborhood: Barrio
+  user:
+    roles:
+      ambassador: Embajador
+      admin: Administrador
+  date:
+    formats:
+      period: "%B"
+      day_and_day_of_week: "%A %d"
+      slashes: "%d/%m/%y"
+  time:
+    formats:
+      slashes: "%d/%m/%y"

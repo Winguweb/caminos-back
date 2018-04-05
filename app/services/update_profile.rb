@@ -1,10 +1,9 @@
 class UpdateProfile
   prepend Service::Base
 
-  def initialize(profile, profile_params, within_transaction = false)
+  def initialize(profile, profile_params)
     @profile = profile
     @profile_params = profile_params
-    @within_transaction = within_transaction
   end
 
   def call
@@ -14,19 +13,11 @@ class UpdateProfile
   private
 
   def update_profile
-    begin
-      Profile.transaction do
-        @profile.assign_attributes( @profile_params )
+    @profile.assign_attributes( @profile_params )
 
-        @profile.save! if @profile.changed?
-      end
-    rescue ActiveRecord::RecordInvalid => e
-      errors.add_multiple_errors( e.record.errors.messages )
+    return @profile if !@profile.changed? || @profile.save
 
-      @within_transaction ? (raise Service::Error.new(self)) : (return nil)
-    end
-
-    @profile
+    errors.add_multiple_errors(@profile.errors.messages) && nil
   end
 
 end

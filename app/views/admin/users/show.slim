@@ -1,9 +1,22 @@
-section
-  h1 Caminos de la Villa
-  .users-list
-    .user-data
-      .name= @user.name
-      .email= @user.email
-      = link_to 'Editar', edit_admin_user_path(@user)
-      = link_to 'Eliminar', admin_user_path(@user), :data => { confirm: 'Are you sure?' }, :method => :delete
+- roles = @user.roles.map{|role| t("user.roles.#{role}")}.join(', ')
 
+= content_for :main_header do
+  == cell('page/header', t('.user_profile'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.users') ] )
+
+div.page-section
+  section
+    == cell('section/header', t('.general'), buttons: [{ title: t('.edit'), url: edit_admin_user_path(@user) }])
+    .user-info
+      .user-avatar
+        == cell('elements/avatar', @user)
+      .information
+        h1= @user.full_name
+        - if @user.entity
+          .entity= @user.entity.name
+        .attributes
+          .email
+            .label= t('.email')
+            = @user.email
+          .permissions
+            .label= t('.permissions')
+            = roles

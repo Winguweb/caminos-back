@@ -1,0 +1,39 @@
+.works-table-cell
+  table style="width:100%"
+    - if filters
+      thead
+          tr
+            th.sortable_name
+              select#name_neighborhood onchange="neighborhoodChange()"
+                option value="asc"  A-Z
+                option value="desc"  Z-A
+
+            th.sortable_status
+              select#status onchange="statusChange()"
+                option value="asc"  Proyectadas
+                option value="desc" En Proceso
+            th.sortable_date
+              select#date onchange="dateChange()"
+                option value="asc"  Orden ascendente
+                option value="desc" Orden descendente
+    tbody
+      - works.each do |work|
+        tr
+          td
+            = link_to admin_neighborhood_work_path(id: work.id) do
+              img src= image_url(work.category_icon)
+          td
+            = link_to admin_neighborhood_work_path(id: work.id) do
+              span class=work.category
+                = t(".#{work.category}").upcase
+              span= work.name
+              span= work.lookup_address
+
+          td
+            = link_to admin_neighborhood_work_path(id: work.id) do
+              span = work.status
+
+          td
+            = link_to admin_neighborhood_work_path(id: work.id) do
+              span= t('admin.works.index.updated_at')
+              span= l(work.updated_at, format: :slashes)

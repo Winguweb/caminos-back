@@ -8,6 +8,7 @@ html , body {
   -webkit-font-smoothing: antialiased;
   font-family: $font-sans;
   a {
+    @include text-color($text-blue, 1);
     text-decoration: none;
   }
 }
@@ -23,6 +24,9 @@ h1, h2 {
 }
 
 body{
+  @include type-setting(0);
+  @include text-color($text-black);
+
   @if $development { @include grid-visual };
 
   @include grid-media($wide-grid) {
@@ -39,9 +43,30 @@ body{
 }
 
 body > main {
-  @include grid-container;
+  @include grid-column(16);
+  .main-header, .main-section{
+    @include grid-collapse;
+  }
+  .main-header{
+    @include shadow-down($light-shadow, 1);
+    padding: $gutter*1.5 0 0;
+    margin-bottom: $gutter*3;
+  }
 }
 
-a {
-  margin-right: $gutter/2;
+.half-input {
+  @include grid-collapse;
+  > div {
+    @include grid-column(1 of 2);
+  }
+}
+
+.two-thirds-one-third-input {
+  @include grid-collapse;
+  > div {
+    @include grid-column(2 of 3);
+    & + div {
+      @include grid-column(1 of 3);
+    }
+  }
 }

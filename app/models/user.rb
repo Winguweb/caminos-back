@@ -16,7 +16,8 @@ class User < ApplicationRecord
 
   attribute :settings, :jsonb, default: {}
 
-  validates_presence_of :password, :email, :username
+  validates_presence_of :email, :username
+  validates_presence_of :password, on: [ :create ]
 
   roles AVAILABLE_ROLES
 
@@ -29,6 +30,10 @@ class User < ApplicationRecord
     authlogic.require_password_confirmation = false
     authlogic.validates_format_of_email_field_options = { with: Authlogic::Regex.email_nonascii }
     authlogic.validates_length_of_password_field_options = { on: :create, minimum: 8 }
+  end
+
+  def self.available_roles
+    AVAILABLE_ROLES
   end
 
   def avatar_url

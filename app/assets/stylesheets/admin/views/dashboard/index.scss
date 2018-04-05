@@ -1,0 +1,13 @@
+#dashboards-show {
+  .page-section {
+    padding-top: $vgutter*2;
+    > section {
+      > ul {
+        @include grid-container;
+        > li {
+          @include grid-column(8);
+        }
+      }
+    }
+  }
+}

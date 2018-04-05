@@ -1,0 +1,20 @@
+.neighborhood-card-cell
+  article
+    header
+      h1
+        span = neighborhood.name
+      p
+        span
+          = "Actualizado en "
+        time
+          = neighborhood.updated_at.to_date.to_s
+
+    main
+      p
+        span
+          = "Proceso de urbanización "
+        span
+          = "#{Random.rand(100)}%"
+      div
+        div
+        div style="width:#{Random.rand(100)}%;"

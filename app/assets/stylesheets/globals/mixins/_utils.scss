@@ -1,3 +1,5 @@
+$no-gutter: (columns: 16, gutter: 0);
+
 @mixin z-level($level) {
   z-index: $level * 100;
 }

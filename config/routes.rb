@@ -2,9 +2,11 @@ Rails.application.routes.draw do
   scope protocol: SECURE_PROTOCOL do
 
     root to: 'home#show'
-
+    get '/neighborhoods/:id', action: :works, controller: :neighborhoods
+    get '/neighborhoods/:id/agreement', action: :agreement, controller: :neighborhoods
+    get '/neighborhoods/:id/about', action: :about, controller: :neighborhoods
   # ╭─ Public Accesible URL's / Path's
-    get  '/components', action: :index, controller: :kitchen_sink
+    get '/components', action: :index, controller: :components
     get '/admin', to: redirect('/admin/dashboard')
   # ╰─  End of Public Accesible URL's / Path's
 
@@ -21,12 +23,11 @@ Rails.application.routes.draw do
 
       resources :organizations, only: [:show, :new, :create, :index]
 
-      resources :neighborhoods, only: [:show, :new, :create, :index, :update,:edit] do
-        resources :works, only: [:show, :new, :create, :index, :update,:edit]
+      resources :neighborhoods, only: [:show, :new, :create, :index, :update, :edit] do
+        resources :works, only: [:show, :new, :create, :index, :update, :edit]
         resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
+        resource :agreement, only: [ :show, :new, :create,:edit, :update]
       end
-
-      resources :users, except: [ :index ]
     end
   # ╰─ End of Private Accesible URL's / Path's
   end

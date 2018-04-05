@@ -1,4 +1,6 @@
-section
-  h1 Crear nuevo Embajador
-  = render 'form'
+= content_for :main_header do
+  == cell('page/header', t('.new_user'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.users') ] )
 
+.page-section
+  section
+    == cell('forms/user', @user, url: admin_users_path, action: 'create')

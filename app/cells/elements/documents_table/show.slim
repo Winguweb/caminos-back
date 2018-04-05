@@ -1,0 +1,37 @@
+.documents-table-cell
+  table style="width:100%"
+    - if filters
+      thead
+          tr
+            th.sortable_type
+              select#name_neighborhood onchange="typeChange()"
+                option value="" Tipo
+                option value="asc"  A-Z
+                option value="desc"  Z-A
+
+            th.sortable_name
+              select#status onchange="nameChange()"
+                option value="" Nombre
+                option value="asc"  A-Z
+                option value="desc" Z-A
+            th.sortable_author
+              select#date onchange="authorChange()"
+                option value="" Descripción
+                option value="asc"  Orden ascendente
+                option value="desc" Orden descendente
+            th.sortable_date
+              select#date onchange="dateChange()"
+                option value="" Fecha
+                option value="asc"  Orden ascendente
+                option value="desc" Orden descendente
+    tbody
+      - documents.each do |document|
+        tr
+          td
+            i
+          td
+            a href=document[:attachment_source] = document[:name]
+          td
+            a href=document[:attachment_source] = document[:description]
+          td
+            a href=document[:attachment_source] = l(document[:created_at], format: :slashes)

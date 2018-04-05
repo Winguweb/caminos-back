@@ -1,0 +1,11 @@
+.form_doc
+  a id="addDoc" Agregar Documento
+  #documents
+
+javascript:
+  $(function() {
+  	  new CDLV.Components['docs']({
+      el: $('.form_doc'), 
+      owner: '#{owner}'
+    })
+  });

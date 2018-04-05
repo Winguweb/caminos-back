@@ -1,21 +1,22 @@
-= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: @neighborhood.name, breadcrumbs: @section_header_breadcrumbs}
-div.page-section-component
+= content_for :main_header do
+  == cell('page/header', @neighborhood.name, links: header_links(@neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+
+div.page-section
   section.with-border
-    = render partial: 'partials/components/section_header', locals: {section: t('.about_neighborhood', neighborhood: @neighborhood.name ), links: @section_header_links}
-    main
-      = render partial: 'partials/components/description_text', locals: {text: @neighborhood.description}
-   
+    == cell('section/header', t('.about_neighborhood', neighborhood: @neighborhood.name ), links: [{title:t('.edit'), href:edit_admin_neighborhood_path(@neighborhood)}])
+    .content
+      == cell('elements/description', text: @neighborhood.description)
+
   section.with-border
-    = render partial: 'partials/components/section_header', locals: {section: t('.address'), links: @section_header_links}
-  
-    = @neighborhood.lookup_address
-  section#works
-    = render partial: 'partials/components/section_header', locals: {section: "Lista de documentos", buttons: @documents_list_button}
-    main
-      = render partial: 'partials/components/documents_list', locals: {documents: @documents_list}
+    == cell('section/header', t('.address'))
+    == cell('elements/map', @neighborhood)
+
+  section.with-border
+    == cell('section/header', t('.documents'), buttons: [{title: t('.upload_document'), url: new_admin_user_path }])
+    .content
+      == cell('elements/documents_table', @documents)
+  section
+    == cell('section/header', t('.ambassadors'), buttons: [{title: t('.add_new_ambassador'), url: '#', extra_classes:'add-new-ambassador' }])
 
   section
-    = render partial: 'partials/components/section_header', locals: {section: t('.ambassadors')}
-    main
-      = render partial: "neighborhoods/partials/ambassadors_list", locals: { ambassadors: @neighborhood.users }
- 
+    == cell('section/header', t('.pictures'), buttons: [{title: t('.add_new_picture'), url: '#', extra_classes:'add-new-picture' }])

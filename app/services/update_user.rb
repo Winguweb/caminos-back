@@ -1,9 +1,11 @@
 class UpdateUser
   prepend Service::Base
+  include Service::Support::User
 
-  def initialize(user, allowed_params)
+  def initialize(user, allowed_params, roles_params)
     @user = user
-    @allowed_params = allowed_params
+    @allowed_params = allowed_params.to_h
+    @roles = roles_params[:roles].to_h
   end
 
   def call
@@ -13,25 +15,17 @@ class UpdateUser
   private
 
   def update_user
-    begin
-      User.transaction do
-        unless profile_params.empty?
-          UpdateProfile.call(@user.profile, profile_params, true)
-        end
+    unless profile_params.empty?
+      profile_service = UpdateProfile.call(@user.profile, profile_params)
 
-        @user.assign_attributes( user_params )
-
-        @user.save! if @user.changed?
-      end
-    rescue Service::Error, ActiveRecord::RecordInvalid => e
-      return errors.add_multiple_errors( exception_errors(e, @delivery) ) && nil
+      return (errors.add_multiple_errors(profile_service.errors) && nil) unless profile_service.success?
     end
 
-    @user
-  end
+    @user.assign_attributes( user_params )
 
-  def exception_errors(exception, delivery)
-    exception.is_a?(Service::Error) ? exception.service.errors : delivery.errors.messages
+    return @user if !@user.changed? || @user.save
+
+    errors.add_multiple_errors(@user.errors.messages) && nil
   end
 
   def profile_params
@@ -39,7 +33,7 @@ class UpdateUser
   end
 
   def user_params
-    @allowed_params.reject{ |_, value| value.blank? }
+    @allowed_params.reject{ |_, value| value.blank? }.merge(roles: roles(@roles))
   end
 
 end

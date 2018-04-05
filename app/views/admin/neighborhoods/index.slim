@@ -1,5 +1,8 @@
-div.page-section-component
+= content_for :main_header do
+  == cell('page/header', t('.neighborhoods'), subtitle: t('.neighborhoods_subtitle'), breadcrumbs: [ t('admin.sections.dashboard') ] )
+
+div.page-section
   section
-    = render partial: 'partials/components/section_header', locals: {section: t('.neighborhoods')}
-    = render partial: "partials/components/neighborhoods_list", locals: { neighborhoods: @neighborhoods }
-   
+    == cell('section/header',"", buttons: [{title: t('.new_neighborhood'), url: new_admin_neighborhood_path }])
+    == cell('elements/neighborhoods_list', neighborhoods: @neighborhoods )
+

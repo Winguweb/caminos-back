@@ -3,27 +3,46 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
   head
     title
       = "#{yield(:head_title)+' - ' unless yield(:head_title).empty? }Caminos de la Villa"
-    / = favicon_link_tag 'favicon.png', type: 'image/png'
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta name="locale" content=I18n.locale.to_s
 
     = stylesheet_link_tag 'admin/application', media: 'all'
+    = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css'
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.css'
     = yield :css
     = csrf_meta_tags
 
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    = javascript_include_tag "https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js"
+    = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.2/leaflet.draw.js"
+
   body id=body_id class=body_class
 
-    = render partial: 'admin/partials/header'
+    - if current_user
+      = render partial: 'admin/partials/header'
 
     main
+      - if content_for?(:main_header)
+        .main-header
+          = content_for(:main_header)
       - unless flash.empty?
-        - flash.each do |name, msg|
-          = msg
-      = yield
+        .main-messages
+          - flash.each do |name, msg|
+            = msg
+      .main-section
+        = yield
 
     = render partial: 'admin/partials/footer'
 
     = yield :before_js
     = javascript_include_tag 'admin/application'
     = yield :js
-

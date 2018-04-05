@@ -1,0 +1,18 @@
+.page-header-cell class="#{'without-links' unless links}"
+  .content
+    == cell('elements/breadcrumbs', crumbs: breadcrumbs)
+    .page-title
+      - if title
+        h1
+          span
+            = title
+      - if subtitle
+        div.subtitle
+          span
+            = subtitle
+  - if links
+    .page-links
+      ul
+        - for link in links
+          li
+            a href=link[:href] = link[:title]

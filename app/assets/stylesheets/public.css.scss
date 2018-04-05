@@ -7,6 +7,7 @@
 @import 'layout/application';
 
 // VIEWS & PARTIALS
-@import 'admin/views/partials/**/*';
+@import 'admin/partials/**/*';
 @import 'views/home/*';
-@import 'views/kitchen_sink/*';
+@import 'views/neighborhoods/*';
+@import 'views/components/*';

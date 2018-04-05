@@ -1,0 +1,38 @@
+.neighborhoods-list-cell
+  table style="width:100%"
+    thead
+      tr
+        th.sortable_name
+          select#name_neighborhood onchange="neighborhoodChange()"
+            option value="asc"  A-Z
+            option value="desc"  Z-A
+
+        th.sortable_progress
+          select#progress onchange="progressChange()"
+            option value="asc"  Orden ascendente
+            option value="desc" Orden descendente
+
+
+    tbody
+      - neighborhoods.each do |neighborhood|
+        - percent = Random.rand(100)
+        tr
+          td
+            a href=admin_neighborhood_path(neighborhood)
+              p#name
+
+                = neighborhood.name
+              p#date
+                = "Actualizado en: #{neighborhood.updated_at}"
+
+          td
+            a href="#"
+              main
+                p
+                  span
+                    = "Proceso de urbanización "
+                  span#percent
+                    = "#{percent}%"
+                div
+                  div
+                  div style="width:#{percent}%;"

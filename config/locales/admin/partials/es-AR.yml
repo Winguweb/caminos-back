@@ -1,0 +1,6 @@
+es-AR:
+  admin:
+    partials:
+      header:
+        neighborhoods: Barrios
+        users: Usuarios

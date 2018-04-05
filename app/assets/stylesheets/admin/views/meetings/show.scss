@@ -1,5 +1,17 @@
 #meetings-show{
-  @include grid-column(8);
-  @include grid-push(2);
- 
+  section{
+    > header {
+      h1{
+        color: $grey;
+        font-weight: 400;
+        @include type-setting(0);
+        font-size: 1.5em;
+      }
+      div{
+        color: $black;
+        font-weight: 200;
+        @include type-setting(0);
+      }
+    }
+  }
 }

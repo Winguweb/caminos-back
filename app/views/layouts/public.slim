@@ -6,14 +6,29 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
         = yield(:head_title)
       - else
         = "Caminos de la villa"
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="theme-color" content="#ffffff">
+
     meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     meta name="locale" content=I18n.locale.to_s
 
+
+
     = stylesheet_link_tag 'public', media: 'all'
+    = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css'
     = yield :css
     = csrf_meta_tags
 
-    body
+    = javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+    = javascript_include_tag "https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js"
+
+    body id=body_id class=body_class
       main
         =yield
 

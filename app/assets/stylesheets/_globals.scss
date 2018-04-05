@@ -12,26 +12,6 @@
 @import 'neat';
 @import 'normalize'; // vendor library
 
-/* ===================
-  GENERAL UI ELEMENTS
-=================== */
-@import "ui/button";
-@import "ui/buttons";
-@import "ui/form";
-@import "ui/user_button";
-@import "ui/add_button";
-@import "ui/site_logo";
-@import "ui/breadcrumbs";
-@import "ui/neighborhood_card";
-@import "ui/section_footer_link";
-@import "ui/description_text";
-@import "ui/page_section";
-@import "ui/person_card";
-@import "ui/documents_list";
-@import "ui/works_list";
-@import "ui/neighborhoods_list";
-
-
 /* ===============================
   CUSTOM MIXIN LIBRARIES & HELPERS
 =============================== */
@@ -40,6 +20,46 @@
 @import 'globals/mixins/typography';
 @import 'globals/mixins/helpers';
 @import 'globals/mixins/flex-grids';
+
+/* ===================
+  PURE MIXIN UI STUFF
+=================== */
+@import "ui/checkbox";
+@import "ui/radiobutton";
+
+/* ===================
+  CELLS UI
+=================== */
+// ELEMENTS
+@import "add_button";
+@import "avatar";
+@import "breadcrumbs";
+@import "button";
+@import "description";
+@import "documents_table";
+@import "map";
+@import "meeting_details";
+@import "neighborhood_card";
+@import "neighborhoods_list";
+@import "meeting_card";
+@import "meetings_list";
+@import "person_card";
+@import "users_table";
+@import "work_details";
+@import "works_table";
+@import "works_list";
+// FORM
+@import "form__user";
+// PAGE
+@import "page__header";
+// SECTION
+@import "section__footer_link";
+
+/* ===================
+  GENERAL UI STUFF
+=================== */
+@import "ui/form";
+@import "ui/page_section";
 
 /* ===============================
   OTHER VENDORS STUFF

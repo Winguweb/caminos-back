@@ -1,75 +1,51 @@
+== cell('page/header', "Nueva Obra", links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
+= form_for ['admin', current_neighborhood, @work], html: { class: 'form' } do |f|
 
-= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: "Nueva Obras", breadcrumbs: @section_header_breadcrumbs}
-= form_for [current_neighborhood,@work] do |f|
-  work  
-    div.page-section-component
-      section
-        = render partial: 'partials/components/section_header', locals: {section: t(".about_work"), links: [ {:title => 'Cancelar', :href => neighborhood_works_path(current_neighborhood)} ]}
-        div
-          = t(".title")
-          br
-          = f.text_field :name
+  .page-section
+    section
+      == cell('section/header', t(".about_work"), links: [ {:title => t(".cancel"), :url => admin_neighborhood_works_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
+      .field
+        = f.label :name, t('.title')
+        = f.text_field :name
+      .field
+        = f.label :description, t('.description')
+        = f.text_area :description
+      .no-grid
+        .field
+          = f.label :name, t('.category')
+          = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
+        .field
+          = f.label :name, t('.status')
+          = f.select :status, @status.collect { |c| [ c, c ] }, include_blank: true
 
-        div
-          = f.label :description
-          br
-          = f.text_area :description
-        div
-          elements
-            .category
-              =t(".category")
-              = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
-            .status 
-              =t(".status") 
-              = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
-        div
-          elements
-            .first-short
-              = f.label :manager
-              br
-              = f.text_field :manager
-            .last-large
-              = f.label :budget
-              br
-              = f.text_field :budget
-        div
-          elements
-            .first-short
-              = f.label :start_date
-              br
-              = f.date_field :start_date
-            .last-large
-              = f.label :estimated_end_date
-              br
-              = f.date_field :estimated_end_date
-        div
-          elements
-            .first-large
-              = f.label :execution_plan
-              br
-              = f.text_field :execution_plan
-            .last-short
-              = f.label :lookup_address
-              br
-              = f.text_field :lookup_address
-      section
-        = render partial: 'partials/components/section_header', locals: {section: "Ubicación en el mapa"}
-        div 
-          #map-container
-            #map-canvas
-          = f.label :geo_geometry
-          br
-          = f.text_field :geo_geometry
+      .half-input
+        .field
+          = f.label :manager, t('.manager')
+          = f.text_field :manager
 
-      section
-        = render partial: 'partials/components/section_header', locals: {section: "Lista de documentos", buttons: @documents_list_button}
-        main
-          = render partial: 'partials/components/documents_list', locals: {documents: @documents_list}
+        .field
+          = f.label :budget, t('.budget')
+          = f.text_field :budget
 
-        div
-          = f.hidden_field :end_date
+        .field
+          = f.label :start_date, t('.start_date')
+          = f.date_field :start_date
 
-       
-      
-        div.actions
-          = f.submit
+        .field
+          = f.label :estimated_end_date, t('.estimated_end_date')
+          = f.date_field :estimated_end_date
+
+      .two-thirds-one-third-input
+        .field
+          = f.label :execution_plan, t('.execution_plan')
+          = f.text_field :execution_plan
+
+        .field
+          = f.label :lookup_address, t('.lookup_address')
+          = f.text_field :lookup_address
+
+    section
+      == cell('section/header', "Ubicación en el mapa")
+      .field
+        = f.label :geo_geometry, t('.geo_geometry')
+        = f.text_field :geo_geometry
