@@ -27,6 +27,7 @@ Rails.application.routes.draw do
         resources :works, only: [:show, :new, :create, :index, :update, :edit]
         resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
         resource :agreement, only: [ :show, :new, :create,:edit, :update]
+        resources :activities, only: [ :index]
       end
     end
   # ╰─ End of Private Accesible URL's / Path's

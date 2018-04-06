@@ -16,7 +16,7 @@ module Admin
           href: admin_neighborhood_agreement_path(neighborhood)
         },{
           title: t('admin.links.neighborhoods.show.activity'),
-          href: '#'
+          href: admin_neighborhood_activities_path(neighborhood)
         }
       ]
     end

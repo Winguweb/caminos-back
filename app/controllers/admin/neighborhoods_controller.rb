@@ -11,6 +11,7 @@ module Admin
     end
 
     def create
+      current_user
       service = CreateNeighborhood.call(neighborhood_params)
       if service.success?
         redirect_to admin_neighborhoods_path

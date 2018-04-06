@@ -1,0 +1,15 @@
+= content_for :main_header do
+  == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+div.page-section
+  section
+    -@activities.each do |activity|
+        = activity.user.name
+        br
+        = activity.action
+        br
+        = activity.auditable_type
+        br
+        = activity.auditable.name
+        br
+        = activity.created_at
+        br

@@ -6,4 +6,6 @@ class Neighborhood < ApplicationRecord
   has_many :documents, as: :holder
   has_one :agreement
   validates_presence_of :name, :description, :geo_polygon, :polygon
+  has_associated_audits
+  audited
 end
