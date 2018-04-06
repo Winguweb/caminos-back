@@ -5,14 +5,12 @@ module Admin
 
     def index
       @activities =  []
-      @works =  current_neighborhood.works
-      @works.each do  |work|
-        work.audits.each  do |audit|
+      @auditables =  current_neighborhood.works +  current_neighborhood.meetings
+      @auditables.each do  |auditable|
+        auditable.audits.each  do |audit|
           @activities.push(audit)
         end
       end
-      #=  Audited::Audit.all
-
     end
   end
 end
