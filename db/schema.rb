@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 20180406134043) do
     t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "urbanization", default: false
+    t.text "delegates"
+    t.float "urbanization_score"
     t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
     t.index ["geometry"], name: "index_neighborhoods_on_geometry", using: :gist
     t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
@@ -153,6 +156,7 @@ ActiveRecord::Schema.define(version: 20180406134043) do
     t.text "execution_plan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "company"
     t.index ["geo_geometry"], name: "index_works_on_geo_geometry", using: :gist
     t.index ["geometry"], name: "index_works_on_geometry", using: :gist
     t.index ["lookup_coordinates"], name: "index_works_on_lookup_coordinates", using: :gist
