@@ -12,9 +12,18 @@
   .leaflet-shadow-pane {
     opacity: 0.2;
   }
+  path {
+    &.water {fill: $water; stroke: $water;}
+    &.trash {fill: $trash; stroke: $trash;}
+    &.public {fill: $public; stroke: $public;}
+    &.health {fill: $health; stroke: $health;}
+    &.energy {fill: $energy; stroke: $energy;}
+    &.sewer {fill: $sewer; stroke: $sewer;}
+    &.infrastructure {fill: $infrastructure; stroke: $infrastructure;}
+
+  }
 }
 
 .map-show-cell{
   @include map-show();
 }
-

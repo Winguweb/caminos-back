@@ -9,16 +9,16 @@ geometry_styles:
   polyline:
     shapeOptions:
       clickable: false
-      color: "#3388ff"
+      color: "#ff3388"
       weight: 10
   polygon:
     allowIntersection: false
     drawError:
-      color: "#3388ff"
+      color: "#ff3388"
       message: "<strong>Oh snap!<strong> you can't draw that!"
     shapeOptions:
       clickable: false
-      color: "#3388ff"
+      color: "#ff3388"
   rectangle:
     shapeOptions:
       clickable: false

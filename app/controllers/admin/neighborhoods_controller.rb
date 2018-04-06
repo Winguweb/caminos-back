@@ -48,10 +48,10 @@ module Admin
     def neighborhood_params
       params.require(:neighborhood).permit(
         :description,
-        :geo_polygon,
+        :geo_geometry,
         :lookup_coordinates,
         :name,
-        :polygon,
+        :geometry,
         documents: [[:link,:name,:description]]
        )
     end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321235454) do
+ActiveRecord::Schema.define(version: 20180406134043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,13 +67,13 @@ ActiveRecord::Schema.define(version: 20180321235454) do
     t.text "description"
     t.string "lookup_address"
     t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
-    t.geography "geo_polygon", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
-    t.geometry "polygon", limit: {:srid=>0, :type=>"geometry"}
+    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["geo_polygon"], name: "index_neighborhoods_on_geo_polygon", using: :gist
+    t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
+    t.index ["geometry"], name: "index_neighborhoods_on_geometry", using: :gist
     t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
-    t.index ["polygon"], name: "index_neighborhoods_on_polygon", using: :gist
   end
 
   create_table "organizations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

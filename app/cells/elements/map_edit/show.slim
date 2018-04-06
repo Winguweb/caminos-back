@@ -1,7 +1,6 @@
 .map-edit-cell
   #map-container
-    input type="hidden" name="#{object_to_set}[#{map_property}]" class="geometry"
-    input type="hidden" name="#{object_to_set}[#{map_geo_property}]" class="geo_geometry"
+
 
 javascript:
   $(function() {
@@ -9,9 +8,8 @@ javascript:
       el: $('.map-edit-cell'),
       defaults: #{MAP.to_json},
       token: '#{MAPBOX_TOKEN}',
-      polygon: #{polygon},
-      marker: #{marker},
-      edit: #{edit},
+      base: #{base},
+      editable: #{editable},
       controls: {
         polygon: #{controls[:polygon]},
         marker: #{controls[:marker]},

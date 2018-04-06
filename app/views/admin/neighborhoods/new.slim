@@ -14,7 +14,9 @@
           = form.text_area :description, class: 'require', rows: 6
         .field.map
           == cell('section/header', t('.map_location'))
-          == cell('elements/map_edit', {}, controls: ['polygon'], set_polygon: true)
+          == cell('elements/map_edit', @neighborhood, controls: ['polygon'], name: 'neighborhood')
+          input type="hidden" name="neighborhood[geometry]" class="geometry-field"
+          input type="hidden" name="neighborhood[geo_geometry]" class="geo_geometry-field"
         .field.docs
           == cell('elements/document_form',"neighborhood")
       .actions

@@ -5,5 +5,5 @@ class Neighborhood < ApplicationRecord
   has_many :works
   has_many :documents, as: :holder
   has_one :agreement
-  validates_presence_of :name, :description, :geo_polygon, :polygon
+  validates_presence_of :name, :description, :geo_geometry, :geometry
 end

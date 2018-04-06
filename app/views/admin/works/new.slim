@@ -47,7 +47,9 @@
 
     section
       == cell('section/header', t('.map_location'))
-      == cell('elements/map_edit', current_neighborhood, controls: ['marker'], set_marker: true)
+      == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon'], name: 'work')
+      input type="hidden" name="work[geometry]" class="geometry-field"
+      input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"
 
     section
       == cell('section/header',"Fotos")

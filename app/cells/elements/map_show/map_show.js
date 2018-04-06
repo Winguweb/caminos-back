@@ -1,18 +1,17 @@
 CDLV.Components['map_show'] = Backbone.View.extend({
   initialize: function(options) {
-
     _.bindAll(
       this,
-      'setMapContainer',
-      'hasPolygon',
-      'hasMarkers',
-      'setAccessToken',
-      'loadDefaults',
-      'createMap',
-      'showPolygons',
-      'showMarkers',
       'centerMap',
+      'createMap',
       'getCenter',
+      'loadDefaults',
+      'setAccessToken',
+      'setMapContainer',
+      'showBaseGeometry',
+      'showFeaturesGeometry',
+      'showMarkers',
+      'showPolygon',
     )
 
     this.setAccessToken(options.token)
@@ -23,9 +22,9 @@ CDLV.Components['map_show'] = Backbone.View.extend({
 
     this.createMap()
 
-    this.showPolygons()
+    this.showBaseGeometry()
 
-    this.showMarkers()
+    this.showFeaturesGeometry()
 
     this.centerMap()
   },
@@ -35,54 +34,71 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   setMapContainer: function(selector) {
     this.mapContainer = this.$el.find(selector)
   },
-  hasPolygon: function () {
-    return !_.isEmpty(this.polygon)
-  },
-  hasMarkers: function () {
-    return !_.isEmpty(this.markers)
+  hasBaseGeometry: function () {
+    return !_.isEmpty(this.base)
   },
   loadDefaults: function(options) {
     this.center = options.defaults.center
-    this.zoom = options.defaults.zoom
-    this.style = options.defaults.style
+    this.geometryStyles = options.defaults.geometry_styles
     this.markerShadowURL = options.defaults.marker_shadow_url
-    this.markers = options.markers
-    this.polygon = options.polygon
+    this.base = options.base
+    this.features = options.features
+    this.style = options.defaults.style
+    this.zoom = options.defaults.zoom
   },
   createMap: function() {
     this.map = L.mapbox.map(this.mapContainer[0], this.style)
+    this.baseGeometryFeature = new L.FeatureGroup()
+    this.map.addLayer(this.baseGeometryFeature)
   },
-  showPolygons: function() {
-    if (!this.hasPolygon()) return
-    new L.Polygon(this.polygon).addTo(this.map)
+  showBaseGeometry: function() {
+    if (!this.hasBaseGeometry()) return
+    this.showPolygon(this.base)
+  },
+  showFeaturesGeometry: function() {
+    this.features.forEach(function(feature) {
+      this.showGeometry(feature)
+    }.bind(this))
+  },
+  showGeometry: function(geometry) {
+    switch (geometry.type) {
+      case 'marker':
+        this.showMarkers(geometry)
+        break
+      case 'polygon':
+        this.showPolygon(geometry)
+        break
+    }
+  },
+  showPolygon: function(polygon) {
+    console.log(polygon)
+    new L.Polygon(polygon.coordinates, {
+      className: polygon.className,
+    }).addTo(this.baseGeometryFeature)
     this.zoom = 14
   },
-  showMarkers: function() {
-    if (!this.hasMarkers()) return
-      var map = this.map
-    this.markers.forEach(function(marker) {
-      new L.Marker(marker.coordinates, {icon: L.icon({
-              iconUrl: marker.icon,
-              iconSize: [40, 40],
-              iconAnchor: [20, 30],
-              className: "marker",
-              shadowUrl: this.markerShadowURL,
-              shadowSize: [40, 40],
-              shadowAnchor: [19, 29],
-          }
-        )}).addTo(map)
-    }.bind(this))
+  showMarkers: function(marker) {
+    new L.Marker(marker.coordinates[0], {
+      icon: L.icon({
+        className: "marker",
+        iconAnchor: [20, 30],
+        iconSize: [40, 40],
+        iconUrl: marker.icon,
+        shadowAnchor: [19, 29],
+        shadowSize: [40, 40],
+        shadowUrl: this.markerShadowURL,
+      }
+    )}).addTo(this.baseGeometryFeature)
   },
   centerMap: function() {
     var center = this.getCenter() || this.center
     this.map.setView([center.x, center.y], this.zoom);
   },
   getCenter: function() {
-    if (!this.hasPolygon()) return
-    var points = this.polygon.map(function(point) {
+    var points = this.base.coordinates.map(function(point) {
       return new L.Point(point[0], point[1])
     })
     var bounds = new L.Bounds(points)
     return bounds.getCenter()
-  }
+  },
 })

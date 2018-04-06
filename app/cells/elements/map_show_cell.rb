@@ -2,19 +2,30 @@ class Elements::MapShowCell < Cell::ViewModel
 
   private
 
-  def polygon
-    return [] if model[:polygon].blank?
-    model[:polygon].coordinates.first.map(&:reverse)
+  def base
+    return [] if model[:geometry].blank?
+    {
+      coordinates: model[:geometry].coordinates.first.map(&:reverse)
+    }.to_json
   end
 
-  def markers
-    return [] if options[:works].blank?
-    options[:works].map do |work|
-      {
-        coordinates: work.geometry.coordinates,
-        icon: image_path(work.category_icon)
-      }
+  def features
+    return [] if options[:features].blank?
+    options[:features].map do |feature|
+      case feature[:geometry].geometry_type
+      when RGeo::Feature::Point
+        {
+          coordinates: [feature[:geometry].coordinates],
+          icon: image_path(feature.category_icon),
+          type: 'marker',
+        }
+      when RGeo::Feature::Polygon
+        {
+          coordinates: feature[:geometry].coordinates.first.map(&:reverse),
+          className: feature.category,
+          type: 'polygon',
+        }
+      end
     end.to_json
   end
-
 end
