@@ -14,8 +14,8 @@ class CreateNeighborhood
   def create_neighborhood
     @neighborhood = Neighborhood.new(neighborhood_params)
     @neighborhood.agreement = Agreement.new
-    
-    if documents_params.present? 
+
+    if documents_params.present?
       documents_params.each do |document|
         service_document = SaveDrive.call(document[:link],document[:name])
         if (service_document.success?)
@@ -23,10 +23,10 @@ class CreateNeighborhood
           document.holder = @neighborhood
         end
       end
-      
+
       return @neighborhood if @neighborhood.save
       errors.add_multiple_errors(@neighborhood.errors.messages) && nil
-      
+
     else
       return @neighborhood if @neighborhood.save
       errors.add_multiple_errors(@neighborhood.errors.messages) && nil
@@ -41,8 +41,8 @@ class CreateNeighborhood
       description: @allowed_params[:description],
       lookup_coordinates: @allowed_params[:lookup_coordinates],
       lookup_address: @allowed_params[:lookup_address],
-      geo_polygon: @allowed_params[:geo_polygon],
-      polygon: @allowed_params[:polygon],
+      geo_geometry: @allowed_params[:geo_geometry],
+      geometry: @allowed_params[:geometry],
     }
   end
 

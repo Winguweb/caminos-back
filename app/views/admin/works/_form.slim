@@ -45,7 +45,7 @@
           = f.text_field :lookup_address
 
     section
-      == cell('section/header', "Ubicación en el mapa")
-      .field
-        = f.label :geo_geometry, t('.geo_geometry')
-        = f.text_field :geo_geometry
+      == cell('section/header', t('.map_location'))
+      == cell('elements/map_edit', current_neighborhood, editable: @work, controls: ['marker', 'polygon'], name: 'work')
+      input type="hidden" name="work[geometry]" class="geometry-field"
+      input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"

@@ -1,0 +1,28 @@
+@mixin map-show() {
+  height: 100%;
+  > div {
+    height: 100%;
+    min-height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .leaflet-tile-pane {
+    opacity: 0.6;
+  }
+  .leaflet-shadow-pane {
+    opacity: 0.2;
+  }
+  path {
+    &.water {fill: $water; stroke: $water;}
+    &.trash {fill: $trash; stroke: $trash;}
+    &.public {fill: $public; stroke: $public;}
+    &.health {fill: $health; stroke: $health;}
+    &.energy {fill: $energy; stroke: $energy;}
+    &.sewer {fill: $sewer; stroke: $sewer;}
+    &.infrastructure {fill: $infrastructure; stroke: $infrastructure;}
+  }
+}
+
+.map-show-cell{
+  @include map-show();
+}

@@ -44,7 +44,7 @@
           span = @work.lookup_address
     section
       == cell('section/header', t('.map_location'))
-      == cell('elements/map', current_neighborhood, works: [@work])
+      == cell('elements/map_show', current_neighborhood, features: [@work])
 
     section
       == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])

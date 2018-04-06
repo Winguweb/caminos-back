@@ -13,10 +13,10 @@ class CreateWork
   private
 
   def create_work
-    
+
     @work = Work.new(work_params)
     @work.neighborhood = @neighborhood
-    
+
     if documents_params.present? || !photo_params.nil?
       save_photos(@work) if !photo_params.nil?
       save_documents(@work) if documents_params.present?

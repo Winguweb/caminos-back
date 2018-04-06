@@ -3,7 +3,7 @@ div
     div
       = link_to admin_dashboard_path do
         span 'Caminos de la Villa'
-    
+
     div
       button type="button"
         span
@@ -23,7 +23,7 @@ div
                   a href="/neighborhoods/#{neighborhood.id}"
                     p
                       span
-                    div 
+                    div
                       h3=neighborhood.name
                       span="Proceso de urbanización"
                       span="#{Random.rand(100)}%"
@@ -52,4 +52,4 @@ div
 
   main
     section
-      == cell('elements/map', @neighborhood, works: @works)
+      == cell('elements/map_show', @neighborhood)
