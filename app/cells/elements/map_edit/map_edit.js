@@ -19,7 +19,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
       'showMarker',
       'showPolygon',
       'updateMarkerInput',
-      'updatePolygonInput',
+      'updatePolygonInput'
     )
 
     this.setAccessToken(options.token)

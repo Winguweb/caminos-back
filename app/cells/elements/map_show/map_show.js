@@ -11,7 +11,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       'showBaseGeometry',
       'showFeaturesGeometry',
       'showMarkers',
-      'showPolygon',
+      'showPolygon'
     )
 
     this.setAccessToken(options.token)
@@ -34,7 +34,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   setMapContainer: function(selector) {
     this.mapContainer = this.$el.find(selector)
   },
-  hasBaseGeometry: function () {
+  hasBaseGeometry: function() {
     return !_.isEmpty(this.base)
   },
   loadDefaults: function(options) {
@@ -71,7 +71,6 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     }
   },
   showPolygon: function(polygon) {
-    console.log(polygon)
     new L.Polygon(polygon.coordinates, {
       className: polygon.className,
     }).addTo(this.baseGeometryFeature)
@@ -92,7 +91,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   centerMap: function() {
     var center = this.getCenter() || this.center
-    this.map.setView([center.x, center.y], this.zoom);
+    this.map.setView([center.x, center.y], this.zoom)
   },
   getCenter: function() {
     var points = this.base.coordinates.map(function(point) {
