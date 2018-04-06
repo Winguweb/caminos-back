@@ -1,0 +1,5 @@
+@mixin activity-card() {
+}
+.activity-card-cell{
+  @include activity-card;
+}

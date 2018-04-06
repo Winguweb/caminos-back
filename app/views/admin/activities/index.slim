@@ -2,14 +2,11 @@
   == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
 div.page-section
   section
-    -@activities.each do |activity|
-        = activity.user.name
-        br
-        = activity.action
-        br
-        = activity.auditable_type
-        br
-        = activity.auditable.name
-        br
-        = activity.created_at
-        br
+    table style="width:100%"
+      tbody
+        - @activities.each do |activity|
+          tr
+            td
+              == cell('elements/activity_card', activity, neighborhood: current_neighborhood)
+            td
+              = activity.created_at.to_date.to_s

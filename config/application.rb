@@ -46,6 +46,7 @@ module CaminosBack
     config.generators.system_tests = nil
 
     config.cells.with_assets = %w(
+      elements/activity_card_cell
       elements/add_button_cell
       elements/avatar_cell
       elements/breadcrumbs_cell
