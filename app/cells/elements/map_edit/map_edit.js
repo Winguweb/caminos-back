@@ -75,7 +75,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   },
   showBaseGeometry: function() {
     if (!this.hasBaseGeometry()) return
-    this.showPolygon(this.base, {fixed: true, color: "#3388ff"})
+    this.showPolygon(this.base, {fixed: true})
   },
   showEditableGeometry: function() {
     if (!this.hasEditableGeometry()) return
@@ -90,7 +90,10 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   },
   showPolygon: function(polygon, options) {
     var parent = options && options.fixed ? this.baseGeometryFeature : this.editableGeometryFeature
-    new L.Polygon(polygon.coordinates).addTo(parent)
+    new L.Polygon(polygon.coordinates,
+      {
+        className: polygon.className,
+      }).addTo(parent)
     this.zoom = 14
   },
   showMarker: function(marker) {
