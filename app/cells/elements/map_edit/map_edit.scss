@@ -12,15 +12,31 @@
   .leaflet-shadow-pane {
     opacity: 0.2;
   }
-  path {
-    &.water {fill: $water; stroke: $water;}
-    &.trash {fill: $trash; stroke: $trash;}
-    &.public {fill: $public; stroke: $public;}
-    &.health {fill: $health; stroke: $health;}
-    &.energy {fill: $energy; stroke: $energy;}
-    &.sewer {fill: $sewer; stroke: $sewer;}
-    &.infrastructure {fill: $infrastructure; stroke: $infrastructure;}
-    &.base-geometry {fill: transparent; stroke: color($blue, 0.7); stroke-dasharray: 5;}
+  .geometry-marker,
+  .geometry-polygon,
+  .geometry-polyline {
+    &.water {stroke: $water;}
+    &.trash {stroke: $trash;}
+    &.public {stroke: $public;}
+    &.health {stroke: $health;}
+    &.energy {stroke: $energy;}
+    &.sewer {stroke: $sewer;}
+    &.infrastructure {stroke: $infrastructure;}
+  }
+  .geometry-polygon {
+    &.water {fill: $water;}
+    &.trash {fill: $trash;}
+    &.public {fill: $public;}
+    &.health {fill: $health;}
+    &.energy {fill: $energy;}
+    &.sewer {fill: $sewer;}
+    &.infrastructure {fill: $infrastructure;}
+    &.base-geometry {
+      stroke-width: 1px;
+      fill: transparent;
+      stroke: color($blue, 0.7);
+      stroke-dasharray: 5 2;
+    }
   }
 }
 
