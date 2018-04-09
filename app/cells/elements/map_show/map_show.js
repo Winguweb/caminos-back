@@ -5,6 +5,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       'centerMap',
       'createMap',
       'getCenter',
+      'getBounds',
       'loadDefaults',
       'setAccessToken',
       'setMapContainer',
@@ -26,13 +27,28 @@ CDLV.Components['map_show'] = Backbone.View.extend({
 
     this.showFeaturesGeometry()
 
-    this.centerMap()
+    this.centerMap(this.base)
+
+    this.zoomMap(this.base)
   },
-  setAccessToken: function(token) {
-    L.mapbox.accessToken = token
+  centerMap: function(polygon) {
+    var center = this.getCenter(polygon) || this.center
+    this.map.setView([center.x, center.y], this.zoom)
   },
-  setMapContainer: function(selector) {
-    this.mapContainer = this.$el.find(selector)
+  createMap: function() {
+    this.map = L.mapbox.map(this.mapContainer[0], this.style)
+    this.baseGeometryFeature = new L.FeatureGroup()
+    this.map.addLayer(this.baseGeometryFeature)
+  },
+  getBounds: function(polygon) {
+    var points = polygon.coordinates.map(function(point) {
+      return new L.Point(point[0], point[1])
+    })
+    return new L.Bounds(points)
+  },
+  getCenter: function(polygon) {
+    var bounds = this.getBounds(polygon)
+    return bounds.getCenter()
   },
   hasBaseGeometry: function() {
     return !_.isEmpty(this.base)
@@ -46,14 +62,15 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.style = options.defaults.style
     this.zoom = options.defaults.zoom
   },
-  createMap: function() {
-    this.map = L.mapbox.map(this.mapContainer[0], this.style)
-    this.baseGeometryFeature = new L.FeatureGroup()
-    this.map.addLayer(this.baseGeometryFeature)
+  setAccessToken: function(token) {
+    L.mapbox.accessToken = token
   },
   showBaseGeometry: function() {
     if (!this.hasBaseGeometry()) return
     this.showPolygon(this.base)
+  },
+  setMapContainer: function(selector) {
+    this.mapContainer = this.$el.find(selector)
   },
   showFeaturesGeometry: function() {
     this.features.forEach(function(feature) {
@@ -70,12 +87,6 @@ CDLV.Components['map_show'] = Backbone.View.extend({
         break
     }
   },
-  showPolygon: function(polygon) {
-    new L.Polygon(polygon.coordinates, {
-      className: polygon.className,
-    }).addTo(this.baseGeometryFeature)
-    this.zoom = 14
-  },
   showMarkers: function(marker) {
     new L.Marker(marker.coordinates[0], {
       icon: L.icon({
@@ -89,15 +100,14 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       }
     )}).addTo(this.baseGeometryFeature)
   },
-  centerMap: function() {
-    var center = this.getCenter() || this.center
-    this.map.setView([center.x, center.y], this.zoom)
+  showPolygon: function(polygon) {
+    new L.Polygon(polygon.coordinates, {
+      className: polygon.className,
+    }).addTo(this.baseGeometryFeature)
+    this.zoom = 14
   },
-  getCenter: function() {
-    var points = this.base.coordinates.map(function(point) {
-      return new L.Point(point[0], point[1])
-    })
-    var bounds = new L.Bounds(points)
-    return bounds.getCenter()
+  zoomMap: function(polygon) {
+    var bounds = this.getBounds(polygon)
+    this.map.fitBounds([[bounds.min.x, bounds.min.y], [bounds.max.x, bounds.max.y]], {animate: false})
   },
 })

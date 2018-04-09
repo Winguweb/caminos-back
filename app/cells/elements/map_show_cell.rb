@@ -5,7 +5,8 @@ class Elements::MapShowCell < Cell::ViewModel
   def base
     return [] if model[:geometry].blank?
     {
-      coordinates: model[:geometry].coordinates.first.map(&:reverse)
+      coordinates: model[:geometry].coordinates.first.map(&:reverse),
+      className: 'base-geometry',
     }.to_json
   end
 

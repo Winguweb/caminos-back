@@ -20,6 +20,7 @@
     &.energy {fill: $energy; stroke: $energy;}
     &.sewer {fill: $sewer; stroke: $sewer;}
     &.infrastructure {fill: $infrastructure; stroke: $infrastructure;}
+    &.base-geometry {fill: transparent; stroke: color($blue, 0.7); stroke-dasharray: 5;}
   }
 }
 
