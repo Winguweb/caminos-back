@@ -91,7 +91,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
       e.layers.eachLayer(function (layer) {
         if (layer instanceof L.Marker) this.updateMarkerInput(layer)
         if (layer instanceof L.Polygon) this.persistPolygon(layer)
-          if (layer instanceof L.Polyline) this.persistPolyline(layer)
+        if (layer instanceof L.Polyline) this.persistPolyline(layer)
       }.bind(this));
       this.map.removeControl(this.createControls)
       this.map.addControl(this.editControls);
