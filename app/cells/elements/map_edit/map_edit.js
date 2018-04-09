@@ -166,7 +166,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
       switch (this.editable.type) {
         case 'marker':
           var marker = new L.Point(this.editable.coordinates[0][0],this.editable.coordinates[0][1])
-          var geometry = marker.toString()
+          var geometry = marker.toString().toUpperCase().replace(',', '')
           break
         case 'polygon':
           var coordinates = this.editable.coordinates.map(function(latlng) {
@@ -237,8 +237,9 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   },
   updateMarkerInput: function(layer) {
     var coordinates = new L.Point(layer._latlng.lat,layer._latlng.lng)
-    this.inputGeometry.val(coordinates.toString().replace(',', ''))
-    this.inputGeo_geometry.val(coordinates.toString().replace(',', ''))
+    var geometry = coordinates.toString().toUpperCase().replace(',', '')
+    this.inputGeometry.val(geometry)
+    this.inputGeo_geometry.val(geometry)
   },
   updatePolygonInput: function(layer) {
     var new_polygon_geojson = (new L.Polygon(layer.getLatLngs())).toGeoJSON()
