@@ -45,4 +45,11 @@ class Elements::MapEditCell < Cell::ViewModel
     }
   end
 
+  def map_defaults
+    MAP.merge(
+      "marker_shadow_url" => image_url(MAP["marker_shadow_url"]),
+      "marker_editable_url" => image_url(MAP["marker_editable_url"]),
+    ).to_json
+  end
+
 end

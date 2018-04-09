@@ -6,7 +6,7 @@ javascript:
   $(function() {
     new CDLV.Components['map_edit']({
       el: $('.map-edit-cell'),
-      defaults: #{MAP.to_json},
+      defaults: #{map_defaults},
       token: '#{MAPBOX_TOKEN}',
       base: #{base},
       editable: #{editable},

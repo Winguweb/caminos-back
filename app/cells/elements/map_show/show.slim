@@ -5,7 +5,7 @@ javascript:
   $(function() {
     new CDLV.Components['map_show']({
       el: $('.map-show-cell'),
-      defaults: #{MAP.to_json},
+      defaults: #{map_defaults},
       token: '#{MAPBOX_TOKEN}',
       base: #{base},
       features: #{features},

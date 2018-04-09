@@ -2,8 +2,8 @@ center:
   x: -34.6083
   y: -58.3712
 zoom: 10
-marker_shadow_url: "/assets/icons/category-shadow.svg"
-marker_editable_url: "/assets/icons/category-editable.svg"
+marker_shadow_url: "icons/category-shadow.svg"
+marker_editable_url: "icons/category-editable.svg"
 style: "mapbox.streets"
 geometry_styles:
   polyline:
