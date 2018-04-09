@@ -65,12 +65,12 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   setAccessToken: function(token) {
     L.mapbox.accessToken = token
   },
+  setMapContainer: function(selector) {
+    this.mapContainer = this.$el.find(selector)
+  },
   showBaseGeometry: function() {
     if (!this.hasBaseGeometry()) return
     this.showPolygon(this.base)
-  },
-  setMapContainer: function(selector) {
-    this.mapContainer = this.$el.find(selector)
   },
   showFeaturesGeometry: function() {
     this.features.forEach(function(feature) {
