@@ -22,7 +22,6 @@
     &.energy {stroke: $energy;}
     &.sewer {stroke: $sewer;}
     &.infrastructure {stroke: $infrastructure;}
-    &.base-geometry {stroke: color($blue, 0.7); stroke-dasharray: 5;}
   }
   .geometry-polygon {
     &.water {fill: $water;}
@@ -32,7 +31,12 @@
     &.energy {fill: $energy;}
     &.sewer {fill: $sewer;}
     &.infrastructure {fill: $infrastructure;}
-    &.base-geometry {fill: transparent;}
+    &.base-geometry {
+      stroke-width: 1px;
+      fill: transparent;
+      stroke: color($blue, 0.7);
+      stroke-dasharray: 5 2;
+    }
   }
 }
 

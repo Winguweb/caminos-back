@@ -175,6 +175,13 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
           var new_polygon_geojson = (new L.Polygon(coordinates)).toGeoJSON()
           var geometry = wellknown.stringify(new_polygon_geojson)
           break
+        case 'polyline':
+          var coordinates = this.editable.coordinates.map(function(latlng) {
+            return new L.latLng(latlng[0], latlng[1])
+          })
+          var new_polygon_geojson = (new L.Polyline(coordinates)).toGeoJSON()
+          var geometry = wellknown.stringify(new_polygon_geojson)
+          break
       }
       this.inputGeometry.val(geometry)
       this.inputGeo_geometry.val(geometry)
