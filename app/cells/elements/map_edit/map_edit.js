@@ -144,6 +144,10 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   getFocusedGeometry: function() {
     return this.hasBaseGeometry() ? this.base : this.editable
   },
+  persistMarker: function(layer) {
+    layer.addTo(this.editableGeometryFeature);
+    this.updateMarkerInput(layer)
+  },
   persistPolygon: function(layer) {
     layer.addTo(this.editableGeometryFeature);
     this.updatePolygonInput(layer)
@@ -151,10 +155,6 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   persistPolyline: function(layer) {
     layer.addTo(this.editableGeometryFeature);
     this.updatePolylineInput(layer)
-  },
-  persistMarker: function(layer) {
-    layer.addTo(this.editableGeometryFeature);
-    this.updateMarkerInput(layer)
   },
   setAccessToken: function(token) {
     L.mapbox.accessToken = token
@@ -165,22 +165,22 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
     if(this.hasEditableGeometry()) {
       switch (this.editable.type) {
         case 'marker':
-          var new_point_geojson = new L.Point(this.editable.coordinates[0][0],this.editable.coordinates[0][1])
-          var geometry = new_point_geojson.toString().replace(',', '')
+          var marker = new L.Point(this.editable.coordinates[0][0],this.editable.coordinates[0][1])
+          var geometry = marker.toString()
           break
         case 'polygon':
           var coordinates = this.editable.coordinates.map(function(latlng) {
             return new L.latLng(latlng[0], latlng[1])
           })
-          var new_polygon_geojson = (new L.Polygon(coordinates)).toGeoJSON()
-          var geometry = wellknown.stringify(new_polygon_geojson)
+          var polygon = (new L.Polygon(coordinates)).toGeoJSON()
+          var geometry = wellknown.stringify(polygon)
           break
         case 'polyline':
           var coordinates = this.editable.coordinates.map(function(latlng) {
             return new L.latLng(latlng[0], latlng[1])
           })
-          var new_polygon_geojson = (new L.Polyline(coordinates)).toGeoJSON()
-          var geometry = wellknown.stringify(new_polygon_geojson)
+          var polyline = (new L.Polyline(coordinates)).toGeoJSON()
+          var geometry = wellknown.stringify(polyline)
           break
       }
       this.inputGeometry.val(geometry)
