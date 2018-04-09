@@ -85,12 +85,15 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       case 'polygon':
         this.showPolygon(geometry)
         break
+      case 'polyline':
+        this.showPolyline(geometry)
+        break
     }
   },
   showMarkers: function(marker) {
     new L.Marker(marker.coordinates[0], {
       icon: L.icon({
-        className: "marker",
+        className: "geometry-marker",
         iconAnchor: [20, 30],
         iconSize: [40, 40],
         iconUrl: marker.icon,
@@ -102,9 +105,15 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   showPolygon: function(polygon) {
     new L.Polygon(polygon.coordinates, {
-      className: polygon.className,
+      className: "geometry-polygon " + polygon.className,
     }).addTo(this.baseGeometryFeature)
-    this.zoom = 14
+  },
+  showPolyline: function(polyline, options) {
+    var parent = options && options.fixed ? this.baseGeometryFeature : this.editableGeometryFeature
+    new L.Polyline(polyline.coordinates,
+      {
+        className: "geometry-polyline " + polyline.className,
+      }).addTo(this.baseGeometryFeature)
   },
   zoomMap: function(polygon) {
     var bounds = this.getBounds(polygon)

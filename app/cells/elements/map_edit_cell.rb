@@ -12,7 +12,6 @@ class Elements::MapEditCell < Cell::ViewModel
 
   def editable #marker
     return [] if options[:editable].blank?
-
     case options[:editable][:geometry].geometry_type
     when RGeo::Feature::Point
       {
@@ -25,6 +24,12 @@ class Elements::MapEditCell < Cell::ViewModel
         coordinates: options[:editable].geometry.coordinates.first.map(&:reverse),
         className: options[:editable].category,
         type: 'polygon',
+      }.to_json
+    when RGeo::Feature::LineString
+      {
+        coordinates: options[:editable].geometry.coordinates.map(&:reverse),
+        className: options[:editable].category,
+        type: 'polyline',
       }.to_json
     end
   end

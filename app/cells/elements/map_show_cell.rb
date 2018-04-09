@@ -26,6 +26,12 @@ class Elements::MapShowCell < Cell::ViewModel
           className: feature.category,
           type: 'polygon',
         }
+      when RGeo::Feature::LineString
+        {
+          coordinates: feature[:geometry].coordinates.map(&:reverse),
+          className: feature.category,
+          type: 'polyline',
+        }
       end
     end.to_json
   end
