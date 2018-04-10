@@ -7,6 +7,14 @@ class Forms::UserCell < Cell::ViewModel
     @user ||= model
   end
 
+  def neighborhoods
+    neighborhoods ||= options[:neighborhoods]
+  end
+
+  def neighborhood
+    neighborhood ||= options[:neighborhood]
+  end
+
   def url
     options[:url]
   end

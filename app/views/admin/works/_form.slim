@@ -1,4 +1,5 @@
-== cell('page/header', "Nueva Obra", links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
+= content_for :main_header do
+  == cell('page/header', "Nueva Obra", links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
 = form_for ['admin', current_neighborhood, @work], html: { class: 'form' } do |f|
 
   .page-section
@@ -13,7 +14,7 @@
       .no-grid
         .field
           = f.label :name, t('.category')
-          = f.select :status, @categories.collect { |c| [ c, c ] }, include_blank: true
+          = f.select :category, @categories.collect { |c| [ c, c ] }, include_blank: true
         .field
           = f.label :name, t('.status')
           = f.select :status, @status.collect { |c| [ c, c ] }, include_blank: true

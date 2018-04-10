@@ -31,7 +31,16 @@ class CreateUser
       approved: true,
       confirmed: true,
       roles: roles(@roles)
-    }
+    }.tap do |_hash|
+      _hash[:entity] = related_entity
+    end
+  end
+
+  def related_entity
+    return Organization.first if roles(@roles)[0] == 'admin'
+    @related_entity ||= if id = @allowed_params[:neighborhood_id]
+      Neighborhood.find_by(id:id)
+    end
   end
 
   def profile_params
