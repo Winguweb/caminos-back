@@ -34,21 +34,10 @@ div
             h2="Otros barrios"
           nav
             ul
-              li
-                div
-                  p="Calacita"
-              li
-                div
-                  p="Villa 16"
-              li
-                div
-                  p="Los Piletones"
-              li
-                div
-                  p="Villa 17"
-              li
-                div
-                  p="Ramón Carrillo"
+              - @unurbanized.each do |neighborhood|
+                li
+                  div
+                    p=neighborhood.name
 
   main
     section
