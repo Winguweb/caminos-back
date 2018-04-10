@@ -3,8 +3,7 @@ class HomeController < ApplicationController
   def show
     load_works
     load_neighborhood
-    @neighborhoods = Neighborhood.all
-    
+    @neighborhoods = Neighborhood.all.order(urbanization: :desc, name: :asc)
   end
 
   private
