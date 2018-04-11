@@ -4,22 +4,26 @@ module Admin
       [
         {
           title: t('admin.links.neighborhoods.show.information'),
-          href: admin_neighborhood_path(neighborhood)
+          href: admin_neighborhood_path(neighborhood),
+          _show: neighborhood.urbanization
         },{
           title: t('admin.links.neighborhoods.show.works'),
-          href: admin_neighborhood_works_path(neighborhood)
+          href: admin_neighborhood_works_path(neighborhood),
+          _show: neighborhood.urbanization
         },{
           title: t('admin.links.neighborhoods.show.meetings'),
-          href: admin_neighborhood_meetings_path(neighborhood)
+          href: admin_neighborhood_meetings_path(neighborhood),
+          _show: neighborhood.urbanization
         },{
           title: t('admin.links.neighborhoods.show.agreement'),
-          href: admin_neighborhood_agreement_path(neighborhood)
+          href: admin_neighborhood_agreement_path(neighborhood),
+          _show: neighborhood.urbanization
         },{
           title: t('admin.links.neighborhoods.show.activity'),
-          href: '#'
+          href: '#',
+          _show: neighborhood.urbanization
         }
-      ]
+      ].select do |_hash| _hash[:_show] end
     end
-
   end
 end
