@@ -3,32 +3,37 @@ es-AR:
     users_table:
       permissions: "Permisos: %{roles}"
     works_list:
+      energy: "Luz / Electricidad"
+      health: "Salud"
+      infrastructure: "Infraestructura"
+      public: "Calles / Plazas"
+      sewer: "Cloacas"
       status: "Estado"
-      water: "Agua"
       trash: "Basura"
-      public: "Calles / Plazas"
-      health: "Salud"
-      energy: "Luz / Electricidad"
-      sewer: "Cloacas"
-      infrastructure: "Infraestructura"
+      water: "Agua"
     works_table:
-      water: "Agua"
-      trash: "Basura"
-      public: "Calles / Plazas"
-      health: "Salud"
       energy: "Luz / Electricidad"
-      sewer: "Cloacas"
+      health: "Salud"
       infrastructure: "Infraestructura"
+      public: "Calles / Plazas"
+      sewer: "Cloacas"
+      trash: "Basura"
+      water: "Agua"
 
   forms:
     user:
       create: Crear Usuario
+      cancel: Cancelar
       email: Dirección de correo electrónico
       first_name: Nombre/s
+      general: General
       last_name: Apellido/s
+      neighborhood: Barrio
+      organization: Organización
       password: Contraseña
       personal_information: Información Personal
       roles: Roles / Permisos
+      save_changes: Guardar Cambios
       update: Actualizar Usuario
       user_information: Información del Usuario
       username: Nombre de Usuario

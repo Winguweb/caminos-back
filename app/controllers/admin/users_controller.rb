@@ -11,12 +11,11 @@ module Admin
 
     def new
       @user = User.new(profile: Profile.new)
-      @entities = Organization.all + Neighborhood.all
+      load_neighborhoods
     end
 
     def create
       service = CreateUser.call(user_params, roles_params)
-
       if service.success?
         redirect_to root_path
       else
@@ -26,6 +25,8 @@ module Admin
 
     def edit
       load_user
+      load_neighborhoods
+      @neighborhood = @user.entity.class.to_s == 'Neighborhood' ? @user.entity.id : nil
     end
 
     def update
@@ -59,6 +60,7 @@ module Admin
         :username,
         :email,
         :password,
+        :neighborhood_id,
         profile: {}
       )
     end
@@ -69,6 +71,10 @@ module Admin
 
     def load_user
       @user = User.find(params[:id])
+    end
+
+    def load_neighborhoods
+      @neighborhoods = Neighborhood.all
     end
 
   end

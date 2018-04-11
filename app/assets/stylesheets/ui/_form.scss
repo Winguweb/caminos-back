@@ -17,6 +17,7 @@
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: center right;
+    padding: $gutter/2 $gutter $gutter/2 $gutter/2;
     &:focus{
       border-color: $blue;
     }

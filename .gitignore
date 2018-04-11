@@ -47,3 +47,4 @@ brakeman.*
 
 #igonere local photos
 public/uploads
+.idea

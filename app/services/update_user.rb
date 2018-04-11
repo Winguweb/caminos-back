@@ -33,7 +33,19 @@ class UpdateUser
   end
 
   def user_params
-    @allowed_params.reject{ |_, value| value.blank? }.merge(roles: roles(@roles))
+    @allowed_params
+        .reject{ |_, value| value.blank? }
+        .merge(roles: roles(@roles)).tap do |_hash|
+          _hash[:entity] = related_entity
+        end
+        .except(:neighborhood_id)
+  end
+
+  def related_entity
+    return Organization.first if roles(@roles)[0] == :admin
+    @related_entity ||= if id = @allowed_params[:neighborhood_id]
+      Neighborhood.find_by(id:id)
+    end
   end
 
 end
