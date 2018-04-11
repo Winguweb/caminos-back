@@ -1,0 +1,24 @@
+div
+  = render('neighborhoods/partials/nav')
+  - if !@neighborhood.urbanization
+    == cell('page/header', @neighborhood.name, breadcrumbs: [t('admin.sections.dashboard'), t('admin.sections.neighborhoods')])
+  - if @neighborhood.urbanization
+    aside
+      div
+        section
+          nav
+            -if !@neighborhood.works.empty?
+              == cell('elements/works_list', @neighborhood.works)
+            -else
+              div
+                = t('.no_works')
+
+  main.page-section
+    section
+      == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
+
+    - if !@neighborhood.urbanization
+      section.with-border
+        == cell('section/header', t('.documents'), buttons: [{title: t('.upload_document'), url: new_admin_user_path}])
+        .content
+          == cell('elements/documents_table', @documents)

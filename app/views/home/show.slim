@@ -37,7 +37,7 @@ div
               - @unurbanized.each do |neighborhood|
                 li
                   div
-                    p=neighborhood.name
+                    = link_to neighborhood.name, neighborhood_path(neighborhood.id)
 
   main
     section

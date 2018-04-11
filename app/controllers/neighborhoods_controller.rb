@@ -1,6 +1,6 @@
 class NeighborhoodsController < ApplicationController
 
-  def works
+  def show
     load_neighborhood
   end
 
@@ -13,7 +13,6 @@ class NeighborhoodsController < ApplicationController
     @data = eval(@neighborhood.agreement.data) if !@neighborhood.agreement.data.nil?
 
   end
-
 
   private
 

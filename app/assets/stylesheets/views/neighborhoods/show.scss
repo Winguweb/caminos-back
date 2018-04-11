@@ -1,4 +1,4 @@
-@mixin works() {
+@mixin neighborhoods-show() {
   @include grid-column(16);
   > main {
     @include grid-collapse;
@@ -175,10 +175,15 @@
 
         }
       }
-      main {
+      aside + main {
         @include grid-column(12, $no-gutter);
+        height: 100%;
+
+      }
+      main {
+        @include grid-column(16, $no-gutter);
         position: relative;
-        height: calc(100% - #{$navbar-height});
+        height: 400px;
         &::before {
           @include box-sizing(border-box);
           content: '';
@@ -191,9 +196,12 @@
           pointer-events: none;
           z-index: 1;
         }
-        section {
+        > section:first-of-type {
+          @include grid-column(16);
+          left: auto;
           height: 100%;
-          .map-cell {
+          .map-show-cell {
+            @include grid-collapse;
             height: 100%;
             > div {
               border-radius: 0;
@@ -205,6 +213,6 @@
   }
 }
 
-#neighborhoods-works {
-  @include works();
+#neighborhoods-show {
+  @include neighborhoods-show();
 }
