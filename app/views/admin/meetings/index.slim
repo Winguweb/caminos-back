@@ -3,9 +3,11 @@
 
 div.page-section
   section
-    -@meetings_years.keys.each do |year| 
-      - if  year==@meetings_years.keys.first  
+    - if @meetings_years.any?
+      == cell('section/header', 'No hay reuniones para este barrio' ,buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_meeting_path }])
+    -@meetings_years.keys.each do |year|
+      - if  year==@meetings_years.keys.first
         == cell('section/header', year, buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_meeting_path }])
-      -else
+      - else
         == cell('section/header', year)
       == cell('elements/meetings_list', @meetings_years[year], neighborhood: current_neighborhood)

@@ -1,5 +1,7 @@
 es-AR:
   elements:
+    documents_table:
+      no_documents: "No hay documentos registrados"
     users_table:
       permissions: "Permisos: %{roles}"
     works_list:

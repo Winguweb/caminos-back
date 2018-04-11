@@ -25,13 +25,16 @@
                 option value="asc"  Orden ascendente
                 option value="desc" Orden descendente
     tbody
-      - documents.each do |document|
-        tr
-          td
-            i
-          td
-            a href=document[:attachment_source] = document[:name]
-          td
-            a href=document[:attachment_source] = document[:description]
-          td
-            a href=document[:attachment_source] = l(document[:created_at], format: :slashes)
+      - if documents.any?
+        - documents.each do |document|
+          tr
+            td
+              i
+            td
+              a href=document[:attachment_source] = document[:name]
+            td
+              a href=document[:attachment_source] = document[:description]
+            td
+              a href=document[:attachment_source] = l(document[:created_at], format: :slashes)
+      - else
+        span=t('.no_documents')
