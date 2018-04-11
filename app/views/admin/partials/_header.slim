@@ -12,14 +12,12 @@ header
       li
         .user-button
           a href=""
-            img src="http://i.pravatar.cc/45"
+            == cell('elements/avatar', current_user)
             span
           ul
             li
-              a href="#" = "Perfil"
-            li
-              = link_to 'Nuevo Usuario', new_admin_user_path
+              = link_to t('.profile'), new_admin_user_path
             li
               hr
             li
-              = link_to 'Salir', admin_signout_path, method: :post
+              = link_to t('.logout'), admin_signout_path, method: :post

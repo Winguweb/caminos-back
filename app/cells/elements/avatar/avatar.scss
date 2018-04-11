@@ -31,6 +31,8 @@
     font-size: .9em;
 
     span {
+      @include type-setting(1);
+      line-height: 1em;
       position: absolute;
       top: 50%;
       left: 0;
@@ -39,8 +41,7 @@
       color: white;
       font-weight: bold;
       margin-top: -.48em;
-      line-height: .9em;
-      // letter-spacing: -.05em;
+
     }
   }
 
