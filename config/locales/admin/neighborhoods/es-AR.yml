@@ -7,7 +7,6 @@ es-AR:
         new_neighborhood: Nuevo Barrio
       new:
         cancel: Cancelar
-        save_changes: Crear Barrio
         create: Crear Barrio
         description: Sobre el Barrio
         information: Información
@@ -15,10 +14,13 @@ es-AR:
         map_location: Ubicación
         name: Nombre del Barrio
         new_neighborhood: Nuevo Barrio
+        save_changes: Crear Barrio
         urbanization_process: Tiene proceso de urbanicación
       show:
         about_neighborhood: Sobre el barrio %{neighborhood}
         activity: Actividad reciente
+        add_new_ambassador: Agregar Nuevo
+        add_new_picture: Agregar Nueva
         address: Ubicación en el mapa
         agreement: Acuerdo
         ambassadors: Embajadores
@@ -29,15 +31,16 @@ es-AR:
         map_location: Ubicación
         meetings: Reuniones
         name: Nombre del Barrio
+        no_urbanization_process: Sin proceso de urbanicación
         pictures: Fotos
-        works: Obras
         upload_document: Cargar Documento
-        add_new_ambassador: Agregar Nuevo
-        add_new_picture: Agregar Nueva
+        urbanization: Proceso de urbanización
+        urbanization_process: Tiene proceso de urbanicación
+        works: Obras
       edit:
         cancel: Cancelar
-        information: Información
         description: Sobre el Barrio
+        information: Información
         map_location: Ubicación
         name: Nombre del Barrio
         save_changes: Guardar Cambios
