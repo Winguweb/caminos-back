@@ -1,13 +1,16 @@
 section
-  h1 Ingresar a Caminos de la Villa
+  .logo
   .signin-content
     .signin-form
-      = form_for @user_session, url: admin_signin_path, method: :post do |f|
+    = form_for @user_session, url: admin_signin_path, method: :post do |f|
+        .title
+          h1 Ingresar a Caminos de la Villa
         .email-input
           = f.label t('.email_label')
           = f.text_field :email, placeholder: t('.email_label')
         .password-input
           = f.label t('.password_label')
           = f.password_field :password, placeholder: t('.password_label')
-        = button_tag type: :submit
-          = t('.enter')
+        .submit-input
+          = button_tag type: :submit
+            = t('.enter')

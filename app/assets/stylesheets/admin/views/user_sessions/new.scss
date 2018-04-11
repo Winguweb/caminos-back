@@ -1,31 +1,41 @@
 #user_sessions-new {
+  @include grid-column(6);
+  @include grid-push(5);
   section {
-    @include grid-column(8);
-    @include grid-push(4);
-
-    @include grid-media($tablet-grid) {
-      @include grid-column(1 of 1);
-    }
-  }
-  .signin-content {
-    @include grid-collapse;
     @include grid-container;
-    .email-input, .password-input {
-      @include grid-column(2 of 4);
-    }
-    button {
-      margin-top: $gutter;
-      @include grid-column(2 of 4);
-      @include grid-push(1 of 4);
-      @include button();
-    }
-  }
-  .email-input, .password-input {
-    label {
-      display: block;
-      @include type-setting(-1);
+    border: 2px solid $light-grey;
+    border-radius: 6px;
+    padding: $vgutter*2 $gutter;
+    margin-bottom: $vgutter*2;
+    margin-top: $gutter*6;
+
+    .logo {
+      margin: 0 auto;
+      background: transparent image-url("admin-logo.svg") no-repeat;
+      width: 100px;
+      height: 100px;
     }
 
-    @include inputs;
+    .title > h1 {
+      font-weight: 800;
+    }
+    .signin-content {
+      .email-input, .password-input, .submit-input, .title {
+        @include grid-column(16);
+        margin-bottom: $vgutter*2;
+      }
+      button {
+        @include button();
+        width: 100%;
+      }
+    }
+    .email-input, .password-input {
+      label {
+        display: block;
+        @include type-setting(-1);
+      }
+
+      @include inputs;
+    }
   }
 }
