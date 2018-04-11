@@ -8,6 +8,14 @@ div.page-section
       == cell('elements/description', text: @neighborhood.description)
 
   section.with-border
+    == cell('section/header', t('.urbanization'))
+    .content
+      - if @neighborhood.urbanization
+        p= t('.urbanization_process')
+      - else
+        p= t('.no_urbanization_process')
+
+  section.with-border
     == cell('section/header', t('.address'))
     == cell('elements/map_show', @neighborhood)
 

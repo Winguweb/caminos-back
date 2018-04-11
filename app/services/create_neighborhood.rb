@@ -43,6 +43,7 @@ class CreateNeighborhood
       lookup_address: @allowed_params[:lookup_address],
       geo_geometry: @allowed_params[:geo_geometry],
       geometry: @allowed_params[:geometry],
+      urbanization: @allowed_params[:urbanization]
     }
   end
 

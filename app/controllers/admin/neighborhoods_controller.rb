@@ -50,6 +50,7 @@ module Admin
         :description,
         :geo_geometry,
         :lookup_coordinates,
+        :urbanization,
         :name,
         :geometry,
         documents: [[:link,:name,:description]]
