@@ -6,7 +6,7 @@ CDLV.Components['user_header_menu'] = Backbone.View.extend({
     _.bindAll(
         this,
         'clickUserMenu',
-        'openUserMenu',
+        'openUserMenu'
     )
 
     this.userMenuElement = this.$el.find('.user-menu')
