@@ -2,7 +2,7 @@ class Elements::MapEditCell < Cell::ViewModel
 
   private
 
-  def base #polygon
+  def base
     return [] if model[:geometry].blank?
     {
       coordinates: model[:geometry].coordinates.first.map(&:reverse),
@@ -10,7 +10,7 @@ class Elements::MapEditCell < Cell::ViewModel
     }.to_json
   end
 
-  def editable #marker
+  def editable
     return [] if options[:editable].blank?
     case options[:editable][:geometry].geometry_type
     when RGeo::Feature::Point

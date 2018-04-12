@@ -60,32 +60,25 @@ body {
   }
 }
 
-@mixin user-button() {
+@mixin user-menu() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: inline-block;
   width: 61px;
   height: calc(45px + $vgutter);
-  > a {
+  > div {
     display: block;
     text-align: left;
     margin: 0 0 $vgutter 0;
 
-    > img {
+    > div {
       @include shadow($normal-shadow, 1);
       vertical-align: top;
-      margin-right: 8px;
       border-radius: 100%;
       overflow: hidden;
-    }
-
-    > img + span {
-      vertical-align: top;
-      width: 8px;
-      height: 45px;
-      display: inline-block;
-      background-image: image-url("icons/down-arrow.svg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 8px 5px;
+      float: right;
     }
   }
 
@@ -101,12 +94,17 @@ body {
     text-align: left;
     margin: 0;
     > li {
-      > a {
+      > a, input {
         @include text-color($text-grey, 1);
         display: block;
         margin: 0; // Todos los a tienen margin right, por que?
         padding: $vgutter $gutter/2;
         white-space: nowrap;
+        background-color: $white;
+        border:none;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
 
         &:hover {
           @include background-color($text-grey, 0.1);
@@ -123,7 +121,7 @@ body {
     }
   }
 
-  &:hover {
+  &.user-menu--opened {
     overflow: visible;
     > ul {
       display: block;
@@ -131,8 +129,8 @@ body {
   }
 }
 
-.user-button {
-  @include user-button;
+.user-menu {
+  @include user-menu;
 }
 
 

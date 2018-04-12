@@ -1,5 +1,6 @@
 //= require ../globals/base
 //= require ./base
+//= require ./partials/header
 //
 // CELLS
 //= require users_table.js

@@ -28,9 +28,11 @@
   .fallback {
     display: none;
     padding-top: 100%;
-    font-size: .9em;
+    font-size: 0.9em;
 
     span {
+      @include type-setting(1);
+      line-height: 1em;
       position: absolute;
       top: 50%;
       left: 0;
@@ -38,9 +40,8 @@
       text-align: center;
       color: white;
       font-weight: bold;
-      margin-top: -.48em;
-      line-height: .9em;
-      // letter-spacing: -.05em;
+      margin-top: -0.48em;
+
     }
   }
 
@@ -51,6 +52,12 @@
   &.simple {
     img {
       width: 100%;
+    }
+  }
+
+  &.big{
+    span {
+      font-size: 60px;
     }
   }
 }

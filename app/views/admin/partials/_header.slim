@@ -1,4 +1,4 @@
-header
+header.user-header-menu
   nav
     ul.menu
       li.site-logo-wrapper
@@ -10,16 +10,20 @@ header
         = link_to t('.users'), admin_users_path
     ul.actions
       li
-        .user-button
-          a href=""
-            img src="http://i.pravatar.cc/45"
-            span
+        .user-menu
+          div.
+            == cell('elements/avatar', current_user)
           ul
             li
-              a href="#" = "Perfil"
-            li
-              = link_to 'Nuevo Usuario', new_admin_user_path
+              = link_to t('.profile'), admin_user_path(current_user)
             li
               hr
             li
-              = link_to 'Salir', admin_signout_path, method: :post
+              = button_to t('.logout'), admin_signout_path
+
+javascript:
+  $(function () {
+    new CDLV.Components['user_header_menu']({
+      el: $('.user-header-menu'),
+    })
+  });
