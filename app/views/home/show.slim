@@ -41,4 +41,5 @@ div
 
   main
     section
-      == cell('elements/map_show', @neighborhood)
+      - if @neighborhood
+        == cell('elements/map_show', @neighborhood)
