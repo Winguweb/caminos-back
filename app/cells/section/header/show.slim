@@ -21,3 +21,6 @@ header
   - if buttons
     div.buttons
       == cell('elements/button', collection: buttons)
+  - if buttons_for
+    div.button_for
+      == cell('elements/button_for', collection: buttons_for)

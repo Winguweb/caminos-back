@@ -1,11 +1,12 @@
-.form_photo
-  a id="btnAdd" Agregar Foto
-  #photos
+.photo-form-cell
+  = file_field_tag("work[photos]", class: "file-input", id: 'photo_uploader')
+  #photos_preview
+    .jFiler-items
 
 javascript:
   $(function() {
-      new CDLV.Components['photos']({
-      el: $('.form_photo'), 
+    new CDLV.Components['photos']({
+      el: $('#fileupload'),
       owner: '#{owner}'
     })
   });

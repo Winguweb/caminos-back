@@ -1,0 +1,4 @@
+fallbacks: false
+translations:
+  - file: 'app/assets/javascripts/admin/translations.js'
+    only: ['*.js.filer.*', '*.js.admin.*']

@@ -22,4 +22,8 @@ class Section::HeaderCell < Cell::ViewModel
   def buttons
     options[:buttons]
   end
+
+  def buttons_for
+    options[:buttons_for]
+  end
 end

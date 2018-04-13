@@ -50,6 +50,7 @@ module CaminosBack
       elements/avatar_cell
       elements/breadcrumbs_cell
       elements/button_cell
+      elements/button_for_cell
       elements/description_cell
       elements/document_form_cell
       elements/documents_table_cell
@@ -69,6 +70,7 @@ module CaminosBack
       forms/user_cell
       page/header_cell
       section/footer_link_cell
+      section/header_cell
     )
   end
 end

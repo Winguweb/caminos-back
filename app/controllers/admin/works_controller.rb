@@ -79,7 +79,7 @@ module Admin
         :name,
         :status,
         :start_date,
-        photos: [[:picture]],
+        photos: [],
         documents: [[:link,:name,:description]]
       )
     end

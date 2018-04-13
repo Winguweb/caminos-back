@@ -10,8 +10,9 @@ gem 'cells-rails'
 gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
 gem "fog-aws"
 gem 'google-api-client', '~> 0.11'
+gem 'i18n-js'
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
-gem 'mini_magick' #gem for resize images  
+gem 'mini_magick' #gem for resize images
 gem 'neat' # A lightweight and flexible Sass grid
 gem 'oj' # A fast JSON parser and Object marshaller.
 gem 'pg' # The PostgreSQL Adapter
