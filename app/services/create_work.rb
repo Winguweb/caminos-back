@@ -16,7 +16,7 @@ class CreateWork
 
     @work = Work.new(work_params)
     @work.neighborhood = @neighborhood
-    binding.pry
+
     if documents_params.present? || !photo_params.nil?
       save_photos(@work) if !photo_params.nil?
       save_documents(@work) if documents_params.present?
@@ -31,11 +31,11 @@ class CreateWork
 
   def save_photos(work)
     binding.pry
-
+    photo_params.each do |photo|
       binding.pry
-      photo =  work.photos.new(photo_params)
+      photo =  work.photos.new(photo)
       photo.owner = work
-
+    end
   end
 
   def save_documents(work)
@@ -65,12 +65,12 @@ class CreateWork
   end
 
   def photo_params
-    return [] if @allowed_params[:photos].blank?
+    return  [] if @allowed_params[:photos].blank?
     @allowed_params[:photos]
   end
 
   def documents_params
-    return [] if @allowed_params[:documents].blank?
+    return  [] if @allowed_params[:documents].blank?
     documents = []
     @allowed_params[:documents].each do |doc|
       documents.push(doc) if !doc[:link].blank?
