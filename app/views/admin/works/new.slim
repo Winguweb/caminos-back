@@ -63,7 +63,8 @@ javascript:
         input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"
 
       section
-        == cell('section/header', "Fotos", custom_tag: file_field_tag("work[photos]", class: "file-input") )
+
+        == cell('section/header',"Fotos", buttons_for: [{title: t('.new_picture'), for: 'photo_uploader' }])
 
         == cell('elements/photo_form',"work")
       section

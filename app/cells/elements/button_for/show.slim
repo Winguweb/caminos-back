@@ -1,0 +1,10 @@
+= label_tag for_element, nil, class: "button-for-cell"
+  = title
+
+javascript:
+  $(function() {
+    new CDLV.Components['button_for']({
+      el: $('.button-for-cell'),
+      for: #{for_element}
+    })
+  });

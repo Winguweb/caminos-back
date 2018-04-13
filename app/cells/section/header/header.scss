@@ -1,7 +1,0 @@
-@mixin header-custom-tag() {
-  @include filer-theme;
-}
-
-.header-custom-tag {
-  @include header-custom-tag
-}

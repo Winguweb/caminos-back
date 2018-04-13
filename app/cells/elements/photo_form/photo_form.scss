@@ -1,5 +1,8 @@
 @mixin photo-form() {
-  .jFiler-items-default .jFiler-item {
+  .jFiler {
+    display: none;
+  }
+  .jFiler-item {
     padding-left: 0;
     padding-right: 0;
     background: transparent;
