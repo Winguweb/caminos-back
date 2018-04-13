@@ -65,6 +65,7 @@ module Admin
     end
 
     def work_params
+      binding.pry
       params.require(:work).permit(
         :budget,
         :description,
@@ -79,7 +80,7 @@ module Admin
         :name,
         :status,
         :start_date,
-        photos: [[:picture]],
+        photos: [:picture => []],
         documents: [[:link,:name,:description]]
       )
     end

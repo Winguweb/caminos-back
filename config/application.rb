@@ -69,6 +69,7 @@ module CaminosBack
       forms/user_cell
       page/header_cell
       section/footer_link_cell
+      section/header_cell
     )
   end
 end

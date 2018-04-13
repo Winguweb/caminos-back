@@ -22,4 +22,8 @@ class Section::HeaderCell < Cell::ViewModel
   def buttons
     options[:buttons]
   end
+
+  def custom_tag
+    options[:custom_tag]
+  end
 end

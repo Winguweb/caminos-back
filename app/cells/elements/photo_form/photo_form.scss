@@ -1,0 +1,30 @@
+@mixin photo-form() {
+  .jFiler-items-default .jFiler-item {
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+  .jFiler-item-icon {
+    float: left;
+    i {
+      margin-top: 12px;
+      display: block;
+    }
+  }
+  .jFiler-item-info {
+    float: left;
+  }
+  .jFiler-item-assets {
+    float: right;
+  }
+  .jFiler-item-others {
+    line-height: 19px;
+  }
+
+}
+
+.photo-form-cell {
+  @include photo-form;
+}
+
+

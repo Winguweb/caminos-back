@@ -21,3 +21,6 @@ header
   - if buttons
     div.buttons
       == cell('elements/button', collection: buttons)
+  - if custom_tag
+    div.header-custom-tag
+      = custom_tag
