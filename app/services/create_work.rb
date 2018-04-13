@@ -30,10 +30,8 @@ class CreateWork
   end
 
   def save_photos(work)
-    binding.pry
     photo_params.each do |photo|
-      binding.pry
-      photo =  work.photos.new(photo)
+      photo =  work.photos.new({:picture => photo})
       photo.owner = work
     end
   end
