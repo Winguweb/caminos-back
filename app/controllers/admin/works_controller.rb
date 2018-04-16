@@ -42,6 +42,14 @@ module Admin
       @categories = Work.categories
       @status = Work.status
       load_work
+      @pictures = @work.photos.collect do |c|
+        {
+          opts: { aid: c.id },
+          name: c.picture.file.original_filename,
+          type: c.picture.file.content_type,
+          file: c.picture.url
+        }
+      end.to_json.html_safe
     end
 
     def update

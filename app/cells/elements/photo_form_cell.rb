@@ -2,8 +2,8 @@ class Elements::PhotoFormCell < Cell::ViewModel
 
   private
 
-  def owner
-    return model   
+  def files
+    return [] if model.blank?
+    model
   end
-
 end
