@@ -42,6 +42,19 @@
       stroke-dasharray: 5 2;
     }
   }
+  p.marker-name {
+    @include transform(translate3d(calc(-50% - 7px), -50%, 0));
+    @include background-color($white, 0.65);
+    @include type-setting(-1);
+    line-height: 24px;
+    position: absolute;
+    left: 50%;
+    top: calc(#{$gutter*2} - #{$border});
+    padding: $vgutter/4 $gutter/2;
+    border-radius: 2px;
+    white-space: nowrap;
+    box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
+  }
   p.reference-marker {
     box-sizing: content-box;
     display: inline-block;

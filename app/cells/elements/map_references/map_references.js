@@ -80,7 +80,7 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     var coordinates = new L.latLng(center.x, center.y)
     new L.Marker(coordinates, {
       icon: new L.divIcon({
-        html: '<p class="reference-marker"><span>' + polygon.reference + '</span></p>'
+        html: '<div><p class="marker-name">' + polygon.name + '</p><p class="reference-marker"><span>' + polygon.reference + '</span></p></div>'
       })
     }).addTo(this.baseGeometryFeature)
   },

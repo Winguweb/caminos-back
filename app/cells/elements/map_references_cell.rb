@@ -10,6 +10,7 @@ class Elements::MapReferencesCell < Cell::ViewModel
       {
           coordinates: neighborhood[:geometry].coordinates.first.map(&:reverse),
           className: 'base-geometry',
+          name: neighborhood[:name],
           reference: reference_number
       }
     end.to_json
