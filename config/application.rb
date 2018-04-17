@@ -54,8 +54,9 @@ module CaminosBack
       elements/description_cell
       elements/document_form_cell
       elements/documents_table_cell
-      elements/map_show_cell
       elements/map_edit_cell
+      elements/map_references_cell
+      elements/map_show_cell
       elements/meeting_details_cell
       elements/neighborhood_card_cell
       elements/neighborhoods_list_cell
