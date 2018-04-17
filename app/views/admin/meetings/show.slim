@@ -2,7 +2,7 @@
   == cell('page/header',  t('.meeting', date: @meeting.date.to_date), breadcrumbs: [ current_neighborhood.name, t('.meetings') ],  subtitle: t('.upload_by',user: "Facundo Pérez" ,date: @meeting.created_at.to_date))
 
 .page-section
-  
+
   section
     == cell('section/header',t(".order_day"), buttons: [{title: "editar", url:  edit_admin_neighborhood_meeting_path(current_neighborhood,@meeting) }])
     main
