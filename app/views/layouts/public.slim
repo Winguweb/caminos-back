@@ -30,6 +30,10 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     = javascript_include_tag "https://cdn.rawgit.com/mapbox/wellknown/master/wellknown.js"
 
     body id=body_id class=body_class
+      nav
+        - if content_for?(:main_header)
+          .main-header
+            = content_for(:main_header)
       main
         =yield
 

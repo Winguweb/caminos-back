@@ -1,17 +1,19 @@
-div
-  = render('neighborhoods/partials/nav')
+= content_for :main_header do
   - if !@neighborhood.urbanization
-    == cell('page/header', @neighborhood.name, breadcrumbs: [t('admin.sections.dashboard'), t('admin.sections.neighborhoods')])
+    == cell('page/public_header', @neighborhood)
   - if @neighborhood.urbanization
-    aside
-      div
-        section
-          nav
-            -if !@neighborhood.works.empty?
-              == cell('elements/works_list', @neighborhood.works)
-            -else
-              div
-                = t('.no_works')
+    == cell('page/public_header', @neighborhood)
+
+div
+  aside
+    div
+      section
+        nav
+          -if !@neighborhood.works.empty?
+            == cell('elements/works_list', @neighborhood.works)
+          -else
+            div
+              = t('.no_works')
 
   main.page-section
     section

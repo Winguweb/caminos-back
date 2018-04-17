@@ -6,9 +6,6 @@
     $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
     > div {
       height: 100%;
-
-      @include navbar();
-
       > aside {
         @include grid-column(4, $no-gutter);
         @include box-sizing(border-box);

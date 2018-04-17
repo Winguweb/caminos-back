@@ -1,8 +1,6 @@
-= content_for :main_header do
-  == cell('page/header', "Nueva Obra", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.works') ])
 .page-section
   section
-    == cell('section/header', t(".about_work"), links: [{title:t('.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
+    == cell('section/header', t(".about_work"))
     div
       span = t('.title')
       span = @work.name
@@ -42,16 +40,16 @@
         span = @work.lookup_address
   section
     == cell('section/header', t('.map_location'))
-    == cell('elements/map_show', current_neighborhood, features: [@work])
+    == cell('elements/map_show', @neighborhood, features: [@work])
 
   section
-    == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
+    == cell('section/header',"Lista de documentos")
     == cell('elements/documents_table',@work.documents)
     a href='#' = t('.view_more')
 
   section
     == cell('section/header', t('.related_meetings'))
-    == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
+    == cell('elements/meetings_list', @work.meetings , neighborhood: @neighborhood)
     a href='#' = t('.view_more')
 
   section

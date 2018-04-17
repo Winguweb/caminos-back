@@ -70,6 +70,7 @@ module CaminosBack
       elements/works_list_cell
       forms/user_cell
       page/header_cell
+      page/public_header_cell
       section/footer_link_cell
       section/header_cell
     )
