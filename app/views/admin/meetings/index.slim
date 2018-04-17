@@ -3,10 +3,10 @@
 
 div.page-section
   section
-    - if @meetings_years.any?
+    - if @meetings_years.blank?
       == cell('section/header', 'No hay reuniones para este barrio' ,buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_meeting_path }])
-    -@meetings_years.keys.each do |year|
-      - if  year==@meetings_years.keys.first
+    - @meetings_years.keys.each do |year|
+      - if year==@meetings_years.keys.first
         == cell('section/header', year, buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_meeting_path }])
       - else
         == cell('section/header', year)
