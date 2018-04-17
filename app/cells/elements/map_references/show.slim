@@ -1,0 +1,14 @@
+.map-references-cell
+  #map-container
+
+javascript:
+  $(function() {
+    new CDLV.Components['map_references']({
+      el: $('.map-references-cell'),
+      defaults: #{map_defaults},
+      token: '#{MAPBOX_TOKEN}',
+      base: #{base},
+      as_references: #{as_references},
+      features: #{features},
+    })
+  });

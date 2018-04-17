@@ -112,9 +112,6 @@
                   margin-bottom: $vgutter*4;
                   > li {
                     position: relative;
-                    $border: 2px;
-                    $outer-diameter: 31px;
-                    $inner-diameter: round($outer-diameter * 0.75);
                     counter-increment: step-counter;
                     &:hover {
                       background-color: color($light-grey, 0.3);
@@ -134,7 +131,7 @@
                       top: auto;
                       bottom: 0;
                     }
-                    >a > p {
+                    > a > p {
                       display: inline-block;
                       position: relative;
                       border-radius: 100%;

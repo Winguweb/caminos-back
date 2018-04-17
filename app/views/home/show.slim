@@ -41,5 +41,5 @@ div
 
   main
     section
-      - if @neighborhood
-        == cell('elements/map_show', @neighborhood)
+      - if @neighborhoods
+        == cell('elements/map_references', @neighborhoods, as_references: true)
