@@ -13,9 +13,12 @@ header
           - if link[:url]
             = link_to link[:title], link[:url]
           - elsif link[:href]
-              = link_to link[:title], link[:href]
-          - else
+            = link_to link[:title], link[:href]
+          - elsif link[:submit]
+            = button_tag type: :submit do
               = link[:title]
+          - else
+            = link[:title]
   - if buttons
     div.buttons
       == cell('elements/button', collection: buttons)
