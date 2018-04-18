@@ -18,16 +18,38 @@ es-AR:
         save_changes: Guardar cambios
         start_date: Fecha de inicio
         status: Estado
+        energy: "Luz / Electricidad"
+        health: Salud
+        infrastructure: Infraestructura
+        public: "Calles / Plazas"
+        sewer: Cloacas
+        trash: Basura
+        water: Agua
       index:
         new_work: Nueva Obra
         updated_at: Actualizado en
       new:
         title: Nueva Obra
       show:
-        photos: Fotos
+        budget: Presupuesto
+        category: Categoría
         documents: Documentos
-        upload_photos: Subir Fotos
+        energy: "Luz / Electricidad"
+        estimated_end_date: Tiempo de finalización estimado
+        execution_plan: Plan de ejecución
+        health: Salud
+        infrastructure: Infraestructura
         load_document: Cargar Documento
+        lookup_address: Dirección
+        Manager: Responsable
+        photos: Fotos
+        public: "Calles / Plazas"
         related_meetings: Reuniones relacionadas
+        sewer: Cloacas
+        start_date: Fecha de inicio
+        status: Estado
+        trash: Basura
+        upload_photos: Subir Fotos
+        water: Agua
 
 

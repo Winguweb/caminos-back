@@ -16,7 +16,7 @@
     tbody
       - neighborhoods.each do |neighborhood|
         - if neighborhood.urbanization
-          - percent = Random.rand(100)
+          - percent = neighborhood.urbanization_score.floor
         - else
           - percent = 0
         tr
