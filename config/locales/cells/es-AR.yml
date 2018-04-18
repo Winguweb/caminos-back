@@ -42,6 +42,6 @@ es-AR:
       username: Nombre de Usuario
   page:
     public_header:
-      about: "Información"
-      agreement: "Acuerdo"
-      works: "Obras"
+      about: Info del barrio
+      works: Seguir las obras
+      agreement: Medir el impacto
