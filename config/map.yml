@@ -1,7 +1,7 @@
 center:
-  x: -34.6083
-  y: -58.3712
-zoom: 10
+  x: -34.615
+  y: -58.450
+zoom: 11
 marker_shadow_url: "icons/category-shadow.svg"
 marker_editable_url: "icons/category-editable.svg"
 style: "mapbox.streets"

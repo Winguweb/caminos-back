@@ -36,7 +36,7 @@ module Admin
     end
 
     def index
-      @neighborhoods = Neighborhood.all.order(urbanization: :desc, name: :asc)
+      @neighborhoods = Neighborhood.all.order([{urbanization: :desc}, 'LOWER(name)'])
     end
 
     private

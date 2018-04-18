@@ -1,22 +1,49 @@
-#works-show {
-  .page-section {
-    > section {
-      > div,
-      .half-input > div,
-      .two-thirds-one-third-input > div {
-        @include grid-container;
-        margin-bottom: $vgutter*2;
-        > span:first-of-type {
-          @include type-setting(-1);
-          display: block;
-          color: $grey;
-          margin-bottom: $gutter/7;
-          text-transform: none;
-        }
-        > span + span {
-          display: block;
+@mixin works-show() {
+  > main {
+    height: 100%;
+    > div {
+      height: 100%;
+      > section {
+        > main {
+          $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+          @include grid-column(16, $no-gutter);
+          height: 100%;
+          > section:first-of-type {
+            @include grid-column(16);
+            left: auto;
+            height: 100%;
+            .map-show-cell {
+              @include grid-collapse;
+              height: 100%;
+              > div {
+                border-radius: 0;
+              }
+            }
+          }
+          > section + section {
+            > div,
+            .half-input > div,
+            .two-thirds-one-third-input > div {
+              @include grid-container;
+              margin-bottom: $vgutter*2;
+              > span:first-of-type {
+                @include type-setting(-1);
+                display: block;
+                color: $grey;
+                margin-bottom: $gutter/7;
+                text-transform: none;
+              }
+              > span + span {
+                display: block;
+              }
+            }
+          }
         }
       }
     }
   }
+}
+
+#works-show {
+  @include works-show();
 }
