@@ -13,10 +13,8 @@ header
           - if link[:url]
             = link_to link[:title], link[:url]
           - elsif link[:href]
-            button
               = link_to link[:title], link[:href]
           - else
-            button
               = link[:title]
   - if buttons
     div.buttons

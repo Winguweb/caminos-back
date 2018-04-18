@@ -150,13 +150,12 @@
                       margin: $vgutter/2 0;
                       @include grid-column(1 of 2);
                       > div {
-
-                        > p {
+                        > a {
                           @include type-setting(-1);
-                          white-space: nowrap;
+                          @include ellipsis;
+                          display: inline-block;
+                          width: 100%;
                           font-weight: bold;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
                         }
                       }
                     }
@@ -184,7 +183,7 @@
           }
           section {
             height: 100%;
-            .map-show-cell {
+            .map-references-cell {
               height: 100%;
               > div {
                 border-radius: 0;

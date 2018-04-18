@@ -32,10 +32,10 @@
     &.sewer {fill: $sewer;}
     &.infrastructure {fill: $infrastructure;}
     &.base-geometry {
-      stroke-width: 1px;
       fill: transparent;
       stroke: color($blue, 0.7);
-      stroke-dasharray: 5 2;
+      stroke-width: 2px;
+      stroke-dasharray: 3 5;
     }
   }
 }
