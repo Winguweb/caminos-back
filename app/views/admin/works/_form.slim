@@ -1,15 +1,10 @@
-- limit = 5
-
-= content_for :main_header do
-  == cell('page/header', "Nueva Obra", breadcrumbs: [t('admin.sections.dashboard'), t('admin.sections.works')])
 .work-form
-  = form_for ['admin', current_neighborhood, @work], html: {class: 'form', :multipart => true} do |f|
-
+  = form_for ['admin', current_neighborhood, @work], html: { class: 'form', multipart: true } do |f|
     .page-section
       section
-        == cell('section/header', t(".about_work"), links: [{:title => t(".cancel"), :url => admin_neighborhood_works_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true}])
+        == cell('section/header', t(".about_work"), links: [{ title: t(".cancel"), url: admin_neighborhood_works_path(current_neighborhood) }, { title: t(".save_changes"), submit: true }])
         .field
-          = f.label :name, t('.title')
+          = f.label :name, t('.name')
           = f.text_field :name
         .field
           = f.label :description, t('.description')
@@ -56,17 +51,3 @@
           == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'work', editable: @work)
         input type="hidden" name="work[geometry]" class="geometry-field"
         input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"
-
-      section
-
-        == cell('section/header', "Fotos", buttons_for: [{title: t('.new_picture'), for: 'photo_uploader'}])
-
-        == cell('elements/photo_form', @pictures)
-      section
-        == cell('section/header', "Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path}])
-
-        == cell('elements/document_form', "work")
-      section
-        == cell('section/header', t('.related_meetings'))
-        == cell('elements/meetings_list', current_neighborhood.meetings, neighborhood: current_neighborhood)
-        a href='#' = t('.view_more')

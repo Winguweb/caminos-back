@@ -1,4 +1,4 @@
-@mixin photo-form() {
+@mixin photos-jfiler() {
   .jFiler {
     display: none;
   }
@@ -26,8 +26,6 @@
 
 }
 
-.photo-form-cell {
-  @include photo-form;
+.photos-uploader-cell {
+  @include photos-jfiler;
 }
-
-

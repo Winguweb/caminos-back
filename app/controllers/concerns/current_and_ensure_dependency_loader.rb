@@ -2,11 +2,13 @@
 module CurrentAndEnsureDependencyLoader
   extend ActiveSupport::Concern
 
-  private
-
   MODELS_TO_LOAD = %w(
     neighborhood
+    work
   ).freeze
+  private_constant :MODELS_TO_LOAD
+
+  private
 
   MODELS_TO_LOAD.each do |model_name|
     define_method :"current_#{model_name}" do

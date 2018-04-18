@@ -63,7 +63,7 @@ module CaminosBack
       elements/meeting_card_cell
       elements/meetings_list_cell
       elements/person_card_cell
-      elements/photo_form_cell
+      elements/photos_uploader_cell
       elements/users_table_cell
       elements/work_details_cell
       elements/works_table_cell

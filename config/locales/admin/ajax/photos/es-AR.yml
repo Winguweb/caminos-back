@@ -1,0 +1,7 @@
+es-AR:
+  admin:
+    ajax:
+      photos:
+        errors:
+          delete: Hubo un erro al intentar eliminar la foto
+          upload: Hubo un error al intentar subir la foto

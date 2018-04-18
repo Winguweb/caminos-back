@@ -42,6 +42,4 @@ class Work < ApplicationRecord
     "icons/category-#{["water", "trash", "public", "health", "energy", "sewer", "infrastructure"][rand(7)]}.svg"
   end
 
-
-
 end

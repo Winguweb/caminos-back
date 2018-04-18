@@ -4,7 +4,7 @@
 = form_for ['admin', @neighborhood], html: { class: 'form' } do |form|
   .page-section
     section
-      == cell('section/header', t(".information"), links: [ {:title => t(".cancel"), :url => admin_neighborhoods_path(@neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
+      == cell('section/header', t(".information"), links: [{ title: t(".cancel"), url: admin_neighborhoods_path(@neighborhood) }, { title: t(".save_changes"), submit: true }])
       .fields
         .field.name
           = form.label :name, t('.name')

@@ -4,13 +4,13 @@
 //= require ./translations
 //
 // CELLS
-//= require users_table.js
+//= require button_for.js
+//= require document_form.js
 //= require map_edit.js
 //= require map_references.js
 //= require map_show.js
-//= require button_for.js
-//= require document_form.js
-//= require photo_form.js
+//= require photos_uploader.js
+//= require users_table.js
 //
 // VIEWS
 //= require_tree ./views

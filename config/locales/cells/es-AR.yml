@@ -1,7 +1,9 @@
 es-AR:
   elements:
     documents_table:
-      no_documents: "No hay documentos registrados"
+      no_documents: No hay documentos asociados
+    meetings_list:
+      no_meetings: Por el momento no hay reuniones relacionadas
     users_table:
       permissions: "Permisos: %{roles}"
     works_list:

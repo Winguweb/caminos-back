@@ -1,5 +1,6 @@
 = content_for :main_header do
-  == cell('page/header', "Nueva Obra", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.works') ])
+  == cell('page/header', @work.name, breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods'), current_neighborhood.name, t('admin.sections.works') ])
+
 .page-section
   section
     == cell('section/header', t(".about_work"), links: [{title:t('.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
@@ -45,16 +46,28 @@
     == cell('elements/map_show', current_neighborhood, features: [@work])
 
   section
-    == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
-    == cell('elements/documents_table',@work.documents)
-    a href='#' = t('.view_more')
+    - file_input_id = 'photo_file_input'
+    == cell('section/header', t('.photos'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
+    == cell('elements/photos_uploader', @work.photos, { owner: @work, file_input_id: file_input_id })
+
+  section
+    == cell('section/header', t('.documents'), buttons: [{ title: t('.load_document') }])
+    == cell('elements/documents_table', @work.documents)
 
   section
     == cell('section/header', t('.related_meetings'))
     == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
-    a href='#' = t('.view_more')
 
-  section
-    div
-      -@work.photos.each do |photo|
-        = image_tag(photo.picture.thumb.url, alt: 'Image')
+
+  / section
+  /   div
+  /     - @work.photos.each do |photo|
+  /       = image_tag(photo.picture.thumb.url, alt: 'Image')
+
+    / section
+    /   == cell('section/header', "Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path}])
+    /   == cell('elements/document_form', "work")
+
+    / section
+    /   == cell('section/header', t('.related_meetings'))
+    /   == cell('elements/meetings_list', current_neighborhood.meetings, neighborhood: current_neighborhood)
