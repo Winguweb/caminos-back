@@ -1,42 +1,33 @@
 es-AR:
   admin:
     works:
-      index:
-        updated_at: Actualizado en
-        new_work: Nueva Obra
-      new:
-        about_work: Sobre la obra
-        cancel: Cancelar
-        save_changes: Guardar cambios
-        title: Título
-        description: Descripción
-        category: Categoría
-        status: Estado
-        manager: Órgano responsable
-        budget: Presupuesto
-        start_date: Fecha de inicio
-        estimated_end_date: Fecha de finalización
-        execution_plan: Fuente
-        lookup_address: Dirección
-        load_document: Cargar documento
-        map_location: Ubicación en el mapa
-        related_meetings: Reuniones relacionadas
+      edit:
+        title: "Editar Obra: %{name}"
       form:
         about_work: Sobre la obra
-        cancel: Cancelar
-        save_changes: Guardar cambios
-        title: Título
-        description: Descripción
-        category: Categoría
-        status: Estado
-        manager: Órgano responsable
         budget: Presupuesto
-        start_date: Fecha de inicio
+        cancel: Cancelar
+        category: Categoría
+        description: Descripción
         estimated_end_date: Fecha de finalización
         execution_plan: Fuente
         lookup_address: Dirección
-        load_document: Cargar documento
+        manager: Órgano responsable
         map_location: Ubicación en el mapa
+        name: Nombre
+        save_changes: Guardar cambios
+        start_date: Fecha de inicio
+        status: Estado
+      index:
+        new_work: Nueva Obra
+        updated_at: Actualizado en
+      new:
+        title: Nueva Obra
+      show:
+        photos: Fotos
+        documents: Documentos
+        upload_photos: Subir Fotos
+        load_document: Cargar Documento
         related_meetings: Reuniones relacionadas
 
 

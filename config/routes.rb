@@ -21,6 +21,13 @@ Rails.application.routes.draw do
       post '/signin',   action: :create,  controller: :user_sessions
       post '/signout',  action: :destroy, controller: :user_sessions
 
+      # ╭─ AJAX Accesible URL's / Path's
+      namespace :ajax do
+        post '/photos/upload', action: :upload, controller: :photos
+        delete '/photos/:id', action: :delete, controller: :photos, as: :photo
+      end
+      # ╰─ End of AJAX Accesible URL's / Path's
+
       resources :users
 
       resource :dashboard, only: [:show]

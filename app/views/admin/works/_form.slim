@@ -1,52 +1,53 @@
-= content_for :main_header do
-  == cell('page/header', "Nueva Obra", links: @page_header_links, breadcrumbs: @section_header_breadcrumbs)
-= form_for ['admin', current_neighborhood, @work], html: { class: 'form' } do |f|
-
-  .page-section
-    section
-      == cell('section/header', t(".about_work"), links: [ {:title => t(".cancel"), :url => admin_neighborhood_works_path(current_neighborhood)}, {:title => t(".save_changes"), :submit => true} ])
-      .field
-        = f.label :name, t('.title')
-        = f.text_field :name
-      .field
-        = f.label :description, t('.description')
-        = f.text_area :description
-      .no-grid
+.work-form
+  = form_for ['admin', current_neighborhood, @work], html: { class: 'form', multipart: true } do |f|
+    .page-section
+      section
+        == cell('section/header', t(".about_work"), links: [{ title: t(".cancel"), url: admin_neighborhood_works_path(current_neighborhood) }, { title: t(".save_changes"), submit: true }])
         .field
-          = f.label :name, t('.category')
-          = f.select :category, @categories.collect { |c| [ c, c ] }, include_blank: true
+          = f.label :name, t('.name')
+          = f.text_field :name
         .field
-          = f.label :name, t('.status')
-          = f.select :status, @status.collect { |c| [ c, c ] }, include_blank: true
+          = f.label :description, t('.description')
+          = f.text_area :description
+        .no-grid
+          .field
+            = f.label :name, t('.category')
+            = f.select :status, @categories.collect {|c| [c, c]}, include_blank: true
+          .field
+            = f.label :name, t('.status')
+            = f.select :status, @status.collect {|c| [c, c]}, include_blank: true
 
-      .half-input
-        .field
-          = f.label :manager, t('.manager')
-          = f.text_field :manager
+        .half-input
+          .field
+            = f.label :manager, t('.manager')
+            = f.text_field :manager
 
-        .field
-          = f.label :budget, t('.budget')
-          = f.text_field :budget
+          .field
+            = f.label :budget, t('.budget')
+            = f.text_field :budget
 
-        .field
-          = f.label :start_date, t('.start_date')
-          = f.date_field :start_date
+          .field
+            = f.label :start_date, t('.start_date')
+            = f.date_field :start_date
 
-        .field
-          = f.label :estimated_end_date, t('.estimated_end_date')
-          = f.date_field :estimated_end_date
+          .field
+            = f.label :estimated_end_date, t('.estimated_end_date')
+            = f.date_field :estimated_end_date
 
-      .two-thirds-one-third-input
-        .field
-          = f.label :execution_plan, t('.execution_plan')
-          = f.text_field :execution_plan
+        .two-thirds-one-third-input
+          .field
+            = f.label :execution_plan, t('.execution_plan')
+            = f.text_field :execution_plan
 
-        .field
-          = f.label :lookup_address, t('.lookup_address')
-          = f.text_field :lookup_address
+          .field
+            = f.label :lookup_address, t('.lookup_address')
+            = f.text_field :lookup_address
 
-    section
-      == cell('section/header', t('.map_location'))
-      == cell('elements/map_edit', current_neighborhood, editable: @work, controls: ['marker', 'polygon', 'polyline'], name: 'work')
-      input type="hidden" name="work[geometry]" class="geometry-field"
-      input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"
+      section
+        == cell('section/header', t('.map_location'))
+        - if @work[:geometry].blank?
+          == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'work')
+        - else
+          == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'work', editable: @work)
+        input type="hidden" name="work[geometry]" class="geometry-field"
+        input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"

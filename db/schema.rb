@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406134043) do
+ActiveRecord::Schema.define(version: 20180416171238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,10 +86,14 @@ ActiveRecord::Schema.define(version: 20180406134043) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "photos", id: false, force: :cascade do |t|
-    t.string "picture"
+  create_table "photos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "owner_type", null: false
     t.uuid "owner_id", null: false
+    t.uuid "uploader_id", null: false
+    t.string "image"
+    t.string "original_filename"
+    t.string "content_type"
+    t.integer "file_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_type", "owner_id"], name: "index_photos_on_owner_type_and_owner_id"

@@ -9,7 +9,8 @@ CDLV.Components['button_for'] = Backbone.View.extend({
         'labelClicked'
     )
 
-    this.element = $('#' + options.for.id).siblings('.jFiler-input')
+    this.element = $('#' + options.for.id)
+
   },
   labelClicked: function(evt) {
     evt.preventDefault()

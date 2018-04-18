@@ -31,7 +31,7 @@ class CreateWork
 
   def save_photos(work)
     photo_params.each do |photo|
-      photo =  work.photos.new({:picture => photo})
+      photo =  work.photos.new( { picture: photo } )
       photo.owner = work
     end
   end

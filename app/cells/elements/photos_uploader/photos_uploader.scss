@@ -1,4 +1,4 @@
-@mixin photo-form() {
+@mixin photos-jfiler() {
   .jFiler {
     display: none;
   }
@@ -24,10 +24,16 @@
     line-height: 19px;
   }
 
+  .jFiler-items-list{
+    columns: 3;
+  }
+
+  .jFiler-photo {
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 
-.photo-form-cell {
-  @include photo-form;
+.photos-uploader-cell {
+  @include photos-jfiler;
 }
-
-

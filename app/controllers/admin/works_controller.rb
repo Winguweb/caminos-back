@@ -12,14 +12,13 @@ module Admin
 
     def new
       ensure_neighborhood; return if performed?
+
       @categories = Work.categories
       @status = Work.status
       @work = current_neighborhood.works.new
-      @work.photos.build()
     end
 
     def create
-
       ensure_neighborhood; return if performed?
 
       service = CreateWork.call(current_neighborhood, work_params)
@@ -39,6 +38,7 @@ module Admin
 
     def edit
       ensure_neighborhood; return if performed?
+
       @categories = Work.categories
       @status = Work.status
       load_work
