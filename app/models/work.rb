@@ -3,6 +3,8 @@ class Work < ApplicationRecord
   has_and_belongs_to_many :meetings
   has_many :documents, as: :holder
   has_many :photos, as: :owner
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :categories
 
   validates_presence_of :name,
     :description,
@@ -12,11 +14,13 @@ class Work < ApplicationRecord
     :budget,
     :manager,
     :name,
-    :execution_plan
+    :execution_plan,
+    :category_list
 
   validate :valid_dates
 
-  CATEGORIES =['Servicios Públicos','Equipamiento Estatal','Vivienda','Espacios Públicos'].freeze
+  # CATEGORIES =['Servicios Públicos','Equipamiento Estatal','Vivienda','Espacios Públicos'].freeze
+  CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure'].freeze
   STATUS =['En proceso','Finalizadas', 'Pendientes','Vencidas','Proyectadas'].freeze
 
   def self.status
@@ -33,13 +37,13 @@ class Work < ApplicationRecord
     end
   end
 
-  # TO-DO: Remove this after tags implementation
   def category
-    ["water", "trash", "public", "health", "energy", "sewer", "infrastructure"][rand(7)]
+    self.tags_on(:categories).first
   end
 
+  # TO-DO: Remove this after tags implementation
   def category_icon
-    "icons/category-#{["water", "trash", "public", "health", "energy", "sewer", "infrastructure"][rand(7)]}.svg"
+    category.blank? ? 'icons/category-editable.svg' : "icons/category-#{category}.svg"
   end
 
 end

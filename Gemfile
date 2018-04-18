@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'activerecord-postgis-adapter'
+gem 'acts-as-taggable-on' # A tagging plugin for Rails
 gem 'authlogic' # For User Authentication
 gem 'bcrypt' # Ruby binding for the OpenBSD bcrypt() password hashing algorithm
 gem 'bourbon' # A Lightweight Sass Tool Set
