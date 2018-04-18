@@ -172,7 +172,7 @@
 
           }
         }
-        main {
+        > main {
           @include grid-column(16, $no-gutter);
           position: relative;
           height: 400px;
@@ -189,7 +189,7 @@
             }
           }
         }
-        aside + main {
+        > aside + main {
           @include grid-column(12, $no-gutter);
           height: 100%;
           > section:first-of-type {

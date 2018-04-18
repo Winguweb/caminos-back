@@ -18,3 +18,15 @@ section
 
     section
       == cell('section/header', t('.pictures'))
+
+    section
+      == cell('section/header', t('.meetings'))
+      - if @meetings.blank?
+        span=t('.no_meetings')
+      - else
+        - @meetings.keys.each do |year|
+          - if year ==@meetings.keys.first
+            == cell('section/header', year)
+          - else
+            == cell('section/header', year)
+          == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)

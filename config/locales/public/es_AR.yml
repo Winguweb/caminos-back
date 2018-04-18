@@ -5,6 +5,8 @@ es-AR:
       description: Descripción
       documents: Documentos
       pictures: Fotos
+      meetings: Reuniones
+      no_meetings: No existen reuniones
     agreement:
       no_agreement: No se encontró información
     partials:

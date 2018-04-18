@@ -36,7 +36,7 @@ module Admin
     end
 
     def index
-      @neighborhoods = Neighborhood.all
+      @neighborhoods = Neighborhood.all.order(urbanization: :desc, name: :asc)
     end
 
     private
