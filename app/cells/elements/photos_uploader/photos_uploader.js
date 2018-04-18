@@ -41,10 +41,10 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
           return CDLV.pubSub.trigger('filer:alert', text)
         }
       },
-      files: options.files || [],
+      files: options.images || [],
       templates: {
         item: '<li class="jFiler-item" data-photo-id=""><div class="jFiler-item-container"><div class="jFiler-item-inner"><div class="jFiler-item-icon pull-left">{{fi-icon}}</div><div class="jFiler-item-info pull-left"><div class="jFiler-item-title" title="{{fi-name}}">{{fi-name | limitTo:30}}</div><div class="jFiler-item-others"><span>Tamaño: {{fi-size2}}</span><span>Tipo: {{fi-extension}}</span><span class="jFiler-item-status">{{fi-progressBar}}</span></div><div class="jFiler-item-assets"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></div></div></li>',
-        itemAppend: '<li class="jFiler-item" data-photo-id="{{fi-phid}}"><div class="jFiler-item-container"><div class="jFiler-item-inner"><div class="jFiler-item-icon pull-left">{{fi-icon}}</div><div class="jFiler-item-info pull-left"><div class="jFiler-item-title">{{fi-name | limitTo:35}}</div><div class="jFiler-item-others"><span>Tipo: {{fi-extension}}</span><span class="jFiler-item-status"></span></div><div class="jFiler-item-assets"></div></div></div></div></li>',
+        itemAppend: '<li class="jFiler-item jFiler-photo" data-photo-id="{{fi-phid}}"><div class="jFiler-photo-inner"><div class="jFiler-photo-image"><img src="{{fi-imgsrc}}" height="200px" border="0"></div><div class="jFiler-photo-actions"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></li>',
         itemAppendToEnd: true,
       },
       uploadFile: {

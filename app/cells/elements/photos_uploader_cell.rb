@@ -11,10 +11,9 @@ class Elements::PhotosUploaderCell < Cell::ViewModel
 
     @images ||= model.map do |photo|
       {
-        opts: { phid: photo.id },
-        name: photo.image.file.original_filename,
-        type: photo.image.file.content_type,
-        file: photo.image.url
+        opts: { phid: photo.id, imgsrc: photo.image.thumb.url },
+        name: photo.original_filename,
+        type: photo.content_type
       }
     end.to_json
   end

@@ -24,6 +24,14 @@
     line-height: 19px;
   }
 
+  .jFiler-items-list{
+    columns: 3;
+  }
+
+  .jFiler-photo {
+    display: inline-block;
+    vertical-align: top;
+  }
 }
 
 .photos-uploader-cell {

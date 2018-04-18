@@ -46,4 +46,11 @@
 
 #works-show {
   @include works-show();
+
+  .photos-list{
+    .photo{
+      @include grid-column(1 of 3);
+      margin-bottom: $gutter;
+    }
+  }
 }

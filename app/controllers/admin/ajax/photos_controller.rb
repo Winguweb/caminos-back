@@ -24,12 +24,13 @@ module Admin::Ajax
 
     def upload
       photo = current_owner.photos.new( extended_params(photo_params) )
-      binding.pry
+
       if photo.valid?
         if photo.save
           render json: {
             response: {
-              id: photo.id
+              id: photo.id,
+              src: photo.image.thumb.url
             }
           }, status: 201
         else

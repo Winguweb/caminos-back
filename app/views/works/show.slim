@@ -54,6 +54,8 @@ section
       a href='#' = t('.view_more')
 
     section
-      div
+      == cell('section/header', t('.photos'))
+      .photos-list
         - @work.photos.each do |photo|
-          = image_tag(photo.picture.thumb.url, alt: 'Image')
+          .photo
+            = image_tag photo.image.thumb.url, alt: 'Image', height: 200
