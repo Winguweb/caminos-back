@@ -1,5 +1,12 @@
 es-AR:
   neighborhoods:
+    about:
+      ambassadors: Embajadores
+      description: Descripción
+      documents: Documentos
+      pictures: Fotos
+    agreement:
+      no_agreement: No se encontró información
     partials:
       nav:
         works: Obras
@@ -7,5 +14,3 @@ es-AR:
         about: Información
     works:
       no_works: No se encontraron obras en este barrio
-    agreement:
-      no_agreement: No se encontró información

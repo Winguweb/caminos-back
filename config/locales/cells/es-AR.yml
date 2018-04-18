@@ -21,7 +21,6 @@ es-AR:
       sewer: "Cloacas"
       trash: "Basura"
       water: "Agua"
-
   forms:
     user:
       create: Crear Usuario
@@ -39,3 +38,8 @@ es-AR:
       update: Actualizar Usuario
       user_information: Información del Usuario
       username: Nombre de Usuario
+  page:
+    public_header:
+      about: "Información"
+      agreement: "Acuerdo"
+      works: "Obras"

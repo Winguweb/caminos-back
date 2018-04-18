@@ -1,19 +1,14 @@
-= content_for :main_header do
-  - if !@neighborhood.urbanization
-    == cell('page/public_header', @neighborhood)
+section
   - if @neighborhood.urbanization
-    == cell('page/public_header', @neighborhood)
-
-div
-  aside
-    div
-      section
-        nav
-          -if !@neighborhood.works.empty?
-            == cell('elements/works_list', @neighborhood.works)
-          -else
-            div
-              = t('.no_works')
+    aside
+      div
+        section
+          nav
+            -if !@neighborhood.works.empty?
+              == cell('elements/works_list', @neighborhood.works)
+            -else
+              div
+                = t('.no_works')
 
   main.page-section
     section

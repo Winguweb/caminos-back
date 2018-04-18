@@ -1,14 +1,9 @@
 @mixin agreement() {
-  @include grid-column(16);
   > main {
-    @include grid-collapse;
     height: 100%;
-    $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
     > div {
       height: 100%;
-      @include navbar();
-      
-      section{
+      > section {
         > div {
           position: relative;
           align-items: center;
@@ -51,7 +46,7 @@
         }
 
         section {
-         
+
           letter-spacing: 1px;
           display: block;
           background-color: #fefffa;
@@ -73,7 +68,7 @@
           > main {
             border-bottom: 1px solid $light-grey;
             margin-bottom: $vgutter*2;
-            
+
             > p {
               @include text-color($text-grey, 1);
               @include type-setting(-1);
@@ -116,9 +111,9 @@
           transform: translate(0, 0);
           margin-top: 14px;
           z-index: 2;
-          
+
           @include grid-container;
-         
+
           .two-thirds-one-third-input {
             > div:nth-of-type(1) {
               color: $text-black;
@@ -133,11 +128,11 @@
               > span:first-of-type {
                 @include type-setting(-1);
                 display: block;
-                
+
                 margin-bottom: $gutter/7;
                 text-transform: none;
               }
-              
+
               > span + span {
                 display: block;
               }

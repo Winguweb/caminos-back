@@ -5,18 +5,15 @@
       &:hover {
         @include background-color($light-grey, 0.3);
       }
+      &:last-of-type > a {
+        border-bottom: none;
+      }
       > a {
         @include grid-container;
         border-bottom: 1px solid $light-grey;
         padding: $gutter 0;
         display: block;
         color: initial;
-        &:first-of-type {
-          border-top: 1px solid $light-grey;
-        }
-        &:last-of-type {
-          border-bottom: none;
-        }
         > div {
           $icon-width: 55px;
           float: left;
