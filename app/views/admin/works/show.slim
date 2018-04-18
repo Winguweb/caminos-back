@@ -1,62 +1,60 @@
 = content_for :main_header do
   == cell('page/header', "Nueva Obra", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.works') ])
-= form_for ['admin', current_neighborhood, @work], html: { class: 'form' } do |f|
-
-  .page-section
-    section
-      == cell('section/header', t(".about_work"), links: [{title:t('.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
+.page-section
+  section
+    == cell('section/header', t(".about_work"), links: [{title:t('.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
+    div
+      span = t('.title')
+      span = @work.name
+    div
+      span = t('.description')
+      span = @work.description
+    .half-input
       div
-        span = t('.title')
-        span = @work.name
+        span = t('.category')
+        span = @work.category
       div
-        span = t('.description')
-        span = @work.description
-      .half-input
-        div
-          span = t('.category')
-          span = @work.category
-        div
-          span = t('.status')
-          span = @work.status
-        div
-          span = t('.manager')
-          span = @work.manager
-
-        div
-          span = t('.budget')
-          span = @work.budget
-
-        div
-          span = t('.start_date')
-          span = @work.start_date
-
-        div
-          span = t('.estimated_end_date')
-          span = @work.estimated_end_date
-
-      .two-thirds-one-third-input
-        div
-          span = t('.execution_plan')
-          span = @work.execution_plan
-
-        div
-          span = t('.lookup_address')
-          span = @work.lookup_address
-    section
-      == cell('section/header', t('.map_location'))
-      == cell('elements/map_show', current_neighborhood, features: [@work])
-
-    section
-      == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
-      == cell('elements/documents_table',@work.documents)
-      a href='#' = t('.view_more')
-
-    section
-      == cell('section/header', t('.related_meetings'))
-      == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
-      a href='#' = t('.view_more')
-
-    section
+        span = t('.status')
+        span = @work.status
       div
-        -@work.photos.each do |photo|
-          = image_tag(photo.picture.thumb.url, alt: 'Image')
+        span = t('.manager')
+        span = @work.manager
+
+      div
+        span = t('.budget')
+        span = @work.budget
+
+      div
+        span = t('.start_date')
+        span = @work.start_date
+
+      div
+        span = t('.estimated_end_date')
+        span = @work.estimated_end_date
+
+    .two-thirds-one-third-input
+      div
+        span = t('.execution_plan')
+        span = @work.execution_plan
+
+      div
+        span = t('.lookup_address')
+        span = @work.lookup_address
+  section
+    == cell('section/header', t('.map_location'))
+    == cell('elements/map_show', current_neighborhood, features: [@work])
+
+  section
+    == cell('section/header',"Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
+    == cell('elements/documents_table',@work.documents)
+    a href='#' = t('.view_more')
+
+  section
+    == cell('section/header', t('.related_meetings'))
+    == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
+    a href='#' = t('.view_more')
+
+  section
+    div
+      -@work.photos.each do |photo|
+        = image_tag(photo.picture.thumb.url, alt: 'Image')

@@ -102,8 +102,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
     }.bind(this));
   },
   centerMap: function(polygon) {
-    if (_.isEmpty(polygon)) return
-    var center = this.getCenter(polygon) || this.center
+    var center = _.isEmpty(polygon) ? this.center : this.getCenter(polygon)
     this.map.setView([center.x, center.y], this.zoom)
   },
   createMap: function() {

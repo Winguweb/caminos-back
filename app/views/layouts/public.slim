@@ -30,8 +30,11 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     = javascript_include_tag "https://cdn.rawgit.com/mapbox/wellknown/master/wellknown.js"
 
     body id=body_id class=body_class
+      .main-header
+        == cell('page/public_header', @neighborhood)
       main
-        =yield
+        .main-section
+          =yield
 
       = yield :before_js
       = javascript_include_tag 'admin/application'

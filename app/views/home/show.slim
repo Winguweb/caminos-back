@@ -1,13 +1,4 @@
-div
-  nav
-    div
-      = link_to admin_dashboard_path do
-        span 'Caminos de la Villa'
-
-    div
-      button type="button"
-        span
-
+section
   aside
     div
       section
@@ -37,9 +28,9 @@ div
               - @unurbanized.each do |neighborhood|
                 li
                   div
-                    = link_to neighborhood.name, neighborhood_path(neighborhood.id)
+                    = link_to neighborhood.name, about_neighborhood_path(neighborhood.id)
 
   main
     section
-      - if @neighborhood
-        == cell('elements/map_show', @neighborhood)
+      - if @neighborhoods
+        == cell('elements/map_references', @neighborhoods)

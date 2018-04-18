@@ -1,7 +1,4 @@
-div
-  = render('neighborhoods/partials/nav')
-  - if !@neighborhood.urbanization
-    == cell('page/header', @neighborhood.name, breadcrumbs: [t('admin.sections.dashboard'), t('admin.sections.neighborhoods')])
+section
   - if @neighborhood.urbanization
     aside
       div

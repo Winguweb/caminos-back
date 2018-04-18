@@ -1,4 +1,4 @@
-@mixin about() {
+@mixin works-show() {
   > main {
     height: 100%;
     > div {
@@ -20,9 +20,23 @@
               }
             }
           }
-          > div {
-            height: 100%;
-            @include navbar();
+          > section + section {
+            > div,
+            .half-input > div,
+            .two-thirds-one-third-input > div {
+              @include grid-container;
+              margin-bottom: $vgutter*2;
+              > span:first-of-type {
+                @include type-setting(-1);
+                display: block;
+                color: $grey;
+                margin-bottom: $gutter/7;
+                text-transform: none;
+              }
+              > span + span {
+                display: block;
+              }
+            }
           }
         }
       }
@@ -30,6 +44,6 @@
   }
 }
 
-#neighborhoods-about {
-  @include about();
+#works-show {
+  @include works-show();
 }

@@ -1,7 +1,7 @@
 module Admin
   class DashboardsController < BaseController
     def show
-      @neighborhoods = Neighborhood.all.order(urbanization: :desc, name: :asc)
+      @neighborhoods = Neighborhood.where(:urbanization => true).order('LOWER(name)')
     end
   end
 end

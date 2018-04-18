@@ -11,7 +11,12 @@ class NeighborhoodsController < ApplicationController
 
   def agreement
     load_neighborhood
-    @data = eval(@neighborhood.agreement.data) if !@neighborhood.agreement.data.nil?
+    if !@neighborhood.agreement.blank? && !@neighborhood.agreement.data.nil?
+      # TODO: ESTO ES PELIGROSO!!!
+      @data = eval(@neighborhood.agreement.data)
+    else
+      @data = {}
+    end
   end
 
   private

@@ -11,7 +11,7 @@
 }
 
 @mixin shadow-down($color, $size) {
-  box-shadow: 0 7px 11px 0px $color;
+  box-shadow: 0 2px 11px 1px $color;
 
 }
 
