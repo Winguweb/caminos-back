@@ -1,8 +1,7 @@
 .works-list-cell
   ul
     - works.each do |work|
-      li
-        div
+      li = link_to work_path(work) do
           div
             =image_tag work.category_icon
           div

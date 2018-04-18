@@ -14,11 +14,6 @@ es-AR:
       period: "%B"
       day_and_day_of_week: "%A %d"
       slashes: "%d/%m/%y"
-  neighborhoods:
-    show:
-      documents: "Documentos"
-      meetings: "Reuniones"
-      no_meetings: "No hay reuniones registradas"
   user:
     roles:
       ambassador: Embajador

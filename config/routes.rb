@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       member do
         get :agreement
         get :about
+        resources :works, only: [:show]
       end
     end
     get '/components', action: :index, controller: :components

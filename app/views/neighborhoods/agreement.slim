@@ -1,6 +1,5 @@
-div 
-  = render('neighborhoods/partials/nav')
-  div.page-section
+section
+  main.page-section
     section
       - if !@data.nil?
         ul
@@ -28,5 +27,5 @@ div
                     div
                       span = @data[indicator][:answers][question]
       -else
-        div 
+        div
           = t('.no_agreement')

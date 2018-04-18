@@ -15,7 +15,10 @@
 
     tbody
       - neighborhoods.each do |neighborhood|
-        - percent = Random.rand(100)
+        - if neighborhood.urbanization
+          - percent = Random.rand(100)
+        - else
+          - percent = 0
         tr
           td
             a href=admin_neighborhood_path(neighborhood)
