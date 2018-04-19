@@ -1,7 +1,7 @@
 .photos-uploader-cell
   = form_for Photo.new, url: url, method: :post, html: { multipart: true } do |form|
     = form.file_field :image, id: file_input_id
-    .photos-preview
+    .photos-uploads
       .jFiler-items
 
 javascript:
@@ -10,6 +10,6 @@ javascript:
       el: $('.photos-uploader-cell'),
       images: #{raw images},
       fileInputId: '#{file_input_id}',
-      ownerData: { name: '#{owner.class.name.downcase}_id', value: '#{owner.id}'}
+      owner: { pluralizeName: '#{owner_pluralize_name}', id: '#{owner_id}'}
     })
   });

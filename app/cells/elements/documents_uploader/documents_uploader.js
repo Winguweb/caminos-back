@@ -1,4 +1,4 @@
-CDLV.Components['photos/uploader'] = Backbone.View.extend({
+CDLV.Components['documents/uploader'] = Backbone.View.extend({
   initialize: function(options){
     _.bindAll(
         this,
@@ -27,21 +27,21 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
 
     this.filerInput = $input.filer({
       limit: 50,
-      maxSize: 100,
+      maxSize: 200,
       fileMaxSize: 10,
-      extensions: ['jpg', 'jpeg', 'png'],
+      extensions: ['jpg', 'jpeg', 'png', 'doc', 'docx', 'xls', 'xlsx', 'pdf'],
       changeInput: true,
       showThumbs: true,
       addMore: true,
-      appendTo: '.photos-uploads',
+      appendTo: '.documents-uploads',
       dialogs: {
         alert: function(text) {
           return that.trigger('filer:alert', text)
         }
       },
-      files: options.images || [],
+      files: options.documents || [],
       templates: {
-        item: '<li class="jFiler-item" data-photo-id=""><div class="jFiler-item-container"><div class="jFiler-item-inner"><div class="jFiler-item-icon pull-left">{{fi-icon}}</div><div class="jFiler-item-info pull-left"><div class="jFiler-item-title" title="{{fi-name}}">{{fi-name | limitTo:30}}</div><div class="jFiler-item-others"><span>Tamaño: {{fi-size2}}</span><span>Tipo: {{fi-extension}}</span><span class="jFiler-item-status">{{fi-progressBar}}</span></div><div class="jFiler-item-assets"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></div></div></li>',
+        item: '<li class="jFiler-item" data-document-id=""><div class="jFiler-item-container"><div class="jFiler-item-inner"><div class="jFiler-item-icon pull-left">{{fi-icon}}</div><div class="jFiler-item-info pull-left"><div class="jFiler-item-title" title="{{fi-name}}">{{fi-name | limitTo:30}}</div><div class="jFiler-item-others"><span>Tamaño: {{fi-size2}}</span><span>Tipo: {{fi-extension}}</span><span class="jFiler-item-status">{{fi-progressBar}}</span></div><div class="jFiler-item-assets"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></div></div></li>',
         itemAppend: '<li class="jFiler-item-dummy"></li>',
         itemAppendToEnd: true,
       },
@@ -87,18 +87,18 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
 
   removeFile: function(filerItem){
     var that = this
-    var photoId = filerItem.data('photo-id')
+    var documentId = filerItem.data('document-id')
 
-    if( _.isEmpty(photoId) ) return true
+    if( _.isEmpty(documentId) ) return true
 
-    var url = '/admin/ajax/'+this.owner.pluralizeName+'/'+this.owner.id+'/photos/'+photoId
+    var url = '/admin/ajax/'+this.owner.pluralizeName+'/'+this.owner.id+'/documents/'+documentId
     this.displayMessage(false)
      $.ajax({
       url: url,
       type: 'delete',
       cache: false,
     }).done(function(data){
-      CDLV.pubSub.trigger('photo:remove', photoId)
+      CDLV.pubSub.trigger('document:remove', documentId)
       return true
     }).fail(function(xhr){
       return false
@@ -127,9 +127,9 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
   },
 
   uploadSuccess: function(data, filerItem){
-    filerItem.data('photo-id', data.response.id)
+    filerItem.data('document-id', data.response.id)
     filerItem.find('.jFiler-item-assets').show()
     filerItem.find('.jFiler-jProgressBar .bar').addClass('green')
-    CDLV.pubSub.trigger('photo:add', data)
+    CDLV.pubSub.trigger('document:add', data)
   }
 })

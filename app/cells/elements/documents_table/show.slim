@@ -1,5 +1,12 @@
 .documents-table-cell
-  table style="width:100%"
+  script type="text/template" id="document-template" class="hidden"
+    tr.document id=raw("<%= id %>")
+      td
+      td = raw("<%= name %>")
+      td = raw("<%= description %>")
+      td = raw("<%= created_at %>")
+
+  table
     - if filters
       thead
           tr
@@ -24,10 +31,10 @@
                 option value="" Fecha
                 option value="asc"  Orden ascendente
                 option value="desc" Orden descendente
-    tbody
-      - if documents.any?
+    tbody.documents-table-body
+      - if documents.present?
         - documents.each do |document|
-          tr
+          tr.document id=document.id
             td
               i
             td
@@ -38,3 +45,10 @@
               a href=document[:attachment_source] = l(document[:created_at], format: :slashes)
       - else
         span=t('.no_documents')
+
+javascript:
+  $(function() {
+    new CDLV.Components['documents/table']({
+      el: $('.documents-table-cell')
+    })
+  });

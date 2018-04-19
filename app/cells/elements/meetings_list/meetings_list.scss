@@ -1,7 +1,6 @@
 @mixin meetings-list() {
   @include grid-container;
   border-bottom: 1px solid $light-grey;
-  padding-bottom: $vgutter*2;
   margin-bottom: $gutter*2;
 
   > div {

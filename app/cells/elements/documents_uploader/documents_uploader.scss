@@ -1,4 +1,4 @@
-@mixin photos-jfiler() {
+@mixin documents-jfiler() {
   .jFiler {
     display: none;
   }
@@ -6,9 +6,6 @@
     padding-left: 0;
     padding-right: 0;
     background: transparent;
-  }
-  .jFiler-item-dummy{
-    display: none;
   }
   .jFiler-item-icon {
     float: left;
@@ -28,6 +25,6 @@
   }
 }
 
-.photos-uploader-cell {
-  @include photos-jfiler;
+.documents-uploader-cell {
+  @include documents-jfiler;
 }

@@ -3,6 +3,7 @@ module CurrentAndEnsureDependencyLoader
   extend ActiveSupport::Concern
 
   MODELS_TO_LOAD = %w(
+    meeting
     neighborhood
     work
   ).freeze

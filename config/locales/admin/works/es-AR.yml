@@ -25,9 +25,7 @@ es-AR:
         title: Nueva Obra
       show:
         photos: Fotos
-        documents: Documentos
+        upload_document: Subir Documentos
         upload_photos: Subir Fotos
-        load_document: Cargar Documento
+        related_documents: Documentos relacionados
         related_meetings: Reuniones relacionadas
-
-

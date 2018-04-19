@@ -14,10 +14,6 @@
           = f.label :lookup_address, t('.address')
           = f.text_field :lookup_address
     section
-      == cell('section/header',t(".documents"), buttons: [{ title: t('.load_document'), url: new_admin_neighborhood_path }])
-      .field.docs
-        == cell('elements/document_form',"meeting")
-    section
       == cell('section/header',t(".works_relation"))
       - @works.each do |work|
         .field
@@ -27,6 +23,3 @@
             = check_box_tag "meeting[works][]",work.id
 
           = work.name
-
-    section
-      == cell('section/header',t(".participants"), buttons: [{ title: t('.load_user'), url: new_admin_neighborhood_path }])

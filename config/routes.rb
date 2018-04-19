@@ -23,8 +23,24 @@ Rails.application.routes.draw do
 
       # ╭─ AJAX Accesible URL's / Path's
       namespace :ajax do
-        post '/photos/upload', action: :upload, controller: :photos
-        delete '/photos/:id', action: :delete, controller: :photos, as: :photo
+        resources :neighborhoods, only: [] do
+          post '/documents/upload', action: :upload, controller: :documents
+          delete '/documents/:id', action: :delete, controller: :documents, as: :document
+
+          post '/photos/upload', action: :upload, controller: :photos
+          delete '/photos/:id', action: :delete, controller: :photos, as: :photo
+        end
+        resources :works, only: [] do
+          post '/documents/upload', action: :upload, controller: :documents
+          delete '/documents/:id', action: :delete, controller: :documents, as: :document
+
+          post '/photos/upload', action: :upload, controller: :photos
+          delete '/photos/:id', action: :delete, controller: :photos, as: :photo
+        end
+        resources :meetings, only: [] do
+          post '/documents/upload', action: :upload, controller: :documents
+          delete '/documents/:id', action: :delete, controller: :documents, as: :document
+        end
       end
       # ╰─ End of AJAX Accesible URL's / Path's
 

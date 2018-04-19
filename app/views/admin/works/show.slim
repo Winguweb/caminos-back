@@ -41,33 +41,23 @@
       div
         span = t('.lookup_address')
         span = @work.lookup_address
+
   section
     == cell('section/header', t('.map_location'))
-    == cell('elements/map_show', current_neighborhood, features: [@work])
+    == cell('elements/map_show', current_neighborhood, features: [ @work ])
 
   section
-    - file_input_id = 'photo_file_input'
-    == cell('section/header', t('.photos'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
-    == cell('elements/photos_uploader', @work.photos, { owner: @work, file_input_id: file_input_id })
+    - photo_file_input_id = 'photo_file_input'
+    == cell('section/header', t('.photos'), buttons_for: [{ title: t('.upload_photos'), for: photo_file_input_id }])
+    == cell('elements/photos_uploader', @work.photos, { owner: @work, file_input_id: photo_file_input_id })
+    == cell('elements/photos_list', @work.photos)
 
   section
-    == cell('section/header', t('.documents'), buttons: [{ title: t('.load_document') }])
+    - document_file_input_id = 'document_file_input'
+    == cell('section/header', t('.related_documents'), buttons_for: [{ title: t('.upload_document'), for: document_file_input_id }])
+    == cell('elements/documents_uploader', @work.documents, { owner: @work, file_input_id: document_file_input_id })
     == cell('elements/documents_table', @work.documents)
 
   section
     == cell('section/header', t('.related_meetings'))
     == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
-
-
-  / section
-  /   div
-  /     - @work.photos.each do |photo|
-  /       = image_tag(photo.picture.thumb.url, alt: 'Image')
-
-    / section
-    /   == cell('section/header', "Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path}])
-    /   == cell('elements/document_form', "work")
-
-    / section
-    /   == cell('section/header', t('.related_meetings'))
-    /   == cell('elements/meetings_list', current_neighborhood.meetings, neighborhood: current_neighborhood)

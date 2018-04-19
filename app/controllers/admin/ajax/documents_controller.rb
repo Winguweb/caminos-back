@@ -1,10 +1,11 @@
 module Admin::Ajax
-  class PhotosController < BaseController
+  class DocumentsController < BaseController
     include CurrentAndEnsureDependencyLoader
 
     def delete
-      if photo = current_owner.photos.find_by(id: params[:id])
-        if photo.destroy
+      binding.pry
+      if document = current_owner.documents.find_by(id: params[:id])
+        if false #photo.destroy
           render json: {
             response: {
               success: true
@@ -12,20 +13,21 @@ module Admin::Ajax
           }, status: 200
         else
           render json: {
-            errors: [ I18n.t('admin.ajax.photos.errors.delete') ]
+            errors: [ I18n.t('admin.ajax.documents.errors.delete') ]
           }, status: 500
         end
       else
         render json: {
-          errors: [ I18n.t('admin.ajax.photos.errors.delete') ]
+          errors: [ I18n.t('admin.ajax.documents.errors.delete') ]
         }, status: 422
       end
     end
 
     def upload
-      photo = current_owner.photos.new( extended_params )
+      binding.pry
+      # document = current_owner.documents.new( extended_params )
 
-      if photo.valid?
+      if false #photo.valid?
         if photo.save
           render json: {
             response: {
@@ -40,7 +42,7 @@ module Admin::Ajax
         end
       else
         render json: {
-          errors: photo.errors
+          errors: '' #photo.errors
         }, status: 422
       end
     end
@@ -48,18 +50,17 @@ module Admin::Ajax
     private
 
     def current_owner
-      current_neighborhood || current_work
+      current_work || current_neighborhood || current_meeting
     end
 
-    def photo_params
-      params.require(:photo).permit( image:[] )
+    def document_params
+      params.require(:document).permit( attachment:[] )
     end
 
     def extended_params
-      cloned_allowed_params = photo_params.deep_dup
+      cloned_allowed_params = document_params.deep_dup
       cloned_allowed_params.tap do |_hash|
-        _hash[:image] = _hash[:image][0]
-        _hash[:uploader_id] = current_user.id
+        _hash[:attachment] = _hash[:attachment][0]
       end
     end
 
