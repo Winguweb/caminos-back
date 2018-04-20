@@ -21,7 +21,7 @@ class Work < ApplicationRecord
 
   # CATEGORIES =['Servicios Públicos','Equipamiento Estatal','Vivienda','Espacios Públicos'].freeze
   CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure'].freeze
-  STATUS =['En proceso','Finalizadas', 'Pendientes','Vencidas','Proyectadas'].freeze
+  STATUS =['in_process','done', 'pending','expired','proyected'].freeze
 
   def self.status
     STATUS

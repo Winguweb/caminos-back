@@ -1,4 +1,8 @@
 @mixin works-list() {
+  > p {
+    @include grid-column(16);
+    padding: $gutter 0;
+  }
   > ul {
     > li {
       padding: 0 $gutter;
@@ -11,9 +15,9 @@
       > a {
         @include grid-container;
         border-bottom: 1px solid $light-grey;
-        padding: $gutter 0;
-        display: block;
         color: initial;
+        display: block;
+        padding: $gutter 0;
         > div {
           $icon-width: 55px;
           float: left;
@@ -24,8 +28,8 @@
             width: calc(100% - #{$icon-width});
           }
           > img {
-            padding-top: $gutter;
             margin-right: $gutter;
+            padding-top: $gutter;
           }
           > h3 {
             @include type-setting(1);
