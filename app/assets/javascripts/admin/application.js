@@ -9,6 +9,7 @@
 //= require map_edit.js
 //= require map_references.js
 //= require map_show.js
+//= require navbar.js
 //= require filterable.js
 //= require photos_uploader.js
 //= require users_table.js

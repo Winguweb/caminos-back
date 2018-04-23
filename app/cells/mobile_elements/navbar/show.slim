@@ -14,3 +14,10 @@ nav.navbar-cell
     li
       = link_to admin_dashboard_path do
         span="Información"
+
+javascript:
+  $(function() {
+    new CDLV.Components['mobile_elements/navbar']({
+      el: $('.navbar-cell')
+    })
+  });
