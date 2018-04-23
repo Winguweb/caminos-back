@@ -3,7 +3,16 @@
   @include background-color($blue);
   height: $aside-height;
   overflow: auto;
+  padding: $gutter*2;
   > div:first-of-type {
+    background-image: url(/assets/logo-v1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+  }
+  > div:nth-of-type(2) {
     text-align: right;
     > button {
       padding: $gutter;
@@ -34,18 +43,20 @@
   }
   > ul {
     @include background-color($white, 0.95);
-    bottom: 0;
+    @include shadow-down($light-shadow, 1);
     display: none;
-    left: 0;
-    padding-top: $gutter*4;
+    left: $gutter;
+    padding-bottom: $gutter*2;
+    padding-top: $gutter*2;
     position: fixed;
+    right: 0;
     right: 0;
     top: 0;
     z-index: 2000;
     > li {
       > a {
         @include text-color($text-black, 1);
-        @include type-setting(0);
+        @include type-setting(1);
         border-bottom: 2px solid transparent;
         display: block;
         margin-right: 0;

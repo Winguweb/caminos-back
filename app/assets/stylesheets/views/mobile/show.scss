@@ -17,7 +17,7 @@
       main {
         @include grid-column(16, $no-gutter);
         // $aside-heigth defined at _variables.scss
-        height: calc(100% - #{$aside-height});
+        height: calc(100% - #{$aside-height} - #{$gutter*4});
         margin-bottom: $gutter*4;
         position: relative;
         &::before {
