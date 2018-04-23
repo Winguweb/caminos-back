@@ -15,8 +15,6 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       'showPolygon'
     )
 
-    this.configureMapForMobile()
-
     this.setAccessToken(options.token)
 
     this.setMapContainer('#map-container')
@@ -24,6 +22,8 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.loadDefaults(options)
 
     this.createMap()
+
+    this.configureMapForMobile()
 
     this.showBaseGeometry()
 

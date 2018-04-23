@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
 
-  layout "public_mobile", only: [:mobile]
-
   def show
     @neighborhoods = Neighborhood.where(urbanization: true).order('LOWER(name)')
     @unurbanized= Neighborhood.where(urbanization: false).order('LOWER(name)')
@@ -10,6 +8,7 @@ class HomeController < ApplicationController
   def mobile
     @neighborhoods = Neighborhood.where(urbanization: true).order('LOWER(name)')
     @unurbanized= Neighborhood.where(urbanization: false).order('LOWER(name)')
+    render layout: 'public_mobile'
   end
 
   private
