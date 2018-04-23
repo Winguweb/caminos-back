@@ -1,45 +1,41 @@
-/ mobile.slim
-div
-  == cell('mobile_elements/navbar')
-
-  main
+main
+  section
+    - if @neighborhoods
+      == cell('elements/map_references', @neighborhoods)
+aside
+  div
     section
-      - if @neighborhoods
-        == cell('elements/map_references', @neighborhoods)
-  aside
-    div
+      header
+        h1="Elegí tu barrio"
       section
         header
-          h1="Elegí tu barrio"
-        section
-          header
-            h2="Barrios en proceso de urbanización"
-          nav
-            ol
-              - @neighborhoods.each do |neighborhood|
-                li
-                  p
-                    span
+          h2="Barrios en proceso de urbanización"
+        nav
+          ol
+            - @neighborhoods.each do |neighborhood|
+              li
+                p
+                  span
+                div
+                  h3=neighborhood.name
+                  span="Proceso de urbanización"
+                  // Aca tiene que ir la lógica que devuelve el procentaje
+                  // del proceso de urbanización
+                  span="5%"
                   div
-                    h3=neighborhood.name
-                    span="Proceso de urbanización"
                     // Aca tiene que ir la lógica que devuelve el procentaje
                     // del proceso de urbanización
-                    span="5%"
-                    div
-                      // Aca tiene que ir la lógica que devuelve el procentaje
-                      // del proceso de urbanización
-                      div style="width:5%;"
+                    div style="width:5%;"
 
-        section
-          header
-            h2="Otros barrios"
-          nav
-            ul
-              // Aca tiene que ir la lógica filtra los barrios
-              // sin proceso de urbanización
-              - @neighborhoods.each do |neighborhood|
-                li
-                  div
-                    p=neighborhood.name
+      section
+        header
+          h2="Otros barrios"
+        nav
+          ul
+            // Aca tiene que ir la lógica filtra los barrios
+            // sin proceso de urbanización
+            - @neighborhoods.each do |neighborhood|
+              li
+                div
+                  p=neighborhood.name
 

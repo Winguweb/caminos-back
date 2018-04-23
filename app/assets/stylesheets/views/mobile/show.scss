@@ -10,9 +10,7 @@
 }
 
 @mixin mobile() {
-  @include grid-column(16);
   > main {
-    @include grid-collapse;
     height: 100%;
     > div {
       height: 100%;

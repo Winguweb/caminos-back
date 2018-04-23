@@ -1,6 +1,6 @@
-CDLV.Components['mobile_elements/navbar'] = Backbone.View.extend({
+CDLV.Components['mobile_elements/mobile_menu'] = Backbone.View.extend({
   events: {
-    'click': 'showMenu',
+    'click button': 'showMenu',
   },
   initialize: function(options) {
 

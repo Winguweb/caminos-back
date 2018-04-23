@@ -1,5 +1,5 @@
 // $aside-heigth defined at _variables.scss
-@mixin navbar() {
+@mixin mobile-menu() {
   @include background-color($blue);
   height: $aside-height;
   overflow: auto;
@@ -60,6 +60,6 @@
   }
 }
 
-.navbar-cell {
-  @include navbar();
+.mobile-menu-cell {
+  @include mobile-menu();
 }
