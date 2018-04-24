@@ -1,5 +1,4 @@
-nav.mobile-menu-cell
-  div
+nav class="mobile-menu-cell"
   div
     button.should-hide type="button"
       span
@@ -15,6 +14,19 @@ nav.mobile-menu-cell
     li
       = link_to admin_dashboard_path do
         span="Información"
+  - unless neighborhood.blank?
+    div
+      ul
+        - if neighborhood.urbanization
+          li
+            = link_to "/neighborhoods/#{neighborhood.id}/" do
+              span= t('.works')
+        li
+          = link_to "/neighborhoods/#{neighborhood.id}/agreement" do
+            span= t('.agreement')
+        li
+          = link_to "/neighborhoods/#{neighborhood.id}/about" do
+            span= t('.about')
 
 javascript:
   $(function() {

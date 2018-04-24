@@ -1,7 +1,6 @@
 main
   section
-    - if !@neighborhood.works.blank?
-      == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
+    == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
   section
     - if @neighborhood.urbanization
       - if !@neighborhood.works.blank?

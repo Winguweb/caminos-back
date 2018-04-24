@@ -1,18 +1,9 @@
 // $aside-heigth defined at _variables.scss
 @mixin mobile-menu() {
-  @include background-color($blue);
+  @include background-color($white);
   height: $aside-height;
   overflow: auto;
-  padding: $gutter*2;
   > div:first-of-type {
-    background-image: url(/assets/logo-v1.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 100%;
-    width: 100%;
-  }
-  > div:nth-of-type(2) {
     text-align: right;
     > button {
       @include appearance(none);
@@ -24,7 +15,7 @@
       top: 0;
       z-index: 2001;
       span {
-        background-image: url(/assets/icons/menu-white.svg);
+        background-image: url(/assets/icons/menu.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -72,8 +63,56 @@
       }
     }
   }
+  > ul + div {
+    margin-top: $aside-height/2;
+    > ul {
+      text-align: center;
+      > li {
+        @include grid-column(1 of 3, $no-gutter);
+        > a {
+          @include text-color($text-grey, 1);
+          @include type-setting(0);
+          border-bottom: 2px solid transparent;
+          display: block;
+          margin-right: 0;
+          padding: $gutter 0;
+          text-align: center;
+          &.active,
+          &:hover {
+            @include text-color($text-blue, 1);
+            border-bottom-color: color($text-blue, 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin mobile-menu-big() {
+  @include background-color($blue);
+  height: $aside-full-height;
+  padding: $gutter*2;
+  > div:first-of-type {
+    background-image: url(/assets/logo-v1.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+  }
+  > div:first-of-type {
+    > button:first-of-type {
+      span {
+        background-image: url(/assets/icons/menu-white.svg);
+      }
+    }
+  }
 }
 
 .mobile-menu-cell {
   @include mobile-menu();
+}
+
+#home-show .mobile-menu-cell {
+  @include mobile-menu-big();
 }

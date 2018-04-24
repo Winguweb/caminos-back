@@ -44,7 +44,9 @@
             > a {
               @include type-setting(0);
               @include text-color($grey);
+              display: block;
               font-weight: bold;
+              padding: 0 $gutter/2;
             }
           }
         }
