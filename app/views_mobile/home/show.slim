@@ -14,28 +14,23 @@ aside
           ol
             - @neighborhoods.each do |neighborhood|
               li
-                p
-                  span
-                div
-                  h3=neighborhood.name
-                  span="Proceso de urbanización"
-                  // Aca tiene que ir la lógica que devuelve el procentaje
-                  // del proceso de urbanización
-                  span="5%"
+                = link_to about_neighborhood_path(neighborhood.id) do
+                  p
+                    span
                   div
-                    // Aca tiene que ir la lógica que devuelve el procentaje
-                    // del proceso de urbanización
-                    div style="width:5%;"
+                    h3=neighborhood.name
+                    span="Proceso de urbanización"
+                    span="#{neighborhood.urbanization_score.floor || 0}%"
+                    div
+                      div style="width:#{neighborhood.urbanization_score.floor || 0}%"
 
       section
-        header
-          h2="Otros barrios"
-        nav
-          ul
-            // Aca tiene que ir la lógica filtra los barrios
-            // sin proceso de urbanización
-            - @neighborhoods.each do |neighborhood|
-              li
-                div
-                  p=neighborhood.name
+          header
+            h2="Otros barrios"
+          nav
+            ul
+              - @unurbanized.each do |neighborhood|
+                li
+                  div
+                    = link_to neighborhood.name, about_neighborhood_path(neighborhood.id)
 

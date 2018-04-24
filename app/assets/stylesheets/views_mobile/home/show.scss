@@ -9,7 +9,7 @@
   }
 }
 
-@mixin mobile() {
+@mixin home-mobile() {
   > main {
     height: 100%;
     > div {
@@ -28,7 +28,7 @@
           height: 20px;
           pointer-events: none;
           position: absolute;
-          top:0;
+          top: 0;
           width: 100%;
           z-index: 1;
         }
@@ -100,69 +100,71 @@
                       bottom: 0;
                       top: auto;
                     }
-                    > p {
-                      border: $border solid $blue;
-                      border-radius: 100%;
-                      display: inline-block;
-                      height: $outer-diameter;
-                      margin: $gutter;
-                      position: relative;
-                      vertical-align: middle;
-                      width: $outer-diameter;
-                      &::before {
-                        background-color: $blue;
+                    a {
+                      > p {
+                        border: $border solid $blue;
                         border-radius: 100%;
-                        content: '';
-                        display: block;
-                        height: $inner-diameter;
-                        left: #{($outer-diameter - $inner-diameter)/2};
+                        display: inline-block;
+                        height: $outer-diameter;
+                        margin: $gutter;
                         position: relative;
-                        top: #{($outer-diameter - $inner-diameter)/2};
-                        width: $inner-diameter;
-                      }
-                      > span {
+                        vertical-align: middle;
+                        width: $outer-diameter;
                         &::before {
-                          content: counter(step-counter);
+                          background-color: $blue;
+                          border-radius: 100%;
+                          content: '';
+                          display: block;
+                          height: $inner-diameter;
+                          left: #{($outer-diameter - $inner-diameter)/2};
+                          position: relative;
+                          top: #{($outer-diameter - $inner-diameter)/2};
+                          width: $inner-diameter;
                         }
-                        @include transform(translate3d(-50%, -50%, 0));
-                        @include text-color($white, 1);
-                        font-weight: bold;
-                        left: 50%;
-                        position: absolute;
-                        top: 50%;
-                      }
-                    }
-                    > div {
-                      display: inline-block;
-                      padding: $gutter 0;
-                      vertical-align: middle;
-                      width: calc(100% - #{$gutter*3} - #{$outer-diameter + $border*2});
-                      > h3 {
-                        @include text-color($text-black, 1);
-                        @include type-setting(0);
-                        font-weight: bold;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                      }
-                      > span {
-                        @include text-color($text-grey, 1);
-                        @include type-setting(-1);
-                        margin-bottom: $vgutter/2;
-                      }
-                      > span + span {
-                        float: right;
-                        font-weight: bold;
+                        > span {
+                          &::before {
+                            content: counter(step-counter);
+                          }
+                          @include transform(translate3d(-50%, -50%, 0));
+                          @include text-color($white, 1);
+                          font-weight: bold;
+                          left: 50%;
+                          position: absolute;
+                          top: 50%;
+                        }
                       }
                       > div {
-                        background-color: $light-grey;
-                        border-radius: 4px;
-                        height: 4px;
-                        overflow: hidden;
-                        width: 100%;
+                        display: inline-block;
+                        padding: $gutter 0;
+                        vertical-align: middle;
+                        width: calc(100% - #{$gutter*3} - #{$outer-diameter + $border*2});
+                        > h3 {
+                          @include text-color($text-black, 1);
+                          @include type-setting(0);
+                          font-weight: bold;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          white-space: nowrap;
+                        }
+                        > span {
+                          @include text-color($text-grey, 1);
+                          @include type-setting(-1);
+                          margin-bottom: $vgutter/2;
+                        }
+                        > span + span {
+                          float: right;
+                          font-weight: bold;
+                        }
                         > div {
-                          background-color: $blue;
-                          height: 100%;
+                          background-color: $light-grey;
+                          border-radius: 4px;
+                          height: 4px;
+                          overflow: hidden;
+                          width: 100%;
+                          > div {
+                            background-color: $blue;
+                            height: 100%;
+                          }
                         }
                       }
                     }
@@ -210,6 +212,6 @@
   }
 }
 
-#home-mobile {
-  @include mobile();
+#home-show {
+  @include home-mobile();
 }
