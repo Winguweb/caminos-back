@@ -1,1 +1,36 @@
-h1="Caminos de la Villa"
+section
+  aside
+    div
+      section
+        header
+          h1="Elegí tu barrio"
+        section
+          header
+            h2="Barrios en proceso de urbanización"
+          nav
+            ol
+              - @neighborhoods.each do |neighborhood|
+                li
+                  a href="/neighborhoods/#{neighborhood.id}"
+                    p
+                      span
+                    div
+                      h3=neighborhood.name
+                      span="Proceso de urbanización"
+                      span="#{Random.rand(100)}%"
+                      div
+                        div style="width:#{Random.rand(100)}%;"
+        section
+          header
+            h2="Otros barrios"
+          nav
+            ul
+              - @unurbanized.each do |neighborhood|
+                li
+                  div
+                    = link_to neighborhood.name, about_neighborhood_path(neighborhood.id)
+
+  main
+    section
+      - if @neighborhoods
+        == cell('elements/map_references', @neighborhoods)

@@ -1,0 +1,13 @@
+.map-show-cell
+  #map-container
+
+javascript:
+  $(function() {
+    new CDLV.Components['map_show']({
+      el: $('.map-show-cell'),
+      defaults: #{map_defaults},
+      token: '#{MAPBOX_TOKEN}',
+      base: #{base},
+      features: #{features},
+    })
+  });

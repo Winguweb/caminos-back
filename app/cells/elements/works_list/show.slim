@@ -1,0 +1,16 @@
+.works-list-cell
+  ul
+    - works.each do |work|
+      li = link_to work_path(work) do
+          div
+            =image_tag work.category_icon
+          div
+            span class=work.category
+              = t(".#{work.category}").upcase
+            h3=work.name
+            span=work.lookup_address
+            span
+              = "#{t('.status')}: "
+              strong
+                = work.status
+            span=work.estimated_end_date

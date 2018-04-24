@@ -1,5 +1,7 @@
-h1 Obras del barrio #{current_neighborhood.name}
-div.page-section-component
+= content_for :main_header do
+  == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+
+div.page-section
   section
-    main
-    = render partial: "/partials/components/works_list", locals: { works: @works, neighborhood: current_neighborhood }
+    == cell('section/header', "", buttons: [{title: t('.new_work'), url: new_admin_neighborhood_work_path }])
+    == cell('elements/works_table', @works, neighborhood: current_neighborhood)

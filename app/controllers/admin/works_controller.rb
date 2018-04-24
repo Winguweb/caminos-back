@@ -13,6 +13,8 @@ module Admin
     def new
       ensure_neighborhood; return if performed?
 
+      @categories = Work.categories
+      @status = Work.status
       @work = current_neighborhood.works.new
     end
 
@@ -22,9 +24,9 @@ module Admin
       service = CreateWork.call(current_neighborhood, work_params)
 
       if service.success?
-        redirect_to neighborhood_works_path
+        redirect_to admin_neighborhood_works_path
       else
-        redirect_to  new_neighborhood_work_path(current_neighborhood)
+        redirect_to new_admin_neighborhood_work_path(current_neighborhood)
       end
     end
 
@@ -37,6 +39,8 @@ module Admin
     def edit
       ensure_neighborhood; return if performed?
 
+      @categories = Work.categories
+      @status = Work.status
       load_work
     end
 
@@ -48,9 +52,9 @@ module Admin
       service = UpdateWork.call(@work, work_params)
 
       if service.success?
-        redirect_to neighborhood_work_path(@work)
+        redirect_to admin_neighborhood_work_path
       else
-        redirect_to edit_neighborhood_work_path(@work)
+        redirect_to edit_admin_neighborhood_work_path(@work)
       end
     end
 
@@ -74,7 +78,9 @@ module Admin
         :manager,
         :name,
         :status,
-        :start_date
+        :start_date,
+        photos: [],
+        documents: [[:link,:name,:description]]
       )
     end
 

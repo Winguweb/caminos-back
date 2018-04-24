@@ -1,0 +1,22 @@
+.map-edit-cell
+  #map-container
+
+
+javascript:
+  $(function() {
+    new CDLV.Components['map_edit']({
+      el: $('.map-edit-cell'),
+      defaults: #{map_defaults},
+      token: '#{MAPBOX_TOKEN}',
+      base: #{base},
+      editable: #{editable},
+      controls: {
+        polygon: #{controls[:polygon]},
+        marker: #{controls[:marker]},
+        polyline: #{controls[:polyline]},
+        circlemarker: #{controls[:circlemarker]},
+        rectangle: #{controls[:rectangle]},
+        circle: #{controls[:circle]},
+      }
+    })
+  });

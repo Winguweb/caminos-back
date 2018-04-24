@@ -1,0 +1,93 @@
+@mixin documents-table() {
+  margin-bottom: $gutter*2;
+  border-bottom: 1px solid $light-grey;
+  > table {
+    display: block;
+    > thead {
+      display: block;
+      > tr {
+        display: block;
+        @include grid-container;
+        > th, > td {
+          > select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: white;
+            border-color: white;
+            background-image: image-url("icons/down-arrow.svg");
+            cursor: pointer;
+            font-weight: bold;
+            background-repeat: no-repeat;
+            background-position: center right;
+            padding-right: 25px;
+            margin-right: 10px;
+            margin-bottom: 15px;
+          }
+          &:nth-of-type(1) {
+            @include grid-column(1);
+          }
+          &:nth-of-type(2) {
+            @include grid-column(7);
+          }
+          &:nth-of-type(3) {
+            @include grid-column(5);
+          }
+          &:nth-of-type(4) {
+            @include grid-column(3);
+          }
+          display: block;
+        }
+      }
+    }
+    > tbody {
+      display: block;
+      > tr {
+        @include grid-container;
+        display: block;
+        border-bottom: 1px solid $light-grey;
+        &:first-of-type {
+          border-top: 1px solid $light-grey;
+        }
+        &:last-of-type {
+          border-bottom: none;
+        }
+        > td {
+          padding: $vgutter*2 0;
+          @include text-color($text-grey, 1);
+          line-height: 35px;
+
+          &:nth-of-type(1) {
+            @include grid-column(1);
+            > i {
+              display: block;
+              width: 31px;
+              height: 37px;
+              background-image: image-url("icons/file-icon.svg");
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+          }
+          &:nth-of-type(2) { @include grid-column(7); @include text-color($text-black, 1); }
+          &:nth-of-type(3) { @include grid-column(5); }
+          &:nth-of-type(4) { @include grid-column(3); text-align: right; float: right; }
+          > a, > span, > i{
+            @include grid-collapse;
+          }
+          > a {
+            display: block;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 0;
+          }
+        }
+
+      }
+    }
+  }
+}
+.documents-table-cell{
+  @include documents-table;
+}

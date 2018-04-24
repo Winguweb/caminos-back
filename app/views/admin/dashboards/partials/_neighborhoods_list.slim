@@ -3,4 +3,4 @@ main
     - neighborhoods.each do |neighborhood|
       li
         = link_to neighborhood do
-          = render partial: 'partials/components/neighborhood_card', locals: {neighborhood: neighborhood}
+          == cell('elements/neighborhood_card', neighborhood)

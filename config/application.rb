@@ -12,6 +12,13 @@ require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+require 'google/apis/drive_v2'
+require 'googleauth'
+require 'googleauth/stores/file_token_store'
+
+require 'fileutils'
+
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -37,5 +44,35 @@ module CaminosBack
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.cells.with_assets = %w(
+      elements/add_button_cell
+      elements/avatar_cell
+      elements/breadcrumbs_cell
+      elements/button_cell
+      elements/button_for_cell
+      elements/description_cell
+      elements/document_form_cell
+      elements/documents_table_cell
+      elements/map_edit_cell
+      elements/map_references_cell
+      elements/map_show_cell
+      elements/meeting_details_cell
+      elements/neighborhood_card_cell
+      elements/neighborhoods_list_cell
+      elements/meeting_card_cell
+      elements/meetings_list_cell
+      elements/person_card_cell
+      elements/photos_uploader_cell
+      elements/users_table_cell
+      elements/work_details_cell
+      elements/works_table_cell
+      elements/works_list_cell
+      forms/user_cell
+      page/header_cell
+      page/public_header_cell
+      section/footer_link_cell
+      section/header_cell
+    )
   end
 end

@@ -3,6 +3,7 @@ module Admin
 
     def show
       load_neighborhood
+      @documents = @neighborhood.documents.all
     end
 
     def new
@@ -11,11 +12,10 @@ module Admin
 
     def create
       service = CreateNeighborhood.call(neighborhood_params)
-
       if service.success?
-        redirect_to neighborhoods_path
+        redirect_to admin_neighborhoods_path
       else
-        redirect_to new_neighborhood_path
+        redirect_to new_admin_neighborhood_path
       end
     end
 
@@ -29,14 +29,14 @@ module Admin
       service = UpdateNeighborhood.call(@neighborhood, neighborhood_params)
 
       if service.success?
-        redirect_to neighborhood_path(@neighborhood)
+        redirect_to admin_neighborhood_path(@neighborhood)
       else
-        redirect_to edit_neighborhood_path(@neighborhood)
+        redirect_to edit_admin_neighborhood_path(@neighborhood)
       end
     end
 
     def index
-      @neighborhoods = Neighborhood.all
+      @neighborhoods = Neighborhood.all.order([{urbanization: :desc}, 'LOWER(name)'])
     end
 
     private
@@ -48,11 +48,12 @@ module Admin
     def neighborhood_params
       params.require(:neighborhood).permit(
         :description,
-        :geo_polygon,
-        :lookup_address,
+        :geo_geometry,
         :lookup_coordinates,
+        :urbanization,
         :name,
-        :polygon
+        :geometry,
+        documents: [[:link,:name,:description]]
        )
     end
   end

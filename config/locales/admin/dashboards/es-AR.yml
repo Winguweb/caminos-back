@@ -1,0 +1,5 @@
+es-AR:
+  admin:
+    dashboards:
+      show:
+        check_all_neighborhoods: Ver todos los barrios

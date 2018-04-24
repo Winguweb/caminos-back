@@ -1,31 +1,73 @@
-= render partial: 'partials/components/page_header', locals: {links: @page_header_links, title: @work.name, breadcrumbs: @section_header_breadcrumbs}
-div.page-section-component
-  section
-    = render partial: 'partials/components/section_header', locals: {section: t(".about_work"), links: @section_header_links}
- 
-    h2= t(".title")
-    p
-    =@work.name
-    p
-    h2= t(".description")
-    p
-    =@work.description
-    p
-    =@work.start_date
-    p
-    =@work.end_date
-    p
-    =@work.estimated_end_date
-    p
-    =@work.budget
-    p
-    =@work.manager
-    p
-    =@work.execution_plan
-    p
-    h2= t(".location")
+= content_for :main_header do
+  == cell('page/header', @work.name, breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods'), current_neighborhood.name, t('admin.sections.works') ])
 
-    p
-    h2= t(".meetings")
-    p
-    =render partial: "/partials/meetings", locals: { meetings: @work.meetings, neighborhood: current_neighborhood }
+.page-section
+  section
+    == cell('section/header', t(".about_work"), links: [{title:t('.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
+    div
+      span = t('.title')
+      span = @work.name
+    div
+      span = t('.description')
+      span = @work.description
+    .half-input
+      div
+        span = t('.category')
+        span = @work.category
+      div
+        span = t('.status')
+        span = @work.status
+      div
+        span = t('.manager')
+        span = @work.manager
+
+      div
+        span = t('.budget')
+        span = @work.budget
+
+      div
+        span = t('.start_date')
+        span = @work.start_date
+
+      div
+        span = t('.estimated_end_date')
+        span = @work.estimated_end_date
+
+    .two-thirds-one-third-input
+      div
+        span = t('.execution_plan')
+        span = @work.execution_plan
+
+      div
+        span = t('.lookup_address')
+        span = @work.lookup_address
+  section
+    == cell('section/header', t('.map_location'))
+    == cell('elements/map_show', current_neighborhood, features: [@work])
+
+  section
+    - file_input_id = 'photo_file_input'
+    == cell('section/header', t('.photos'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
+    == cell('elements/photos_uploader', @work.photos, { owner: @work, file_input_id: file_input_id })
+
+  section
+    == cell('section/header', t('.documents'), buttons: [{ title: t('.load_document') }])
+    == cell('elements/documents_table', @work.documents)
+
+  section
+    == cell('section/header', t('.related_meetings'))
+    == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
+
+
+  / section
+  /   div
+  /     - @work.photos.each do |photo|
+  /       = image_tag(photo.picture.thumb.url, alt: 'Image')
+
+    / section
+    /   == cell('section/header', "Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path}])
+    /   == cell('elements/document_form', "work")
+
+    / section
+    /   == cell('section/header', t('.related_meetings'))
+    /   == cell('elements/meetings_list', current_neighborhood.meetings, neighborhood: current_neighborhood)

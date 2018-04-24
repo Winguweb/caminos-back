@@ -1,0 +1,46 @@
+@mixin map-edit() {
+  height: 100%;
+  > div {
+    height: 100%;
+    min-height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .leaflet-tile-pane {
+    opacity: 0.6;
+  }
+  .leaflet-shadow-pane {
+    opacity: 0.2;
+  }
+  .geometry-marker,
+  .geometry-polygon,
+  .geometry-polyline {
+    &.water {stroke: $water;}
+    &.trash {stroke: $trash;}
+    &.public {stroke: $public;}
+    &.health {stroke: $health;}
+    &.energy {stroke: $energy;}
+    &.sewer {stroke: $sewer;}
+    &.infrastructure {stroke: $infrastructure;}
+  }
+  .geometry-polygon {
+    &.water {fill: $water;}
+    &.trash {fill: $trash;}
+    &.public {fill: $public;}
+    &.health {fill: $health;}
+    &.energy {fill: $energy;}
+    &.sewer {fill: $sewer;}
+    &.infrastructure {fill: $infrastructure;}
+    &.base-geometry {
+      fill: transparent;
+      stroke: color($blue, 0.7);
+      stroke-width: 2px;
+      stroke-dasharray: 3 5;
+    }
+  }
+}
+
+.map-edit-cell{
+  @include map-edit();
+}
+

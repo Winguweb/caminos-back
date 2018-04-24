@@ -1,0 +1,25 @@
+class Page::HeaderCell < Cell::ViewModel
+
+  def show
+    return unless title
+    render
+  end
+
+  private
+
+  def title
+    @title ||= model
+  end
+
+  def subtitle
+    options[:subtitle]
+  end
+
+  def links
+    options[:links]
+  end
+
+  def breadcrumbs
+    options[:breadcrumbs]
+  end
+end

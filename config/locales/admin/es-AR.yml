@@ -1,25 +1,36 @@
 es-AR:
   admin:
-    meetings:
-        show:
-          meeting_date: Reunión %{date}
+    agreements:
+      form:
+        cancel: Cancelar
+        indicators: Indicadores
+        save_changes: Guardar Cambios
+      show:
+        agreement: Indicadores para la medición del Acuerdo de Urbanización
+        new_agreement: Crear Acuerdo
+        edit_agreement: Editar Acuerdo
+    links:
       neighborhoods:
-        index:
-          neighborhoods: Barrios
-          new_neighborhood: Nuevo Barrio
         show:
-          about_neighborhood: Sobre la barrio %{neighborhood}
-          activity: Actividad reciente
-          address: Dirección
-          agreement: Acuerdo
-          ambassadors: Embajadores
-          edit: Editar
           information: Información
-          meetings: Reuniones
           works: Obras
-      works:
-        show:
-          about_work: Sobre la obra
-          edit: Editar
-          title: Título
-          description: Descripción
+          meetings: Reuniones
+          agreement: Acuerdo
+          activity: Actividad reciente
+    meetings:
+      show:
+        meeting_date: Reunión %{date}
+    roles:
+      admin: Administrador
+      ambassador: Embajador
+    sections:
+      dashboard: Escritorio
+      neighborhoods: Barrios
+      users: Usuarios
+      works: Obras
+    works:
+      show:
+        about_work: Sobre la obra
+        edit: Editar
+        title: Título
+        description: Descripción

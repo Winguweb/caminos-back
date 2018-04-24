@@ -3,6 +3,15 @@ development: &app_config
   allowed_origins:
     - 'localhost:3300'
 
+  aws:
+    account_id: ''
+    credentials:
+      access_key: ''
+      secret_key: ''
+    s3:
+      bucket: 'caminos-uploads'
+    region: 'us-east-1'
+
   hostname: 'localhost'
 
   ssl_enabled: false

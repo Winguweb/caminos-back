@@ -1,0 +1,138 @@
+body {
+  &.single-header{
+    > header {
+      > nav {
+        box-shadow: 0 5px 5px -3px $light-shadow;
+      }
+    }
+  }
+  > header {
+    padding: $gutter/2 0;
+    @include grid-column(16 of 16);
+
+    @include grid-media($tablet-grid) {
+      @include grid-column(1 of 1);
+    }
+    z-index: 0;
+    > nav {
+      @include grid-container;
+      @include grid-collapse;
+      > ul {
+        > li {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+
+      .site-logo-wrapper{
+        padding: 5px $gutter/2 0 0;
+      }
+      .site-logo {
+        display: inline-block;
+        width: 44px;
+        height: 35px;
+        background: transparent image-url("admin-logo.svg") no-repeat;
+        background-size: 100%;
+        margin: 0;
+        padding: 0px;
+        overflow: hidden;
+        span{
+          display: inline-block;
+          @include hide-text;
+        }
+      }
+      /* Links */
+      .menu {
+        @include grid-column(13 of 16);
+        li.item {
+          > a {
+            @include text-color($text-grey, 1);
+            display: inline-block;
+            padding: 14px;
+          }
+        }
+      }
+      .actions {
+        text-align: right;
+        @include grid-column(3 of 16);
+      }
+    }
+  }
+}
+
+@mixin user-menu() {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  width: 61px;
+  height: calc(45px + $vgutter);
+  > div {
+    display: block;
+    text-align: left;
+    margin: 0 0 $vgutter 0;
+
+    > div {
+      @include shadow($normal-shadow, 1);
+      vertical-align: top;
+      border-radius: 100%;
+      overflow: hidden;
+      float: right;
+    }
+  }
+
+  > ul {
+    @include shadow($normal-shadow, 1);
+    @include z-level(1);
+    @include grid-column(3);
+    background-color: $background-white;
+    position: absolute;
+    top: calc(45px + #{$vgutter*3});
+    right: $gutter;
+    display: none;
+    text-align: left;
+    margin: 0;
+    > li {
+      > a, input {
+        @include text-color($text-grey, 1);
+        display: block;
+        margin: 0; // Todos los a tienen margin right, por que?
+        padding: $vgutter $gutter/2;
+        white-space: nowrap;
+        background-color: $white;
+        border:none;
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+
+        &:hover {
+          @include background-color($text-grey, 0.1);
+          @include text-color($text-black, 1);
+
+        }
+      }
+
+      > hr {
+        border: none;
+        border-top: 1px solid color($text-grey, 0.2);
+        margin: 0;
+      }
+    }
+  }
+
+  &.user-menu--opened {
+    overflow: visible;
+    > ul {
+      display: block;
+    }
+  }
+}
+
+.user-menu {
+  @include user-menu;
+}
+
+
+
+

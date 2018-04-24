@@ -1,0 +1,31 @@
+@mixin radiobutton(){
+  visibility: hidden;
+  cursor: pointer;
+  &::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid lighten($grey, 50%);
+    border-radius: 24px;
+    visibility: visible;
+  }
+  &::before {
+    content: '';
+    position: relative;
+    display: block;
+    left: 4px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    visibility: visible;
+    position: absolute;
+    background-color: $blue;
+    opacity: 0;
+  }
+  &:checked::before {
+    opacity: 1;
+  }
+}

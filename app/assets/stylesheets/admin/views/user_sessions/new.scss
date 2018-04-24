@@ -1,32 +1,46 @@
-#user_sessions-new{
+#user_sessions-new {
+  @include grid-column(6);
+  @include grid-push(5);
   section {
-    @include grid-column(8);
-    @include grid-push(4);
-
-    @include grid-media($tablet-grid) {
-      @include grid-column(1 of 1);
-    }
-  }
-  .signin-content{
-    @include grid-collapse;
     @include grid-container;
-    .email-input, .password-input{
-      @include grid-column(2 of 4);
-    }
-    button{
+    border: 2px solid $light-grey;
+    border-radius: 6px;
+    padding: $vgutter*2 $gutter;
+    margin-bottom: $vgutter*2;
+    margin-top: $gutter*6;
+
+    .logo {
+      @include grid-column(10);
+      box-sizing: border-box;
       margin-top: $gutter;
-      @include grid-column(2 of 4);
-      @include grid-push(1 of 4);
-      @include button('blue');
+      margin-bottom: $gutter*2;
+      background: transparent image-url("admin-logo-full.svg") no-repeat;
+      background-size: contain;
+      height: 35px;
+      position: relative;
+      left: -9px;
     }
-  }
-  .email-input, .password-input{
-    label{
-      display: block;
-      @include type-setting(-1);
+
+    .title > h1 {
+      font-weight: 800;
     }
-    input{
-      @include input;
+    .signin-content {
+      .email-input, .password-input, .submit-input, .title {
+        @include grid-column(16);
+        margin-bottom: $vgutter*2;
+      }
+      button {
+        @include button();
+        width: 100%;
+      }
+    }
+    .email-input, .password-input {
+      label {
+        display: block;
+        @include type-setting(-1);
+      }
+
+      @include inputs;
     }
   }
 }

@@ -10,12 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180105134156) do
+ActiveRecord::Schema.define(version: 20180416171238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
   enable_extension "pgcrypto"
+
+  create_table "agreements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["neighborhood_id"], name: "index_agreements_on_neighborhood_id"
+  end
+
+  create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "attachment_type"
+    t.string "attachment_source"
+    t.string "filetype"
+    t.string "holder_type"
+    t.uuid "holder_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["holder_id"], name: "index_documents_on_holder_id"
+    t.index ["holder_type", "holder_id"], name: "index_documents_on_holder_type_and_holder_id"
+  end
 
   create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
@@ -45,13 +67,16 @@ ActiveRecord::Schema.define(version: 20180105134156) do
     t.text "description"
     t.string "lookup_address"
     t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
-    t.geography "geo_polygon", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
-    t.geometry "polygon", limit: {:srid=>0, :type=>"geometry"}
+    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["geo_polygon"], name: "index_neighborhoods_on_geo_polygon", using: :gist
+    t.boolean "urbanization", default: false
+    t.text "delegates"
+    t.float "urbanization_score"
+    t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
+    t.index ["geometry"], name: "index_neighborhoods_on_geometry", using: :gist
     t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
-    t.index ["polygon"], name: "index_neighborhoods_on_polygon", using: :gist
   end
 
   create_table "organizations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -59,6 +84,19 @@ ActiveRecord::Schema.define(version: 20180105134156) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "owner_type", null: false
+    t.uuid "owner_id", null: false
+    t.uuid "uploader_id", null: false
+    t.string "image"
+    t.string "original_filename"
+    t.string "content_type"
+    t.integer "file_size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_type", "owner_id"], name: "index_photos_on_owner_type_and_owner_id"
   end
 
   create_table "profiles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -122,6 +160,7 @@ ActiveRecord::Schema.define(version: 20180105134156) do
     t.text "execution_plan"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "company"
     t.index ["geo_geometry"], name: "index_works_on_geo_geometry", using: :gist
     t.index ["geometry"], name: "index_works_on_geometry", using: :gist
     t.index ["lookup_coordinates"], name: "index_works_on_lookup_coordinates", using: :gist

@@ -1,0 +1,36 @@
+.work-details-cell
+  main
+    div  
+      = "Nombre:"
+      p= work.name
+    div
+      = "Descripción:"
+      p= work.description
+    div
+      span 
+        = "Categoría:"
+        p= work.category
+      span
+        = "Estado:"
+        p= work.status 
+    div
+      span 
+        = "Órgano responsable:"
+        p= work.manager
+      span
+        = "Presupuesto:"
+        p= work.budget
+    div
+      span
+        = "Fecha de inicio:"
+        p= work.start_date
+      span
+        = "Fecha finalizado::"
+        p= work.estimated_end_date 
+    div
+      span
+        = "Fuente:"
+        p= work.execution_plan
+      span
+        = "Dirección:"
+        p= work.lookup_address

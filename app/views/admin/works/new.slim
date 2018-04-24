@@ -1,2 +1,4 @@
-.work_form
-  = render 'form'
+= content_for :main_header do
+  == cell('page/header', t('.title'), breadcrumbs: [t('admin.sections.dashboard'), t('admin.sections.works')])
+
+= render 'form'

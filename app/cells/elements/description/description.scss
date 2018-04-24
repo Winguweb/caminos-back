@@ -1,0 +1,11 @@
+@mixin description() {
+  > p {
+    @include text-color($text-black, 1);
+    margin-bottom: $vgutter;
+    line-height: 1.8rem;
+  }
+}
+
+.description-cell{
+  @include description;
+}

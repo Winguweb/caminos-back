@@ -1,0 +1,63 @@
+// Simple avatar of the user, will contain a fallback with the initials.
+//
+// .show-fallback - will hide the image and show the fallback text
+
+@mixin avatar-size($size) {
+  &.simple {
+    width: $size;
+    height: $size;
+    border-radius: $size / 2;
+  }
+}
+
+.avatar {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  @include avatar-size(48px);
+
+  &:not(.show-fallback) {
+    background-color: transparent !important;
+  }
+
+  &.show-fallback {
+    img { display: none; }
+    .fallback { display: block; }
+  }
+
+  .fallback {
+    display: none;
+    padding-top: 100%;
+    font-size: 0.9em;
+
+    span {
+      @include type-setting(1);
+      line-height: 1em;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      margin-top: -0.48em;
+
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  &.simple {
+    img {
+      width: 100%;
+    }
+  }
+
+  &.big{
+    span {
+      font-size: 60px;
+    }
+  }
+}

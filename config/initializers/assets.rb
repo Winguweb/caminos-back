@@ -14,5 +14,5 @@ Rails.application.config.assets.precompile += [
   'public.js',
   'public.css',
   'admin/application.js',
-  'admin/application.css'
+  'admin/application.css',
 ]

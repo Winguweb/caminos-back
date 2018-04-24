@@ -1,0 +1,47 @@
+es-AR:
+  elements:
+    documents_table:
+      no_documents: No hay documentos asociados
+    meetings_list:
+      no_meetings: Por el momento no hay reuniones relacionadas
+    users_table:
+      permissions: "Permisos: %{roles}"
+    works_list:
+      energy: "Luz / Electricidad"
+      health: "Salud"
+      infrastructure: "Infraestructura"
+      public: "Calles / Plazas"
+      sewer: "Cloacas"
+      status: "Estado"
+      trash: "Basura"
+      water: "Agua"
+    works_table:
+      energy: "Luz / Electricidad"
+      health: "Salud"
+      infrastructure: "Infraestructura"
+      public: "Calles / Plazas"
+      sewer: "Cloacas"
+      trash: "Basura"
+      water: "Agua"
+  forms:
+    user:
+      create: Crear Usuario
+      cancel: Cancelar
+      email: Dirección de correo electrónico
+      first_name: Nombre/s
+      general: General
+      last_name: Apellido/s
+      neighborhood: Barrio
+      organization: Organización
+      password: Contraseña
+      personal_information: Información Personal
+      roles: Roles / Permisos
+      save_changes: Guardar Cambios
+      update: Actualizar Usuario
+      user_information: Información del Usuario
+      username: Nombre de Usuario
+  page:
+    public_header:
+      about: Info del barrio
+      works: Seguir las obras
+      agreement: Medir el impacto

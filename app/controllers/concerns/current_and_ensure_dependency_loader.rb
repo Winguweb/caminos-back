@@ -2,11 +2,13 @@
 module CurrentAndEnsureDependencyLoader
   extend ActiveSupport::Concern
 
-  private
-
   MODELS_TO_LOAD = %w(
     neighborhood
+    work
   ).freeze
+  private_constant :MODELS_TO_LOAD
+
+  private
 
   MODELS_TO_LOAD.each do |model_name|
     define_method :"current_#{model_name}" do
@@ -27,7 +29,7 @@ module CurrentAndEnsureDependencyLoader
           flash[:error] = I18n.t("errors.missing.#{model_name}")
         end
         flash.keep
-        redirect_to redirect_back(fallback_location: root_path) and return
+        redirect_back(fallback_location: root_path) and return
       end
     end
   end

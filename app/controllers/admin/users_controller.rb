@@ -1,42 +1,43 @@
 module Admin
   class UsersController < BaseController
 
+    def index
+      @users = User.preload(:profile, :entity).all
+    end
+
     def show
       load_user
     end
 
     def new
       @user = User.new(profile: Profile.new)
-      @entities = Organization.all + Neighborhood.all
+      load_neighborhoods
     end
 
     def create
-      service = CreateUser.call(user_params)
-
+      service = CreateUser.call(user_params, roles_params)
       if service.success?
         redirect_to root_path
       else
-        redirect_to new_user_path
+        redirect_to new_admin_user_path
       end
-    end
-
-    def index
-      @users = User.preload(:profile).all
     end
 
     def edit
       load_user
+      load_neighborhoods
+      @neighborhood = @user.entity.class.to_s == 'Neighborhood' ? @user.entity.id : nil
     end
 
     def update
       load_user
 
-      service = UpdateUser.call(@user, user_params)
+      service = UpdateUser.call(@user, user_params, roles_params)
 
       if service.success?
-        redirect_to user_path(@user)
+        redirect_to admin_user_path(@user)
       else
-        redirect_to edit_user_path(@user)
+        redirect_to edit_admin_user_path(@user)
       end
     end
 
@@ -46,9 +47,9 @@ module Admin
       service = DestroyUser.call(@user)
 
       if service.success?
-        redirect_to root_path
+        redirect_to admin_users_path
       else
-        redirect_to user_path(@user)
+        redirect_to admin_user_path(@user)
       end
     end
 
@@ -59,13 +60,21 @@ module Admin
         :username,
         :email,
         :password,
-        :entity,
+        :neighborhood_id,
         profile: {}
       )
     end
 
+    def roles_params
+      params.permit(roles: {})
+    end
+
     def load_user
       @user = User.find(params[:id])
+    end
+
+    def load_neighborhoods
+      @neighborhoods = Neighborhood.all
     end
 
   end

@@ -1,0 +1,27 @@
+header
+  article
+    - if section
+      h1= section
+    - if subtitle
+      div
+        span
+          = subtitle
+  - if links
+    ul.links
+      - links.each do |link|
+        li
+          - if link[:url]
+            = link_to link[:title], link[:url]
+          - elsif link[:href]
+            = link_to link[:title], link[:href]
+          - elsif link[:submit]
+            = button_tag type: :submit do
+              = link[:title]
+          - else
+            = link[:title]
+  - if buttons
+    div.buttons
+      == cell('elements/button', collection: buttons)
+  - if buttons_for
+    div.button_for
+      == cell('elements/button_for', collection: buttons_for)

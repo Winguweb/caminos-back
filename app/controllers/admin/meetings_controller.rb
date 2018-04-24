@@ -23,21 +23,25 @@ module Admin
       service = CreateMeeting.call(current_neighborhood, meeting_params)
 
       if service.success?
-        redirect_to neighborhood_meetings_path
+        redirect_to admin_neighborhood_meetings_path
       else
-        redirect_to new_neighborhood_meeting_path(current_neighborhood)
+        redirect_to new_admin_neighborhood_meeting_path(current_neighborhood)
       end
     end
 
     def index
       ensure_neighborhood; return if performed?
 
-      @meetings = current_neighborhood.meetings
+      @meetings = current_neighborhood.meetings.order(date: :desc)
+
+      @meetings_years = @meetings.group_by { |x| x.date.year }
+
+      
     end
 
     def edit
       ensure_neighborhood; return if performed?
-
+      @works = current_neighborhood.works
       load_meeting
     end
 
@@ -47,11 +51,11 @@ module Admin
       load_meeting
 
       service = UpdateMeeting.call(@meeting, meeting_params)
-
+      
       if service.success?
-        redirect_to neighborhood_meeting_path(@meeting)
+        redirect_to admin_neighborhood_meeting_path(current_neighborhood,@meeting)
       else
-        redirect_to edit_neighborhood_meeting_path(@meeting)
+        redirect_to edit_admin_neighborhood_meeting_path(@meeting)
       end
     end
 
@@ -69,7 +73,8 @@ module Admin
         :organizer,
         :participants,
         :lookup_address,
-        works: []
+        works: [],
+        documents: [[:link,:name,:description]]
        )
     end
   end

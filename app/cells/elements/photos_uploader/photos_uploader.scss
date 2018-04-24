@@ -1,0 +1,39 @@
+@mixin photos-jfiler() {
+  .jFiler {
+    display: none;
+  }
+  .jFiler-item {
+    padding-left: 0;
+    padding-right: 0;
+    background: transparent;
+  }
+  .jFiler-item-icon {
+    float: left;
+    i {
+      margin-top: 12px;
+      display: block;
+    }
+  }
+  .jFiler-item-info {
+    float: left;
+  }
+  .jFiler-item-assets {
+    float: right;
+  }
+  .jFiler-item-others {
+    line-height: 19px;
+  }
+
+  .jFiler-items-list{
+    columns: 3;
+  }
+
+  .jFiler-photo {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.photos-uploader-cell {
+  @include photos-jfiler;
+}

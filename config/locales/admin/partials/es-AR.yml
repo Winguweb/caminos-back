@@ -1,0 +1,7 @@
+es-AR:
+  admin:
+    partials:
+      header:
+        logout: Salir
+        neighborhoods: Barrios
+        users: Usuarios

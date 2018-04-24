@@ -1,19 +1,19 @@
-h1 = t('.meeting_date', date: @meeting.date)
-p
-= link_to t('.edit'), edit_neighborhood_meeting_path
-p
-=@meeting.objectives
+= content_for :main_header do
+  == cell('page/header',  t('.meeting', date: @meeting.date.to_date), breadcrumbs: [ current_neighborhood.name, t('.meetings') ],  subtitle: t('.upload_by',user: "Facundo Pérez" ,date: @meeting.created_at.to_date))
 
-p
-=@meeting.minute
+.page-section
 
-p
-=@meeting.organizer
-p
-=@meeting.participants
+  section
+    == cell('section/header',t(".order_day"), buttons: [{title: "editar", url:  edit_admin_neighborhood_meeting_path(current_neighborhood,@meeting) }])
+    main
+      == cell('elements/meeting_details', @meeting)
+  section
+    == cell('section/header',t(".documents"), buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path }])
 
-
-h2 Obras relacionadas
-p
-.works-list
-  = render partial: "/partials/components/works_list", locals: { works: @meeting.works, neighborhood: current_neighborhood}
+    == cell('elements/documents_table', @meeting.documents)
+  section
+    == cell('section/header',t(".works_relation"))
+    main
+      == cell('elements/works_table', @meeting.works, filters: false)
+  section
+    == cell('section/header',t(".participants"))

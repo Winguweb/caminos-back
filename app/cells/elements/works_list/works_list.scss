@@ -1,0 +1,83 @@
+@mixin works-list() {
+  > ul {
+    > li {
+      padding: 0 $gutter;
+      &:hover {
+        @include background-color($light-grey, 0.3);
+      }
+      &:last-of-type > a {
+        border-bottom: none;
+      }
+      > a {
+        @include grid-container;
+        border-bottom: 1px solid $light-grey;
+        padding: $gutter 0;
+        display: block;
+        color: initial;
+        > div {
+          $icon-width: 55px;
+          float: left;
+          &:nth-of-type(1) {
+            width: $icon-width;
+          }
+          &:nth-of-type(2) {
+            width: calc(100% - #{$icon-width});
+          }
+          > img {
+            padding-top: $gutter;
+            margin-right: $gutter;
+          }
+          > h3 {
+            @include type-setting(1);
+            font-weight: bold;
+          }
+          > span {
+            display: block;
+            &:nth-of-type(1) {
+              @include type-setting(-2);
+              line-height: 1em;
+              &.water {
+                @include text-color($water, 1);
+              }
+              &.trash {
+                @include text-color($trash, 1);
+              }
+              &.public {
+                @include text-color($public, 1);
+              }
+              &.health {
+                @include text-color($health, 1);
+              }
+              &.energy {
+                @include text-color($energy, 1);
+              }
+              &.sewer {
+                @include text-color($sewer, 1);
+              }
+              &.infrastructure {
+                @include text-color($infrastructure, 1);
+              }
+            }
+            &:nth-of-type(2) {
+              @include type-setting(0);
+            }
+            &:nth-of-type(3) {
+              @include type-setting(-1);
+              @include text-color($text-grey, 1);
+              float: left;
+            }
+            &:nth-of-type(4) {
+              @include type-setting(-1);
+              @include text-color($text-grey, 1);
+              float: right;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.works-list-cell{
+  @include works-list;
+}

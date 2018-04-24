@@ -1,0 +1,18 @@
+nav
+  div
+    = link_to root_path do
+      span 'Caminos de la Villa'
+    - if @neighborhood.urbanization
+      span
+        =@neighborhood.name
+  - if @neighborhood.urbanization
+    ul
+      li
+        = link_to "/neighborhoods/#{@neighborhood.id}/" do
+          span=t('.works')
+      li
+        = link_to "/neighborhoods/#{@neighborhood.id}/agreement" do
+          span=t('.agreement')
+      li
+        = link_to "/neighborhoods/#{@neighborhood.id}/about" do
+          span=t('.about')

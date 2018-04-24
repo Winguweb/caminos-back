@@ -1,0 +1,25 @@
+.users-table-cell
+  table style="width:100%"
+    tbody
+      - users.each do |user|
+        - entity = user.entity
+        - roles = user.roles.map{|role| t("user.roles.#{role}")}.join(', ')
+        tr.user data-id=user.id
+          td.user-information
+            == cell('elements/avatar', user)
+            h3= user.full_name
+            .email= user.email
+          td.other-information
+            -if entity
+              .entity
+                span.type
+                  = t("entities.#{entity.class.to_s.downcase}")
+                  = ': '
+                span.name= entity.name
+            .permissions= t('.permissions', roles: roles)
+javascript:
+  $(function() {
+    new CDLV.Components['users/table']({
+      el: $('.users-table-cell')
+    })
+  });

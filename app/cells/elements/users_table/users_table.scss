@@ -1,0 +1,48 @@
+@mixin users-table{
+  table{
+    td,th{
+      vertical-align: middle;
+    }
+    td{
+      padding: $gutter 0;
+      border-bottom: 1px solid $light-grey;
+    }
+    .user{
+      &.on-focus{
+        cursor: pointer;
+        td{
+          border-color: $blue;
+        }
+      }
+    }
+    .other-information{
+      width:40%;
+      text-align: right;
+    }
+
+    .user-information{
+      position: relative;
+      padding-left: 68px;
+      .avatar{
+        position: absolute;
+        left: 0;
+        top: 14px;
+      }
+    }
+    .entity{
+      @include type-setting(-1);
+      @include text-color($text-grey);
+      .name{
+        font-weight: 500;
+      }
+    }
+    .permissions, .email{
+      @include type-setting(-1);
+      @include text-color($text-grey);
+    }
+  }
+}
+
+.users-table-cell{
+  @include users-table;
+}

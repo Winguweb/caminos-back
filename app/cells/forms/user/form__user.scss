@@ -1,0 +1,23 @@
+.form-user-cell {
+  .role {
+    position:relative;
+    padding: $gutter/2 0;
+    .checkbox{
+      position: absolute;
+      top: 0;
+      left: 0;
+      input[type=checkbox] {
+        @include checkbox;
+        & + label.check-label::after {
+          margin: $gutter/2 0;
+        }
+      }
+    }
+    .role-name {
+      padding-left: 40px;
+      cursor: pointer;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+  }
+}

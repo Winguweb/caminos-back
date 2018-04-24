@@ -1,0 +1,33 @@
+= content_for :main_header do
+  == cell('page/header', "", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+
+= form_for @agreement, url: admin_neighborhood_agreement_path, html: { class: 'form' } do |f|
+  .page-section
+    section
+      == cell('section/header', t(".indicators"), links: [{ title: t(".cancel"), url: admin_neighborhood_agreement_path(current_neighborhood) }, { title: t(".save_changes"), submit: true } ])
+      - @indicators.keys.each do |indicator|
+        article
+          header
+            h1=@indicators[indicator][:title]
+          main
+            - if !@data.nil?
+              input type="number" name="data[#{indicator}]score" required="true" min="0" max="100" value="#{@data[indicator][:score]}"
+            - else
+              input type="number" name="data[#{indicator}]score" required="true" min="0" max="100"
+
+          aside
+            -@indicators[indicator][:questions].keys.each do |question|
+              .two-thirds-one-third-input
+                div
+                  = @indicators[indicator][:questions][question][:title]
+                div
+                  select name="data[#{indicator}[questions[#{question}]]]" required="true"
+                    option value=""
+                    -@indicators[indicator][:questions][question][:answers].each do |answer|
+                      - if !@data.nil?
+                        - if answer == @data[indicator][:answers][question]
+                          option selected="#{answer}" value="#{answer}" = answer
+                        -else
+                          option value="#{answer}" = answer
+                      -else
+                          option value="#{answer}" = answer

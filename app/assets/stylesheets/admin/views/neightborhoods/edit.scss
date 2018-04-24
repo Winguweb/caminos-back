@@ -1,0 +1,31 @@
+#neighborhoods-edit{
+  form {
+    .actions{
+      text-align: center;
+    }
+    .urbanization {
+      @include grid-container;
+      > span {
+        float: left;
+        padding: $gutter/2 0;
+      }
+      > div {
+        float: left;
+        height: 20px;
+        position:relative;
+      }
+      .checkbox{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $gutter*2;
+        input[type=checkbox] {
+          @include checkbox;
+          & + label.check-label::after {
+            margin: $gutter/2 0;
+          }
+        }
+      }
+    }
+  }
+}
