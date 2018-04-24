@@ -6,7 +6,7 @@ class MobileElements::MobileMenuCell < Cell::ViewModel
     model
   end
 
-  def links
-    options[:links]
+  def with_links
+    options[:with_links].blank? ? '' : 'with-links'
   end
 end

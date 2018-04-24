@@ -1,0 +1,56 @@
+@mixin works-mobile-show() {
+  > main {
+    height: 100%;
+    > div {
+      height: 100%;
+      > section {
+        > main {
+          $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+          @include grid-column(16, $no-gutter);
+          height: 100%;
+          > section:first-of-type {
+            @include grid-column(16);
+            height: 100%;
+            left: auto;
+            .map-show-cell {
+              @include grid-collapse;
+              height: 100%;
+              > div {
+                border-radius: 0;
+              }
+            }
+          }
+          > section + section {
+            > div,
+            .half-input > div,
+            .two-thirds-one-third-input > div {
+              @include grid-container;
+              margin-bottom: $vgutter*2;
+              > span:first-of-type {
+                @include type-setting(-1);
+                color: $grey;
+                display: block;
+                margin-bottom: $gutter/7;
+                text-transform: none;
+              }
+              > span + span {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#works-show.works-mobile {
+  @include works-mobile-show();
+
+  .photos-list{
+    .photo{
+      @include grid-column(1 of 3);
+      margin-bottom: $gutter;
+    }
+  }
+}

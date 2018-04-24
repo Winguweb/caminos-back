@@ -1,8 +1,8 @@
 class WorksController < ApplicationController
+  before_action :check_for_mobile, :only => [:show]
 
   def show
     load_work
-    load_neighborhood
   end
 
   private
