@@ -14,7 +14,7 @@ aside
           ol
             - @neighborhoods.each do |neighborhood|
               li
-                = link_to about_neighborhood_path(neighborhood.id) do
+                = link_to neighborhood_path(neighborhood.id) do
                   p
                     span
                   div

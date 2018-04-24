@@ -1,0 +1,18 @@
+@mixin neighborhoods-mobile-show() {
+  > main {
+    height: calc(100% - #{$aside-height} - #{$gutter*4});
+    > div {
+      height: 100%;
+      > main {
+        height: 100%;
+        > section:first-of-type {
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+#neighborhoods-show.neighborhoods-mobile {
+  @include neighborhoods-mobile-show();
+}

@@ -29,7 +29,7 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     = javascript_include_tag "https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.js"
     = javascript_include_tag "https://cdn.rawgit.com/mapbox/wellknown/master/wellknown.js"
 
-    body id=body_id class=body_class
+    body id=body_id class="#{body_class}-mobile mobile-layout"
       .main-header
         == cell('mobile_elements/mobile_menu', @neighborhood)
       main
