@@ -22,7 +22,7 @@ class Elements::MapEditCell < Cell::ViewModel
     when RGeo::Feature::Polygon
       {
         coordinates: options[:editable].geometry.coordinates.first.map(&:reverse),
-        className: options[:editable].category,
+        className: 'editable',
         type: 'polygon',
       }.to_json
     when RGeo::Feature::LineString

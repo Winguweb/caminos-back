@@ -6,23 +6,42 @@ es-AR:
       no_meetings: Por el momento no hay reuniones relacionadas
     users_table:
       permissions: "Permisos: %{roles}"
+    filterable:
+      all_categories: Todas
+      all_status: Todos
+      categories: Categorías
+      done: Finalizadas
+      energy: "Luz / Electricidad"
+      expired: Vencidas
+      filters: Filtros
+      health: Salud
+      in_process: En progreso
+      infrastructure: Infraestructura
+      pending: Pendientes
+      proyected: Proyectadas
+      public: "Calles / Plazas"
+      sewer: Cloacas
+      status: Estados
+      trash: Basura
+      water: Agua
     works_list:
       energy: "Luz / Electricidad"
-      health: "Salud"
-      infrastructure: "Infraestructura"
+      health: Salud
+      infrastructure: Infraestructura
       public: "Calles / Plazas"
-      sewer: "Cloacas"
-      status: "Estado"
-      trash: "Basura"
-      water: "Agua"
+      sewer: Cloacas
+      status: Estado
+      trash: Basura
+      water: Agua
+      no_results: Sin resultados
     works_table:
       energy: "Luz / Electricidad"
-      health: "Salud"
-      infrastructure: "Infraestructura"
+      health: Salud
+      infrastructure: Infraestructura
       public: "Calles / Plazas"
-      sewer: "Cloacas"
-      trash: "Basura"
-      water: "Agua"
+      sewer: Cloacas
+      trash: Basura
+      water: Agua
   forms:
     user:
       create: Crear Usuario
@@ -43,5 +62,5 @@ es-AR:
   page:
     public_header:
       about: Info del barrio
-      works: Seguir las obras
       agreement: Medir el impacto
+      works: Seguir las obras

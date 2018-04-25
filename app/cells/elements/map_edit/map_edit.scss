@@ -37,6 +37,11 @@
       stroke-width: 2px;
       stroke-dasharray: 3 5;
     }
+    &.editable {
+      fill: color($red, 0.7);
+      stroke: color($red, 0.7);
+      stroke-width: 2px;
+    }
   }
 }
 

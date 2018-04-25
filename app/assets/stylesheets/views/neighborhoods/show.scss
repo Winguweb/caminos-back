@@ -201,6 +201,7 @@
   }
 }
 
-#neighborhoods-show {
+#neighborhoods-show,
+#neighborhoods-filtered {
   @include neighborhoods-show();
 }

@@ -1,4 +1,6 @@
 .works-list-cell
+  - if works.blank?
+    p = t(".no_results")
   ul
     - works.each do |work|
       li = link_to work_path(work) do
