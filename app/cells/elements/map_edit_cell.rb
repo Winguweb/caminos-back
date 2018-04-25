@@ -20,6 +20,7 @@ class Elements::MapEditCell < Cell::ViewModel
         type: 'marker',
       }.to_json
     when RGeo::Feature::Polygon
+    when RGeo::Feature::MultiLineString
       {
         coordinates: options[:editable].geometry.coordinates.first.map(&:reverse),
         className: 'editable',
