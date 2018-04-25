@@ -3,6 +3,12 @@
   @include background-color($white);
   height: $aside-height;
   overflow: auto;
+  &.with-links {
+    height: $aside-links-height;
+  }
+  &.with-links ~ main {
+    height: calc(100% - #{$aside-links-height});
+  }
   > div:first-of-type {
     text-align: right;
     > button {
