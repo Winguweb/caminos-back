@@ -16,6 +16,12 @@
       }
     }
   }
+  .mobile-menu-cell.with-links {
+    height: $aside-links-height;
+  }
+  .mobile-menu-cell.with-links ~ main {
+    height: calc(100% - #{$aside-links-height});
+  }
 }
 
 #neighborhoods-show.neighborhoods-mobile {

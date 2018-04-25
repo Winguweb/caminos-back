@@ -14,7 +14,7 @@ nav class="mobile-menu-cell #{with_links}"
     li
       = link_to admin_dashboard_path do
         span="Información"
-  - unless neighborhood.blank?
+  - unless !with_links || neighborhood.blank?
     div
       ul
         - if neighborhood.urbanization
