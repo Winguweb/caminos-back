@@ -1,4 +1,5 @@
 class Elements::NeighborhoodCardCell < Cell::ViewModel
+  include LayoutHelper
 
   private
 

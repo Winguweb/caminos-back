@@ -23,4 +23,8 @@ module LayoutHelper
     partial_name = "_#{path.pop}"
     lookup_context.exists?("#{path.join('/')}/#{partial_name}")
   end
+
+  def to_fixed_percentage(value)
+    value.to_i.floor
+  end
 end

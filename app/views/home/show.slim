@@ -17,9 +17,9 @@ section
                     div
                       h3=neighborhood.name
                       span="Proceso de urbanización"
-                      span="#{neighborhood.urbanization_score.floor || 0}%"
+                      span="#{to_fixed_percentage(neighborhood.urbanization_score)}%"
                       div
-                        div style="width:#{neighborhood.urbanization_score.floor || 0}%"
+                        div style="width:#{to_fixed_percentage(neighborhood.urbanization_score)}%"
         section
           header
             h2="Otros barrios"
