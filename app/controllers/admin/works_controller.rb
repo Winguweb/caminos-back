@@ -78,8 +78,7 @@ module Admin
         :name,
         :status,
         :start_date,
-        :tag_list,
-        :category,
+        :category_list,
         photos: [],
         documents: [[:link,:name,:description]]
       )

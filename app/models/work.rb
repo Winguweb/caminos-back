@@ -3,7 +3,7 @@ class Work < ApplicationRecord
   has_and_belongs_to_many :meetings
   has_many :documents, as: :holder
   has_many :photos, as: :owner
-  acts_as_taggable # Alias for acts_as_taggable_on :tags
+
   acts_as_taggable_on :categories
 
   validates_presence_of :name,

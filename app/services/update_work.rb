@@ -13,9 +13,7 @@ class UpdateWork
   private
 
   def update_work
-    @work.update(@allowed_params.except(:category))
-    @work.category_list = @allowed_params[:category]
-    return @work if @work.save
+    return @work if @work.update(@allowed_params)
     errors.add_multiple_errors(@work.errors.messages) && nil
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418182664) do
+ActiveRecord::Schema.define(version: 20180425193909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,9 +87,13 @@ ActiveRecord::Schema.define(version: 20180418182664) do
   end
 
   create_table "photos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "picture"
     t.string "owner_type", null: false
     t.uuid "owner_id", null: false
+    t.uuid "uploader_id", null: false
+    t.string "image"
+    t.string "original_filename"
+    t.string "content_type"
+    t.integer "file_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_type", "owner_id"], name: "index_photos_on_owner_type_and_owner_id"
@@ -104,13 +108,13 @@ ActiveRecord::Schema.define(version: 20180418182664) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "taggings", id: :serial, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
-    t.integer "taggable_id"
+    t.uuid "taggable_id"
     t.string "tagger_type"
-    t.integer "tagger_id"
-    t.string "context", limit: 128
+    t.uuid "tagger_id"
+    t.string "context"
     t.datetime "created_at"
     t.index ["context"], name: "index_taggings_on_context"
     t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
@@ -123,7 +127,7 @@ ActiveRecord::Schema.define(version: 20180418182664) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", id: :serial, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true

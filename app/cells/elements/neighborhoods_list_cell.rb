@@ -1,4 +1,5 @@
 class Elements::NeighborhoodsListCell < Cell::ViewModel
+  include LayoutHelper
 
   private
 

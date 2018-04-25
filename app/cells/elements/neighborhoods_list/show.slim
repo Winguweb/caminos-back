@@ -15,10 +15,8 @@
 
     tbody
       - neighborhoods.each do |neighborhood|
-        - if neighborhood.urbanization
-          - percent = neighborhood.urbanization_score.floor
-        - else
-          - percent = 0
+        - percent = to_fixed_percentage(neighborhood.urbanization_score)
+
         tr
           td
             a href=admin_neighborhood_path(neighborhood)

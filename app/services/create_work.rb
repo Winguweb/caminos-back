@@ -13,9 +13,8 @@ class CreateWork
   private
 
   def create_work
-    @work = Work.new(work_params.except(:category))
+    @work = Work.new(work_params)
     @work.neighborhood = @neighborhood
-    @work.category_list = work_params[:category]
 
     if documents_params.present? || !photo_params.nil?
       save_photos(@work) if !photo_params.nil?
@@ -46,7 +45,7 @@ class CreateWork
   def work_params
     {
       budget: @allowed_params[:budget],
-      category: @allowed_params[:category],
+      category_list: @allowed_params[:category_list],
       description: @allowed_params[:description],
       estimated_end_date: @allowed_params[:estimated_end_date],
       execution_plan: @allowed_params[:execution_plan],
