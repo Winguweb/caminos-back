@@ -7,50 +7,11 @@ es-AR:
     users_table:
       permissions: "Permisos: %{roles}"
     filterable:
-      all_categories: Todas
-      all_status: Todos
       categories: Categorías
-      done: Finalizadas
-      energy: "Luz / Electricidad"
-      expired: Vencidas
       filters: Filtros
-      health: Salud
-      in_process: En progreso
-      infrastructure: Infraestructura
-      pending: Pendientes
-      proyected: Proyectadas
-      public: "Calles / Plazas"
-      sewer: Cloacas
-      status: Estados
-      trash: Basura
-      water: Agua
-    works_list:
-      done: Finalizada
-      energy: "Luz / Electricidad"
-      expired: Vencida
-      health: Salud
-      in_process: En progreso
-      infrastructure: Infraestructura
-      no_results: Sin resultados
-      pending: Pendiente
-      proyected: Proyectada
-      public: "Calles / Plazas"
-      sewer: Cloacas
-      status: Estado
-      trash: Basura
-      water: Agua
-    works_table:
-      energy: "Luz / Electricidad"
-      health: Salud
-      infrastructure: Infraestructura
-      public: "Calles / Plazas"
-      sewer: Cloacas
-      trash: Basura
-      water: Agua
   forms:
     user:
       create: Crear Usuario
-      cancel: Cancelar
       email: Dirección de correo electrónico
       first_name: Nombre/s
       general: General
@@ -60,7 +21,6 @@ es-AR:
       password: Contraseña
       personal_information: Información Personal
       roles: Roles / Permisos
-      save_changes: Guardar Cambios
       update: Actualizar Usuario
       user_information: Información del Usuario
       username: Nombre de Usuario
@@ -70,12 +30,6 @@ es-AR:
       agreement: Acuerdo
       about: Información
     over_work_card:
-      status: Estado
-      expired: Vencidas
-      done: Finalizadas
-      in_process: En progreso
-      pending: Pendientes
-      proyected: Proyectadas
   page:
     public_header:
       about: Info del barrio

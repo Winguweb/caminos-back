@@ -3,7 +3,7 @@ main
   section.with-border
     == cell('elements/map_show', @neighborhood)
   section.with-border
-    == cell('section/header', t('.description'))
+    == cell('section/header', t('neighborhoods.description'))
     div
       == cell('elements/description', text: @neighborhood.description)
       == cell('section/footer_link', { title: t('.view_more'), href: admin_neighborhoods_path })
@@ -11,22 +11,22 @@ main
 
   section.with-border
     div
-      == cell('section/header', t('.documents'))
+      == cell('section/header', t('documents.documents'))
       == cell('elements/documents_table', @neighborhood.documents)
 
   section
     div
-      == cell('section/header', t('.ambassadors'))
+      == cell('section/header', t('neighborhoods.ambassadors'))
       == cell('elements/documents_table', @neighborhood.documents)
 
   section
     div
-      == cell('section/header', t('.pictures'))
+      == cell('section/header', t('pictures.pictures'))
       == cell('elements/documents_table', @neighborhood.documents)
 
   section
     div
-      == cell('section/header', t('.meetings'))
+      == cell('section/header', t('meetings.meetings'))
       - if @meetings.blank?
         span=t('.no_meetings')
       - else

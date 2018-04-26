@@ -1,12 +1,7 @@
 es-AR:
   neighborhoods:
     about:
-      ambassadors: Embajadores
-      description: Descripción
-      documents: Documentos
-      meetings: Reuniones
       no_meetings: No existen reuniones
-      pictures: Fotos
     agreement:
       no_agreement: No se encontró información
     partials:
@@ -16,26 +11,5 @@ es-AR:
         works: Obras
   works:
     show:
-      budget: Presupuesto
-      category: Categoría
-      documents: Documentos
-      energy: "Luz / Electricidad"
-      estimated_end_date: Fecha finalización
-      execution_plan: Plan de ejecución
-      health: Salud
-      infrastructure: Infraestructura
-      load_document: Cargar Documento
-      lookup_address: Dirección
-      manager: Órgano responsable
-      photos: Fotos
-      public: "Calles / Plazas"
-      related_meetings: Reuniones relacionadas
-      sewer: Cloacas
-      start_date: Fecha inicio
-      trash: Basura
-      upload_photos: Subir Fotos
-      water: Agua
       files: Archivos
-      meetings: Reuniones
-
 

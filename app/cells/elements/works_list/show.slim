@@ -8,11 +8,11 @@
             =image_tag work.category_icon
           div
             span class=work.category
-              = t(".#{work.category}").upcase
+              = t("categories.#{work.category}").upcase
             h3=work.name
             span=work.lookup_address
             span
-              = "#{t('.status')}: "
+              = "#{t('works.status')}: "
               strong
-                = t(".#{work.status}")
+                = t("status.#{work.status}")
             span=work.estimated_end_date

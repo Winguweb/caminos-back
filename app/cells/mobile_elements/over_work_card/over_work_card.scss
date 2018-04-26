@@ -9,10 +9,10 @@
   position: relative;
   z-index: 1000;
   > span:first-of-type {
-    background-image: url(/assets/icons/pin.svg);
-    background-position: left;
+    background-image: url(/assets/icons/marker.svg);
+    background-position: left top;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: $gutter;
     margin-bottom: $gutter;
   }
   > span:nth-of-type(2) {

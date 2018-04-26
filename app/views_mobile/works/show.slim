@@ -1,7 +1,7 @@
 section
   main
     header
-      span class="#{@work.category}" = t(".#{@work.category}")
+      span class=@work.category = t("categories.#{@work.category}")
       h1 = @work.name
     section
       / Blocks not working, related to https://github.com/trailblazer/cells/issues/406
@@ -11,23 +11,23 @@ section
         span = @work.description
       div
         p
-          span = "#{t('.start_date')}: "
+          span = "#{t('works.start_date')}: "
           span = @work.start_date
         p
-          span = "#{t('.estimated_end_date')}: "
+          span = "#{t('works.estimated_end_date')}: "
           span = @work.estimated_end_date
         p
-          span = "#{t('.budget')}: "
+          span = "#{t('works.budget')}: "
           span = @work.budget
         p
-          span = "#{t('.manager')}: "
+          span = "#{t('works.manager')}: "
           span = @work.manager
         p
-          span = "#{t('.execution_plan')}: "
+          span = "#{t('works.execution_plan')}: "
           span = @work.execution_plan
 
     section
       == cell('section/header', t('.files'))
-      == cell('mobile_elements/resources_card', t('.documents'), size: @work.documents.count, link: root_path)
-      == cell('mobile_elements/resources_card', t('.meetings'), size: @work.meetings.count, link: root_path)
+      == cell('mobile_elements/resources_card', t('documents.documents'), size: @work.documents.count, link: root_path)
+      == cell('mobile_elements/resources_card', t('meetings.meetings'), size: @work.meetings.count, link: root_path)
 

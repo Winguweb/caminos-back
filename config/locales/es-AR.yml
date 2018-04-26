@@ -1,4 +1,8 @@
 es-AR:
+  actions:
+    edit: Editar
+    save: Guardar cambios
+    cancel: Cancelar
   activerecord:
     errors:
       models:
@@ -6,18 +10,84 @@ es-AR:
           attributes:
             neighborhood:
               required: Este campo es requerido
-  entities:
-    organization: Organización
-    neighborhood: Barrio
+  categories:
+    all_categories: Todas
+    energy: "Luz / Electricidad"
+    health: Salud
+    infrastructure: Infraestructura
+    public: "Calles / Plazas"
+    sewer: Cloacas
+    trash: Basura
+    water: Agua
   date:
     formats:
       period: "%B"
       day_and_day_of_week: "%A %d"
       slashes: "%d/%m/%y"
+  documents:
+    documents: Documentos
+  entities:
+    organization: Organización
+    neighborhood: Barrio
+  labels:
+    updated_at: Actualizado el
+    created_at: Creado en
+  meetings:
+    meetings: Reuniones
+  neighborhoods:
+    description: Sobre el Barrio
+    information: Información
+    lookup_address: Ubicación del Barrio
+    map_location: Ubicación
+    name: Nombre del Barrio
+    urbanization_process: Proceso de urbanización
+    has_urbanization_process: Tiene proceso de urbanización
+    hasnt_urbanization_process: Sin proceso de urbanicación
+    pictures: Fotos
+    agreement: Acuerdo
+    ambassadors: Embajadores
+    meetings: Reuniones
+    documents: Documentos
+  pictures:
+    pictures: Fotos
+  status:
+    all_status: Todos
+    expired: Vencida
+    done: Finalizada
+    in_process: En progreso
+    pending: Pendiente
+    proyected: Proyectada
+  time:
+    formats:
+      slashes: "%d/%m/%y"
   user:
     roles:
       ambassador: Embajador
       admin: Administrador
-  time:
-    formats:
-      slashes: "%d/%m/%y"
+  works:
+    category: Categoría
+    works: Obras
+    name: Título
+    description: Descripción
+    status: Estado
+    start_date: Fecha inicio
+    estimated_end_date: Fecha finalización estimada
+    end_date: Fecha finalización
+    lookup_address: Dirección
+    lookup_coordinates: Coordenadas
+    geo_geometry: Geometría Geoespacial
+    geometry: Geometría
+    budget: Presupuesto
+    manager: Responsable
+    map_location: Ubicación en el mapa
+    execution_plan: Plán de ejecución
+    created_at: Creado el
+    documents: Documentos
+    photos: Fotos
+    related_meetings: Reuniones relacionadas
+    company: Empresa
+
+
+
+
+

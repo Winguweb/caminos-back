@@ -4,23 +4,23 @@
 = form_for ['admin', @neighborhood], html: { class: 'form' } do |form|
   .page-section
     section
-      == cell('section/header', t(".information"), links: [{ title: t(".cancel"), url: admin_neighborhoods_path(@neighborhood) }, { title: t(".save_changes"), submit: true }])
+      == cell('section/header', t("neighborhoods.information"), links: [{ title: t("actions.cancel"), url: admin_neighborhoods_path(@neighborhood) }, { title: t("actions.save"), submit: true }])
       .fields
         .field.name
-          = form.label :name, t('.name')
+          = form.label :name, t('neighborhoods.name')
           = form.text_field :name, class: 'require'
         .field.description
-          = form.label :description, t('.description')
+          = form.label :description, t('neighborhoods.description')
           = form.text_area :description, class: 'require', rows: 6
         .field.urbanization
-          span= t('.urbanization_process')
+          span= t('neighborhoods.has_urbanization_process')
           div
             .checkbox
               = form.check_box :urbanization, id: "urbanization"
               label for="urbanization" class="check-label"
             label for="urbanization"
         .field.map
-          == cell('section/header', t('.map_location'))
+          == cell('section/header', t('neighborhoods.map_location'))
           == cell('elements/map_edit', {}, editable: @neighborhood, controls: ['polygon'], name: 'neighborhood')
           input type="hidden" name="neighborhood[geometry]" class="geometry-field"
           input type="hidden" name="neighborhood[geo_geometry]" class="geo_geometry-field"

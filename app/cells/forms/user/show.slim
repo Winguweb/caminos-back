@@ -2,7 +2,7 @@
   = form_for user, url: url, html: { class: 'form' } do |form|
     .page-section
       section
-        == cell('section/header', t(".general"), links: [{ title: t(".cancel"), url: url }, { title: t(".save_changes"), submit: true }])
+        == cell('section/header', t(".general"), links: [{ title: t("actions.cancel"), url: url }, { title: t("actions.save"), submit: true }])
 
         .fields.personal-information
           .half-input

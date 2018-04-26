@@ -1,5 +1,5 @@
 section class="over-work-card-cell"
   span = work.lookup_address
-  span = t(".status")
+  span = t("works.status")
   - if work.status
-    span = t(".#{work.status}")
+    span = t("status.#{work.status}")

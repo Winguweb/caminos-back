@@ -5,73 +5,20 @@ es-AR:
         title: "Editar Obra: %{name}"
       form:
         about_work: Sobre la obra
-        budget: Presupuesto
-        cancel: Cancelar
-        category: Categoría
-        description: Descripción
-        estimated_end_date: Fecha de finalización
-        execution_plan: Fuente
-        lookup_address: Dirección
-        manager: Órgano responsable
-        map_location: Ubicación en el mapa
-        name: Nombre
-        save_changes: Guardar cambios
-        start_date: Fecha de inicio
-        status: Estado
-        energy: "Luz / Electricidad"
-        health: Salud
-        infrastructure: Infraestructura
-        public: "Calles / Plazas"
-        sewer: Cloacas
-        trash: Basura
-        water: Agua
       index:
         new_work: Nueva Obra
-        updated_at: Actualizado en
       new:
         title: Nueva Obra
       show:
-        budget: Presupuesto
-        category: Categoría
-        documents: Documentos
-        energy: "Luz / Electricidad"
         estimated_end_date: Tiempo de finalización estimado
-        execution_plan: Plan de ejecución
-        health: Salud
-        infrastructure: Infraestructura
         load_document: Cargar Documento
-        lookup_address: Dirección
-        Manager: Responsable
-        photos: Fotos
-        public: "Calles / Plazas"
         related_meetings: Reuniones relacionadas
-        sewer: Cloacas
-        start_date: Fecha de inicio
-        status: Estado
-        trash: Basura
         upload_photos: Subir Fotos
-        water: Agua
   works:
     show:
-      budget: Presupuesto
-      category: Categoría
-      documents: Documentos
-      energy: "Luz / Electricidad"
-      estimated_end_date: Tiempo de finalización estimado
-      execution_plan: Plan de ejecución
-      health: Salud
-      infrastructure: Infraestructura
       load_document: Cargar Documento
-      lookup_address: Dirección
-      Manager: Responsable
-      photos: Fotos
-      public: "Calles / Plazas"
-      related_meetings: Reuniones relacionadas
-      sewer: Cloacas
       start_date: Fecha de inicio
-      trash: Basura
       upload_photos: Subir Fotos
-      water: Agua
 
 
 

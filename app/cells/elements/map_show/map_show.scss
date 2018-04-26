@@ -41,6 +41,16 @@
   }
 }
 
+@mixin map-show-mobile-cell() {
+  .leaflet-control-container {
+    display: none;
+  }
+}
+
 .map-show-cell{
   @include map-show();
+}
+
+.mobile-layout .map-show-cell{
+  @include map-show-mobile-cell();
 }
