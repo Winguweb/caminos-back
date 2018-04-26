@@ -9,4 +9,8 @@ class MobileElements::MobileMenuCell < Cell::ViewModel
   def with_links
     options[:with_links].blank? ? '' : 'with-links'
   end
+
+  def section
+    params[:action]
+  end
 end

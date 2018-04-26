@@ -28,7 +28,7 @@
             > span {
               display: block;
               &:nth-of-type(1) {
-                @include type-setting(-2);
+                @include type-setting(-1);
                 line-height: 1em;
                 &.water {
                   @include text-color($water, 1);
@@ -54,7 +54,7 @@
               }
             }
             > h1 {
-              @include type-setting(1);
+              @include type-setting(2);
               font-weight: bold;
             }
           }

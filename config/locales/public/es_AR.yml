@@ -16,19 +16,26 @@ es-AR:
         works: Obras
   works:
     show:
-      about_work: Acerca de la obra
       budget: Presupuesto
       category: Categoría
-      description: Descripción
       documents: Documentos
-      estimated_end_date: Tiempo de finalización estimado
+      energy: "Luz / Electricidad"
+      estimated_end_date: Fecha finalización
       execution_plan: Plan de ejecución
+      health: Salud
+      infrastructure: Infraestructura
+      load_document: Cargar Documento
       lookup_address: Dirección
-      manager: Encargado
+      manager: Órgano responsable
+      photos: Fotos
+      public: "Calles / Plazas"
+      related_meetings: Reuniones relacionadas
+      sewer: Cloacas
+      start_date: Fecha inicio
+      trash: Basura
+      upload_photos: Subir Fotos
+      water: Agua
+      files: Archivos
       meetings: Reuniones
-      no_works: No se encontraron obras en este barrio
-      photos: Fotos de la obra
-      start_date: Fecha de inicio
-      status: Estado
-      title: Título
-      view_more: Ver más
+
+

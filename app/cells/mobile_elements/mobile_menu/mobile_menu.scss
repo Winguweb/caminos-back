@@ -82,7 +82,7 @@
           border-bottom: 2px solid transparent;
           display: block;
           margin-right: 0;
-          padding: $gutter 0;
+          padding: $gutter 0 calc(#{$gutter} - 6px);
           text-align: center;
           &.active,
           &:hover {

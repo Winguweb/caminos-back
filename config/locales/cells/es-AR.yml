@@ -25,15 +25,20 @@ es-AR:
       trash: Basura
       water: Agua
     works_list:
+      done: Finalizada
       energy: "Luz / Electricidad"
+      expired: Vencida
       health: Salud
+      in_process: En progreso
       infrastructure: Infraestructura
+      no_results: Sin resultados
+      pending: Pendiente
+      proyected: Proyectada
       public: "Calles / Plazas"
       sewer: Cloacas
       status: Estado
       trash: Basura
       water: Agua
-      no_results: Sin resultados
     works_table:
       energy: "Luz / Electricidad"
       health: Salud
@@ -59,6 +64,18 @@ es-AR:
       update: Actualizar Usuario
       user_information: Información del Usuario
       username: Nombre de Usuario
+  mobile_elements:
+    mobile_menu:
+      works: Obras
+      agreement: Acuerdo
+      about: Información
+    over_work_card:
+      status: Estado
+      expired: Vencidas
+      done: Finalizadas
+      in_process: En progreso
+      pending: Pendientes
+      proyected: Proyectadas
   page:
     public_header:
       about: Info del barrio

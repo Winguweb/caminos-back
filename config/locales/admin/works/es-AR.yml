@@ -51,5 +51,29 @@ es-AR:
         trash: Basura
         upload_photos: Subir Fotos
         water: Agua
+  works:
+    show:
+      budget: Presupuesto
+      category: Categoría
+      documents: Documentos
+      energy: "Luz / Electricidad"
+      estimated_end_date: Tiempo de finalización estimado
+      execution_plan: Plan de ejecución
+      health: Salud
+      infrastructure: Infraestructura
+      load_document: Cargar Documento
+      lookup_address: Dirección
+      Manager: Responsable
+      photos: Fotos
+      public: "Calles / Plazas"
+      related_meetings: Reuniones relacionadas
+      sewer: Cloacas
+      start_date: Fecha de inicio
+      trash: Basura
+      upload_photos: Subir Fotos
+      water: Agua
+
+
+
 
 
