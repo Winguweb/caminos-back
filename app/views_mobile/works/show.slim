@@ -7,59 +7,27 @@ section
       / Blocks not working, related to https://github.com/trailblazer/cells/issues/406
       == cell('elements/map_show', @work.neighborhood, features: [@work]).(){ cell('mobile_elements/over_work_card', @work) }
     section
-      == cell('section/header', t('.about_work'))
-    section
       div
-        span = t('.title')
-        span = @work.name
-      div
-        span = t('.description')
         span = @work.description
-      .half-input
-        div
-          span = t('.category')
-          span = @work.category
-        div
-          span = t('.status')
-          span = @work.status
-        div
-          span = t('.manager')
-          span = @work.manager
-
-        div
-          span = t('.budget')
-          span = @work.budget
-
-        div
-          span = t('.start_date')
+      div
+        p
+          span = "#{t('.start_date')}: "
           span = @work.start_date
-
-        div
-          span = t('.estimated_end_date')
+        p
+          span = "#{t('.estimated_end_date')}: "
           span = @work.estimated_end_date
-
-      .two-thirds-one-third-input
-        div
-          span = t('.execution_plan')
+        p
+          span = "#{t('.budget')}: "
+          span = @work.budget
+        p
+          span = "#{t('.manager')}: "
+          span = @work.manager
+        p
+          span = "#{t('.execution_plan')}: "
           span = @work.execution_plan
 
-        div
-          span = t('.lookup_address')
-          span = @work.lookup_address
-
     section
-      == cell('section/header', t('.documents'))
-      == cell('elements/documents_table',@work.documents)
-      a href='#' = t('.view_more')
+      == cell('section/header', t('.files'))
+      == cell('mobile_elements/resources_card', t('.documents'), size: @work.documents.count, link: root_path)
+      == cell('mobile_elements/resources_card', t('.meetings'), size: @work.meetings.count, link: root_path)
 
-    section
-      == cell('section/header', t('.meetings'))
-      == cell('elements/meetings_list', @work.meetings , neighborhood: @neighborhood)
-      a href='#' = t('.view_more')
-
-    section
-      == cell('section/header', t('.photos'))
-      .photos-list
-        - @work.photos.each do |photo|
-          .photo
-            = image_tag photo.image.thumb.url, alt: 'Image', height: 200

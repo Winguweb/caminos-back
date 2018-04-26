@@ -60,20 +60,25 @@
           }
           > section + section {
             @include grid-column(16);
-            > div,
-            .half-input > div,
-            .two-thirds-one-third-input > div {
-              @include grid-container;
-              margin-bottom: $vgutter*2;
-              > span:first-of-type {
-                @include type-setting(-1);
-                color: $grey;
-                display: block;
-                margin-bottom: $gutter/7;
-                text-transform: none;
+            div:first-of-type {
+              border-top: 1px solid color($light-grey, 1);
+              padding-top: $gutter;
+            }
+            div {
+              border-bottom: 1px solid color($light-grey, 1);
+              padding-bottom: $gutter;
+              > span, > p {
+                @include text-color($black);
+                @include type-setting(0);
               }
-              > span + span {
-                display: block;
+              > p {
+                margin-bottom: $gutter/2;
+                &:last-of-type {
+                  margin-bottom: 0;
+                }
+                > span:first-of-type {
+                  font-weight: bold;
+                }
               }
             }
           }
