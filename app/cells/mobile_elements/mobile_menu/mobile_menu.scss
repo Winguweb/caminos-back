@@ -1,6 +1,7 @@
 // $aside-heigth defined at _variables.scss
 @mixin mobile-menu() {
   @include background-color($white);
+  box-shadow: 0 2px 12px 0px color($grey, 0.2);
   height: $aside-height;
   overflow: auto;
   &.with-links {

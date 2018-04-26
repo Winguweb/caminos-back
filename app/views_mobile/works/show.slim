@@ -1,8 +1,12 @@
 section
-  main.page-section
-    section.with-border
-      == cell('elements/map_show', @work.neighborhood, features: [@work])
-    section.with-border
+  main
+    header
+      span class="#{@work.category}" = t(".#{@work.category}")
+      h1 = @work.name
+    section
+      / Blocks not working, related to https://github.com/trailblazer/cells/issues/406
+      == cell('elements/map_show', @work.neighborhood, features: [@work]).(){ cell('mobile_elements/over_work_card', @work) }
+    section
       == cell('section/header', t('.about_work'))
     section
       div

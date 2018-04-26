@@ -1,0 +1,30 @@
+// $aside-heigth defined at _variables.scss
+@mixin over-work-card() {
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 7px 12px 0 color($light-grey);
+  margin: 0 $gutter;
+  margin-top: -$gutter*2;
+  padding: $gutter;
+  position: relative;
+  z-index: 1000;
+  > span:first-of-type {
+    background-image: url(/assets/icons/pin.svg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: $gutter;
+  }
+  > span:nth-of-type(2) {
+    font-weight: bold;
+  }
+  > span {
+    @include type-setting(0);
+    display: block;
+    padding-left: $gutter*1.5;
+  }
+}
+
+.over-work-card-cell {
+  @include over-work-card();
+}

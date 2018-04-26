@@ -71,6 +71,7 @@ module CaminosBack
       elements/works_list_cell
       forms/user_cell
       mobile_elements/mobile_menu_cell
+      mobile_elements/over_work_card_cell
       page/header_cell
       page/public_header_cell
       section/footer_link_cell
