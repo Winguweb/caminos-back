@@ -1,0 +1,33 @@
+section
+  main
+    header
+      span class=@work.category = t("categories.#{@work.category}")
+      h1 = @work.name
+    section
+      / Blocks not working, related to https://github.com/trailblazer/cells/issues/406
+      == cell('elements/map_show', @work.neighborhood, features: [@work]).(){ cell('mobile_elements/over_work_card', @work) }
+    section
+      div
+        span = @work.description
+      div
+        p
+          span = "#{t('works.start_date')}: "
+          span = @work.start_date
+        p
+          span = "#{t('works.estimated_end_date')}: "
+          span = @work.estimated_end_date
+        p
+          span = "#{t('works.budget')}: "
+          span = @work.budget
+        p
+          span = "#{t('works.manager')}: "
+          span = @work.manager
+        p
+          span = "#{t('works.execution_plan')}: "
+          span = @work.execution_plan
+
+    section
+      == cell('section/header', t('.files'))
+      == cell('mobile_elements/resources_card', t('documents.documents'), size: @work.documents.count, link: root_path)
+      == cell('mobile_elements/resources_card', t('meetings.meetings'), size: @work.meetings.count, link: root_path)
+

@@ -3,6 +3,8 @@
   > div {
     @include grid-collapse;
     @include grid-container;
+    height: 10px;
+    margin-bottom: $gutter/2;
     padding: $gutter 0;
     position: relative;
     > div {
@@ -24,7 +26,6 @@
         @include type-setting(-1);
         background: none;
         border: none;
-        margin-bottom: $gutter;
         padding: $vgutter $gutter;
         text-align: right;
       }
@@ -43,7 +44,9 @@
             > a {
               @include type-setting(0);
               @include text-color($grey);
+              display: block;
               font-weight: bold;
+              padding: 0 $gutter/2;
             }
           }
         }
@@ -52,6 +55,4 @@
   }
 }
 
-.filterable-cell{
-  @include filterable;
-}
+.filterable-cell {@include filterable;}

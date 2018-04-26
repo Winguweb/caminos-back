@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+  before_action :check_for_mobile, :only => [:show]
 
   def show
     @neighborhoods = Neighborhood.where(urbanization: true).order('LOWER(name)')

@@ -8,7 +8,10 @@
 
 // VIEWS & PARTIALS
 @import 'admin/partials/**/*';
+@import 'views/components/*';
 @import 'views/home/*';
 @import 'views/neighborhoods/*';
 @import 'views/works/*';
-@import 'views/components/*';
+@import 'views_mobile/home/*';
+@import 'views_mobile/neighborhoods/*';
+@import 'views_mobile/works/*';

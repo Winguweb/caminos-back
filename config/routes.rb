@@ -3,12 +3,15 @@ Rails.application.routes.draw do
 
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#show'
+
+    get '/mobile', action: :mobile, controller: :home
+
     resources :neighborhoods, only: [:show] do
       member do
         get :agreement
         get :about
         resources :works, only: [:show]
-        get '/(:filters)', action: :filtered, controller: :neighborhoods, as: :filtered_work
+        get '/:filters', action: :show, controller: :neighborhoods, as: :filtered_work
       end
     end
     get '/components', action: :index, controller: :components

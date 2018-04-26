@@ -1,5 +1,8 @@
 .map-show-cell
   #map-container
+  = yield if block_given?
+
+
 
 javascript:
   $(function() {

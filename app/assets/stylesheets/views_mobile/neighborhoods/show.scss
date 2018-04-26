@@ -1,0 +1,28 @@
+@mixin neighborhoods-mobile-show() {
+  > main {
+    height: calc(100% - #{$aside-height});
+    > div {
+      height: 100%;
+      > main {
+        height: 100%;
+        > section:first-of-type {
+          height: 100%;
+          .map-show-cell {
+            > div {
+              border-radius: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.nav-with-liks {
+    > main {
+      height: calc(100% - #{$aside-links-height});
+    }
+  }
+}
+
+#neighborhoods-show.neighborhoods-mobile {
+  @include neighborhoods-mobile-show();
+}

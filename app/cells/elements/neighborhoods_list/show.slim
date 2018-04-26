@@ -24,14 +24,14 @@
 
                 = neighborhood.name
               p#date
-                = "Actualizado en: #{neighborhood.updated_at}"
+                = "#{t('labels.updated_at')}: #{neighborhood.updated_at}"
 
           td
             a href="#"
               main
                 p
                   span
-                    = "Proceso de urbanización "
+                    = "#{t('neighborhoods.urbanization_process')} "
                   span#percent
                     = "#{percent}%"
                 div

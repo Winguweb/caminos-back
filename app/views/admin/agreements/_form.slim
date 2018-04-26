@@ -4,7 +4,7 @@
 = form_for @agreement, url: admin_neighborhood_agreement_path, html: { class: 'form' } do |f|
   .page-section
     section
-      == cell('section/header', t(".indicators"), links: [{ title: t(".cancel"), url: admin_neighborhood_agreement_path(current_neighborhood) }, { title: t(".save_changes"), submit: true } ])
+      == cell('section/header', t(".indicators"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_agreement_path(current_neighborhood) }, { title: t("actions.save"), submit: true } ])
       - @indicators.keys.each do |indicator|
         article
           header

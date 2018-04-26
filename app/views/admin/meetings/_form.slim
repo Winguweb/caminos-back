@@ -2,7 +2,7 @@
 = form_for ['admin', current_neighborhood, @meeting], html: { class: 'form' } do |f|
   .page-section
     section
-      == cell('section/header', t(".day_order"), links: [{ title: t(".cancel"), url: admin_neighborhood_works_path(current_neighborhood) }, { title: t(".save_changes"), submit: true }])
+      == cell('section/header', t(".day_order"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_works_path(current_neighborhood) }, { title: t("actions.save"), submit: true }])
       .field
         = f.text_area :objectives
       .half-input
@@ -14,7 +14,7 @@
           = f.label :lookup_address, t('.address')
           = f.text_field :lookup_address
     section
-      == cell('section/header',t(".documents"), buttons: [{ title: t('.load_document'), url: new_admin_neighborhood_path }])
+      == cell('section/header',t("documents.documents"), buttons: [{ title: t('.load_document'), url: new_admin_neighborhood_path }])
       .field.docs
         == cell('elements/document_form',"meeting")
     section

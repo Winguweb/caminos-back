@@ -23,6 +23,8 @@ CDLV.Components['map_show'] = Backbone.View.extend({
 
     this.createMap()
 
+    this.configureMapForMobile()
+
     this.showBaseGeometry()
 
     this.showFeaturesGeometry()
@@ -34,6 +36,9 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   centerMap: function(polygon) {
     var center = this.getCenter(polygon) || this.center
     this.map.setView([center.x, center.y], this.zoom)
+  },
+  configureMapForMobile: function() {
+    if ($('html').hasClass('touchevents')) {this.map.dragging.disable()}
   },
   createMap: function() {
     this.map = L.mapbox.map(this.mapContainer[0], this.style)

@@ -2,6 +2,10 @@ class Elements::MapShowCell < Cell::ViewModel
 
   private
 
+  def info_content
+    options[:info]
+  end
+
   def base
     return [] if model[:geometry].blank?
     {
