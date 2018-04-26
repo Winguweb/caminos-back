@@ -1,30 +1,30 @@
 @mixin inputs($color: $text-black, $bgcolor: $white, $bordercolor: rgba($grey, .8), $height: auto, $padding: $gutter/1.2 $gutter){
   select {
     @include box-sizing(border-box);
-    outline: none;
     -webkit-appearance: none;
-    line-height: 1.2142em;
     background: $bgcolor;
+    background-image: image-url("/assets/icons/down-arrow.svg");
+    background-position: center right;
+    background-repeat: no-repeat;
     border: none;
     border-bottom: 1px solid $light-grey;
-    color: $color;
     border-radius: 0;
     box-shadow: 0em 0em 0em 0em transparent inset;
+    color: $color;
+    cursor: pointer;
+    line-height: 1.2142em;
+    outline: none;
+    padding: $gutter/2 $gutter $gutter/2 $gutter/2;
     -webkit-transition: color 0.1s ease, border-color 0.1s ease;
     transition: color 0.1s ease, border-color 0.1s ease;
     vertical-align: top;
-    background-image: url(/assets/icons/down-arrow.svg);
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-position: center right;
-    padding: $gutter/2 $gutter $gutter/2 $gutter/2;
     &:focus{
       border-color: $blue;
     }
     &.disabled{
       background-color: lighten($light-grey, 5%);
-      opacity: 0.5;
       cursor: not-allowed;
+      opacity: 0.5;
     }
   }
   input {
@@ -40,45 +40,45 @@
     &[type="text"],
     &[type="url"] {
       @include box-sizing(border-box);
-      margin: 0em;
-      outline: none;
       -webkit-appearance: none;
-      line-height: 1.2142em;
-      padding: $padding;
-      font-size: 1em;
       background: $bgcolor;
       border: 1px solid $light-grey;
-      color: $color;
       border-radius: 0.28571429rem;
       box-shadow: 0em 0em 0em 0em transparent inset;
+      color: $color;
+      font-size: 1em;
+      height: $height;
+      line-height: 1.2142em;
+      margin: 0em;
+      outline: none;
+      padding: $padding;
       -webkit-transition: color 0.1s ease, border-color 0.1s ease;
       transition: color 0.1s ease, border-color 0.1s ease;
       vertical-align: top;
-      height: $height;
       width: 100%;
       &:focus{
         border-color: $blue;
       }
       &.disabled{
         background-color: lighten($light-grey, 5%);
-        opacity: 0.5;
         cursor: not-allowed;
+        opacity: 0.5;
       }
     }
   }
   textarea {
     @include box-sizing(border-box);
-    margin: 0em;
-    outline: none;
     -webkit-appearance: none;
-    line-height: 1.2142em;
-    padding: $padding;
-    font-size: 1em;
     background: $bgcolor;
     border: 1px solid $light-grey;
-    color: $color;
     border-radius: 0.28571429rem;
     box-shadow: 0em 0em 0em 0em transparent inset;
+    color: $color;
+    font-size: 1em;
+    line-height: 1.2142em;
+    margin: 0em;
+    outline: none;
+    padding: $padding;
     -webkit-transition: color 0.1s ease, border-color 0.1s ease;
     transition: color 0.1s ease, border-color 0.1s ease;
     vertical-align: top;
@@ -88,8 +88,8 @@
     }
     &.disabled{
       background-color: lighten($light-grey, 5%);
-      opacity: 0.5;
       cursor: not-allowed;
+      opacity: 0.5;
     }
   }
 }
@@ -113,18 +113,18 @@
     $selector: '> ';
   }
   #{$selector}label {
-    display: block;
-    @include type-setting(-1);
     color: $grey;
+    display: block;
     margin-bottom: $gutter/7;
     text-transform: none;
+    @include type-setting(-1);
     &.required {
       &:after {
-        display: inline-block;
-        vertical-align: top;
         color: #DB2828;
         content: "*";
+        display: inline-block;
         margin: -$gutter/8 0 0 $gutter/8;
+        vertical-align: top;
       }
     }
   }
@@ -152,9 +152,9 @@
   @include fields;
   @include inputs;
   .actions{
+    border-top: 1px solid $light-grey;
     margin-top: $gutter*2;
     padding-top: $gutter*2;
-    border-top: 1px solid $light-grey;
     button, input[type="submit"], input[type="button"]{
       @include button();
     }
@@ -164,22 +164,22 @@
   @include form;
 
   .selectize-input {
-    margin: 0em;
-    outline: none;
     -webkit-appearance: none;
-    line-height: 1.2142em;
-    padding: 0.67861429em 1em;
-    font-size: 1em;
     border-radius: 0.28571429rem;
     box-shadow: 0em 0em 0em 0em transparent inset;
+    font-size: 1em;
+    line-height: 1.2142em;
+    margin: 0em;
+    outline: none;
+    padding: 0.67861429em 1em;
     -webkit-transition: color 0.1s ease, border-color 0.1s ease;
     transition: color 0.1s ease, border-color 0.1s ease;
     vertical-align: top;
     width: 100%;
     &.disabled{
       background-color: lighten($light-grey, 5%);
-      opacity: 0.5;
       cursor: not-allowed;
+      opacity: 0.5;
     }
   }
 }

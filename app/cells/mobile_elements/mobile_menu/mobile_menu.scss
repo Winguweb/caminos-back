@@ -22,7 +22,7 @@
       top: 0;
       z-index: 2001;
       span {
-        background-image: url(/assets/icons/menu.svg);
+        background-image: image-url("/assets/icons/menu.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -36,7 +36,7 @@
     > button:nth-of-type(2) {
       display: none;
       span {
-        background-image: url(/assets/icons/close.svg);
+        background-image: image-url("/assets/icons/close.svg");
         height: 20px;
         width: 20px;
       }
@@ -100,7 +100,7 @@
   height: $aside-full-height;
   padding: $gutter*2;
   > div:first-of-type {
-    background-image: url(/assets/logo-v1.svg);
+    background-image: image-url("/assets/logo-v1.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -110,7 +110,7 @@
   > div:first-of-type {
     > button:first-of-type {
       span {
-        background-image: url(/assets/icons/menu-white.svg);
+        background-image: image-url("/assets/icons/menu-white.svg");
       }
     }
   }

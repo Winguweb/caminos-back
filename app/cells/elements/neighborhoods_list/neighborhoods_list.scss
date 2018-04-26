@@ -9,21 +9,19 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             background-color: white;
+            background-image: image-url("/assets/icons/down-arrow.svg");
+            background-position: center right;
+            background-repeat: no-repeat;
             border-color: white;
-            background-image: url(/assets/icons/down-arrow.svg);
             cursor: pointer;
             font-weight: bold;
-            background-repeat: no-repeat;
-            background-position: center right;
             padding-right: 25px;
           }
-
           &:nth-of-type(1) {
             @include grid-column(6);
           }
           &:nth-of-type(2) {
             @include grid-column(10);
-
           }
         }
       }
@@ -68,16 +66,16 @@
                 @include text-color($text-grey,1);
               }
               > div {
-                height: 7px;
-                width: 100%;
-                position: relative;
                 border-radius: 3px;
+                height: 7px;
                 overflow: hidden;
+                position: relative;
+                width: 100%;
                 > div {
+                  height: 7px;
+                  left: 0;
                   position: absolute;
                   top: 0;
-                  left: 0;
-                  height: 7px;
                   width: 100%;
                 }
                 > div:nth-of-type(1) {
