@@ -5,7 +5,8 @@ section
         section
           nav
             -if !@neighborhood.works.empty?
-              == cell('elements/works_list', @neighborhood.works)
+              == cell('elements/filterable', 'elements/works_list' , data: @neighborhood.works, filters: @filters)
+
             -else
               div
                 = t('.no_works')

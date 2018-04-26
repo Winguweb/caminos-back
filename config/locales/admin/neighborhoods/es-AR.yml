@@ -15,7 +15,7 @@ es-AR:
         name: Nombre del Barrio
         new_neighborhood: Nuevo Barrio
         save_changes: Crear Barrio
-        urbanization_process: Tiene proceso de urbanicación
+        urbanization_process: Tiene proceso de urbanización
       show:
         about_neighborhood: Sobre el barrio %{neighborhood}
         activity: Actividad reciente
@@ -35,7 +35,7 @@ es-AR:
         pictures: Fotos
         upload_document: Cargar Documento
         urbanization: Proceso de urbanización
-        urbanization_process: Tiene proceso de urbanicación
+        urbanization_process: Tiene proceso de urbanización
         works: Obras
       edit:
         cancel: Cancelar
@@ -45,4 +45,4 @@ es-AR:
         name: Nombre del Barrio
         save_changes: Guardar Cambios
         update_neighborhood: Actualizar
-        urbanization_process: Tiene proceso de urbanicación
+        urbanization_process: Tiene proceso de urbanización

@@ -11,8 +11,8 @@
           = f.text_area :description
         .no-grid
           .field
-            = f.label :name, t('.category')
-            = f.select :status, @categories.collect {|c| [c, c]}, include_blank: true
+            = f.label :category_list, t('.category')
+            = f.select :category_list, @categories.collect {|c| [t(".#{c}"), c]}, include_blank: true
           .field
             = f.label :name, t('.status')
             = f.select :status, @status.collect {|c| [c, c]}, include_blank: true

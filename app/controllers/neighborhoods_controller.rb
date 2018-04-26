@@ -19,6 +19,12 @@ class NeighborhoodsController < ApplicationController
     end
   end
 
+  def filtered
+    load_neighborhood
+    @filters = params[:filters].blank? ? nil : params[:filters].split(',')
+    render :show
+  end
+
   private
 
   def load_neighborhood

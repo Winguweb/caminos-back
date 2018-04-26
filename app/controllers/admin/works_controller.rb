@@ -48,7 +48,6 @@ module Admin
       ensure_neighborhood; return if performed?
 
       load_work
-
       service = UpdateWork.call(@work, work_params)
 
       if service.success?
@@ -79,6 +78,7 @@ module Admin
         :name,
         :status,
         :start_date,
+        :category_list,
         photos: [],
         documents: [[:link,:name,:description]]
       )

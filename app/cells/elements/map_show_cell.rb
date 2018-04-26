@@ -23,7 +23,7 @@ class Elements::MapShowCell < Cell::ViewModel
       when RGeo::Feature::Polygon
         {
           coordinates: feature[:geometry].coordinates.first.map(&:reverse),
-          className: feature.category,
+          className: feature.category.name,
           type: 'polygon',
         }
       when RGeo::Feature::LineString

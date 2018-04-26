@@ -17,9 +17,9 @@ section
                     div
                       h3=neighborhood.name
                       span="Proceso de urbanización"
-                      span="#{Random.rand(100)}%"
+                      span="#{to_fixed_percentage(neighborhood.urbanization_score)}%"
                       div
-                        div style="width:#{Random.rand(100)}%;"
+                        div style="width:#{to_fixed_percentage(neighborhood.urbanization_score)}%"
         section
           header
             h2="Otros barrios"

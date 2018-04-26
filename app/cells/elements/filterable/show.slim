@@ -1,0 +1,25 @@
+.filterable-cell
+  div
+    div.filter-list
+      button.filter-button
+        = t(".filters")
+      div
+        h2 = t(".categories")
+        ul
+          - categories.each do |filter|
+            li
+              =link_to t(".#{filter}"), filtered_work_neighborhood_path(filters: filters(filter))
+      div
+        h2 = t(".status")
+        ul
+          - status.each do |filter|
+            li
+              =link_to t(".#{filter}"), filtered_work_neighborhood_path(filters: filters(filter))
+  = "#{child}"
+
+javascript:
+  $(function() {
+    new CDLV.Components['elements/filterable']({
+      el: $('.filterable-cell')
+    })
+  });

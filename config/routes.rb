@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         get :agreement
         get :about
         resources :works, only: [:show]
+        get '/(:filters)', action: :filtered, controller: :neighborhoods, as: :filtered_work
       end
     end
     get '/components', action: :index, controller: :components

@@ -14,7 +14,7 @@
         span
           = "Proceso de urbanización "
         span
-          = "#{Random.rand(100)}%"
+          = "#{to_fixed_percentage(neighborhood.urbanization_score)}%"
       div
         div
-        div style="width:#{Random.rand(100)}%;"
+        div style="width:#{to_fixed_percentage(neighborhood.urbanization_score)}%;"

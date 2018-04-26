@@ -54,6 +54,7 @@ module CaminosBack
       elements/description_cell
       elements/document_form_cell
       elements/documents_table_cell
+      elements/filterable_cell
       elements/map_edit_cell
       elements/map_references_cell
       elements/map_show_cell
