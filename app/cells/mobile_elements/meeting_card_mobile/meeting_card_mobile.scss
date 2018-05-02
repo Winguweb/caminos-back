@@ -1,0 +1,28 @@
+@mixin meeting-card-mobile() {
+  margin-bottom: $vgutter*2;
+  > a > article {
+    border: 2px solid $light-grey;
+    border-radius: 6px;
+    padding: $vgutter*2 $gutter;
+    > header {
+      > h1 {
+        margin: 0;
+        @include text-color($text-black, 1);
+        time {
+          display: block;
+          text-align: center;
+          &:first-of-type {
+            @include type-setting(2);
+            font-weight: bold;
+          }
+          &:nth-of-type(2) {
+            @include type-setting(0);
+          }
+        }
+      }
+    }
+  }
+}
+.meeting-card-mobile-cell{
+  @include meeting-card-mobile;
+}

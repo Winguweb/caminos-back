@@ -10,6 +10,8 @@ es-AR:
           attributes:
             neighborhood:
               required: Este campo es requerido
+  common:
+    files: Archivos
   categories:
     all_categories: Todas
     energy: "Luz / Electricidad"
@@ -22,7 +24,10 @@ es-AR:
   date:
     formats:
       period: "%B"
+      year_and_month: "%Y · %B"
       day_and_day_of_week: "%A %d"
+      day_of_week: "%A"
+      day: "%d"
       slashes: "%d/%m/%y"
   documents:
     documents: Documentos

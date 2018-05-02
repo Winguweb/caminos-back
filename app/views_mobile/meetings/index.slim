@@ -1,0 +1,6 @@
+- @back_menu = t("meetings.meetings")
+main
+  section
+    - @meetings_years.keys.each do |year|
+      == cell('section/header', year)
+      == cell('mobile_elements/meetings_list_mobile', @meetings_years[year], neighborhood: @neighborhood)

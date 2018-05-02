@@ -1,0 +1,7 @@
+nav class="mobile-menu-cell back-menu"
+  div
+    button type="button"
+      = link_to request.referer.present? ? request.referer : root_path do
+        span
+    span
+      = "#{back_menu}"

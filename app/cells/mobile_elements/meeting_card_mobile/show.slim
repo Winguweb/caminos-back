@@ -1,0 +1,7 @@
+.meeting-card-mobile-cell
+  a href=neighborhood_meeting_path(meeting.neighborhood, meeting)
+    article
+      header
+        h1
+          time = l(meeting.date, format: :day).titleize
+          time = l(meeting.date, format: :day_of_week).titleize

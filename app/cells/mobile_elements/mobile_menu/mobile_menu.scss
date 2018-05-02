@@ -95,6 +95,27 @@
   }
 }
 
+@mixin mobile-back-menu() {
+  margin-bottom: $gutter*2;
+  overflow: hidden;
+  > div:first-of-type {
+    text-align: left;
+    > button {
+      position: static;
+      span {
+        background-image: image-url("icons/back.svg");
+        height: 15px;
+        vertical-align: middle;
+        width: 16px;
+      }
+    }
+    > span {
+      display: inline-block;
+      padding: $gutter $gutter $gutter 0;
+    }
+  }
+}
+
 @mixin mobile-menu-big() {
   @include background-color($blue);
   height: $aside-full-height;
@@ -118,6 +139,10 @@
 
 .mobile-menu-cell {
   @include mobile-menu();
+}
+
+.mobile-menu-cell.back-menu {
+  @include mobile-back-menu();
 }
 
 #home-show .mobile-menu-cell {

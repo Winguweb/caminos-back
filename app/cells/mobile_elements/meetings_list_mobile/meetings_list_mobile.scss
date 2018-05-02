@@ -1,21 +1,25 @@
-@mixin meetings-list() {
+@mixin meetings-list-mobile() {
   @include grid-container;
-  border-bottom: 1px solid $light-grey;
   margin-bottom: $gutter*2;
   padding-bottom: $vgutter*2;
 
   > div {
     @include grid-collapse;
+    @include grid-container;
+    margin-bottom: $gutter;
     > h2 {
       @include grid-column(16);
-      @include type-setting(1);
+      @include type-setting(0);
+      @include text-color($text-grey, 1);
       margin-bottom: $vgutter;
+      text-transform: uppercase;
+
     }
     > div {
       @include grid-column(1 of 3);
     }
   }
 }
-.meetings-list-cell {
-  @include meetings-list;
+.meetings-list-mobile-cell {
+  @include meetings-list-mobile;
 }

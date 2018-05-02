@@ -1,0 +1,33 @@
+- @back_menu = t("meetings.meetings")
+main
+  section
+    span
+      time = l(@meeting.date, format: :year_and_month).titleize
+    span
+      time = l(@meeting.date, format: :day_and_day_of_week).titleize
+    span = @meeting.lookup_address
+  section
+    p = @meeting.objectives
+  section
+    p
+      strong = "Actor convocante: "
+      span = "Municipio"
+    p
+      strong = "Participantes: "
+      span = "Junta vecinal, ACIJ"
+  section
+    == cell('section/header', t('common.files'))
+    == cell('mobile_elements/resources_card', t('documents.documents'), size: @meeting.documents.count, link: root_path)
+    == cell('mobile_elements/resources_card', t('works.works'), size: @meeting.works.count, link: root_path)
+  section
+    ul
+      li
+        - if @meeting.prev
+          = link_to neighborhood_meeting_path(@meeting.neighborhood, @meeting.prev) do
+            span
+            span = l(@meeting.prev.date, format: :day_and_day_of_week).titleize
+      li
+        - if @meeting.next
+          = link_to neighborhood_meeting_path(@meeting.neighborhood, @meeting.next) do
+            span = l(@meeting.next.date, format: :day_and_day_of_week).titleize
+            span
