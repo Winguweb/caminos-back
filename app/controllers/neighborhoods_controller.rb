@@ -8,6 +8,7 @@ class NeighborhoodsController < ApplicationController
 
   def about
     load_neighborhood
+    load_meetings
   end
 
   def agreement

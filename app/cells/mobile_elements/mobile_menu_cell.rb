@@ -19,6 +19,10 @@ class MobileElements::MobileMenuCell < Cell::ViewModel
     options[:back_menu]
   end
 
+  def back_url
+    options[:back_url] || '/'
+  end
+
   def section
     params[:action]
   end
