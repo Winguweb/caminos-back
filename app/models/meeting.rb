@@ -6,6 +6,8 @@ class Meeting < ApplicationRecord
   validates_presence_of :date,
     :objectives
 
+  default_scope { order(date: :asc) }
+
   def next
     Meeting.where(neighborhood_id: neighborhood_id).where("date > ?", date).order(date: 'asc').first
   end

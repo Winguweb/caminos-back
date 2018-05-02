@@ -15,6 +15,9 @@ Rails.application.routes.draw do
         get '/:filters', action: :show, controller: :neighborhoods, as: :filtered_work
       end
     end
+    resources :works, only: [] do
+      resources :meetings, only: [:index, :show]
+    end
     get '/components', action: :index, controller: :components
     get '/admin', to: redirect('/admin/dashboard')
   # ╰─  End of Public Accesible URL's / Path's

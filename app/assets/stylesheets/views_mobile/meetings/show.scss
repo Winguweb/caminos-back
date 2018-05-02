@@ -44,63 +44,7 @@
               }
             }
           }
-          &:last-of-type {
-            border-bottom: 0;
-            padding-bottom: 0;
-            > ul {
-              > li {
-                > a {
-                  > span {
-                    font-weight: bold;
-                  }
-                }
-                &:nth-of-type(1) {
-                  float: left;
-                  text-align: left;
-                  > a {
-                    > span {
-                      display: inline-block;
-                      line-height: 15px;
-                      vertical-align: top;
-                      &:first-of-type {
-                        background-image: image-url("icons/left-arrow.svg");
-                        background-position: left top;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        display: block;
-                        float: left;
-                        height: 16px;
-                        margin-right: $gutter/2;
-                        width: 10px;
-                      }
-                    }
-                  }
-                }
-                &:nth-of-type(2) {
-                  float: right;
-                  text-align: right;
-                  > a {
-                    > span {
-                      display: inline-block;
-                      line-height: 15px;
-                      vertical-align: top;
-                      &:last-of-type {
-                        background-image: image-url("icons/right-arrow.svg");
-                        background-position: left top;
-                        background-repeat: no-repeat;
-                        background-size: contain;
-                        display: block;
-                        float: right;
-                        height: 16px;
-                        margin-left: $gutter/2;
-                        width: 10px;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+          &:last-of-type {}
         }
       }
     }

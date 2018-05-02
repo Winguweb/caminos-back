@@ -21,14 +21,5 @@ main
     == cell('mobile_elements/resources_card', t('documents.documents'), size: @meeting.documents.count, link: root_path)
     == cell('mobile_elements/resources_card', t('works.works'), size: @meeting.works.count, link: root_path)
   section
-    ul
-      li
-        - if @meeting.prev
-          = link_to neighborhood_meeting_path(@meeting.neighborhood, @meeting.prev) do
-            span
-            span = l(@meeting.prev.date, format: :day_and_day_of_week).titleize
-      li
-        - if @meeting.next
-          = link_to neighborhood_meeting_path(@meeting.neighborhood, @meeting.next) do
-            span = l(@meeting.next.date, format: :day_and_day_of_week).titleize
-            span
+
+    == cell('mobile_elements/meetings_navigation_mobile', @meeting, current_meetable: @current_meetable)
