@@ -1,12 +1,13 @@
-div.meetings-navigation-mobile-cell
-  ul
-    li
-      - if get_previous(current_meetable)
-        = link_to get_previous(current_meetable)[:url]
-          span
-          span = l(get_previous(current_meetable)[:date], format: :day_and_day_of_week).titleize
-    li
-      - if get_next(current_meetable)
-        = link_to get_next(current_meetable)[:url] do
-          span = l(get_next(current_meetable)[:date], format: :day_and_day_of_week).titleize
-          span
+- unless !get_previous(current_meetable) and !get_next(current_meetable)
+  div.meetings-navigation-mobile-cell
+    ul
+      li
+        - if get_previous(current_meetable)
+          = link_to get_previous(current_meetable)[:url]
+            span
+            span = l(get_previous(current_meetable)[:date], format: :day_and_day_of_week).titleize
+      li
+        - if get_next(current_meetable)
+          = link_to get_next(current_meetable)[:url] do
+            span = l(get_next(current_meetable)[:date], format: :day_and_day_of_week).titleize
+            span

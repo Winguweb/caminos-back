@@ -1,6 +1,6 @@
 - @back_menu = t("meetings.meetings")
 main
-  section
+  section.section-with-gutter
     span
       time = l(@meeting.date, format: :year_and_month).titleize
     span
@@ -18,7 +18,7 @@ main
   section
     == cell('section/header', t('common.files'))
     == cell('mobile_elements/resources_card', t('documents.documents'), size: @meeting.documents.count, link: root_path)
-    == cell('mobile_elements/resources_card', t('works.works'), size: @meeting.works.count, link: root_path)
+    == cell('mobile_elements/resources_card', t('works.works'), size: @meeting.works.count, link: meeting_works_path(@meeting))
   section
 
     == cell('mobile_elements/meetings_navigation_mobile', @meeting, current_meetable: current_meetable)

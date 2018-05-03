@@ -1,6 +1,6 @@
 - @back_menu = t("works.works")
 main
-  section
+  section.section-with-gutter
     - @meetings_years.keys.each do |year|
       == cell('section/header', year)
       == cell('mobile_elements/meetings_list_mobile', @meetings_years[year], current_meetable: current_meetable)
