@@ -20,7 +20,7 @@ class MobileElements::MobileMenuCell < Cell::ViewModel
   end
 
   def back_url
-    options[:back_url] || '/'
+    options[:back_url] || 'javascript:history.back()'
   end
 
   def section

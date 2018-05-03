@@ -8,4 +8,8 @@ class MobileElements::MeetingsListMobileCell < Cell::ViewModel
     @meetings ||= model
   end
 
+  def current_meetable
+    options[:current_meetable]
+  end
+
 end

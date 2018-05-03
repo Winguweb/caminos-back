@@ -40,6 +40,7 @@ es-AR:
   meetings:
     meetings: Reuniones
   neighborhoods:
+    neighborhoods: Barrios
     description: Sobre el Barrio
     information: Información
     lookup_address: Ubicación del Barrio

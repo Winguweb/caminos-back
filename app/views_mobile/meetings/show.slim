@@ -1,5 +1,4 @@
 - @back_menu = t("meetings.meetings")
-- @back_url = neighborhood_path(@meeting.neighborhood) + '/about'
 main
   section
     span
@@ -22,4 +21,4 @@ main
     == cell('mobile_elements/resources_card', t('works.works'), size: @meeting.works.count, link: root_path)
   section
 
-    == cell('mobile_elements/meetings_navigation_mobile', @meeting, current_meetable: @current_meetable)
+    == cell('mobile_elements/meetings_navigation_mobile', @meeting, current_meetable: current_meetable)

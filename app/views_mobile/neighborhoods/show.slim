@@ -1,4 +1,6 @@
 - @with_links = true
+- @back_menu = t("neighborhoods.neighborhoods")
+- @back_url = "/"
 main
   section
     == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
