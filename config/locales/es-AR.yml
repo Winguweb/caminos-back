@@ -66,6 +66,11 @@ es-AR:
     proyected: Proyectada
   time:
     formats:
+      period: "%B"
+      year_and_month: "%Y · %B"
+      day_and_day_of_week: "%A %d"
+      day_of_week: "%A"
+      day: "%d"
       slashes: "%d/%m/%y"
   user:
     roles:

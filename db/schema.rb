@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180425193909) do
+ActiveRecord::Schema.define(version: 20180503200122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20180425193909) do
 
   create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
-    t.date "date"
+    t.datetime "date"
     t.string "lookup_address"
     t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.text "objectives"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20180425193909) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: :bigint, default: -> { "nextval('taggings_id_seq1'::regclass)" }, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.uuid "taggable_id"
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20180425193909) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", id: :bigint, default: -> { "nextval('tags_id_seq1'::regclass)" }, force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
