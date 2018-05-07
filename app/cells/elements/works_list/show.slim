@@ -3,7 +3,7 @@
     p = t(".no_results")
   ul
     - works.each do |work|
-      li = link_to work_path(work) do
+      li = link_to neighborhood_work_path(work.neighborhood, work) do
           div
             =image_tag work.category_icon
           div

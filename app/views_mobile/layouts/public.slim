@@ -31,7 +31,7 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
 
     body id=body_id class="#{body_class}-mobile mobile-layout #{'nav-with-liks' if @with_links}"
       .main-header
-        == cell('mobile_elements/mobile_menu', @neighborhood, with_links: @with_links)
+        == cell('mobile_elements/mobile_menu', @neighborhood, with_links: @with_links, back_menu: @back_menu, back_url: @back_url)
       main
         .main-section
           =yield

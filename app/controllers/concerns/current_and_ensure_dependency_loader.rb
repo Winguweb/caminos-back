@@ -5,6 +5,7 @@ module CurrentAndEnsureDependencyLoader
   MODELS_TO_LOAD = %w(
     neighborhood
     work
+    meeting
   ).freeze
   private_constant :MODELS_TO_LOAD
 

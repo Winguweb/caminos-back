@@ -1,0 +1,20 @@
+nav class="mobile-menu-cell back-menu #{with_links}"
+  div
+    button type="button"
+      = link_to back_url do
+        span
+    span
+      = "#{back_menu}"
+  - unless !with_links || neighborhood.blank?
+    div
+      ul
+        - if neighborhood.urbanization
+          li
+            = link_to "/neighborhoods/#{neighborhood.id}/", class: section=='show' ? 'active' : nil do
+              span= t('.works')
+        li
+          = link_to "/neighborhoods/#{neighborhood.id}/agreement", class: section=='agreement' ? 'active' : nil do
+            span= t('.agreement')
+        li
+          = link_to "/neighborhoods/#{neighborhood.id}/about", class: section=='about' ? 'active' : nil do
+            span= t('.about')
