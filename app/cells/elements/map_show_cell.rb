@@ -33,7 +33,13 @@ class Elements::MapShowCell < Cell::ViewModel
       when RGeo::Feature::LineString
         {
           coordinates: feature[:geometry].coordinates.map(&:reverse),
-          className: feature.category,
+          className: feature.category.name,
+          type: 'polyline',
+        }
+      when RGeo::Feature::MultiLineString
+        {
+          coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
+          className: feature.category.name,
           type: 'polyline',
         }
       end

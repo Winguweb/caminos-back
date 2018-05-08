@@ -33,9 +33,9 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
 
     this.createMap()
 
-    this.addControls()
-
     this.setInputs()
+
+    this.addControls()
 
     this.bindDrawEvents()
 
@@ -46,30 +46,44 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
     this.centerMap(this.getFocusedGeometry())
 
     this.zoomMap(this.getFocusedGeometry())
+
+    this.orderGeometry()
   },
   addControls: function() {
+    this.map.addControl(this.hasEditableGeometry() ? this.generateEditControls() : this.generateCreateControls());
+  },
+  generateCreateControls: function() {
     var createControls = {
       position: 'topright',
       draw: {
-        circle: this.controls.circle ? this.geometryStyles.circle : false,
-        circlemarker: this.controls.circlemarker ? this.geometryStyles.circlemarker : false,
-        marker: this.controls.marker ? this.geometryStyles.marker : false,
-        polygon: this.controls.polygon ? this.geometryStyles.polygon : false,
-        polyline: this.controls.polyline ? this.geometryStyles.polyline : false,
-        rectangle: this.controls.rectangle ? this.geometryStyles.rectangle : false,
+        circle: false,
+        circlemarker: false,
+        marker: this.featureType ? this.featureType == 'marker' : this.geometryStyles.marker,
+        polygon: this.featureType ? this.featureType == 'polygon' : this.geometryStyles.polygon,
+        polyline: this.featureType ? this.featureType == 'polyline' : this.geometryStyles.polyline,
+        rectangle: false,
       },
     }
     createControls.draw.marker.icon = L.icon(_.extend(createControls.draw.marker.icon, {
       iconUrl: this.markerEditableURL,
       shadowUrl: this.markerShadowURL,
     }))
-    this.createControls = new L.Control.Draw(createControls)
-    var editControls = _.extend({}, createControls, {
-      draw: false,
+    return this.createControls = new L.Control.Draw(createControls)
+  },
+  generateEditControls: function() {
+    var editControls = {
+      position: 'topright',
+      draw: {
+        circle: false,
+        circlemarker: false,
+        marker: this.featureType ? this.featureType == 'marker' : this.geometryStyles.marker,
+        polygon: this.featureType ? this.featureType == 'polygon' : this.geometryStyles.polygon,
+        polyline: this.featureType ? this.featureType == 'polyline' : this.geometryStyles.polyline,
+        rectangle: false,
+      },
       edit: { featureGroup: this.editableGeometryFeature },
-    })
-    this.editControls = new L.Control.Draw(editControls)
-    this.map.addControl(this.hasEditableGeometry() ? this.editControls : this.createControls);
+    }
+    return this.editControls = new L.Control.Draw(editControls)
   },
   bindDrawEvents: function() {
     this.map.on('draw:created', function (e) {
@@ -81,24 +95,31 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
           this.persistPolygon(e.layer)
           break
         case 'polyline':
-          this.persistPolyline(e.layer)
+          var layers = [].concat(e.layer, this.editableGeometryFeature.getLayers())
+          this.persistPolyline(layers)
           break
       }
-      this.map.removeControl(this.createControls)
-      this.map.addControl(this.editControls);
+      this.createControls && this.map.removeControl(this.createControls)
+      this.editControls && this.map.removeControl(this.editControls);
+      this.map.addControl(this.generateEditControls());
     }.bind(this))
     this.map.on('draw:edited', function (e) {
       e.layers.eachLayer(function (layer) {
         if (layer instanceof L.Marker) this.updateMarkerInput(layer)
         if (layer instanceof L.Polygon) this.persistPolygon(layer)
-        if (layer instanceof L.Polyline) this.persistPolyline(layer)
+        if (layer instanceof L.Polyline) {
+          var layers = [].concat(layer, this.editableGeometryFeature.getLayers())
+          this.persistPolyline(layers)
+        }
       }.bind(this));
-      this.map.removeControl(this.createControls)
-      this.map.addControl(this.editControls);
     }.bind(this))
     this.map.on("draw:deleted", function(e) {
-      this.map.removeControl(this.editControls)
-      this.map.addControl(this.createControls);
+      if (lastGeometry(this.editableGeometryFeature)) {
+        this.featureType = null
+        this.editControls && this.map.removeControl(this.editControls)
+        this.map.addControl(this.generateCreateControls());
+      }
+      function lastGeometry(geom) {return geom.getLayers().length == 0}
     }.bind(this));
   },
   centerMap: function(polygon) {
@@ -143,6 +164,9 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   getFocusedGeometry: function() {
     return this.hasBaseGeometry() ? this.base : this.editable
   },
+  orderGeometry: function() {
+    this.baseGeometryFeature.bringToBack()
+  },
   persistMarker: function(layer) {
     layer.addTo(this.editableGeometryFeature);
     this.updateMarkerInput(layer)
@@ -152,7 +176,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
     this.updatePolygonInput(layer)
   },
   persistPolyline: function(layer) {
-    layer.addTo(this.editableGeometryFeature);
+    layer[0].addTo(this.editableGeometryFeature);
     this.updatePolylineInput(layer)
   },
   setAccessToken: function(token) {
@@ -175,15 +199,24 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
           var geometry = wellknown.stringify(polygon)
           break
         case 'polyline':
-          var coordinates = this.editable.coordinates.map(function(latlng) {
-            return new L.latLng(latlng[0], latlng[1])
-          })
-          var polyline = (new L.Polyline(coordinates)).toGeoJSON()
+          if (this.editable.coordinates[0][0] instanceof Array) {
+            var polylines = this.editable.coordinates.map(function(polyline) {
+              return polyline.map(function(latlng) {
+                return new L.latLng(latlng[0], latlng[1])
+              })
+            })
+          } else {
+            var polylines = this.editable.coordinates.map(function(latlng) {
+              return new L.latLng(latlng[0], latlng[1])
+            })
+          }
+          var polyline = (new L.Polyline(polylines)).toGeoJSON()
           var geometry = wellknown.stringify(polyline)
           break
       }
       this.inputGeometry.val(geometry)
       this.inputGeo_geometry.val(geometry)
+      this.featureType = this.editable.type
     }
   },
   setMapContainer: function(selector) {
@@ -222,35 +255,48 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   },
   showPolygon: function(polygon, options) {
     var parent = options && options.fixed ? this.baseGeometryFeature : this.editableGeometryFeature
-    new L.Polygon(polygon.coordinates,
+    var layer = new L.Polygon(polygon.coordinates,
       {
         className: "geometry-polygon " + polygon.className,
       }).addTo(parent)
   },
   showPolyline: function(polyline, options) {
     var parent = options && options.fixed ? this.baseGeometryFeature : this.editableGeometryFeature
-    new L.Polyline(polyline.coordinates,
-      {
-        className: "geometry-polyline " + polyline.className,
-      }).addTo(parent)
+    var polylines =  polyline.coordinates[0][0] instanceof Array ? polyline.coordinates : [polyline.coordinates]
+    polylines.forEach(function(_polyline) {
+      new L.Polyline(_polyline,
+        {
+          className: "geometry-polyline " + polyline.className,
+        }).addTo(parent)
+    })
   },
   updateMarkerInput: function(layer) {
     var coordinates = new L.Point(layer._latlng.lat,layer._latlng.lng)
     var geometry = coordinates.toString().toUpperCase().replace(',', '')
     this.inputGeometry.val(geometry)
     this.inputGeo_geometry.val(geometry)
+    this.featureType = 'marker'
   },
   updatePolygonInput: function(layer) {
     var new_polygon_geojson = (new L.Polygon(layer.getLatLngs())).toGeoJSON()
     var polygon = wellknown.stringify(new_polygon_geojson)
     this.inputGeometry.val(polygon)
     this.inputGeo_geometry.val(polygon)
+    this.featureType = 'polygon'
   },
   updatePolylineInput: function(layer) {
-    var new_polyline_geojson = (new L.Polyline(layer.getLatLngs())).toGeoJSON()
+    if (layer.length > 1) {
+      var polylines = layer.map(function(layer) { return layer.getLatLngs() })
+      var new_polyline_geojson = (new L.Polyline(polylines)).toGeoJSON()
+    } else {
+      var new_polyline_geojson = (new L.Polyline(layer[0].getLatLngs())).toGeoJSON()
+    }
+
     var polyline = wellknown.stringify(new_polyline_geojson)
+
     this.inputGeometry.val(polyline)
     this.inputGeo_geometry.val(polyline)
+    this.featureType = 'polyline'
   },
   zoomMap: function(polygon) {
     if (_.isEmpty(polygon)) return
