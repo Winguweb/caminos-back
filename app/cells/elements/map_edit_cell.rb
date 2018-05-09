@@ -19,9 +19,21 @@ class Elements::MapEditCell < Cell::ViewModel
         icon: image_path(options[:editable].category_icon),
         type: 'marker',
       }.to_json
+    when RGeo::Feature::MultiPoint
+      {
+        coordinates: options[:editable].geometry.coordinates.map(&:reverse),
+        icon: image_path(options[:editable].category_icon),
+        type: 'marker',
+      }.to_json
     when RGeo::Feature::Polygon
       {
         coordinates: options[:editable].geometry.coordinates.first.map(&:reverse),
+        className: 'editable',
+        type: 'polygon',
+      }.to_json
+    when RGeo::Feature::MultiPolygon
+      {
+        coordinates: options[:editable].geometry.coordinates.map {|polygons| polygons.first.map(&:reverse)},
         className: 'editable',
         type: 'polygon',
       }.to_json
