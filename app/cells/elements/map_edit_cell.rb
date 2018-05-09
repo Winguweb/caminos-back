@@ -16,38 +16,38 @@ class Elements::MapEditCell < Cell::ViewModel
     when RGeo::Feature::Point
       {
         coordinates: [options[:editable].geometry.coordinates],
-        icon: image_path(options[:editable].category_icon),
-        type: 'marker',
+        className: 'editable',
+        type: 'Point',
       }.to_json
     when RGeo::Feature::MultiPoint
       {
         coordinates: options[:editable].geometry.coordinates.map(&:reverse),
-        icon: image_path(options[:editable].category_icon),
-        type: 'marker',
+        className: 'editable',
+        type: 'Point',
       }.to_json
     when RGeo::Feature::Polygon
       {
         coordinates: options[:editable].geometry.coordinates.first.map(&:reverse),
         className: 'editable',
-        type: 'polygon',
+        type: 'Polygon',
       }.to_json
     when RGeo::Feature::MultiPolygon
       {
         coordinates: options[:editable].geometry.coordinates.map {|polygons| polygons.first.map(&:reverse)},
         className: 'editable',
-        type: 'polygon',
+        type: 'Polygon',
       }.to_json
     when RGeo::Feature::LineString
       {
         coordinates: options[:editable].geometry.coordinates.map(&:reverse),
         className: 'editable',
-        type: 'polyline',
+        type: 'Polyline',
       }.to_json
     when RGeo::Feature::MultiLineString
       {
         coordinates: options[:editable].geometry.coordinates.map { |lines| lines.map(&:reverse) },
         className: 'editable',
-        type: 'polyline',
+        type: 'Polyline',
       }.to_json
     end
   end
