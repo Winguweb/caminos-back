@@ -24,16 +24,34 @@ class Elements::MapShowCell < Cell::ViewModel
           icon: image_path(feature.category_icon),
           type: 'marker',
         }
+      when RGeo::Feature::MultiPoint
+      {
+        coordinates: feature[:geometry].coordinates.map(&:reverse),
+        icon: image_path(feature.category_icon),
+        type: 'marker',
+      }
       when RGeo::Feature::Polygon
         {
           coordinates: feature[:geometry].coordinates.first.map(&:reverse),
           className: feature.category.name,
           type: 'polygon',
         }
+      when RGeo::Feature::MultiPolygon
+        {
+          coordinates: feature[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+          className: feature.category.name,
+          type: 'polygon',
+        }
       when RGeo::Feature::LineString
         {
           coordinates: feature[:geometry].coordinates.map(&:reverse),
-          className: feature.category,
+          className: feature.category.name,
+          type: 'polyline',
+        }
+      when RGeo::Feature::MultiLineString
+        {
+          coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
+          className: feature.category.name,
           type: 'polyline',
         }
       end
