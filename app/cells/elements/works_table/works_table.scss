@@ -7,15 +7,15 @@
             -webkit-appearance: none;
             -moz-appearance: none;
             background-color: white;
+            background-image: image-url("icons/down-arrow.svg");
+            background-position: center right;
+            background-repeat: no-repeat;
             border-color: white;
-            background-image: url(/assets/icons/down-arrow.svg);
             cursor: pointer;
             font-weight: bold;
-            background-repeat: no-repeat;
-            background-position: center right;
-            padding-right: 25px;
-            margin-right: 10px;
             margin-bottom: 15px;
+            margin-right: 10px;
+            padding-right: 25px;
           }
           &:nth-of-type(1) {
             @include grid-column(1);
@@ -53,13 +53,13 @@
             display: table-cell; vertical-align: middle;
             > a  {
               &:nth-of-type(1) {
-                display: block;
-                width: 48px;
-                height: 48px;
-                margin-top: 20px;
+                background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                display: block;
+                height: 48px;
+                margin-top: 20px;
+                width: 48px;
               }
             }
           }
@@ -68,8 +68,8 @@
             @include grid-column(7);
             > a > span {
               @include text-color($text-black,1);
-              padding-left: 0px;
               margin-left: 0px;
+              padding-left: 0px;
               &:nth-of-type(1) {
                 @include type-setting(-2);
                 line-height: 1em;
@@ -103,22 +103,22 @@
             }
           }
           &:nth-of-type(3) {
-            padding-top: $gutter*2;
-            padding-bottom: 0px;
-            @include grid-column(3);
             display: table-cell;
+            padding-bottom: 0px;
+            padding-top: $gutter*2;
             vertical-align: middle;
+            @include grid-column(3);
             > a {
               @include text-color($text-grey, 1);
             }
           }
           &:nth-of-type(4) {
-            padding-top: $gutter*2;
-            margin-bottom: 0px;
-            @include grid-column(5);
-            text-align: right;
             display: table-cell;
+            margin-bottom: 0px;
+            padding-top: $gutter*2;
+            text-align: right;
             vertical-align: middle;
+            @include grid-column(5);
             > a {
               @include text-color($text-grey, 1);
             }

@@ -70,6 +70,12 @@ module CaminosBack
       elements/works_table_cell
       elements/works_list_cell
       forms/user_cell
+      mobile_elements/meetings_navigation_mobile_cell
+      mobile_elements/meetings_list_mobile_cell
+      mobile_elements/meeting_card_mobile_cell
+      mobile_elements/mobile_menu_cell
+      mobile_elements/over_work_card_cell
+      mobile_elements/resources_card_cell
       page/header_cell
       page/public_header_cell
       section/footer_link_cell

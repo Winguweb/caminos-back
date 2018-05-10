@@ -1,0 +1,36 @@
+nav class="mobile-menu-cell #{with_links}"
+  div
+    button.should-hide type="button"
+      span
+    button.should-show type="button"
+      span
+  ul.should-show
+    li
+      = link_to admin_dashboard_path do
+        span="Obras"
+    li
+      = link_to admin_dashboard_path do
+        span="Acuerdo"
+    li
+      = link_to admin_dashboard_path do
+        span="Información"
+  - unless !with_links || neighborhood.blank?
+    div
+      ul
+        - if neighborhood.urbanization
+          li
+            = link_to "/neighborhoods/#{neighborhood.id}/", class: section=='show' ? 'active' : nil do
+              span= t('.works')
+        li
+          = link_to "/neighborhoods/#{neighborhood.id}/agreement", class: section=='agreement' ? 'active' : nil do
+            span= t('.agreement')
+        li
+          = link_to "/neighborhoods/#{neighborhood.id}/about", class: section=='about' ? 'active' : nil do
+            span= t('.about')
+
+javascript:
+  $(function() {
+    new CDLV.Components['mobile_elements/mobile_menu']({
+      el: $('.mobile-menu-cell')
+    })
+  });

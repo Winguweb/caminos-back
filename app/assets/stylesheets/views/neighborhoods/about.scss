@@ -1,4 +1,4 @@
-@mixin about() {
+@mixin neighborhoods-about() {
   > main {
     height: 100%;
     > div {
@@ -10,8 +10,8 @@
           height: 100%;
           > section:first-of-type {
             @include grid-column(16);
-            left: auto;
             height: 100%;
+            left: auto;
             .map-show-cell {
               @include grid-collapse;
               height: 100%;
@@ -31,5 +31,5 @@
 }
 
 #neighborhoods-about {
-  @include about();
+  @include neighborhoods-about();
 }

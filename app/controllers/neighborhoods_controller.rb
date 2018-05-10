@@ -1,12 +1,14 @@
 class NeighborhoodsController < ApplicationController
+  before_action :check_for_mobile, :only => [:show, :about, :agreement]
 
   def show
     load_neighborhood
-    load_meetings
+    @filters = params[:filters].blank? ? nil : params[:filters].split(',')
   end
 
   def about
     load_neighborhood
+    load_meetings
   end
 
   def agreement
@@ -17,12 +19,6 @@ class NeighborhoodsController < ApplicationController
     else
       @data = {}
     end
-  end
-
-  def filtered
-    load_neighborhood
-    @filters = params[:filters].blank? ? nil : params[:filters].split(',')
-    render :show
   end
 
   private

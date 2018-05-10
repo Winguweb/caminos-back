@@ -23,6 +23,8 @@ CDLV.Components['map_show'] = Backbone.View.extend({
 
     this.createMap()
 
+    this.configureMapForMobile()
+
     this.showBaseGeometry()
 
     this.showFeaturesGeometry()
@@ -34,6 +36,9 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   centerMap: function(polygon) {
     var center = this.getCenter(polygon) || this.center
     this.map.setView([center.x, center.y], this.zoom)
+  },
+  configureMapForMobile: function() {
+    if ($('html').hasClass('touchevents')) {this.map.dragging.disable()}
   },
   createMap: function() {
     this.map = L.mapbox.map(this.mapContainer[0], this.style)
@@ -91,17 +96,20 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     }
   },
   showMarkers: function(marker) {
-    new L.Marker(marker.coordinates[0], {
-      icon: L.icon({
-        className: "geometry-marker",
-        iconAnchor: [20, 30],
-        iconSize: [40, 40],
-        iconUrl: marker.icon,
-        shadowAnchor: [19, 29],
-        shadowSize: [40, 40],
-        shadowUrl: this.markerShadowURL,
-      }
-    )}).addTo(this.baseGeometryFeature)
+    var points =  marker.coordinates[0] instanceof Array ? marker.coordinates : [marker.coordinates]
+    points.forEach(function(point) {
+      new L.Marker(point, {
+        icon: L.icon({
+          className: "geometry-marker",
+          iconAnchor: [20, 30],
+          iconSize: [40, 40],
+          iconUrl: marker.icon,
+          shadowAnchor: [19, 29],
+          shadowSize: [40, 40],
+          shadowUrl: this.markerShadowURL,
+        }
+      )}).addTo(this.baseGeometryFeature)
+    }.bind(this))
   },
   showPolygon: function(polygon) {
     new L.Polygon(polygon.coordinates, {

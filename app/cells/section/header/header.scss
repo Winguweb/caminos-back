@@ -1,0 +1,18 @@
+@mixin header-cell() {
+}
+
+@mixin header-cell-mobile() {
+  > article {
+    > h1 {
+      @include type-setting(0);
+      @include text-color($text-grey, 1);
+      border-bottom: 1px solid color($light-grey);
+      margin-bottom: $gutter;
+      padding-bottom: $gutter;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.header-cell {@include header-cell;}
+.mobile-layout .header-cell {@include header-cell-mobile;}

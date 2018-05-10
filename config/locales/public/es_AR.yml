@@ -1,12 +1,7 @@
 es-AR:
   neighborhoods:
     about:
-      ambassadors: Embajadores
-      description: Descripción
-      documents: Documentos
-      meetings: Reuniones
       no_meetings: No existen reuniones
-      pictures: Fotos
     agreement:
       no_agreement: No se encontró información
     partials:
@@ -14,21 +9,3 @@ es-AR:
         about: Información
         agreement: Acuerdo
         works: Obras
-  works:
-    show:
-      about_work: Acerca de la obra
-      budget: Presupuesto
-      category: Categoría
-      description: Descripción
-      documents: Documentos
-      estimated_end_date: Tiempo de finalización estimado
-      execution_plan: Plan de ejecución
-      lookup_address: Dirección
-      manager: Encargado
-      meetings: Reuniones
-      no_works: No se encontraron obras en este barrio
-      photos: Fotos de la obra
-      start_date: Fecha de inicio
-      status: Estado
-      title: Título
-      view_more: Ver más
