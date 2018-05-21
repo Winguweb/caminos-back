@@ -92,6 +92,6 @@ CDLV.Components['map_references'] = Backbone.View.extend({
       return center
     }.bind(this))
     var bounds = this.getBounds({coordinates: polygonsCenters})
-    this.map.fitBounds([[bounds.min.x, bounds.min.y], [bounds.max.x, bounds.max.y]], {animate: false})
+    this.map.fitBounds([[bounds.min.x, bounds.min.y], [bounds.max.x, bounds.max.y]], {animate: false, padding: [50,50]})
   },
 })
