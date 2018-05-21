@@ -164,8 +164,13 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   setInputs: function() {
     this.inputGeometry = $('.geometry-field')
     this.inputGeo_geometry = $('.geo_geometry-field')
+    var GEOMETRY_TYPE = {
+      "Polygon": "Polygon",
+      "Polyline": "Polyline",
+      "Point": "Polyline", /* Its converted to MultiPoint later */
+    }
     if(this.hasEditableGeometry()) {
-      var geoJsonGeometry = (new L.Polyline(this.editable.coordinates)).toGeoJSON()
+      var geoJsonGeometry = (new L[GEOMETRY_TYPE[this.editable.type]](this.editable.coordinates)).toGeoJSON()
       if (this.editable.type == 'Point') geoJsonGeometry.geometry.type = 'MultiPoint'
       var WKTGeometry = wellknown.stringify(geoJsonGeometry)
       this.saveInputs(WKTGeometry)
