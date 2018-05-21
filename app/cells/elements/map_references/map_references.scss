@@ -54,6 +54,10 @@
     position: absolute;
     top: calc(#{$gutter*2} - #{$border});
     white-space: nowrap;
+    &.unurbanized {
+      left: calc(50% + 4px);
+      top: calc(#{$gutter*1.5} - #{$border});
+    }
   }
   p.reference-marker {
     border: $border solid $blue;
@@ -85,6 +89,20 @@
       left: 50%;
       position: absolute;
       top: 50%;
+    }
+    &.unurbanized {
+      border: none;
+      height: $gutter/1.5;
+      width: $gutter/1.5;
+      &::before {
+        background-color: transparent;
+        border: 2px solid color($blue);
+        height: 100%;
+        width: 100%;
+      }
+      > span {
+        display: none;
+      }
     }
   }
 }

@@ -9,7 +9,7 @@ section
             h2="Barrios en proceso de urbanización"
           nav
             ol
-              - @neighborhoods.each do |neighborhood|
+              - @urbanized.each do |neighborhood|
                 li
                   = link_to neighborhood_path(neighborhood.id) do
                     p
