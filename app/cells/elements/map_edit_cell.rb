@@ -4,10 +4,18 @@ class Elements::MapEditCell < Cell::ViewModel
 
   def base
     return [] if model[:geometry].blank?
-    {
-      coordinates: model[:geometry].coordinates.first.map(&:reverse),
-      className: 'base-geometry',
-    }.to_json
+    case model[:geometry].geometry_type
+      when RGeo::Feature::Polygon
+      {
+        coordinates: model[:geometry].coordinates.first.map(&:reverse),
+        className: 'base-geometry',
+      }.to_json
+      when RGeo::Feature::MultiPolygon
+      {
+        coordinates: model[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+        className: 'base-geometry',
+      }.to_json
+    end
   end
 
   def editable
@@ -35,7 +43,7 @@ class Elements::MapEditCell < Cell::ViewModel
       {
         coordinates: options[:editable].geometry.coordinates.map {|polygons| polygons.first.map(&:reverse)},
         className: 'editable',
-        type: 'Polygon',
+        type: 'MultiPolygon',
       }.to_json
     when RGeo::Feature::LineString
       {

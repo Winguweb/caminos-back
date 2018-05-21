@@ -29,8 +29,13 @@ CDLV.Components['map_references'] = Backbone.View.extend({
 
     this.zoomMap(this.base)
   },
-  centerMap: function(polygon) {
-    var center = this.getCenter(polygon) || this.center
+  centerMap: function(polygons) {
+    var polygonsCenters = polygons.map(function(polygon) {
+      var center = this.getCenter(polygon)
+      return center
+    }.bind(this))
+
+    var center = this.getCenter({coordinates: polygonsCenters}) || this.center
     this.map.setView([center.x, center.y], this.zoom)
   },
   configureMapForMobile: function() {
@@ -46,18 +51,8 @@ CDLV.Components['map_references'] = Backbone.View.extend({
       return new L.Point(point[0], point[1])
     })
   },
-  getBounds: function(polygons) {
-    if (polygons instanceof Array) {
-      var points = []
-      for (var i in polygons) {
-        var polygon = polygons[i]
-        points = points.concat(this.createPoints(polygon))
-      }
-    } else {
-      var points = this.createPoints(polygons)
-    }
-
-    return new L.Bounds(points)
+  getBounds: function(polygon) {
+    return new L.Bounds(polygon.coordinates)
   },
   getCenter: function(polygon) {
     var bounds = this.getBounds(polygon)
@@ -89,8 +84,12 @@ CDLV.Components['map_references'] = Backbone.View.extend({
       })
     }).addTo(this.baseGeometryFeature)
   },
-  zoomMap: function(polygon) {
-    var bounds = this.getBounds(polygon)
+  zoomMap: function(polygons) {
+    var polygonsCenters = polygons.map(function(polygon) {
+      var center = this.getCenter(polygon)
+      return center
+    }.bind(this))
+    var bounds = this.getBounds({coordinates: polygonsCenters})
     this.map.fitBounds([[bounds.min.x, bounds.min.y], [bounds.max.x, bounds.max.y]], {animate: false})
   },
 })

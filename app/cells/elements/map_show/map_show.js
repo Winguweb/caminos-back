@@ -46,10 +46,8 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.map.addLayer(this.baseGeometryFeature)
   },
   getBounds: function(polygon) {
-    var points = polygon.coordinates.map(function(point) {
-      return new L.Point(point[0], point[1])
-    })
-    return new L.Bounds(points)
+    var coordinates = polygon.coordinates[0][0] instanceof Array ? polygon.coordinates[0] : polygon.coordinates
+    return new L.Bounds(coordinates)
   },
   getCenter: function(polygon) {
     var bounds = this.getBounds(polygon)
