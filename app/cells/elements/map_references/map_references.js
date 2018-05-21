@@ -76,8 +76,10 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     }.bind(this))
   },
   showReference: function(polygon) {
+    polygon.coordinates = polygon.coordinates.length == 1 ? polygon.coordinates[0] : polygon.coordinates
     var center = this.getCenter(polygon)
     var coordinates = new L.latLng(center.x, center.y)
+
     new L.Marker(coordinates, {
       icon: new L.divIcon({
         html: '<div><p class="marker-name">' + polygon.name + '</p><p class="reference-marker"><span>' + polygon.reference + '</span></p></div>'
