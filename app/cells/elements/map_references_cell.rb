@@ -11,14 +11,14 @@ class Elements::MapReferencesCell < Cell::ViewModel
         when RGeo::Feature::Polygon
         {
           coordinates: neighborhood[:geometry].coordinates.first.map(&:reverse),
-          className: 'base-geometry',
+          className: neighborhood[:urbanization] ? 'urbanized' : 'unurbanized',
           name: neighborhood[:name],
           reference: reference_number
         }
         when RGeo::Feature::MultiPolygon
         {
           coordinates: neighborhood[:geometry].coordinates.first.first.map(&:reverse),
-          className: 'base-geometry',
+          className: neighborhood[:urbanization] ? 'urbanized' : 'unurbanized',
           name: neighborhood[:name],
           reference: reference_number
         }
