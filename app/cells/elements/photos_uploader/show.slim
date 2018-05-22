@@ -3,12 +3,12 @@
     = form.file_field :image, id: file_input_id
     .photos-uploads
       .jFiler-items
-
 javascript:
   $(function() {
     new CDLV.Components['photos/uploader']({
       el: $('.photos-uploader-cell'),
       images: #{raw images},
+      loadingImage: '#{asset_path('/assets/icons/image.svg')}',
       fileInputId: '#{file_input_id}',
       owner: { pluralizeName: '#{owner_pluralize_name}', id: '#{owner_id}'}
     })

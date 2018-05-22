@@ -15,6 +15,7 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
     var $input = $form.find('#'+options.fileInputId)
 
     this.owner = options.owner || {}
+    this.loadingImage = options.loadingImage
 
     this.on({
       'filer:add': this.addFile,
@@ -41,8 +42,8 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
       },
       files: options.images || [],
       templates: {
-        item: '<li class="jFiler-item" data-photo-id=""><div class="jFiler-item-container"><div class="jFiler-item-inner"><div class="jFiler-item-icon pull-left">{{fi-icon}}</div><div class="jFiler-item-info pull-left"><div class="jFiler-item-title" title="{{fi-name}}">{{fi-name | limitTo:30}}</div><div class="jFiler-item-others"><span>Tamaño: {{fi-size2}}</span><span>Tipo: {{fi-extension}}</span><span class="jFiler-item-status">{{fi-progressBar}}</span></div><div class="jFiler-item-assets"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></div></div></li>',
-        itemAppend: '<li class="jFiler-item-dummy"></li>',
+        item: '<li class="jFiler-item"></li>',
+        itemAppend: '<li class="jFiler-item jFiler-photo" data-photo-id="{{fi-phid}}"><div class="jFiler-photo-inner"><div class="jFiler-photo-image"><img src="{{fi-imgsrc}}" height="200px" border="0"></div><div class="jFiler-photo-actions"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></li>',
         itemAppendToEnd: true,
       },
       uploadFile: {
@@ -58,6 +59,7 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
       afterShow: function(){ that.trigger('filer:add'); return true },
       onRemove: function(filerItem){ that.trigger('filer:remove', filerItem); return true }
     }).prop("jFiler")
+
     $('.jFiler-items-list').slick({
       infinite: false,
       speed: 300,
@@ -133,7 +135,11 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
   },
 
   beforeUpload: function(filerItem){
-    filerItem.find('.jFiler-item-assets').hide()
+    var item = $('.jFiler-item:first-of-type').clone().addClass('loading-item')
+    item.find('img')[0].setAttribute('src', this.loadingImage)
+    var itemStringRepresentation = item.prop('outerHTML')
+    $('.jFiler-items-list').slick('slickAdd', itemStringRepresentation)
+    $('.jFiler-items-list').slick('slickGoTo', $('.slick-track .slick-slide').length);
   },
 
   uploadError: function(filerItem){
@@ -144,6 +150,9 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
 
   uploadSuccess: function(data, filerItem){
     filerItem.data('photo-id', data.response.id)
+    var index = filerItem.data('jfiler-index')
+    var slickImage = $('[data-slick-index='+index+']')
+    slickImage.find('img').attr('src', data.response.src)
     filerItem.find('.jFiler-item-assets').show()
     filerItem.find('.jFiler-jProgressBar .bar').addClass('green')
     CDLV.pubSub.trigger('photo:add', data)
