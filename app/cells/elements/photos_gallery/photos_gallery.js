@@ -17,14 +17,25 @@ CDLV.Components['photos/gallery'] = Backbone.View.extend({
       speed: 300,
       slidesToShow: 1,
       centerMode: true,
-      variableWidth: true
+      variableWidth: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            dots: false
+          }
+        },
+      ]
     });
     CDLV.pubSub.on({
       'photos-gallery:show': this.openFullPhoto,
       'photos-gallery:close': this.closeFullPhoto,
     })
+    this.isMobile = $('body').hasClass('mobile-layout');
   },
   pictureClick: function(ev) {
+    if (this.isMobile) return
     var src = ev.target.src
     CDLV.pubSub.trigger('photos-gallery:show', src)
   },

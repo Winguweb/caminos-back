@@ -1,12 +1,13 @@
 .photos-gallery-cell
-  .photo-gallery-carousel
-    - photos.each do |photo|
+  - unless photos.empty?
+    .photo-gallery-carousel
+      - photos.each do |photo|
+        div
+          = image_tag photo.image.thumb.url, alt: 'Image'
+    .photo-gallery-livebox
+      i
       div
-        = image_tag photo.image.thumb.url, alt: 'Image', height: 200
-  .photo-gallery-livebox
-    i
-    div
-      img
+        img
 
 javascript:
   $(function() {

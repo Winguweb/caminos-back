@@ -5,6 +5,7 @@
   }
   .slick-slide {
     > img {
+      height: 100px;
       padding: $gutter;
     }
   }
@@ -51,7 +52,21 @@
     }
   }
 }
+@mixin photos-gallery-mobile() {
+  @include grid-collapse;
+  .slick-slide {
+    > img {
+      height: auto;
+      padding: 0;
+      width: 100vw;
+    }
+  }
+}
 
 .photos-gallery-cell {
   @include photos-gallery;
+}
+
+.mobile-layout .photos-gallery-cell {
+  @include photos-gallery-mobile;
 }
