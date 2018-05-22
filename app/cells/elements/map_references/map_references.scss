@@ -1,9 +1,9 @@
 @mixin map-references() {
   height: 100%;
   > div {
+    border-radius: 8px;
     height: 100%;
     min-height: 400px;
-    border-radius: 8px;
     overflow: hidden;
   }
   .leaflet-tile-pane {
@@ -36,55 +36,73 @@
     &.sewer {fill: $sewer;}
     &.infrastructure {fill: $infrastructure;}
     &.base-geometry {
-      stroke-width: 1px;
       fill: transparent;
       stroke: color($blue, 0.7);
       stroke-dasharray: 5 2;
+      stroke-width: 1px;
     }
   }
   p.marker-name {
     @include transform(translate3d(calc(-50% - 7px), -50%, 0));
     @include background-color($white, 0.65);
     @include type-setting(-1);
-    line-height: 24px;
-    position: absolute;
-    left: 50%;
-    top: calc(#{$gutter*2} - #{$border});
-    padding: $vgutter/4 $gutter/2;
     border-radius: 2px;
-    white-space: nowrap;
     box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
+    left: 50%;
+    line-height: 24px;
+    padding: $vgutter/4 $gutter/2;
+    position: absolute;
+    top: calc(#{$gutter*2} - #{$border});
+    white-space: nowrap;
+    &.unurbanized {
+      left: calc(50% + 4px);
+      top: calc(#{$gutter*1.5} - #{$border});
+    }
   }
   p.reference-marker {
+    border: $border solid $blue;
+    border-radius: 100%;
     box-sizing: content-box;
     display: inline-block;
-    position: absolute;
-    border-radius: 100%;
-    border: $border solid $blue;
-    width: $outer-diameter;
     height: $outer-diameter;
     margin: $gutter;
-    vertical-align: middle;
     margin: 0;
+    position: absolute;
+    vertical-align: middle;
+    width: $outer-diameter;
     @include transform(translate3d(-50%, -50%, 0));
     &::before {
+      background-color: $blue;
+      border-radius: 100%;
       content: '';
       display: block;
-      border-radius: 100%;
-      width: $inner-diameter;
       height: $inner-diameter;
-      background-color: $blue;
+      left: #{($outer-diameter - $inner-diameter)/2};
       position: relative;
       top: #{($outer-diameter - $inner-diameter)/2};
-      left: #{($outer-diameter - $inner-diameter)/2};
+      width: $inner-diameter;
     }
     > span {
       @include transform(translate3d(-50%, -50%, 0));
       @include text-color($white, 1);
       font-weight: bold;
+      left: 50%;
       position: absolute;
       top: 50%;
-      left: 50%;
+    }
+    &.unurbanized {
+      border: none;
+      height: $gutter/1.5;
+      width: $gutter/1.5;
+      &::before {
+        background-color: transparent;
+        border: 2px solid color($blue);
+        height: 100%;
+        width: 100%;
+      }
+      > span {
+        display: none;
+      }
     }
   }
 }

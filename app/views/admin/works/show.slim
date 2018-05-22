@@ -3,54 +3,53 @@
 
 .page-section
   section
-    == cell('section/header', t(".about_work"), links: [{title:t('.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
+    == cell('section/header', t(".about_work"), links: [{title:t('actions.edit'), href: edit_admin_neighborhood_work_path(current_neighborhood, @work)}])
     div
-      span = t('.title')
+      span = t('works.name')
       span = @work.name
     div
       span = t('.description')
       span = @work.description
     .half-input
       div
-        span = t('.category')
-        span = @work.category
+        span = t('works.category')
+        span = t("categories.#{@work.category}")
       div
-        span = t('.status')
-        span = @work.status
+        span = t('works.status')
+        span = t("status.#{@work.status}")
       div
-        span = t('.manager')
+        span = t('works.manager')
         span = @work.manager
 
       div
-        span = t('.budget')
+        span = t('works.budget')
         span = @work.budget
 
       div
-        span = t('.start_date')
+        span = t('works.start_date')
         span = @work.start_date
 
       div
-        span = t('.estimated_end_date')
+        span = t('works.estimated_end_date')
         span = @work.estimated_end_date
 
     .two-thirds-one-third-input
       div
-        span = t('.execution_plan')
+        span = t('works.execution_plan')
         span = @work.execution_plan
 
       div
-        span = t('.lookup_address')
+        span = t('works.lookup_address')
         span = @work.lookup_address
 
   section
-    == cell('section/header', t('.map_location'))
+    == cell('section/header', t('works.map_location'))
     == cell('elements/map_show', current_neighborhood, features: [ @work ])
 
   section
-    - photo_file_input_id = 'photo_file_input'
-    == cell('section/header', t('.photos'), buttons_for: [{ title: t('.upload_photos'), for: photo_file_input_id }])
-    == cell('elements/photos_uploader', @work.photos, { owner: @work, file_input_id: photo_file_input_id })
-    == cell('elements/photos_list', @work.photos)
+    - file_input_id = 'photo_file_input'
+    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
+    == cell('elements/photos_uploader', @work.photos, { owner: @work, file_input_id: file_input_id })
 
   section
     - document_file_input_id = 'document_file_input'
@@ -59,5 +58,5 @@
     == cell('elements/documents_table', @work.documents)
 
   section
-    == cell('section/header', t('.related_meetings'))
+    == cell('section/header', t('meetings.meetings'))
     == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)

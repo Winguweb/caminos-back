@@ -3,28 +3,30 @@
 
 div.page-section
   section.with-border
-    == cell('section/header', t('.about_neighborhood', neighborhood: @neighborhood.name ), links: [{title:t('.edit'), href:edit_admin_neighborhood_path(@neighborhood)}])
+    == cell('section/header', t('.about_neighborhood', neighborhood: @neighborhood.name ), links: [{title:t('actions.edit'), href:edit_admin_neighborhood_path(@neighborhood)}])
     .content
       == cell('elements/description', text: @neighborhood.description)
 
   section.with-border
-    == cell('section/header', t('.urbanization'))
+    == cell('section/header', t('neighborhoods.urbanization_process'))
     .content
       - if @neighborhood.urbanization
-        p= t('.urbanization_process')
+        p= t('neighborhoods.has_urbanization_process')
       - else
-        p= t('.no_urbanization_process')
+        p= t('neighborhoods.hasnt_urbanization_process')
 
   section.with-border
-    == cell('section/header', t('.address'))
+    == cell('section/header', t('neighborhoods.lookup_address'))
     == cell('elements/map_show', @neighborhood)
 
   section.with-border
-    == cell('section/header', t('.documents'), buttons: [{title: t('.upload_document'), url: new_admin_user_path }])
+    == cell('section/header', t('neighborhoods.documents'), buttons: [{title: t('.upload_document'), url: new_admin_user_path }])
     .content
       == cell('elements/documents_table', @documents)
   section
-    == cell('section/header', t('.ambassadors'), buttons: [{title: t('.add_new_ambassador'), url: '#', extra_classes:'add-new-ambassador' }])
+    == cell('section/header', t('neighborhoods.ambassadors'), buttons: [{title: t('.add_new_ambassador'), url: '#', extra_classes:'add-new-ambassador' }])
 
   section
-    == cell('section/header', t('.pictures'), buttons: [{title: t('.add_new_photo'), url: '#', extra_classes:'add-new-photo' }])
+    - file_input_id = 'photo_file_input'
+    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
+    == cell('elements/photos_uploader', @neighborhood.photos, { owner: @neighborhood, file_input_id: file_input_id })

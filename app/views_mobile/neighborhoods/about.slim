@@ -1,0 +1,40 @@
+- @with_links = true
+- @back_menu = t("neighborhoods.neighborhoods")
+- @back_url = "/"
+main
+  section.with-border
+    == cell('elements/map_show', @neighborhood)
+  section.with-border
+    == cell('section/header', t('neighborhoods.description'))
+    div
+      == cell('elements/description', text: @neighborhood.description)
+      == cell('section/footer_link', { title: t('.view_more'), href: admin_neighborhoods_path })
+
+
+  section.with-border
+    div
+      == cell('section/header', t('documents.documents'))
+      == cell('elements/documents_table', @neighborhood.documents)
+
+  section
+    div
+      == cell('section/header', t('neighborhoods.ambassadors'))
+      == cell('elements/documents_table', @neighborhood.documents)
+
+  section
+    div
+      == cell('section/header', t('pictures.pictures'))
+      == cell('elements/documents_table', @neighborhood.documents)
+
+  section
+    div
+      == cell('section/header', t('meetings.meetings'))
+      - if @meetings.blank?
+        span=t('.no_meetings')
+      - else
+        - @meetings.keys.each do |year|
+          - if year ==@meetings.keys.first
+            == cell('section/header', year)
+          - else
+            == cell('section/header', year)
+          == cell('mobile_elements/meetings_list_mobile', @meetings[year], current_meetable: @neighborhood)

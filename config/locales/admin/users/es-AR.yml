@@ -2,12 +2,10 @@ es-AR:
   admin:
     users:
       edit:
-        cancel: Cancelar
         email: Email
         general: General
         user_profile: Perfil del usuario
         permissions: Permisos
-        save: Guardar Cambios
       index:
         new_user: Nuevo Usuario
         users: Usuarios y Embajadores
@@ -15,7 +13,6 @@ es-AR:
       new:
         new_user: Nuevo Usuario
       show:
-        edit: Editar
         email: Email
         general: General
         user_profile: Perfil del usuario

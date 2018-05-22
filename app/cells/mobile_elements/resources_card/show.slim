@@ -1,0 +1,7 @@
+section class="resources-card-cell"
+  = link_to link
+    p = title
+    - if size > 0
+      span = "#{size} #{title}"
+    - else
+      span = "No hay #{title}"

@@ -9,17 +9,17 @@ section
             h2="Barrios en proceso de urbanización"
           nav
             ol
-              - @neighborhoods.each do |neighborhood|
+              - @urbanized.each do |neighborhood|
                 li
-                  a href="/neighborhoods/#{neighborhood.id}"
+                  = link_to neighborhood_path(neighborhood.id) do
                     p
                       span
                     div
                       h3=neighborhood.name
                       span="Proceso de urbanización"
-                      span="#{Random.rand(100)}%"
+                      span="#{to_fixed_percentage(neighborhood.urbanization_score)}%"
                       div
-                        div style="width:#{Random.rand(100)}%;"
+                        div style="width:#{to_fixed_percentage(neighborhood.urbanization_score)}%"
         section
           header
             h2="Otros barrios"

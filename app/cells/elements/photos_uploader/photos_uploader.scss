@@ -1,11 +1,37 @@
 @mixin photos-jfiler() {
+  @include grid-collapse;
+  .list-inline {
+    text-align: center;
+    a {
+      cursor: pointer;
+    }
+  }
+  .slick-arrow::before,
+  .slick-arrow::after {
+    color: $black;
+  }
+  .slick-prev, .slick-next {
+    top: 115px;
+  }
   .jFiler {
     display: none;
   }
-  .jFiler-item {
+  .jFiler-items-default .slick-list .jFiler-item {
+    @include shadow($normal-shadow, 1);
+    background: $white;
     padding-left: 0;
     padding-right: 0;
-    background: transparent;
+    .jFiler-photo-image {
+      text-align: center;
+      img {
+        display: inline;
+        height: 100px;
+        margin: $gutter;
+      }
+    }
+  }
+  .slick-dots + .jFiler-item {
+
   }
   .jFiler-item-dummy{
     display: none;
@@ -13,8 +39,8 @@
   .jFiler-item-icon {
     float: left;
     i {
-      margin-top: 12px;
       display: block;
+      margin-top: 12px;
     }
   }
   .jFiler-item-info {
@@ -25,6 +51,16 @@
   }
   .jFiler-item-others {
     line-height: 19px;
+  }
+
+  .jFiler-items-list {
+
+  }
+
+  .jFiler-photo {
+    display: inline-block;
+    margin: $gutter;
+    vertical-align: top;
   }
 }
 

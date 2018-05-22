@@ -4,10 +4,18 @@ class Elements::MapEditCell < Cell::ViewModel
 
   def base
     return [] if model[:geometry].blank?
-    {
-      coordinates: model[:geometry].coordinates.first.map(&:reverse),
-      className: 'base-geometry',
-    }.to_json
+    case model[:geometry].geometry_type
+      when RGeo::Feature::Polygon
+      {
+        coordinates: model[:geometry].coordinates.first.map(&:reverse),
+        className: 'base-geometry',
+      }.to_json
+      when RGeo::Feature::MultiPolygon
+      {
+        coordinates: model[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+        className: 'base-geometry',
+      }.to_json
+    end
   end
 
   def editable
@@ -16,20 +24,38 @@ class Elements::MapEditCell < Cell::ViewModel
     when RGeo::Feature::Point
       {
         coordinates: [options[:editable].geometry.coordinates],
-        icon: image_path(options[:editable].category_icon),
-        type: 'marker',
+        className: 'editable',
+        type: 'Point',
+      }.to_json
+    when RGeo::Feature::MultiPoint
+      {
+        coordinates: options[:editable].geometry.coordinates.map(&:reverse),
+        className: 'editable',
+        type: 'Point',
       }.to_json
     when RGeo::Feature::Polygon
       {
         coordinates: options[:editable].geometry.coordinates.first.map(&:reverse),
-        className: options[:editable].category,
-        type: 'polygon',
+        className: 'editable',
+        type: 'Polygon',
+      }.to_json
+    when RGeo::Feature::MultiPolygon
+      {
+        coordinates: options[:editable].geometry.coordinates.map {|polygons| polygons.first.map(&:reverse)},
+        className: 'editable',
+        type: 'MultiPolygon',
       }.to_json
     when RGeo::Feature::LineString
       {
         coordinates: options[:editable].geometry.coordinates.map(&:reverse),
-        className: options[:editable].category,
-        type: 'polyline',
+        className: 'editable',
+        type: 'Polyline',
+      }.to_json
+    when RGeo::Feature::MultiLineString
+      {
+        coordinates: options[:editable].geometry.coordinates.map { |lines| lines.map(&:reverse) },
+        className: 'editable',
+        type: 'Polyline',
       }.to_json
     end
   end

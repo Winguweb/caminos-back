@@ -3,24 +3,26 @@ section
     section.with-border
       == cell('elements/map_show', @neighborhood)
     section.with-border
-      == cell('section/header', t('.description'))
+      == cell('section/header', t('neighborhoods.description'))
       .content
         == cell('elements/description', text: @neighborhood.description)
 
     section.with-border
-      == cell('section/header', t('.documents'))
+      == cell('section/header', t('documents.documents'))
       .content
         == cell('elements/documents_table', @neighborhood.documents)
 
 
     section
-      == cell('section/header', t('.ambassadors'))
+      == cell('section/header', t('neighborhoods.ambassadors'))
 
     section
-      == cell('section/header', t('.pictures'))
+      == cell('section/header', t('pictures.pictures'))
+      == cell('elements/photos_gallery', @neighborhood.photos)
+
 
     section
-      == cell('section/header', t('.meetings'))
+      == cell('section/header', t('meetings.meetings'))
       - if @meetings.blank?
         span=t('.no_meetings')
       - else

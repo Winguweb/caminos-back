@@ -15,16 +15,16 @@
         @include type-setting(-1);
 
         &:before {
+          background-image: image-url("icons/marker.svg");
+          background-repeat: no-repeat;
+          background-size: cover;
           content: '';
+          display: inline-block;
+          height: 17px;
+          margin-right: $gutter;
           position: relative;
           top: 4px;
-          margin-right: $gutter;
-          background-image: url(/assets/icons/marker.svg);
-          background-size: cover;
-          background-repeat: no-repeat;
           width: 13px;
-          height: 17px;
-          display: inline-block;
         }
       }
     }

@@ -39,6 +39,7 @@
 @import "description";
 @import "documents_table";
 @import "documents_uploader";
+@import "filterable";
 @import "map_edit";
 @import "map_references";
 @import "map_show";
@@ -47,7 +48,9 @@
 @import "neighborhoods_list";
 @import "meeting_card";
 @import "meetings_list";
+@import "meetings_navigation_mobile";
 @import "person_card";
+@import "photos_gallery";
 @import "photos_list";
 @import "photos_uploader";
 @import "users_table";
@@ -56,6 +59,12 @@
 @import "works_list";
 // FORM
 @import "form__user";
+// MOBILE ELEMENTS
+@import "mobile_menu";
+@import "meetings_list_mobile";
+@import "meeting_card_mobile";
+@import "over_work_card";
+@import "resources_card";
 // PAGE
 @import "page__header";
 @import "public_header";

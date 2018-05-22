@@ -2,12 +2,24 @@ class Elements::MapShowCell < Cell::ViewModel
 
   private
 
+  def info_content
+    options[:info]
+  end
+
   def base
     return [] if model[:geometry].blank?
-    {
-      coordinates: model[:geometry].coordinates.first.map(&:reverse),
-      className: 'base-geometry',
-    }.to_json
+    case model[:geometry].geometry_type
+      when RGeo::Feature::Polygon
+      {
+        coordinates: model[:geometry].coordinates.first.map(&:reverse),
+        className: 'base-geometry',
+      }.to_json
+    when RGeo::Feature::MultiPolygon
+      {
+        coordinates: model[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+        className: 'base-geometry',
+      }.to_json
+    end
   end
 
   def features
@@ -20,16 +32,34 @@ class Elements::MapShowCell < Cell::ViewModel
           icon: image_path(feature.category_icon),
           type: 'marker',
         }
+      when RGeo::Feature::MultiPoint
+      {
+        coordinates: feature[:geometry].coordinates.map(&:reverse),
+        icon: image_path(feature.category_icon),
+        type: 'marker',
+      }
       when RGeo::Feature::Polygon
         {
           coordinates: feature[:geometry].coordinates.first.map(&:reverse),
-          className: feature.category,
+          className: feature.category.name,
+          type: 'polygon',
+        }
+      when RGeo::Feature::MultiPolygon
+        {
+          coordinates: feature[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+          className: feature.category.name,
           type: 'polygon',
         }
       when RGeo::Feature::LineString
         {
           coordinates: feature[:geometry].coordinates.map(&:reverse),
-          className: feature.category,
+          className: feature.category.name,
+          type: 'polyline',
+        }
+      when RGeo::Feature::MultiLineString
+        {
+          coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
+          className: feature.category.name,
           type: 'polyline',
         }
       end

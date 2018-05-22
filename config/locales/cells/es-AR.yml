@@ -8,27 +8,12 @@ es-AR:
       no_photos: No hay fotos asociadas
     users_table:
       permissions: "Permisos: %{roles}"
-    works_list:
-      energy: "Luz / Electricidad"
-      health: "Salud"
-      infrastructure: "Infraestructura"
-      public: "Calles / Plazas"
-      sewer: "Cloacas"
-      status: "Estado"
-      trash: "Basura"
-      water: "Agua"
-    works_table:
-      energy: "Luz / Electricidad"
-      health: "Salud"
-      infrastructure: "Infraestructura"
-      public: "Calles / Plazas"
-      sewer: "Cloacas"
-      trash: "Basura"
-      water: "Agua"
+    filterable:
+      categories: Categorías
+      filters: Filtros
   forms:
     user:
       create: Crear Usuario
-      cancel: Cancelar
       email: Dirección de correo electrónico
       first_name: Nombre/s
       general: General
@@ -38,12 +23,17 @@ es-AR:
       password: Contraseña
       personal_information: Información Personal
       roles: Roles / Permisos
-      save_changes: Guardar Cambios
       update: Actualizar Usuario
       user_information: Información del Usuario
       username: Nombre de Usuario
+  mobile_elements:
+    mobile_menu:
+      works: Obras
+      agreement: Acuerdo
+      about: Información
+    over_work_card:
   page:
     public_header:
-      about: "Información"
-      agreement: "Acuerdo"
-      works: "Obras"
+      about: Info del barrio
+      agreement: Medir el impacto
+      works: Seguir las obras

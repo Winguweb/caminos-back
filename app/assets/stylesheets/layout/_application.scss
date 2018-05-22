@@ -1,12 +1,12 @@
 $development: false;
 
 html, body {
+  font-family: $font-sans;
+  -webkit-font-smoothing: antialiased;
   height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
-  font-family: $font-sans;
+  width: 100%;
   a {
     @include text-color($text-blue, 1);
     text-decoration: none;
@@ -49,8 +49,8 @@ body > main {
   }
   .main-header{
     @include shadow-down($light-shadow, 1);
-    padding: $gutter*1.5 0 0;
     margin-bottom: $gutter*3;
+    padding: $gutter*1.5 0 0;
   }
 }
 
@@ -69,4 +69,13 @@ body > main {
       @include grid-column(1 of 3);
     }
   }
+}
+
+.section-with-gutter {
+  margin-top: $gutter*2;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }

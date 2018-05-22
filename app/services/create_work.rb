@@ -13,20 +13,16 @@ class CreateWork
   private
 
   def create_work
-
     @work = Work.new(work_params)
     @work.neighborhood = @neighborhood
 
     if documents_params.present? || !photo_params.nil?
       save_photos(@work) if !photo_params.nil?
       save_documents(@work) if documents_params.present?
-      return @work if @work.save
-      errors.add_multiple_errors(@work.errors.messages) && nil
-
-    else
-      return @work if @work.save
-      errors.add_multiple_errors(@work.errors.messages) && nil
     end
+
+    return @work if @work.save
+    errors.add_multiple_errors(@work.errors.messages) && nil
   end
 
   def save_photos(work)
@@ -49,6 +45,7 @@ class CreateWork
   def work_params
     {
       budget: @allowed_params[:budget],
+      category_list: @allowed_params[:category_list],
       description: @allowed_params[:description],
       estimated_end_date: @allowed_params[:estimated_end_date],
       execution_plan: @allowed_params[:execution_plan],

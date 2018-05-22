@@ -21,15 +21,25 @@ CDLV.Components['map_references'] = Backbone.View.extend({
 
     this.createMap()
 
+    this.configureMapForMobile()
+
     this.showBaseGeometry()
 
     this.centerMap(this.base)
 
     this.zoomMap(this.base)
   },
-  centerMap: function(polygon) {
-    var center = this.getCenter(polygon) || this.center
+  centerMap: function(polygons) {
+    var polygonsCenters = polygons.map(function(polygon) {
+      var center = this.getCenter(polygon)
+      return center
+    }.bind(this))
+
+    var center = this.getCenter({coordinates: polygonsCenters}) || this.center
     this.map.setView([center.x, center.y], this.zoom)
+  },
+  configureMapForMobile: function() {
+    if ($('html').hasClass('touchevents')) {this.map.dragging.disable()}
   },
   createMap: function() {
     this.map = L.mapbox.map(this.mapContainer[0], this.style)
@@ -41,18 +51,8 @@ CDLV.Components['map_references'] = Backbone.View.extend({
       return new L.Point(point[0], point[1])
     })
   },
-  getBounds: function(polygons) {
-    if (polygons instanceof Array) {
-      var points = []
-      for (var i in polygons) {
-        var polygon = polygons[i]
-        points = points.concat(this.createPoints(polygon))
-      }
-    } else {
-      var points = this.createPoints(polygons)
-    }
-
-    return new L.Bounds(points)
+  getBounds: function(polygon) {
+    return new L.Bounds(polygon.coordinates)
   },
   getCenter: function(polygon) {
     var bounds = this.getBounds(polygon)
@@ -76,16 +76,22 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     }.bind(this))
   },
   showReference: function(polygon) {
+    polygon.coordinates = polygon.coordinates.length == 1 ? polygon.coordinates[0] : polygon.coordinates
     var center = this.getCenter(polygon)
     var coordinates = new L.latLng(center.x, center.y)
+
     new L.Marker(coordinates, {
       icon: new L.divIcon({
-        html: '<div><p class="marker-name">' + polygon.name + '</p><p class="reference-marker"><span>' + polygon.reference + '</span></p></div>'
+        html: '<div><p class="marker-name ' + polygon.className + '">' + polygon.name + '</p><p class="reference-marker ' + polygon.className + '"><span>' + polygon.reference + '</span></p></div>'
       })
     }).addTo(this.baseGeometryFeature)
   },
-  zoomMap: function(polygon) {
-    var bounds = this.getBounds(polygon)
-    this.map.fitBounds([[bounds.min.x, bounds.min.y], [bounds.max.x, bounds.max.y]], {animate: false})
+  zoomMap: function(polygons) {
+    var polygonsCenters = polygons.map(function(polygon) {
+      var center = this.getCenter(polygon)
+      return center
+    }.bind(this))
+    var bounds = this.getBounds({coordinates: polygonsCenters})
+    this.map.fitBounds([[bounds.min.x, bounds.min.y], [bounds.max.x, bounds.max.y]], {animate: false, padding: [50,50]})
   },
 })

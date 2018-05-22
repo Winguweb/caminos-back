@@ -15,10 +15,8 @@
 
     tbody
       - neighborhoods.each do |neighborhood|
-        - if neighborhood.urbanization
-          - percent = Random.rand(100)
-        - else
-          - percent = 0
+        - percent = to_fixed_percentage(neighborhood.urbanization_score)
+
         tr
           td
             a href=admin_neighborhood_path(neighborhood)
@@ -26,14 +24,14 @@
 
                 = neighborhood.name
               p#date
-                = "Actualizado en: #{neighborhood.updated_at}"
+                = "#{t('labels.updated_at')}: #{neighborhood.updated_at}"
 
           td
             a href="#"
               main
                 p
                   span
-                    = "Proceso de urbanización "
+                    = "#{t('neighborhoods.urbanization_process')} "
                   span#percent
                     = "#{percent}%"
                 div

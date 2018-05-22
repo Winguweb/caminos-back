@@ -1,0 +1,58 @@
+@mixin filterable() {
+  @include grid-column(16);
+  > div {
+    @include grid-collapse;
+    @include grid-container;
+    height: 10px;
+    margin-bottom: $gutter/2;
+    padding: $gutter 0;
+    position: relative;
+    > div {
+      @include grid-container;
+      background-color: $white;
+      height: auto;
+      left: $gutter;
+      max-height: 38px;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      z-index: 1000;
+      &.opened {
+        @include shadow-down($light-shadow, 1);
+        max-height: none;
+      }
+      > button {
+        @include grid-column(16, $no-gutter);
+        @include type-setting(-1);
+        background: none;
+        border: none;
+        padding: $vgutter $gutter;
+        text-align: right;
+      }
+      > div {
+        margin-bottom: $gutter;
+        > h2 {
+          @include type-setting(-1);
+          @include text-color($grey);
+          border-bottom: 1px solid $grey;
+          margin-bottom: $vgutter;
+          text-transform: uppercase;
+        }
+        @include grid-column(1 of 2);
+        > ul {
+          > li {
+            > a {
+              @include type-setting(0);
+              @include text-color($grey);
+              display: block;
+              font-weight: bold;
+              padding: 0 $gutter/2;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.filterable-cell {@include filterable;}

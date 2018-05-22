@@ -4,17 +4,16 @@
       h1
         span = neighborhood.name
       p
-        span
-          = "Actualizado en "
+        span = t("labels.updated_at")
         time
           = neighborhood.updated_at.to_date.to_s
 
     main
       p
         span
-          = "Proceso de urbanización "
+          = t("neighborhoods.urbanization_process")
         span
-          = "#{Random.rand(100)}%"
+          = "#{to_fixed_percentage(neighborhood.urbanization_score)}%"
       div
         div
-        div style="width:#{Random.rand(100)}%;"
+        div style="width:#{to_fixed_percentage(neighborhood.urbanization_score)}%;"
