@@ -5,10 +5,10 @@
         == cell('section/header', t(".about_work"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_works_path(current_neighborhood) }, { title: t("actions.save"), submit: true }])
         .field
           = f.label :name, t('works.name')
-          = f.text_field :name
+          = f.text_field :name, required: true
         .field
           = f.label :description, t('works.description')
-          = f.text_area :description
+          = f.text_area :description, required: true
         .no-grid
           .field
             = f.label :category_list, t('works.category')
@@ -20,7 +20,7 @@
         .half-input
           .field
             = f.label :manager, t('works.manager')
-            = f.text_field :manager
+            = f.text_field :manager, required: true
 
           .field
             = f.label :budget, t('works.budget')
@@ -37,11 +37,11 @@
         .two-thirds-one-third-input
           .field
             = f.label :execution_plan, t('works.execution_plan')
-            = f.text_field :execution_plan
+            = f.text_field :execution_plan, required: true
 
           .field
             = f.label :lookup_address, t('works.lookup_address')
-            = f.text_field :lookup_address
+            = f.text_field :lookup_address, required: true
 
       section
         == cell('section/header', t('works.map_location'))

@@ -28,6 +28,12 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_works_path
       else
+        errors  = []
+        service.errors.each do |error|
+          errors << t('admin.works.errors', field: t("works.#{error}"))
+        end
+        flash[:error] =  errors
+        flash.keep
         redirect_to new_admin_neighborhood_work_path(current_neighborhood)
       end
     end
@@ -55,6 +61,12 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_work_path
       else
+        errors  = []
+        service.errors.each do |error|
+          errors << t('admin.works.errors', field: t("works.#{error}"))
+        end
+        flash[:error] =  errors
+        flash.keep
         redirect_to edit_admin_neighborhood_work_path(@work)
       end
     end

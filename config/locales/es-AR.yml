@@ -77,6 +77,9 @@ es-AR:
     delete: Eliminar Obra
     delete_info_html: "Si elimina una obra, todos sus acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
     delete_work: "Está seguro de que realmente quiere eliminar %{work}?"
+    category_list: Categoría
+    works: Obras
+    name: Título
     description: Descripción
     documents: Documentos
     end_date: Fecha finalización

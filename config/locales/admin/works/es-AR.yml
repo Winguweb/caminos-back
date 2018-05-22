@@ -1,8 +1,10 @@
 es-AR:
   admin:
     works:
+      addres: Dirección
       edit:
         title: "Editar Obra: %{name}"
+      errors: "%{field}: Este campo es obligatorio"
       form:
         about_work: Sobre la obra
       index:

@@ -10,15 +10,15 @@ class Work < ApplicationRecord
   validates_presence_of :name,
     :description,
     :status,
-    :start_date,
-    :estimated_end_date,
-    :budget,
     :manager,
     :name,
     :execution_plan,
-    :category_list
+    :category_list,
+    :lookup_address,
+    :geo_geometry
 
-  validate :valid_dates
+
+  # validate :valid_dates
 
   # CATEGORIES =['Servicios Públicos','Equipamiento Estatal','Vivienda','Espacios Públicos'].freeze
   CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure'].freeze
