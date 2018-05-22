@@ -60,11 +60,13 @@
           }
           > section + section {
             @include grid-column(16);
-            div:first-of-type {
-              border-top: 1px solid color($light-grey, 1);
-              padding-top: $gutter;
+            &:first-of-type {
+              > div:first-of-type {
+                border-top: 1px solid color($light-grey, 1);
+                padding-top: $gutter;
+              }
             }
-            div {
+            > div {
               border-bottom: 1px solid color($light-grey, 1);
               padding-bottom: $gutter;
               > span, > p {

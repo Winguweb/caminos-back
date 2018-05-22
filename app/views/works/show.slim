@@ -55,7 +55,4 @@ section
 
     section
       == cell('section/header', t('pictures.pictures'))
-      .photos-list
-        - @work.photos.each do |photo|
-          .photo
-            = image_tag photo.image.thumb.url, alt: 'Image', height: 200
+      == cell('elements/photos_gallery', @work.photos)
