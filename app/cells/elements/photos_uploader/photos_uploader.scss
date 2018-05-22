@@ -30,8 +30,11 @@
       }
     }
   }
+  .jFiler-items-list > .jFiler-item {
+    display: none !important;
+  }
   .slick-dots + .jFiler-item {
-
+    display: block;
   }
   .jFiler-item-icon {
     float: left;
