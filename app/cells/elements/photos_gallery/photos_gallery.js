@@ -6,7 +6,7 @@ CDLV.Components['photos/gallery'] = Backbone.View.extend({
   initialize: function(options) {
     _.bindAll(
         this,
-        'pictureClick',
+        'pictureClick'
     )
     $photoGalleryCarousel = this.$el.find('.photo-gallery-carousel')
     $photoGalleryLivebox = this.$el.find('.photo-gallery-livebox')
