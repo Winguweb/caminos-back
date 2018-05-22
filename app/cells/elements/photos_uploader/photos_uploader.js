@@ -61,6 +61,22 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
       afterShow: function(){ CDLV.pubSub.trigger('filer:add'); return true },
       onRemove: function(filerItem){ CDLV.pubSub.trigger('filer:remove', filerItem); return true }
     }).prop("jFiler")
+    $('.jFiler-items-list').slick({
+      infinite: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      centerMode: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            dots: false
+          }
+        },
+      ]
+    })
   },
 
   localizeCaptions: function(){
@@ -102,6 +118,7 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
       type: 'delete',
       cache: false,
     }).done(function(data){
+      $('.jFiler-items-list').slick('reinit')
       return true
     }).fail(function(xhr){
       return false
