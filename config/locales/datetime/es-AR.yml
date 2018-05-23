@@ -117,6 +117,7 @@ es-AR:
       long: "%d de %B de %Y %H:%M"
       period: "%B"
       short: "%d de %b %H:%M"
+      slashes: "%d/%m/%y"
       supershort: '%d %b'
       year_and_month: "%Y · %B"
     pm: pm
