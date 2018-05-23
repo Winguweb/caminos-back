@@ -23,6 +23,7 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
       'filer:upload:before': this.beforeUpload,
       'filer:upload:error': this.uploadError,
       'filer:upload:success': this.uploadSuccess,
+      'filer:select': this.selectFile,
       'filer:remove': this.removeFile
     })
 
@@ -42,40 +43,26 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
       },
       files: options.images || [],
       templates: {
-        item: '<li class="jFiler-item"></li>',
+        item: '<li class="jFiler-item jFiler-photo" data-photo-id="{{fi-phid}}"><div class="jFiler-photo-inner"><div class="jFiler-photo-image"><span class="jFiler-item-status">{{fi-progressBar}}</span><img src="{{fi-imgsrc}}" height="200px" border="0"></div><div class="jFiler-photo-actions"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></li>',
         itemAppend: '<li class="jFiler-item jFiler-photo" data-photo-id="{{fi-phid}}"><div class="jFiler-photo-inner"><div class="jFiler-photo-image"><img src="{{fi-imgsrc}}" height="200px" border="0"></div><div class="jFiler-photo-actions"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></li>',
         itemAppendToEnd: true,
+        progressBar: '<div class="bar"></div>',
       },
       uploadFile: {
         url: $form.attr('action'),
         type: 'POST',
         enctype: 'multipart/form-data',
-        synchron: true,
+        synchron: false,
         beforeSend: function(filerItem){ that.trigger('filer:upload:before', filerItem) },
         success: function(data, filerItem){ that.trigger('filer:upload:success', data, filerItem) },
         error: function(filerItem){ that.trigger('filer:upload:error', filerItem) }
       },
       captions: that.localizeCaptions(),
-      afterShow: function(){ that.trigger('filer:add'); return true },
+      onSelect: function(data, filerItem){ that.trigger('filer:select', data, filerItem); return true },
+      beforeShow: function(){ that.trigger('filer:add'); return true },
       onRemove: function(filerItem){ that.trigger('filer:remove', filerItem); return true }
     }).prop("jFiler")
-
-    $('.jFiler-items-list').slick({
-      infinite: false,
-      speed: 300,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-      centerMode: false,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            arrows: false,
-            dots: false
-          }
-        },
-      ]
-    })
+    this.slickInit()
   },
 
   localizeCaptions: function(){
@@ -99,6 +86,16 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
     this.displayMessage(false)
   },
 
+  selectFile: function(file, filerItem){
+    var reader = new FileReader()
+    reader.onloadend = function () {
+      filerItem.find('img')[0].setAttribute('src', reader.result)
+    }
+
+    reader.readAsDataURL(file)
+    this.displayMessage(false)
+  },
+
   alert: function(text){
     this.displayMessage(text)
   },
@@ -110,13 +107,18 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
     if( _.isEmpty(photoId) ) return true
 
     var url = '/admin/ajax/'+this.owner.pluralizeName+'/'+this.owner.id+'/photos/'+photoId
+
+    filerItem.fadeOut(300, function() {
+      $(this).remove()
+      $('.jFiler-items-list').slick('reinit')
+    })
     this.displayMessage(false)
      $.ajax({
       url: url,
       type: 'delete',
       cache: false,
     }).done(function(data){
-      $('.jFiler-items-list').slick('reinit')
+
       return true
     }).fail(function(xhr){
       return false
@@ -135,26 +137,44 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
   },
 
   beforeUpload: function(filerItem){
-    var item = $('.jFiler-item:first-of-type').clone().addClass('loading-item')
-    item.find('img')[0].setAttribute('src', this.loadingImage)
-    var itemStringRepresentation = item.prop('outerHTML')
-    $('.jFiler-items-list').slick('slickAdd', itemStringRepresentation)
+    this.slickInit()
+    filerItem.appendTo($('.slick-track'))
+    $('.jFiler-items-list').slick('reinit')
+    filerItem.addClass('uploading-item')
     $('.jFiler-items-list').slick('slickGoTo', $('.slick-track .slick-slide').length);
   },
 
   uploadError: function(filerItem){
-    filerItem.find('.jFiler-item-assets').show()
     filerItem.find('.jFiler-jProgressBar .bar').addClass('red')
     filerItem.find('.jFiler-item-inner').append('<div class="jFiler-item-upload-status pull-left"><span class="error">'+I18n.t('js.filer.upload.error')+'</span></div>')
   },
 
   uploadSuccess: function(data, filerItem){
     filerItem.data('photo-id', data.response.id)
-    var index = filerItem.data('jfiler-index')
-    var slickImage = $('[data-slick-index='+index+']')
-    slickImage.find('img').attr('src', data.response.src)
-    filerItem.find('.jFiler-item-assets').show()
-    filerItem.find('.jFiler-jProgressBar .bar').addClass('green')
+    filerItem.removeClass('uploading-item')
+    filerItem.find('.jFiler-jProgressBar').fadeOut()
     CDLV.pubSub.trigger('photo:add', data)
+  },
+  slickInit: function() {
+    if (this.slickInitialized()) return
+    $('.jFiler-items-list').slick({
+      infinite: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      centerMode: false,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            arrows: false,
+            dots: false
+          }
+        },
+      ]
+    })
+  },
+  slickInitialized: function() {
+    return $('.slick-track').length > 0
   }
 })
