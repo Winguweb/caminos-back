@@ -39,7 +39,7 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
           return that.trigger('filer:alert', text)
         }
       },
-      files: options.documents || [],
+      files: [],
       templates: {
         item: '<li class="jFiler-item" data-document-id=""><div class="jFiler-item-container"><div class="jFiler-item-inner"><div class="jFiler-item-icon pull-left">{{fi-icon}}</div><div class="jFiler-item-info pull-left"><div class="jFiler-item-title" title="{{fi-name}}">{{fi-name | limitTo:30}}</div><div class="jFiler-item-others"><span>Tamaño: {{fi-size2}}</span><span>Tipo: {{fi-extension}}</span><span class="jFiler-item-status">{{fi-progressBar}}</span></div><div class="jFiler-item-assets"><ul class="list-inline"><li><a class="icon-jfi-trash jFiler-item-trash-action">' + I18n.t('js.filer.trash') + '</a></li></ul></div></div></div></div></li>',
         itemAppend: '<li class="jFiler-item-dummy"></li>',
