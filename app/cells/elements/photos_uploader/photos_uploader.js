@@ -141,13 +141,10 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
     filerItem.appendTo($('.slick-track'))
     $('.jFiler-items-list').slick('reinit')
     filerItem.addClass('uploading-item')
-    // filerItem.find('img')[0].setAttribute('src', this.loadingImage)
     $('.jFiler-items-list').slick('slickGoTo', $('.slick-track .slick-slide').length);
-
   },
 
   uploadError: function(filerItem){
-    filerItem.find('.jFiler-item-assets').show()
     filerItem.find('.jFiler-jProgressBar .bar').addClass('red')
     filerItem.find('.jFiler-item-inner').append('<div class="jFiler-item-upload-status pull-left"><span class="error">'+I18n.t('js.filer.upload.error')+'</span></div>')
   },
