@@ -49,6 +49,7 @@ es-AR:
     documents: Documentos
   pictures:
     pictures: Fotos
+    upload_photos: Subi Fotos
   status:
     all_status: Todos
     expired: Vencida

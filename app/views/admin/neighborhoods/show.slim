@@ -28,5 +28,5 @@ div.page-section
 
   section
     - file_input_id = 'photo_file_input'
-    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
+    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('pictures.upload_photos'), for: file_input_id }])
     == cell('elements/photos_uploader', @neighborhood.photos, { owner: @neighborhood, file_input_id: file_input_id })
