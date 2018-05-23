@@ -3,5 +3,5 @@ es-AR:
     ajax:
       photos:
         errors:
-          delete: Hubo un erro al intentar eliminar la foto
+          destroy: Hubo un error al intentar eliminar la foto
           upload: Hubo un error al intentar subir la foto

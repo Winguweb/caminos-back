@@ -1,7 +1,8 @@
 class Work < ApplicationRecord
+  include DocumentRelatable
+
   belongs_to :neighborhood
   has_and_belongs_to_many :meetings
-  has_many :documents, as: :holder
   has_many :photos, as: :owner
 
   acts_as_taggable_on :categories

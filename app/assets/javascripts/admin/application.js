@@ -5,10 +5,12 @@
 //
 // CELLS
 //= require button_for.js
-//= require document_form.js
+//= require documents_table.js
+//= require documents_uploader.js
 //= require map_edit.js
 //= require map_references.js
 //= require map_show.js
+//= require photos_list.js
 //= require mobile_menu.js
 //= require filterable.js
 //= require photos_gallery.js

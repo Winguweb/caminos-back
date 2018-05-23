@@ -1,0 +1,19 @@
+.photos-list-cell
+  script type="text/template" id="photo-template" class="hidden"
+    .photo id=raw("<%= id %>")
+      img src=raw("<%= url %>") height='200px'
+
+  - if photos.present?
+    - photos.each do |photo|
+      .photo id=photo.id
+        = image_tag photo.image.thumb.url, alt: photo.original_filename, height: 200
+  - else
+    .empty-photos
+      span=t('.no_photos')
+
+javascript:
+  $(function() {
+    new CDLV.Components['photos/list']({
+      el: $('.photos-list-cell')
+    })
+  });

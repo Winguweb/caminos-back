@@ -1,5 +1,4 @@
 class Elements::DocumentsTableCell < Cell::ViewModel
-
   include ::Cell::Translation
 
   private

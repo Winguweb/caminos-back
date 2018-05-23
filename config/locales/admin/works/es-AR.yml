@@ -11,16 +11,9 @@ es-AR:
         title: Nueva Obra
       show:
         estimated_end_date: Tiempo de finalización estimado
-        load_document: Cargar Documento
+        photos: Fotos
+        related_documents: Documentos relacionados
         related_meetings: Reuniones relacionadas
+        start_date: Fecha de inicio
+        upload_document: Subir Documentos
         upload_photos: Subir Fotos
-  works:
-    show:
-      load_document: Cargar Documento
-      start_date: Fecha de inicio
-      upload_photos: Subir Fotos
-
-
-
-
-
