@@ -39,21 +39,21 @@ Rails.application.routes.draw do
       namespace :ajax do
         resources :neighborhoods, only: [] do
           post '/documents/upload', action: :upload, controller: :documents
-          delete '/documents/:id', action: :delete, controller: :documents, as: :document
+          delete '/documents/:id', action: :destroy, controller: :documents, as: :document
 
           post '/photos/upload', action: :upload, controller: :photos
-          delete '/photos/:id', action: :delete, controller: :photos, as: :photo
+          delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
         end
         resources :works, only: [] do
           post '/documents/upload', action: :upload, controller: :documents
-          delete '/documents/:id', action: :delete, controller: :documents, as: :document
+          delete '/documents/:id', action: :destroy, controller: :documents, as: :document
 
           post '/photos/upload', action: :upload, controller: :photos
-          delete '/photos/:id', action: :delete, controller: :photos, as: :photo
+          delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
         end
         resources :meetings, only: [] do
           post '/documents/upload', action: :upload, controller: :documents
-          delete '/documents/:id', action: :delete, controller: :documents, as: :document
+          delete '/documents/:id', action: :destroy, controller: :documents, as: :document
         end
       end
       # ╰─ End of AJAX Accesible URL's / Path's

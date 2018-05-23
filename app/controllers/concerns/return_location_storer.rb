@@ -4,7 +4,7 @@ module ReturnLocationStorer
 
   included do
     helper_method :store_return_to_location,
-                  :redirect_to_attemped_location_or_root
+                  :redirect_to_attemped_location_or_dashboard
   end
 
   protected
@@ -15,13 +15,13 @@ module ReturnLocationStorer
     end
   end
 
-  def redirect_to_attemped_location_or_root
+  def redirect_to_attemped_location_or_dashboard
     if session[:return_to].present?
       return_to = session[:return_to]
       clean_return_to_location
       redirect_to return_to
     else
-      redirect_to root_path
+      redirect_to admin_dashboard_path
     end
   end
 

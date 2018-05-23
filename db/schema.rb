@@ -40,13 +40,12 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.index ["neighborhood_id"], name: "index_documents_on_neighborhood_id"
   end
 
-  create_table "documents_relations", id: false, force: :cascade do |t|
+  create_table "documents_relations", force: :cascade do |t|
     t.uuid "document_id", null: false
     t.string "relatable_type"
     t.uuid "relatable_id", null: false
     t.uuid "responsible_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
     t.index ["document_id"], name: "index_documents_relations_on_document_id"
     t.index ["relatable_type", "relatable_id"], name: "index_documents_relations_on_relatable_type_and_relatable_id"
     t.index ["responsible_id"], name: "index_documents_relations_on_responsible_id"
@@ -121,7 +120,7 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "taggings", id: :bigint, default: -> { "nextval('taggings_id_seq1'::regclass)" }, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.uuid "taggable_id"
@@ -140,7 +139,7 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", id: :bigint, default: -> { "nextval('tags_id_seq1'::regclass)" }, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true

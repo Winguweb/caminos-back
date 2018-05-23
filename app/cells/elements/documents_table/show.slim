@@ -2,7 +2,10 @@
   script type="text/template" id="document-template" class="hidden"
     tr.document id=raw("<%= id %>")
       td
-      td = raw("<%= name %>")
+        i class=raw("<%= icon_type %>")
+      td
+        a href=raw("<%= url %>") target='_blank'
+          = raw("<%= name %>")
       td = raw("<%= description %>")
       td = raw("<%= created_at %>")
 
@@ -36,13 +39,10 @@
         - documents.each do |document|
           tr.document id=document.id
             td
-              i
-            td
-              a href=document[:attachment_source] = document[:name]
-            td
-              a href=document[:attachment_source] = document[:description]
-            td
-              a href=document[:attachment_source] = l(document[:created_at], format: :slashes)
+              i class=document.icon_type
+            td = link_to document.name, document.attachment.url, target:'_blank'
+            td = document.description
+            td = l(document.created_at, format: :basic)
       - else
         span=t('.no_documents')
 

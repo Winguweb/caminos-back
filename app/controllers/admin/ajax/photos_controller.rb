@@ -2,7 +2,7 @@ module Admin::Ajax
   class PhotosController < BaseController
     include CurrentAndEnsureDependencyLoader
 
-    def delete
+    def destroy
       if photo = current_owner.photos.find_by(id: params[:id])
         if photo.destroy
           render json: {
@@ -12,12 +12,12 @@ module Admin::Ajax
           }, status: 200
         else
           render json: {
-            errors: [ I18n.t('admin.ajax.photos.errors.delete') ]
+            errors: [ I18n.t('admin.ajax.photos.errors.destroy') ]
           }, status: 500
         end
       else
         render json: {
-          errors: [ I18n.t('admin.ajax.photos.errors.delete') ]
+          errors: [ I18n.t('admin.ajax.photos.errors.destroy') ]
         }, status: 422
       end
     end

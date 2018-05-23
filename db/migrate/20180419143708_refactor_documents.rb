@@ -19,7 +19,7 @@ class RefactorDocuments < ActiveRecord::Migration[5.1]
     end
     add_index  :documents, :data, using: :gin
 
-    create_table :documents_relations, id: false do |t|
+    create_table :documents_relations do |t|
       t.uuid :document_id, null: false, index: true
 
       t.string :relatable_type
@@ -27,7 +27,7 @@ class RefactorDocuments < ActiveRecord::Migration[5.1]
 
       t.uuid :responsible_id, null: false, index: true
 
-      t.timestamps
+      t.datetime :created_at
     end
     add_index :documents_relations, [:relatable_type, :relatable_id]
   end

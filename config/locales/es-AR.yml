@@ -21,14 +21,6 @@ es-AR:
     sewer: Cloacas
     trash: Basura
     water: Agua
-  date:
-    formats:
-      period: "%B"
-      year_and_month: "%Y · %B"
-      day_and_day_of_week: "%A %d"
-      day_of_week: "%A"
-      day: "%d"
-      slashes: "%d/%m/%y"
   documents:
     documents: Documentos
   entities:
@@ -64,14 +56,6 @@ es-AR:
     in_process: En progreso
     pending: Pendiente
     proyected: Proyectada
-  time:
-    formats:
-      period: "%B"
-      year_and_month: "%Y · %B"
-      day_and_day_of_week: "%A %d"
-      day_of_week: "%A"
-      day: "%d"
-      slashes: "%d/%m/%y"
   user:
     roles:
       ambassador: Embajador
