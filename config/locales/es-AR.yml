@@ -59,45 +59,48 @@ es-AR:
     pictures: Fotos
   status:
     all_status: Todos
-    expired: Vencida
     done: Finalizada
+    expired: Vencida
     in_process: En progreso
     pending: Pendiente
     proyected: Proyectada
   time:
     formats:
-      period: "%B"
-      year_and_month: "%Y · %B"
+      day: "%d"
       day_and_day_of_week: "%A %d"
       day_of_week: "%A"
-      day: "%d"
+      period: "%B"
       slashes: "%d/%m/%y"
+      year_and_month: "%Y · %B"
   user:
     roles:
-      ambassador: Embajador
       admin: Administrador
+      ambassador: Embajador
   works:
+    about_work: Sobre la obra
+    budget: Presupuesto
     category: Categoría
-    works: Obras
-    name: Título
+    company: Empresa
+    created_at: Creado el
     description: Descripción
+    documents: Documentos
+    end_date: Fecha finalización
+    estimated_end_date: Fecha finalización estimada
+    execution_plan: Plán de ejecución
+    geometry: Geometría
+    geo_geometry: Geometría Geoespacial
     status: Estado
     start_date: Fecha inicio
-    estimated_end_date: Fecha finalización estimada
-    end_date: Fecha finalización
+    show:
+      view_more: Ver más
     lookup_address: Dirección
     lookup_coordinates: Coordenadas
-    geo_geometry: Geometría Geoespacial
-    geometry: Geometría
-    budget: Presupuesto
     manager: Responsable
     map_location: Ubicación en el mapa
-    execution_plan: Plán de ejecución
-    created_at: Creado el
-    documents: Documentos
+    name: Título
     photos: Fotos
     related_meetings: Reuniones relacionadas
-    company: Empresa
+    works: Obras
 
 
 
