@@ -39,6 +39,12 @@ module Admin
       @neighborhoods = Neighborhood.all.order([{urbanization: :desc}, 'LOWER(name)'])
     end
 
+    def destroy
+      load_neighborhood
+      @neighborhood.destroy if current_user_session
+      redirect_to admin_dashboard_path
+    end
+
     private
 
     def load_neighborhood

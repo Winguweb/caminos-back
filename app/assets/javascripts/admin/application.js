@@ -4,6 +4,8 @@
 //= require ./translations
 //
 // CELLS
+//= require alert.js
+//= require button.js
 //= require button_for.js
 //= require documents_table.js
 //= require documents_uploader.js

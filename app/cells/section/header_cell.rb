@@ -26,4 +26,12 @@ class Section::HeaderCell < Cell::ViewModel
   def buttons_for
     options[:buttons_for]
   end
+
+  def header_type
+    options[:header_type]
+  end
+
+  def alert
+    option[:alert]
+  end
 end

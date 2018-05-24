@@ -57,6 +57,13 @@ module Admin
       end
     end
 
+    def destroy
+      load_work
+      neighborhood = @work.neighborhood
+      @work.destroy if current_user_session
+      redirect_to admin_neighborhood_works_path(neighborhood)
+    end
+
     private
 
     def load_work
