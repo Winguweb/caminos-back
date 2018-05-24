@@ -41,8 +41,11 @@ module Admin
 
     def destroy
       load_neighborhood
-      @neighborhood.destroy if current_user_session
-      redirect_to admin_dashboard_path
+      if @neighborhood.destroy
+        redirect_to admin_dashboard_path
+      else
+        redirect_back(fallback_location: admin_dashboard_path)
+      end
     end
 
     private

@@ -58,10 +58,15 @@ module Admin
     end
 
     def destroy
+      ensure_neighborhood; return if performed?
+
       load_work
-      neighborhood = @work.neighborhood
-      @work.destroy if current_user_session
-      redirect_to admin_neighborhood_works_path(neighborhood)
+
+      if @work.destroy
+        redirect_to admin_neighborhood_works_path(current_neighborhood)
+      else
+        redirect_back(fallback_location: admin_dashboard_path)
+      end
     end
 
     private
