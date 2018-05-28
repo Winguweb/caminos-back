@@ -1,6 +1,5 @@
 module Admin
   module NeighborhoodsHelper
-    include UsersHelper
 
     def header_links(neighborhood)
       [

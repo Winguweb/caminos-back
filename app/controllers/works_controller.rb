@@ -1,6 +1,5 @@
 class WorksController < ApplicationController
   include CurrentAndEnsureDependencyLoader
-
   before_action :check_for_mobile, :only => [:show, :index]
   helper_method :current_meetable
 

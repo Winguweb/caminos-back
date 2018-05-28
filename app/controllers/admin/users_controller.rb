@@ -1,5 +1,7 @@
 module Admin
   class UsersController < BaseController
+    include UsersHelper
+    before_action :restrict_neighborhood
 
     def index
       @users = User.preload(:profile, :entity).all
