@@ -1,9 +1,9 @@
 module Admin
   class WorksController < BaseController
     include CurrentAndEnsureDependencyLoader
+    include UsersHelper
 
     before_action :restrict_if_responsible, only: [:destroy]
-
     helper_method :current_neighborhood
 
     def show
