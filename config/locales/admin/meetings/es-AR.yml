@@ -5,7 +5,6 @@ es-AR:
         address: Dirección
         date: Fecha
         day_order: Orden del día
-        load_document: Cargar Documentos
         load_user: Agregar Usuario
         participantas: Participantes
         works_relation: Obras Relacionadas
@@ -15,7 +14,6 @@ es-AR:
         new_meeting: Nueva Reunión
       show:
         download_minute: Descargar Minuta
-        load_document: Cargar Documento
         meeting: Reunión %{date}
         order_day: Orden del día
         participants: Participantes
