@@ -3,6 +3,8 @@ es-AR:
     edit: Editar
     save: Guardar cambios
     cancel: Cancelar
+    delete: Borrar
+    danger_zone: Zona de peligro
   activerecord:
     errors:
       models:
@@ -31,22 +33,28 @@ es-AR:
     created_at: Creado en
   meetings:
     meetings: Reuniones
+    delete: Eliminar Reunión
+    delete_info_html: "Si elimina esta reunión no podrá ser recuperada."
+    delete_meeting: "Está seguro de que realmente quiere eliminar la reunión del día %{meeting}?"
   neighborhoods:
-    neighborhood: Barrio
-    neighborhoods: Barrios
+    agreement: Acuerdo
+    ambassadors: Embajadores
+    delete: Eliminar Barrio
+    delete_info_html: "Si elimina un barrio, todas sus obras y acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
+    delete_neighborhood: "Está seguro de que realmente quiere eliminar %{neighborhood}?"
     description: Sobre el Barrio
+    documents: Documentos
+    has_urbanization_process: Tiene proceso de urbanización
+    hasnt_urbanization_process: Sin proceso de urbanicación
     information: Información
     lookup_address: Ubicación del Barrio
     map_location: Ubicación
-    name: Nombre del Barrio
-    urbanization_process: Proceso de urbanización
-    has_urbanization_process: Tiene proceso de urbanización
-    hasnt_urbanization_process: Sin proceso de urbanicación
-    pictures: Fotos
-    agreement: Acuerdo
-    ambassadors: Embajadores
     meetings: Reuniones
-    documents: Documentos
+    name: Nombre del Barrio
+    neighborhood: Barrio
+    neighborhoods: Barrios
+    pictures: Fotos
+    urbanization_process: Proceso de urbanización
   pictures:
     pictures: Fotos
     upload_photos: Subi Fotos
@@ -62,27 +70,30 @@ es-AR:
       ambassador: Embajador
       admin: Administrador
   works:
+    budget: Presupuesto
     category: Categoría
-    works: Obras
-    name: Título
+    company: Empresa
+    created_at: Creado el
+    delete: Eliminar Obra
+    delete_info_html: "Si elimina una obra, todos sus acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
+    delete_work: "Está seguro de que realmente quiere eliminar %{work}?"
     description: Descripción
-    status: Estado
-    start_date: Fecha inicio
-    estimated_end_date: Fecha finalización estimada
+    documents: Documentos
     end_date: Fecha finalización
-    lookup_address: Dirección
-    lookup_coordinates: Coordenadas
+    estimated_end_date: Fecha finalización estimada
+    execution_plan: Plán de ejecución
     geo_geometry: Geometría Geoespacial
     geometry: Geometría
-    budget: Presupuesto
+    lookup_address: Dirección
+    lookup_coordinates: Coordenadas
     manager: Responsable
     map_location: Ubicación en el mapa
-    execution_plan: Plán de ejecución
-    created_at: Creado el
-    documents: Documentos
+    name: Título
     photos: Fotos
     related_meetings: Reuniones relacionadas
-    company: Empresa
+    start_date: Fecha inicio
+    status: Estado
+    works: Obras
 
 
 

@@ -1,2 +1,16 @@
-= link_to url, class: "button-cell #{extra_classes if extra_classes}" do
-  = title
+.header-button
+  - if action.nil?
+    = link_to url, class: "button-cell #{extra_classes if extra_classes}" do
+      = title
+  - else
+    = form_tag action[:url],  method: action[:method] || 'get' do
+      = button_tag url, class: "button-cell #{extra_classes if extra_classes}" do
+        = title
+
+javascript:
+  $(function() {
+    new CDLV.Components['elements/button']({
+      el: $('.header-cell .header-button'),
+      action: #{action.to_json}
+    })
+  });

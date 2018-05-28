@@ -47,6 +47,7 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
         = yield
 
     = render partial: 'admin/partials/footer'
+    == cell('elements/alert')
 
     = yield :before_js
     = javascript_include_tag 'admin/application'

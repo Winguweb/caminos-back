@@ -1,6 +1,9 @@
 module Admin
   class WorksController < BaseController
     include CurrentAndEnsureDependencyLoader
+    include UsersHelper
+
+    before_action :restrict_if_ambassador, only: [:destroy]
 
     helper_method :current_neighborhood
 
@@ -54,6 +57,18 @@ module Admin
         redirect_to admin_neighborhood_work_path
       else
         redirect_to edit_admin_neighborhood_work_path(@work)
+      end
+    end
+
+    def destroy
+      ensure_neighborhood; return if performed?
+
+      load_work
+
+      if @work.destroy
+        redirect_to admin_neighborhood_works_path(current_neighborhood)
+      else
+        redirect_back(fallback_location: admin_dashboard_path)
       end
     end
 

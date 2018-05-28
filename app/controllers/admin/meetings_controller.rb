@@ -31,12 +31,8 @@ module Admin
 
     def index
       ensure_neighborhood; return if performed?
-
       @meetings = current_neighborhood.meetings.order(date: :desc)
-
       @meetings_years = @meetings.group_by { |x| x.date.year }
-
-      
     end
 
     def edit
@@ -47,15 +43,24 @@ module Admin
 
     def update
       ensure_neighborhood; return if performed?
-
       load_meeting
-
       service = UpdateMeeting.call(@meeting, meeting_params)
-      
+
       if service.success?
         redirect_to admin_neighborhood_meeting_path(current_neighborhood,@meeting)
       else
         redirect_to edit_admin_neighborhood_meeting_path(@meeting)
+      end
+    end
+
+    def destroy
+      ensure_neighborhood; return if performed?
+      load_meeting
+
+      if @meeting.destroy
+        redirect_to admin_neighborhood_path(current_neighborhood)
+      else
+        redirect_back(fallback_location: admin_dashboard_path)
       end
     end
 
