@@ -1,7 +1,6 @@
 module Admin
   class NeighborhoodsController < BaseController
     include UsersHelper
-
     before_action :restrict_if_responsible, only: [:destroy]
     before_action :restrict_neighborhood
 
