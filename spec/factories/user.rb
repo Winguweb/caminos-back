@@ -12,9 +12,9 @@ FactoryBot.define do
 
     factory :user_with_profile, traits: [ :with_profile ]
 
-    factory :ambassador do
+    factory :responsible do
       with_profile
-      roles [ :ambassador ]
+      roles [ :responsible ]
     end
 
     factory :admin do
