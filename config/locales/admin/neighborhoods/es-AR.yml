@@ -11,6 +11,6 @@ es-AR:
       show:
         about_neighborhood: Sobre el barrio %{neighborhood}
         activity: Actividad reciente
-        add_new_ambassador: Agregar Nuevo
+        add_new_responsible: Agregar Nuevo
         add_new_photo: Agregar Nueva
         upload_document: Cargar Documento

@@ -1,5 +1,8 @@
 module Admin
   class NeighborhoodsController < BaseController
+    include UsersHelper
+    before_action :restrict_if_responsible, only: [:destroy]
+    before_action :restrict_neighborhood
 
     def show
       load_neighborhood
@@ -37,6 +40,15 @@ module Admin
 
     def index
       @neighborhoods = Neighborhood.all.order([{urbanization: :desc}, 'LOWER(name)'])
+    end
+
+    def destroy
+      load_neighborhood
+      if @neighborhood.destroy
+        redirect_to admin_dashboard_path
+      else
+        redirect_back(fallback_location: admin_dashboard_path)
+      end
     end
 
     private

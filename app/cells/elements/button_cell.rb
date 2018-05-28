@@ -13,4 +13,8 @@ class Elements::ButtonCell < Cell::ViewModel
   def url
     model[:url]
   end
+
+  def action
+    model[:action]
+  end
 end

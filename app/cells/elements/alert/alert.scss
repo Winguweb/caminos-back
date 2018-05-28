@@ -1,0 +1,7 @@
+@mixin alert() {
+}
+
+.alert-cell{
+  @include alert();
+}
+

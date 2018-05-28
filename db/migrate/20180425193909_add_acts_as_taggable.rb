@@ -1,5 +1,5 @@
 class AddActsAsTaggable < ActiveRecord::Migration[5.1]
-  def change
+  def up
     drop_table :taggings if table_exists?(:taggings)
     drop_table :tags if table_exists?(:tags)
 
@@ -32,5 +32,10 @@ class AddActsAsTaggable < ActiveRecord::Migration[5.1]
       t.integer :taggings_count, default: 0
       t.index [:name], unique: true
     end
+  end
+
+  def down
+    drop_table :taggings if table_exists?(:taggings)
+    drop_table :tags if table_exists?(:tags)
   end
 end

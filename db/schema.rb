@@ -25,18 +25,52 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.index ["neighborhood_id"], name: "index_agreements_on_neighborhood_id"
   end
 
+  create_table "audits", force: :cascade do |t|
+    t.uuid "auditable_id"
+    t.string "auditable_type"
+    t.uuid "associated_id"
+    t.string "associated_type"
+    t.uuid "user_id"
+    t.string "user_type"
+    t.string "username"
+    t.string "action"
+    t.text "audited_changes"
+    t.integer "version", default: 0
+    t.string "comment"
+    t.string "remote_address"
+    t.string "request_uuid"
+    t.datetime "created_at"
+    t.index ["associated_type", "associated_id"], name: "associated_index"
+    t.index ["auditable_type", "auditable_id"], name: "auditable_index"
+    t.index ["created_at"], name: "index_audits_on_created_at"
+    t.index ["request_uuid"], name: "index_audits_on_request_uuid"
+    t.index ["user_id", "user_type"], name: "user_index"
+  end
+
   create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "type"
     t.string "name"
     t.string "description"
-    t.string "attachment_type"
-    t.string "attachment_source"
-    t.string "filetype"
-    t.string "holder_type"
-    t.uuid "holder_id", null: false
+    t.uuid "neighborhood_id", null: false
+    t.string "attachment"
+    t.string "file_type"
+    t.integer "file_size"
+    t.jsonb "data", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["holder_id"], name: "index_documents_on_holder_id"
-    t.index ["holder_type", "holder_id"], name: "index_documents_on_holder_type_and_holder_id"
+    t.index ["data"], name: "index_documents_on_data", using: :gin
+    t.index ["neighborhood_id"], name: "index_documents_on_neighborhood_id"
+  end
+
+  create_table "documents_relations", force: :cascade do |t|
+    t.uuid "document_id", null: false
+    t.string "relatable_type"
+    t.uuid "relatable_id", null: false
+    t.uuid "responsible_id", null: false
+    t.datetime "created_at"
+    t.index ["document_id"], name: "index_documents_relations_on_document_id"
+    t.index ["relatable_type", "relatable_id"], name: "index_documents_relations_on_relatable_type_and_relatable_id"
+    t.index ["responsible_id"], name: "index_documents_relations_on_responsible_id"
   end
 
   create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -108,7 +142,7 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "taggings", id: :bigint, default: -> { "nextval('taggings_id_seq1'::regclass)" }, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.uuid "taggable_id"
@@ -127,7 +161,7 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", id: :bigint, default: -> { "nextval('tags_id_seq1'::regclass)" }, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true

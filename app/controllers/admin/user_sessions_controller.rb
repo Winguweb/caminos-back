@@ -6,7 +6,7 @@ module Admin
     layout 'admin'
 
     def new
-      redirect_to root_path and return if current_user.present?
+      redirect_to admin_dashboard_path and return if current_user.present?
 
       @user_session = UserSession.new
     end
@@ -15,7 +15,7 @@ module Admin
       @user_session = UserSession.new(user_session_params)
 
       if @user_session.save
-        redirect_to_attemped_location_or_root
+        redirect_to_attemped_location_or_dashboard
       else
         flash[:error] = I18n.t('signin.error')
         flash.keep

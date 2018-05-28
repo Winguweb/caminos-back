@@ -1,5 +1,6 @@
 module Admin
   module NeighborhoodsHelper
+
     def header_links(neighborhood)
       [
         {

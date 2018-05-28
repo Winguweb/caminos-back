@@ -4,7 +4,7 @@
     @include grid-shift(3);
     @include grid-column(10);
     margin-bottom: $vgutter*4;
-    > header {
+    > header, > form > header {
       @include grid-collapse;
       @include display(flex);
       @include align-items(flex-end);
@@ -20,7 +20,7 @@
           @include grid-container;
           @include text-color($text-grey);
            > span {
-            @include grid-column(6 of 10);
+            @include grid-column(16);
            }
         }
       }
@@ -32,9 +32,9 @@
           text-align: right;
           > a, > button {
             @include text-color($text-blue);
-            margin-right: 0;
             background: none;
             border: none;
+            margin-right: 0;
             padding: 0;
             &:hover {
               @include text-color($text-blue);

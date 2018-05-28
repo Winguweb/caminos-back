@@ -3,6 +3,8 @@ es-AR:
     edit: Editar
     save: Guardar cambios
     cancel: Cancelar
+    delete: Borrar
+    danger_zone: Zona de peligro
   activerecord:
     errors:
       models:
@@ -21,14 +23,6 @@ es-AR:
     sewer: Cloacas
     trash: Basura
     water: Agua
-  date:
-    formats:
-      period: "%B"
-      year_and_month: "%Y · %B"
-      day_and_day_of_week: "%A %d"
-      day_of_week: "%A"
-      day: "%d"
-      slashes: "%d/%m/%y"
   documents:
     documents: Documentos
   entities:
@@ -39,24 +33,31 @@ es-AR:
     created_at: Creado en
   meetings:
     meetings: Reuniones
+    delete: Eliminar Reunión
+    delete_info_html: "Si elimina esta reunión no podrá ser recuperada."
+    delete_meeting: "Está seguro de que realmente quiere eliminar la reunión del día %{meeting}?"
   neighborhoods:
-    neighborhood: Barrio
-    neighborhoods: Barrios
+    agreement: Acuerdo
+    responsibles: Responsables
+    delete: Eliminar Barrio
+    delete_info_html: "Si elimina un barrio, todas sus obras y acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
+    delete_neighborhood: "Está seguro de que realmente quiere eliminar %{neighborhood}?"
     description: Sobre el Barrio
+    documents: Documentos
+    has_urbanization_process: Tiene proceso de urbanización
+    hasnt_urbanization_process: Sin proceso de urbanicación
     information: Información
     lookup_address: Ubicación del Barrio
     map_location: Ubicación
-    name: Nombre del Barrio
-    urbanization_process: Proceso de urbanización
-    has_urbanization_process: Tiene proceso de urbanización
-    hasnt_urbanization_process: Sin proceso de urbanicación
-    pictures: Fotos
-    agreement: Acuerdo
-    ambassadors: Embajadores
     meetings: Reuniones
-    documents: Documentos
+    name: Nombre del Barrio
+    neighborhood: Barrio
+    neighborhoods: Barrios
+    pictures: Fotos
+    urbanization_process: Proceso de urbanización
   pictures:
     pictures: Fotos
+    upload_photos: Subi Fotos
   status:
     all_status: Todos
     done: Finalizada
@@ -74,25 +75,26 @@ es-AR:
       year_and_month: "%Y · %B"
   user:
     roles:
+      responsible: Responsable
       admin: Administrador
       ambassador: Embajador
   works:
     about_work: Sobre la obra
     budget: Presupuesto
     category: Categoría
+    category_list: Categoría
     company: Empresa
     created_at: Creado el
+    delete: Eliminar Obra
+    delete_info_html: "Si elimina una obra, todos sus acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
+    delete_work: "Está seguro de que realmente quiere eliminar %{work}?"
     description: Descripción
     documents: Documentos
     end_date: Fecha finalización
     estimated_end_date: Fecha finalización estimada
     execution_plan: Plán de ejecución
-    geometry: Geometría
     geo_geometry: Geometría Geoespacial
-    status: Estado
-    start_date: Fecha inicio
-    show:
-      view_more: Ver más
+    geometry: Geometría
     lookup_address: Dirección
     lookup_coordinates: Coordenadas
     manager: Responsable
@@ -100,6 +102,8 @@ es-AR:
     name: Título
     photos: Fotos
     related_meetings: Reuniones relacionadas
+    start_date: Fecha inicio
+    status: Estado
     works: Obras
 
 

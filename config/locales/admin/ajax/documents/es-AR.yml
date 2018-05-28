@@ -1,0 +1,7 @@
+es-AR:
+  admin:
+    ajax:
+      photos:
+        errors:
+          destroy: Hubo un error al intentar eliminar el documento
+          upload: Hubo un error al intentar subir el documento

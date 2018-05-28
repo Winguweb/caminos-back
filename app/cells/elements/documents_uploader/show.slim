@@ -1,0 +1,16 @@
+.documents-uploader-cell
+  = form_for Document.new, url: url, method: :post, html: { multipart: true } do |form|
+    = form.file_field :attachment, id: file_input_id
+    .documents-uploads
+      .jFiler-items
+
+javascript:
+  $(function() {
+    new CDLV.Components['documents/uploader']({
+      el: $('.documents-uploader-cell'),
+      documents: #{raw documents},
+      fileInputId: '#{file_input_id}',
+      owner: { pluralizeName: '#{owner_pluralize_name}', id: '#{owner_id}'}
+    })
+  });
+

@@ -24,9 +24,9 @@ div.page-section
     .content
       == cell('elements/documents_table', @documents)
   section
-    == cell('section/header', t('neighborhoods.ambassadors'), buttons: [{title: t('.add_new_ambassador'), url: '#', extra_classes:'add-new-ambassador' }])
+    == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
 
   section
     - file_input_id = 'photo_file_input'
-    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
+    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('pictures.upload_photos'), for: file_input_id }])
     == cell('elements/photos_uploader', @neighborhood.photos, { owner: @neighborhood, file_input_id: file_input_id })

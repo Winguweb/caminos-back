@@ -37,8 +37,24 @@ Rails.application.routes.draw do
 
       # ╭─ AJAX Accesible URL's / Path's
       namespace :ajax do
-        post '/photos/upload', action: :upload, controller: :photos
-        delete '/photos/:id', action: :delete, controller: :photos, as: :photo
+        resources :neighborhoods, only: [] do
+          post '/documents/upload', action: :upload, controller: :documents
+          delete '/documents/:id', action: :destroy, controller: :documents, as: :document
+
+          post '/photos/upload', action: :upload, controller: :photos
+          delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
+        end
+        resources :works, only: [] do
+          post '/documents/upload', action: :upload, controller: :documents
+          delete '/documents/:id', action: :destroy, controller: :documents, as: :document
+
+          post '/photos/upload', action: :upload, controller: :photos
+          delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
+        end
+        resources :meetings, only: [] do
+          post '/documents/upload', action: :upload, controller: :documents
+          delete '/documents/:id', action: :destroy, controller: :documents, as: :document
+        end
       end
       # ╰─ End of AJAX Accesible URL's / Path's
 
@@ -48,10 +64,10 @@ Rails.application.routes.draw do
 
       resources :organizations, only: [:show, :new, :create, :index]
 
-      resources :neighborhoods, only: [:show, :new, :create, :index, :update, :edit] do
-        resources :works, only: [:show, :new, :create, :index, :update, :edit]
-        resources :meetings, only: [:show, :new, :create, :index, :update, :edit]
-        resource :agreement, only: [ :show, :new, :create,:edit, :update]
+      resources :neighborhoods, :as => "neighborhoods" do
+        resources :works
+        resources :meetings
+        resource :agreement
       end
     end
   # ╰─ End of Private Accesible URL's / Path's
