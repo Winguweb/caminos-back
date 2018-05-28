@@ -25,6 +25,7 @@
           input type="hidden" name="neighborhood[geometry]" class="geometry-field"
           input type="hidden" name="neighborhood[geo_geometry]" class="geo_geometry-field"
 
-  section
-    == cell('section/header', t('actions.danger_zone'), header_type: 'danger')
-    == cell('section/header', t('actions.delete'), subtitle: t('neighborhoods.delete_info_html'), buttons: [{title: t('neighborhoods.delete'), extra_classes: 'danger-type', action: {type: 'alert:show', title: t('neighborhoods.delete'), message: t("neighborhoods.delete_neighborhood", neighborhood: @neighborhood.name), url: admin_neighborhood_path, method: 'DELETE'}}])
+  - if is_admin?
+    section
+      == cell('section/header', t('actions.danger_zone'), header_type: 'danger')
+      == cell('section/header', t('actions.delete'), subtitle: t('neighborhoods.delete_info_html'), buttons: [{title: t('neighborhoods.delete'), extra_classes: 'danger-type', action: {type: 'alert:show', title: t('neighborhoods.delete'), message: t("neighborhoods.delete_neighborhood", neighborhood: @neighborhood.name), url: admin_neighborhood_path, method: 'DELETE'}}])

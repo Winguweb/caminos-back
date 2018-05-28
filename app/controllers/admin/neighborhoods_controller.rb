@@ -1,5 +1,8 @@
 module Admin
   class NeighborhoodsController < BaseController
+    include UsersHelper
+
+    before_action :restrict_if_ambassador, only: [:destroy]
 
     def show
       load_neighborhood
