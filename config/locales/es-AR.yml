@@ -60,26 +60,34 @@ es-AR:
     upload_photos: Subi Fotos
   status:
     all_status: Todos
-    expired: Vencida
     done: Finalizada
+    expired: Vencida
     in_process: En progreso
     pending: Pendiente
     proyected: Proyectada
+  time:
+    formats:
+      day: "%d"
+      day_and_day_of_week: "%A %d"
+      day_of_week: "%A"
+      period: "%B"
+      slashes: "%d/%m/%y"
+      year_and_month: "%Y · %B"
   user:
     roles:
       responsible: Responsable
       admin: Administrador
+      ambassador: Embajador
   works:
+    about_work: Sobre la obra
     budget: Presupuesto
     category: Categoría
+    category_list: Categoría
     company: Empresa
     created_at: Creado el
     delete: Eliminar Obra
     delete_info_html: "Si elimina una obra, todos sus acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
     delete_work: "Está seguro de que realmente quiere eliminar %{work}?"
-    category_list: Categoría
-    works: Obras
-    name: Título
     description: Descripción
     documents: Documentos
     end_date: Fecha finalización
