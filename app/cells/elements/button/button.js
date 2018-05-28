@@ -1,6 +1,6 @@
 CDLV.Components['elements/button'] = Backbone.View.extend({
   events: {
-    ['click .button-cell']: 'buttonTrigger',
+    'click .button-cell': 'buttonTrigger',
   },
   initialize: function(options) {
     _.bindAll(
