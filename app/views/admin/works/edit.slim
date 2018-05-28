@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', t('.title', name: @work.name), breadcrumbs: [t('admin.sections.dashboard'), t('admin.sections.works')])
+  == cell('page/header', t('.title', name: @work.name), breadcrumbs: [{title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.works'), href: admin_neighborhood_works_path}])
 
 = render 'form'
 

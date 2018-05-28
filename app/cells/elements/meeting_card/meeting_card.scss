@@ -3,6 +3,7 @@
   > a > article {
     border: 2px solid $light-grey;
     border-radius: 6px;
+    min-height: 70px;
     padding: $vgutter*2 $gutter;
     > header {
       > h1 {
@@ -17,11 +18,12 @@
         &:before {
           background-image: image-url("icons/marker.svg");
           background-repeat: no-repeat;
-          background-size: cover;
+          background-size: contain;
           content: '';
           display: inline-block;
-          height: 17px;
-          margin-right: $gutter;
+          float: left;
+          height: 35px;
+          margin-right: $gutter/2;
           position: relative;
           top: 4px;
           width: 13px;

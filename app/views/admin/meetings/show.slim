@@ -1,10 +1,10 @@
 = content_for :main_header do
-  == cell('page/header',  t('.meeting', date: @meeting.date.to_date), breadcrumbs: [ current_neighborhood.name, t('.meetings') ],  subtitle: t('.upload_by',user: "Facundo Pérez" ,date: @meeting.created_at.to_date))
+  == cell('page/header',  t('.meeting', date: @meeting.date.to_date), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path},{title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} , {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('.meetings'), href: admin_neighborhood_meeting_path} ],  subtitle: t('.upload_by',user: "Facundo Pérez" ,date: @meeting.created_at.to_date))
 
 .page-section
 
   section
-    == cell('section/header',t(".order_day"), buttons: [{title: "editar", url:  edit_admin_neighborhood_meeting_path(current_neighborhood,@meeting) }])
+    == cell('section/header',t(".order_day"), buttons: [{title: "editar", url:  edit_admin_neighborhood_meeting_path(current_neighborhood, @meeting) }])
     main
       == cell('elements/meeting_details', @meeting)
   section
