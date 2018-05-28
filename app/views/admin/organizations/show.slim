@@ -1,9 +1,9 @@
 
 section
   h1 = @organization.name
-  h3 = "Embajadores:"
-  .ambassadors-list
-    - @organization.users.each do |ambassador|
+  h3 = "Responsables:"
+  .responsibles-list
+    - @organization.users.each do |responsible|
       .neighborhood-data
         h4
-          .name= ambassador.username
+          .name= responsible.username

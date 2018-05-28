@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
     let(:responsible){ create(:responsible) }
     let(:admin){ create(:admin) }
 
-    it('check ambassador role') { expect(ambassador.roles).to contain_exactly(:responsible) }
+    it('check responsible role') { expect(responsible.roles).to contain_exactly(:responsible) }
     it('check admin role') { expect(admin.roles).to contain_exactly(:admin) }
   end
 
