@@ -1,7 +1,7 @@
 - roles = @user.roles.map{|role| t("user.roles.#{role}")}.join(', ')
 
 = content_for :main_header do
-  == cell('page/header', t('.user_profile'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.users') ] )
+  == cell('page/header', t('.user_profile'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.users'), href: admin_users_path} ] )
 
 div.page-section
   section

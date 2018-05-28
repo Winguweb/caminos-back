@@ -2,5 +2,6 @@ div.breadcrumbs-cell
   - unless crumbs.nil?
     ul
       - crumbs.each do |crumb|
-        li = crumb
+        li
+          = link_to crumb[:title], crumb[:href]
         li = ">"

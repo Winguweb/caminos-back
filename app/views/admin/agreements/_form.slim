@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', "", breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+  == cell('page/header', "", breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhoods_path(current_neighborhood)}, {title: t('admin.sections.agreements'), href: admin_neighborhood_agreement_path} ] )
 
 = form_for @agreement, url: admin_neighborhood_agreement_path, html: { class: 'form' } do |f|
   .page-section
