@@ -5,15 +5,14 @@
         span = neighborhood.name
       p
         span = t("labels.updated_at")
-        time
-          = neighborhood.updated_at.to_date.to_s
+        time = " #{l(neighborhood.updated_at.to_date, formats: :slashes)}"
 
     main
       p
         span
           = t("neighborhoods.urbanization_process")
         span
-          = "#{to_fixed_percentage(neighborhood.urbanization_score)}%"
+          = " #{to_fixed_percentage(neighborhood.urbanization_score)}%"
       div
         div
         div style="width:#{to_fixed_percentage(neighborhood.urbanization_score)}%;"
