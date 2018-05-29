@@ -7,7 +7,8 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
         'beforeUpload',
         'removeFile',
         'uploadError',
-        'uploadSuccess'
+        'uploadSuccess',
+        'sendRemoveQuery'
     )
 
     var that = this
@@ -23,6 +24,10 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
       'filer:upload:error': this.uploadError,
       'filer:upload:success': this.uploadSuccess,
       'filer:remove': this.removeFile
+    })
+
+    CDLV.pubSub.on({
+      'filer:remove:query': this.sendRemoveQuery
     })
 
     this.filerInput = $input.filer({
@@ -86,11 +91,14 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
   },
 
   removeFile: function(filerItem){
-    var that = this
     var documentId = filerItem.data('document-id')
 
     if( _.isEmpty(documentId) ) return true
 
+    this.sendRemoveQuery(documentId)
+  },
+
+  sendRemoveQuery(documentId) {
     var url = '/admin/ajax/'+this.owner.pluralizeName+'/'+this.owner.id+'/documents/'+documentId
     this.displayMessage(false)
      $.ajax({

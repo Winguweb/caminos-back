@@ -1,10 +1,14 @@
 CDLV.Components['documents/table'] = Backbone.View.extend({
+  events: {
+  'click .remove-document': 'removeDocumentClicked',
+  },
   initialize: function(options){
     _.bindAll(
       this,
       'addDocument',
       'removeDocument'
     )
+
     var $template = this.$el.find('#document-template')
     this.template = _.template($template.html())
     $template.remove()
@@ -15,6 +19,14 @@ CDLV.Components['documents/table'] = Backbone.View.extend({
       'document:add': this.addDocument,
       'document:remove': this.removeDocument
     })
+  },
+
+  removeDocumentClicked: function(evt) {
+    var $el = $(evt.target)
+    var documentId = $el.data('document-id')
+    $el.closest('tr').addClass('removing')
+    CDLV.pubSub.trigger('filer:remove:query', documentId)
+    return false
   },
 
   addDocument: function(data){
