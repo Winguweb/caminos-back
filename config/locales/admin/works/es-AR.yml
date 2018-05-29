@@ -6,6 +6,7 @@ es-AR:
       errors: "%{field}: Este campo es obligatorio"
       form:
         about_work: Sobre la obra
+        select_a_category: Seleccione una categoría
       index:
         new_work: Nueva Obra
       new:

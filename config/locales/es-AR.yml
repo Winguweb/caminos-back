@@ -16,6 +16,10 @@ es-AR:
     files: Archivos
   categories:
     all_categories: Todas
+    public_services: Servicios Públicos
+    state_equipment: Equipamiento Estatal
+    public_spaces: Espacios Públicos
+    home: Vivienda
     energy: "Luz / Electricidad"
     health: Salud
     infrastructure: Infraestructura
