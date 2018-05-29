@@ -110,7 +110,7 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
 
     filerItem.fadeOut(300, function() {
       $(this).remove()
-      this.$el.find('.jFiler-items-list').slick('reinit')
+      that.$el.find('.jFiler-items-list').slick('reinit')
     })
     this.displayMessage(false)
      $.ajax({
