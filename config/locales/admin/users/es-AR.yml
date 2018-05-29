@@ -20,11 +20,13 @@ es-AR:
       create:
         entity: Barrio
         errors: "%{field}: Este campo es obligatorio"
+        email: "Email: %{message}"
         password: "Contraseña: %{message}"
         roles: Roles/Permisos
       update:
         entity: Barrio
         errors: "%{field}: Este campo es obligatorio"
+        email: "Email: %{message}"
         password: "Contraseña: %{message}"
         roles: Roles/Permisos
 

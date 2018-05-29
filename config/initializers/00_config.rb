@@ -5,7 +5,7 @@ ALLOWED_ORIGINS    = APP_CONFIG[env]['allowed_origins'].freeze
 aws = APP_CONFIG[env]['aws'].freeze
 AWS_CREDENTIALS = aws['credentials'].freeze
 AWS_REGION      = aws['region'].freeze
-AWS_S3_BUCKET   = aws['credentials'].freeze
+AWS_S3_BUCKET   = aws['s3']['bucket'].freeze
 
 HOSTNAME = APP_CONFIG[env]['hostname'].freeze
 
