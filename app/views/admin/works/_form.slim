@@ -12,7 +12,7 @@
         .no-grid
           .field
             = f.label :category_list, t('works.category')
-            span.category-parent = "Seleccione una categoría"
+            span.category-parent = t(".select_a_category")
             = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, include_blank: true
           .field
             = f.label :name, t('works.status')

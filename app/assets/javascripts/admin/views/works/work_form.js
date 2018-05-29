@@ -10,7 +10,7 @@ CDLV.Components['work_form'] = Backbone.View.extend({
       state_equipment: {keys: ["health"], title: "Equipamiento Estatal: "},
       public_spaces: {keys: ["infrastructure"], title: "Espacios Públicos: "},
       home: {keys: ["home"], title: "Vivienda: "},
-      empty: {keys: [""], title: "Seleccione una categoría"},
+      empty: {keys: [""], title: I18n.t('js.admin.works.select_a_category')},
     }
 
     this.$select = this.$el.find('#work_category_list')

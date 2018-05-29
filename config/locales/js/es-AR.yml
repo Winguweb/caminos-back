@@ -1,5 +1,8 @@
 es-AR:
   js:
+    admin:
+      works:
+        select_a_category: Seleccione una categoría
     filer:
       button: Elegir archivos
       drop: Arrastra un archivo para subir
@@ -15,9 +18,3 @@ es-AR:
       trash: Quitar
       upload:
         error: Ocurrió un error al subir este archivo
-    admin:
-      components:
-        campaigns:
-          confirm_delete: ¿Realmente desea eliminar la campaña?
-        donations:
-          confirm_delete: ¿Realmente desea eliminar la donación?
