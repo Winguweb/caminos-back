@@ -46,12 +46,10 @@ section
     section
       == cell('section/header', t('documents.documents'))
       == cell('elements/documents_table',@work.documents)
-      a href='#' = t('.view_more')
 
     section
       == cell('section/header', t('meetings.meetings'))
       == cell('elements/meetings_list', @work.meetings , neighborhood: @neighborhood)
-      a href='#' = t('.view_more')
 
     section
       == cell('section/header', t('pictures.pictures'))
