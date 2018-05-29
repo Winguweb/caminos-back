@@ -14,7 +14,8 @@ section
       .half-input
         div
           span = t('works.category')
-          span = @work.category
+          - @work.categories.each do |category|
+            span = t("categories.#{category}")
         div
           span = t('works.status')
           span = @work.status

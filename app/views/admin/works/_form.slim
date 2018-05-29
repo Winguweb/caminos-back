@@ -12,6 +12,7 @@
         .no-grid
           .field
             = f.label :category_list, t('works.category')
+            span.category-parent = "Seleccione una categoría"
             = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, include_blank: true
           .field
             = f.label :name, t('works.status')
@@ -51,3 +52,10 @@
           == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'work', editable: @work)
         input type="hidden" name="work[geometry]" class="geometry-field"
         input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"
+
+javascript:
+  $(function() {
+    new CDLV.Components['work_form']({
+      el: $('.work-form')
+    })
+  });
