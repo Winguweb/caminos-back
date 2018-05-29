@@ -76,6 +76,7 @@ es-AR:
       day_of_week: "%A"
       period: "%B"
       slashes: "%d/%m/%y"
+      full: "%d de %B  de %Y"
       year_and_month: "%Y · %B"
   user:
     roles:
