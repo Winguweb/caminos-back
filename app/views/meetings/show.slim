@@ -1,0 +1,13 @@
+= content_for :main_header do
+
+main.page-section
+  == cell('page/header',  t('.meeting', date: @meeting.date.to_date), pretitle: l(@meeting.date, format: :year_and_month), subtitle: @meeting.lookup_address)
+  section
+    == cell('section/header',t(".objectives"))
+    == cell('elements/meeting_details', @meeting)
+  section
+    == cell('section/header',t(".documents"))
+    == cell('elements/documents_table', @meeting.documents)
+  section
+    == cell('section/header',t(".works_relation"))
+    == cell('elements/works_table', @meeting.works, filters: false)

@@ -4,4 +4,4 @@
 div.page-section
   section
     == cell('section/header', "", buttons: [{title: t('.new_work'), url: new_admin_neighborhood_work_path }])
-    == cell('elements/works_table', @works, neighborhood: current_neighborhood)
+    == cell('elements/works_table', @works, neighborhood: current_neighborhood, admin: true)

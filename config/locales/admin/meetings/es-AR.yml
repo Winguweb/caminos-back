@@ -13,9 +13,20 @@ es-AR:
       new:
         new_meeting: Nueva Reunión
       show:
+        documents: Documentos
         download_minute: Descargar Minuta
         meeting: Reunión %{date}
         order_day: Orden del día
         participants: Participantes
-        upload_by: Subido por %{user} el %{date}
+        upload_document: Subir Documento
+        upload_by: Subido el %{date}
         works_relation: Obras Relacionadas
+  meetings:
+    show:
+      documents: Documentos
+      download_minute: Descargar Minuta
+      meeting: Reunión %{date}
+      objectives: Objetivos
+      participants: Participantes
+      upload_by: Subido el %{date}
+      works_relation: Obras Relacionadas

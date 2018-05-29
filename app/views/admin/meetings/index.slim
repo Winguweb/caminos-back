@@ -10,4 +10,4 @@ div.page-section
         == cell('section/header', year, buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_meeting_path }])
       - else
         == cell('section/header', year)
-      == cell('elements/meetings_list', @meetings_years[year], neighborhood: current_neighborhood)
+      == cell('elements/meetings_list', @meetings_years[year], neighborhood: current_neighborhood, admin: true)

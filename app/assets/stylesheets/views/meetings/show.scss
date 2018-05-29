@@ -1,0 +1,9 @@
+@mixin meetings-show() {
+  > main {
+    padding-top: $gutter;
+  }
+}
+
+#meetings-show {
+  @include meetings-show();
+}

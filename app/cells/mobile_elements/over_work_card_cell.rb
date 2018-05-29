@@ -5,5 +5,4 @@ class MobileElements::OverWorkCardCell < Cell::ViewModel
     return [] if model.blank?
     model
   end
-
 end
