@@ -110,7 +110,7 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
 
     filerItem.fadeOut(300, function() {
       $(this).remove()
-      $('.jFiler-items-list').slick('reinit')
+      this.$el.find('.jFiler-items-list').slick('reinit')
     })
     this.displayMessage(false)
      $.ajax({
@@ -139,9 +139,9 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
   beforeUpload: function(filerItem){
     this.slickInit()
     filerItem.appendTo($('.slick-track'))
-    $('.jFiler-items-list').slick('reinit')
+    this.$el.find('.jFiler-items-list').slick('reinit')
     filerItem.addClass('uploading-item')
-    $('.jFiler-items-list').slick('slickGoTo', $('.slick-track .slick-slide').length);
+    this.$el.find('.jFiler-items-list').slick('slickGoTo', $('.slick-track .slick-slide').length);
   },
 
   uploadError: function(filerItem){
@@ -157,7 +157,7 @@ CDLV.Components['photos/uploader'] = Backbone.View.extend({
   },
   slickInit: function() {
     if (this.slickInitialized()) return
-    $('.jFiler-items-list').slick({
+    this.$el.find('.jFiler-items-list').slick({
       infinite: false,
       speed: 300,
       slidesToShow: 3,
