@@ -65,6 +65,18 @@ module Admin
 
     private
 
+    def load_errors(errors)
+      messages  = []
+      errors.each do |error|
+        if error == :password || error == :email
+            messages << t(".#{error}", message: errors[error].last)
+        else
+          messages << t('.errors', field: t(".#{error}"))
+        end
+      end
+      return messages
+    end
+
     def reload_params
       {
         username: user_params[:username],
