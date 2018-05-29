@@ -1,22 +1,8 @@
 .neighborhoods-list-cell
   table style="width:100%"
-    thead
-      tr
-        th.sortable_name
-          select#name_neighborhood onchange="neighborhoodChange()"
-            option value="asc"  A-Z
-            option value="desc"  Z-A
-
-        th.sortable_progress
-          select#progress onchange="progressChange()"
-            option value="asc"  Orden ascendente
-            option value="desc" Orden descendente
-
-
     tbody
       - neighborhoods.each do |neighborhood|
         - percent = to_fixed_percentage(neighborhood.urbanization_score)
-
         tr
           td
             a href=admin_neighborhood_path(neighborhood)
@@ -24,8 +10,7 @@
 
                 = neighborhood.name
               p#date
-                = "#{t('labels.updated_at')}: #{neighborhood.updated_at}"
-
+                = "#{t('labels.updated_at')} #{l(neighborhood.updated_at, format: :full)}"
           td
             a href="#"
               main
