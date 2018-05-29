@@ -98,7 +98,7 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
     this.sendRemoveQuery(documentId)
   },
 
-  sendRemoveQuery(documentId) {
+  sendRemoveQuery: function(documentId) {
     var url = '/admin/ajax/'+this.owner.pluralizeName+'/'+this.owner.id+'/documents/'+documentId
     this.displayMessage(false)
      $.ajax({
