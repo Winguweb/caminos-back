@@ -5,6 +5,6 @@
       div
         h2=l(beginning_of_month, format: :period).titleize
         - period_meetings.reverse.each do |meeting|
-          == cell('elements/meeting_card', meeting)
+          == cell('elements/meeting_card', meeting, admin: admin)
   - else
     span=t('.no_meetings')

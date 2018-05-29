@@ -2,6 +2,10 @@
   .content
     == cell('elements/breadcrumbs', crumbs: breadcrumbs)
     .page-title
+      - if pretitle
+        div.pretitle
+          span
+            = pretitle
       - if title
         h1
           span
