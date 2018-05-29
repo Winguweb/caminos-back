@@ -29,7 +29,7 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_works_path
       else
-        flash[:error] =  load_errors(service.errors)
+        flash.now[:error] =  load_errors(service.errors)
         @categories = Work.categories
         @status = Work.status
         @work = current_neighborhood.works.new(work_params)
@@ -60,7 +60,7 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_work_path
       else
-        flash[:error] =  load_errors(service.errors)
+        flash.now[:error] =  load_errors(service.errors)
         @categories = Work.categories
         @status = Work.status
         @work = current_neighborhood.works.new(work_params)

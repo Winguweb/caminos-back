@@ -12,7 +12,6 @@ class Work < ApplicationRecord
     :status,
     :manager,
     :name,
-    :execution_plan,
     :category_list,
     :lookup_address,
     :geo_geometry
