@@ -55,6 +55,7 @@
     top: calc(#{$gutter*2} - #{$border});
     white-space: nowrap;
     &.unurbanized {
+      display: none;
       left: calc(50% + 4px);
       top: calc(#{$gutter*1.5} - #{$border});
     }
