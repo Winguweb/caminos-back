@@ -21,7 +21,11 @@ module Admin
       if service.success?
         redirect_to root_path
       else
-        redirect_to new_admin_user_path
+        flash.now[:error] =  load_errors(service.errors)
+        @user = User.new(reload_params)
+        @user.profile = Profile.new(user_params[:profile])
+        load_neighborhoods
+        render action: :new
       end
     end
 
@@ -39,7 +43,10 @@ module Admin
       if service.success?
         redirect_to admin_user_path(@user)
       else
-        redirect_to edit_admin_user_path(@user)
+        flash.now[:error] =  load_errors(service.errors)
+        load_user
+        load_neighborhoods
+        render action: :edit
       end
     end
 
@@ -56,6 +63,22 @@ module Admin
     end
 
     private
+
+    def load_errors(errors)
+      messages  = []
+      errors.each do |error|
+        messages << t('.errors', field: t(".#{error}"))
+      end
+      return messages
+    end
+
+    def reload_params
+      {
+        username: user_params[:username],
+        email: user_params[:email],
+        password: user_params[:password],
+      }
+    end
 
     def user_params
       params.require(:user).permit(

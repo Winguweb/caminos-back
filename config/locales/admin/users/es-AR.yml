@@ -17,3 +17,11 @@ es-AR:
         general: General
         user_profile: Perfil del usuario
         permissions: Permisos
+      create:
+        errors: "%{field}: Este campo es obligatorio"
+        roles: Roles/Permisos
+        entity: Barrio
+      update:
+        errors: "%{field}: Este campo es obligatorio"
+        roles: Roles/Permisos
+        entity: Barrio

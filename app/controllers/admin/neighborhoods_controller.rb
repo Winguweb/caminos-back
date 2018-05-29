@@ -37,8 +37,8 @@ module Admin
         redirect_to admin_neighborhood_path(@neighborhood)
       else
         flash.now[:error] =  load_errors(service.errors)
-        @neighborhood = Neighborhood.new(neighborhood_params)
-        render action: :new
+        load_neighborhood
+        render action: :edit
       end
     end
 
@@ -60,10 +60,11 @@ module Admin
     def load_errors(errors)
       messages  = []
       errors.each do |error|
-        messages << t('admin.works.errors', field: t("works.#{error}"))
+        messages << t('.errors', field: t(".#{error}"))
       end
       return messages
     end
+
     def load_neighborhood
       @neighborhood = Neighborhood.find(params[:id])
     end

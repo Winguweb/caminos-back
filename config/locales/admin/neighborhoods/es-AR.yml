@@ -15,3 +15,11 @@ es-AR:
         add_new_photo: Agregar Nueva
         related_documents: Documentos relacionados
         upload_document: Subir Documentos
+      create:
+        errors: "%{field}: Este campo es obligatorio"
+        geometry: Poligono
+        geo_geometry: Poligono
+      update:
+        errors: "%{field}: Este campo es obligatorio"
+        geometry: Poligono
+        geo_geometry: Poligono

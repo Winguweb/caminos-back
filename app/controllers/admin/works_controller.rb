@@ -64,7 +64,7 @@ module Admin
         @categories = Work.categories
         @status = Work.status
         @work = current_neighborhood.works.new(work_params)
-        render action: :new
+        render action: :edit
       end
     end
 
