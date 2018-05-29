@@ -5,7 +5,7 @@
     div
       span
         = "Fecha de inicio"
-        p= meeting.date
+        p= l(meeting.date, format: :slashes)
       span
         = "Dirección"
         p= meeting.lookup_address
