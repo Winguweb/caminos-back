@@ -21,8 +21,9 @@ module Admin
       if service.success?
         redirect_to root_path
       else
+
         flash.now[:error] =  load_errors(service.errors)
-        @user = User.new(reload_params)
+        @user = User.new(service.reload_user_params)
         @user.profile = Profile.new(user_params[:profile])
         load_neighborhoods
         render action: :new
@@ -64,21 +65,23 @@ module Admin
 
     private
 
-    def load_errors(errors)
-      messages  = []
-      errors.each do |error|
-        messages << t('.errors', field: t(".#{error}"))
-      end
-      return messages
-    end
-
     def reload_params
       {
         username: user_params[:username],
         email: user_params[:email],
         password: user_params[:password],
-      }
+        roles: roles(@roles)
+      }.tap do |_hash|
+        _hash[:entity] = related_entity
+      end
     end
+
+  def related_entity
+    return Organization.first if roles(@roles)[0] == 'admin'
+    @related_entity ||= if id = @allowed_params[:neighborhood_id]
+      Neighborhood.find_by(id:id)
+    end
+  end
 
     def user_params
       params.require(:user).permit(

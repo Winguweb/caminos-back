@@ -18,10 +18,13 @@ es-AR:
         user_profile: Perfil del usuario
         permissions: Permisos
       create:
-        errors: "%{field}: Este campo es obligatorio"
-        roles: Roles/Permisos
         entity: Barrio
+        errors: "%{field}: Este campo es obligatorio"
+        password: "Contraseña: %{message}"
+        roles: Roles/Permisos
       update:
-        errors: "%{field}: Este campo es obligatorio"
-        roles: Roles/Permisos
         entity: Barrio
+        errors: "%{field}: Este campo es obligatorio"
+        password: "Contraseña: %{message}"
+        roles: Roles/Permisos
+

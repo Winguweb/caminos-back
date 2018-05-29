@@ -11,9 +11,24 @@ class CreateUser
     create_user
   end
 
+  def reload_user_params
+    {
+      username: @allowed_params[:username],
+      email: @allowed_params[:email],
+      password: @allowed_params[:password],
+      active: true,
+      approved: true,
+      confirmed: true,
+      roles: roles(@roles)
+    }.tap do |_hash|
+      _hash[:entity] = related_entity
+    end
+  end
+
   private
 
   def create_user
+
     @user = User.new(user_params)
     @user.profile = Profile.new(profile_params)
 
@@ -37,7 +52,7 @@ class CreateUser
   end
 
   def related_entity
-    return Organization.first if roles(@roles)[0] == 'admin'
+    return Organization.first if roles(@roles)[0] == 'admin' || roles(@roles)[0] == :admin
     @related_entity ||= if id = @allowed_params[:neighborhood_id]
       Neighborhood.find_by(id:id)
     end
