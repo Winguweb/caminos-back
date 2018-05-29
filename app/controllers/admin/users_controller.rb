@@ -68,7 +68,8 @@ module Admin
     def load_errors(errors)
       messages  = []
       errors.each do |error|
-        if error == :password || error == :email
+
+        if [:password, :email, :username].include?(error)
             messages << t(".#{error}", message: errors[error].last)
         else
           messages << t('.errors', field: t(".#{error}"))

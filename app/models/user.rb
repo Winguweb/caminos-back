@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
   validates_presence_of :email, :username, :roles, :entity
   validates_presence_of :password, on: [ :create ]
+  validates :username, uniqueness: true
 
   roles AVAILABLE_ROLES
 
