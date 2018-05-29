@@ -52,6 +52,10 @@
         &:last-of-type {
           border-bottom: none;
         }
+        &.removing {
+          opacity: 0.3;
+          pointer-events: none;
+        }
         > td {
           line-height: 35px;
           padding: $vgutter*2 0;
@@ -70,8 +74,9 @@
             }
           }
           &:nth-of-type(2) { @include grid-column(7); @include text-color($text-black, 1); }
-          &:nth-of-type(3) { @include grid-column(5); }
-          &:nth-of-type(4) { @include grid-column(3); float: right; text-align: right; }
+          &:nth-of-type(3) { @include grid-column(3); }
+          &:nth-of-type(4) { @include grid-column(2); }
+          &:nth-of-type(5) { @include grid-column(3); float: right; text-align: right; }
           > a, > span, > i{
             @include grid-collapse;
           }

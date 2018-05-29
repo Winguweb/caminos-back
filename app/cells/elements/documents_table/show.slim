@@ -42,6 +42,8 @@
               i class=document.icon_type
             td = link_to document.name, document.attachment.url, target:'_blank'
             td = document.description
+            td = link_to 'delete', class: 'remove-document', 'data-document-id': document.id do
+              = t('js.filer.trash')
             td = l(document.created_at, format: :basic)
       - else
         span=t('.no_documents')
