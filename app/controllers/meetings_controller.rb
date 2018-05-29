@@ -1,6 +1,5 @@
 class MeetingsController < ApplicationController
   include CurrentAndEnsureDependencyLoader
-  helper_method :current_user_session
   helper_method :current_neighborhood
 
   before_action :check_for_mobile, :only => [:index, :show]
