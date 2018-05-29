@@ -12,11 +12,11 @@ CDLV.Components['photos/gallery'] = Backbone.View.extend({
     $photoGalleryLivebox = this.$el.find('.photo-gallery-livebox')
     $photoGalleryLiveboxImage = this.$el.find('.photo-gallery-livebox img')
     $photoGalleryCarousel.slick({
-      dots: true,
-      infinite: true,
+      dots: false,
+      infinite: false,
       speed: 300,
-      slidesToShow: 1,
-      centerMode: true,
+      slidesToShow: 4,
+      centerMode: false,
       variableWidth: true,
       responsive: [
         {
