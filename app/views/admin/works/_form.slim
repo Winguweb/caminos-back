@@ -17,12 +17,10 @@
             label.required
               = f.label :category_list, t('works.category')
             span.category-parent = t(".select_a_category")
-            / = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, include_blank: true, required: true
             = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
           .field
             label.required
               = f.label :name, t('works.status')
-            / = f.select :status, @status.collect {|c| [t("status.#{c}"), c]}, include_blank: true, required: true
             = f.select :status, @status.collect {|c| [t("status.#{c}"), c]}, { include_blank: true }, required: true
         .half-input
           .field
@@ -65,5 +63,5 @@ javascript:
   $(function() {
     new CDLV.Components['work_form']({
       el: $('.work-form')
-    });
+    })
   });
