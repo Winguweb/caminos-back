@@ -1,0 +1,9 @@
+- unless field_messages.empty?
+  .error-messages-cell
+    ul.main-messages
+      - field_messages.each do |name, field_message|
+        -if field_message.is_a?(Array)
+          - field_message.each do |message|
+            li = message
+        -else
+          = field_message

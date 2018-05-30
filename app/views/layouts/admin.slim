@@ -39,14 +39,8 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
       - if content_for?(:main_header)
         .main-header
           = content_for(:main_header)
-      - unless flash.empty?
-        .main-messages
-          - flash.each do |name, msg|
-            -if msg.is_a?(Array)
-              - msg.each do |e|
-                li =e
-            -else
-              = msg
+      == cell('elements/error_messages', flash)
+
       .main-section
         = yield
 

@@ -8,10 +8,10 @@
       .fields
         .field.name
           = form.label :name, t('neighborhoods.name')
-          = form.text_field :name, class: 'require'
+          = form.text_field :name, class: 'require', required: true
         .field.description
           = form.label :description, t('neighborhoods.description')
-          = form.text_area :description, class: 'require', rows: 6
+          = form.text_area :description, class: 'require', rows: 6, required: true
         .field.urbanization
           span= t('neighborhoods.has_urbanization_process')
           div
