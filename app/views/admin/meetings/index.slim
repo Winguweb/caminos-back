@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} ] )
+  == cell('page/header', "#{current_neighborhood.name} (#{current_neighborhood.abbreviation})", links: header_links(current_neighborhood), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} ] )
 
 div.page-section
   section

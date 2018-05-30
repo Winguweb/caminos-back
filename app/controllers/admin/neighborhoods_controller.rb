@@ -71,6 +71,7 @@ module Admin
 
     def neighborhood_params
       params.require(:neighborhood).permit(
+        :abbreviation,
         :description,
         :geo_geometry,
         :lookup_coordinates,
