@@ -23,7 +23,7 @@ div.page-section
     - document_file_input_id = 'document_file_input'
     == cell('section/header', t('.related_documents'), buttons_for: [{ title: t('.upload_document'), for: document_file_input_id }])
     == cell('elements/documents_uploader', @neighborhood.documents, { owner: @neighborhood, file_input_id: document_file_input_id })
-    == cell('elements/documents_table', @neighborhood.documents)
+    == cell('elements/documents_table', @neighborhood.documents, admin: true)
 
   section
     == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
