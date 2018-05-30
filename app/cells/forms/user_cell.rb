@@ -22,4 +22,8 @@ class Forms::UserCell < Cell::ViewModel
   def action
     options[:action]
   end
+
+  def disabled_inputs
+    options[:from_neighborhood]
+  end
 end

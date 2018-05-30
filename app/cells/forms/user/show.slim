@@ -26,7 +26,7 @@
             = form.label :password, t('.password')
             = form.password_field :password, required: true
           .half-input
-            .field
+            .field class="#{'disabled' if disabled_inputs}"
               label= t('.roles')
               - User.available_roles.each do |role|
                 .role
@@ -36,6 +36,6 @@
                     label for="roles_#{role}" class="check-label"
                   label.role-name for="roles_#{role}"
                     = t("admin.roles.#{role}")
-            .field
+            .field class="#{'disabled' if disabled_inputs}"
               = form.label :name, t('.neighborhood')
               = select_tag 'user[neighborhood_id]', options_for_select(neighborhoods.map { |o| [ o.name, o.id ] }, neighborhood), include_blank: true

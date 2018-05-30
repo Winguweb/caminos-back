@@ -26,7 +26,7 @@ div.page-section
     == cell('elements/documents_table', @neighborhood.documents)
 
   section
-    == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
+    == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: new_admin_user_path(neighborhood_id: @neighborhood.id), extra_classes:'add-new-responsible' }])
 
   section
     - file_input_id = 'photo_file_input'

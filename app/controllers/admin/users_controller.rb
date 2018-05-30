@@ -13,6 +13,12 @@ module Admin
 
     def new
       @user = User.new(profile: Profile.new)
+      if params[:neighborhood_id]
+        @from_neighborhood_form = true
+        @roles = 'responsible'
+        @user.roles = [@roles]
+        @neighborhood = params[:neighborhood_id]
+      end
       load_neighborhoods
     end
 
