@@ -19,9 +19,8 @@ module Admin
     def create
       service = CreateUser.call(user_params, roles_params)
       if service.success?
-        redirect_to root_path
+        redirect_to admin_users_path
       else
-
         flash.now[:error] =  load_errors(service.errors)
         @user = User.new(service.reload_user_params)
         @user.profile = Profile.new(user_params[:profile])
