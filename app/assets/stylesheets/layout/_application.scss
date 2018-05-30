@@ -46,6 +46,7 @@ body > main {
   @include grid-column(16);
   .main-header, .main-section{
     @include grid-collapse;
+    overflow: hidden;
   }
   .main-header{
     @include shadow-down($light-shadow, 1);

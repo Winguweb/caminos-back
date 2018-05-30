@@ -9,22 +9,22 @@
             = form.fields_for user.profile do |profile|
               .field.first_name
                 = profile.label :first_name, t('.first_name')
-                = profile.text_field :first_name
+                = profile.text_field :first_name, required: true
               .field.last_name
                 = profile.label :last_name, t('.last_name')
-                = profile.text_field :last_name
+                = profile.text_field :last_name, required: true
 
         .fields.user-information
           .half-input
             .field
               = form.label :username, t('.username')
-              = form.text_field :username
+              = form.text_field :username, required: true
             .field
               = form.label :email, t('.email')
-              = form.text_field :email
+              = form.text_field :email, required: true
           .field
             = form.label :password, t('.password')
-            = form.password_field :password
+            = form.password_field :password, required: true
           .half-input
             .field
               label= t('.roles')

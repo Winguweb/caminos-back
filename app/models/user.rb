@@ -17,8 +17,9 @@ class User < ApplicationRecord
 
   attribute :settings, :jsonb, default: {}
 
-  validates_presence_of :email, :username
+  validates_presence_of :email, :username, :roles, :entity
   validates_presence_of :password, on: [ :create ]
+  validates :username, uniqueness: true
 
   roles AVAILABLE_ROLES
 
