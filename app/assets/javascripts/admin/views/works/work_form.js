@@ -20,14 +20,22 @@ CDLV.Components['work_form'] = Backbone.View.extend({
     this.$select.on('change', this.categoryChanged)
 
     for (var index = 0; index < this.$options.length; index++) {
+     if (this.$options[index].value != "" ){
       var parentIndex = this.getParentFromCategory(this.$options[index].value)
       this.$options[index].value = [this.$options[index].value, parentIndex].join(',')
+     }
+
     }
 
-    this.changeParentValue(this.$select.val())
+    if(this.$select.val() != "" ){
+      this.changeParentValue(this.$select.val())
+    }
   },
   categoryChanged: function(el) {
-    this.changeParentValue(el.target.value)
+    if(el.target.value != "" ){
+       this.changeParentValue(el.target.value)
+    }
+
   },
   changeParentValue: function(value) {
     var parentIndex = this.getParentFromCategory(value.split(',')[0])
