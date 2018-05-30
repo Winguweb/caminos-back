@@ -15,3 +15,5 @@ es-AR:
         add_new_photo: Agregar Nueva
         related_documents: Documentos relacionados
         upload_document: Subir Documentos
+      edit:
+        update_neighborhood: Actulizando Barrio
