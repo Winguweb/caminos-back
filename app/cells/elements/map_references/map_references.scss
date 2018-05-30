@@ -86,12 +86,13 @@
       width: $inner-diameter;
     }
     > span {
-      @include transform(translate3d(-50%, -50%, 0));
       @include text-color($white, 1);
+      @include transform(translate3d(-50%, -50%, 0));
+      @include type-setting(-2);
       font-weight: bold;
       left: 50%;
       position: absolute;
-      top: 50%;
+      top: calc(50% - 1px);
     }
     &.unurbanized {
       border: none;
