@@ -60,4 +60,4 @@
 
   section
     == cell('section/header', t('meetings.meetings'))
-    == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
+    == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood, admin: true)

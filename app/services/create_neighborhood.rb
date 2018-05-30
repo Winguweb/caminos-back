@@ -38,6 +38,7 @@ class CreateNeighborhood
   def neighborhood_params
     {
       name: @allowed_params[:name],
+      abbreviation: @allowed_params[:abbreviation],
       description: @allowed_params[:description],
       lookup_coordinates: @allowed_params[:lookup_coordinates],
       lookup_address: @allowed_params[:lookup_address],

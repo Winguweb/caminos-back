@@ -13,7 +13,7 @@ section
                 li
                   = link_to neighborhood_path(neighborhood.id) do
                     p
-                      span
+                      span = neighborhood.abbreviation
                     div
                       h3=neighborhood.name
                       span="Proceso de urbanización"

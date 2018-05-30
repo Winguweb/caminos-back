@@ -5,12 +5,18 @@
   section
     = form_for ['admin', @neighborhood], html: { class: 'form' } do |form|
       == cell('section/header', t("neighborhoods.information"), links: [{ title: t("actions.cancel"), url: admin_neighborhoods_path(@neighborhood) }, { title: t("actions.save"), submit: true }])
-      .fields
+      .two-thirds-one-third-input
         .field.name
-          = form.label :name, t('neighborhoods.name')
+          label.required
+            = form.label :name, t('neighborhoods.name')
           = form.text_field :name, class: 'require', required: true
+        .field.abbreviation
+          = form.label :abbreviation, t('neighborhoods.abbreviation')
+          = form.text_field :abbreviation, class: 'require', required: true
+      .fields
         .field.description
-          = form.label :description, t('neighborhoods.description')
+          label.required
+            = form.label :description, t('neighborhoods.description')
           = form.text_area :description, class: 'require', rows: 6, required: true
         .field.urbanization
           span= t('neighborhoods.has_urbanization_process')
