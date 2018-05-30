@@ -12,6 +12,7 @@ class MeetingsController < ApplicationController
   end
 
   def show
+    @neighborhood = current_neighborhood
     load_meeting
   end
 
