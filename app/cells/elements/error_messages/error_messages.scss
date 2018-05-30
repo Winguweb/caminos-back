@@ -1,0 +1,20 @@
+@mixin error_messages() {
+    > ul {
+      @include grid-shift(3);
+      @include grid-column(10);
+      > li {
+        @include background-color($red, 0.6);
+        @include text-color($white, 1);
+        @include type-setting(-1);
+        border-radius: 0.28571429rem;
+        margin-bottom: $vgutter*4;
+        margin-bottom: $gutter/4;
+        padding: $gutter/4;
+      }
+    }
+}
+
+.error-messages-cell {
+  @include error_messages();
+}
+
