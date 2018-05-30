@@ -14,8 +14,7 @@ class NeighborhoodsController < ApplicationController
   def agreement
     load_neighborhood
     if !@neighborhood.agreement.blank? && !@neighborhood.agreement.data.nil?
-      # TODO: ESTO ES PELIGROSO!!!
-      @data = eval(@neighborhood.agreement.data)
+      @data = JSON.parse(@neighborhood.agreement.data)
     else
       @data = {}
     end
