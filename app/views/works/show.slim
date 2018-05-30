@@ -18,7 +18,7 @@ section
             span = t("categories.#{category}")
         div
           span = t('works.status')
-          span = @work.status
+          span = t("status.#{@work.status}")
         div
           span = t('works.manager')
           span = @work.manager
