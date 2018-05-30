@@ -1,8 +1,7 @@
 = content_for :main_header do
-  == cell('page/header',  t('.meeting', date: @meeting.date.to_date), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path},{title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} , {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('.meetings'), href: admin_neighborhood_meeting_path} ],  subtitle: t('.upload_by', date: @meeting.created_at.to_date))
+  == cell('page/header',  t('.meeting', date: @meeting.date.to_date), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path},{title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} , {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('.meetings'), href: admin_neighborhood_meetings_path} ],  subtitle: t('.upload_by', date: @meeting.created_at.to_date))
 
 .page-section
-
   section
     == cell('section/header',t(".order_day"), buttons: [{title: "editar", url:  edit_admin_neighborhood_meeting_path(current_neighborhood, @meeting) }])
     main
@@ -11,10 +10,8 @@
     - document_file_input_id = 'document_file_input'
     == cell('section/header', t('.related_documents'), buttons_for: [{ title: t('.upload_document'), for: document_file_input_id }])
     == cell('elements/documents_uploader', @meeting.documents, { owner: @meeting, file_input_id: document_file_input_id })
-    == cell('elements/documents_table', @meeting.documents)
+    == cell('elements/documents_table', @meeting.documents, admin: true)
   section
     == cell('section/header',t(".works_relation"))
     main
       == cell('elements/works_table', @meeting.works, filters: false, admin: true)
-  section
-    == cell('section/header',t(".participants"))
