@@ -20,7 +20,7 @@ class Work < ApplicationRecord
   # validate :valid_dates
 
   # CATEGORIES =['Servicios Públicos','Equipamiento Estatal','Vivienda','Espacios Públicos'].freeze
-  CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure'].freeze
+  CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure', 'home'].freeze
   STATUS =['in_process','done', 'pending','expired','proyected'].freeze
 
   def self.status
