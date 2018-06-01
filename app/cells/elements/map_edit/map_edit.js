@@ -73,8 +73,6 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
 
     this.drawingControls = new L.Control.Draw(drawingControls)
 
-    window.drawingControls = this.drawingControls
-
     return this.drawingControls
   },
   bindDrawEvents: function() {
@@ -100,8 +98,13 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
     }.bind(this));
   },
   centerMap: function(polygon) {
-    polygon.coordinates = polygon.coordinates.length == 1 ? polygon.coordinates[0] : polygon.coordinates
-    var center = _.isEmpty(polygon) ? this.center : this.getCenter(polygon)
+    var center = null
+    if (_.isEmpty(polygon)) {
+      center = this.center
+    } else {
+      polygon.coordinates = polygon.coordinates.length == 1 ? polygon.coordinates[0] : polygon.coordinates
+      center = this.getCenter(polygon)
+    }
     this.map.setView([center.x, center.y], this.zoom)
   },
   createMap: function() {
