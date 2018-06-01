@@ -25,8 +25,10 @@ div.page-section
     == cell('elements/documents_uploader', @neighborhood.documents, { owner: @neighborhood, file_input_id: document_file_input_id })
     == cell('elements/documents_table', @neighborhood.documents, admin: true)
 
-  section
-    == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
+  / This is removed temporarily until task https://www.pivotaltracker.com/story/show/157920396 is finished
+
+  / section
+  /   == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
 
   section
     - file_input_id = 'photo_file_input'
