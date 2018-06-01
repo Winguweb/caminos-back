@@ -3,10 +3,20 @@
   .slick-arrow::after {
     color: $black;
   }
+  .slick-list {
+    padding: $gutter 0;
+  }
   .slick-slide {
+    @include shadow($normal-shadow, 1);
+    background: $white;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
     > img {
+      display: inline-block;
       height: 100px;
-      padding: $gutter;
+      padding: $gutter*2;
+      vertical-align: top;
     }
   }
   .photo-gallery-livebox {
