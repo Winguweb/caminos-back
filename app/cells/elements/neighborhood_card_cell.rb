@@ -9,7 +9,7 @@ class Elements::NeighborhoodCardCell < Cell::ViewModel
 
   def average
     if neighborhood
-      # binding.pry
+      return 0 if neighborhood.agreement.data.nil?
       indicators = JSON.parse(neighborhood.agreement.data)
       average = indicators.sum do |indicator|
         indicator[1]["score"].to_i

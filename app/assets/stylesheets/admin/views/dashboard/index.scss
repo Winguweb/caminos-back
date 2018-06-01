@@ -4,6 +4,7 @@
     > section {
       > ul {
         @include grid-collapse;
+        @include grid-container;
         > li {
           @include grid-column(8);
         }
