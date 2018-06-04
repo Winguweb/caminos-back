@@ -4,10 +4,11 @@ header.user-header-menu
       li.site-logo-wrapper
         = link_to admin_dashboard_path, class: 'site-logo' do
           span 'Caminos de la Villa'
-      li.item
-        = link_to t('.neighborhoods'), admin_neighborhoods_path
-      li.item
-        = link_to t('.users'), admin_users_path
+      -if is_admin?
+        li.item
+          = link_to t('.neighborhoods'), admin_neighborhoods_path
+        li.item
+          = link_to t('.users'), admin_users_path
     ul.actions
       li
         .user-menu

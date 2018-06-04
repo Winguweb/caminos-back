@@ -4,19 +4,18 @@
     section
       == cell('section/header', t(".day_order"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_works_path(current_neighborhood) }, { title: t("actions.save"), submit: true }])
       .field
-        = f.text_area :objectives
+        / label.required
+        = f.text_area :objectives, required: true
       .half-input
         .field
-          = f.label :date, t('.date')
-          = f.date_field :date
+          label.required
+            = f.label :date, t('.date')
+          = f.date_field :date, required: true
 
         .field
-          = f.label :lookup_address, t('.address')
-          = f.text_field :lookup_address
-    section
-      == cell('section/header',t("documents.documents"), buttons: [{ title: t('.load_document'), url: new_admin_neighborhood_path }])
-      .field.docs
-        == cell('elements/document_form',"meeting")
+          label.required
+            = f.label :lookup_address, t('.address')
+          = f.text_field :lookup_address, required: true
     section
       == cell('section/header',t(".works_relation"))
       - @works.each do |work|
@@ -27,6 +26,3 @@
             = check_box_tag "meeting[works][]",work.id
 
           = work.name
-
-    section
-      == cell('section/header',t(".participants"), buttons: [{ title: t('.load_user'), url: new_admin_neighborhood_path }])

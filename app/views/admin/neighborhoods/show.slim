@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', @neighborhood.name, links: header_links(@neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+  == cell('page/header', "#{@neighborhood.name} (#{@neighborhood.abbreviation})" , links: header_links(@neighborhood), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} ] )
 
 div.page-section
   section.with-border
@@ -19,12 +19,18 @@ div.page-section
     == cell('section/header', t('neighborhoods.lookup_address'))
     == cell('elements/map_show', @neighborhood)
 
-  section.with-border
-    == cell('section/header', t('neighborhoods.documents'), buttons: [{title: t('.upload_document'), url: new_admin_user_path }])
-    .content
-      == cell('elements/documents_table', @documents)
   section
-    == cell('section/header', t('neighborhoods.ambassadors'), buttons: [{title: t('.add_new_ambassador'), url: '#', extra_classes:'add-new-ambassador' }])
+    - document_file_input_id = 'document_file_input'
+    == cell('section/header', t('.related_documents'), buttons_for: [{ title: t('.upload_document'), for: document_file_input_id }])
+    == cell('elements/documents_uploader', @neighborhood.documents, { owner: @neighborhood, file_input_id: document_file_input_id })
+    == cell('elements/documents_table', @neighborhood.documents, admin: true)
+
+  / This is removed temporarily until task https://www.pivotaltracker.com/story/show/157920396 is finished
+
+  / section
+  /   == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
 
   section
-    == cell('section/header', t('neighborhoods.pictures'), buttons: [{title: t('.add_new_photo'), url: '#', extra_classes:'add-new-photo' }])
+    - file_input_id = 'photo_file_input'
+    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('pictures.upload_photos'), for: file_input_id }])
+    == cell('elements/photos_uploader', @neighborhood.photos, { owner: @neighborhood, file_input_id: file_input_id })

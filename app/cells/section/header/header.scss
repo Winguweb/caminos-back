@@ -1,4 +1,29 @@
 @mixin header-cell() {
+  &.danger-type,
+  &.warning-type,
+  &.success-type {
+    @include text-color($white, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: $gutter;
+    > article {
+      margin: 0;
+    }
+  }
+
+  &.danger-type {
+    @include background-color($red, 1);
+    border: 2px solid $red;
+  }
+  &.warning-type {
+    @include background-color($yellow, 1);
+    border: 2px solid $yellow;
+  }
+  &.success-type {
+    @include background-color($green, 1);
+    border: 2px solid $green;
+  }
+
 }
 
 @mixin header-cell-mobile() {

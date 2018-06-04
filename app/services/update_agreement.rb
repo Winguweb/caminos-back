@@ -1,7 +1,7 @@
 class UpdateAgreement
   prepend Service::Base
 
-  def initialize(neighborhood, params,agreement)
+  def initialize(neighborhood, params, agreement)
     @neighborhood = neighborhood
     @params = params
     @agreement = agreement
@@ -28,6 +28,6 @@ class UpdateAgreement
       end
       @data[indicator.parameterize.underscore.to_sym] = { answers:  @answers, score:  @params[indicator][:score]}
     end
-    return @data
+    return @data.to_json
   end
 end

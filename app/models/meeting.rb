@@ -1,7 +1,8 @@
 class Meeting < ApplicationRecord
+  include DocumentRelatable
+
   belongs_to :neighborhood
   has_and_belongs_to_many :works
-  has_many :documents, as: :holder
 
   validates_presence_of :date,
     :objectives

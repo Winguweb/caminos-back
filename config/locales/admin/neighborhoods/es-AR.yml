@@ -1,6 +1,12 @@
 es-AR:
   admin:
     neighborhoods:
+      create:
+        errors: "%{field}: Este campo es obligatorio"
+        geometry: Poligono
+        geo_geometry: Poligono
+      edit:
+        update_neighborhood: Actulizando Barrio
       index:
         neighborhoods: Barrios
         neighborhoods_subtitle: Listado de todos los barrios cargados
@@ -11,6 +17,11 @@ es-AR:
       show:
         about_neighborhood: Sobre el barrio %{neighborhood}
         activity: Actividad reciente
-        add_new_ambassador: Agregar Nuevo
+        add_new_responsible: Agregar Nuevo
         add_new_photo: Agregar Nueva
-        upload_document: Cargar Documento
+        related_documents: Documentos relacionados
+        upload_document: Subir Documentos
+      update:
+        errors: "%{field}: Este campo es obligatorio"
+        geometry: Poligono
+        geo_geometry: Poligono

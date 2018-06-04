@@ -3,24 +3,18 @@ es-AR:
     works:
       edit:
         title: "Editar Obra: %{name}"
+      errors: "%{field}: Este campo es obligatorio"
       form:
         about_work: Sobre la obra
+        select_a_category: Seleccione una categoría
       index:
         new_work: Nueva Obra
       new:
         title: Nueva Obra
       show:
         estimated_end_date: Tiempo de finalización estimado
-        load_document: Cargar Documento
+        photos: Fotos
+        related_documents: Documentos relacionados
         related_meetings: Reuniones relacionadas
-        upload_photos: Subir Fotos
-  works:
-    show:
-      load_document: Cargar Documento
-      start_date: Fecha de inicio
-      upload_photos: Subir Fotos
-
-
-
-
-
+        start_date: Fecha de inicio
+        upload_document: Subir Documentos

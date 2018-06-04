@@ -1,11 +1,11 @@
 section
-  h1  Organizaciones 
+  h1  Organizaciones
   = link_to 'Nueva Organizacion', new_organization_path
   .neighborhoods-list
     - @organizations.each do |organization|
       .organization-data
         h3
           .name= organization.name
-        .ambassadors= " Embajadores #{organization.users.all.count} "
+        .responsibles= " Responsables #{organization.users.all.count} "
         = link_to 'Ver', organization
-        
+

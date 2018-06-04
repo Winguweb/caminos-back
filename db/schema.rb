@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503200122) do
+ActiveRecord::Schema.define(version: 20180530152447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,17 +26,29 @@ ActiveRecord::Schema.define(version: 20180503200122) do
   end
 
   create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "type"
     t.string "name"
     t.string "description"
-    t.string "attachment_type"
-    t.string "attachment_source"
-    t.string "filetype"
-    t.string "holder_type"
-    t.uuid "holder_id", null: false
+    t.uuid "neighborhood_id", null: false
+    t.string "attachment"
+    t.string "file_type"
+    t.integer "file_size"
+    t.jsonb "data", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["holder_id"], name: "index_documents_on_holder_id"
-    t.index ["holder_type", "holder_id"], name: "index_documents_on_holder_type_and_holder_id"
+    t.index ["data"], name: "index_documents_on_data", using: :gin
+    t.index ["neighborhood_id"], name: "index_documents_on_neighborhood_id"
+  end
+
+  create_table "documents_relations", force: :cascade do |t|
+    t.uuid "document_id", null: false
+    t.string "relatable_type"
+    t.uuid "relatable_id", null: false
+    t.uuid "responsible_id", null: false
+    t.datetime "created_at"
+    t.index ["document_id"], name: "index_documents_relations_on_document_id"
+    t.index ["relatable_type", "relatable_id"], name: "index_documents_relations_on_relatable_type_and_relatable_id"
+    t.index ["responsible_id"], name: "index_documents_relations_on_responsible_id"
   end
 
   create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -74,6 +86,7 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.boolean "urbanization", default: false
     t.text "delegates"
     t.float "urbanization_score"
+    t.string "abbreviation"
     t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
     t.index ["geometry"], name: "index_neighborhoods_on_geometry", using: :gist
     t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist

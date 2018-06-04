@@ -1,0 +1,17 @@
+.photos-gallery-cell
+  - unless photos.empty?
+    .photo-gallery-carousel
+      - photos.each do |photo|
+        div
+          = image_tag photo.image.thumb.url, alt: 'Image'
+    .photo-gallery-livebox
+      i
+      div
+        img
+
+javascript:
+  $(function() {
+    new CDLV.Components['photos/gallery']({
+      el: $('.photos-gallery-cell'),
+    })
+  });

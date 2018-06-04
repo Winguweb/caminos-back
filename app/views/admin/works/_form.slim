@@ -1,26 +1,32 @@
 .work-form
+
   = form_for ['admin', current_neighborhood, @work], html: { class: 'form', multipart: true } do |f|
     .page-section
       section
         == cell('section/header', t(".about_work"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_works_path(current_neighborhood) }, { title: t("actions.save"), submit: true }])
         .field
-          = f.label :name, t('works.name')
-          = f.text_field :name
+          label.required
+            = f.label :name, t('works.name')
+          = f.text_field :name, required: true
         .field
-          = f.label :description, t('works.description')
-          = f.text_area :description
+          label.required
+            = f.label :description, t('works.description')
+          = f.text_area :description, required: true
         .no-grid
           .field
-            = f.label :category_list, t('works.category')
-            = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, include_blank: true
+            label.required
+              = f.label :category_list, t('works.category')
+            span.category-parent = t(".select_a_category")
+            = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
           .field
-            = f.label :name, t('works.status')
-            = f.select :status, @status.collect {|c| [t("status.#{c}"), c]}, include_blank: true
-
+            label.required
+              = f.label :name, t('works.status')
+            = f.select :status, @status.collect {|c| [t("status.#{c}"), c]}, { include_blank: true }, required: true
         .half-input
           .field
-            = f.label :manager, t('works.manager')
-            = f.text_field :manager
+            label.required
+              = f.label :manager, t('works.manager')
+            = f.text_field :manager, required: true
 
           .field
             = f.label :budget, t('works.budget')
@@ -40,8 +46,9 @@
             = f.text_field :execution_plan
 
           .field
-            = f.label :lookup_address, t('works.lookup_address')
-            = f.text_field :lookup_address
+            label.required
+              = f.label :lookup_address, t('works.lookup_address')
+            = f.text_field :lookup_address, required: true
 
       section
         == cell('section/header', t('works.map_location'))
@@ -51,3 +58,10 @@
           == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'work', editable: @work)
         input type="hidden" name="work[geometry]" class="geometry-field"
         input type="hidden" name="work[geo_geometry]" class="geo_geometry-field"
+
+javascript:
+  $(function() {
+    new CDLV.Components['work_form']({
+      el: $('.work-form')
+    })
+  });

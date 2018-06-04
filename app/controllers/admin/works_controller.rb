@@ -1,7 +1,9 @@
 module Admin
   class WorksController < BaseController
     include CurrentAndEnsureDependencyLoader
+    include UsersHelper
 
+    before_action :restrict_if_responsible, only: [:destroy]
     helper_method :current_neighborhood
 
     def show
@@ -11,6 +13,7 @@ module Admin
     end
 
     def new
+
       ensure_neighborhood; return if performed?
 
       @categories = Work.categories
@@ -26,7 +29,11 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_works_path
       else
-        redirect_to new_admin_neighborhood_work_path(current_neighborhood)
+        flash.now[:error] =  load_errors(service.errors)
+        @categories = Work.categories
+        @status = Work.status
+        @work = current_neighborhood.works.new(work_params)
+        render action: :new
       end
     end
 
@@ -53,11 +60,35 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_work_path
       else
-        redirect_to edit_admin_neighborhood_work_path(@work)
+        flash.now[:error] =  load_errors(service.errors)
+        @categories = Work.categories
+        @status = Work.status
+        @work = current_neighborhood.works.new(work_params)
+        render action: :edit
+      end
+    end
+
+    def destroy
+      ensure_neighborhood; return if performed?
+
+      load_work
+
+      if @work.destroy
+        redirect_to admin_neighborhood_works_path(current_neighborhood)
+      else
+        redirect_back(fallback_location: admin_dashboard_path)
       end
     end
 
     private
+
+    def load_errors(errors)
+      messages  = []
+      errors.each do |error|
+        messages << t('admin.works.errors', field: t("works.#{error}"))
+      end
+      return messages
+    end
 
     def load_work
       @work = current_neighborhood.works.find(params[:id])

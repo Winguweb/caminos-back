@@ -8,23 +8,28 @@
           .half-input
             = form.fields_for user.profile do |profile|
               .field.first_name
-                = profile.label :first_name, t('.first_name')
-                = profile.text_field :first_name
+                label.required
+                  = profile.label :first_name, t('.first_name')
+                = profile.text_field :first_name, required: true
               .field.last_name
-                = profile.label :last_name, t('.last_name')
-                = profile.text_field :last_name
+                label.required
+                  = profile.label :last_name, t('.last_name')
+                = profile.text_field :last_name, required: true
 
         .fields.user-information
           .half-input
             .field
-              = form.label :username, t('.username')
-              = form.text_field :username
+              label.required
+                = form.label :username, t('.username')
+              = form.text_field :username, required: true
             .field
-              = form.label :email, t('.email')
-              = form.text_field :email
+              label.required
+                = form.label :email, t('.email')
+              = form.text_field :email, required: true
           .field
-            = form.label :password, t('.password')
-            = form.password_field :password
+            label.required
+              = form.label :password, t('.password')
+            = form.password_field :password, required: true
           .half-input
             .field
               label= t('.roles')
@@ -37,5 +42,6 @@
                   label.role-name for="roles_#{role}"
                     = t("admin.roles.#{role}")
             .field
+              / label.required
               = form.label :name, t('.neighborhood')
               = select_tag 'user[neighborhood_id]', options_for_select(neighborhoods.map { |o| [ o.name, o.id ] }, neighborhood), include_blank: true

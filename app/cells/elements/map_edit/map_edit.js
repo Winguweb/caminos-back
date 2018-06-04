@@ -73,8 +73,6 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
 
     this.drawingControls = new L.Control.Draw(drawingControls)
 
-    window.drawingControls = this.drawingControls
-
     return this.drawingControls
   },
   bindDrawEvents: function() {
@@ -100,7 +98,13 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
     }.bind(this));
   },
   centerMap: function(polygon) {
-    var center = _.isEmpty(polygon) ? this.center : this.getCenter(polygon)
+    var center = null
+    if (_.isEmpty(polygon)) {
+      center = this.center
+    } else {
+      polygon.coordinates = polygon.coordinates.length == 1 ? polygon.coordinates[0] : polygon.coordinates
+      center = this.getCenter(polygon)
+    }
     this.map.setView([center.x, center.y], this.zoom)
   },
   createMap: function() {
@@ -164,8 +168,18 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   setInputs: function() {
     this.inputGeometry = $('.geometry-field')
     this.inputGeo_geometry = $('.geo_geometry-field')
+    var GEOMETRY_TYPE = {
+      "MultiPolygon": "Polygon",
+      "Polygon": "Polygon",
+      "Polyline": "Polyline",
+      "Point": "Polyline", /* Its converted to MultiPoint later */
+    }
     if(this.hasEditableGeometry()) {
-      var geoJsonGeometry = (new L.Polyline(this.editable.coordinates)).toGeoJSON()
+      var coordinates = this.editable.coordinates
+      if (this.editable.type == 'MultiPolygon') {
+        coordinates = coordinates.map(function(coordinate) { return [coordinate]})
+      }
+      var geoJsonGeometry = (new L[GEOMETRY_TYPE[this.editable.type]](coordinates)).toGeoJSON()
       if (this.editable.type == 'Point') geoJsonGeometry.geometry.type = 'MultiPoint'
       var WKTGeometry = wellknown.stringify(geoJsonGeometry)
       this.saveInputs(WKTGeometry)
@@ -203,6 +217,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
         this.showPoint(this.editable)
         break
       case 'Polygon':
+      case 'MultiPolygon':
         this.showPolygon(this.editable)
         break
       case 'Polyline':

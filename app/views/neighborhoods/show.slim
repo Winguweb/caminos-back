@@ -30,4 +30,4 @@ section
               == cell('section/header', year)
             - else
               == cell('section/header', year)
-            == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)
+            == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood, admin: true)

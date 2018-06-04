@@ -1,5 +1,7 @@
 module Admin
   class UsersController < BaseController
+    include UsersHelper
+    before_action :restrict_neighborhood
 
     def index
       @users = User.preload(:profile, :entity).all
@@ -17,9 +19,13 @@ module Admin
     def create
       service = CreateUser.call(user_params, roles_params)
       if service.success?
-        redirect_to root_path
+        redirect_to admin_users_path
       else
-        redirect_to new_admin_user_path
+        flash.now[:error] =  load_errors(service.errors)
+        @user = User.new(service.reload_user_params)
+        @user.profile = Profile.new(user_params[:profile])
+        load_neighborhoods
+        render action: :new
       end
     end
 
@@ -37,7 +43,10 @@ module Admin
       if service.success?
         redirect_to admin_user_path(@user)
       else
-        redirect_to edit_admin_user_path(@user)
+        flash.now[:error] =  load_errors(service.errors)
+        load_user
+        load_neighborhoods
+        render action: :edit
       end
     end
 
@@ -54,6 +63,37 @@ module Admin
     end
 
     private
+
+    def load_errors(errors)
+      messages  = []
+      errors.each do |error|
+
+        if [:password, :email, :username].include?(error)
+            messages << t(".#{error}", message: errors[error].last)
+        else
+          messages << t('.errors', field: t(".#{error}"))
+        end
+      end
+      return messages
+    end
+
+    def reload_params
+      {
+        username: user_params[:username],
+        email: user_params[:email],
+        password: user_params[:password],
+        roles: roles(@roles)
+      }.tap do |_hash|
+        _hash[:entity] = related_entity
+      end
+    end
+
+  def related_entity
+    return Organization.first if roles(@roles)[0] == 'admin'
+    @related_entity ||= if id = @allowed_params[:neighborhood_id]
+      Neighborhood.find_by(id:id)
+    end
+  end
 
     def user_params
       params.require(:user).permit(

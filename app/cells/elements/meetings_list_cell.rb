@@ -8,4 +8,8 @@ class Elements::MeetingsListCell < Cell::ViewModel
     @meetings ||= model
   end
 
+  def admin
+    options[:admin]
+  end
+
 end

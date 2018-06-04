@@ -3,7 +3,7 @@ section
     section.with-border
       == cell('elements/map_show', @work.neighborhood, features: [@work])
     section.with-border
-      == cell('section/header', t('.about_work'))
+      == cell('section/header', t('works.about_work'))
     section
       div
         span = t('works.name')
@@ -14,10 +14,11 @@ section
       .half-input
         div
           span = t('works.category')
-          span = @work.category
+          - @work.categories.each do |category|
+            span = t("categories.#{category}")
         div
           span = t('works.status')
-          span = @work.status
+          span = t("status.#{@work.status}")
         div
           span = t('works.manager')
           span = @work.manager
@@ -46,16 +47,11 @@ section
     section
       == cell('section/header', t('documents.documents'))
       == cell('elements/documents_table',@work.documents)
-      a href='#' = t('.view_more')
 
     section
       == cell('section/header', t('meetings.meetings'))
       == cell('elements/meetings_list', @work.meetings , neighborhood: @neighborhood)
-      a href='#' = t('.view_more')
 
     section
       == cell('section/header', t('pictures.pictures'))
-      .photos-list
-        - @work.photos.each do |photo|
-          .photo
-            = image_tag photo.image.thumb.url, alt: 'Image', height: 200
+      == cell('elements/photos_gallery', @work.photos)

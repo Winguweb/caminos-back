@@ -7,16 +7,15 @@ module Admin
       ensure_neighborhood; return if performed?
       load_agreement
       @indicators = Agreement.indicators
-      
+
       @data = eval(@agreement.data) if !@agreement.data.nil?
-      
 
     end
 
     def update
       ensure_neighborhood; return if performed?
       load_agreement
-      service = UpdateAgreement.call(current_neighborhood, params[:data],@agreement)
+      service = UpdateAgreement.call(current_neighborhood, params[:data], @agreement)
       if service.success?
         redirect_to admin_neighborhood_agreement_path
       else
@@ -30,7 +29,6 @@ module Admin
       if !@agreement.nil?
         @data = eval(@agreement.data) if !@agreement.data.nil?
       end
-
     end
 
     def new
@@ -55,7 +53,6 @@ module Admin
 
       @agreement = current_neighborhood.agreement
       @data = eval(@agreement.data) if !@agreement.nil?
-
     end
 
 

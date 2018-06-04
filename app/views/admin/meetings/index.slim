@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', current_neighborhood.name, links: header_links(current_neighborhood), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+  == cell('page/header', "#{current_neighborhood.name} (#{current_neighborhood.abbreviation})", links: header_links(current_neighborhood), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} ] )
 
 div.page-section
   section
@@ -10,4 +10,4 @@ div.page-section
         == cell('section/header', year, buttons: [{title: t('.new_meeting'), url: new_admin_neighborhood_meeting_path }])
       - else
         == cell('section/header', year)
-      == cell('elements/meetings_list', @meetings_years[year], neighborhood: current_neighborhood)
+      == cell('elements/meetings_list', @meetings_years[year], neighborhood: current_neighborhood, admin: true)

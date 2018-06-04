@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', @work.name, breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods'), current_neighborhood.name, t('admin.sections.works') ])
+  == cell('page/header', @work.name, breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.works'), href: admin_neighborhood_works_path(current_neighborhood)} ])
 
 .page-section
   section
@@ -13,7 +13,8 @@
     .half-input
       div
         span = t('works.category')
-        span = t("categories.#{@work.category}")
+        - @work.categories.each do |category|
+          span = t("categories.#{category}")
       div
         span = t('works.status')
         span = t("status.#{@work.status}")
@@ -41,33 +42,22 @@
       div
         span = t('works.lookup_address')
         span = @work.lookup_address
+
   section
     == cell('section/header', t('works.map_location'))
-    == cell('elements/map_show', current_neighborhood, features: [@work])
+    == cell('elements/map_show', current_neighborhood, features: [ @work ])
 
   section
     - file_input_id = 'photo_file_input'
-    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('.upload_photos'), for: file_input_id }])
+    == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('pictures.upload_photos'), for: file_input_id }])
     == cell('elements/photos_uploader', @work.photos, { owner: @work, file_input_id: file_input_id })
 
   section
-    == cell('section/header', t('documents.documents'), buttons: [{ title: t('.load_document') }])
-    == cell('elements/documents_table', @work.documents)
+    - document_file_input_id = 'document_file_input'
+    == cell('section/header', t('.related_documents'), buttons_for: [{ title: t('.upload_document'), for: document_file_input_id }])
+    == cell('elements/documents_uploader', @work.documents, { owner: @work, file_input_id: document_file_input_id })
+    == cell('elements/documents_table', @work.documents, admin: true)
 
   section
     == cell('section/header', t('meetings.meetings'))
-    == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood)
-
-
-  / section
-  /   div
-  /     - @work.photos.each do |photo|
-  /       = image_tag(photo.picture.thumb.url, alt: 'Image')
-
-    / section
-    /   == cell('section/header', "Lista de documentos", buttons: [{title: t('.load_document'), url: new_admin_neighborhood_path}])
-    /   == cell('elements/document_form', "work")
-
-    / section
-    /   == cell('section/header', t('.related_meetings'))
-    /   == cell('elements/meetings_list', current_neighborhood.meetings, neighborhood: current_neighborhood)
+    == cell('elements/meetings_list', @work.meetings , neighborhood: current_neighborhood, admin: true)

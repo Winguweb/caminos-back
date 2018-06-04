@@ -1,4 +1,10 @@
 = content_for :main_header do
-  == cell('page/header', t('.title', name: @work.name), breadcrumbs: [t('admin.sections.dashboard'), t('admin.sections.works')])
+  == cell('page/header', t('.title', name: @work.name), breadcrumbs: [{title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.works'), href: admin_neighborhood_works_path}])
 
 = render 'form'
+
+- if is_admin?
+  .page-section
+    section
+      == cell('section/header', t('actions.danger_zone'), header_type: 'danger')
+      == cell('section/header', t('actions.delete'), subtitle: t('works.delete_info_html'), buttons: [{title: t('works.delete'), extra_classes: 'danger-type', action: {type: 'alert:show', title: t('works.delete'), message: t("works.delete_work", work: @work.name), url: admin_neighborhood_work_path, method: 'DELETE'}}])

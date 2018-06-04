@@ -6,7 +6,7 @@ class User < ApplicationRecord
   belongs_to :entity, polymorphic: true, optional: true
   has_many :pictures, foreign_key: :uploader_id, dependent: :nullify
 
-  AVAILABLE_ROLES = [:admin, :ambassador].freeze
+  AVAILABLE_ROLES = [:admin, :responsible].freeze
   private_constant :AVAILABLE_ROLES
 
   FALLBACK_COLORS = [ '#34495e', '#9b59b6', '#3498db', '#2ecc71', '#1abc9c', '#3498db',
@@ -17,8 +17,9 @@ class User < ApplicationRecord
 
   attribute :settings, :jsonb, default: {}
 
-  validates_presence_of :email, :username
+  validates_presence_of :email, :username, :roles, :entity
   validates_presence_of :password, on: [ :create ]
+  validates :username, uniqueness: true
 
   roles AVAILABLE_ROLES
 

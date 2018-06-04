@@ -1,3 +1,8 @@
 = content_for :main_header do
-  == cell('page/header', t('actions.edit'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods'), current_neighborhood.name ] )
+  == cell('page/header', t('actions.edit'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.meetings'), href: admin_neighborhood_meetings_path} ] )
 = render 'form'
+
+.page-section
+  section
+    == cell('section/header', t('actions.danger_zone'), header_type: 'danger')
+    == cell('section/header', t('actions.delete'), subtitle: t('meetings.delete_info_html'), buttons: [{title: t('meetings.delete'), extra_classes: 'danger-type', action: {type: 'alert:show', title: t('meetings.delete'), message: t("meetings.delete_meeting", meeting: l(@meeting.date, format: :slashes)), url: admin_neighborhood_meeting_path, method: 'DELETE'}}])

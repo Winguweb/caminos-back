@@ -8,8 +8,8 @@ es-AR:
         permissions: Permisos
       index:
         new_user: Nuevo Usuario
-        users: Usuarios y Embajadores
-        users_subtitle: Listado los usuarios y embajadores autorizados a ingresar al administrador
+        users: Usuarios y Responsables
+        users_subtitle: Listado los usuarios y Responsables autorizados a ingresar al administrador
       new:
         new_user: Nuevo Usuario
       show:
@@ -17,3 +17,18 @@ es-AR:
         general: General
         user_profile: Perfil del usuario
         permissions: Permisos
+      create:
+        entity: Barrio
+        errors: "%{field}: Este campo es obligatorio"
+        email: "Email: %{message}"
+        password: "Contraseña: %{message}"
+        roles: Roles/Permisos
+        username: "Nombre de usuario : %{message}"
+      update:
+        entity: Barrio
+        errors: "%{field}: Este campo es obligatorio"
+        email: "Email: %{message}"
+        password: "Contraseña: %{message}"
+        roles: Roles/Permisos
+        username: "Nombre de usuario : %{message}"
+

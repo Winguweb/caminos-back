@@ -1,17 +1,23 @@
 = content_for :main_header do
-  == cell('page/header', t('.update_neighborhood'), breadcrumbs: [ t('admin.sections.dashboard'), t('admin.sections.neighborhoods') ] )
+  == cell('page/header', t('.update_neighborhood'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: @neighborhood.name, href: admin_neighborhood_path(@neighborhood)} ] )
 
-= form_for ['admin', @neighborhood], html: { class: 'form' } do |form|
-  .page-section
-    section
+.page-section
+  section
+    = form_for ['admin', @neighborhood], html: { class: 'form' } do |form|
       == cell('section/header', t("neighborhoods.information"), links: [{ title: t("actions.cancel"), url: admin_neighborhoods_path(@neighborhood) }, { title: t("actions.save"), submit: true }])
-      .fields
+      .two-thirds-one-third-input
         .field.name
-          = form.label :name, t('neighborhoods.name')
-          = form.text_field :name, class: 'require'
+          label.required
+            = form.label :name, t('neighborhoods.name')
+          = form.text_field :name, class: 'require', required: true
+        .field.abbreviation
+          = form.label :abbreviation, t('neighborhoods.abbreviation')
+          = form.text_field :abbreviation, class: 'require', required: true
+      .fields
         .field.description
-          = form.label :description, t('neighborhoods.description')
-          = form.text_area :description, class: 'require', rows: 6
+          label.required
+            = form.label :description, t('neighborhoods.description')
+          = form.text_area :description, class: 'require', rows: 6, required: true
         .field.urbanization
           span= t('neighborhoods.has_urbanization_process')
           div
@@ -24,3 +30,8 @@
           == cell('elements/map_edit', {}, editable: @neighborhood, controls: ['polygon'], name: 'neighborhood')
           input type="hidden" name="neighborhood[geometry]" class="geometry-field"
           input type="hidden" name="neighborhood[geo_geometry]" class="geo_geometry-field"
+
+  - if is_admin?
+    section
+      == cell('section/header', t('actions.danger_zone'), header_type: 'danger')
+      == cell('section/header', t('actions.delete'), subtitle: t('neighborhoods.delete_info_html'), buttons: [{title: t('neighborhoods.delete'), extra_classes: 'danger-type', action: {type: 'alert:show', title: t('neighborhoods.delete'), message: t("neighborhoods.delete_neighborhood", neighborhood: @neighborhood.name), url: admin_neighborhood_path, method: 'DELETE'}}])

@@ -1,13 +1,13 @@
 @mixin button() {
   @include text-color($text-blue, 1);
   @include type-setting(0);
-  display: inline-block;
+  background: transparent;
   border: 1px solid $blue;
   border-radius: 6px;
-  padding: $vgutter $gutter;
-  margin: 0;
   cursor: pointer;
-  background: transparent;
+  display: inline-block;
+  margin: 0;
+  padding: $vgutter $gutter;
   @include user-select(none);
   &:hover {
     @include text-color($text-white, 1);
@@ -16,6 +16,21 @@
   &:active {
     position: relative;
     top: 1px;
+  }
+  &.danger-type {
+    @include background-color($red, 1);
+    @include text-color($white);
+    border: 2px solid $red;
+  }
+  &.warning-type {
+    @include background-color($yellow, 1);
+    @include text-color($white);
+    border: 2px solid $yellow;
+  }
+  &.success-type {
+    @include background-color($green, 1);
+    @include text-color($white);
+    border: 2px solid $green;
   }
 }
 

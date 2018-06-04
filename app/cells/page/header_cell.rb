@@ -15,6 +15,10 @@ class Page::HeaderCell < Cell::ViewModel
     options[:subtitle]
   end
 
+  def pretitle
+    options[:pretitle]
+  end
+
   def links
     options[:links]
   end
