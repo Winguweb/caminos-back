@@ -18,7 +18,6 @@ es-AR:
         meeting: Reunión %{date}
         order_day: Orden del día
         participants: Participantes
-        upload_document: Subir Documento
         upload_by: Subido el %{date}
         works_relation: Obras Relacionadas
   meetings:

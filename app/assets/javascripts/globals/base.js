@@ -5,6 +5,7 @@
 //= require i18n
 //= require selectize
 //= require jquery.filer
+//= require jquery.formParams
 
 // APP SETUP
 //= require ./caminos

@@ -1,6 +1,10 @@
 es-AR:
   admin:
     neighborhoods:
+      edit:
+        create: Crear Barrio
+        folder_name: "Nombre de la carpeta:"
+        update_neighborhood: "Actualizar información del barrio: %{name}"
       index:
         neighborhoods: Barrios
         neighborhoods_subtitle: Listado de todos los barrios cargados
@@ -14,4 +18,3 @@ es-AR:
         add_new_responsible: Agregar Nuevo
         add_new_photo: Agregar Nueva
         related_documents: Documentos relacionados
-        upload_document: Subir Documentos

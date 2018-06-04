@@ -6,8 +6,4 @@ class Elements::DocumentsTableCell < Cell::ViewModel
   def documents
     model || []
   end
-
-  def filters
-    @filters ||= options[:filters]
-  end
 end

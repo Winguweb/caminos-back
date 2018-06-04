@@ -1,5 +1,7 @@
 es-AR:
   elements:
+    documents_relatable:
+      relate_document: Relacionar Documento
     documents_table:
       no_documents: No hay documentos relacionados
     meetings_list:

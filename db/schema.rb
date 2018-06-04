@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503200122) do
+ActiveRecord::Schema.define(version: 20180602212606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,28 +25,6 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.index ["neighborhood_id"], name: "index_agreements_on_neighborhood_id"
   end
 
-  create_table "audits", force: :cascade do |t|
-    t.uuid "auditable_id"
-    t.string "auditable_type"
-    t.uuid "associated_id"
-    t.string "associated_type"
-    t.uuid "user_id"
-    t.string "user_type"
-    t.string "username"
-    t.string "action"
-    t.text "audited_changes"
-    t.integer "version", default: 0
-    t.string "comment"
-    t.string "remote_address"
-    t.string "request_uuid"
-    t.datetime "created_at"
-    t.index ["associated_type", "associated_id"], name: "associated_index"
-    t.index ["auditable_type", "auditable_id"], name: "auditable_index"
-    t.index ["created_at"], name: "index_audits_on_created_at"
-    t.index ["request_uuid"], name: "index_audits_on_request_uuid"
-    t.index ["user_id", "user_type"], name: "user_index"
-  end
-
   create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "type"
     t.string "name"
@@ -58,6 +36,8 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.jsonb "data", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_documents_on_ancestry"
     t.index ["data"], name: "index_documents_on_data", using: :gin
     t.index ["neighborhood_id"], name: "index_documents_on_neighborhood_id"
   end
@@ -106,7 +86,7 @@ ActiveRecord::Schema.define(version: 20180503200122) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "urbanization", default: false
-    t.text "delegates"
+    t.jsonb "extras", default: {}
     t.float "urbanization_score"
     t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
     t.index ["geometry"], name: "index_neighborhoods_on_geometry", using: :gist

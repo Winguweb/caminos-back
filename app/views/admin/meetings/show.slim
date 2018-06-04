@@ -10,7 +10,7 @@
   section
     - document_file_input_id = 'document_file_input'
     == cell('section/header', t('.related_documents'), buttons_for: [{ title: t('.upload_document'), for: document_file_input_id }])
-    == cell('elements/documents_uploader', @meeting.documents, { owner: @meeting, file_input_id: document_file_input_id })
+    == cell('elements/documents_uploader', nil, { owner: @meeting, file_input_id: document_file_input_id })
     == cell('elements/documents_table', @meeting.documents)
   section
     == cell('section/header',t(".works_relation"))

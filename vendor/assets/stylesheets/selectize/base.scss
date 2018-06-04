@@ -22,7 +22,7 @@ $selectize-color-dropdown-item-active: #f5fafd !default;
 $selectize-color-dropdown-item-active-text: #495c68 !default;
 $selectize-color-dropdown-item-create-text: rgba(red($selectize-color-text), green($selectize-color-text), blue($selectize-color-text), 0.5) !default;
 $selectize-color-dropdown-item-create-active-text: $selectize-color-dropdown-item-active-text !default;
-$selectize-color-optgroup: $selectize-color-dropdown !default;
+$selectize-color-optgroup: $light-grey !default;
 $selectize-color-optgroup-text: $selectize-color-text !default;
 $selectize-lighten-disabled-item: 30% !default;
 $selectize-lighten-disabled-item-text: 30% !default;

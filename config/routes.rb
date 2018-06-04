@@ -24,7 +24,6 @@ Rails.application.routes.draw do
       resources :works, only: [:index]
     end
 
-    get '/components', action: :index, controller: :components
     get '/admin', to: redirect('/admin/dashboard')
   # ╰─  End of Public Accesible URL's / Path's
 
@@ -38,22 +37,30 @@ Rails.application.routes.draw do
       # ╭─ AJAX Accesible URL's / Path's
       namespace :ajax do
         resources :neighborhoods, only: [] do
+          # Documents Resource routes
           post '/documents/upload', action: :upload, controller: :documents
           delete '/documents/:id', action: :destroy, controller: :documents, as: :document
+          resources :documents_relations, only: [:create, :destroy]
 
+          # Photos Resources routes
           post '/photos/upload', action: :upload, controller: :photos
           delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
         end
         resources :works, only: [] do
+          # Documents Resource routes
           post '/documents/upload', action: :upload, controller: :documents
           delete '/documents/:id', action: :destroy, controller: :documents, as: :document
+          resources :documents_relations, only: [:create, :destroy]
 
+          # Photos Resources routes
           post '/photos/upload', action: :upload, controller: :photos
           delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
         end
         resources :meetings, only: [] do
+          # Documents Resource routes
           post '/documents/upload', action: :upload, controller: :documents
           delete '/documents/:id', action: :destroy, controller: :documents, as: :document
+          resources :documents_relations, only: [:create, :destroy]
         end
       end
       # ╰─ End of AJAX Accesible URL's / Path's

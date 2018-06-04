@@ -7,23 +7,30 @@ class Elements::MapShowCell < Cell::ViewModel
   end
 
   def base
-    return [] if model[:geometry].blank?
-    case model[:geometry].geometry_type
-      when RGeo::Feature::Polygon
+    return { coordinates: [], className: 'base-geometry' }.to_json if model.geometry.blank?
+
+    case model.geometry.geometry_type
+    when RGeo::Feature::Polygon
       {
-        coordinates: model[:geometry].coordinates.first.map(&:reverse),
+        coordinates: model.geometry.coordinates.first.map(&:reverse),
         className: 'base-geometry',
-      }.to_json
+      }
     when RGeo::Feature::MultiPolygon
       {
-        coordinates: model[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+        coordinates: model.geometry.coordinates.map {|polygons| polygons.first.map(&:reverse)},
         className: 'base-geometry',
-      }.to_json
-    end
+      }
+    else
+      {
+        coordinates: [ ],
+        className: 'base-geometry'
+      }
+    end.to_json
   end
 
   def features
     return [] if options[:features].blank?
+
     options[:features].map do |feature|
       case feature[:geometry].geometry_type
       when RGeo::Feature::Point

@@ -20,9 +20,18 @@ div.page-section
     == cell('elements/map_show', @neighborhood)
 
   section
+    // TO-DO: This seems a little bit over complicated, right?
+    //        I think that make sense to rethink a little bit how we are dealing with it
+    - with_gdrive_documents = @neighborhood.google_drive_folder.has_documents?
     - document_file_input_id = 'document_file_input'
-    == cell('section/header', t('.related_documents'), buttons_for: [{ title: t('.upload_document'), for: document_file_input_id }])
-    == cell('elements/documents_uploader', @neighborhood.documents, { owner: @neighborhood, file_input_id: document_file_input_id })
+    - relate_document_button_id = 'relate_document_button'
+    - buttons_for_documents = related_documents_buttons(with_gdrive_documents, document_file_input_id, relate_document_button_id)
+    == cell('section/header', t('.related_documents'), buttons_for: buttons_for_documents )
+
+    == cell('elements/documents_uploader', nil, { owner: @neighborhood, file_input_id: document_file_input_id })
+    - if with_gdrive_documents
+      == cell('elements/documents_relatable', nil, { owner: @neighborhood, button_id: relate_document_button_id })
+
     == cell('elements/documents_table', @neighborhood.documents)
 
   section

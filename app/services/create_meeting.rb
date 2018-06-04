@@ -15,31 +15,12 @@ class CreateMeeting
   def create_meeting
     meeting = @neighborhood.meetings.new(meeting_params)
 
-    if documents_params.present? 
-      documents_params.each do |document|
-        service_document = SaveDrive.call(document[:link],document[:name])
-        if (service_document.success?)
-          document =  meeting.documents.new(name:document[:name], description:document[:description], attachment_source:service_document.result. alternate_link)
-          document.holder = meeting
-        end
-      end
-      
-      return meeting if meeting.save
+    return meeting if meeting.save
 
-      errors.add_multiple_errors(meeting.errors.messages) && nil
-      
-    else
-      return meeting if meeting.save
+    errors.add_multiple_errors(meeting.errors.messages) && nil
 
-      errors.add_multiple_errors(meeting.errors.messages) && nil
-    end
-
-   
   end
 
-  # def meeting_params
-  #   @allowed_params.merge(works: works)
-  # end
   def meeting_params
     {
       date: @allowed_params[:date],
@@ -56,15 +37,6 @@ class CreateMeeting
   def works
     return [] if @allowed_params[:works].blank?
     @neighborhood.works.where(id: @allowed_params[:works])
-  end
-
-  def documents_params
-    return  [] if @allowed_params[:documents].blank?
-    documents = []
-    @allowed_params[:documents].each do |doc|
-      documents.push(doc) if !doc[:link].blank?
-    end
-    documents
   end
 
 end
