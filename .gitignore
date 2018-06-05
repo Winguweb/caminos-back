@@ -14,7 +14,6 @@
 !/tmp/.keep
 config/database.yml
 config/caminos.yml
-config/Gdrive.yaml
 /lib/tasks/log/*
 *.local.*
 

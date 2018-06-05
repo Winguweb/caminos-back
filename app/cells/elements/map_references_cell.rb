@@ -5,7 +5,6 @@ class Elements::MapReferencesCell < Cell::ViewModel
   def base
     return [] if model.blank?
     model.map do |neighborhood|
-      reference_number += 1
       case neighborhood.geometry.try(:geometry_type)
       when RGeo::Feature::Polygon
         {
