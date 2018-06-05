@@ -40,7 +40,8 @@ module Admin::Ajax
               url: document.url,
               name: document.name,
               description: document.description,
-              created_at: I18n.l(document.created_at, format: :basic)
+              created_at: I18n.l(document.created_at, format: :basic),
+              type: document.type.downcase
             }
           }, status: 201
         else

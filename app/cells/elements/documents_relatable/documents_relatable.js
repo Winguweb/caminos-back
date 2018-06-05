@@ -6,7 +6,8 @@ CDLV.Components['documents/relatable'] = Backbone.View.extend({
   initialize: function(options){
     _.bindAll(
       this,
-      'displayComponent'
+      'displayComponent',
+      'removeRelatedDocument'
     )
 
     var $button = this.$el.find('#'+options.buttonId)
@@ -24,6 +25,10 @@ CDLV.Components['documents/relatable'] = Backbone.View.extend({
     this.relateButton = this.$el.find('.relate-button .button')
 
     $button.on('click', this.displayComponent)
+
+    CDLV.pubSub.on({
+      'document:remove:drive': this.removeRelatedDocument
+    })
   },
 
   displayComponent: function(){
@@ -31,7 +36,6 @@ CDLV.Components['documents/relatable'] = Backbone.View.extend({
   },
 
   relateDocument: function(){
-    var that = this
     var url = this.$form.attr('action')
 
     $.ajax({
@@ -40,12 +44,24 @@ CDLV.Components['documents/relatable'] = Backbone.View.extend({
       data: this.$form.formParams(),
       dataType: 'json'
     }).done(function(data){
-      CDLV.pubSub.trigger('document:add', data)
+      CDLV.pubSub.trigger('document:add:done', data)
     }).fail(function(xhr){
-      console.log("ERROR:")
-      console.log(xhr)
+      CDLV.pubSub.trigger('document:add:fail', xhr)
     })
+  },
 
-  }
+  removeRelatedDocument: function(documentId) {
+    var url = this.$form.attr('action')+'/'+documentId
+
+    $.ajax({
+      url: url,
+      type: 'DELETE',
+      cache: false,
+    }).done(function(data){
+      CDLV.pubSub.trigger('document:remove:done', documentId)
+    }).fail(function(xhr){
+      CDLV.pubSub.trigger('document:remove:fail', xhr)
+    })
+  },
 
 })

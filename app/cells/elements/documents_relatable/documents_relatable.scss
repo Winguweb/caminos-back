@@ -1,7 +1,6 @@
 .documents-relatable-cell {
   @include grid-collapse;
   margin-bottom: $gutter;
-  padding-bottom: $gutter;
   display: none;
 
   .relate-documents-button{
