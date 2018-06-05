@@ -12,16 +12,16 @@ class Work < ApplicationRecord
     :status,
     :manager,
     :name,
-    :execution_plan,
     :category_list,
     :lookup_address,
     :geo_geometry
 
+  validate :valid_categories
 
   # validate :valid_dates
 
   # CATEGORIES =['Servicios Públicos','Equipamiento Estatal','Vivienda','Espacios Públicos'].freeze
-  CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure'].freeze
+  CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure', 'home'].freeze
   STATUS =['in_process','done', 'pending','expired','proyected'].freeze
 
   def self.status
@@ -30,6 +30,12 @@ class Work < ApplicationRecord
 
   def self.categories
     CATEGORIES
+  end
+
+  def valid_categories
+    if category_list.nil? || category_list.empty?
+      errors.add(:category_list, "errors")
+    end
   end
 
   def valid_dates

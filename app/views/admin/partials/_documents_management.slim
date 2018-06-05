@@ -16,4 +16,4 @@
 - if with_gdrive_documents
   == cell('elements/documents_relatable', nil, { owner: owner, button_id: relate_document_button_id })
 
-== cell('elements/documents_table', owner.documents)
+== cell('elements/documents_table', owner.document, admin: true)

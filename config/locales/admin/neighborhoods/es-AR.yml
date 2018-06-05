@@ -1,6 +1,10 @@
 es-AR:
   admin:
     neighborhoods:
+      create:
+        errors: "%{field}: Este campo es obligatorio"
+        geometry: Poligono
+        geo_geometry: Poligono
       edit:
         create: Crear Barrio
         folder_name: "Nombre de la carpeta:"
@@ -17,3 +21,7 @@ es-AR:
         activity: Actividad reciente
         add_new_responsible: Agregar Nuevo
         add_new_photo: Agregar Nueva
+      update:
+        errors: "%{field}: Este campo es obligatorio"
+        geometry: Poligono
+        geo_geometry: Poligono

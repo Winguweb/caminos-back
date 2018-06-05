@@ -13,13 +13,13 @@ section
                 li
                   = link_to neighborhood_path(neighborhood.id) do
                     p
-                      span
+                      span = neighborhood.abbreviation
                     div
                       h3=neighborhood.name
                       span="Proceso de urbanización"
-                      span="#{to_fixed_percentage(neighborhood.urbanization_score)}%"
+                      span="#{to_fixed_percentage(average(neighborhood))}%"
                       div
-                        div style="width:#{to_fixed_percentage(neighborhood.urbanization_score)}%"
+                        div style="width:#{to_fixed_percentage(average(neighborhood))}%"
         section
           header
             h2="Otros barrios"

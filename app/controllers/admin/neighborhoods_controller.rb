@@ -20,7 +20,9 @@ module Admin
       if service.success?
         redirect_to admin_neighborhoods_path
       else
-        redirect_to new_admin_neighborhood_path
+        flash.now[:error] =  load_errors(service.errors)
+        @neighborhood = Neighborhood.new(neighborhood_params)
+        render action: :new
       end
     end
 
@@ -36,7 +38,9 @@ module Admin
       if service.success?
         redirect_to admin_neighborhood_path(@neighborhood)
       else
-        redirect_to edit_admin_neighborhood_path(@neighborhood)
+        flash.now[:error] =  load_errors(service.errors)
+        load_neighborhood
+        render action: :edit
       end
     end
 
@@ -56,6 +60,14 @@ module Admin
 
     private
 
+    def load_errors(errors)
+      messages  = []
+      errors.each do |error|
+        messages << t('.errors', field: t(".#{error}"))
+      end
+      return messages
+    end
+
     def load_neighborhood
       return if @neighborhood = Neighborhood.find_by(id: params[:id])
 
@@ -64,6 +76,7 @@ module Admin
 
     def neighborhood_params
       params.require(:neighborhood).permit(
+        :abbreviation,
         :description,
         :gdrive_folder,
         :geo_geometry,

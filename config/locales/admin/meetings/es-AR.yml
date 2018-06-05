@@ -13,6 +13,7 @@ es-AR:
       new:
         new_meeting: Nueva Reunión
       show:
+        meetings: Reuniones
         documents: Documentos
         download_minute: Descargar Minuta
         meeting: Reunión %{date}
@@ -20,6 +21,7 @@ es-AR:
         participants: Participantes
         upload_by: Subido el %{date}
         works_relation: Obras Relacionadas
+        related_documents: Documentos Relacionados
   meetings:
     show:
       documents: Documentos
@@ -29,3 +31,4 @@ es-AR:
       participants: Participantes
       upload_by: Subido el %{date}
       works_relation: Obras Relacionadas
+      related_documents: Documentos Relacionados

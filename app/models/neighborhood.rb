@@ -9,7 +9,7 @@ class Neighborhood < ApplicationRecord
   has_many :works
   has_one :agreement
 
-  validates_presence_of :name, :description, :geo_geometry, :geometry
+  validates_presence_of :name, :description, :geo_geometry, :geometry, :abbreviation
 
   EXTRAS = %w(
     gdrive_folder

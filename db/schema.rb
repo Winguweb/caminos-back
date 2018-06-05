@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20180602212606) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "ancestry"
+    t.integer "ancestry_depth", default: 0
     t.index ["ancestry"], name: "index_documents_on_ancestry"
     t.index ["data"], name: "index_documents_on_data", using: :gin
     t.index ["neighborhood_id"], name: "index_documents_on_neighborhood_id"
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20180602212606) do
     t.boolean "urbanization", default: false
     t.jsonb "extras", default: {}
     t.float "urbanization_score"
+    t.string "abbreviation"
     t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
     t.index ["geometry"], name: "index_neighborhoods_on_geometry", using: :gist
     t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist

@@ -41,6 +41,7 @@ es-AR:
     delete_meeting: "Está seguro de que realmente quiere eliminar la reunión del día %{meeting}?"
     meetings: Reuniones
   neighborhoods:
+    abbreviation: Abreviación (Código de referencia)
     agreement: Acuerdo
     delete: Eliminar Barrio
     delete_info_html: "Si elimina un barrio, todas sus obras y acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."

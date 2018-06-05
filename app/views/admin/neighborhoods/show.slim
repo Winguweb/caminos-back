@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', @neighborhood.name, links: header_links(@neighborhood), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} ] )
+  == cell('page/header', "#{@neighborhood.name} (#{@neighborhood.abbreviation})" , links: header_links(@neighborhood), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path} ] )
 
 div.page-section
   section.with-border
@@ -22,8 +22,9 @@ div.page-section
   section
     = render partial: 'admin/partials/documents_management', locals: { owner: @neighborhood }
 
-  section
-    == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
+  / This is removed temporarily until task https://www.pivotaltracker.com/story/show/157920396 is finished
+  / section
+  /   == cell('section/header', t('neighborhoods.responsibles'), buttons: [{title: t('.add_new_responsible'), url: '#', extra_classes:'add-new-responsible' }])
 
   section
     - file_input_id = 'photo_file_input'

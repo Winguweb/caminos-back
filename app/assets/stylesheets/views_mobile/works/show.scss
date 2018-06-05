@@ -30,27 +30,14 @@
               &:nth-of-type(1) {
                 @include type-setting(-1);
                 line-height: 1em;
-                &.water {
-                  @include text-color($water, 1);
-                }
-                &.trash {
-                  @include text-color($trash, 1);
-                }
-                &.public {
-                  @include text-color($public, 1);
-                }
-                &.health {
-                  @include text-color($health, 1);
-                }
-                &.energy {
-                  @include text-color($energy, 1);
-                }
-                &.sewer {
-                  @include text-color($sewer, 1);
-                }
-                &.infrastructure {
-                  @include text-color($infrastructure, 1);
-                }
+                &.home {@include text-color($home, 1);}
+                &.water {@include text-color($water, 1);}
+                &.trash {@include text-color($trash, 1);}
+                &.public {@include text-color($public, 1);}
+                &.health {@include text-color($health, 1);}
+                &.energy {@include text-color($energy, 1);}
+                &.sewer {@include text-color($sewer, 1);}
+                &.infrastructure {@include text-color($infrastructure, 1);}
               }
             }
             > h1 {

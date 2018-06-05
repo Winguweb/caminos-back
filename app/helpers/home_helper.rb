@@ -1,11 +1,4 @@
-class Elements::NeighborhoodsListCell < Cell::ViewModel
-  include LayoutHelper
-
-  private
-
-  def neighborhoods
-    @neighborhoods ||= model[:neighborhoods]
-  end
+module HomeHelper
 
   def average(neighborhood)
     if neighborhood

@@ -16,7 +16,7 @@ class CreateAgreement
 
     @agreement = Agreement.new(data: agreement_params)
     @agreement.neighborhood = @neighborhood
-    
+
     return @agreement if @agreement.save
     errors.add_multiple_errors(@agreement.errors.messages) && nil
 
@@ -31,6 +31,6 @@ class CreateAgreement
       end
       @data[indicator.parameterize.underscore.to_sym] = { answers:  @answers, score:  @params[indicator][:score]}
     end
-    return @data
+    return @data.to_json
   end
 end

@@ -3,6 +3,7 @@
     padding-top: $vgutter*2;
     > section {
       > ul {
+        @include grid-collapse;
         @include grid-container;
         > li {
           @include grid-column(8);

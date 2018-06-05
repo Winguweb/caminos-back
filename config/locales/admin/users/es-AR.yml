@@ -17,3 +17,18 @@ es-AR:
         general: General
         user_profile: Perfil del usuario
         permissions: Permisos
+      create:
+        entity: Barrio
+        errors: "%{field}: Este campo es obligatorio"
+        email: "Email: %{message}"
+        password: "Contraseña: %{message}"
+        roles: Roles/Permisos
+        username: "Nombre de usuario : %{message}"
+      update:
+        entity: Barrio
+        errors: "%{field}: Este campo es obligatorio"
+        email: "Email: %{message}"
+        password: "Contraseña: %{message}"
+        roles: Roles/Permisos
+        username: "Nombre de usuario : %{message}"
+

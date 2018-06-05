@@ -6,4 +6,8 @@ class Elements::DocumentsTableCell < Cell::ViewModel
   def documents
     model || []
   end
+
+  def is_admin
+    options[:admin]
+  end
 end

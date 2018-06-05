@@ -16,6 +16,7 @@
   .geometry-marker,
   .geometry-polygon,
   .geometry-polyline {
+    &.home {stroke: $home;}
     &.water {stroke: $water;}
     &.trash {stroke: $trash;}
     &.public {stroke: $public;}
@@ -25,6 +26,7 @@
     &.infrastructure {stroke: $infrastructure;}
   }
   .geometry-polygon {
+    &.home {fill: $home;}
     &.water {fill: $water;}
     &.trash {fill: $trash;}
     &.public {fill: $public;}
