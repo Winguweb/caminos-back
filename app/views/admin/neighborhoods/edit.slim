@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', t('.update_neighborhood'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: @neighborhood.name, href: admin_neighborhood_path(@neighborhood)} ] )
+  == cell('page/header', t('.update_neighborhood', name: @neighborhood.name), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: @neighborhood.name, href: admin_neighborhood_path(@neighborhood)} ] )
 
 .page-section
   section
@@ -30,6 +30,15 @@
           == cell('elements/map_edit', {}, editable: @neighborhood, controls: ['polygon'], name: 'neighborhood')
           input type="hidden" name="neighborhood[geometry]" class="geometry-field"
           input type="hidden" name="neighborhood[geo_geometry]" class="geo_geometry-field"
+
+        .field.gdrive_folder
+          - gdrive_folder = @neighborhood.google_drive_folder
+          = form.label :gdrive_folder, t('neighborhoods.gdrive_folder')
+          = form.text_field :gdrive_folder, placeholder: 'https://drive.google.com/drive/folders/ID-DE-EJEMPLO', class: "#{'disabled' if gdrive_folder.has_documents?}", disabled: gdrive_folder.has_documents?
+          .folder_name class="#{(gdrive_folder.has_documents? || gdrive_folder.valid?) ? 'valid' : 'error'}"
+            - if (gdrive_folder.has_documents? || gdrive_folder.valid?)
+              span= t('.folder_name')
+            = @neighborhood.google_drive_folder.name
 
   - if is_admin?
     section

@@ -7,10 +7,6 @@ class Elements::DocumentsTableCell < Cell::ViewModel
     model || []
   end
 
-  def filters
-    @filters ||= options[:filters]
-  end
-
   def is_admin
     options[:admin]
   end

@@ -1,0 +1,25 @@
+.documents-relatable-cell {
+  @include grid-collapse;
+  margin-bottom: $gutter;
+  display: none;
+
+  .relate-documents-button{
+    display: none;
+  }
+
+  form{
+    @include grid-container;
+  }
+
+  .drive-document-select {
+   @include grid-column(8 of 12);
+  }
+  .relate-button{
+    @include grid-column(4 of 12);
+    .button{
+      @include button;
+      display: block;
+      text-align: center;
+    }
+  }
+}

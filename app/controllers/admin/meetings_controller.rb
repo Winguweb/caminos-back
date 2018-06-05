@@ -78,8 +78,7 @@ module Admin
         :organizer,
         :participants,
         :lookup_address,
-        works: [],
-        documents: [[:link,:name,:description]]
+        works: []
        )
     end
   end

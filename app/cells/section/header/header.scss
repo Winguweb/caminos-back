@@ -23,7 +23,6 @@
     @include background-color($green, 1);
     border: 2px solid $green;
   }
-
 }
 
 @mixin header-cell-mobile() {

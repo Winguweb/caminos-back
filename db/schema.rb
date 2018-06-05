@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180530152447) do
+ActiveRecord::Schema.define(version: 20180602212606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20180530152447) do
     t.jsonb "data", default: {}, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ancestry"
+    t.integer "ancestry_depth", default: 0
+    t.index ["ancestry"], name: "index_documents_on_ancestry"
     t.index ["data"], name: "index_documents_on_data", using: :gin
     t.index ["neighborhood_id"], name: "index_documents_on_neighborhood_id"
   end
@@ -84,7 +87,7 @@ ActiveRecord::Schema.define(version: 20180530152447) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "urbanization", default: false
-    t.text "delegates"
+    t.jsonb "extras", default: {}
     t.float "urbanization_score"
     t.string "abbreviation"
     t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
@@ -121,7 +124,7 @@ ActiveRecord::Schema.define(version: 20180530152447) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "taggings", id: :bigint, default: -> { "nextval('taggings_id_seq1'::regclass)" }, force: :cascade do |t|
+  create_table "taggings", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.uuid "taggable_id"
@@ -140,7 +143,7 @@ ActiveRecord::Schema.define(version: 20180530152447) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", id: :bigint, default: -> { "nextval('tags_id_seq1'::regclass)" }, force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "name"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true

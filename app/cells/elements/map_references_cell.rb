@@ -5,20 +5,28 @@ class Elements::MapReferencesCell < Cell::ViewModel
   def base
     return [] if model.blank?
     model.map do |neighborhood|
-      case neighborhood[:geometry].geometry_type
-        when RGeo::Feature::Polygon
+      reference_number += 1
+      case neighborhood.geometry.try(:geometry_type)
+      when RGeo::Feature::Polygon
         {
-          coordinates: neighborhood[:geometry].coordinates.first.map(&:reverse),
-          className: neighborhood[:urbanization] ? 'urbanized' : 'unurbanized',
-          name: neighborhood[:name],
-          reference: neighborhood[:abbreviation]
+          coordinates: neighborhood.geometry.coordinates.first.map(&:reverse),
+          className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
+          name: neighborhood.name,
+          reference: neighborhood.abbreviation
         }
-        when RGeo::Feature::MultiPolygon
+      when RGeo::Feature::MultiPolygon
         {
-          coordinates: neighborhood[:geometry].coordinates.first.first.map(&:reverse),
-          className: neighborhood[:urbanization] ? 'urbanized' : 'unurbanized',
-          name: neighborhood[:name],
-          reference: neighborhood[:abbreviation]
+          coordinates: neighborhood.geometry.coordinates.first.first.map(&:reverse),
+          className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
+          name: neighborhood.name,
+          reference: neighborhood.abbreviation
+        }
+      else
+        {
+          coordinates: [],
+          className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
+          name: neighborhood.name,
+          reference: neighborhood.abbreviation
         }
       end
     end.to_json

@@ -1,6 +1,8 @@
 es-AR:
   admin:
     partials:
+      documents_management:
+        related_documents: Documentos relacionados
       header:
         logout: Salir
         neighborhoods: Barrios

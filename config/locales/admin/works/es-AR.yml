@@ -14,7 +14,5 @@ es-AR:
       show:
         estimated_end_date: Tiempo de finalización estimado
         photos: Fotos
-        related_documents: Documentos relacionados
         related_meetings: Reuniones relacionadas
         start_date: Fecha de inicio
-        upload_document: Subir Documentos

@@ -4,7 +4,6 @@ development: &app_config
     - 'localhost:3300'
 
   aws:
-    account_id: ''
     credentials:
       access_key: ''
       secret_key: ''
@@ -12,7 +11,19 @@ development: &app_config
       bucket: 'caminos-uploads'
     region: 'us-east-1'
 
+  google:
+    drive:
+      api_key: 'AIzaSyCTdRM8X6Uo6RJyZf-LWyAgp2iE_VNMRaE'
+
   hostname: 'localhost'
+
+  mapbox:
+    token: ''
+
+  redis:
+    host: 'localhost'
+    port: 6379
+    db:   1
 
   ssl_enabled: false
 

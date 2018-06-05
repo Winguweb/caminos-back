@@ -1,0 +1,5 @@
+es-AR:
+  admin:
+    google_drive:
+      folder:
+        invalid: 'No es una carpeta de Google Drive válida'
