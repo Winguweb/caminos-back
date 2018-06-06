@@ -8,7 +8,7 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
         'removeFile',
         'uploadError',
         'uploadSuccess',
-        'sendRemoveQuery'
+        'removeUploaded'
     )
 
     var that = this
@@ -27,7 +27,7 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
     })
 
     CDLV.pubSub.on({
-      'filer:remove:query': this.sendRemoveQuery
+      'document:remove:uploaded': this.removeUploaded
     })
 
     this.filerInput = $input.filer({
@@ -95,20 +95,21 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
 
     if( _.isEmpty(documentId) ) return true
 
-    this.sendRemoveQuery(documentId)
+    this.removeUploaded(documentId)
   },
 
-  sendRemoveQuery: function(documentId) {
+  removeUploaded: function(documentId) {
     var url = '/admin/ajax/'+this.owner.pluralizeName+'/'+this.owner.id+'/documents/'+documentId
     this.displayMessage(false)
      $.ajax({
       url: url,
-      type: 'delete',
+      type: 'DELETE',
       cache: false,
     }).done(function(data){
-      CDLV.pubSub.trigger('document:remove', documentId)
+      CDLV.pubSub.trigger('document:remove:done', documentId)
       return true
     }).fail(function(xhr){
+      CDLV.pubSub.trigger('document:remove:fail', xhr)
       return false
     })
   },
@@ -138,6 +139,6 @@ CDLV.Components['documents/uploader'] = Backbone.View.extend({
     filerItem.data('document-id', data.response.id)
     filerItem.find('.jFiler-item-assets').show()
     filerItem.find('.jFiler-jProgressBar .bar').addClass('green')
-    CDLV.pubSub.trigger('document:add', data)
+    CDLV.pubSub.trigger('document:add:done', data)
   }
 })

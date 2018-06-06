@@ -27,5 +27,21 @@
         }
       }
     }
+    .gdrive_folder{
+      .folder_name{
+        @include type-setting(0);
+        padding: $gutter $gutter/2 0;
+        &.error{
+          color:$red;
+        }
+        &.valid{
+          font-weight: bold;
+          span {
+            font-weight: 400;
+            margin-right: $gutter/2;
+          }
+        }
+      }
+    }
   }
 }

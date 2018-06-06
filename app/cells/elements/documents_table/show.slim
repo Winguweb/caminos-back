@@ -8,51 +8,36 @@
           = raw("<%= name %>")
       td = raw("<%= description %>")
       td = raw("<%= created_at %>")
+      td
+        a href="#" class='remove-document' data-document-id=raw("<%= id %>") data-document-type=raw("<%= type %>")
+          = t('js.filer.trash')
+
+  script type="text/template" id="no-documents-template" class="hidden"
+    tr.no-documents
+      td=t('.no_documents')
 
   table
-    - if filters
-      thead
-          tr
-            th.sortable_type
-              select#name_neighborhood onchange="typeChange()"
-                option value="" Tipo
-                option value="asc"  A-Z
-                option value="desc"  Z-A
-
-            th.sortable_name
-              select#status onchange="nameChange()"
-                option value="" Nombre
-                option value="asc"  A-Z
-                option value="desc" Z-A
-            th.sortable_author
-              select#date onchange="authorChange()"
-                option value="" Descripción
-                option value="asc"  Orden ascendente
-                option value="desc" Orden descendente
-            th.sortable_date
-              select#date onchange="dateChange()"
-                option value="" Fecha
-                option value="asc"  Orden ascendente
-                option value="desc" Orden descendente
     tbody.documents-table-body
       - if documents.present?
         - documents.each do |document|
           tr.document id=document.id
             td
               i class=document.icon_type
-            td = link_to document.name, document.attachment.url, target:'_blank'
+            td = link_to document.name, document.url, target:'_blank'
             td = document.description
+            td = l(document.created_at, format: :basic)
             td
               - if is_admin
-                = link_to 'delete', class: 'remove-document', 'data-document-id': document.id do
+                = link_to '#', class: 'remove-document', 'data-document-id': document.id, 'data-document-type': document.type.downcase do
                   = t('js.filer.trash')
-            td = l(document.created_at, format: :basic)
       - else
-        span=t('.no_documents')
+        tr.no-documents
+          td=t('.no_documents')
 
 javascript:
   $(function() {
     new CDLV.Components['documents/table']({
-      el: $('.documents-table-cell')
+      el: $('.documents-table-cell'),
+      documentsIds: #{documents.map(&:id)}
     })
   });

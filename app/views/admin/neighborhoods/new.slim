@@ -30,3 +30,11 @@
           == cell('elements/map_edit', @neighborhood, controls: ['polygon'], name: 'neighborhood')
           input type="hidden" name="neighborhood[geometry]" class="geometry-field"
           input type="hidden" name="neighborhood[geo_geometry]" class="geo_geometry-field"
+
+        .field.gdrive_folder
+          = form.label :gdrive_folder, t('neighborhoods.gdrive_folder')
+          = form.text_field :gdrive_folder, placeholder: 'https://drive.google.com/drive/folders/ID-DE-EJEMPLO'
+
+/ https://drive.google.com/drive/folders/0B_V23YZ5SzTsVGRPZkotNXUwdEk
+/ https://drive.google.com/drive/folders/1ywx4dnIoJh30g8T1SmSoUAJ-xTXV-0TR
+/ https://drive.google.com/open?id=0B_V23YZ5SzTsVGRPZkotNXUwdEk

@@ -1,0 +1,17 @@
+.documents-relatable-cell
+  .relate-documents-button id=button_id
+    = t('admin.helpers.documents.relate_document')
+  = form_for DocumentsRelation.new, url: url, method: :post do |form|
+    .drive-document-select
+      = form.select :document_id, grouped_options_for_select(drive_documents_options), include_blank: true
+    .relate-button
+      .button= t('.relate_document')
+
+javascript:
+  $(function() {
+    new CDLV.Components['documents/relatable']({
+      el: $('.documents-relatable-cell'),
+      buttonId: '#{button_id}',
+      owner: { pluralizeName: '#{owner_pluralize_name}', id: '#{owner_id}'}
+    })
+  });

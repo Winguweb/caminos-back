@@ -6,7 +6,9 @@ es-AR:
         geometry: Poligono
         geo_geometry: Poligono
       edit:
-        update_neighborhood: Actulizando Barrio
+        create: Crear Barrio
+        folder_name: "Nombre de la carpeta:"
+        update_neighborhood: "Actualizar información del barrio: %{name}"
       index:
         neighborhoods: Barrios
         neighborhoods_subtitle: Listado de todos los barrios cargados
@@ -19,8 +21,6 @@ es-AR:
         activity: Actividad reciente
         add_new_responsible: Agregar Nuevo
         add_new_photo: Agregar Nueva
-        related_documents: Documentos relacionados
-        upload_document: Subir Documentos
       update:
         errors: "%{field}: Este campo es obligatorio"
         geometry: Poligono

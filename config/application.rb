@@ -53,6 +53,7 @@ module CaminosBack
       elements/button_cell
       elements/button_for_cell
       elements/description_cell
+      elements/documents_relatable_cell
       elements/documents_table_cell
       elements/documents_uploader_cell
       elements/error_messages_cell

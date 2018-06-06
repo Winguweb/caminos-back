@@ -1,3 +1,5 @@
+require 'document'
+
 module Admin::Ajax
   class DocumentsController < BaseController
     include CurrentAndEnsureDependencyLoader
@@ -35,10 +37,11 @@ module Admin::Ajax
             response: {
               id: document.id,
               icon_type: document.icon_type,
-              url: document.attachment.url,
+              url: document.url,
               name: document.name,
               description: document.description,
-              created_at: I18n.l(document.created_at, format: :basic)
+              created_at: I18n.l(document.created_at, format: :basic),
+              type: document.type.downcase
             }
           }, status: 201
         else

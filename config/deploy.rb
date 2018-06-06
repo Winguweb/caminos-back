@@ -30,7 +30,7 @@ set :puma_preload_app, false
 set :puma_worker_timeout, 60
 set :puma_init_active_record, false
 
-set :linked_files, %w{config/database.yml config/caminos.yml config/secrets.yml config/puma.rb}
+set :linked_files, %w{config/database.yml config/caminos.yml config/secrets.yml config/puma.rb config/sidekiq.yml}
 set :linked_dirs,  %w{bundle lib/tasks/log log public/system tmp/cache tmp/pids tmp/sockets}
 
 set :assets_roles, [ :app ]
@@ -76,6 +76,7 @@ namespace :deploy do
       upload! "config/deploy/files/#{fetch(:stage)}/database.yml", "#{shared_path}/config/database.yml"
       upload! "config/deploy/files/#{fetch(:stage)}/caminos.yml", "#{shared_path}/config/caminos.yml"
       upload! "config/deploy/files/#{fetch(:stage)}/secrets.yml",  "#{shared_path}/config/secrets.yml"
+      upload! "config/deploy/files/#{fetch(:stage)}/sidekiq.yml",  "#{shared_path}/config/sidekiq.yml"
       invoke 'puma:config'
     end
   end

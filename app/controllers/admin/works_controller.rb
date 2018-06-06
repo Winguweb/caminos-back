@@ -109,9 +109,7 @@ module Admin
         :name,
         :status,
         :start_date,
-        :category_list,
-        photos: [],
-        documents: [[:link,:name,:description]]
+        :category_list
       )
     end
 

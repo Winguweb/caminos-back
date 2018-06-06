@@ -6,16 +6,6 @@ class Elements::DocumentsUploaderCell < Cell::ViewModel
     ::Rails.application.routes.url_helpers.send(:"admin_ajax_#{owner_class_name}_documents_upload_path", owner_id)
   end
 
-  def documents
-    return [] if model.blank?
-
-    @documents ||= model.map do |document|
-      {
-        opts: { docid: document.id }
-      }
-    end.to_json
-  end
-
   def file_input_id
     @file_input_id ||= (options[:file_input_id] || 'document_file_input')
   end
