@@ -25,6 +25,6 @@ set :output, lambda { "2>&1 | logger -t whenever_cron" }
 
 set :chronic_options, hours24: true
 
-every :day, at: '4:30 am', roles: [:app] do
+every :day, at: '4:30 am', roles: [ :production_cron ] do
   rake "google_drive:sync:neighborhoods_folders"
 end

@@ -38,7 +38,7 @@ set :keep_assets, 5
 
 set :maintenance_template_path, File.expand_path("../deploy/files/maintenance.erb.html", __FILE__)
 
-set :whenever_roles, ->{ :app }
+set :whenever_roles, ->{ :production_cron }
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 namespace :puma do
