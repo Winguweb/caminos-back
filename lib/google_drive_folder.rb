@@ -95,7 +95,3 @@ class GoogleDriveFolder
     Drive.create!(drive_params)
   end
 end
-
-# barrio = Neighborhood.find('e5e30949-c86a-4640-a69e-b6e3ddebe760');barrio.name
-# gdrive = barrio.google_drive_folder;
-# gdrive.root_folder_content(create_documents: true)

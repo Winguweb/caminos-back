@@ -51,7 +51,12 @@ module Admin
     def destroy
       load_neighborhood; return if performed?
 
+      # TO-DO: we should move all this to a Service
       if @neighborhood.destroy
+        if documents = Document.where(neighborhood: @neighborhood)
+          documents.destroy_all
+        end
+
         redirect_to admin_dashboard_path
       else
         redirect_back(fallback_location: admin_dashboard_path)
@@ -86,11 +91,6 @@ module Admin
         :name,
         :urbanization
        )
-    end
-
-    def neighborhood_gdrive_folder_changed?
-      @neighborhood.previous_changes[:extras].present? &&
-      @neighborhood.previous_changes[:extras].any?{|extra| extra.keys.include?('gdrive_folder') }
     end
   end
 end
