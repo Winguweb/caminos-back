@@ -15,7 +15,14 @@ class CreateNeighborhood
     @neighborhood = Neighborhood.new(neighborhood_params)
     @neighborhood.agreement = Agreement.new
 
-    return @neighborhood if @neighborhood.save
+    if @neighborhood.save
+
+      if @neighborhood.google_drive_folder.valid?
+        SyncGoogleDriveFolderWorker.perform_async(@neighborhood.id)
+      end
+
+      return @neighborhood
+    end
 
     errors.add_multiple_errors(@neighborhood.errors.messages) && nil
   end

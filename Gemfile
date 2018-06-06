@@ -29,6 +29,7 @@ gem 'rgeo-geojson'
 gem 'role_model' # In order to use for Authorization
 gem 'sass-rails'
 gem 'sidekiq'
+gem 'whenever', require: false
 gem 'slim-rails' # Template language
 gem 'uglifier' # For assets pipeline compression
 

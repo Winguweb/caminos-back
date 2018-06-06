@@ -38,6 +38,9 @@ set :keep_assets, 5
 
 set :maintenance_template_path, File.expand_path("../deploy/files/maintenance.erb.html", __FILE__)
 
+set :whenever_roles, ->{ :app }
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
   task :make_dirs do
@@ -48,6 +51,19 @@ namespace :puma do
   end
 
   before :start, :make_dirs
+end
+
+namespace :sidekiq do
+  task :quiet do
+    on roles(:app) do
+      puts capture("pgrep -f 'sidekiq' | xargs kill -USR1")
+    end
+  end
+  task :restart do
+    on roles(:app) do
+      execute :sudo, :service, :sidekiq, :restart
+    end
+  end
 end
 
 namespace :deploy do
@@ -82,7 +98,10 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
+  after  :starting,     'sidekiq:quiet'
   after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
+  after  :reverted,     'sidekiq:restart'
+  after  :published,    'sidekiq:restart'
 end

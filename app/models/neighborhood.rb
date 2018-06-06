@@ -3,6 +3,8 @@ class Neighborhood < ApplicationRecord
 
   include DocumentRelatable
 
+  scope :with_gdrive_folder, -> { where('extras ?| array[:keys]', keys: ['gdrive_folder']) }
+
   has_many :meetings
   has_many :users, as: :entity
   has_many :photos, as: :owner
