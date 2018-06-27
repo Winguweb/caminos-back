@@ -1,33 +1,38 @@
 .page-public-header-cell {
   @include grid-container;
   $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
-  height: $navbar-height;
   box-shadow: 0 4px 4px color($light-shadow, 0.1);
+  height: $navbar-height;
   position: relative;
   z-index: 1000;
   > nav {
     @include grid-column(4);
     padding: $vgutter 0;
     > a {
-      display: inline-block;
-      width: 44px;
-      height: 35px;
       background: transparent image-url("admin-logo.svg") no-repeat;
       background-size: 100%;
+      display: inline-block;
+      height: 35px;
       margin: 0;
-      padding: 0px;
       overflow: hidden;
+      padding: 0px;
       vertical-align: middle;
+      width: 44px;
       > span{
         display: inline-block;
         @include hide-text;
       }
     }
     > span {
-      @include text-color($text-black, 1);
-      padding-left: 20px;
-      font-weight: 800;
-      vertical-align: middle;
+      > a {
+        @include text-color($text-black, 1);
+        font-weight: 800;
+        padding-left: 20px;
+        vertical-align: middle;
+        &:hover {
+          @include text-color($text-blue, 1);
+        }
+      }
     }
   }
   > ul {
@@ -39,11 +44,11 @@
       > a {
         @include text-color($text-grey, 1);
         @include type-setting(0);
-        display: block;
-        padding: $gutter $gutter*2;
         border-bottom: 2px solid transparent;
-        text-align: center;
+        display: block;
         margin-right: 0;
+        padding: $gutter $gutter*2;
+        text-align: center;
         &.active,
         &:hover {
           @include text-color($text-blue, 1);

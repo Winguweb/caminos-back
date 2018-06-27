@@ -4,7 +4,8 @@ header.page-public-header-cell class="#{'without-links' unless links}"
       span 'Caminos de la Villa'
     - unless neighborhood.blank?
       span
-        = neighborhood.name
+        = link_to neighborhood_path(neighborhood.id) do
+          = neighborhood.name
   - unless neighborhood.blank?
     ul
       - if neighborhood.urbanization
