@@ -12,7 +12,8 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       'showBaseGeometry',
       'showFeaturesGeometry',
       'showMarkers',
-      'showPolygon'
+      'showPolygon',
+      'addClickEvent'
     )
 
     this.setAccessToken(options.token)
@@ -32,6 +33,11 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.centerMap(this.base)
 
     this.zoomMap(this.base)
+  },
+  addClickEvent: function(element) {
+    element.on('click', function (evt) {
+      window.location = evt.target.options.url
+    })
   },
   centerMap: function(polygon) {
     var center = this.getCenter(polygon) || this.center
@@ -73,7 +79,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   showBaseGeometry: function() {
     if (!this.hasBaseGeometry()) return
-    this.showPolygon(this.base)
+    this.showPolygon(this.base, {fixed: true})
   },
   showFeaturesGeometry: function() {
     this.features.forEach(function(feature) {
@@ -96,7 +102,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   showMarkers: function(marker) {
     var points =  marker.coordinates[0] instanceof Array ? marker.coordinates : [marker.coordinates]
     points.forEach(function(point) {
-      new L.Marker(point, {
+      var newMarker = new L.Marker(point, {
         icon: L.icon({
           className: "geometry-marker",
           iconAnchor: [20, 30],
@@ -105,21 +111,27 @@ CDLV.Components['map_show'] = Backbone.View.extend({
           shadowAnchor: [19, 29],
           shadowSize: [40, 40],
           shadowUrl: this.markerShadowURL,
-        }
-      )}).addTo(this.baseGeometryFeature)
+        }),
+        url: marker.url
+      }).addTo(this.baseGeometryFeature)
+      this.addClickEvent(newMarker)
     }.bind(this))
   },
-  showPolygon: function(polygon) {
-    new L.Polygon(polygon.coordinates, {
+  showPolygon: function(polygon, options) {
+    var newPolygon = new L.Polygon(polygon.coordinates, {
       className: "geometry-polygon " + polygon.className,
+      url: polygon.url
     }).addTo(this.baseGeometryFeature)
+    if (!options || !options.fixed) this.addClickEvent(newPolygon)
   },
   showPolyline: function(polyline, options) {
     var parent = options && options.fixed ? this.baseGeometryFeature : this.editableGeometryFeature
-    new L.Polyline(polyline.coordinates,
+    var newPolyline = new L.Polyline(polyline.coordinates,
       {
         className: "geometry-polyline " + polyline.className,
+        url: polyline.url
       }).addTo(this.baseGeometryFeature)
+    this.addClickEvent(newPolyline)
   },
   zoomMap: function(polygon) {
     var bounds = this.getBounds(polygon)
