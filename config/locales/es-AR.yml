@@ -20,9 +20,9 @@ es-AR:
     state_equipment: Equipamiento Estatal
     public_spaces: Espacios Públicos
     home: Vivienda
-    energy: "Luz / Electricidad"
+    energy: "Electricidad y Alumbrado"
     health: Salud
-    infrastructure: Infraestructura
+    infrastructure: Equipamiento
     public: "Calles / Plazas"
     sewer: Cloacas
     trash: Basura
