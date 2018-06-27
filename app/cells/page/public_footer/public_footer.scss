@@ -1,0 +1,25 @@
+@mixin public-footer() {
+  @include grid-container;
+  background: $white;
+  border: 0;
+  bottom: -90px;
+  box-sizing: border-box;
+  height: 100px;
+  left: 0;
+  padding: $gutter;
+  position: fixed;
+  right: 0;
+  transition: bottom 300ms ease;
+  z-index: 1000;
+  @include shadow($normal-shadow, 1);
+  &:hover {
+    bottom: 0;
+  }
+  > div {
+  }
+}
+
+
+.page-public-footer-cell {
+  @include public-footer;
+}
