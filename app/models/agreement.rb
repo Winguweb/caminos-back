@@ -92,7 +92,7 @@ class Agreement < ApplicationRecord
             'La mayoría de las conexiones son formales, pero la calidad del servicio es precaria.',
             'La mayoría de las conexiones son formales, y la calidad del servicio es buena.',
             'Todas las conexiones son formales y la calidad del servicio es buena.',
-            'Sin información' 
+            'Sin información'
           ]
         },
         q2: {
@@ -136,7 +136,7 @@ class Agreement < ApplicationRecord
       }
     },
     i3: {
-      title: 'Equipamiento urbano Valor',
+      title: 'Equipamiento urbano',
       questions:{
         q1: {
           title: '¿El barrio cuenta con un centro de salud de atención primaria con capacidad suficiente, y en un radio de 10 cuadras desde el centro del barrio?',
@@ -245,7 +245,7 @@ class Agreement < ApplicationRecord
       }
     },
     i4: {
-      title: 'Vivienda Valor',
+      title: 'Vivienda',
       questions:{
         q1: {
           title: '¿Existen viviendas que no cumplan con los requisitos de habitabilidad mínimos (iluminación, materiales de calidad, ventilación)?',
