@@ -82,6 +82,7 @@ module CaminosBack
       mobile_elements/over_work_card_cell
       mobile_elements/resources_card_cell
       page/header_cell
+      page/public_footer_cell
       page/public_header_cell
       section/footer_link_cell
       section/header_cell
