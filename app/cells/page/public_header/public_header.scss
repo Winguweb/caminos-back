@@ -24,14 +24,13 @@
     > span {
       @include type-setting(-1);
       box-sizing: border-box;
-      float: right;
+      display: inline-block;
       font-weight: 100;
       padding: $gutter/2 0 $gutter/2 10px;
       position: relative;
       text-align: center;
       text-align: left;
       top: 2px;
-      width: calc(100% - 100px);
     }
   }
   > div:nth-child(2) {
