@@ -7,13 +7,12 @@ body {
     }
   }
   > header {
-    padding: $gutter/2 0;
-    @include grid-column(16 of 16);
+    padding: $gutter;
+    z-index: 0;
 
     @include grid-media($tablet-grid) {
       @include grid-column(1 of 1);
     }
-    z-index: 0;
     > nav {
       @include grid-container;
       @include grid-collapse;
@@ -25,17 +24,18 @@ body {
       }
 
       .site-logo-wrapper{
-        padding: 5px $gutter/2 0 0;
+        @include grid-column(3 of 12);
       }
       .site-logo {
-        display: inline-block;
-        width: 44px;
-        height: 35px;
         background: transparent image-url("admin-logo.svg") no-repeat;
-        background-size: 100%;
-        margin: 0;
-        padding: 0px;
+        background-size: contain;
+        display: inline-block;
+        height: 35px;
+        margin: 3px 0;
         overflow: hidden;
+        padding: 0px;
+        vertical-align: top;
+        width: 100px;
         span{
           display: inline-block;
           @include hide-text;
@@ -43,42 +43,45 @@ body {
       }
       /* Links */
       .menu {
-        @include grid-column(13 of 16);
+        @include grid-column(12 of 16);
         li.item {
           > a {
             @include text-color($text-grey, 1);
             display: inline-block;
-            padding: 14px;
+            padding: $gutter/2;
+            &.active {
+              @include text-color($text-blue, 1);
+            }
           }
         }
       }
       .actions {
         text-align: right;
-        @include grid-column(3 of 16);
+        @include grid-column(4 of 16);
       }
     }
   }
 }
 
 @mixin user-menu() {
+  display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  display: inline-block;
+  vertical-align: top;
   width: 61px;
-  height: calc(45px + $vgutter);
   > div {
     display: block;
-    text-align: left;
     margin: 0 0 $vgutter 0;
+    text-align: left;
 
     > div {
       @include shadow($normal-shadow, 1);
-      vertical-align: top;
       border-radius: 100%;
-      overflow: hidden;
       float: right;
+      overflow: hidden;
+      vertical-align: top;
     }
   }
 
@@ -87,24 +90,24 @@ body {
     @include z-level(1);
     @include grid-column(3);
     background-color: $background-white;
-    position: absolute;
-    top: calc(45px + #{$vgutter*3});
-    right: $gutter;
     display: none;
-    text-align: left;
     margin: 0;
+    position: absolute;
+    right: $gutter;
+    text-align: left;
+    top: calc(45px + #{$vgutter*3});
     > li {
       > a, input {
         @include text-color($text-grey, 1);
+        background-color: $white;
+        border:none;
+        box-sizing: border-box;
         display: block;
         margin: 0; // Todos los a tienen margin right, por que?
         padding: $vgutter $gutter/2;
-        white-space: nowrap;
-        background-color: $white;
-        border:none;
-        width: 100%;
         text-align: left;
-        box-sizing: border-box;
+        white-space: nowrap;
+        width: 100%;
 
         &:hover {
           @include background-color($text-grey, 0.1);

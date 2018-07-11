@@ -6,9 +6,9 @@ header.user-header-menu
           span 'Caminos de la Villa'
       -if is_admin?
         li.item
-          = link_to t('.neighborhoods'), admin_neighborhoods_path
+          = active_link_to t('.neighborhoods'), admin_neighborhoods_path
         li.item
-          = link_to t('.users'), admin_users_path
+          = active_link_to t('.users'), admin_users_path
     ul.actions
       li
         .user-menu

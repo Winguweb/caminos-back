@@ -1,20 +1,24 @@
 header.page-public-header-cell class="#{'without-links' unless links}"
-  nav
+  div
     = link_to root_path do
       span 'Caminos de la Villa'
+    span
+      = t('slogan')
+  div
+    nav
+      - unless neighborhood.blank?
+        span
+          = link_to neighborhood_path(neighborhood.id) do
+            = neighborhood.name
     - unless neighborhood.blank?
-      span
-        = link_to neighborhood_path(neighborhood.id) do
-          = neighborhood.name
-  - unless neighborhood.blank?
-    ul
-      - if neighborhood.urbanization
+      ul
+        - if neighborhood.urbanization
+          li
+            = active_link_to "/neighborhoods/#{neighborhood.id}/", class: controller.controller_name == 'works' ? 'active':'' do
+              span= t('.works')
         li
-          = active_link_to "/neighborhoods/#{neighborhood.id}/", class: controller.controller_name == 'works' ? 'active':'' do
-            span= t('.works')
-      li
-        = active_link_to "/neighborhoods/#{neighborhood.id}/agreement" do
-          span= t('.agreement')
-      li
-        = active_link_to "/neighborhoods/#{neighborhood.id}/about" do
-          span= t('.about')
+          = active_link_to "/neighborhoods/#{neighborhood.id}/agreement" do
+            span= t('.agreement')
+        li
+          = active_link_to "/neighborhoods/#{neighborhood.id}/about" do
+            span= t('.about')

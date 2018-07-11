@@ -1,5 +1,5 @@
 class Page::PublicHeaderCell < Cell::ViewModel
-  include ApplicationHelper
+  include HeaderCellHelper
   include ::Cell::Translation
 
   private
@@ -11,5 +11,10 @@ class Page::PublicHeaderCell < Cell::ViewModel
 
   def links
     options[:links]
+  end
+
+  def current_class?(test_path)
+    return 'active' if current_page?(test_path)
+    ''
   end
 end

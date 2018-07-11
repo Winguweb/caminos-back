@@ -1,9 +1,14 @@
 class Page::HeaderCell < Cell::ViewModel
-  include ApplicationHelper
+  include HeaderCellHelper
 
   def show
     return unless title
     render
+  end
+
+  def current_class?(test_path)
+    return 'active' if current_page?(test_path)
+    ''
   end
 
   private

@@ -30,12 +30,4 @@ module LayoutHelper
   def to_fixed_percentage(value)
     value.to_i.floor
   end
-
-  def active_link_to(href, *args, &block)
-    active_class = current_class?(href)
-    link_class = args[0] && args[0][:class]
-    added_classes = [] << active_class << link_class
-    args[0] = (args[0] || {}).merge({:class => added_classes})
-    link_to(href, *args , &block)
-  end
 end
