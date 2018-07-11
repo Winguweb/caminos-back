@@ -10,11 +10,11 @@ header.page-public-header-cell class="#{'without-links' unless links}"
     ul
       - if neighborhood.urbanization
         li
-          = link_to "/neighborhoods/#{neighborhood.id}/" do
+          = active_link_to "/neighborhoods/#{neighborhood.id}/" do
             span= t('.works')
       li
-        = link_to "/neighborhoods/#{neighborhood.id}/agreement" do
+        = active_link_to "/neighborhoods/#{neighborhood.id}/agreement" do
           span= t('.agreement')
       li
-        = link_to "/neighborhoods/#{neighborhood.id}/about" do
+        = active_link_to "/neighborhoods/#{neighborhood.id}/about" do
           span= t('.about')

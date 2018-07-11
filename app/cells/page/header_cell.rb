@@ -1,4 +1,5 @@
 class Page::HeaderCell < Cell::ViewModel
+  include ApplicationHelper
 
   def show
     return unless title

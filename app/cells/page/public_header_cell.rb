@@ -1,4 +1,5 @@
 class Page::PublicHeaderCell < Cell::ViewModel
+  include ApplicationHelper
   include ::Cell::Translation
 
   private

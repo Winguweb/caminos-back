@@ -1,5 +1,6 @@
 module LayoutHelper
   include Admin::UsersHelper
+  include ActionView::Helpers::UrlHelper
 
   def body_id
     if content_for?(:body_id)
@@ -28,5 +29,10 @@ module LayoutHelper
 
   def to_fixed_percentage(value)
     value.to_i.floor
+  end
+
+  def active_link_to(*args, &block)
+    link_class = current_class?(args[0]) || current_class?(args[1])
+    link_to(*args, class: link_class, &block)
   end
 end
