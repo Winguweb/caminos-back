@@ -1,5 +1,6 @@
 @mixin home() {
   > main {
+    $navbar-height: 74px;
     height: calc(100% - #{$navbar-height});
     > div {
       height: 100%;
