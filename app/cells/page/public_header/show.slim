@@ -10,7 +10,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
     ul
       - if neighborhood.urbanization
         li
-          = active_link_to "/neighborhoods/#{neighborhood.id}/" do
+          = active_link_to "/neighborhoods/#{neighborhood.id}/", class: controller.controller_name == 'works' ? 'active':'' do
             span= t('.works')
       li
         = active_link_to "/neighborhoods/#{neighborhood.id}/agreement" do

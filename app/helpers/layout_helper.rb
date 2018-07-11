@@ -31,8 +31,11 @@ module LayoutHelper
     value.to_i.floor
   end
 
-  def active_link_to(*args, &block)
-    link_class = current_class?(args[0]) || current_class?(args[1])
-    link_to(*args, class: link_class, &block)
+  def active_link_to(href, *args, &block)
+    active_class = current_class?(href)
+    link_class = args[0] && args[0][:class]
+    added_classes = [] << active_class << link_class
+    args[0] = (args[0] || {}).merge({:class => added_classes})
+    link_to(href, *args , &block)
   end
 end
