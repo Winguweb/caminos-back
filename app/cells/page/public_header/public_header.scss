@@ -1,7 +1,7 @@
 .page-public-header-cell {
   @include grid-container;
-  $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
   box-shadow: 0 4px 4px color($light-shadow, 0.1);
+  height: $navbar-height;
   position: relative;
   z-index: 1000;
   > div:first-of-type {

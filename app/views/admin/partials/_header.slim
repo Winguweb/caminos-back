@@ -6,9 +6,9 @@ header.user-header-menu
           span 'Caminos de la Villa'
       -if is_admin?
         li.item
-          = active_link_to t('.neighborhoods'), admin_neighborhoods_path
+          = active_link_to t('.neighborhoods'), admin_neighborhoods_path, class: ['neighborhoods', 'works', 'meetings', 'agreements', 'dashboards'].include?(controller.controller_name)  ? 'active':''
         li.item
-          = active_link_to t('.users'), admin_users_path
+          = active_link_to t('.users'), admin_users_path, class: controller.controller_name == 'users' ? 'active':''
     ul.actions
       li
         .user-menu
