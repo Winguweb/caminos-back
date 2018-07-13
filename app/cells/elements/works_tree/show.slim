@@ -1,0 +1,24 @@
+.works-tree-cell
+  ul
+    - Work.categories.each do |category|
+      li
+        div
+          button.open-list-button disabled=works[category].count==0 = "+"
+          i class="category-#{category}"
+          span = t("categories.#{category}")
+          span = works[category].count
+        ul
+          - works[category].each do |work|
+            li = link_to neighborhood_work_path(work.neighborhood, work) do
+              div
+                i class="category-#{category}"
+                span = work.name
+              div
+                span class="status-#{work.status}" = t("status.#{work.status}")
+
+javascript:
+  $(function() {
+    new CDLV.Components['works/tree']({
+      el: $('.works-tree-cell'),
+    })
+  });

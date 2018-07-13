@@ -1,0 +1,107 @@
+@mixin works-tree() {
+  margin-top: $gutter;
+  > ul {
+    > li {
+      > div {
+        @include background-color($light-grey, 0.3);
+        margin-bottom: $gutter;
+        padding: $gutter/2 $gutter;
+        > button {
+          background: transparent;
+          padding-left: 0;
+          padding-right: $gutter;
+          border: none;
+          border-radius: none;
+          vertical-align: middle;
+          &[disabled] {
+            opacity: 0.3;
+          }
+        }
+        > i {
+          display: inline-block;
+          background-position: center;
+          width: 24px;
+          height: 24px;
+          background-size: cover;
+          vertical-align: middle;
+          margin-right: $gutter/2;
+          &.category-home {background-image: image-url("icons/category-home.svg")}
+          &.category-water {background-image: image-url("icons/category-water.svg")}
+          &.category-trash {background-image: image-url("icons/category-trash.svg")}
+          &.category-public {background-image: image-url("icons/category-public.svg")}
+          &.category-health {background-image: image-url("icons/category-health.svg")}
+          &.category-energy {background-image: image-url("icons/category-energy.svg")}
+          &.category-sewer {background-image: image-url("icons/category-sewer.svg")}
+          &.category-infrastructure {background-image: image-url("icons/category-infrastructure.svg")}
+        }
+        > span:first-of-type {
+          @include type-setting(0);
+          vertical-align: middle;
+        }
+        > span:last-of-type {
+          @include type-setting(0);
+          font-weight: 600;
+          float: right;
+          vertical-align: middle;
+        }
+      }
+      > ul {
+        padding-left: $gutter*4;
+        height: 0;
+        overflow: hidden;
+        &.opened {
+          height: auto;
+          margin-bottom: $gutter;
+        }
+        > li {
+          > a {
+            > div:first-of-type {
+              i {
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+                margin-right: $gutter/2;
+                &.category-home {background-color: color($home, 1)}
+                &.category-water {background-color: color($water, 1)}
+                &.category-trash {background-color: color($trash, 1)}
+                &.category-public {background-color: color($public, 1)}
+                &.category-health {background-color: color($health, 1)}
+                &.category-energy {background-color: color($energy, 1)}
+                &.category-sewer {background-color: color($sewer, 1)}
+                &.category-infrastructure {background-color: color($infrastructure, 1)}
+              }
+              span {
+                @include text-color($black, 1);
+              }
+            }
+            > div:last-of-type {
+              @include type-setting(-2);
+              line-height: 1em;
+              margin-bottom: $gutter/2;
+              span {
+                @include text-color($black, 1);
+                &.status-in_process { @include text-color($status-in-process,1)}
+                &.status-done { @include text-color($status-done,1)}
+                &.status-pending { @include text-color($status-pending,1)}
+                &.status-expired { @include text-color($status-expired,1)}
+                &.status-proyected { @include text-color($status-proyected,1)}
+                text-transform: uppercase;
+                padding-left: calc(12px + #{$gutter/2});
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin works-tree-mobile() {
+
+}
+
+
+.works-tree-cell{@include works-tree;}
+
+.mobile-layout .works-tree-cell{@include works-tree-mobile;}

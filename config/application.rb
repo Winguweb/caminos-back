@@ -74,6 +74,7 @@ module CaminosBack
       elements/work_details_cell
       elements/works_table_cell
       elements/works_list_cell
+      elements/works_tree_cell
       forms/user_cell
       mobile_elements/meetings_navigation_mobile_cell
       mobile_elements/meetings_list_mobile_cell
