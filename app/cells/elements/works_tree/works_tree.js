@@ -13,7 +13,6 @@ CDLV.Components['works/tree'] = Backbone.View.extend({
     CDLV.pubSub.on({
       'filter-toggle:changed': this.changeFilter,
     })
-    console.log('yes')
   },
   render: function(data) {
       this.$el.html( this.work_template({works:data.works, categories: data.categories, filter_name: this.filter_name}));
