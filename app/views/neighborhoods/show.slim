@@ -5,6 +5,7 @@ section
         section
           nav
             -if !@neighborhood.works.empty?
+              == cell('elements/filter_toggle')
               == cell('elements/works_tree' , @neighborhood.works)
 
             -else

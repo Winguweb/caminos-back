@@ -1,0 +1,31 @@
+@mixin filter-toggle() {
+  margin-top: $gutter;
+  > ul {
+    > li {
+      display: inline-block;
+      padding: $gutter/2;
+      border-bottom: 2px solid transparent;
+      &.active {
+        border-color: color($blue, 1);
+        > a { @include text-color($blue, 1); }
+      }
+      > a {
+        @include text-color($black, 1);
+        font-size: 13px;
+        font-weight: 600;
+        &:hover {
+          @include text-color($blue, 1);
+        }
+      }
+    }
+  }
+}
+
+@mixin filter-toggle-mobile() {
+
+}
+
+
+.filter-toggle-cell{@include filter-toggle;}
+
+.mobile-layout .filter-toggle-cell{@include filter-toggle-mobile;}

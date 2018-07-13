@@ -20,5 +20,7 @@ javascript:
   $(function() {
     new CDLV.Components['works/tree']({
       el: $('.works-tree-cell'),
+      categories: #{Work.categories},
+      works: #{works.to_json}
     })
   });

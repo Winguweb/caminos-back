@@ -3,6 +3,19 @@ es-AR:
     admin:
       works:
         select_a_category: Seleccione una categoría
+    categories:
+      all_categories: Todas
+      public_services: Servicios Públicos
+      state_equipment: Equipamiento Estatal
+      public_spaces: Espacios Públicos
+      home: Vivienda
+      energy: "Electricidad y Alumbrado"
+      health: Salud
+      infrastructure: Equipamiento
+      public: "Calles y Plazas"
+      sewer: Cloacas
+      trash: Basura
+      water: Agua
     filer:
       button: Elegir archivos
       drop: Arrastra un archivo para subir
@@ -18,3 +31,12 @@ es-AR:
       trash: Quitar
       upload:
         error: Ocurrió un error al subir este archivo
+    filter:
+      no_results: "No hay obras con estado"
+    status:
+      all_status: Todos
+      done: Finalizada
+      expired: Vencida
+      in_process: En progreso
+      pending: Pendiente
+      proyected: Proyectada
