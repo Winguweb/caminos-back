@@ -9,6 +9,7 @@ CDLV.Components['works/tree'] = Backbone.View.extend({
         'changeFilter'
     )
     this.options = this.translate(options)
+    this.neighborhoodId = this.options.neighborhood_id
     this.render(this.options)
     CDLV.pubSub.on({
       'filter-toggle:changed': this.changeFilter,
@@ -41,7 +42,7 @@ CDLV.Components['works/tree'] = Backbone.View.extend({
   changeFilter: function(filter_name) {
     var _self = this
     this.filter_name = filter_name
-    axios.get('/api/neighborhoods/820adb89-f6b0-4866-90c8-e5710d397c50/works/status/' + filter_name)
+    axios.get('/api/neighborhoods/' + this.neighborhoodId + '/works/status/' + filter_name)
     .then(function (response) {
       _self.options.works = response.data.works
       _self.options.categories = response.data.categories

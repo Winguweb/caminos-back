@@ -21,6 +21,7 @@ javascript:
     new CDLV.Components['works/tree']({
       el: $('.works-tree-cell'),
       categories: #{Work.categories},
-      works: #{works.to_json}
+      works: #{works.to_json},
+      neighborhood_id: '#{neighborhood_id}'
     })
   });
