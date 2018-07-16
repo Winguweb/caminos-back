@@ -1,12 +1,14 @@
 CDLV.Components['works/tree'] = Backbone.View.extend({
   events: {
   'click .open-list-button': 'toggleList',
+  'click .filter-action': 'categorySelected',
   },
   initialize: function(options) {
     _.bindAll(
         this,
         'toggleList',
-        'changeFilter'
+        'changeFilter',
+        'categorySelected'
     )
     this.options = this.translate(options)
     this.neighborhoodId = this.options.neighborhood_id
@@ -52,8 +54,14 @@ CDLV.Components['works/tree'] = Backbone.View.extend({
     .catch(function (response) {
       console.log("error")
     })
-
   },
-  work_template: _.template('<% if(categories.length) { %><ul><% _.each(categories, function(category) { %><li><div><button class="open-list-button" <%= works[category.code].length == 0 ? "disabled" : "" %>>+</button><i class="category-<%= category.code %>"></i><span><%= category.name %></span><span><%= works[category.code].length %></span></div><ul><% _.each(works[category.code], function(work) { %><li><a href="#"><div><i class="category-<%= category.code %>"></i><span><%= work.name %></span></div><div><span class="status-<%= work.status.code %>"><%= work.status.name %></span></div></a></li><% }); %></ul></li><% }); %></ul><% } else { %><span>'+ I18n.t('js.filter.no_results') + ' <%= I18n.t("js.status."+filter_name) %></span><% } %>')
+  categorySelected: function(ev) {
+    filterItem = $(ev.currentTarget)
+    $filterItems = this.$el.find('.filter-action').parent().parent().removeClass('active')
+    filterItem.parent().parent().addClass('active')
+    categoryName = $(filterItem).data('category-name')
+    CDLV.pubSub.trigger('map-show:filter:category', categoryName)
+  },
+  work_template: _.template('<% if(categories.length) { %><ul><% _.each(categories, function(category) { %><li><div><button class="open-list-button" <%= works[category.code].length == 0 ? "disabled" : "" %>>+</button><div class="filter-action" data-category-name="<%= category.code %>"><i class="category-<%= category.code %>"></i><span><%= category.name %></span><span><%= works[category.code].length %></span></div></div><ul><% _.each(works[category.code], function(work) { %><li><a href="#"><div><i class="category-<%= category.code %>"></i><span><%= work.name %></span></div><div><span class="status-<%= work.status.code %>"><%= work.status.name %></span></div></a></li><% }); %></ul></li><% }); %></ul><% } else { %><span>'+ I18n.t('js.filter.no_results') + ' <%= I18n.t("js.status."+filter_name) %></span><% } %>')
 })
 

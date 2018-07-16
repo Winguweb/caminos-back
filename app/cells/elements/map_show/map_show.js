@@ -13,7 +13,9 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       'showFeaturesGeometry',
       'showMarkers',
       'showPolygon',
-      'addClickEvent'
+      'addClickEvent',
+      'changeCategoryFilter',
+      'changeStatusFilter'
     )
 
     this.setAccessToken(options.token)
@@ -33,6 +35,11 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.centerMap(this.base)
 
     this.zoomMap(this.base)
+
+    CDLV.pubSub.on({
+      'map-show:filter:category': this.changeCategoryFilter,
+      'map-show:filter:status': this.changeStatusFilter
+    })
   },
   addClickEvent: function(element) {
     element.on('click', function (evt) {
@@ -43,6 +50,21 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     var center = this.getCenter(polygon) || this.center
     this.map.setView([center.x, center.y], this.zoom)
   },
+  changeCategoryFilter: function(categoryName) {
+    this.categoryFilter = categoryName
+    this.filterFeatures()
+    this.baseGeometryFeature.clearLayers()
+    this.showBaseGeometry()
+    this.showFeaturesGeometry()
+  },
+  changeStatusFilter: function(statusName) {
+    this.statusFilter = statusName
+    this.categoryFilter = null
+    this.filterFeatures()
+    this.baseGeometryFeature.clearLayers()
+    this.showBaseGeometry()
+    this.showFeaturesGeometry()
+  },
   configureMapForMobile: function() {
     if ($('html').hasClass('touchevents')) {this.map.dragging.disable()}
   },
@@ -50,6 +72,13 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.map = L.mapbox.map(this.mapContainer[0], this.style)
     this.baseGeometryFeature = new L.FeatureGroup()
     this.map.addLayer(this.baseGeometryFeature)
+  },
+  filterFeatures: function() {
+    this.features.forEach(function(feature) {
+      passCategoryFilter = (feature.category == this.categoryFilter) || !this.categoryFilter
+      passStatusFilter = (feature.status == this.statusFilter) || !this.statusFilter
+      feature.show = passCategoryFilter && passStatusFilter
+    }.bind(this))
   },
   getBounds: function(polygon) {
     var coordinates = polygon.coordinates[0][0] instanceof Array ? polygon.coordinates[0] : polygon.coordinates
@@ -70,6 +99,9 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.features = options.features
     this.style = options.defaults.style
     this.zoom = options.defaults.zoom
+
+    this.categoryFilter = null
+    this.statusFilter = null
   },
   setAccessToken: function(token) {
     L.mapbox.accessToken = token
@@ -83,7 +115,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   showFeaturesGeometry: function() {
     this.features.forEach(function(feature) {
-      this.showGeometry(feature)
+      if (feature.show) this.showGeometry(feature)
     }.bind(this))
   },
   showGeometry: function(geometry) {

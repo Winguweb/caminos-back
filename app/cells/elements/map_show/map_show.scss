@@ -36,7 +36,10 @@
     &.infrastructure {fill: $infrastructure;}
     &.base-geometry {
       fill: $black;
-      stroke: none;
+      fill-opacity: 0.1;
+      stroke: $black;
+      stroke-opacity: 0.4;
+      stroke-width: 2;
     }
   }
 }
