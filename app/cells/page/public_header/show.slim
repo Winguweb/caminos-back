@@ -20,3 +20,10 @@ header.page-public-header-cell class="#{'without-links' unless links}"
         li
           = active_link_to "/neighborhoods/#{neighborhood.id}/about" do
             span= t('.about')
+
+javascript:
+  $(function() {
+    new CDLV.Components['page/public_header']({
+      el: $('.page-public-header-cell')
+    })
+  });
