@@ -37,47 +37,65 @@ class Elements::MapShowCell < Cell::ViewModel
     options[:features].map do |feature|
       case feature[:geometry].geometry_type
       when RGeo::Feature::Point
-        {
-          coordinates: [feature[:geometry].coordinates],
-          icon: image_path(feature.category_icon),
-          type: 'marker',
-          url: neighborhood_work_path(feature.neighborhood.id, feature.id)
-        }
+      {
+        coordinates: [feature[:geometry].coordinates],
+        icon: image_path(feature.category_icon),
+        type: 'marker',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status
+      }
       when RGeo::Feature::MultiPoint
       {
         coordinates: feature[:geometry].coordinates.map(&:reverse),
         icon: image_path(feature.category_icon),
         type: 'marker',
-        url: neighborhood_work_path(feature.neighborhood.id, feature.id)
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status
       }
       when RGeo::Feature::Polygon
-        {
-          coordinates: feature[:geometry].coordinates.first.map(&:reverse),
-          className: feature.category.name,
-          type: 'polygon',
-          url: neighborhood_work_path(feature.neighborhood.id, feature.id)
-        }
+      {
+        coordinates: feature[:geometry].coordinates.first.map(&:reverse),
+        className: feature.category.name,
+        type: 'polygon',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status
+      }
       when RGeo::Feature::MultiPolygon
-        {
-          coordinates: feature[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
-          className: feature.category.name,
-          type: 'polygon',
-          url: neighborhood_work_path(feature.neighborhood.id, feature.id)
-        }
+      {
+        coordinates: feature[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+        className: feature.category.name,
+        type: 'polygon',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status
+      }
       when RGeo::Feature::LineString
-        {
-          coordinates: feature[:geometry].coordinates.map(&:reverse),
-          className: feature.category.name,
-          type: 'polyline',
-          url: neighborhood_work_path(feature.neighborhood.id, feature.id)
-        }
+      {
+        coordinates: feature[:geometry].coordinates.map(&:reverse),
+        className: feature.category.name,
+        type: 'polyline',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status
+      }
       when RGeo::Feature::MultiLineString
-        {
-          coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
-          className: feature.category.name,
-          type: 'polyline',
-          url: neighborhood_work_path(feature.neighborhood.id, feature.id)
-        }
+      {
+        coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
+        className: feature.category.name,
+        type: 'polyline',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status
+      }
       end
     end.to_json
   end

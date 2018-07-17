@@ -1,0 +1,143 @@
+@mixin works-tree() {
+  margin-top: $gutter;
+  > ul {
+    > li {
+      margin-bottom: $gutter;
+      &.active {
+        position: relative;
+        &:before {
+          background-color: $blue;
+          bottom: 0;
+          content: '';
+          height: 40px;
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: -1;
+        }
+        > div {
+          > button {
+            color: $white;
+          }
+          > div {
+            > i, > span {
+              color: $white;
+            }
+            > i {
+              background-image: image-url("icons/category-generic-white.svg") !important;
+            }
+          }
+        }
+      }
+      > div {
+        @include background-color($light-grey, 0.3);
+        padding: 0 $gutter;
+        > button {
+          background: transparent;
+          border: none;
+          border-radius: 0;
+          padding-left: 0;
+          padding-right: $gutter;
+          vertical-align: middle;
+          &[disabled] {
+            opacity: 0.3;
+          }
+        }
+        > div {
+          cursor: pointer;
+          display: inline-block;
+          padding: $gutter/2 0;
+          width: calc(100% - #{$gutter} - 10px);
+          > i {
+            background-position: center;
+            background-size: cover;
+            display: inline-block;
+            height: 24px;
+            margin-right: $gutter/2;
+            vertical-align: middle;
+            width: 24px;
+            &.category-home {background-image: image-url("icons/category-home.svg")}
+            &.category-water {background-image: image-url("icons/category-water.svg")}
+            &.category-trash {background-image: image-url("icons/category-trash.svg")}
+            &.category-public {background-image: image-url("icons/category-public.svg")}
+            &.category-health {background-image: image-url("icons/category-health.svg")}
+            &.category-energy {background-image: image-url("icons/category-energy.svg")}
+            &.category-sewer {background-image: image-url("icons/category-sewer.svg")}
+            &.category-infrastructure {background-image: image-url("icons/category-infrastructure.svg")}
+          }
+          > span:first-of-type {
+            @include type-setting(0);
+            vertical-align: middle;
+          }
+          > span:last-of-type {
+            @include type-setting(0);
+            float: right;
+            font-weight: 600;
+            vertical-align: middle;
+          }
+        }
+      }
+      > ul {
+        height: 0;
+        overflow: hidden;
+        padding-left: $gutter*4;
+        &.opened {
+          height: auto;
+          margin-bottom: $gutter;
+        }
+        > li {
+          &:first-of-type {
+            margin-top: $gutter;
+          }
+          > a {
+            > div:first-of-type {
+              i {
+                border-radius: 100%;
+                display: inline-block;
+                height: 12px;
+                margin-right: $gutter/2;
+                width: 12px;
+                &.category-home {background-color: color($home, 1)}
+                &.category-water {background-color: color($water, 1)}
+                &.category-trash {background-color: color($trash, 1)}
+                &.category-public {background-color: color($public, 1)}
+                &.category-health {background-color: color($health, 1)}
+                &.category-energy {background-color: color($energy, 1)}
+                &.category-sewer {background-color: color($sewer, 1)}
+                &.category-infrastructure {background-color: color($infrastructure, 1)}
+              }
+              span {
+                @include text-color($black, 1);
+              }
+            }
+            > div:last-of-type {
+              @include type-setting(-2);
+              line-height: 1em;
+              margin-bottom: $gutter/2;
+              span {
+                @include text-color($black, 1);
+                &.status-in_process { @include text-color($status-in-process,1)}
+                &.status-done { @include text-color($status-done,1)}
+                &.status-pending { @include text-color($status-pending,1)}
+                &.status-expired { @include text-color($status-expired,1)}
+                &.status-proyected { @include text-color($status-proyected,1)}
+                padding-left: calc(12px + #{$gutter/2});
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin works-tree-mobile() {
+
+}
+
+
+.works-tree-cell{@include works-tree;}
+
+.mobile-layout .works-tree-cell{@include works-tree-mobile;}
