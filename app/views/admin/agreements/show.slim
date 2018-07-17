@@ -3,24 +3,29 @@
 div.page-section
   section
     == cell('section/header', t('.agreement'), buttons: [{title: @agreement.nil? ? t('.new_agreement') : t('actions.edit'), url: @agreement.nil? ?  new_admin_neighborhood_agreement_path : edit_admin_neighborhood_agreement_path }])
-    - if !@data.nil?
-      - @data.keys.each do |indicator|
-        article
-          header
-            h1= Agreement.indicators[indicator][:title]
-          main
-            p
-              span
-                = "#{@data[indicator][:score]}/100"
-            div
-              div
-              div style="width:#{@data[indicator][:score]}%;"
-            div
-          aside
-            -@data[indicator][:answers].keys.each do |question|
-              .two-thirds-one-third-input
-                div
-                  span  = Agreement.indicators[indicator][:questions][question][:title]
 
-                div
-                  span = @data[indicator][:answers][question]
+    - if !@data.nil?
+      ul
+        - @data.keys.each do |indicator|
+          li
+            input type="checkbox" id=indicator name="agreement"
+            = label_tag indicator do
+              section
+                i
+                header
+                  h1= Agreement.indicators[indicator][:title]
+                main
+                  p
+                    span
+                      = "#{@data[indicator][:score]}/100"
+                  div
+                    div
+                    div style="width:#{@data[indicator][:score]}%;"
+              aside
+                - @data[indicator][:answers].keys.each do |question|
+                  .two-thirds-one-third-input
+                    div
+                      span  = Agreement.indicators[indicator][:questions][question][:title]
+
+                    div
+                      span = @data[indicator][:answers][question]

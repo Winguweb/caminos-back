@@ -1,94 +1,146 @@
-#agreements-show{
-  section{
+@mixin agreement() {
+  section {
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    position: relative;
     > header {
-      h1{
-        color: $text-black;
-        font-size: 1.5em;
-        font-weight: 600;
-        @include type-setting(0);
+      margin-bottom: $vgutter;
+      margin-top: $vgutter*2;
+      > h1 {
+        margin: 0;
+        @include text-color($text-black, 1);
+        @include type-setting(6);
       }
-      div{
-        color: $black;
-        font-weight: 200;
-        @include type-setting(0);
+      > p {
+        @include text-color($text-black, 1);
+        @include type-setting(-1);
+      }
+    }
+    > main {
+      margin-bottom: $vgutter*2;
+      > p {
+        @include text-color($text-grey, 1);
+        @include type-setting(-1);
+        margin-bottom: $vgutter;
+      }
+      > div {
+        height: 4px;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        > div {
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+        > div:nth-of-type(1) {
+          background-color: $light-grey;
+        }
+        > div:nth-of-type(2) {
+          background-color: $blue;
+        }
       }
     }
 
-    > article {
-      border-top: 1px solid $light-grey;
-      > header {
-        margin-bottom: $vgutter;
-        margin-top: $vgutter*2;
-        > h1 {
-          margin: 0;
-          @include text-color($text-black, 1);
-          @include type-setting(5);
-        }
-        > p {
-          @include text-color($text-black, 1);
-          @include type-setting(-1);
-        }
-      }
-      > main {
-        border-bottom: 1px solid $light-grey;
-        margin-bottom: $vgutter*2;
+  }
 
-        > p {
-          @include text-color($text-grey, 1);
-          @include type-setting(-1);
-          margin-bottom: $vgutter;
-        }
-        > div {
-          border-radius: 3px;
-          height: 7px;
-          overflow: hidden;
-          position: relative;
-          width: 100%;
-          > div {
-            height: 7px;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-          }
-          > div:nth-of-type(1) {
-            background-color: $light-grey;
-          }
-          > div:nth-of-type(2) {
-            background-color: $blue;
-            border-radius: 3px;
-          }
-        }
-      }
+  aside {
+    @include grid-container;
+    @include type-setting(-1);
+    margin-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    transform: translate(0, 50%);
+    z-index: 2;
 
-      > aside  {
+    .two-thirds-one-third-input {
+      > div:nth-of-type(1) {
+        color: $text-black;
+      }
+      > div:nth-of-type(2) {
+        color: $text-grey;
+      }
+      > div {
         @include grid-container;
+        color: $text-black;
+        margin-bottom: $vgutter*2;
+        > span:first-of-type {
+          @include type-setting(-1);
+          display: block;
 
-        .two-thirds-one-third-input {
-          > div:nth-of-type(1) {
-            color: $text-black;
-          }
-          > div:nth-of-type(2) {
-            color: $text-grey;
-          }
-          > div {
-            @include grid-container;
-            color: $text-black;
-            margin-bottom: $vgutter*2;
-            > span:first-of-type {
-              @include type-setting(-1);
-              display: block;
+          margin-bottom: $gutter/7;
+          text-transform: none;
+        }
 
-              margin-bottom: $gutter/7;
-              text-transform: none;
+        > span + span {
+          display: block;
+        }
+      }
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      border-top: 1px dotted #dce7eb;
+      margin: 0;
+      position: relative;
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+
+      i {
+        margin-top: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(-6px, 0);
+        &:before, &:after {
+          background-color: $text-blue;
+          content: "";
+          height: 9px;
+          position: absolute;
+          width: 2px;
+        }
+        &:before {
+          transform: translate(2px, 0) rotate(45deg);
+        }
+        &:after {
+          transform: translate(-3px, 0) rotate(-45deg);
+        }
+      }
+      input[type=checkbox] {
+        cursor: pointer;
+        height: 0;
+        visibility: hidden;
+        width: 0;
+        z-index: 1;
+        &:checked ~ label {
+          aside {
+            margin-top: 14px;
+            max-height: 800px;
+            transform: translate(0, 0);
+          }
+          i {
+            &:before {
+              transform: translate(-3px, 0) rotate(45deg);
             }
-
-            > span + span {
-              display: block;
+            &:after {
+              transform: translate(2px, 0) rotate(-45deg);
             }
           }
         }
       }
     }
   }
+}
+
+#agreements-show {
+  @include agreement();
 }
