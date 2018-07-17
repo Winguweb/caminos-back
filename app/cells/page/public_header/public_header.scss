@@ -41,16 +41,17 @@
 
     > nav {
       @include grid-column(4);
-      > span {
+      > select {
+        @include text-color($text-black, 1);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
         display: inline-block;
+        font-weight: 800;
         padding: $gutter 0;
-        > a {
-          @include text-color($text-black, 1);
-          font-weight: 800;
-          vertical-align: middle;
-          &:hover {
-            @include text-color($text-blue, 1);
-          }
+        vertical-align: middle;
+        &:hover {
+          @include text-color($text-blue, 1);
         }
       }
     }
