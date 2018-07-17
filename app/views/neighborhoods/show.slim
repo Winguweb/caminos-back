@@ -18,17 +18,29 @@ section
 
     - if !@neighborhood.urbanization
       section.with-border
-        == cell('section/header', t('.documents'))
+        == cell('section/header', @neighborhood.name, header_type: 'main')
         .content
-          == cell('elements/documents_table', @documents)
+          == cell('elements/description', text: @neighborhood.description)
+
+      section.with-border
+        == cell('section/header', t('documents.documents'))
+        == cell('elements/documents_table', @neighborhood.documents)
+
       section
-        == cell('section/header', t('.meetings'))
+        == cell('section/header', t('pictures.pictures'))
+        - if @neighborhood.photos.blank?
+          span=t('pictures.no_pictures')
+        - else
+          == cell('elements/photos_gallery', @neighborhood.photos)
+
+      section
+        == cell('section/header', t('meetings.meetings'))
         - if @meetings.blank?
-          span=t('.no_meetings')
+          span=t('meetings.no_meetings')
         - else
           - @meetings.keys.each do |year|
             - if year ==@meetings.keys.first
               == cell('section/header', year)
             - else
               == cell('section/header', year)
-            == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood, admin: true)
+            == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)

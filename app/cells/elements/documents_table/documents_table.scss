@@ -1,7 +1,4 @@
 @mixin documents-table() {
-  border-bottom: 1px solid $light-grey;
-  margin-bottom: $gutter;
-  // padding-bottom: $gutter;
   > table {
     display: block;
     > thead {
@@ -45,12 +42,10 @@
       > tr {
         @include grid-container;
         border-bottom: 1px solid $light-grey;
+        border-top: 1px solid $light-grey;
         display: block;
         &:first-of-type {
           border-top: 1px solid $light-grey;
-        }
-        &:last-of-type {
-          border-bottom: none;
         }
         &.removing {
           opacity: 0.3;

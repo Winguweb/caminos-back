@@ -1,4 +1,11 @@
 @mixin header-cell() {
+  &.main-type {
+    > article {
+      h1 {
+        @include type-setting(3);
+      }
+    }
+  }
   &.danger-type,
   &.warning-type,
   &.success-type {

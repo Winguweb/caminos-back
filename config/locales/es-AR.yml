@@ -40,6 +40,7 @@ es-AR:
     delete_info_html: "Si elimina esta reunión no podrá ser recuperada."
     delete_meeting: "Está seguro de que realmente quiere eliminar la reunión del día %{meeting}?"
     meetings: Reuniones
+    no_meetings: No hay reuniones relacionadas
   neighborhoods:
     abbreviation: Abreviación (Código de referencia)
     agreement: Acuerdo
@@ -64,6 +65,7 @@ es-AR:
   pictures:
     pictures: Fotos
     upload_photos: Subi Fotos
+    no_pictures: No hay imágenes
   status:
     all_status: Todos
     done: Finalizada
