@@ -8,6 +8,10 @@ class Page::PublicHeaderCell < Cell::ViewModel
     model
   end
 
+  def neighborhoods
+    Neighborhood.all
+  end
+
   def links
     options[:links]
   end

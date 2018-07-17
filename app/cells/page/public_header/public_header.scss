@@ -4,7 +4,7 @@
   box-shadow: 0 4px 4px color($light-shadow, 0.1);
   height: $navbar-height;
   position: relative;
-  z-index: 1000;
+  z-index: 1001;
   > div:first-of-type {
     padding: $gutter;
     > a {
@@ -41,17 +41,38 @@
 
     > nav {
       @include grid-column(4);
-      > span {
+      .selectize-control {
+        margin: $gutter/2 0;
+      }
+      .selectize-input {
+        @include text-color($text-black, 1);
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
         display: inline-block;
-        padding: $gutter 0;
-        > a {
-          @include text-color($text-black, 1);
-          font-weight: 800;
-          vertical-align: middle;
-          &:hover {
-            @include text-color($text-blue, 1);
-          }
+        font-weight: 800;
+        margin: $gutter/2 0 0 0;
+        padding: $gutter/3 0;
+        vertical-align: middle;
+        &:after {
+          content: none;
         }
+        &:before {
+          content: none;
+        }
+      }
+      .selectize-dropdown {
+        border: none;
+        border-radius: 2px;
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+        padding: $gutter/2 0;
+      }
+      .selectize-dropdown-content .option.active {
+        background-color: color($light-grey, 0.2);
+      }
+
+      .selectize-dropdown-content .option.selected {
+        background-color: color($light-grey, 0.5);
       }
     }
     > ul {

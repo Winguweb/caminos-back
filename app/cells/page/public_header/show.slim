@@ -7,9 +7,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
   div
     nav
       - unless neighborhood.blank?
-        span
-          = link_to neighborhood_path(neighborhood.id) do
-            = neighborhood.name
+        = select_tag "neighborhood", options_from_collection_for_select(neighborhoods, "id", "name", neighborhood.id)
     - unless neighborhood.blank?
       ul
         - if neighborhood.urbanization
@@ -22,3 +20,10 @@ header.page-public-header-cell class="#{'without-links' unless links}"
         li
           = active_link_to "/neighborhoods/#{neighborhood.id}/about" do
             span= t('.about')
+
+javascript:
+  $(function() {
+    new CDLV.Components['page/public_header']({
+      el: $('.page-public-header-cell')
+    })
+  });
