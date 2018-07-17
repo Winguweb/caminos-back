@@ -1,13 +1,13 @@
 section
   main.page-section
-    section.with-border
+    section
       == cell('elements/map_show', @neighborhood)
-    section.with-border
+    section
       == cell('section/header', @neighborhood.name, header_type: 'main')
       .content
         == cell('elements/description', text: @neighborhood.description)
 
-    section.with-border
+    section
       == cell('section/header', t('documents.documents'))
       == cell('elements/documents_table', @neighborhood.documents)
 
@@ -26,7 +26,7 @@ section
       - else
         - @meetings.keys.each do |year|
           - if year ==@meetings.keys.first
-            == cell('section/header', year)
+            == cell('section/header', year, header_type: 'sub-section')
           - else
-            == cell('section/header', year)
+            == cell('section/header', year, header_type: 'sub-section')
           == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)

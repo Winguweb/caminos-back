@@ -5,12 +5,12 @@
     color: $black;
   }
   .slick-list {
-    padding: $gutter 0;
+    // padding: $gutter 0;
   }
   .slick-slide {
-    @include shadow($normal-shadow, 1);
     background: $white;
-    margin: $gutter;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    margin: 3px $gutter;
     padding-left: 0;
     padding-right: 0;
     text-align: center;
@@ -48,8 +48,8 @@
       height: 100%;
       width: 100%;
       > img {
-        @include shadow($normal-shadow, 1);
         background-color: $white;
+        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
         box-sizing: border-box;
         left: 50%;
         max-width: 100%;

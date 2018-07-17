@@ -3,12 +3,12 @@
   > section {
     @include grid-shift(3);
     @include grid-column(10);
-    margin-bottom: $vgutter*4;
+    margin-bottom: $gutter*3;
     > header, > form > header {
       @include grid-collapse;
       @include display(flex);
       @include align-items(flex-end);
-      margin-bottom: $gutter;
+      margin-bottom: $gutter/2;
       > article{
         @include grid-column(7 of 10);
         > h1 {
@@ -54,11 +54,11 @@
     }
     > main {
     }
-    &.with-border {
-      > .content {
-        padding-top: $gutter;
-      }
-    }
+    // &.with-border {
+    //   > .content {
+    //     padding-top: $gutter;
+    //   }
+    // }
   }
 }
 .page-section {

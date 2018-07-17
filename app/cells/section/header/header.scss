@@ -3,6 +3,17 @@
     > article {
       h1 {
         @include type-setting(3);
+        margin-bottom: $gutter;
+      }
+    }
+  }
+  &.sub-section-type {
+    > article {
+      h1 {
+        @include type-setting(0);
+        background-color: $white;
+        color: $grey;
+        font-weight: 700;
       }
     }
   }
