@@ -12,7 +12,7 @@ es-AR:
       energy: "Electricidad y Alumbrado"
       health: Salud
       infrastructure: Equipamiento
-      public: "Calles y Plazas"
+      public: Calles y Plazas
       sewer: Cloacas
       trash: Basura
       water: Agua
@@ -32,7 +32,7 @@ es-AR:
       upload:
         error: Ocurrió un error al subir este archivo
     filter:
-      no_results: "No hay obras con estado"
+      no_results: No hay obras con estado
     status:
       all_status: Todos
       done: Finalizada
