@@ -8,11 +8,10 @@
       @include grid-collapse;
       @include display(flex);
       @include align-items(flex-end);
-      margin-bottom: $gutter/2;
       > article{
-        @include grid-column(7 of 10);
+        @include grid-column(6 of 10);
         > h1 {
-          @include type-setting(1);
+          @include type-setting(5);
           margin-top: 0;
         }
         > div {
@@ -25,21 +24,13 @@
         }
       }
       > ul {
-        @include grid-column(3 of 10);
-        @include display(flex);
+        @include grid-column(4 of 10);
+        position: relative;
+        right: -$gutter;
+        text-align: right;
         > li {
-          @include flex-grow(1);
+          display: inline-block;
           text-align: right;
-          > a, > button {
-            @include text-color($text-blue);
-            background: none;
-            border: none;
-            margin-right: 0;
-            padding: 0;
-            &:hover {
-              @include text-color($text-blue);
-            }
-          }
         }
         > li + li {
           a {
@@ -48,7 +39,7 @@
         }
       }
       > div {
-        @include grid-column(3 of 10);
+        @include grid-column(4 of 10);
         text-align: right;
       }
     }

@@ -22,7 +22,7 @@
               > header {
                 h1 {
                   @include text-color($text-black, 1);
-                  @include type-setting(1);
+                  @include type-setting(5);
                   font-weight: 800;
                   margin-bottom: $vgutter;
                 }

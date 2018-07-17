@@ -21,7 +21,7 @@
         margin-bottom: $vgutter/2;
       }
       .entity{
-        @include type-setting(1);
+        @include type-setting(5);
       }
       .attributes{
         @include display(flex);

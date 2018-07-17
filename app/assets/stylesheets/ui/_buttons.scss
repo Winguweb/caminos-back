@@ -1,17 +1,21 @@
-@mixin button() {
+@mixin button($color: $blue) {
   @include text-color($text-blue, 1);
-  @include type-setting(0);
-  background: transparent;
-  border: 1px solid $blue;
-  border-radius: 6px;
+  @include type-setting(-1);
+  @include user-select(none);
+  background: $color;
+  border: 2px solid $color;
+  border-radius: 2px;
+  color: $white;
   cursor: pointer;
   display: inline-block;
+  font-weight: 500;
   margin: 0;
-  padding: $vgutter $gutter;
-  @include user-select(none);
+  min-width: 64px;
+  padding: $gutter/2 $gutter;
+  text-align: center;
+  text-transform: uppercase;
   &:hover {
-    @include text-color($text-white, 1);
-    background-color: $blue;
+    opacity: 0.9;
   }
   &:active {
     position: relative;
@@ -35,23 +39,31 @@
 }
 
 @mixin wired-button($color: $blue) {
+  @include button($color);
   @include text-color($color, 1);
-  @include type-setting(0);
-  display: inline-block;
-  border: 1px solid $color;
-  border-radius: 6px;
-  padding: $vgutter $gutter;
-  margin-right: $gutter/2;
-  cursor: pointer;
   background: transparent;
-  @include user-select(none);
-  &:last-of-type{
-    margin-right: 0;
+  &:hover,
+  &:hover a {;
+    @include text-color($color, 1);
+    background-color: color($color, 0.1);
   }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+@mixin text-button($color: $blue) {
+  @include wired-button($color);
+  border: none;
+  border-radius: 0;
+  font-weight: 500;
+  min-width: auto;
+  text-transform: uppercase;
   &:hover,
   &:hover a {
-    @include text-color($text-white, 1);
-    background-color: $color;
+    @include text-color($color, 1);
+    background: color($color, 0.1);
   }
   &:active {
     position: relative;

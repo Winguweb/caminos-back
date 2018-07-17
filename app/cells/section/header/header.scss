@@ -1,4 +1,12 @@
 @mixin header-cell() {
+  margin-bottom: $gutter;
+  > ul {
+    > li {
+      > a, > button {
+        @include text-button;
+      }
+    }
+  }
   &.main-type {
     > article {
       h1 {
@@ -10,10 +18,7 @@
   &.sub-section-type {
     > article {
       h1 {
-        @include type-setting(0);
-        background-color: $white;
-        color: $grey;
-        font-weight: 700;
+        @include type-setting(6);
       }
     }
   }

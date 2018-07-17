@@ -5,9 +5,9 @@
       height: 100%;
       > section {
         > div {
-          position: relative;
           align-items: center;
           margin-top: 100px;
+          position: relative;
           text-align: center;
         }
         .transition, aside {
@@ -37,28 +37,28 @@
         @media (max-width: 550px) {
           body {
             box-sizing: border-box;
-            transform: translate(0, 0);
+            left: 0;
+            margin: 0;
             max-width: 100%;
             min-height: 100%;
-            margin: 0;
-            left: 0;
+            transform: translate(0, 0);
           }
         }
 
         section {
+          background-color: #fefffa;
+          cursor: pointer;
+          display: block;
 
           letter-spacing: 1px;
-          display: block;
-          background-color: #fefffa;
           margin: 0;
-          cursor: pointer;
           > header {
-            margin-top: $vgutter*2;
             margin-bottom: $vgutter;
+            margin-top: $vgutter*2;
             > h1 {
               margin: 0;
               @include text-color($text-black, 1);
-              @include type-setting(1);
+              @include type-setting(5);
             }
             > p {
               @include text-color($text-black, 1);
@@ -75,16 +75,16 @@
               margin-bottom: $vgutter;
             }
             > div {
-              height: 7px;
-              width: 100%;
-              position: relative;
               border-radius: 3px;
+              height: 7px;
               overflow: hidden;
+              position: relative;
+              width: 100%;
               > div {
+                height: 7px;
+                left: 0;
                 position: absolute;
                 top: 0;
-                left: 0;
-                height: 7px;
                 width: 100%;
               }
               > div:nth-of-type(1) {
@@ -102,14 +102,14 @@
         aside {
           color: rgba(48, 69, 92, 0.8);
           font-size: 17px;
-          line-height: 26px;
           letter-spacing: 1px;
-          position: relative;
-          overflow: hidden;
+          line-height: 26px;
+          margin-top: 14px;
           max-height: 800px;
           opacity: 1;
+          overflow: hidden;
+          position: relative;
           transform: translate(0, 0);
-          margin-top: 14px;
           z-index: 2;
 
           @include grid-container;
@@ -142,16 +142,16 @@
 
         ul {
           list-style: none;
-          perspective: 900;
-          padding: 0;
           margin: 0;
+          padding: 0;
+          perspective: 900;
           li {
-            position: relative;
-            padding: 0;
+            border-top: 1px dotted #dce7eb;
             margin: 0;
+            padding: 0;
             padding-bottom: 4px;
             padding-top: 18px;
-            border-top: 1px dotted #dce7eb;
+            position: relative;
             &:nth-of-type(1) {
               animation-delay: 0.5s;
             }
@@ -165,16 +165,16 @@
               padding-bottom: 0;
             }
             i {
-              position: absolute;
-              transform: translate(-6px, 0);
               margin-top: 16px;
+              position: absolute;
               right: 0;
+              transform: translate(-6px, 0);
               &:before, &:after {
-                content: "";
-                position: absolute;
                 background-color: $text-blue;
-                width: 3px;
+                content: "";
                 height: 9px;
+                position: absolute;
+                width: 3px;
               }
               &:before {
                 transform: translate(-2px, 0) rotate(45deg);
@@ -184,12 +184,12 @@
               }
             }
             input[type=checkbox] {
-              position: absolute;
               cursor: pointer;
-              width: 100%;
               height: 100%;
-              z-index: 1;
               opacity: 0;
+              position: absolute;
+              width: 100%;
+              z-index: 1;
               &:checked ~ {
                 aside {
                   margin-top: 0;
@@ -213,8 +213,8 @@
         @keyframes flipdown {
           0% {
             opacity: 0;
-            transform-origin: top center;
             transform: rotateX(-90deg);
+            transform-origin: top center;
           }
 
           5% {
@@ -234,8 +234,8 @@
           }
 
           100% {
-            transform-origin: top center;
             transform: rotateX(0deg);
+            transform-origin: top center;
           }
         }
       }
