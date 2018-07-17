@@ -44,7 +44,8 @@ class Elements::MapShowCell < Cell::ViewModel
         url: neighborhood_work_path(feature.neighborhood.id, feature.id),
         show: true,
         category: feature.category.name,
-        status: feature.status
+        status: feature.status,
+        name: feature.name
       }
       when RGeo::Feature::MultiPoint
       {
@@ -54,7 +55,8 @@ class Elements::MapShowCell < Cell::ViewModel
         url: neighborhood_work_path(feature.neighborhood.id, feature.id),
         show: true,
         category: feature.category.name,
-        status: feature.status
+        status: feature.status,
+        name: feature.name
       }
       when RGeo::Feature::Polygon
       {
@@ -64,7 +66,8 @@ class Elements::MapShowCell < Cell::ViewModel
         url: neighborhood_work_path(feature.neighborhood.id, feature.id),
         show: true,
         category: feature.category.name,
-        status: feature.status
+        status: feature.status,
+        name: feature.name
       }
       when RGeo::Feature::MultiPolygon
       {
@@ -74,7 +77,8 @@ class Elements::MapShowCell < Cell::ViewModel
         url: neighborhood_work_path(feature.neighborhood.id, feature.id),
         show: true,
         category: feature.category.name,
-        status: feature.status
+        status: feature.status,
+        name: feature.name
       }
       when RGeo::Feature::LineString
       {
@@ -84,7 +88,8 @@ class Elements::MapShowCell < Cell::ViewModel
         url: neighborhood_work_path(feature.neighborhood.id, feature.id),
         show: true,
         category: feature.category.name,
-        status: feature.status
+        status: feature.status,
+        name: feature.name
       }
       when RGeo::Feature::MultiLineString
       {
@@ -94,7 +99,8 @@ class Elements::MapShowCell < Cell::ViewModel
         url: neighborhood_work_path(feature.neighborhood.id, feature.id),
         show: true,
         category: feature.category.name,
-        status: feature.status
+        status: feature.status,
+        name: feature.name
       }
       end
     end.to_json

@@ -79,7 +79,7 @@
             .map-show-cell {
               @include grid-collapse;
               height: 100%;
-              > div {
+              > div:first-of-type {
                 border-radius: 0;
               }
             }
