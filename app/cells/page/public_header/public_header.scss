@@ -4,7 +4,7 @@
   box-shadow: 0 4px 4px color($light-shadow, 0.1);
   height: $navbar-height;
   position: relative;
-  z-index: 1000;
+  z-index: 1001;
   > div:first-of-type {
     padding: $gutter;
     > a {
