@@ -4,17 +4,17 @@
 
 @mixin avatar-size($size) {
   &.simple {
-    width: $size;
-    height: $size;
     border-radius: $size / 2;
+    height: $size;
+    width: $size;
   }
 }
 
 .avatar {
-  position: relative;
   cursor: pointer;
   overflow: hidden;
-  @include avatar-size(48px);
+  position: relative;
+  @include avatar-size(42px);
 
   &:not(.show-fallback) {
     background-color: transparent !important;
@@ -27,26 +27,26 @@
 
   .fallback {
     display: none;
-    padding-top: 100%;
     font-size: 0.9em;
+    padding-top: 100%;
 
     span {
-      @include type-setting(1);
-      line-height: 1em;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      text-align: center;
+      @include type-setting(0);
       color: white;
       font-weight: bold;
+      left: 0;
+      line-height: 1em;
       margin-top: -0.48em;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      width: 100%;
 
     }
   }
 
   img {
-    max-width: 100%;
+    width: 100%;
   }
 
   &.simple {

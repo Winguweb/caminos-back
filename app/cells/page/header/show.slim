@@ -19,4 +19,5 @@
       ul
         - for link in links
           li
-            a href=link[:href] = link[:title]
+            = active_link_to link[:href] do
+              = link[:title]

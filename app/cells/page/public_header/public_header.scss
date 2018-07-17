@@ -1,58 +1,78 @@
 .page-public-header-cell {
   @include grid-container;
-  $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+  $navbar-height: 74px;
   box-shadow: 0 4px 4px color($light-shadow, 0.1);
   height: $navbar-height;
   position: relative;
   z-index: 1000;
-  > nav {
-    @include grid-column(4);
-    padding: $vgutter 0;
+  > div:first-of-type {
+    padding: $gutter;
     > a {
       background: transparent image-url("admin-logo.svg") no-repeat;
-      background-size: 100%;
+      background-size: contain;
       display: inline-block;
       height: 35px;
-      margin: 0;
+      margin: 3px 0 4px;
       overflow: hidden;
       padding: 0px;
-      vertical-align: middle;
-      width: 44px;
+      vertical-align: top;
+      width: 100px;
       > span{
         display: inline-block;
         @include hide-text;
       }
     }
     > span {
-      > a {
-        @include text-color($text-black, 1);
-        font-weight: 800;
-        padding-left: 20px;
-        vertical-align: middle;
-        &:hover {
-          @include text-color($text-blue, 1);
+      @include type-setting(-1);
+      box-sizing: border-box;
+      display: inline-block;
+      font-weight: 100;
+      padding: $gutter/2 0 $gutter/2 10px;
+      position: relative;
+      text-align: center;
+      text-align: left;
+      top: 2px;
+    }
+  }
+  > div:nth-child(2) {
+    @include grid-container;
+    background-color: $white;
+    box-shadow: 0 2px 11px 1px rgba(162, 162, 162, 0.2);
+
+    > nav {
+      @include grid-column(4);
+      > span {
+        display: inline-block;
+        padding: $gutter 0;
+        > a {
+          @include text-color($text-black, 1);
+          font-weight: 800;
+          vertical-align: middle;
+          &:hover {
+            @include text-color($text-blue, 1);
+          }
         }
       }
     }
-  }
-  > ul {
-    @include grid-column(10);
-    @include grid-push(1);
-    text-align: center;
-    > li {
-      display: inline-block;
-      > a {
-        @include text-color($text-grey, 1);
-        @include type-setting(0);
-        border-bottom: 2px solid transparent;
-        display: block;
-        margin-right: 0;
-        padding: $gutter $gutter*2;
-        text-align: center;
-        &.active,
-        &:hover {
-          @include text-color($text-blue, 1);
-          border-bottom-color: color($text-blue, 1);
+    > ul {
+      @include grid-column(10);
+      @include grid-push(1);
+      text-align: center;
+      > li {
+        display: inline-block;
+        > a {
+          @include text-color($text-grey, 1);
+          @include type-setting(0);
+          border-bottom: 2px solid transparent;
+          display: block;
+          margin-right: 0;
+          padding: $gutter $gutter*2;
+          text-align: center;
+          &.active,
+          &:hover {
+            @include text-color($text-blue, 1);
+            border-bottom-color: color($text-blue, 1);
+          }
         }
       }
     }
