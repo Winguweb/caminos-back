@@ -12,6 +12,8 @@ es-AR:
           attributes:
             neighborhood:
               required: Este campo es requerido
+  agreements:
+    title: Indicadores del Acuerdo de Urbanización
   common:
     files: Archivos
   categories:

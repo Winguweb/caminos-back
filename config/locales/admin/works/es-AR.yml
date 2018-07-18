@@ -9,6 +9,7 @@ es-AR:
         select_a_category: Seleccione una categoría
       index:
         new_work: Nueva Obra
+        works_list: Listado de obras
       new:
         title: Nueva Obra
       show:

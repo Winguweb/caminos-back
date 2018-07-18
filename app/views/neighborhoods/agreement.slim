@@ -1,5 +1,7 @@
 section
   main.page-section
+    section.with-gutter
+      == cell('section/header', t('agreements.title'))
     section
       - if !@data.nil?
         ul

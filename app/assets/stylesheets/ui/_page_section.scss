@@ -4,10 +4,11 @@
     @include grid-shift(3);
     @include grid-column(10);
     margin-bottom: $gutter*3;
+    &.with-gutter {
+      margin-top: $gutter*3 !important;
+    }
     > header, > form > header {
       @include grid-collapse;
-      @include display(flex);
-      @include align-items(flex-end);
       > article{
         @include grid-column(6 of 10);
         > h1 {

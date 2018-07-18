@@ -1,5 +1,6 @@
 @mixin header-cell() {
   margin-bottom: $gutter;
+  overflow: auto;
   > ul {
     > li {
       > a, > button {

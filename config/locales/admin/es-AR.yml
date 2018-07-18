@@ -4,7 +4,7 @@ es-AR:
       form:
         indicators: Indicadores
       show:
-        agreement: Indicadores para la medición del Acuerdo de Urbanización
+        agreement: Indicadores del Acuerdo de Urbanización
         new_agreement: Crear Acuerdo
     links:
       neighborhoods:
