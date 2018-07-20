@@ -82,7 +82,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     if ($('html').hasClass('touchevents')) {this.map.dragging.disable()}
   },
   createMap: function() {
-    this.map = L.mapbox.map(this.mapContainer[0], this.style)
+    this.map = L.mapbox.map(this.mapContainer[0], this.style, {scrollWheelZoom: false})
     this.baseGeometryFeature = new L.FeatureGroup()
     this.map.addLayer(this.baseGeometryFeature)
   },

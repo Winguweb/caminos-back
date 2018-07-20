@@ -8,7 +8,7 @@
     @include grid-collapse;
     > h2 {
       @include grid-column(16);
-      @include type-setting(1);
+      @include type-setting(6);
       margin-bottom: $vgutter;
     }
     > div {

@@ -12,13 +12,12 @@ header.user-header-menu
     ul.actions
       li
         .user-menu
-          div.
+          div
             == cell('elements/avatar', current_user)
+          i
           ul
             li
               = link_to t('.profile'), admin_user_path(current_user)
-            li
-              hr
             li
               = button_to t('.logout'), admin_signout_path
 

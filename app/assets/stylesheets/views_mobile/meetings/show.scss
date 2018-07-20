@@ -20,7 +20,7 @@
                 text-transform: uppercase;
               }
               &:nth-of-type(2) {
-                @include type-setting(1);
+                @include type-setting(5);
                 font-weight: bold;
               }
               &:nth-of-type(3) {

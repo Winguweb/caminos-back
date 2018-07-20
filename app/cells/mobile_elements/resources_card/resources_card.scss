@@ -8,7 +8,7 @@
     padding: $vgutter*2 $gutter;
     > p {
       @include text-color($blue);
-      @include type-setting(1);
+      @include type-setting(5);
     }
     > span {
       @include text-color($text-grey);

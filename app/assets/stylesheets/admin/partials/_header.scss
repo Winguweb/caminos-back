@@ -83,14 +83,37 @@ body {
       vertical-align: top;
     }
   }
-
+  > i {
+    display: none;
+    height: 10px;
+    overflow: hidden;
+    position: absolute;
+    right: 26px;
+    top: calc(45px + #{$vgutter*3});
+    transform: translateY(-100%);
+    width: 20px;
+    z-index: 101;
+    &:before {
+      background-color: $white;
+      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+      content: '';
+      display: block;
+      height: 10px;
+      left: 4px;
+      position: relative;
+      top: 5px;
+      transform: rotate(45deg);
+      width: 10px;
+    }
+  }
   > ul {
-    @include shadow($normal-shadow, 1);
     @include z-level(1);
     @include grid-column(3);
     background-color: $background-white;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
     display: none;
     margin: 0;
+    padding: $gutter/2 0;
     position: absolute;
     right: $gutter;
     text-align: left;
@@ -103,7 +126,7 @@ body {
         box-sizing: border-box;
         display: block;
         margin: 0; // Todos los a tienen margin right, por que?
-        padding: $vgutter $gutter/2;
+        padding: $gutter/2 $gutter;
         text-align: left;
         white-space: nowrap;
         width: 100%;
@@ -114,18 +137,12 @@ body {
 
         }
       }
-
-      > hr {
-        border: none;
-        border-top: 1px solid color($text-grey, 0.2);
-        margin: 0;
-      }
     }
   }
 
   &.user-menu--opened {
     overflow: visible;
-    > ul {
+    > i, > ul {
       display: block;
     }
   }

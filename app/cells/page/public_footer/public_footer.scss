@@ -15,7 +15,28 @@
   &:hover {
     bottom: 0;
   }
+  > i {
+    background-color: color($black, 1);
+    border-radius: 4px;
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    top: 3px;
+    transform: translateX(-50%);
+    transition: all 100ms ease;
+    width: 4px;
+  }
   > div {
+  }
+  &:hover > i {
+    background-color: color($black, 0.2);
+    border-radius: 0px;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 4px;
+    transform: translateX(-50%);
+    width: $gutter*5;
   }
 }
 

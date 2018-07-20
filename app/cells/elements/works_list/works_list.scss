@@ -32,7 +32,7 @@
             padding-top: $gutter;
           }
           > h3 {
-            @include type-setting(1);
+            @include type-setting(5);
             font-weight: bold;
           }
           > span {

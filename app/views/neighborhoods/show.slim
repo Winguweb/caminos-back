@@ -17,18 +17,30 @@ section
       == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
 
     - if !@neighborhood.urbanization
-      section.with-border
-        == cell('section/header', t('.documents'))
-        .content
-          == cell('elements/documents_table', @documents)
       section
-        == cell('section/header', t('.meetings'))
+        == cell('section/header', @neighborhood.name, header_type: 'main')
+        .content
+          == cell('elements/description', text: @neighborhood.description)
+
+      section
+        == cell('section/header', t('documents.documents'))
+        == cell('elements/documents_table', @neighborhood.documents)
+
+      section
+        == cell('section/header', t('pictures.pictures'))
+        - if @neighborhood.photos.blank?
+          span=t('pictures.no_pictures')
+        - else
+          == cell('elements/photos_gallery', @neighborhood.photos)
+
+      section
+        == cell('section/header', t('meetings.meetings'))
         - if @meetings.blank?
-          span=t('.no_meetings')
+          span=t('meetings.no_meetings')
         - else
           - @meetings.keys.each do |year|
             - if year ==@meetings.keys.first
-              == cell('section/header', year)
+              == cell('section/header', year, header_type: 'sub-section')
             - else
-              == cell('section/header', year)
-            == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood, admin: true)
+              == cell('section/header', year, header_type: 'sub-section')
+            == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)
