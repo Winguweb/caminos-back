@@ -2,10 +2,7 @@
   section{
     > header {
       h1{
-        color: $text-black;
-        font-size: 1.5em;
-        font-weight: 600;
-        @include type-setting(0);
+
       }
       div{
         color: $black;

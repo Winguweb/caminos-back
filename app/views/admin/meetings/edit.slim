@@ -1,5 +1,5 @@
 = content_for :main_header do
-  == cell('page/header', t('actions.edit'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.meetings'), href: admin_neighborhood_meetings_path} ] )
+  == cell('page/header', t('actions.edit'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('meetings.meetings'), href: admin_neighborhood_meetings_path}, {title: t('.meeting', date: @meeting.date.to_date), href: admin_neighborhood_meeting_path(current_neighborhood, @meeting)}, {title: t('actions.edit')} ] )
 = render 'form'
 
 .page-section

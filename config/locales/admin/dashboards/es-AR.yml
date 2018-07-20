@@ -3,3 +3,4 @@ es-AR:
     dashboards:
       show:
         check_all_neighborhoods: Ver todos los barrios
+        title: Dashboard

@@ -44,9 +44,7 @@
                 margin-bottom: $vgutter;
                 margin-top: $vgutter*2;
                 > h1 {
-                  margin: 0;
-                  @include text-color($text-black, 1);
-                  @include type-setting(6);
+
                 }
                 > p {
                   @include text-color($text-black, 1);

@@ -5,6 +5,8 @@ es-AR:
     delete: Borrar
     edit: Editar
     save: Guardar cambios
+    new: Nuevo
+    newf: Nueva
   activerecord:
     errors:
       models:
@@ -14,6 +16,8 @@ es-AR:
               required: Este campo es requerido
   agreements:
     title: Indicadores del Acuerdo de Urbanización
+    agreements: Acuerdos
+    agreement: Acuerdo
   common:
     files: Archivos
   categories:
@@ -42,6 +46,7 @@ es-AR:
     delete_info_html: "Si elimina esta reunión no podrá ser recuperada."
     delete_meeting: "Está seguro de que realmente quiere eliminar la reunión del día %{meeting}?"
     meetings: Reuniones
+    meeting: Reunión
     no_meetings: No hay reuniones relacionadas
   neighborhoods:
     abbreviation: Abreviación (Código de referencia)
