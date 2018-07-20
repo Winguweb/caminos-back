@@ -13,9 +13,11 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       'showFeaturesGeometry',
       'showMarkers',
       'showPolygon',
-      'addClickEvent',
+      'addEvents',
       'changeCategoryFilter',
-      'changeStatusFilter'
+      'changeStatusFilter',
+      'showPopup',
+      'hidePopup'
     )
 
     this.setAccessToken(options.token)
@@ -41,10 +43,21 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       'map-show:filter:status': this.changeStatusFilter
     })
   },
-  addClickEvent: function(element) {
+  addEvents: function(element) {
     element.on('click', function (evt) {
       window.location = evt.target.options.url
     })
+    element.on('mouseover', function (evt) {
+      var status = I18n.t('js.status.' + evt.target.options.status)
+      var popupOptions = {
+        position: {left: evt.layerPoint.x + 'px', top: evt.layerPoint.y + 'px'},
+        html: '<p>' + evt.target.options.name + '</p><span class="status-' + evt.target.options.status + '">' + status + '</span>'
+      }
+      this.showPopup(popupOptions)
+    }.bind(this))
+    element.on('mouseout', function () {
+      this.hidePopup()
+    }.bind(this))
   },
   centerMap: function(polygon) {
     var center = this.getCenter(polygon) || this.center
@@ -90,6 +103,9 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   hasBaseGeometry: function() {
     return !_.isEmpty(this.base)
+  },
+  hidePopup: function() {
+    this.popup.removeClass('visible')
   },
   loadDefaults: function(options) {
     this.center = options.defaults.center
@@ -144,26 +160,38 @@ CDLV.Components['map_show'] = Backbone.View.extend({
           shadowSize: [40, 40],
           shadowUrl: this.markerShadowURL,
         }),
-        url: marker.url
+        url: marker.url,
+        name: marker.name,
+        status: marker.status
       }).addTo(this.baseGeometryFeature)
-      this.addClickEvent(newMarker)
+      this.addEvents(newMarker)
     }.bind(this))
   },
   showPolygon: function(polygon, options) {
     var newPolygon = new L.Polygon(polygon.coordinates, {
       className: "geometry-polygon " + polygon.className,
-      url: polygon.url
+      url: polygon.url,
+      name: polygon.name,
+      status: polygon.status
     }).addTo(this.baseGeometryFeature)
-    if (!options || !options.fixed) this.addClickEvent(newPolygon)
+    if (!options || !options.fixed) this.addEvents(newPolygon)
   },
   showPolyline: function(polyline, options) {
     var parent = options && options.fixed ? this.baseGeometryFeature : this.editableGeometryFeature
     var newPolyline = new L.Polyline(polyline.coordinates,
       {
         className: "geometry-polyline " + polyline.className,
-        url: polyline.url
+        url: polyline.url,
+        name: polyline.name,
+        status: polyline.status
       }).addTo(this.baseGeometryFeature)
-    this.addClickEvent(newPolyline)
+    this.addEvents(newPolyline)
+  },
+  showPopup: function(options) {
+    this.popup = this.popup || $('<div class="map-show-popup"></div>').appendTo(this.$el)
+    this.popup.css(options.position)
+    this.popup.html(options.html)
+    this.popup.addClass('visible')
   },
   zoomMap: function(polygon) {
     var bounds = this.getBounds(polygon)
