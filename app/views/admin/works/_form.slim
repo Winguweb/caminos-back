@@ -3,7 +3,7 @@
   = form_for ['admin', current_neighborhood, @work], html: { class: 'form', multipart: true } do |f|
     .page-section
       section
-      - - back_url = @work.new_record? ? admin_neighborhood_works_path : admin_neighborhood_work_path(current_neighborhood, @work)
+        - back_url = @work.new_record? ? admin_neighborhood_works_path : admin_neighborhood_work_path(current_neighborhood, @work)
         == cell('section/header', t(".about_work"), links: [{ title: t("actions.cancel"), url: back_url }, { title: t("actions.save"), submit: true }])
         .field
           label.required
