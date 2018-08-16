@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#show'
 
-    get '/mobile', action: :mobile, controller: :home
-
     resources :neighborhoods, only: [:show] do
       resources :works, only: [:show]
       resources :meetings, only: [:index, :show]
