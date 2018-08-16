@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :meetings, only: [:index, :show]
       member do
         # TODO: It should be routed to agreements controller
-        get :agreement
+        get  :agreements, action: :show, controller: :agreements
         get :about
       end
     end

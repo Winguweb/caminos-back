@@ -1,5 +1,5 @@
 class NeighborhoodsController < ApplicationController
-  before_action :check_for_mobile, :only => [:show, :about, :agreement]
+  before_action :check_for_mobile, :only => [:show, :about]
 
   def show
     load_neighborhood
@@ -29,6 +29,5 @@ class NeighborhoodsController < ApplicationController
   def load_meetings
     @meetings = @neighborhood.meetings.order(date: :desc).group_by { |x| x.date.year }
   end
-
 
 end

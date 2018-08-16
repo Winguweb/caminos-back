@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::NeighborhoodsController, type: :routing do
   let(:routes_params){ { protocol: 'https' } }
 
-  describe 'Neighborhood REST routeable' do
+  describe 'Neighborhood REST routable' do
     it { expect(get: '/admin/neighborhoods').to route_to( routes_params.merge(controller: 'admin/neighborhoods', action: 'index') ) }
     it { expect(get: '/admin/neighborhoods/new').to route_to( routes_params.merge(controller: 'admin/neighborhoods', action: 'new') ) }
     it { expect(post: '/admin/neighborhoods').to route_to( routes_params.merge(controller: 'admin/neighborhoods', action: 'create') ) }

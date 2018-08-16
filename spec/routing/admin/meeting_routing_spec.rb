@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::MeetingsController, type: :routing do
   let(:routes_params){ { protocol: 'https', neighborhood_id: '1' } }
 
-  describe 'Meeting REST routeable' do
+  describe 'Meeting REST routable' do
     it { expect(get: '/admin/neighborhoods/1/meetings').to route_to( routes_params.merge(controller: 'admin/meetings', action: 'index') ) }
     it { expect(get: '/admin/neighborhoods/1/meetings/new').to route_to( routes_params.merge(controller: 'admin/meetings', action: 'new') ) }
     it { expect(post: '/admin/neighborhoods/1/meetings').to route_to( routes_params.merge(controller: 'admin/meetings', action: 'create') ) }

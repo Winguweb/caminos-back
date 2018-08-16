@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin::WorksController, type: :routing do
   let(:routes_params){ { protocol: 'https', neighborhood_id: '1' } }
 
-  describe 'Work REST routeable' do
+  describe 'Work REST routable' do
     it { expect(get: '/admin/neighborhoods/1/works').to route_to( routes_params.merge(controller: 'admin/works', action: 'index') ) }
     it { expect(get: '/admin/neighborhoods/1/works/new').to route_to( routes_params.merge(controller: 'admin/works', action: 'new') ) }
     it { expect(post: '/admin/neighborhoods/1/works').to route_to( routes_params.merge(controller: 'admin/works', action: 'create') ) }
