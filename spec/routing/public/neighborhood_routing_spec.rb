@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe NeighborhoodsController, type: :routing do
   let(:routes_params){ { protocol: 'https' } }
+
   describe 'Neighborhood NOT routeable' do
     it { expect(get: '/neighborhoods').not_to be_routable }
     it { expect(post: '/neighborhoods').not_to be_routable }

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MeetingsController, type: :routing do
   let(:routes_params){ { protocol: 'https' } }
+
   describe 'Meeting NOT routeable' do
     it { expect(get: '/meetings').not_to be_routable }
     it { expect(get: '/meetings/1').not_to be_routable }
