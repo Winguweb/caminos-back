@@ -73,7 +73,7 @@ Rails.application.routes.draw do
       resources :neighborhoods, :as => "neighborhoods" do
         resources :works
         resources :meetings
-        resource :agreement
+        resource :agreement, except: [:destroy]
       end
     end
   # ╰─ End of Private Accesible URL's / Path's
