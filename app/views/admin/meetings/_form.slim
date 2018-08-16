@@ -5,7 +5,8 @@
       - back_url = @meeting.new_record? ? admin_neighborhood_meetings_path : admin_neighborhood_meeting_path(current_neighborhood, @meeting)
       == cell('section/header', t(".day_order"), links: [{ title: t("actions.cancel"), url: back_url }, { title: t("actions.save"), submit: true }])
       .field
-        / label.required
+        label.required
+          = f.label :objectives, t('.objectives')
         = f.text_area :objectives, required: true
       .half-input
         .field

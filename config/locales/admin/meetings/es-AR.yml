@@ -8,6 +8,7 @@ es-AR:
         date: Fecha
         day_order: Orden del día
         load_user: Agregar Usuario
+        objectives: Objetivos
         participantas: Participantes
         works_relation: Obras Relacionadas
       index:
