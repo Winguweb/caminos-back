@@ -80,8 +80,6 @@ Rails.application.routes.draw do
       resources :neighborhoods, :as => "neighborhoods" do
         get '/works/status/:status', action: :by_status, controller: :works
         get '/works/status', action: :index, controller: :works
-        resources :works do
-        end
       end
     end
   end
