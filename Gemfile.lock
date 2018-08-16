@@ -323,6 +323,9 @@ GEM
       rspec-expectations (~> 3.7.0)
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
+    rspec-sidekiq (3.0.3)
+      rspec-core (~> 3.0, >= 3.0.0)
+      sidekiq (>= 2.4.0)
     rspec-support (3.7.0)
     ruby-graphviz (1.2.3)
     sass (3.5.3)
@@ -435,6 +438,7 @@ DEPENDENCIES
   rgeo-geojson
   role_model
   rspec-rails (~> 3.5)
+  rspec-sidekiq
   sass-rails
   shoulda-matchers (~> 3.1)
   sidekiq
@@ -444,4 +448,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.16.0
+   1.16.1

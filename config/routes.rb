@@ -12,7 +12,6 @@ Rails.application.routes.draw do
       member do
         get :agreement
         get :about
-        get '/:filters', action: :show, controller: :neighborhoods, as: :filtered_work
       end
     end
 

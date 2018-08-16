@@ -103,13 +103,9 @@ ActiveRecord::Schema.define(version: 20180602212606) do
   end
 
   create_table "photos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "picture"
     t.string "owner_type", null: false
     t.uuid "owner_id", null: false
-    t.uuid "uploader_id", null: false
-    t.string "image"
-    t.string "original_filename"
-    t.string "content_type"
-    t.integer "file_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_type", "owner_id"], name: "index_photos_on_owner_type_and_owner_id"
