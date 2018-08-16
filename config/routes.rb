@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :works, only: [:show]
       resources :meetings, only: [:index, :show]
       member do
+        # TODO: It should be routed to agreements controller
         get :agreement
         get :about
       end
