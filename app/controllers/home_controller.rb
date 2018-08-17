@@ -7,6 +7,4 @@ class HomeController < ApplicationController
     @unurbanized= @neighborhoods.where(urbanization: false).order('LOWER(name)')
   end
 
-  private
-
 end
