@@ -8,6 +8,11 @@
         margin-bottom: $gutter*2;
         padding: 0;
         > li {
+          &:first-of-type {
+            border-bottom: 1px solid $light-grey;
+            margin-bottom: $gutter*2;
+            padding-bottom: $gutter;
+          }
           > label {
             border-top: 1px dotted #dce7eb;
             margin: 0;
