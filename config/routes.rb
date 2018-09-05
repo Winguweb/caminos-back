@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   scope protocol: SECURE_PROTOCOL do
 
   # ╭─ Public Accesible URL's / Path's
-    root to: 'home#show'
+    root to: 'home#index'
 
     get '/mobile', action: :mobile, controller: :home
 

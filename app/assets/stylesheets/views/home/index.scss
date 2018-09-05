@@ -1,7 +1,281 @@
-@mixin home() {
+@mixin home-index() {
+  * {
+    box-sizing: border-box;
+  }
+  > main {
+    > .main-section {
+      @include small-diagonal-right-main-down;
+      overflow-y: hidden;
+      padding-bottom: 50px;
+      position: relative;
+      > nav {
+        @include diagonal-left;
+        @include clearfix;
+        height: 160px;
+        padding: $gutter*3 $gutter*3 0 $gutter*3;
+        position: relative;
+        > div:first-of-type {
+          float: left;
+          position: relative;
+          z-index: 1;
+          > img {
+            vertical-align: top;
+            width: 400px;
+          }
+        }
+        > div:last-of-type {
+          float: right;
+          position: relative;
+          text-align: right;
+          z-index: 1;
+          > span {
+            @include type-setting(6);
+            display: inline-block;
+            width: 70%;
+          }
+        }
+      }
+      > section ~ section:nth-of-type(even) {
+        > div {
+          @include small-diagonal-left-up;
+          position: relative;
+          > img {
+            margin: 0 #{-$gutter*3};
+            position: relative;
+            vertical-align: top;
+            width: calc(100% + #{$gutter*6});
+            z-index: -3;
+          }
+        }
+      }
+      > section ~ section:nth-of-type(odd) {
+        > div {
+          @include small-diagonal-right-up;
+          position: relative;
+          > img {
+            margin: 0 #{-$gutter*3};
+            position: relative;
+            vertical-align: top;
+            width: calc(100% + #{$gutter*6});
+            z-index: -3;
+          }
+        }
+      }
+      // > section:nth-child(odd) {
+      //   position: relative;
+      //   @include diagonal-right;
+      // }
+      // > section:nth-child(even) {
+      //   position: relative;
+      //   @include diagonal-left;
+      // }
+      > section:first-of-type {
+        font-family: 'Roboto Slab';
+        > div:first-of-type {
+          @include clearfix;
+          background-image: image-url("home/landing_bg.jpg");
+          background-size: cover;
+          > div {
+            float: right;
+            width: 50%;
+            > a {
+              background-color: $fuchsia;
+              border-radius: 2px;
+              box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+              display: inline-block;
+              margin: $gutter*6 $gutter*3 $gutter*4;
+              padding: $gutter*2;
+              > p {
+                @include type-setting(4);
+                color: $white;
+                > strong {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+        > div:last-of-type {
+          background-color: $light-blue;
+          box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+          color: $white;
+          padding: $gutter*2;
+          text-align: right;
+          > p {
+            @include type-setting(5);
+            margin-bottom: $gutter;
+            & + p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      > footer {
+        @include small-diagonal-right-footer;
+        @include clearfix;
+        background: $light-blue;
+        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+        position: relative;
+        > div {
+          float: left;
+          padding: $gutter*3;
+          position: relative;
+          width: 50%;
+          z-index: 1;
+          > a {
+            @include clearfix;
+            display: inline-block;
+            width: 100%;
+            > img {
+              display: block;
+              vertical-align: top;
+              width: 50%;
+            }
+            > span {
+              color: $white;
+              display: inline-block;
+              margin-top: $gutter;
+            }
+          }
+        }
+        > div:last-of-type {
+          float: right;
+          text-align: right;
+          > a {
+            > img {
+              clear: both;
+              float: right;
+              vertical-align: top;
+              width: 30%;
+            }
+            &:first-of-type {
+              margin-bottom: $gutter*2;
+            }
+          }
+        }
+      }
+      > section + section {
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        padding: 0 $gutter*3;
+        position: relative;
+        z-index: 1;
+        > header {
+          > h1 {
+            @include type-setting(2);
+            font-family: 'Roboto Slab';
+            font-weight: 600;
+            margin-bottom: $gutter*3;
+            margin-top: $gutter*3;
+            position: relative;
+            &:before, &:after {
+              content: '';
+              display: block;
+              height: $gutter*2;
+              opacity: 0.5;
+              position: absolute;
+              width: 61%;
+              z-index: -1;
+            }
+            &:before {
+              background-color: $light-blue;
+              left: 0;
+              top: 30px;
+            }
+            &:after {
+              background-color: $fuchsia;
+              bottom: 0;
+              right: 0;
+            }
 
+          }
+        }
+        > p {
+          margin-bottom: $gutter*3;
+        }
+        > div {
+          > img {
+            margin: 0 #{-$gutter*3};
+            vertical-align: top;
+            width: calc(100% + #{$gutter*6});
+          }
+        }
+      }
+    }
+  }
 }
 
-#home.home-desktop {
-  @include home();
+@mixin diagonal-left {
+  &:before {
+    background-color: $white;
+    bottom: -45px;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    content: '';
+    height: 200%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skew(0, -4deg)
+  }
+}
+
+@mixin small-diagonal-left-up {
+  &:before {
+    background-color: $white;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    content: '';
+    height: 400px;
+    left: -$gutter*3;
+    position: absolute;
+    right: -$gutter*3;
+    top: -356px;
+    transform: skew(0, -4deg);
+    z-index: -2;
+  }
+}
+
+@mixin small-diagonal-right-up {
+  &:before {
+    background-color: $white;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    content: '';
+    height: 400px;
+    left: -$gutter*3;
+    position: absolute;
+    right: -$gutter*3;
+    top: -356px;
+    transform: skew(0, 4deg);
+    z-index: -2;
+  }
+}
+@mixin small-diagonal-right-footer {
+  &:before {
+    background-color: $light-blue;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    content: '';
+    height: 160%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -45px;
+    transform: skew(0, 4deg);
+    z-index: 1;
+  }
+}
+@mixin small-diagonal-right-main-down {
+  &:before {
+    background-color: $fuchsia;
+    bottom: -46px;
+    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    content: '';
+    height: 90px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: skew(0, -4deg);
+    z-index: 2;
+  }
+}
+#home-index.home-desktop {
+  @include home-index();
 }

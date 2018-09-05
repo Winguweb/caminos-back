@@ -1,0 +1,45 @@
+nav
+  div
+    = image_tag image_path("logos/caminos_logo.svg")
+  div
+    span
+      = t('.text_to_v1')
+      = link_to t('.link_to_v1')
+section
+  div
+    div
+      = link_to neighborhoods_path
+        p
+          strong = t('.link_to_v2_1')
+          = t('.link_to_v2_2')
+  div
+    p = t('.text_1_html')
+    p = t('.text_2')
+section
+  header
+    h1 = t('.section_1_header')
+  p = t('.section_1_text')
+  div
+    = image_tag image_path("home/section_1.jpg")
+section
+  header
+    h1 = t('.section_2_header')
+  p = t('.section_2_text')
+  div
+    = image_tag image_path("home/section_1.jpg")
+section
+  header
+    h1 = t('.section_3_header')
+  p = t('.section_3_text')
+  div
+    = image_tag image_path("home/section_1.jpg")
+footer
+  div
+    = link_to '' do
+      = image_tag image_path("logos/caminos_white_logo.png")
+      span = t('.footer_logo_text')
+  div
+    = link_to '' do
+      = image_tag image_path("logos/acij_logo.png")
+    = link_to '' do
+      = image_tag image_path("logos/wingu_logo.png")
