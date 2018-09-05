@@ -1,0 +1,36 @@
+section
+  aside
+    div
+      section
+        header
+          h1="Elegí tu barrio"
+        section
+          header
+            h2="Barrios en proceso de urbanización"
+          nav
+            ol
+              - @urbanized.each do |neighborhood|
+                li
+                  = link_to neighborhood_path(neighborhood.id) do
+                    p
+                      span = neighborhood.abbreviation
+                    div
+                      h3=neighborhood.name
+                      span="Proceso de urbanización"
+                      span="#{to_fixed_percentage(average(neighborhood))}%"
+                      div
+                        div style="width:#{to_fixed_percentage(average(neighborhood))}%"
+        section
+          header
+            h2="Otros barrios"
+          nav
+            ul
+              - @unurbanized.each do |neighborhood|
+                li
+                  div
+                    = link_to neighborhood.name, about_neighborhood_path(neighborhood.id)
+
+  main
+    section
+      - if @neighborhoods
+        == cell('elements/map_references', @neighborhoods)

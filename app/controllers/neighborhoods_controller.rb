@@ -1,6 +1,12 @@
 class NeighborhoodsController < ApplicationController
   before_action :check_for_mobile, :only => [:show, :about, :agreement]
 
+  def index
+    @neighborhoods = Neighborhood.order('LOWER(name)')
+    @urbanized = @neighborhoods.where(urbanization: true).order('LOWER(name)')
+    @unurbanized= @neighborhoods.where(urbanization: false).order('LOWER(name)')
+  end
+
   def show
     load_neighborhood
     @filters = params[:filters].blank? ? nil : params[:filters].split(',')

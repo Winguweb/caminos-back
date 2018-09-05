@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
     get '/mobile', action: :mobile, controller: :home
 
-    resources :neighborhoods, only: [:show] do
+    resources :neighborhoods, only: [:index, :show] do
       resources :works, only: [:show]
       resources :meetings, only: [:index, :show]
       member do

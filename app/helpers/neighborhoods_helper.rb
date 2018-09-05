@@ -1,4 +1,4 @@
-module HomeHelper
+module NeighborhoodsHelper
 
   def average(neighborhood)
     if neighborhood
