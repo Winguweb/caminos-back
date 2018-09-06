@@ -97,6 +97,7 @@
               position: absolute;
               top: 50%;
               transform: translate3d(0, -50%, 0);
+              width: 100%;
               > a {
                 @include type-setting(-1);
                 background-color: $white;
