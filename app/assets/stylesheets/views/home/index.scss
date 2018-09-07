@@ -11,14 +11,14 @@
       > nav {
         @include diagonal-left;
         @include clearfix;
-        height: 160px;
+        height: 140px;
         padding: $gutter*3 $gutter*3 0 $gutter*3;
         position: relative;
         z-index: 4;
         > div:first-of-type {
           float: left;
           position: relative;
-          width: 35%;
+          width: 30%;
           z-index: 1;
           > img {
             vertical-align: top;
