@@ -32,7 +32,7 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
 
   body id=body_id class=body_class
 
-    - if current_user
+    - unless current_user.nil?
       = render partial: 'admin/partials/header'
 
     main
