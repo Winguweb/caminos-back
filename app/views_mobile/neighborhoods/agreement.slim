@@ -4,30 +4,42 @@
 main
   section
     - if !@data.nil?
-      - @data.keys.each do |indicator|
         ul
           li
-            input checked="" type="checkbox"
-            i
-            section
-              header
-                h1= Agreement.indicators[indicator][:title]
-              main
-                p
-                  span
-                    = "#{@data[indicator][:score]}/100"
-                div
+            = label_tag do
+              section
+                header
+                  h1 = "General"
+                main
+                  p
+                    span
+                      = "#{to_fixed_percentage(average)}%"
                   div
-                  div style="width:#{@data[indicator][:score]}%;"
-                div
-            aside
-              -@data[indicator][:answers].keys.each do |question|
-                .two-thirds-one-third-input
-                  div
-                    span  = Agreement.indicators[indicator][:questions][question][:title]
+                    div
+                    div style="width:#{to_fixed_percentage(average)}%;"
+          - @data.each do |indicator|
+            li
+              input type="checkbox" id=indicator[0] name="agreement"
+              = label_tag indicator[0] do
+                section
+                  i
+                  header
+                    h1= Agreement.indicators[indicator[0].to_sym][:title]
+                  main
+                    p
+                      span
+                        = "#{indicator[1]["score"]}/100"
+                    div
+                      div
+                      div style="width:#{indicator[1]["score"]}%;"
+                aside
+                  - indicator[1]["answers"].each do |answer|
+                    .two-thirds-one-third-input
+                      div
+                        span = Agreement.indicators[indicator[0].to_sym][:questions][answer[0].to_sym][:title]
 
-                  div
-                    span = @data[indicator][:answers][question]
+                      div
+                        span = answer[1]
     -else
       div
         = t('.no_agreement')

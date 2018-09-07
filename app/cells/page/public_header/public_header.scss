@@ -60,6 +60,21 @@
         &:before {
           content: none;
         }
+        .item {
+          white-space: nowrap;
+          &:after {
+            border-color: #808080 transparent transparent transparent;
+            border-style: solid;
+            border-width: 5px 5px 0 5px;
+            content: ' ';
+            display: inline-block;
+            height: 0;
+            margin-left: 6px;
+            margin-top: 6px;
+            position: absolute;
+            width: 0;
+          }
+        }
       }
       .selectize-dropdown {
         border: none;
