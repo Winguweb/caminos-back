@@ -1,5 +1,5 @@
 module Api
-  class WorksController < ActionController::Base
+  class WorksController < BaseController
     include CurrentAndEnsureDependencyLoader
     helper_method :current_neighborhood
 

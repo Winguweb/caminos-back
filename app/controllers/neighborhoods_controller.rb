@@ -1,5 +1,5 @@
 class NeighborhoodsController < ApplicationController
-  before_action :check_for_mobile, :only => [:show, :about, :agreement]
+  before_action :check_for_mobile, :only => [:show, :about]
 
   def index
     @neighborhoods = Neighborhood.order('LOWER(name)')
@@ -8,17 +8,18 @@ class NeighborhoodsController < ApplicationController
   end
 
   def show
-    load_neighborhood
+    load_neighborhood_or_redirect; return if performed?
+
     @filters = params[:filters].blank? ? nil : params[:filters].split(',')
   end
 
   def about
-    load_neighborhood
+    load_neighborhood_or_redirect
     load_meetings
   end
 
   def agreement
-    load_neighborhood
+    load_neighborhood_or_redirect
     if !@neighborhood.agreement.blank? && !@neighborhood.agreement.data.nil?
       @data = JSON.parse(@neighborhood.agreement.data)
     else
@@ -28,13 +29,12 @@ class NeighborhoodsController < ApplicationController
 
   private
 
-  def load_neighborhood
-    @neighborhood = Neighborhood.find(params[:id])
+  def load_neighborhood_or_redirect
+    redirect_to root_path unless @neighborhood = Neighborhood.find_by(id: params[:id])
   end
 
   def load_meetings
     @meetings = @neighborhood.meetings.order(date: :desc).group_by { |x| x.date.year }
   end
-
 
 end

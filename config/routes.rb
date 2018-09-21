@@ -4,15 +4,13 @@ Rails.application.routes.draw do
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#index'
 
-    get '/mobile', action: :mobile, controller: :home
-
     resources :neighborhoods, only: [:index, :show] do
       resources :works, only: [:show]
       resources :meetings, only: [:index, :show]
       member do
-        get :agreement
+        # TODO: It should be routed to agreements controller
+        get  :agreements, action: :show, controller: :agreements
         get :about
-        get '/:filters', action: :show, controller: :neighborhoods, as: :filtered_work
       end
     end
 
@@ -74,7 +72,7 @@ Rails.application.routes.draw do
       resources :neighborhoods, :as => "neighborhoods" do
         resources :works
         resources :meetings
-        resource :agreement
+        resource :agreement, except: [:destroy]
       end
     end
   # ╰─ End of Private Accesible URL's / Path's
@@ -82,8 +80,6 @@ Rails.application.routes.draw do
       resources :neighborhoods, :as => "neighborhoods" do
         get '/works/status/:status', action: :by_status, controller: :works
         get '/works/status', action: :index, controller: :works
-        resources :works do
-        end
       end
     end
   end
