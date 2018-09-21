@@ -9,14 +9,10 @@ section
             = label_tag do
               section
                 header
-                  h1 = "General"
-                main
-                  p
-                    span
-                      = "#{to_fixed_percentage(average)}%"
+                  == cell('elements/ring', to_fixed_percentage(average))
                   div
-                    div
-                    div style="width:#{to_fixed_percentage(average)}%;"
+                    h1 = t('agreements.general')
+                    p = t('agreements.description')
           - @data.each do |indicator|
             li
               input type="checkbox" id=indicator[0] name="agreement"
