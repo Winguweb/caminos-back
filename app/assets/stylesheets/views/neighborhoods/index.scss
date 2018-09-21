@@ -1,4 +1,4 @@
-@mixin home() {
+@mixin neighborhoods-index() {
   > main {
     $navbar-height: 74px;
     height: calc(100% - #{$navbar-height});
@@ -194,6 +194,6 @@
   }
 }
 
-#home-show.home-desktop {
-  @include home();
+#neighborhoods-index.neighborhoods-desktop {
+  @include neighborhoods-index();
 }
