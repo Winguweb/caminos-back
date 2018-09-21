@@ -20,6 +20,9 @@
             &:last-of-type {
               padding-bottom: 0;
             }
+            > section:first-of-type {
+              cursor: initial;
+            }
             > section {
               cursor: pointer;
               display: block;
@@ -46,10 +49,21 @@
                 }
               }
               > header {
-                margin-bottom: $vgutter;
-                margin-top: $vgutter*2;
+                @include clearfix;
+                > div {
+                  float: left;
+                  margin-bottom: $vgutter;
+                  margin-top: $vgutter*2;
+                  > h1 {
+                    font-weight: 600;
+                  }
+                  > p {
+                    @include text-color($text-black, 1);
+                    @include type-setting(-1);
+                  }
+                }
                 > h1 {
-
+                  font-weight: 600;
                 }
                 > p {
                   @include text-color($text-black, 1);
