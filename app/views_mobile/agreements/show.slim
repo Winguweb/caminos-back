@@ -1,0 +1,45 @@
+- @with_links = true
+- @back_menu = t("neighborhoods.neighborhoods")
+- @back_url = "/"
+main
+  section
+    - if !@data.nil?
+        ul
+          li
+            = label_tag do
+              section
+                header
+                  h1 = "General"
+                main
+                  p
+                    span
+                      = "#{to_fixed_percentage(average)}%"
+                  div
+                    div
+                    div style="width:#{to_fixed_percentage(average)}%;"
+          - @data.each do |indicator|
+            li
+              input type="checkbox" id=indicator[0] name="agreement"
+              = label_tag indicator[0] do
+                section
+                  i
+                  header
+                    h1= Agreement.indicators[indicator[0].to_sym][:title]
+                  main
+                    p
+                      span
+                        = "#{indicator[1]["score"]}/100"
+                    div
+                      div
+                      div style="width:#{indicator[1]["score"]}%;"
+                aside
+                  - indicator[1]["answers"].each do |answer|
+                    .two-thirds-one-third-input
+                      div
+                        span = Agreement.indicators[indicator[0].to_sym][:questions][answer[0].to_sym][:title]
+
+                      div
+                        span = answer[1]
+    -else
+      div
+        = t('.no_agreement')

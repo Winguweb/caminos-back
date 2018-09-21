@@ -1,7 +1,7 @@
 @mixin map-show() {
   height: 100%;
   position: relative;
-  > div {
+  > div:first-of-type {
     border-radius: 8px;
     height: 100%;
     min-height: 400px;
@@ -35,10 +35,50 @@
     &.sewer {fill: $sewer;}
     &.infrastructure {fill: $infrastructure;}
     &.base-geometry {
-      fill: transparent;
-      stroke: color($blue, 0.7);
-      stroke-dasharray: 3 5;
-      stroke-width: 2px;
+      fill: $black;
+      fill-opacity: 0.1;
+      stroke: $black;
+      stroke-opacity: 0.4;
+      stroke-width: 2;
+    }
+  }
+
+  .map-show-popup {
+    background-color: $white;
+    border-radius: 2px;
+    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+    display: none;
+    padding: $gutter;
+    pointer-events: none;
+    position: absolute;
+    transform: translate3d(10px, -50%, 0);
+    > p {
+      margin-bottom: 0;
+    }
+    > span {
+      @include type-setting(-1);
+      &.status-in_process { @include text-color($status-in-process,1)}
+      &.status-done { @include text-color($status-done,1)}
+      &.status-pending { @include text-color($status-pending,1)}
+      &.status-expired { @include text-color($status-expired,1)}
+      &.status-proyected { @include text-color($status-proyected,1)}
+      text-transform: uppercase;
+    }
+    &:before {
+      border-color: transparent $white transparent transparent;
+      border-style: solid;
+      border-width: 5px 4px 5px 0;
+      content: '';
+      display: block;
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-100%, -50%, 0);
+      width: 0;
+    }
+    &.visible {
+      display: block;
     }
   }
 }

@@ -1,15 +1,18 @@
 es-AR:
   admin:
     meetings:
+      edit:
+        meeting: Reunión %{date}
       form:
         address: Dirección
         date: Fecha
         day_order: Orden del día
         load_user: Agregar Usuario
+        objectives: Objetivos
         participantas: Participantes
         works_relation: Obras Relacionadas
       index:
-        new_meeting: Cargar Reunión
+        new_meeting: Nueva Reunión
       new:
         new_meeting: Nueva Reunión
       show:

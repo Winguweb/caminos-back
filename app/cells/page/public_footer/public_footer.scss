@@ -1,0 +1,46 @@
+@mixin public-footer() {
+  @include grid-container;
+  background: $white;
+  border: 0;
+  bottom: -90px;
+  box-sizing: border-box;
+  height: 100px;
+  left: 0;
+  padding: $gutter;
+  position: fixed;
+  right: 0;
+  transition: bottom 300ms ease;
+  z-index: 1000;
+  @include shadow($normal-shadow, 1);
+  &:hover {
+    bottom: 0;
+  }
+  > i {
+    background-color: color($black, 1);
+    border-radius: 4px;
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    top: 3px;
+    transform: translateX(-50%);
+    transition: all 100ms ease;
+    width: 4px;
+  }
+  > div {
+  }
+  &:hover > i {
+    background-color: color($black, 0.2);
+    border-radius: 0px;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    top: 4px;
+    transform: translateX(-50%);
+    width: $gutter*5;
+  }
+}
+
+
+.page-public-footer-cell {
+  @include public-footer;
+}

@@ -13,8 +13,7 @@
           = t('js.filer.trash')
 
   script type="text/template" id="no-documents-template" class="hidden"
-    tr.no-documents
-      td=t('.no_documents')
+    span=t('.no_documents')
 
   table
     tbody.documents-table-body
@@ -31,8 +30,7 @@
                 = link_to '#', class: 'remove-document', 'data-document-id': document.id, 'data-document-type': document.type.downcase do
                   = t('js.filer.trash')
       - else
-        tr.no-documents
-          td=t('.no_documents')
+        span=t('.no_documents')
 
 javascript:
   $(function() {

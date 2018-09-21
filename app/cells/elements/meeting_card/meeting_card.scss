@@ -3,13 +3,13 @@
   > a > article {
     border: 2px solid $light-grey;
     border-radius: 6px;
-    min-height: 70px;
+    min-height: 72px;
     padding: $vgutter*2 $gutter;
     > header {
       > h1 {
         margin: 0;
         @include text-color($text-black, 1);
-        @include type-setting(1);
+        @include type-setting(5);
       }
       > p {
         @include text-color($text-black, 1);

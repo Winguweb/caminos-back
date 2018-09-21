@@ -5,13 +5,12 @@
       height: 100%;
       > section {
         > main {
-          $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
           @include grid-column(16, $no-gutter);
           height: 100%;
           > section:first-of-type {
             @include grid-column(16);
-            left: auto;
             height: 100%;
+            left: auto;
             .map-show-cell {
               @include grid-collapse;
               height: 100%;
@@ -28,8 +27,8 @@
               margin-bottom: $vgutter*2;
               > span:first-of-type {
                 @include type-setting(-1);
-                display: block;
                 color: $grey;
+                display: block;
                 margin-bottom: $gutter/7;
                 text-transform: none;
               }

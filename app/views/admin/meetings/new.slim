@@ -1,3 +1,3 @@
 = content_for :main_header do
-  == cell('page/header', t('.new_meeting'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.meetings'), href: admin_neighborhood_meetings_path} ] )
+  == cell('page/header', t('.new_meeting'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('meetings.meetings'), href: admin_neighborhood_meetings_path}, {title: t('actions.newf')} ] )
 = render 'form'

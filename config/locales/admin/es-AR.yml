@@ -2,9 +2,9 @@ es-AR:
   admin:
     agreements:
       form:
-        indicators: Indicadores
+        edit_agreement: Editar Acuerdo de Urbanización
       show:
-        agreement: Indicadores para la medición del Acuerdo de Urbanización
+        agreement: Indicadores del Acuerdo de Urbanización
         new_agreement: Crear Acuerdo
     links:
       neighborhoods:
@@ -21,7 +21,7 @@ es-AR:
       admin: Administrador
       responsible: Responsable
     sections:
-      dashboard: Escritorio
+      dashboard: Dashboard
       neighborhoods: Barrios
       users: Usuarios
       works: Obras

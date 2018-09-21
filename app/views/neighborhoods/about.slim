@@ -1,24 +1,22 @@
 section
   main.page-section
-    section.with-border
+    section
       == cell('elements/map_show', @neighborhood)
-    section.with-border
-      == cell('section/header', t('neighborhoods.description'))
+    section
+      == cell('section/header', @neighborhood.name, header_type: 'main')
       .content
         == cell('elements/description', text: @neighborhood.description)
 
-    section.with-border
-      == cell('section/header', t('documents.documents'))
-      .content
-        == cell('elements/documents_table', @neighborhood.documents)
-
-
     section
-      == cell('section/header', t('neighborhoods.responsibles'))
+      == cell('section/header', t('documents.documents'))
+      == cell('elements/documents_table', @neighborhood.documents)
 
     section
       == cell('section/header', t('pictures.pictures'))
-      == cell('elements/photos_gallery', @neighborhood.photos)
+      - if @neighborhood.photos.blank?
+        span=t('pictures.no_pictures')
+      - else
+        == cell('elements/photos_gallery', @neighborhood.photos)
 
 
     section
@@ -28,7 +26,7 @@ section
       - else
         - @meetings.keys.each do |year|
           - if year ==@meetings.keys.first
-            == cell('section/header', year)
+            == cell('section/header', year, header_type: 'sub-section')
           - else
-            == cell('section/header', year)
+            == cell('section/header', year, header_type: 'sub-section')
           == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)

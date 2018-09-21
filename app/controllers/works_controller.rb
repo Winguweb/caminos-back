@@ -5,6 +5,7 @@ class WorksController < ApplicationController
 
   def show
     load_work
+    @neighborhood = @work.neighborhood
   end
 
   def index

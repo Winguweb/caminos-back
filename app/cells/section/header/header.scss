@@ -1,4 +1,28 @@
 @mixin header-cell() {
+  @include clearfix;
+  margin-bottom: $gutter;
+  > ul {
+    > li {
+      > a, > button {
+        @include text-button;
+      }
+    }
+  }
+  &.main-type {
+    > article {
+      h1 {
+        @include type-setting(3);
+        margin-bottom: $gutter;
+      }
+    }
+  }
+  &.sub-section-type {
+    > article {
+      h1 {
+        @include type-setting(6);
+      }
+    }
+  }
   &.danger-type,
   &.warning-type,
   &.success-type {

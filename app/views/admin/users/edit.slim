@@ -1,3 +1,3 @@
 = content_for :main_header do
-  == cell('page/header', t('.user_profile'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.users'), href: admin_users_path}, {title: "#{@user.profile.full_name} (#{@user.username})", href: admin_user_path} ] )
+  == cell('page/header', t('.user_profile'), breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.users'), href: admin_users_path}, {title: "#{@user.profile.full_name} (#{@user.username})", href: admin_user_path}, { title: t('actions.edit')} ] )
 == cell('forms/user', @user, neighborhoods: @neighborhoods, neighborhood: @neighborhood, url: admin_user_path(@user), action: 'update')

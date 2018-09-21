@@ -1,6 +1,6 @@
-@mixin home() {
-  $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+@mixin neighborhoods-index() {
   > main {
+    $navbar-height: 74px;
     height: calc(100% - #{$navbar-height});
     > div {
       height: 100%;
@@ -22,7 +22,7 @@
               > header {
                 h1 {
                   @include text-color($text-black, 1);
-                  @include type-setting(1);
+                  @include type-setting(5);
                   font-weight: 800;
                   margin-bottom: $vgutter;
                 }
@@ -194,6 +194,6 @@
   }
 }
 
-#home-show.home-desktop {
-  @include home();
+#neighborhoods-index.neighborhoods-desktop {
+  @include neighborhoods-index();
 }

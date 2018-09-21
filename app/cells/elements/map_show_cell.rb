@@ -14,16 +14,19 @@ class Elements::MapShowCell < Cell::ViewModel
       {
         coordinates: model.geometry.coordinates.first.map(&:reverse),
         className: 'base-geometry',
+        url: neighborhood_work_path(model.id)
       }
     when RGeo::Feature::MultiPolygon
       {
         coordinates: model.geometry.coordinates.map {|polygons| polygons.first.map(&:reverse)},
         className: 'base-geometry',
+        url: neighborhood_work_path(model.id)
       }
     else
       {
         coordinates: [ ],
-        className: 'base-geometry'
+        className: 'base-geometry',
+        url: neighborhood_work_path(model.id)
       }
     end.to_json
   end
@@ -34,41 +37,71 @@ class Elements::MapShowCell < Cell::ViewModel
     options[:features].map do |feature|
       case feature[:geometry].geometry_type
       when RGeo::Feature::Point
-        {
-          coordinates: [feature[:geometry].coordinates],
-          icon: image_path(feature.category_icon),
-          type: 'marker',
-        }
+      {
+        coordinates: [feature[:geometry].coordinates],
+        icon: image_path(feature.category_icon),
+        type: 'marker',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status,
+        name: feature.name
+      }
       when RGeo::Feature::MultiPoint
       {
         coordinates: feature[:geometry].coordinates.map(&:reverse),
         icon: image_path(feature.category_icon),
         type: 'marker',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status,
+        name: feature.name
       }
       when RGeo::Feature::Polygon
-        {
-          coordinates: feature[:geometry].coordinates.first.map(&:reverse),
-          className: feature.category.name,
-          type: 'polygon',
-        }
+      {
+        coordinates: feature[:geometry].coordinates.first.map(&:reverse),
+        className: feature.category.name,
+        type: 'polygon',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status,
+        name: feature.name
+      }
       when RGeo::Feature::MultiPolygon
-        {
-          coordinates: feature[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
-          className: feature.category.name,
-          type: 'polygon',
-        }
+      {
+        coordinates: feature[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
+        className: feature.category.name,
+        type: 'polygon',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status,
+        name: feature.name
+      }
       when RGeo::Feature::LineString
-        {
-          coordinates: feature[:geometry].coordinates.map(&:reverse),
-          className: feature.category.name,
-          type: 'polyline',
-        }
+      {
+        coordinates: feature[:geometry].coordinates.map(&:reverse),
+        className: feature.category.name,
+        type: 'polyline',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status,
+        name: feature.name
+      }
       when RGeo::Feature::MultiLineString
-        {
-          coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
-          className: feature.category.name,
-          type: 'polyline',
-        }
+      {
+        coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
+        className: feature.category.name,
+        type: 'polyline',
+        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        show: true,
+        category: feature.category.name,
+        status: feature.status,
+        name: feature.name
+      }
       end
     end.to_json
   end

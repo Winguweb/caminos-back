@@ -63,7 +63,7 @@
                 > h1 {
                   margin: 0;
                   @include text-color($text-black, 1);
-                  @include type-setting(1);
+                  @include type-setting(5);
                 }
                 > p {
                   @include text-color($text-black, 1);
@@ -254,6 +254,6 @@
   }
 }
 
-#neighborhoods-agreement.neighborhoods-mobile {
+#agreements-show.agreements-mobile {
   @include neighborhoods-mobile-agreement();
 }

@@ -3,6 +3,7 @@
 
 div.page-section
   section
+    == cell('section/header',t('.dashboard'), header_type: 'main')
     ul.neighborhood-cards
       - @neighborhoods.each do |neighborhood|
         li

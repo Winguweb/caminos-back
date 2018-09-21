@@ -1,9 +1,8 @@
-module HomeHelper
+module AgreementsHelper
 
-  def average(neighborhood)
+  def average(neighborhood = @neighborhood)
     if neighborhood
-      return 0 unless neighborhood.agreement && neighborhood.agreement.data
-
+      return 0 if neighborhood.agreement.data.nil?
       indicators = JSON.parse(neighborhood.agreement.data)
       average = indicators.sum do |indicator|
         indicator[1]["score"].to_i
@@ -11,5 +10,4 @@ module HomeHelper
       average / indicators.length
     end
   end
-
 end

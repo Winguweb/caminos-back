@@ -3,5 +3,8 @@ div.breadcrumbs-cell
     ul
       - crumbs.each do |crumb|
         li
-          = link_to crumb[:title], crumb[:href]
-        li = ">"
+          - if crumb[:href].nil?
+            span = crumb[:title]
+          - else
+            = link_to crumb[:title], crumb[:href]
+        li = "›"

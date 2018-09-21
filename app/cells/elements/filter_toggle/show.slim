@@ -1,0 +1,14 @@
+.filter-toggle-cell
+  ul
+    li.active
+      =link_to t("status.all_status"), "#", {"data-filter":""}
+    - Work.status.each do |status|
+      li
+        =link_to t("status.#{status}"), "#", {"data-filter":"#{status}"}
+
+javascript:
+  $(function() {
+    new CDLV.Components['elements/filter_toggle']({
+      el: $('.filter-toggle-cell')
+    })
+  });

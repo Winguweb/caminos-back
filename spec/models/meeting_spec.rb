@@ -8,10 +8,7 @@ RSpec.describe Meeting, type: :model do
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:date) }
-    it { is_expected.to validate_presence_of(:lookup_coordinates) }
-    it { is_expected.to validate_presence_of(:objectives) }
-    it { is_expected.to validate_presence_of(:organizer) }
-    it { is_expected.to validate_presence_of(:participants) }
+    it { is_expected.to validate_presence_of(:lookup_address) }
   end
 
 end

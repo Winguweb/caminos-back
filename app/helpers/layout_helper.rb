@@ -1,5 +1,6 @@
 module LayoutHelper
   include Admin::UsersHelper
+  include ActionView::Helpers::UrlHelper
 
   def body_id
     if content_for?(:body_id)

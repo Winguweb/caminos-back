@@ -2,10 +2,7 @@
   section{
     > header {
       h1{
-        color: $text-black;
-        font-weight: 600;
-        @include type-setting(0);
-        font-size: 1.5em;
+
       }
       div{
         color: $black;
@@ -13,16 +10,16 @@
         @include type-setting(0);
       }
     }
-   
+
     > article {
       border-top: 1px solid $light-grey;
       > header {
-        margin-top: $vgutter*2;
         margin-bottom: $vgutter;
+        margin-top: $vgutter*2;
         > h1 {
           margin: 0;
           @include text-color($text-black, 1);
-          @include type-setting(1);
+          @include type-setting(5);
         }
         > p {
           @include text-color($text-black, 1);
@@ -39,16 +36,16 @@
           margin-bottom: $vgutter;
         }
         > div {
-          height: 7px;
-          width: 100%;
-          position: relative;
           border-radius: 3px;
+          height: 7px;
           overflow: hidden;
+          position: relative;
+          width: 100%;
           > div {
+            height: 7px;
+            left: 0;
             position: absolute;
             top: 0;
-            left: 0;
-            height: 7px;
             width: 100%;
           }
           > div:nth-of-type(1) {
@@ -60,10 +57,10 @@
           }
         }
       }
-    
+
       > aside  {
         @include grid-container;
-       
+
         .two-thirds-one-third-input {
           > div:nth-of-type(1) {
             color: $text-black;
@@ -82,11 +79,11 @@
             > span:first-of-type {
               @include type-setting(-1);
               display: block;
-              
+
               margin-bottom: $gutter/7;
               text-transform: none;
             }
-            
+
             > span + span {
               display: block;
             }

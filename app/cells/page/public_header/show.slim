@@ -1,19 +1,29 @@
 header.page-public-header-cell class="#{'without-links' unless links}"
-  nav
+  div
     = link_to root_path do
       span 'Caminos de la Villa'
+    / span
+    /   = t('slogan')
+  div
+    nav
+      - unless neighborhood.blank?
+        = select_tag "neighborhood", options_from_collection_for_select(neighborhoods, "id", "name", neighborhood.id)
     - unless neighborhood.blank?
-      span
-        = neighborhood.name
-  - unless neighborhood.blank?
-    ul
-      - if neighborhood.urbanization
+      ul
+        - if neighborhood.urbanization
+          li
+            = active_link_to "/neighborhoods/#{neighborhood.id}/", class: controller.controller_name == 'works' ? 'active':'' do
+              span= t('.works')
         li
-          = link_to "/neighborhoods/#{neighborhood.id}/" do
-            span= t('.works')
-      li
-        = link_to "/neighborhoods/#{neighborhood.id}/agreement" do
-          span= t('.agreement')
-      li
-        = link_to "/neighborhoods/#{neighborhood.id}/about" do
-          span= t('.about')
+          = active_link_to agreements_neighborhood_path do
+            span= t('.agreement')
+        li
+          = active_link_to "/neighborhoods/#{neighborhood.id}/about" do
+            span= t('.about')
+
+javascript:
+  $(function() {
+    new CDLV.Components['page/public_header']({
+      el: $('.page-public-header-cell')
+    })
+  });

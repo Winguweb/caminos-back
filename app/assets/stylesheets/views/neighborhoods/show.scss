@@ -1,5 +1,4 @@
 @mixin neighborhoods-show() {
-  $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
   height: calc(100% - #{$navbar-height});
   > main {
     height: 100%;
@@ -21,7 +20,7 @@
             > header {
               h1 {
                 @include text-color($text-black, 1);
-                @include type-setting(1);
+                @include type-setting(5);
                 font-weight: 800;
                 margin-bottom: $vgutter;
               }
@@ -80,7 +79,7 @@
             .map-show-cell {
               @include grid-collapse;
               height: 100%;
-              > div {
+              > div:first-of-type {
                 border-radius: 0;
               }
             }

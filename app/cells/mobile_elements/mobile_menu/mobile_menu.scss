@@ -57,7 +57,7 @@
     > li {
       > a {
         @include text-color($text-black, 1);
-        @include type-setting(1);
+        @include type-setting(5);
         border-bottom: 2px solid transparent;
         display: block;
         margin-right: 0;
