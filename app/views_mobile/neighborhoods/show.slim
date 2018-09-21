@@ -1,14 +1,57 @@
 - @with_links = true
 - @back_menu = t("neighborhoods.neighborhoods")
-- @back_url = "/"
+- @back_url = neighborhoods_path
 main
+  div
+    - if @neighborhood.urbanization
+      aside
+        div
+          section
+            nav
+              -if !@neighborhood.works.empty?
+                == cell('elements/filter_toggle')
   section
     == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
+
+    main.page-section
+
+      - if !@neighborhood.urbanization
+        section
+          == cell('section/header', @neighborhood.name, header_type: 'main')
+          .content
+            == cell('elements/description', text: @neighborhood.description)
+
+        section
+          == cell('section/header', t('documents.documents'))
+          == cell('elements/documents_table', @neighborhood.documents)
+
+        section
+          == cell('section/header', t('pictures.pictures'))
+          - if @neighborhood.photos.blank?
+            span=t('pictures.no_pictures')
+          - else
+            == cell('elements/photos_gallery', @neighborhood.photos)
+
+        section
+          == cell('section/header', t('meetings.meetings'))
+          - if @meetings.blank?
+            span=t('meetings.no_meetings')
+          - else
+            - @meetings.keys.each do |year|
+              - if year ==@meetings.keys.first
+                == cell('section/header', year, header_type: 'sub-section')
+              - else
+                == cell('section/header', year, header_type: 'sub-section')
+              == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)
   section
     - if @neighborhood.urbanization
-      - if !@neighborhood.works.blank?
-        == cell('elements/filterable', 'elements/works_list' , data: @neighborhood.works, filters: @filters)
-
-      - else
+      aside
         div
-          = t('.no_works')
+          section
+            nav
+              -if !@neighborhood.works.empty?
+                == cell('elements/works_tree' , @neighborhood.works)
+
+              -else
+                div
+                  = t('.no_works')

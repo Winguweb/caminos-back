@@ -12,13 +12,13 @@ header.page-public-header-cell class="#{'without-links' unless links}"
       ul
         - if neighborhood.urbanization
           li
-            = active_link_to "/neighborhoods/#{neighborhood.id}/", class: controller.controller_name == 'works' ? 'active':'' do
+            = active_link_to neighborhood_path(neighborhood), class: controller.controller_name == 'works' ? 'active':'' do
               span= t('.works')
         li
-          = active_link_to agreements_neighborhood_path do
+          = active_link_to agreements_neighborhood_path(neighborhood) do
             span= t('.agreement')
         li
-          = active_link_to "/neighborhoods/#{neighborhood.id}/about" do
+          = active_link_to about_neighborhood_path(neighborhood) do
             span= t('.about')
 
 javascript:

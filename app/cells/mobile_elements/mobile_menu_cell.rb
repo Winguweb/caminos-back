@@ -24,6 +24,6 @@ class MobileElements::MobileMenuCell < Cell::ViewModel
   end
 
   def section
-    params[:action]
+    "#{params[:controller]}-#{params[:action]}"
   end
 end
