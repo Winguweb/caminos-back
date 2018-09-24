@@ -2,9 +2,12 @@
   margin-top: $gutter;
   > ul {
     > li {
-      display: inline-block;
-      padding: $gutter/2;
       border-bottom: 2px solid transparent;
+      box-sizing: border-box;
+      display: inline-block;
+  min-width: 33%;
+      padding: $gutter/2;
+  text-align: center;
       &.active {
         border-color: color($blue, 1);
         > a { @include text-color($blue, 1); }
@@ -22,7 +25,9 @@
 }
 
 @mixin filter-toggle-mobile() {
-
+  box-sizing: border-box;
+  min-width: 25%;
+  text-align: center;
 }
 
 

@@ -1,5 +1,5 @@
 class NeighborhoodsController < ApplicationController
-  before_action :check_for_mobile, :only => [:show, :about]
+  before_action :check_for_mobile, :only => [:index, :show, :about]
 
   def index
     @neighborhoods = Neighborhood.order('LOWER(name)')

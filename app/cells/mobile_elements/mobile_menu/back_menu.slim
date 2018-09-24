@@ -10,11 +10,11 @@ nav class="mobile-menu-cell back-menu #{with_links}"
       ul
         - if neighborhood.urbanization
           li
-            = link_to "/neighborhoods/#{neighborhood.id}/", class: section=='show' ? 'active' : nil do
+            = link_to neighborhood_path(neighborhood), class: section=='neighborhoods-show' ? 'active' : nil do
               span= t('.works')
         li
-          = link_to "/neighborhoods/#{neighborhood.id}/agreement", class: section=='agreement' ? 'active' : nil do
+          = link_to agreements_neighborhood_path(neighborhood), class: section=='agreements-show' ? 'active' : nil do
             span= t('.agreement')
         li
-          = link_to "/neighborhoods/#{neighborhood.id}/about", class: section=='about' ? 'active' : nil do
+          = link_to about_neighborhood_path(neighborhood), class: section=='neighborhoods-about' ? 'active' : nil do
             span= t('.about')

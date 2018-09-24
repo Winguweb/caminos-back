@@ -1,5 +1,5 @@
 class AgreementsController < ApplicationController
-  before_action :check_for_mobile, :only => [:agreement]
+  before_action :check_for_mobile, :only => [:show]
 
   def show
     load_neighborhood
