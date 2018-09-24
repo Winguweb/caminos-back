@@ -139,11 +139,11 @@
 }
 
 @mixin mobile-menu-big() {
-  @include background-color($blue);
+  @include background-color($white);
   height: $aside-full-height;
   padding: $gutter*2;
   > div:first-of-type {
-    background-image: image-url("logo-v1.svg");
+    background-image: image-url("logos/caminos_logo.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -153,7 +153,7 @@
   > div:first-of-type {
     > button:first-of-type {
       span {
-        background-image: image-url("icons/menu-white.svg");
+        background-image: image-url("icons/menu.svg");
       }
     }
   }
