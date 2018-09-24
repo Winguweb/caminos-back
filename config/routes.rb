@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
     resources :works, only: [] do
       resources :meetings, only: [:index, :show]
+      resources :documents, only: [:index]
     end
 
     resources :meetings, only: [] do
