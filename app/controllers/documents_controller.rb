@@ -2,7 +2,7 @@ class DocumentsController < ApplicationController
   include CurrentAndEnsureDependencyLoader
   helper_method :current_neighborhood
 
-  before_action :check_for_mobile, :only => %i[index]
+  before_action :check_for_mobile, only: %i[index]
 
   helper_method :current_documentable
 
@@ -17,7 +17,7 @@ class DocumentsController < ApplicationController
 
     @current_documentable = current_neighborhood || current_work
 
-    (redirect_back(fallback_location: root_path) and return) unless @current_documentable
+    (redirect_back(fallback_location: root_path) && return) unless @current_documentable
 
     @current_documentable
   end

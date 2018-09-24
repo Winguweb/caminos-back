@@ -2,7 +2,7 @@ class MeetingsController < ApplicationController
   include CurrentAndEnsureDependencyLoader
   helper_method :current_neighborhood
 
-  before_action :check_for_mobile, :only => %i[index show]
+  before_action :check_for_mobile, only: %i[index show]
 
   helper_method :current_meetable
 
