@@ -1,0 +1,30 @@
+@mixin ring {
+  height: 80px;
+  margin-right: $gutter;
+  position: relative;
+  width: 80px;
+  > svg {
+    .cls-1 {
+      fill:none;
+      height: 100%;
+      stroke: $blue;
+      stroke-width: 2px;
+      width: 100%;
+      &:first-of-type {
+        stroke: $light-grey;
+      }
+    }
+  }
+  > span {
+    @include type-setting(5);
+    color: $blue;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%,-50%, 0);
+  }
+}
+
+.ring-cell {
+  @include ring;
+}

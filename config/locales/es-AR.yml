@@ -18,6 +18,8 @@ es-AR:
     title: Indicadores del Acuerdo de Urbanización
     agreements: Acuerdos
     agreement: Acuerdo
+    general: Estado General
+    description: A través de los Indicadores se realiza la medición del Acuerdo por la Urbanización.
   common:
     files: Archivos
   categories:

@@ -1,0 +1,216 @@
+// Rules for show/hide elements when menu is opened
+.opened {
+  overflow: hidden;
+  .should-show {
+    display: block !important;
+  }
+  .should-hide {
+    display: none !important;
+  }
+}
+
+@mixin neighborhoods-index-mobile() {
+  > main {
+    height: 100%;
+    > div {
+      height: 100%;
+      main {
+        @include grid-column(16, $no-gutter);
+        // $aside-heigth defined at _variables.scss
+        height: calc(100% - #{$aside-height} - #{$gutter*4});
+        margin-bottom: $gutter;
+        position: relative;
+        &::before {
+          @include box-sizing(border-box);
+          border-top: 1px solid color($black, 0.1);
+          box-shadow: inset 0 4px 4px color($light-shadow, 0.1);
+          content: '';
+          height: 20px;
+          pointer-events: none;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: 1;
+        }
+        section {
+          height: 100%;
+          .map-references-cell {
+            height: 100%;
+            > div {
+              border-radius: 0;
+            }
+          }
+        }
+      }
+      > aside {
+        @include grid-column(16, $no-gutter);
+        @include box-sizing(border-box);
+        border-right: 1px solid color($black, 0.1);
+        box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
+        margin-bottom: $gutter*4;
+        overflow: auto;
+        position: relative;
+        z-index: 1;
+        > div {
+          @include grid-column(16);
+          > section {
+            > header {
+              h1 {
+                @include text-color($text-black, 1);
+                @include type-setting(5);
+                font-weight: 800;
+                margin-bottom: $vgutter*2;
+              }
+            }
+            > section:first-of-type {
+              > header {
+                h2 {
+                  @include text-color($text-grey, 1);
+                  @include type-setting(-1);
+                  border-bottom: 1px solid $light-grey;
+                  margin-bottom: $gutter;
+                  padding-bottom: $gutter/2;
+                  text-transform: uppercase;
+                }
+              }
+              > nav {
+                @include grid-collapse;
+                > ol {
+                  @include grid-container;
+                  cursor: pointer;
+                  margin-bottom: $vgutter*4;
+                  > li {
+                    @include grid-column(16);
+                    counter-increment: step-counter;
+                    position: relative;
+                    $border: 2px;
+                    $outer-diameter: 31px;
+                    $inner-diameter: round($outer-diameter * 0.75);
+                    &:hover {
+                      background-color: color($light-grey, 0.3);
+                    }
+                    &::before,
+                    &::after {
+                      bottom: 0;
+                      top: auto;
+                    }
+                    a {
+                      border-radius: 8px;
+                      box-shadow: 0 4px 16px 0 rgba(194,194,194,0.50);
+                      display: inline-block;
+                      margin-bottom: $gutter;
+                      width: 100%;
+                      > p {
+                        border: $border solid $blue;
+                        border-radius: 100%;
+                        display: inline-block;
+                        height: $outer-diameter;
+                        margin: $gutter;
+                        position: relative;
+                        vertical-align: middle;
+                        width: $outer-diameter;
+                        &::before {
+                          background-color: $blue;
+                          border-radius: 100%;
+                          content: '';
+                          display: block;
+                          height: $inner-diameter;
+                          left: #{($outer-diameter - $inner-diameter)/2};
+                          position: relative;
+                          top: #{($outer-diameter - $inner-diameter)/2};
+                          width: $inner-diameter;
+                        }
+                        > span {
+                          &::before {
+                            content: counter(step-counter);
+                          }
+                          @include transform(translate3d(-50%, -50%, 0));
+                          @include text-color($white, 1);
+                          font-weight: bold;
+                          left: 50%;
+                          position: absolute;
+                          top: 50%;
+                        }
+                      }
+                      > div {
+                        display: inline-block;
+                        padding: $gutter 0;
+                        vertical-align: middle;
+                        width: calc(100% - #{$gutter*3} - #{$outer-diameter + $border*2});
+                        > h3 {
+                          @include text-color($text-black, 1);
+                          @include type-setting(0);
+                          font-weight: bold;
+                          overflow: hidden;
+                          text-overflow: ellipsis;
+                          white-space: nowrap;
+                        }
+                        > span {
+                          @include text-color($text-grey, 1);
+                          @include type-setting(-1);
+                          margin-bottom: $vgutter/2;
+                        }
+                        > span + span {
+                          float: right;
+                          font-weight: bold;
+                        }
+                        > div {
+                          background-color: $light-grey;
+                          border-radius: 4px;
+                          height: 4px;
+                          overflow: hidden;
+                          width: 100%;
+                          > div {
+                            background-color: $blue;
+                            height: 100%;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+            }
+            > section + section {
+              > header {
+                > h2 {
+                  @include text-color($text-grey, 1);
+                  @include type-setting(-1);
+                  border-bottom: 1px solid color($grey, 0.3);
+                  margin-bottom: $vgutter;
+                  padding-bottom: $vgutter;
+                  text-transform: uppercase;
+                }
+              }
+              > nav {
+                > ul {
+                  @include grid-collapse;
+                  > li {
+                    cursor: pointer;
+                    margin: $vgutter/2 0;
+                    @include grid-column(1 of 2);
+                    > div {
+
+                      > p {
+                        @include type-setting(-1);
+                        font-weight: bold;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#neighborhoods-index.neighborhoods-mobile {
+  @include neighborhoods-index-mobile();
+}
