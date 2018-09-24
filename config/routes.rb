@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#index'
 
-    resources :neighborhoods, only: [:index, :show] do
-      resources :works, only: [:show]
-      resources :meetings, only: [:index, :show]
+    resources :neighborhoods, only: %i[index show] do
+      resources :works, only: %i[show]
+      resources :meetings, only: %i[index show]
       member do
         # TODO: It should be routed to agreements controller
         get  :agreements, action: :show, controller: :agreements
@@ -15,11 +15,12 @@ Rails.application.routes.draw do
     end
 
     resources :works, only: [] do
-      resources :meetings, only: [:index, :show]
+      resources :meetings, only: %i[index show]
+      resources :documents, only: %i[index]
     end
 
     resources :meetings, only: [] do
-      resources :works, only: [:index]
+      resources :works, only: %i[index]
     end
 
     get '/admin', to: redirect('/admin/dashboard')
@@ -38,7 +39,7 @@ Rails.application.routes.draw do
           # Documents Resource routes
           post '/documents/upload', action: :upload, controller: :documents
           delete '/documents/:id', action: :destroy, controller: :documents, as: :document
-          resources :documents_relations, only: [:create, :destroy]
+          resources :documents_relations, only: %i[create destroy]
 
           # Photos Resources routes
           post '/photos/upload', action: :upload, controller: :photos
@@ -48,7 +49,7 @@ Rails.application.routes.draw do
           # Documents Resource routes
           post '/documents/upload', action: :upload, controller: :documents
           delete '/documents/:id', action: :destroy, controller: :documents, as: :document
-          resources :documents_relations, only: [:create, :destroy]
+          resources :documents_relations, only: %i[create destroy]
 
           # Photos Resources routes
           post '/photos/upload', action: :upload, controller: :photos
@@ -58,21 +59,21 @@ Rails.application.routes.draw do
           # Documents Resource routes
           post '/documents/upload', action: :upload, controller: :documents
           delete '/documents/:id', action: :destroy, controller: :documents, as: :document
-          resources :documents_relations, only: [:create, :destroy]
+          resources :documents_relations, only: %i[create destroy]
         end
       end
       # ╰─ End of AJAX Accesible URL's / Path's
 
       resources :users
 
-      resource :dashboard, only: [:show]
+      resource :dashboard, only: %i[show]
 
-      resources :organizations, only: [:show, :new, :create, :index]
+      resources :organizations, only: %i[show new create index]
 
       resources :neighborhoods, :as => "neighborhoods" do
         resources :works
         resources :meetings
-        resource :agreement, except: [:destroy]
+        resource :agreement, except: %i[destroy]
       end
     end
   # ╰─ End of Private Accesible URL's / Path's

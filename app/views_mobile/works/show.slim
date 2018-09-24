@@ -32,6 +32,6 @@ section
       == cell('elements/photos_gallery', @work.photos)
     section
       == cell('section/header', t('common.files'))
-      == cell('mobile_elements/resources_card', t('documents.documents'), size: @work.documents.count, link: root_path)
+      == cell('mobile_elements/resources_card', t('documents.documents'), size: @work.documents.count, link: work_documents_path(@work))
       == cell('mobile_elements/resources_card', t('meetings.meetings'), size: @work.meetings.count, link: work_meetings_path(@work))
 
