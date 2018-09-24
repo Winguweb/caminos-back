@@ -6,7 +6,7 @@ module CurrentAndEnsureDependencyLoader
     meeting
     neighborhood
     work
-    meeting
+    document
   ).freeze
   private_constant :MODELS_TO_LOAD
 

@@ -1,0 +1,18 @@
+@mixin documents-mobile-index() {
+  > main {
+    > div {
+      > main {
+        > section {
+          @include grid-column(16);
+          > div {
+            margin-bottom: $gutter*2;
+          }
+        }
+      }
+    }
+  }
+}
+
+#documents-index.documents-mobile {
+  @include documents-mobile-index();
+}
