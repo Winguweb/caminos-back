@@ -1,5 +1,5 @@
 class AgreementsController < ApplicationController
-  include AgreementsParse
+  include AgreementsUtils
   before_action :check_for_mobile, only: %i[show]
 
   def show

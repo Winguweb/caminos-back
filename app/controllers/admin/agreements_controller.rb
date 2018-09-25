@@ -1,7 +1,7 @@
 module Admin
   class AgreementsController < BaseController
     include CurrentAndEnsureDependencyLoader
-    include AgreementsParse
+    include AgreementsUtils
     helper_method :current_neighborhood
 
     def create

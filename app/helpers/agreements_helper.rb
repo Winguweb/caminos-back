@@ -1,13 +1,8 @@
 module AgreementsHelper
-  def average(neighborhood = @neighborhood)
-    if neighborhood
-      indicators = JSON.parse(neighborhood.agreement.data)
-      return 0 if indicators.blank?
+  include AgreementsUtils
 
-      average = indicators.sum do |indicator|
-        indicator[1]["score"].to_i
-      end
-      average / indicators.length
-    end
+  def average(neighborhood = @neighborhood)
+    agreement_data = parsed_agreement_data(neighborhood.agreement)
+    agreement_data.blank? ? 0 : agreements_average(agreement_data)
   end
 end
