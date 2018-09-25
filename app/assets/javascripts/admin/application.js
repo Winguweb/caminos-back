@@ -15,7 +15,6 @@
 //= require map_show.js
 //= require photos_list.js
 //= require mobile_menu.js
-//= require filterable.js
 //= require filter_toggle.js
 //= require photos_gallery.js
 //= require photos_uploader.js

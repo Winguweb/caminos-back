@@ -9,5 +9,4 @@ class Agreement < ApplicationRecord
   private_class_method def self.read_indicators
     YAML.load_file("#{Rails.root}/config/agreements.yml").with_indifferent_access
   end
-
 end
