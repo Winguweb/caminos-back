@@ -1,16 +1,17 @@
 class AgreementsController < ApplicationController
+  include AgreementsParse
   before_action :check_for_mobile, only: %i[show]
 
   def show
     load_neighborhood
-    if !@neighborhood.agreement.blank? && !@neighborhood.agreement.data.nil?
-      @data = JSON.parse(@neighborhood.agreement.data)
-    else
-      @data = {}
-    end
+    load_agreement_data
   end
 
   private
+
+  def load_agreement_data
+    @agreement_data = parsed_agreement_data(@neighborhood.agreement)
+  end
 
   def load_neighborhood
     @neighborhood = Neighborhood.find(params[:id])
