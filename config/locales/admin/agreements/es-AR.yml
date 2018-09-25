@@ -1,0 +1,5 @@
+es-AR:
+  admin:
+    agreements:
+      index:
+        new_agreement: "Crear acuerdo"

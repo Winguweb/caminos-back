@@ -1,31 +1,32 @@
 = content_for :main_header do
-  == cell('page/header', "", breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhoods_path(current_neighborhood)}, {title: t('agreements.agreement'), href: admin_neighborhood_agreement_path}, {title: t('actions.edit')} ] )
+  == cell('page/header', "", breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhoods_path(current_neighborhood)}, {title: t('agreements.agreement'), href: admin_neighborhood_agreements_path}, {title: t('actions.edit')} ] )
 
-= form_for @agreement, url: admin_neighborhood_agreement_path, html: { class: 'form' } do |f|
+= form_for ['admin', current_neighborhood, @agreement], html: { class: 'form' } do |f|
   .page-section
     section
-      == cell('section/header', t(".edit_agreement"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_agreement_path(current_neighborhood) }, { title: t("actions.save"), submit: true } ])
-      - @indicators.keys.each do |indicator|
+      == cell('section/header', t(".edit_agreement"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_agreements_path(current_neighborhood) }, { title: t("actions.save"), submit: true } ])
+      - @indicators.keys.each do |indicator_key|
+        - @indicator = @indicators[indicator_key]
         article
           header
-            h1=@indicators[indicator][:title]
+            h1=@indicator[:title]
           main
-            - if !@data.nil?
-              input type="number" name="data[#{indicator}]score" required="true" min="0" max="100" value="#{@data[indicator][:score]}"
+            - if @agreement_data.present?
+              input type="number" name="data[#{indicator_key}]score" required="true" min="0" max="100" value="#{@agreement_data[indicator_key][:score]}"
             - else
-              input type="number" name="data[#{indicator}]score" required="true" min="0" max="100"
+              input type="number" name="data[#{indicator_key}]score" required="true" min="0" max="100"
 
           aside
-            -@indicators[indicator][:questions].keys.each do |question|
+            - @indicator[:questions].keys.each do |question|
               .two-thirds-one-third-input
                 div
-                  = @indicators[indicator][:questions][question][:title]
+                  = @indicator[:questions][question][:title]
                 div
-                  select name="data[#{indicator}[questions[#{question}]]]" required="true"
+                  select name="data[#{indicator_key}[questions[#{question}]]]" required="true"
                     option value=""
-                    -@indicators[indicator][:questions][question][:answers].each do |answer|
-                      - if !@data.nil?
-                        - if answer == @data[indicator][:answers][question]
+                    - @indicator[:questions][question][:answers].each do |answer|
+                      - if @agreement_data.present?
+                        - if answer == @agreement_data[indicator_key][:answers][question]
                           option selected="#{answer}" value="#{answer}" = answer
                         -else
                           option value="#{answer}" = answer
