@@ -9,7 +9,8 @@ module Api
       unordered_works = current_neighborhood.works
       works = sort_by_status(unordered_works, all: true)
       categories = Work.categories
-      render :json => {works: sort_by_status(unordered_works, all: true), categories: categories}
+      neighborhood_slug = current_neighborhood.slug
+      render :json => {works: sort_by_status(unordered_works, all: true), categories: categories, neighborhood_slug: neighborhood_slug}
     end
 
     def by_status
@@ -18,7 +19,8 @@ module Api
       unordered_works = current_neighborhood.works.where(:status => status)
       works = sort_by_status(unordered_works)
       categories = works.keys
-      render :json => {works: sort_by_status(unordered_works), categories: categories}
+      neighborhood_slug = current_neighborhood.slug
+      render :json => {works: sort_by_status(unordered_works), categories: categories, neighborhood_slug: neighborhood_slug}
     end
 
     private
@@ -42,7 +44,7 @@ module Api
     end
 
     def load_work
-      @work = current_neighborhood.works.find(params[:id])
+      @work = current_neighborhood.works.friendly.find(params[:id])
     end
 
     def work_params

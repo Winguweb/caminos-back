@@ -1,4 +1,7 @@
 class Agreement < ApplicationRecord
+  extend FriendlyId
+  friendly_id :created_at, use: %i(slugged finders history)
+
   belongs_to :neighborhood
   validates :neighborhood, uniqueness: true
 

@@ -1,6 +1,9 @@
 class Meeting < ApplicationRecord
   include DocumentRelatable
 
+  extend FriendlyId
+  friendly_id :lookup_address, use: %i(slugged finders history)
+
   belongs_to :neighborhood
   has_and_belongs_to_many :works
 

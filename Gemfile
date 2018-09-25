@@ -11,6 +11,7 @@ gem 'carrierwave', '~> 1.0' # provides a simple and extremely flexible way to up
 gem 'carrierwave-aws' # For using native AWS library for File Uploads
 gem 'cells-rails'
 gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
+gem 'friendly_id', '~> 5.2.0'
 gem 'google-api-client', '~> 0.22'
 gem 'i18n-js'
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard

@@ -30,7 +30,7 @@ class NeighborhoodsController < ApplicationController
   private
 
   def load_neighborhood_or_redirect
-    redirect_to root_path unless @neighborhood = Neighborhood.find_by(id: params[:id])
+    redirect_to root_path unless @neighborhood = Neighborhood.friendly.find(params[:id])
   end
 
   def load_meetings

@@ -67,7 +67,7 @@ module Admin
     private
 
     def load_meeting
-      @meeting = current_neighborhood.meetings.find(params[:id])
+      @meeting = current_neighborhood.meetings.friendly_find(params[:id])
     end
 
     def meeting_params

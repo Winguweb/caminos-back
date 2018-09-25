@@ -7,7 +7,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
   div
     nav
       - unless neighborhood.blank?
-        = select_tag "neighborhood", options_from_collection_for_select(neighborhoods, "id", "name", neighborhood.id)
+        = select_tag "neighborhood", options_from_collection_for_select(neighborhoods, "slug", "name", neighborhood.slug)
     - unless neighborhood.blank?
       ul
         - if neighborhood.urbanization

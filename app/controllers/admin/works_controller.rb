@@ -90,7 +90,7 @@ module Admin
     end
 
     def load_work
-      @work = current_neighborhood.works.find(params[:id])
+      @work = current_neighborhood.works.friendly.find(params[:id])
     end
 
     def work_params

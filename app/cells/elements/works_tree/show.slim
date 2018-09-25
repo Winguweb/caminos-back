@@ -10,7 +10,7 @@
             span = works[category].count
         ul
           - works[category].each do |work|
-            li = link_to neighborhood_work_path(work.neighborhood, work) do
+            li = link_to neighborhood_work_path(work.neighborhood.slug, work.slug) do
               div
                 i class="category-#{category}"
                 span = work.name
@@ -23,6 +23,6 @@ javascript:
       el: $('.works-tree-cell'),
       categories: #{Work.categories},
       works: #{works.to_json},
-      neighborhood_id: '#{neighborhood_id}'
+      neighborhood_slug: '#{neighborhood_slug}'
     })
   });
