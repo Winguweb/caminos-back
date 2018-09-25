@@ -80,7 +80,7 @@ module Admin
         i4: {},
         i5: {},
         i6: {}
-       )
+      )
     end
   end
 end

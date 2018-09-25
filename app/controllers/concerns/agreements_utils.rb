@@ -17,7 +17,7 @@ module AgreementsUtils
   end
 
   def total_agreement_values(agreements_data)
-    agreements_data.sum {|d| d[1]["score"].to_i}
+    agreements_data.sum { |d| d[1][:score].to_i }
   end
 
   def agreements_length(agreements_data)
