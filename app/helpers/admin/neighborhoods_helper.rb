@@ -21,12 +21,6 @@ module Admin
           href: admin_neighborhood_agreements_path(neighborhood),
           _show: true
         },
-        # Temporarily removed
-        # {
-        #   title: t('admin.links.neighborhoods.show.activity'),
-        #   href: '#',
-        #   _show: neighborhood.urbanization
-        # }
       ].select do |_hash| _hash[:_show] end
     end
   end
