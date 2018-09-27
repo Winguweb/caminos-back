@@ -20,7 +20,7 @@ module CurrentAndEnsureDependencyLoader
 
       class_name = model_name.classify.constantize
 
-      instance_variable_set("@current_#{model_name}", class_name.find_by(id: id))
+      instance_variable_set("@current_#{model_name}", class_name.friendly.find(id))
     end
 
     define_method :"ensure_#{model_name}" do

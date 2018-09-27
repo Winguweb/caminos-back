@@ -1,10 +1,10 @@
 = content_for :main_header do
-  == cell('page/header', "", breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhoods_path(current_neighborhood)}, {title: t('agreements.agreement'), href: admin_neighborhood_agreements_path}, {title: t('actions.edit')} ] )
+  == cell('page/header', "", breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhoods_path(current_neighborhood)}, {title: t('agreements.agreement'), href: admin_neighborhood_agreement_path}, {title: t('actions.edit')} ] )
 
 = form_for ['admin', current_neighborhood, @agreement], html: { class: 'form' } do |f|
   .page-section
     section
-      == cell('section/header', t(".edit_agreement"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_agreements_path(current_neighborhood) }, { title: t("actions.save"), submit: true } ])
+      == cell('section/header', t(".edit_agreement"), links: [{ title: t("actions.cancel"), url: admin_neighborhood_agreement_path(current_neighborhood) }, { title: t("actions.save"), submit: true } ])
       - @indicators.keys.each do |indicator_key|
         - @indicator = @indicators[indicator_key]
         article

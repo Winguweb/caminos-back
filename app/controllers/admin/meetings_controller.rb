@@ -47,7 +47,7 @@ module Admin
       service = UpdateMeeting.call(@meeting, meeting_params)
 
       if service.success?
-        redirect_to admin_neighborhood_meeting_path(current_neighborhood,@meeting)
+        redirect_to admin_neighborhood_meeting_path(current_neighborhood, @meeting)
       else
         redirect_to edit_admin_neighborhood_meeting_path(@meeting)
       end
@@ -67,7 +67,7 @@ module Admin
     private
 
     def load_meeting
-      @meeting = current_neighborhood.meetings.find(params[:id])
+      @meeting = current_neighborhood.meetings.friendly.find(params[:id])
     end
 
     def meeting_params

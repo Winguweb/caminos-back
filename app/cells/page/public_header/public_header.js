@@ -14,7 +14,7 @@ CDLV.Components['page/public_header'] = Backbone.View.extend({
   neighborhoodChanged: function(ev) {
     var value = ev.target.value
     if (!value) return
-    window.location = "/neighborhoods/" + value
+    window.location = "/barrios/" + value
   }
 
 })

@@ -74,7 +74,7 @@ module Admin
     end
 
     def load_neighborhood
-      return if @neighborhood = Neighborhood.find_by(id: params[:id])
+      return if @neighborhood = Neighborhood.friendly.find(params[:id])
 
       redirect_back(fallback_location: admin_dashboard_path)
     end

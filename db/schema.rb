@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180602212606) do
+ActiveRecord::Schema.define(version: 20180925231808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,9 @@ ActiveRecord::Schema.define(version: 20180602212606) do
     t.text "data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
     t.index ["neighborhood_id"], name: "index_agreements_on_neighborhood_id"
+    t.index ["slug"], name: "index_agreements_on_slug"
   end
 
   create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -53,6 +55,18 @@ ActiveRecord::Schema.define(version: 20180602212606) do
     t.index ["responsible_id"], name: "index_documents_relations_on_responsible_id"
   end
 
+  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
+    t.string "slug", null: false
+    t.uuid "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
   create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
     t.datetime "date", precision: 6
@@ -64,7 +78,9 @@ ActiveRecord::Schema.define(version: 20180602212606) do
     t.string "participants"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
     t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
+    t.index ["slug"], name: "index_meetings_on_slug"
   end
 
   create_table "meetings_works", id: false, force: :cascade do |t|
@@ -88,6 +104,8 @@ ActiveRecord::Schema.define(version: 20180602212606) do
     t.jsonb "extras", default: {}
     t.float "urbanization_score"
     t.string "abbreviation"
+    t.string "slug"
+    t.index ["slug"], name: "index_neighborhoods_on_slug"
   end
 
   create_table "organizations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -196,7 +214,9 @@ ActiveRecord::Schema.define(version: 20180602212606) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "company"
+    t.string "slug"
     t.index ["neighborhood_id"], name: "index_works_on_neighborhood_id"
+    t.index ["slug"], name: "index_works_on_slug"
   end
 
 end

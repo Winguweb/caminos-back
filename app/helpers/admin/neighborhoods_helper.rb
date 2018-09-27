@@ -18,7 +18,7 @@ module Admin
           _show: true
         },{
           title: t('admin.links.neighborhoods.show.agreement'),
-          href: admin_neighborhood_agreements_path(neighborhood),
+          href: admin_neighborhood_agreement_path(neighborhood),
           _show: true
         },
       ].select do |_hash| _hash[:_show] end

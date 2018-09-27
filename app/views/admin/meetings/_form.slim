@@ -1,4 +1,3 @@
-/ = form_for @meeting, url: admin_neighborhood_meetings_path, html: { class: 'form' } do |f|
 = form_for ['admin', current_neighborhood, @meeting], html: { class: 'form' } do |f|
   .page-section
     section
@@ -22,7 +21,7 @@
       == cell('section/header',t(".works_relation"))
       - @works.each do |work|
         .field
-          - if @meeting.works.include? work
+          - if @meeting.works.pluck(:id).include? work.id
             = check_box_tag "meeting[works][]", work.id , 1
           -else
             = check_box_tag "meeting[works][]",work.id
