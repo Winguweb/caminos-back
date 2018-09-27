@@ -1,6 +1,6 @@
 class Neighborhood < ApplicationRecord
   extend FriendlyId
-  friendly_id :name, use: %i(slugged finders history)
+  friendly_id :name, use: %i[slugged finders history]
 
   attribute :extras, :jsonb, default: {}
 

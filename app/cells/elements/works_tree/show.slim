@@ -10,7 +10,7 @@
             span = works[category].count
         ul
           - works[category].each do |work|
-            li = link_to neighborhood_work_path(work.neighborhood.slug, work.slug) do
+            li = link_to neighborhood_work_path(work.neighborhood, work) do
               div
                 i class="category-#{category}"
                 span = work.name

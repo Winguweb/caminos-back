@@ -11,7 +11,7 @@ section
             ol
               - @urbanized.each do |neighborhood|
                 li
-                  = link_to neighborhood_path(neighborhood.slug) do
+                  = link_to neighborhood_path(neighborhood) do
                     p
                       span = neighborhood.abbreviation
                     div
@@ -28,7 +28,7 @@ section
               - @unurbanized.each do |neighborhood|
                 li
                   div
-                    = link_to neighborhood.name, about_neighborhood_path(neighborhood.slug)
+                    = link_to neighborhood.name, about_neighborhood_path(neighborhood)
 
   main
     section

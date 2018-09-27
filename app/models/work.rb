@@ -2,7 +2,7 @@ class Work < ApplicationRecord
   include DocumentRelatable
 
   extend FriendlyId
-  friendly_id :name, use: %i(slugged finders history)
+  friendly_id :name, use: %i[slugged finders history]
 
   belongs_to :neighborhood
   has_and_belongs_to_many :meetings

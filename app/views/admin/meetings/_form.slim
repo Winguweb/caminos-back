@@ -21,9 +21,9 @@
       == cell('section/header',t(".works_relation"))
       - @works.each do |work|
         .field
-          - if @meeting.works.include? work
-            = check_box_tag "meeting[works][]", work.slug , 1
+          - if @meeting.works.pluck(:id).include? work.id
+            = check_box_tag "meeting[works][]", work.id , 1
           -else
-            = check_box_tag "meeting[works][]",work.slug
+            = check_box_tag "meeting[works][]",work.id
 
           = work.name
