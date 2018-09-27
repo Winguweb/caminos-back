@@ -24,5 +24,4 @@ class Agreement < ApplicationRecord
       :formatted_date
     ]
   end
-
 end
