@@ -2,7 +2,7 @@
 - @back_menu = t("neighborhoods.neighborhoods")
 main
   section
-    - if !@data.nil?
+    - if @agreement_data.present?
         ul
           li
             = label_tag do
@@ -12,7 +12,7 @@ main
                   div
                     h1 = t('agreements.general')
                     p = t('agreements.description')
-          - @data.each do |indicator|
+          - @agreement_data.each do |indicator|
             li
               input type="checkbox" id=indicator[0] name="agreement"
               = label_tag indicator[0] do
@@ -35,6 +35,6 @@ main
 
                       div
                         span = answer[1]
-    -else
+    - else
       div
         = t('.no_agreement')
