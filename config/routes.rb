@@ -4,23 +4,23 @@ Rails.application.routes.draw do
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#index'
 
-    resources :neighborhoods, only: %i[index show] do
-      resources :works, only: %i[show]
-      resources :meetings, only: %i[index show]
+    resources :neighborhoods, only: %i[index show], path: "barrios" do
+      resources :works, only: %i[show], path: "obras"
+      resources :meetings, only: %i[index show], path: "reuniones"
       member do
         # TODO: It should be routed to agreements controller
-        get  :agreements, action: :show, controller: :agreements
-        get :about
+        get  :agreement, action: :show, controller: :agreements, path: "acuerdo"
+        get :about, path: "acerca-del-barrio"
       end
     end
 
-    resources :works, only: [] do
-      resources :meetings, only: %i[index show]
-      resources :documents, only: %i[index]
+    resources :works, only: [], path: "obras" do
+      resources :meetings, only: %i[index show], path: "reuniones"
+      resources :documents, only: %i[index], path: "documentos"
     end
 
-    resources :meetings, only: [] do
-      resources :works, only: %i[index]
+    resources :meetings, only: [], path: "reuniones" do
+      resources :works, only: %i[index], path: "obras"
     end
 
     get '/admin', to: redirect('/admin/dashboard')
@@ -73,7 +73,7 @@ Rails.application.routes.draw do
       resources :neighborhoods, :as => "neighborhoods" do
         resources :works
         resources :meetings
-        resources :agreements, except: %i[destroy]
+        resource :agreement, except: %i[destroy]
       end
     end
   # ╰─ End of Private Accesible URL's / Path's

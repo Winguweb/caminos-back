@@ -10,7 +10,7 @@ module Admin
       service = CreateAgreement.call(current_neighborhood, agreement_params)
 
       if service.success?
-        redirect_to admin_neighborhood_agreements_path
+        redirect_to admin_neighborhood_agreement_path
       else
         redirect_to new_admin_neighborhood_agreement_path
       end
@@ -52,9 +52,9 @@ module Admin
       service = UpdateAgreement.call(current_neighborhood, agreement_params, @agreement)
 
       if service.success?
-        redirect_to admin_neighborhood_agreements_path
+        redirect_to admin_neighborhood_agreement_path
       else
-        redirect_to edit_admin_neighborhood_agreemen_path
+        redirect_to edit_admin_neighborhood_agreement_path
       end
     end
 
