@@ -10,9 +10,6 @@ es-AR:
       no_photos: No hay fotos asociadas
     users_table:
       permissions: "Permisos: %{roles}"
-    filterable:
-      categories: Categorías
-      filters: Filtros
   forms:
     user:
       create: Crear Usuario
