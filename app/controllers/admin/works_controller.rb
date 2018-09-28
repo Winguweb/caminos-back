@@ -6,21 +6,6 @@ module Admin
     before_action :restrict_if_responsible, only: [:destroy]
     helper_method :current_neighborhood
 
-    def show
-      ensure_neighborhood; return if performed?
-
-      load_work
-    end
-
-    def new
-
-      ensure_neighborhood; return if performed?
-
-      @categories = Work.categories
-      @status = Work.status
-      @work = current_neighborhood.works.new
-    end
-
     def create
       ensure_neighborhood; return if performed?
 
@@ -37,17 +22,31 @@ module Admin
       end
     end
 
+    def edit
+      ensure_neighborhood; return if performed?
+
+      @categories = Work.categories
+      @status = Work.status
+      load_work
+    end
+
     def index
       ensure_neighborhood; return if performed?
 
       @works = current_neighborhood.works
     end
 
-    def edit
+    def new
       ensure_neighborhood; return if performed?
 
       @categories = Work.categories
       @status = Work.status
+      @work = current_neighborhood.works.new
+    end
+
+    def show
+      ensure_neighborhood; return if performed?
+
       load_work
     end
 
@@ -91,7 +90,7 @@ module Admin
     end
 
     def load_work
-      @work = current_neighborhood.works.find(params[:id])
+      @work = current_neighborhood.works.friendly.find(params[:id])
     end
 
     def work_params

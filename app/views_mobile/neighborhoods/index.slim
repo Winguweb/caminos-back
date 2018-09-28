@@ -14,7 +14,7 @@ aside
           ol
             - @urbanized.each do |neighborhood|
               li
-                = link_to neighborhood_path(neighborhood.id) do
+                = link_to neighborhood_path(neighborhood) do
                   p
                     span
                   div
@@ -32,5 +32,5 @@ aside
               - @unurbanized.each do |neighborhood|
                 li
                   div
-                    = link_to neighborhood.name, about_neighborhood_path(neighborhood.id)
+                    = link_to neighborhood.name, about_neighborhood_path(neighborhood)
 

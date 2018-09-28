@@ -14,10 +14,10 @@ class Elements::WorksTreeCell < Cell::ViewModel
     @works
   end
 
-  def neighborhood_id
+  def neighborhood_slug
     works.each do |category|
       first_work = category[1].first
-      return first_work.neighborhood.id if first_work
+      return first_work.neighborhood.slug if first_work
     end
   end
 

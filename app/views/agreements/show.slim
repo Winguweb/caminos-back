@@ -3,7 +3,7 @@ section
     section.with-gutter
       == cell('section/header', t('agreements.title'))
     section
-      - if !@data.nil?
+      - if @agreement_data.present?
         ul
           li
             = label_tag do
@@ -13,7 +13,7 @@ section
                   div
                     h1 = t('agreements.general')
                     p = t('agreements.description')
-          - @data.each do |indicator|
+          - @agreement_data.each do |indicator|
             li
               input type="checkbox" id=indicator[0] name="agreement"
               = label_tag indicator[0] do
@@ -24,16 +24,15 @@ section
                   main
                     p
                       span
-                        = "#{indicator[1]["score"]}/100"
+                        = "#{indicator[1][:score]}/100"
                     div
                       div
-                      div style="width:#{indicator[1]["score"]}%;"
+                      div style="width:#{indicator[1][:score]}%;"
                 aside
-                  - indicator[1]["answers"].each do |answer|
+                  - indicator[1][:answers].each do |answer|
                     .two-thirds-one-third-input
                       div
                         span = Agreement.indicators[indicator[0].to_sym][:questions][answer[0].to_sym][:title]
-
                       div
                         span = answer[1]
       -else

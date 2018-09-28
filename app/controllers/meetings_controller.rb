@@ -29,7 +29,7 @@ class MeetingsController < ApplicationController
   end
 
   def load_meeting
-    @meeting = current_meetable.meetings.find_by(id: params[:id])
+    @meeting = current_meetable.meetings.friendly.find(params[:id])
   end
   def load_meetings
     @meetings = current_meetable.meetings.reverse

@@ -15,7 +15,7 @@ class WorksController < ApplicationController
   private
 
   def load_work
-    @work = Work.find(params[:id])
+    @work = Work.friendly.find(params[:id])
   end
 
   def load_works

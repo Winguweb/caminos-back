@@ -14,7 +14,8 @@ class CreateAgreement
 
   def create_agreement
 
-    @agreement = Agreement.new(data: agreement_params)
+    @agreement = @neighborhood.agreement || Agreement.new
+    @agreement.assign_attributes(data: agreement_params)
     @agreement.neighborhood = @neighborhood
 
     return @agreement if @agreement.save

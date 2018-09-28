@@ -14,19 +14,19 @@ class Elements::MapShowCell < Cell::ViewModel
       {
         coordinates: model.geometry.coordinates.first.map(&:reverse),
         className: 'base-geometry',
-        url: neighborhood_work_path(model.id)
+        url: neighborhood_work_path(model)
       }
     when RGeo::Feature::MultiPolygon
       {
         coordinates: model.geometry.coordinates.map {|polygons| polygons.first.map(&:reverse)},
         className: 'base-geometry',
-        url: neighborhood_work_path(model.id)
+        url: neighborhood_work_path(model)
       }
     else
       {
         coordinates: [ ],
         className: 'base-geometry',
-        url: neighborhood_work_path(model.id)
+        url: neighborhood_work_path(model)
       }
     end.to_json
   end
@@ -41,7 +41,7 @@ class Elements::MapShowCell < Cell::ViewModel
         coordinates: [feature[:geometry].coordinates],
         icon: image_path(feature.category_icon),
         type: 'marker',
-        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        url: neighborhood_work_path(feature.neighborhood, feature),
         show: true,
         category: feature.category.name,
         status: feature.status,
@@ -52,7 +52,7 @@ class Elements::MapShowCell < Cell::ViewModel
         coordinates: feature[:geometry].coordinates.map(&:reverse),
         icon: image_path(feature.category_icon),
         type: 'marker',
-        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        url: neighborhood_work_path(feature.neighborhood, feature),
         show: true,
         category: feature.category.name,
         status: feature.status,
@@ -63,7 +63,7 @@ class Elements::MapShowCell < Cell::ViewModel
         coordinates: feature[:geometry].coordinates.first.map(&:reverse),
         className: feature.category.name,
         type: 'polygon',
-        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        url: neighborhood_work_path(feature.neighborhood, feature),
         show: true,
         category: feature.category.name,
         status: feature.status,
@@ -74,7 +74,7 @@ class Elements::MapShowCell < Cell::ViewModel
         coordinates: feature[:geometry].coordinates.map {|polygons| polygons.first.map(&:reverse)},
         className: feature.category.name,
         type: 'polygon',
-        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        url: neighborhood_work_path(feature.neighborhood, feature),
         show: true,
         category: feature.category.name,
         status: feature.status,
@@ -85,7 +85,7 @@ class Elements::MapShowCell < Cell::ViewModel
         coordinates: feature[:geometry].coordinates.map(&:reverse),
         className: feature.category.name,
         type: 'polyline',
-        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        url: neighborhood_work_path(feature.neighborhood, feature),
         show: true,
         category: feature.category.name,
         status: feature.status,
@@ -96,7 +96,7 @@ class Elements::MapShowCell < Cell::ViewModel
         coordinates: feature[:geometry].coordinates.map { |lines| lines.map(&:reverse) },
         className: feature.category.name,
         type: 'polyline',
-        url: neighborhood_work_path(feature.neighborhood.id, feature.id),
+        url: neighborhood_work_path(feature.neighborhood, feature),
         show: true,
         category: feature.category.name,
         status: feature.status,

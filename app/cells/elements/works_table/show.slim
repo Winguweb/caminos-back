@@ -20,20 +20,20 @@
       - works.each do |work|
         tr
           td
-            = link_to work_url(id: work.id) do
+            = link_to work_url(id: work) do
               =image_tag work.category_icon
           td
-            = link_to work_url(id: work.id) do
+            = link_to work_url(id: work) do
               span class=work.category
                 = t("categories.#{work.category}")
               span= work.name
               span= work.lookup_address
 
           td
-            = link_to work_url(id: work.id) do
+            = link_to work_url(id: work) do
               span = t("status.#{work.status}")
 
           td
-            = link_to work_url(id: work.id) do
+            = link_to work_url(id: work) do
               span= t('labels.updated_at')
               span= l(work.updated_at, format: :slashes)

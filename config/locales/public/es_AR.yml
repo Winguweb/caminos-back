@@ -1,5 +1,8 @@
 es-AR:
   slogan: Trabajando por la integración urbana
+  agreements:
+    show:
+      no_agreement: "No hay acuerdo"
   neighborhoods:
     about:
       no_meetings: No existen reuniones

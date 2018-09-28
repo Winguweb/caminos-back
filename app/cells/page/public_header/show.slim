@@ -7,7 +7,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
   div
     nav
       - unless neighborhood.blank?
-        = select_tag "neighborhood", options_from_collection_for_select(neighborhoods, "id", "name", neighborhood.id)
+        = select_tag "neighborhood", options_from_collection_for_select(neighborhoods, "slug", "name", neighborhood.slug)
     - unless neighborhood.blank?
       ul
         - if neighborhood.urbanization
@@ -15,7 +15,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
             = active_link_to neighborhood_path(neighborhood), class: controller.controller_name == 'works' ? 'active':'' do
               span= t('.works')
         li
-          = active_link_to agreements_neighborhood_path(neighborhood) do
+          = active_link_to agreement_neighborhood_path(neighborhood) do
             span= t('.agreement')
         li
           = active_link_to about_neighborhood_path(neighborhood) do
