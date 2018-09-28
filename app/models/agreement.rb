@@ -16,6 +16,7 @@ class Agreement < ApplicationRecord
   end
 
   def formatted_date
+    return unless created_at.present?
     created_at.strftime('%d-%m-%Y')
   end
 
