@@ -1,51 +1,33 @@
 CDLV.Components['map_references'] = Backbone.View.extend({
   initialize: function(options) {
-    _.bindAll(
-      this,
-      'centerMap',
-      'createMap',
-      'loadDefaults',
-      'setAccessToken',
-      'setMapContainer',
-      'showBaseGeometry',
-    )
-
-    this.setAccessToken(options.token)
-
-    this.setMapContainer('#map-container')
-
     this.loadDefaults(options)
-
+    this.setAccessToken()
     this.createMap()
-
     this.configureMapForMobile()
-
     this.showBaseGeometry()
-
     this.centerMap(this.base)
   },
-  centerMap: function(polygons) {
+  centerMap: function() {
     this.map.fitBounds(this.baseGeometryFeature.getBounds())
   },
   configureMapForMobile: function() {
     if ($('html').hasClass('touchevents')) {this.map.dragging.disable()}
   },
   createMap: function() {
-    this.map = L.mapbox.map(this.mapContainer[0], this.style)
+    var mapContainer = this.$el.find('#map-container')[0]
+    this.map = L.mapbox.map(mapContainer, this.style)
     this.baseGeometryFeature = new L.FeatureGroup()
     this.map.addLayer(this.baseGeometryFeature)
   },
   loadDefaults: function(options) {
-    this.center = options.defaults.center
     this.base = options.base
+    this.center = options.defaults.center
     this.style = options.defaults.style
+    this.token = options.token
     this.zoom = options.defaults.zoom
   },
-  setAccessToken: function(token) {
-    L.mapbox.accessToken = token
-  },
-  setMapContainer: function(selector) {
-    this.mapContainer = this.$el.find(selector)
+  setAccessToken: function() {
+    L.mapbox.accessToken = this.token
   },
   showBaseGeometry: function() {
     L.geoJSON(this.base).addTo(this.baseGeometryFeature)
