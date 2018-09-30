@@ -5,7 +5,7 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     this.createMap()
     this.configureMapForMobile()
     this.showBaseGeometry()
-    this.centerMap(this.base)
+    this.centerMap()
   },
   centerMap: function() {
     this.map.fitBounds(this.baseGeometryFeature.getBounds())
