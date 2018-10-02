@@ -72,6 +72,7 @@ es-AR:
     responsibles: Responsables
     urbanization_process: Proceso de urbanización
   pictures:
+    picture: Foto
     pictures: Fotos
     upload_photos: Subi Fotos
     no_pictures: No hay imágenes
