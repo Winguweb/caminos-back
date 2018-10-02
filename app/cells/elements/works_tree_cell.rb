@@ -4,6 +4,7 @@ class Elements::WorksTreeCell < Cell::ViewModel
   private
 
   def works
+    return @works unless @works.blank?
     unordered_works = model
     @works = {}
     Work.categories.each do |category|

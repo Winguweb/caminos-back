@@ -8,6 +8,8 @@
       i
       div
         img
+    span
+      = "#{photos.size} #{photos.size > 1 ? t('pictures.pictures') : t('pictures.picture')}"
 
 javascript:
   $(function() {

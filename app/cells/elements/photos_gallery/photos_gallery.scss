@@ -1,4 +1,5 @@
 @mixin photos-gallery() {
+  position: relative;
   @include grid-collapse;
   .slick-arrow::before,
   .slick-arrow::after {
@@ -63,6 +64,16 @@
       display: block;
     }
   }
+  > span {
+    background: color($white, 0.5);
+    bottom: 3px;
+    color: $black;
+    display: none;
+    font-weight: 600;
+    padding: $gutter/2 $gutter;
+    position: absolute;
+    right: 0;
+  }
 }
 @mixin photos-gallery-mobile() {
   @include grid-collapse;
@@ -72,6 +83,12 @@
       padding: 0;
       width: 100vw;
     }
+  }
+  .slick-slide {
+    margin: 3px 0;
+  }
+  > span {
+    display: block;
   }
 }
 
