@@ -9,8 +9,6 @@ class NeighborhoodsController < ApplicationController
 
   def show
     load_neighborhood_or_redirect; return if performed?
-
-    @filters = params[:filters].blank? ? nil : params[:filters].split(',')
   end
 
   def about
