@@ -126,19 +126,36 @@
               box-shadow: 0 13px 8px -3px rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.14), 0 3px 9px 0 rgba(0, 0, 0, 0.12);
               display: block;
               margin: $gutter*4 $gutter*3 $gutter*4;
+              min-height: 200px;
               padding: $gutter*2;
               &:hover {
-                background-color: $white;
-                color: $fuchsia;
-                > p {
-                  color: $fuchsia;
-                }
+
               }
               > p {
-                @include type-setting(4);
-                color: $white;
                 > strong {
-                  display: block;
+                  @include type-setting(4);
+                  color: $white;
+                  display: inline-block;
+                  font-weight: 300;
+                  min-width: 240px;
+                  width: 50%;
+                }
+                > span {
+                  @include type-setting(5);
+                  background-color: white;
+                  border-radius: 2px;
+                  clear: both;
+                  color: $fuchsia;
+                  display: inline-block;
+                  margin-top: $gutter;
+                  min-width: 240px;
+                  padding: $gutter;
+                  text-align: center;
+                  vertical-align: bottom;
+                  width: calc(50% - #{$gutter});
+                  &:hover {
+                    color: $light-blue;
+                  }
                 }
               }
             }
