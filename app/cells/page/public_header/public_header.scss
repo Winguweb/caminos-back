@@ -1,22 +1,24 @@
 .page-public-header-cell {
   @include grid-container;
   $navbar-height: 74px;
+  background-color: #009EE2;
   box-shadow: 0 4px 4px color($light-shadow, 0.1);
   height: $navbar-height;
   position: relative;
   z-index: 1001;
   > div:first-of-type {
+    box-sizing: border-box;
+    height: 100%;
     padding: $gutter;
     > a {
-      background: transparent image-url("logos/caminos_logo.svg") no-repeat;
+      background: transparent image-url("logos/caminos_white_logo.svg") no-repeat;
       background-size: contain;
       display: inline-block;
-      height: 35px;
-      margin: 3px 0 4px;
+      height: 100%;
+      margin: 0;
       overflow: hidden;
       padding: 0px;
       vertical-align: top;
-      width: 100px;
       > span{
         display: inline-block;
         @include hide-text;
