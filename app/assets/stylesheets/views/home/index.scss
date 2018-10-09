@@ -126,7 +126,6 @@
               box-shadow: 0 13px 8px -3px rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.14), 0 3px 9px 0 rgba(0, 0, 0, 0.12);
               display: block;
               margin: $gutter*4 $gutter*3 $gutter*4;
-              min-height: 200px;
               padding: $gutter*2;
               &:hover {
 
@@ -138,23 +137,24 @@
                   display: inline-block;
                   font-weight: 300;
                   min-width: 240px;
+                  vertical-align: middle;
                   width: 50%;
                 }
-                > span {
-                  @include type-setting(5);
-                  background-color: white;
-                  border-radius: 2px;
-                  clear: both;
-                  color: $fuchsia;
-                  display: inline-block;
-                  margin-top: $gutter;
-                  min-width: 240px;
-                  padding: $gutter;
-                  text-align: center;
-                  vertical-align: bottom;
-                  width: calc(50% - #{$gutter});
-                  &:hover {
-                    color: $light-blue;
+                > strong:last-of-type {
+                  text-align: right;
+                  > span {
+                    @include type-setting(5);
+                    background-color: white;
+                    border-radius: 2px;
+                    color: $fuchsia;
+                    display: inline-block;
+                    min-width: 208px;
+                    padding: $gutter;
+                    text-align: center;
+                    vertical-align: middle;
+                    &:hover {
+                      color: $light-blue;
+                    }
                   }
                 }
               }
@@ -342,6 +342,19 @@
                 width: 80%;
                 > p {
                   @include type-setting(5);
+                  > strong:last-of-type {
+                    text-align: center;
+                  }
+                }
+              }
+            }
+            > div:first-of-type {
+              > a {
+                > p {
+                  > strong:last-of-type {
+                    margin-top: $gutter;
+                    text-align: center;
+                  }
                 }
               }
             }
