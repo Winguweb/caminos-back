@@ -109,6 +109,7 @@ CDLV.Components['map_edit'] = Backbone.View.extend({
   },
   createMap: function() {
     this.map = L.mapbox.map(this.mapContainer[0], this.style, {scrollWheelZoom: false})
+    L.mapbox.styleLayer('mapbox://styles/rockarloz/cjhhzkc8l5u5a2srtipnad8lu').addTo(this.map);
     this.editableGeometryFeature = new L.FeatureGroup()
     this.baseGeometryFeature = new L.FeatureGroup()
     this.map.addLayer(this.editableGeometryFeature)

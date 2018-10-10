@@ -29,6 +29,11 @@ CDLV.Components['map_references'] = Backbone.View.extend({
 
     this.zoomMap(this.base)
   },
+  addEvents: function(element) {
+    element.on('click', function (evt) {
+      window.location = evt.target.options.url
+    })
+  },
   centerMap: function(polygons) {
     var polygonsCenters = polygons.map(function(polygon) {
       var center = this.getCenter(polygon)
@@ -43,6 +48,7 @@ CDLV.Components['map_references'] = Backbone.View.extend({
   },
   createMap: function() {
     this.map = L.mapbox.map(this.mapContainer[0], this.style)
+    L.mapbox.styleLayer('mapbox://styles/rockarloz/cjhhzkc8l5u5a2srtipnad8lu').addTo(this.map);
     this.baseGeometryFeature = new L.FeatureGroup()
     this.map.addLayer(this.baseGeometryFeature)
   },
@@ -80,11 +86,13 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     var center = this.getCenter(polygon)
     var coordinates = new L.latLng(center.x, center.y)
 
-    new L.Marker(coordinates, {
+    var newMarker = new L.Marker(coordinates, {
       icon: new L.divIcon({
-        html: '<div><p class="marker-name ' + polygon.className + '">' + polygon.name + '</p><p class="reference-marker ' + polygon.className + '"><span>' + polygon.reference + '</span></p></div>'
-      })
+        html: '<div><p class="marker-name ' + polygon.className + '">' + polygon.name + '</p><p class="reference-marker ' + polygon.className + '"><span>' + polygon.reference + '</span></p></div>',
+      }),
+      url: polygon.url
     }).addTo(this.baseGeometryFeature)
+    this.addEvents(newMarker)
   },
   zoomMap: function(polygons) {
     var polygonsCenters = polygons.map(function(polygon) {

@@ -50,7 +50,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     element.on('mouseover', function (evt) {
       var status = I18n.t('js.status.' + evt.target.options.status)
       var popupOptions = {
-        position: {left: evt.layerPoint.x + 'px', top: evt.layerPoint.y + 'px'},
+        position: {left: evt.containerPoint.x + 'px', top: evt.containerPoint.y + 'px'},
         html: '<p>' + evt.target.options.name + '</p><span class="status-' + evt.target.options.status + '">' + status + '</span>'
       }
       this.showPopup(popupOptions)
@@ -83,6 +83,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   createMap: function() {
     this.map = L.mapbox.map(this.mapContainer[0], this.style, {scrollWheelZoom: false})
+    L.mapbox.styleLayer('mapbox://styles/rockarloz/cjhhzkc8l5u5a2srtipnad8lu').addTo(this.map);
     this.baseGeometryFeature = new L.FeatureGroup()
     this.map.addLayer(this.baseGeometryFeature)
   },

@@ -33,6 +33,6 @@ es-AR:
     over_work_card:
   page:
     public_header:
-      about: Info del barrio
-      agreement: Medir el impacto
-      works: Seguir las obras
+      about: Sobre el barrio
+      agreement: Indicadores de Impacto
+      works: Obras
