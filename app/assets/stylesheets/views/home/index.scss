@@ -76,6 +76,19 @@
           }
         }
       }
+      > section:last-of-type {
+        > div {
+          height: 500px;
+          > img {
+            height: auto;
+            margin-top: 10px;
+            width: 100vw;
+          }
+          > i {
+            top: -27px;
+          }
+        }
+      }
       > section:first-of-type {
         font-family: 'Roboto Slab';
         > div:first-of-type {
@@ -330,6 +343,20 @@
             }
           }
         }
+        > section:last-of-type {
+          height: 730px;
+          > div {
+            height: 260px;
+            > img {
+              height: auto;
+              margin-top: 10px;
+              width: 100vw;
+            }
+            > i {
+              top: -27px;
+            }
+          }
+        }
         > section:first-of-type {
           > div:first-of-type {
             > div {
@@ -441,24 +468,178 @@
             }
           }
         }
-        > section ~ section:nth-of-type(even) {
+        > section ~ section:nth-of-type(1) {
           > div {
+            @include small-diagonal-right-up;
+            position: relative;
             > img {
-              height: 370px;
+              margin: 0 #{-$gutter*3};
               position: relative;
-              transform: translateX(-50%);
-              width: auto;
+              vertical-align: top;
+              width: calc(100% + #{$gutter*6});
+              z-index: -3;
+            }
+            > i {
+              left: $gutter;
+              &:before {
+                transform: rotateZ(-41deg) translateY(-76px) translateX(-10px);
+              }
             }
           }
         }
-        > section ~ section:nth-of-type(odd) {
+        > section ~ section:nth-of-type(2) {
+          > div {
+            @include small-diagonal-right-up;
+            height: auto;
+            position: relative;
+            > img {
+              margin: 0 #{-$gutter*3};
+              position: relative;
+              vertical-align: top;
+              width: calc(100% + #{$gutter*6});
+              z-index: -3;
+            }
+            > i {
+              left: $gutter;
+              &:before {
+                transform: rotateZ(-41deg) translateY(-76px) translateX(-10px);
+              }
+            }
+          }
+        }
+        > section:last-of-type {
+          height: 610px;
+        }
+        > section:first-of-type {
+          > div:first-of-type {
+            > div {
+              float: none !important;
+              position: static !important;
+              width: 100% !important;
+              > a {
+                margin: $gutter*4 $gutter*2 $gutter*4 !important;
+                max-width: 100%;
+                width: auto;
+                > p {
+                }
+              }
+              > div {
+                padding: $gutter*2;
+                position: static !important;
+                transform: none !important;
+                > a {
+                  margin: $gutter auto !important;
+                  > p {
+                  }
+                }
+              }
+            }
+          }
+          > div:last-of-type {
+            > p {
+              text-align: left;
+              @include type-setting(0);
+              & + p {
+              }
+            }
+          }
+        }
+        > footer {
+          > div {
+            float: none;
+            width: 100%;
+            > a {
+              text-align: center;
+              > img {
+                float: none;
+                margin: 0 auto;
+                max-width: 300px;
+                width: 80%;
+              }
+              > span {
+
+              }
+            }
+          }
+          > div:last-of-type {
+            text-align: center;
+            width: 100%;
+            > a {
+              > img {
+                float: none;
+                margin: 0 auto;
+                margin-bottom: $gutter*3;
+                max-width: 300px;
+                width: 80%;
+              }
+              &:first-of-type {
+              }
+            }
+          }
+        }
+        > section + section {
+          > header {
+            > h1 {
+              @include type-setting(4);
+              &:before, &:after {
+              }
+              &:before {
+              }
+              &:after {
+              }
+            }
+          }
+          > p {
+          }
           > div {
             > img {
-              height: 370px;
-              position: relative;
-              transform: translateX(-50%);
-              width: auto;
             }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 426px) {
+    > main {
+      > .main-section {
+        > nav {
+          > div:first-of-type {
+            > img {
+            }
+          }
+          > div:last-of-type {
+            > span {
+              @include type-setting(0);
+              > span {
+              }
+            }
+          }
+        }
+        > section ~ section:nth-of-type(1) {
+          > div {
+            > img {
+            }
+            > i {
+              &:before {
+              }
+            }
+          }
+        }
+        > section ~ section:nth-of-type(2) {
+          > div {
+            > img {
+            }
+            > i {
+              &:before {
+              }
+            }
+          }
+        }
+        > section:last-of-type {
+          height: 680px;
+          > div {
+            height: 140px;
           }
         }
         > section:first-of-type {
@@ -551,6 +732,7 @@
     }
   }
 }
+
 
 @mixin diagonal-left {
   &:before {
