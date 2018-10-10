@@ -63,17 +63,17 @@
     }
   }
   p.reference-marker {
+    @include transform(translate3d(-50%, -50%, 0));
     border: $border solid $blue;
     border-radius: 100%;
     box-sizing: content-box;
     display: inline-block;
+    font-family: $font-sans;
     height: $outer-diameter;
-    margin: $gutter;
     margin: 0;
     position: absolute;
     vertical-align: middle;
     width: $outer-diameter;
-    @include transform(translate3d(-50%, -50%, 0));
     &::before {
       background-color: $blue;
       border-radius: 100%;
@@ -88,11 +88,12 @@
     > span {
       @include text-color($white, 1);
       @include transform(translate3d(-50%, -50%, 0));
-      @include type-setting(-2);
+      font-size: 13px;
       font-weight: bold;
       left: 50%;
       position: absolute;
-      top: calc(50% - 1px);
+      text-transform: uppercase;
+      top: 50%;
     }
     &.unurbanized {
       border: none;

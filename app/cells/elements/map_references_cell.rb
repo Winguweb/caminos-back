@@ -11,21 +11,24 @@ class Elements::MapReferencesCell < Cell::ViewModel
           coordinates: neighborhood.geometry.coordinates.first.map(&:reverse),
           className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
           name: neighborhood.name,
-          reference: neighborhood.abbreviation
+          reference: neighborhood.abbreviation,
+          url: neighborhood_path(neighborhood.slug)
         }
       when RGeo::Feature::MultiPolygon
         {
           coordinates: neighborhood.geometry.coordinates.first.first.map(&:reverse),
           className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
           name: neighborhood.name,
-          reference: neighborhood.abbreviation
+          reference: neighborhood.abbreviation,
+          url: neighborhood_path(neighborhood.slug)
         }
       else
         {
           coordinates: [],
           className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
           name: neighborhood.name,
-          reference: neighborhood.abbreviation
+          reference: neighborhood.abbreviation,
+          url: neighborhood_path(neighborhood.slug)
         }
       end
     end.to_json
