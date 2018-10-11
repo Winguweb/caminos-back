@@ -10,10 +10,10 @@ es-AR:
       public_spaces: Espacios Públicos
       home: Vivienda
       energy: "Electricidad y Alumbrado"
-      health: Salud
+      health: Educación y Salud
       infrastructure: Equipamiento
       public: Calles y Plazas
-      sewer: Cloacas
+      sewer: Cloacas y Pluviales
       trash: Basura
       water: Agua
     filer:
