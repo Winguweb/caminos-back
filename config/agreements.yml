@@ -8,7 +8,7 @@ i1:
       - text: "No"
         weight: 0
       - text: "Sí"
-        weight: 0
+        weight: 3
       - text: "Sin información"
         weight: 0
     q2:
@@ -17,9 +17,9 @@ i1:
       - text: "No"
         weight: 0
       - text: "Sí, pero el proyecto aún no fue aprobado"
-        weight: 0
+        weight: 1.5
       - text: "Sí, el proyecto se encuentra aprobado"
-        weight: 0
+        weight: 3
       - text: "Sin información"
         weight: 0
     q3:
@@ -28,9 +28,9 @@ i1:
       - text: "No"
         weight: 0
       - text: "Sí, pero el proyecto aún no fue aprobado"
-        weight: 0
+        weight: 2
       - text: "Sí, el proyecto se encuentra aprobado"
-        weight: 0
+        weight: 4
       - text: "Sin información"
         weight: 0
     q4:
@@ -39,9 +39,9 @@ i1:
       - text: "No"
         weight: 0
       - text: "Sí, pero el proyecto aún no fue aprobado"
-        weight: 0
+        weight: 1.5
       - text: "Sí, el proyecto se encuentra aprobado"
-        weight: 0
+        weight: 3
       - text: "Sin información"
         weight: 0
     q5:
@@ -50,22 +50,22 @@ i1:
       - text: "No"
         weight: 0
       - text: "Sí, pero el proyecto aún no fue aprobado"
-        weight: 0
+        weight: 1
       - text: "Sí, el proyecto se encuentra aprobado"
-        weight: 0
+        weight: 2
       - text: "No aplica"
         weight: 0
       - text: "Sin información"
         weight: 0
     q6:
-      title: "¿Se prevé el mejoramiento de las vivienda existente?"
+      title: "¿Se prevé el mejoramiento de la vivienda existente?"
       answers:
       - text: "No"
         weight: 0
       - text: "Sí, pero el proyecto aún no fue aprobado"
-        weight: 0
+        weight: 1.5
       - text: "Sí, el proyecto se encuentra aprobado"
-        weight: 0
+        weight: 3
       - text: "No Aplica"
         weight: 0
       - text: "Sin información"
@@ -76,22 +76,22 @@ i1:
       - text: "No"
         weight: 0
       - text: "Sí, pero el proyecto aún no fue aprobado"
-        weight: 0
+        weight: 1.5
       - text: "Sí, el proyecto se encuentra aprobado"
-        weight: 0
+        weight: 3
       - text: "No aplica"
         weight: 0
       - text: "Sin información"
         weight: 0
     q8:
-      title: "¿Se contemplan mecanismos que promuevan la permanencia? (aplicación de tarifa social, financiamiento acorde a los ingresos de los beneficiarios, ect)"
+      title: "¿Se contemplan mecanismos que promuevan la permanencia? (aplicación de tarifa social, financiamiento acorde a los ingresos de los beneficiarios, etc)"
       answers:
       - text: "No"
         weight: 0
       - text: "Sí, pero el proyecto aún no fue aprobado"
-        weight: 0
+        weight: 1.5
       - text: "Sí, el proyecto se encuentra aprobado"
-        weight: 0
+        weight: 3
       - text: "Sin información"
         weight: 0
 i2:
@@ -103,13 +103,13 @@ i2:
       - text: "Todas las conexiones son informales"
         weight: 0
       - text: "La mayoría de las conexiones son informales"
-        weight: 0
+        weight: 0.50
       - text: "La mayoría de las conexiones son formales, pero la calidad del servicio es precaria."
-        weight: 0
+        weight: 2
       - text: "La mayoría de las conexiones son formales, y la calidad del servicio es buena."
-        weight: 0
+        weight: 3
       - text: "Todas las conexiones son formales y la calidad del servicio es buena."
-        weight: 0
+        weight: 4
       - text: "Sin información"
         weight: 0
     q2:
@@ -118,12 +118,12 @@ i2:
       - text: "Todas las conexiones son informales"
         weight: 0
       - text: "La mayoría de las conexiones son informales"
-        weight: 0
+        weight: 1
       - text: "La mayoría de las conexiones son formales"
-        weight: 0
-      - text: "La mayoría de las conexiones son formales"
-        weight: 0
+        weight: 3
       - text: "Todas las conexiones son formales"
+        weight: 4
+      - text: "Sin información"
         weight: 0
     q3:
       title: "¿Qué extensión del barrio posee conexión formal al tendido eléctrico?"
@@ -131,12 +131,12 @@ i2:
       - text: "Todas las conexiones son informales"
         weight: 0
       - text: "La mayoría de las conexiones son informales"
-        weight: 0
+        weight: 1
       - text: "La mayoría de las conexiones son formales"
-        weight: 0
-      - text: "La mayoría de las conexiones son formales"
-        weight: 0
+        weight: 2
       - text: "Todas las conexiones son formales"
+        weight: 3
+      - text: "Sin información"
         weight: 0
     q4:
       title: "¿El barrio cuenta con recolección de residuos puerta a puerta, en un punto de arrojo o no hay recolección de basura?"
@@ -144,20 +144,20 @@ i2:
       - text: "No hay recolección de residuos formal"
         weight: 0
       - text: "La recolección de residuos formal se realiza en puntos de arrojo"
-        weight: 0
+        weight: 1
       - text: "La recolección de residuos formal se realiza puerta a puerta o en la cuadra"
-        weight: 0
+        weight: 3
       - text: "Sin información"
         weight: 0
     q5:
       title: "¿El barrio cuenta con alumbrado público?"
       answers:
       - text: "No hay alumbrado público"
-        weight: 0
+        weight: 1
       - text: "Hay alumbrado público sólo en arterias principales"
-        weight: 0
+        weight: 2
       - text: "Todas las calles cuentan con alumbrado público"
-        weight: 0
+        weight: 3
       - text: "Sin información"
         weight: 0
 i3:
@@ -168,21 +168,17 @@ i3:
       answers:
       - text: "No hay centro de salud a menos de 10 cuadras"
         weight: 0
-      - text: "Hay centro de salud a menos de 10 cuadras, pero con capacidad insuficiente"
-        weight: 0
-      - text: "Hay centro de salud a menos de 10 cuadras con capacidad suficiente"
-        weight: 0
+      - text: "Hay centro de salud a menos de 10 cuadras"
+        weight: 2
       - text: "Sin información"
         weight: 0
     q2:
-      title: "¿El barrio cuenta con un hospital, con capacidad suficiente, y en un radio de 15 cuadras desde el centro del barrio?"
+      title: "¿El barrio cuenta con un hospital, con capacidad suficiente, y en un radio de 15 cuadras?"
       answers:
       - text: "No hay hospital a menos de 15 cuadras"
         weight: 0
-      - text: "Hay hospital a menos de 15 cuadras, pero con capacidad insuficiente"
-        weight: 0
-      - text: "Hay hospital a menos de 15 cuadras con capacidad suficiente"
-        weight: 0
+      - text: "Hay hospital a menos de 15 cuadras"
+        weight: 1
       - text: "Sin información"
         weight: 0
     q3:
@@ -191,9 +187,9 @@ i3:
       - text: "No ingresan"
         weight: 0
       - text: "Ingresan, pero sólo a las arterias principales o con grandes demoras de tiempo"
-        weight: 0
+        weight: 1
       - text: "Ingresan a todos los sectores del barrio de manera rápida"
-        weight: 0
+        weight: 2
       - text: "Sin información"
         weight: 0
     q4:
@@ -202,9 +198,9 @@ i3:
       - text: "No hay escuelas primarias iniciales a menos de 10 minutos a pie"
         weight: 0
       - text: "Hay escuelas iniciales a menos de 10 minutos a pie, pero hay problemas de vacantes"
-        weight: 0
+        weight: 0.50
       - text: "Hay escuelas iniciales a menos de 10 minutos a pie, y no hay problemas de vacantes"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
     q5:
@@ -213,9 +209,9 @@ i3:
       - text: "No hay escuelas primarias a menos de 10 minutos a pie"
         weight: 0
       - text: "Hay escuelas primarias a menos de 10 minutos a pie, pero hay problemas de vacantes"
-        weight: 0
+        weight: 1
       - text: "Hay escuelas primarias a menos de 10 minutos a pie, y no hay problemas de vacantes"
-        weight: 0
+        weight: 2
       - text: "Sin información"
         weight: 0
     q6:
@@ -224,9 +220,9 @@ i3:
       - text: "No hay escuelas secundarias a menos de 10 minutos a pie"
         weight: 0
       - text: "Hay escuelas secundarias a menos de 10 minutos a pie, pero hay problemas de vacantes"
-        weight: 0
+        weight: 1
       - text: "Hay escuelas a menos de 10 minutos a pie, y no hay problemas de vacantes"
-        weight: 0
+        weight: 2
       - text: "Sin información"
         weight: 0
     q7:
@@ -235,28 +231,27 @@ i3:
       - text: "No hay bachilleratos populares"
         weight: 0
       - text: "Hay bachilleratos populares, pero hay problemas de vacantes"
-        weight: 0
+        weight: 0.50
       - text: "Hay bachilleratos populares y no hay problemas de vacantes"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
     q8:
-      title: "¿Existen en el barrio espacios verdes, tales como canchas de fútbol, parques o plazas públicas?"
+      title: "¿ Existen en el barrio espacios verdes, tales como parques o plazas públicas?"
       answers:
       - text: "No"
         weight: 0
       - text: "Si"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
     q9:
-      title: "¿El barrio cuenta con oficinas que garanticen el acceso a la justicia
-        de sus habitantes?"
+      title: "¿El barrio cuenta con oficinas que garanticen el acceso a la justicia de sus habitantes?"
       answers:
       - text: "No"
         weight: 0
       - text: "Si"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
     q10:
@@ -265,11 +260,11 @@ i3:
       - text: "No"
         weight: 0
       - text: "Si"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
     q11:
-      title: "¿Existen pasillos de menos de 3metros de ancho?"
+      title: "¿Existen pasillos de menos de 3 metros de ancho?"
       answers:
       - text: "No"
         weight: 0
@@ -285,108 +280,108 @@ i3:
       - text: "No"
         weight: 0
       - text: "Si"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
 i4:
   title: "Vivienda"
   questions:
     q1:
-      title: "¿Existen viviendas que no cumplan con los requisitos de habitabilidad mínimos (iluminación, materiales de calidad, ventilación)?"
+      title: "¿Las viviendas cumplen con los requisitos de habitabilidad mínimos (iluminación, materiales de calidad, ventilación)?"
       answers:
       - text: "Ninguna vivienda cumple con los requisitos de habitabilidad mínimos"
         weight: 0
       - text: "La mayoría de las viviendas NO cumple con los requisitos de habitabilidad mínimos"
-        weight: 0
+        weight: 1
       - text: "La mayoría de las viviendas cumple con los requisitos de habitabilidad mínimos"
-        weight: 0
+        weight: 2.5
       - text: "Todas las viviendas cumplen con los requisitos de habitabilidad mínimos"
-        weight: 0
+        weight: 4
     q2:
       title: "¿Cuál es el índice de hacinamiento del barrio?"
       answers:
       - text: "Hasta 2.4 (sin hacinamiento)"
         weight: 0
-      - text: "De 2.5 a 4.9 ( hacinamiento medio)"
-        weight: 0
+      - text: "De 2.5 a 4.9 (hacinamiento medio)"
+        weight: 2
       - text: "Más de 5.0 (hacinamiento crítico)"
-        weight: 0
+        weight: 3
       - text: "Sin información"
         weight: 0
 i5:
   title: "Participación"
   questions:
     q1:
-      title: "¿Existe información oficial sobre los proyectos de urbanización?"
+      title: "Información oficial ¿Existe información oficial sobre los proyectos de urbanización?"
       answers:
       - text: "No existe información sobre los proyectos"
         weight: 0
       - text: "La información brindada no tiene respaldo oficial –es informal-"
-        weight: 0
+        weight: 1.5
       - text: "La información brindada es oficial"
-        weight: 0
+        weight: 3
     q2:
-      title: "¿La información es adecuada en términos de lenguaje para su comprensión?"
+      title: "Información adecuada para comprensión ¿La información es adecuada en términos de lenguaje para su comprensión?"
       answers:
       - text: "La información no adecuada para su comprensión"
         weight: 0
-      - text: "Solo alguna información es adecuada (hay personas que manifiestan dudas en su comprensión)"
-        weight: 0
+      - text: "Sólo alguna información es adecuada (hay personas que manifiestan dudas en su comprensión)"
+        weight: 1.5
       - text: "Toda la información es adecuada para la compresión"
-        weight: 0
+        weight: 3
       - text: "No aplica"
         weight: 0
     q3:
-      title: "¿Existen espacios de consulta periódicos y abiertos abiertos donde se dé información oficial sobre los proyectos a implementar en el barrio?"
+      title: "Espacios informativos abiertos ¿Existen espacios de consulta periódicos y abiertos abiertos donde se dé información oficial sobre los proyectos a implementar en el barrio?"
       answers:
       - text: "No existen espacios de información abiertos"
         weight: 0
       - text: "Existen espacios de información abiertos, pero las reuniones no son previsibles o son espaciadas en el tiempo"
-        weight: 0
+        weight: 2
       - text: "Existen espacios de información abiertos periódicos y previsibles."
-        weight: 0
+        weight: 4
       - text: "Sin información"
         weight: 0
     q4:
-      title: "¿La información está disponible para su difusión de forma accesible?"
+      title: "Disponibilidad y difusión de información. ¿La información está disponible para su difusión de forma accesible?"
       answers:
       - text: "La información no está disponible para su difusión."
         weight: 0
-      - text: "La información está disponible, pero los medios de difusión son de difícil acceso (“EJ”: disponible en “boletín oficial”)"
-        weight: 0
+      - text: "La información está disponible, pero los medios de difusión son de difícil acceso (EJ: disponible en “boletín oficial”)"
+        weight: 1
       - text: "La información está disponible a través de distintos formatos, pero presenta falencias en los esquemas de difusión."
-        weight: 0
+        weight: 1.5
       - text: "La información es ampliamente facilitada por los organismos correspondientes a los propios afectados (en medios digitales e impresos)."
-        weight: 0
+        weight: 2
     q5:
-      title: "Participación y mesa de trabajo¿Existe una mesa de trabajo con funcionarios de gobierno donde los habitantes del barrio y/o sus representantes participen del proceso de toma de decisiones?"
+      title: "Participación y mesa de trabajo ¿Existe una mesa de trabajo con funcionarios de gobierno donde los habitantes del barrio y/o sus representantes participen del proceso de toma de decisiones?"
       answers:
       - text: "No existe una mesa de trabajo con funcionarios con capacidad de decisión"
         weight: 0
       - text: "Existe una mesa de trabajo con funcionarios con capacidad de decisión, pero restringida a ciertos sectores del barrio."
-        weight: 0
+        weight: 1
       - text: "Existe una mesa de trabajo abierta a todo el barrio y otra restringida a ciertos sectores."
-        weight: 0
+        weight: 2
       - text: "Existe una única mesa de trabajo abierta a todo el barrio"
-        weight: 0
+        weight: 3
     q6:
       title: "¿La mesa de trabajo se reúne periódicamente?"
       answers:
       - text: "No existe mesa de trabajo que se reúna periódicamente"
         weight: 0
       - text: "La mesa de trabajo se reúne intermitentemente, sin periodicidad."
-        weight: 0
+        weight: 0.5
       - text: "La mesa de trabajo tiene funcionamiento continuo y periódico"
-        weight: 0
+        weight: 1
     q7:
       title: "¿La mesa de trabajo se realiza en horarios y lugares compatibles para garantizar el máximo de participación barrial?"
       answers:
       - text: "La mesa de trabajo no se realiza en horarios y lugares que garanticen el máximo de participación vecinal"
         weight: 0
       - text: "Solo algunas mesas de trabajo se realizan en horarios y lugares que garanticen el máximo de participación vecinal"
-        weight: 0
+        weight: 0.5
       - text: "Todas las mesas de trabajo realizan en horarios y lugares que garanticen el máximo de participación vecinal"
-        weight: 0
+        weight: 1
       - text: "No aplica"
         weight: 0
     q8:
@@ -395,63 +390,63 @@ i5:
       - text: "A la mesa no asisten funcionarios con capacidad de decisión"
         weight: 0
       - text: "Generalmente a la mesa asiste un funcionario con capacidad de decisión."
-        weight: 0
+        weight: 2
       - text: "A todas las mesas asiste un funcionario con capacidad de decisión"
-        weight: 0
+        weight: 4
 i6:
   title: "Sostenibilidad barrial"
   questions:
     q1:
-      title: "¿El mejoramiento en el hogar fue gratuito o pago?"
+      title: "El mejoramiento en el hogar definido ¿es gratuito o pago?"
       answers:
-      - text: "El mejoramiento del hogar fue gratuito"
-        weight: 0
-      - text: "El mejoramiento del hogar fue pago"
-        weight: 0
+      - text: "El mejoramiento del hogar previsto es gratuito"
+        weight: 2
+      - text: "El mejoramiento del hogar previsto es pago"
+        weight: 1
       - text: "No aplica"
         weight: 0
       - text: "Sin información"
         weight: 0
     q2:
-      title: "BIS En caso de ser pago, ¿Qué mecanismos de pago y financiamiento se ofreció al propietario?"
+      title: "En caso de ser pago ¿qué mecanismos de pago y financiamiento se ofrece?"
       answers:
       - text: "Microcredito emitido por el organismo encargado del proceso con tasa subsidiada"
-        weight: 0
+        weight: 2
       - text: "Crédito bancario convencional"
         weight: 0
       - text: "Crédito bancario con tasa subsidiada"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
     q3:
-      title: "¿El otorgamiento de la vivienda fue gratuito o pago?"
+      title: "¿La adjudicación de la vivienda es gratuita o paga?"
       answers:
-      - text: "El otorgamiento del hogar fue gratuito"
-        weight: 0
-      - text: "El otorgamiento del hogar fue pago"
-        weight: 0
+      - text: "La adjudicación de la vivienda es gratuita"
+        weight: 2
+      - text: "La adjudicación de la vivienda es paga"
+        weight: 1
       - text: "No aplica"
         weight: 0
       - text: "Sin información"
         weight: 0
     q4:
-      title: "BIS En caso de ser pago, ¿Qué mecanismos de pago y financiamiento se ofreció al propietario?"
+      title: "En caso de ser paga ¿qué mecanismos de pago y financiamiento se ofreció?"
       answers:
       - text: "Crédito emitido por el organismo encargado del proceso con tasa subsidiada"
-        weight: 0
-      - text: "Crédito bancario convenciona"
-        weight: 0
+        weight: 2
+      - text: "Crédito bancario convencional"
+        weight: 1
       - text: "Crédito bancario con tasa subsidiada"
-        weight: 0
+        weight: 1
       - text: "Sin información"
         weight: 0
     q5:
-      title: "¿Se preveen mecanismos anti gentrificación?"
+      title: "¿Se prevén mecanismos anti gentrificación?"
       answers:
-      - text: "Se preveen mecanismos anti gentrificación"
+      - text: "Se prevén mecanismos anti gentrificación"
         weight: 0
-      - text: "No se preveen mecanismos anti gentrificación"
-        weight: 0
+      - text: "No se prevén mecanismos anti gentrificación"
+        weight: 3
       - text: "Sin información"
         weight: 0
     q6:
@@ -460,17 +455,17 @@ i6:
       - text: "No se estableció una tarifa social o diferencial para los habitantes del barrio"
         weight: 0
       - text: "Se estableció tarifa social o diferencial solo para algunos habitantes del barrio"
-        weight: 0
+        weight: 1
       - text: "Se estableció una tarifa social o diferencial para todos los habitantes del barrio"
-        weight: 0
+        weight: 3
     q7:
       title: "¿Existen mecanismos para garantizar la permanencia de los inquilinos en el barrio?"
       answers:
       - text: "No existen mecanismos para garantizar la permanencia de los inquilinos en el barrio"
         weight: 0
       - text: "No existen mecanismos para garantizar la permanencia de los inquilinos en el barrio pero se les ha brindado una solución habitacional definitiva en situaciones de igualdad con los propietarios"
-        weight: 0
+        weight: 1
       - text: "Existen mecanismos para garantizar la permanencia de los inquilinos en el barrio"
-        weight: 0
+        weight: 2
       - text: "Existen mecanismos para garantizar la permanencia de los inquilinos en el barrio y se les ha brindado una solución habitacional definitiva en situaciones de igualdad con los propietarios"
-        weight: 0
+        weight: 3

@@ -10,12 +10,6 @@
         article
           header
             h1=@indicator[:title]
-          main
-            - if @agreement_data.present?
-              input type="number" name="data[#{indicator_key}]score" required="true" min="0" max="100" value="#{@agreement_data[indicator_key][:score]}"
-            - else
-              input type="number" name="data[#{indicator_key}]score" required="true" min="0" max="100"
-
           aside
             - @indicator[:questions].keys.each do |question|
               .two-thirds-one-third-input
@@ -26,9 +20,9 @@
                     option value=""
                     - @indicator[:questions][question][:answers].each do |answer|
                       - if @agreement_data.present?
-                        - if answer == @agreement_data[indicator_key][:answers][question]
-                          option selected="#{answer}" value="#{answer}" = answer
+                        - if answer[:text] == @agreement_data[indicator_key][:answers][question]
+                          option selected="#{answer[:text]}" value="#{answer[:text]}" = answer[:text]
                         -else
-                          option value="#{answer}" = answer
+                          option value="#{answer[:text]}" = answer[:text]
                       -else
-                          option value="#{answer}" = answer
+                          option value="#{answer[:text]}" = answer[:text]
