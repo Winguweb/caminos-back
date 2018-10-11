@@ -1,5 +1,6 @@
 ---
 i1:
+  total: 24
   title: "Proyecto de urbanización"
   questions:
     q1:
@@ -95,6 +96,7 @@ i1:
       - text: "Sin información"
         weight: 0
 i2:
+  total: 17
   title: "Equipamiento básico / Servicios públicos"
   questions:
     q1:
@@ -118,7 +120,7 @@ i2:
       - text: "Todas las conexiones son informales"
         weight: 0
       - text: "La mayoría de las conexiones son informales"
-        weight: 1
+        weight: 2
       - text: "La mayoría de las conexiones son formales"
         weight: 3
       - text: "Todas las conexiones son formales"
@@ -144,7 +146,7 @@ i2:
       - text: "No hay recolección de residuos formal"
         weight: 0
       - text: "La recolección de residuos formal se realiza en puntos de arrojo"
-        weight: 1
+        weight: 2
       - text: "La recolección de residuos formal se realiza puerta a puerta o en la cuadra"
         weight: 3
       - text: "Sin información"
@@ -161,6 +163,7 @@ i2:
       - text: "Sin información"
         weight: 0
 i3:
+  total: 16
   title: "Equipamiento urbano"
   questions:
     q1:
@@ -267,7 +270,7 @@ i3:
       title: "¿Existen pasillos de menos de 3 metros de ancho?"
       answers:
       - text: "No"
-        weight: 0
+        weight: 1
       - text: "Si"
         weight: 0
       - text: "No aplica"
@@ -284,6 +287,7 @@ i3:
       - text: "Sin información"
         weight: 0
 i4:
+  total: 7
   title: "Vivienda"
   questions:
     q1:
@@ -301,14 +305,15 @@ i4:
       title: "¿Cuál es el índice de hacinamiento del barrio?"
       answers:
       - text: "Hasta 2.4 (sin hacinamiento)"
-        weight: 0
+        weight: 3
       - text: "De 2.5 a 4.9 (hacinamiento medio)"
         weight: 2
       - text: "Más de 5.0 (hacinamiento crítico)"
-        weight: 3
+        weight: 0
       - text: "Sin información"
         weight: 0
 i5:
+  total: 21
   title: "Participación"
   questions:
     q1:
@@ -394,6 +399,7 @@ i5:
       - text: "A todas las mesas asiste un funcionario con capacidad de decisión"
         weight: 4
 i6:
+  total: 17
   title: "Sostenibilidad barrial"
   questions:
     q1:
@@ -413,7 +419,7 @@ i6:
       - text: "Microcredito emitido por el organismo encargado del proceso con tasa subsidiada"
         weight: 2
       - text: "Crédito bancario convencional"
-        weight: 0
+        weight: 1
       - text: "Crédito bancario con tasa subsidiada"
         weight: 1
       - text: "Sin información"

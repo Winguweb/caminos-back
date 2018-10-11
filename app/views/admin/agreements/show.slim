@@ -26,10 +26,10 @@ div.page-section
                 main
                   p
                     span
-                      = "#{@indicator[:score]}/100"
+                      = "#{@indicator[:score]}/#{Agreement.indicators[indicator_key][:total]}"
                   div
                     div
-                    div style="width:#{@indicator[:score]}%;"
+                    div style="width:#{@indicator[:score] * 100 / Agreement.indicators[indicator_key][:total]}%;"
               aside
                 - @indicator[:answers].keys.each do |question|
                   .two-thirds-one-third-input
