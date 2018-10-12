@@ -3,6 +3,15 @@
     > section {
       display: block;
       position: relative;
+      &:nth-of-type(2) {
+        @include type-setting(-1);
+        border-bottom: 1px solid $light-grey;
+        margin-bottom: $gutter/2;
+        > p {
+          margin-bottom: $gutter;
+          text-align: justify;
+        }
+      }
       > ul {
         list-style: none;
         margin-bottom: $gutter*2;
