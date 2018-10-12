@@ -3,11 +3,8 @@ section
     section.with-border
       == cell('elements/map_show', @work.neighborhood, features: [@work])
     section.with-border
-      == cell('section/header', t('works.about_work'), header_type: 'main')
+      == cell('section/header', @work.name, header_type: 'main')
     section
-      div
-        span = t('works.name')
-        span = @work.name
       div
         span = t('works.description')
         span = @work.description
@@ -19,27 +16,24 @@ section
         div
           span = t('works.status')
           span = t("status.#{@work.status}")
+      .half-input
         div
           span = t('works.manager')
           span = @work.manager
-
         div
           span = t('works.budget')
           span = @work.budget
-
+      .half-input
         div
           span = t('works.start_date')
           span = @work.start_date
-
         div
           span = t('works.estimated_end_date')
           span = @work.estimated_end_date
-
-      .two-thirds-one-third-input
+      .half-input
         div
           span = t('works.execution_plan')
           span = @work.execution_plan
-
         div
           span = t('works.lookup_address')
           span = @work.lookup_address

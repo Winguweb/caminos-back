@@ -20,6 +20,15 @@
             }
           }
           > section + section {
+            margin-bottom: $gutter;
+            > header {
+              > article {
+                @include grid-column(1 of 1);
+                h1 {
+                  margin-bottom: 0;
+                }
+              }
+            }
             > div,
             .half-input > div,
             .two-thirds-one-third-input > div {
@@ -28,6 +37,7 @@
               > span:first-of-type {
                 @include type-setting(-1);
                 color: $grey;
+                color: #009ee2;
                 display: block;
                 margin-bottom: $gutter/7;
                 text-transform: none;
