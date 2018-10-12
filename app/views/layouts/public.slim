@@ -34,6 +34,8 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     = javascript_include_tag "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     = javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"
 
+    = render partial: 'partials/javascripts/analytics/google'
+
     body id=body_id class="#{body_class}-desktop"
       .main-header
         == cell('page/public_header', @neighborhood)
