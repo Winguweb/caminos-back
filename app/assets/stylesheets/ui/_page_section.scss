@@ -9,7 +9,7 @@
     }
     > header, > form > header {
       @include grid-collapse;
-      > article{
+      > article {
         @include grid-column(6 of 10);
         > h1 {
           @include type-setting(5);

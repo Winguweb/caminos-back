@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   scope protocol: SECURE_PROTOCOL do
 
+    get '/mapeo-participativo', to: redirect('https://mapeo-participativo.caminosdelavilla.org')
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#index'
 
