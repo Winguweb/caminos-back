@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   scope protocol: SECURE_PROTOCOL do
 
-    get '/mapeo-participativo', to: redirect('https://mapeo-participativo.caminosdelavilla.org')
-    match "/themes/*all", :constraints => { :all => /.*/ }, via: [:get], to: 'home#old_site'
-    match "/mapanuevo/*all", :constraints => { :all => /.*/ }, via: [:get], to: 'home#old_site'
-    match "/media/*all", :constraints => { :all => /.*/ }, via: [:get], to: 'home#old_site'
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#index'
 
