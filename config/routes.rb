@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#index'
 
-    get '/datos/descarga/:model', action: :download, controller: :home, as: :data_download, constraints: { model: /(Neighborhood)/ }
+    get '/datos/descarga/:model', action: :download, controller: :home, as: :data_download, constraints: { model: /(Neighborhood|Work)/ }
     get '/datasets' => 'home#datasets', as: :datasets
-    
+
     resources :neighborhoods, only: %i[index show], path: "barrios" do
       resources :works, only: %i[show], path: "obras"
       resources :meetings, only: %i[index show], path: "reuniones"
