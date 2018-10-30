@@ -1,7 +1,7 @@
 section
   main.page-section
     section
-      == cell('elements/map_show', @neighborhood)
+      == cell('elements/map_show', @neighborhood, features: @features)
     section
       == cell('section/header', @neighborhood.name, header_type: 'main')
       .content

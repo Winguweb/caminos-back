@@ -1,0 +1,1262 @@
+"id incidentes","id de location","incident_title","incident_description","incident_date","incident_mode","incident_active","incident_verified","id cat","categoria","id inci","cat id","location_name","latitude","longitude","location id "
+18,17,"Red de agua potable","Red de agua potable manzana 3","2014-06-12 15:44:00",1,1,1,15,"water",18,15,"Fátima (ex Villa 3), Manzana 3",-34.661004,-58.452647,17
+18,17,"Red de agua potable","Red de agua potable manzana 3","2014-06-12 15:44:00",1,1,1,23,"Fatima",18,23,"Fátima (ex Villa 3), Manzana 3",-34.661004,-58.452647,17
+21,19,"Tendido eléctrico","Tendido eléctrico manzana 5","2014-06-17 09:50:00",1,1,1,17,"energy",21,17,"Fátima (ex Villa 3) Manzana 5",-34.661684,-58.452968,19
+21,19,"Tendido eléctrico","Tendido eléctrico manzana 5","2014-06-17 09:50:00",1,1,1,23,"Fatima",21,23,"Fátima (ex Villa 3) Manzana 5",-34.661684,-58.452968,19
+22,20,"Tendido eléctrico","Tendido eléctrico manzana 3 y 6","2014-06-17 10:08:00",1,1,1,17,"energy",22,17,"Fátima (ex Villa 3) Manzana  3 y 6",-34.661004,-58.452647,20
+22,20,"Tendido eléctrico","Tendido eléctrico manzana 3 y 6","2014-06-17 10:08:00",1,1,1,23,"Fatima",22,23,"Fátima (ex Villa 3) Manzana  3 y 6",-34.661004,-58.452647,20
+23,21,"Tendido eléctrico","Tendido eléctrico manzana 18 y transferencias","2014-06-17 10:14:00",1,1,1,17,"energy",23,17,"Villa 21-24 Manzana 18 y transferencias",-34.652136,-58.39808,21
+24,22,"Tendido eléctrico","Tendido eléctrico manzana 9,10, 11 y 12","2014-06-17 10:27:00",1,1,1,17,"energy",24,17,"Villa 21-24 Manzana 9,10, 11 y 12",-34.655277,-58.399453,22
+24,22,"Tendido eléctrico","Tendido eléctrico manzana 9,10, 11 y 12","2014-06-17 10:27:00",1,1,1,25,"Villa 21-24",24,25,"Villa 21-24 Manzana 9,10, 11 y 12",-34.655277,-58.399453,22
+25,23,"Tendido eléctrico","Tendido eléctrico manzana 1","2014-06-17 10:37:00",1,1,1,17,"energy",25,17,"Villa 21-24 Manzana 1",-34.655277,-58.399453,23
+25,23,"Tendido eléctrico","Tendido eléctrico manzana 1","2014-06-17 10:37:00",1,1,1,25,"Villa 21-24",25,25,"Villa 21-24 Manzana 1",-34.655277,-58.399453,23
+26,24,"Tendido eléctrico","Tendido eléctrico manzana 18","2014-06-17 10:41:00",1,1,1,17,"energy",26,17,"Villa 21-24 Manzana 18",-34.655277,-58.399453,24
+26,24,"Tendido eléctrico","Tendido eléctrico manzana 18","2014-06-17 10:41:00",1,1,1,25,"Villa 21-24",26,25,"Villa 21-24 Manzana 18",-34.655277,-58.399453,24
+27,25,"Red cloacal","Red cloacal tiras 1 a 11","2014-06-17 10:47:00",1,1,1,16,"sewer",27,16,"Zavaleta Tiras 1 a 11",-34.655277,-58.399453,25
+28,26,"Puesta en valor de Poliderportivo","Puesta en valor de Poliderportivo Los Piletones","2014-06-17 10:50:00",1,1,1,21,"infrastructure",28,21,"Piletones Poliderportivo Los Piletones",-34.655277,-58.399453,26
+28,26,"Puesta en valor de Poliderportivo","Puesta en valor de Poliderportivo Los Piletones","2014-06-17 10:50:00",1,1,1,26,"Los piletones",28,26,"Piletones Poliderportivo Los Piletones",-34.655277,-58.399453,26
+29,27,"Puesta en valor plaza","Puesta en valor de Plaza Niño Jesús","2014-06-17 10:54:00",1,1,1,19,"infrastructure",29,19,"Villa 20 Plaza Niño Jesús",-34.655277,-58.399453,27
+29,27,"Puesta en valor plaza","Puesta en valor de Plaza Niño Jesús","2014-06-17 10:54:00",1,1,1,24,"Villa 20",29,24,"Villa 20 Plaza Niño Jesús",-34.655277,-58.399453,27
+30,28,"Cancha","Cancha Los Chanchitos","2014-06-17 11:03:00",1,1,1,21,"infrastructure",30,21,"Villa 21-24 Cancha Los Chanchitos",-34.655277,-58.399453,28
+30,28,"Cancha","Cancha Los Chanchitos","2014-06-17 11:03:00",1,1,1,25,"Villa 21-24",30,25,"Villa 21-24 Cancha Los Chanchitos",-34.655277,-58.399453,28
+31,29,"Proyecto Barranca","Proyecto Barranca","2014-06-17 11:06:00",1,1,1,21,"infrastructure",31,21,"Villa 20 Barranca",-34.671514,-58.46226,29
+31,29,"Proyecto Barranca","Proyecto Barranca","2014-06-17 11:06:00",1,1,1,24,"Villa 20",31,24,"Villa 20 Barranca",-34.671514,-58.46226,29
+32,30,"Puesta en valor Manzana","Puesta en valor Manzana 18","2014-06-17 11:26:00",1,1,1,21,"infrastructure",32,21,"Villa 21-24 Puesta en valor Manzana 18",-34.654192,-58.395387,30
+32,30,"Puesta en valor Manzana","Puesta en valor Manzana 18","2014-06-17 11:26:00",1,1,1,25,"Villa 21-24",32,25,"Villa 21-24 Puesta en valor Manzana 18",-34.654192,-58.395387,30
+33,31,"Puesta en valor plaza","Puesta en valor Plaza Triángulo","2014-06-19 08:18:00",1,1,1,19,"infrastructure",33,19,"Villa 21-24 Plaza Triángulo",-34.655277,-58.399453,31
+34,32,"Cancha","Cancha Los Changuitos","2014-06-19 09:27:00",1,1,1,21,"infrastructure",34,21,"Villa 21-24 Cancha Los Changuitos",-34.655277,-58.399453,32
+34,32,"Cancha","Cancha Los Changuitos","2014-06-19 09:27:00",1,1,1,25,"Villa 21-24",34,25,"Villa 21-24 Cancha Los Changuitos",-34.655277,-58.399453,32
+35,33,"Tendido eléctrico","Tendido eléctrico manzana 3 y 6","2014-06-19 09:29:00",1,1,1,17,"energy",35,17,"Fátima (ex Villa 3) Manzana  3 y 6",-34.642273,-58.423882,33
+35,33,"Tendido eléctrico","Tendido eléctrico manzana 3 y 6","2014-06-19 09:29:00",1,1,1,23,"Fatima",35,23,"Fátima (ex Villa 3) Manzana  3 y 6",-34.642273,-58.423882,33
+36,34,"Plaza Lacarra y Somellera","Plaza Lacarra y Somellera","2014-06-19 09:30:00",1,1,1,19,"infrastructure",36,19,"Fátima (ex Villa 3) Plaza Lacarra y Somellera",-34.659301,-58.457036,34
+37,35,"Equipamento comunitario","Equipamento comunitario- Tercio central- manzana 5","2014-06-19 09:39:00",1,1,1,21,"infrastructure",37,21,"Fátima (ex Villa 3) Tercio central Manzana 5",-34.660911,-58.452825,35
+38,36,"Apertura de calle","Apertura de calle Martinez Castro hasta intersección con Somellera","2014-06-19 09:49:00",1,1,1,19,"infrastructure",38,19,"Fátima (ex Villa 3) Martinez Castro",-34.658913,-58.454337,36
+38,36,"Apertura de calle","Apertura de calle Martinez Castro hasta intersección con Somellera","2014-06-19 09:49:00",1,1,1,23,"Fatima",38,23,"Fátima (ex Villa 3) Martinez Castro",-34.658913,-58.454337,36
+39,37,"Finalización de casas","Finalización de viviendas en Manzanas 11,012,13 y 15","2014-06-19 09:54:00",1,1,1,21,"infrastructure",39,21,"Villa 20 Manzanas 11, 12,13 y 15",-34.655277,-58.399453,37
+40,38,"Finalización de casas","Finalización de viviendas en Manzanas 5, 6, 10 y 11","2014-06-19 09:58:00",1,1,1,21,"infrastructure",40,21,"Villa 20 Manzanas 5, 6, 10 y 11",-34.676314,-58.469047,38
+40,38,"Finalización de casas","Finalización de viviendas en Manzanas 5, 6, 10 y 11","2014-06-19 09:58:00",1,1,1,24,"Villa 20",40,24,"Villa 20 Manzanas 5, 6, 10 y 11",-34.676314,-58.469047,38
+41,39,"Pavimentación y servicios","Pavimentación y servicios calle Luna","2014-06-19 10:02:00",1,1,1,19,"infrastructure",41,19,"Villa 21-24 Calle Luna entre Orma y Zepita",-34.653106,-58.39519,39
+41,39,"Pavimentación y servicios","Pavimentación y servicios calle Luna","2014-06-19 10:02:00",1,1,1,25,"Villa 21-24",41,25,"Villa 21-24 Calle Luna entre Orma y Zepita",-34.653106,-58.39519,39
+42,40,"Pavimentación y servicios","Pavimentación, construcción de veredas e iluminación Calle Montesquieu entre Av. Iriarte y California","2014-06-19 10:05:00",1,1,1,19,"infrastructure",42,19,"Villa 21-24 Calle Montesquieu entre Av. Iriarte y California",-34.651076,-58.396563,40
+42,40,"Pavimentación y servicios","Pavimentación, construcción de veredas e iluminación Calle Montesquieu entre Av. Iriarte y California","2014-06-19 10:05:00",1,1,1,25,"Villa 21-24",42,25,"Villa 21-24 Calle Montesquieu entre Av. Iriarte y California",-34.651076,-58.396563,40
+43,41,"Ampliación de Comedor","Ejecucción de ampliación de comedor El Alfarero","2014-06-19 10:08:00",1,1,1,21,"infrastructure",43,21,"Villa 21-24  Luna 1955",-34.657965,-58.399453,41
+43,41,"Ampliación de Comedor","Ejecucción de ampliación de comedor El Alfarero","2014-06-19 10:08:00",1,1,1,25,"Villa 21-24",43,25,"Villa 21-24  Luna 1955",-34.657965,-58.399453,41
+44,42,"Infraestructura urbana","Infraestructura urbana","2014-06-19 10:11:00",1,1,1,21,"infrastructure",44,21,"Piletones No informado",-34.655277,-58.399453,42
+44,42,"Infraestructura urbana","Infraestructura urbana","2014-06-19 10:11:00",1,1,1,26,"Los piletones",44,26,"Piletones No informado",-34.655277,-58.399453,42
+45,43,"Finalización de edificios","Finalización de edificios 17, 18 y 19  - Conjunto habitacional Los Piletones","2014-06-19 10:13:00",1,1,1,21,"infrastructure",45,21,"Piletones Edificios 17, 18 y 19 - Conjunto habitacional Los Piletones",-34.665073,-58.456795,43
+45,43,"Finalización de edificios","Finalización de edificios 17, 18 y 19  - Conjunto habitacional Los Piletones","2014-06-19 10:13:00",1,1,1,26,"Los piletones",45,26,"Piletones Edificios 17, 18 y 19 - Conjunto habitacional Los Piletones",-34.665073,-58.456795,43
+46,44,"Finalización de edificios","Finalización de edificios 14, 15 y 16 en  Conjunto habitacional Los Piletones","2014-06-19 10:16:00",1,1,1,21,"infrastructure",46,21,"Piletones Edificios  14, 15 y 16 - Conjunto habitacional Los Piletones",-34.655277,-58.399453,44
+46,44,"Finalización de edificios","Finalización de edificios 14, 15 y 16 en  Conjunto habitacional Los Piletones","2014-06-19 10:16:00",1,1,1,26,"Los piletones",46,26,"Piletones Edificios  14, 15 y 16 - Conjunto habitacional Los Piletones",-34.655277,-58.399453,44
+47,45,"Pavimentación y servicios","Pavimentación y servicios en pasajes internos Manzana 4","2014-06-19 10:20:00",1,1,1,19,"infrastructure",47,19,"Fátima (ex Villa 3) Pasajes internos Manzana 4",-34.658913,-58.452825,45
+47,45,"Pavimentación y servicios","Pavimentación y servicios en pasajes internos Manzana 4","2014-06-19 10:20:00",1,1,1,23,"Fatima",47,23,"Fátima (ex Villa 3) Pasajes internos Manzana 4",-34.658913,-58.452825,45
+48,46,"Parquización y senderos","Parquización y senderos Manzana 5","2014-06-19 10:23:00",1,1,1,19,"infrastructure",48,19,"Fátima (ex Villa 3) Manzana 5",-34.658629,-58.453218,46
+48,46,"Parquización y senderos","Parquización y senderos Manzana 5","2014-06-19 10:23:00",1,1,1,23,"Fatima",48,23,"Fátima (ex Villa 3) Manzana 5",-34.658629,-58.453218,46
+49,47,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 421 metros lineales Zavaleta","2014-06-19 10:26:00",1,1,1,16,"sewer",49,16,"Zavaleta",-34.651694,-58.401352,47
+49,47,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 421 metros lineales Zavaleta","2014-06-19 10:26:00",1,1,1,25,"Villa 21-24",49,25,"Zavaleta",-34.651694,-58.401352,47
+50,48,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 18 metros lineales","2014-06-19 10:30:00",1,1,1,16,"sewer",50,16,"Villa 21-24",-34.654465,-58.397822,48
+50,48,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 18 metros lineales","2014-06-19 10:30:00",1,1,1,25,"Villa 21-24",50,25,"Villa 21-24",-34.654465,-58.397822,48
+51,49,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 230 metros lineales cancha los chanchitos","2014-06-19 10:33:00",1,1,1,16,"sewer",51,16,"Villa 21-24 Cancha Los Chanchitos",-34.652559,-58.428442,49
+51,49,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 230 metros lineales cancha los chanchitos","2014-06-19 10:33:00",1,1,1,25,"Villa 21-24",51,25,"Villa 21-24 Cancha Los Chanchitos",-34.652559,-58.428442,49
+52,50,"Red de agua potable","Red de agua potable","2014-06-19 10:35:00",1,1,1,15,"water",52,15,"Villa 20 No informado",-34.655277,-58.399453,50
+52,50,"Red de agua potable","Red de agua potable","2014-06-19 10:35:00",1,1,1,24,"Villa 20",52,24,"Villa 20 No informado",-34.655277,-58.399453,50
+53,51,"Red cloacal y pluvial","Mejoras red cloacal y pluvial de Manzana 7 y 7bis. 349 metros lineales","2014-06-19 10:40:00",1,1,1,16,"sewer",53,16,"Fátima (ex Villa 3) Manzanas 7 y 7bis",-34.657101,-58.453221,51
+53,51,"Red cloacal y pluvial","Mejoras red cloacal y pluvial de Manzana 7 y 7bis. 349 metros lineales","2014-06-19 10:40:00",1,1,1,23,"Fatima",53,23,"Fátima (ex Villa 3) Manzanas 7 y 7bis",-34.657101,-58.453221,51
+81,80,"Red cloacal","Red cloacal","2014-09-15 14:49:00",1,1,1,16,"sewer",81,16,"Zavaleta Tiras 1 a 11",-34.652559,-58.428442,80
+82,81,"Puesta en valor de Poliderportivo Los Piletones","Puesta en valor de Poliderportivo Los Piletones","2014-09-15 14:55:00",1,1,1,21,"infrastructure",82,21,"Poliderportivo Los Piletones",-34.658913,-58.452825,81
+82,81,"Puesta en valor de Poliderportivo Los Piletones","Puesta en valor de Poliderportivo Los Piletones","2014-09-15 14:55:00",1,1,1,26,"Los piletones",82,26,"Poliderportivo Los Piletones",-34.658913,-58.452825,81
+83,82,"Cancha","Cancha Los Chanchitos","2014-09-15 14:59:00",1,1,1,21,"infrastructure",83,21,"Villa 21-24 Cancha Los Chanchitos",-34.652559,-58.428442,82
+83,82,"Cancha","Cancha Los Chanchitos","2014-09-15 14:59:00",1,1,1,25,"Villa 21-24",83,25,"Villa 21-24 Cancha Los Chanchitos",-34.652559,-58.428442,82
+84,83,"Vivienda","Construcción de vivienda Manzana 25, casa 95","2014-09-15 15:07:00",1,1,1,21,"infrastructure",84,21,"Villa 21-24 Mz 25 - casa 95",-34.658913,-58.452825,83
+84,83,"Vivienda","Construcción de vivienda Manzana 25, casa 95","2014-09-15 15:07:00",1,1,1,25,"Villa 21-24",84,25,"Villa 21-24 Mz 25 - casa 95",-34.658913,-58.452825,83
+85,84,"Vivienda","Construcción de vivienda Manzana 10 casa 91","2014-09-15 15:10:00",1,1,1,21,"infrastructure",85,21,"Villa 21-24 - Mz 10 - Casa 91",0,-58.452825,84
+85,84,"Vivienda","Construcción de vivienda Manzana 10 casa 91","2014-09-15 15:10:00",1,1,1,25,"Villa 21-24",85,25,"Villa 21-24 - Mz 10 - Casa 91",0,-58.452825,84
+86,85,"Red cloacal - colectores internos","Red clocal en tiras 1 a 11 y 13","2014-09-15 15:13:00",1,1,1,16,"sewer",86,16,"Zavaleta Tiras 1 a 11 y 13",-34.652559,-58.428442,85
+86,85,"Red cloacal - colectores internos","Red clocal en tiras 1 a 11 y 13","2014-09-15 15:13:00",1,1,1,27,"Zavaleta",86,27,"Zavaleta Tiras 1 a 11 y 13",-34.652559,-58.428442,85
+87,86,"Red de agua potable","Red de agua potable en Manzana 1 y 9","2014-09-15 15:16:00",1,1,1,15,"water",87,15,"Piletones Mz 1 y 9",-34.652559,-58.428442,86
+87,86,"Red de agua potable","Red de agua potable en Manzana 1 y 9","2014-09-15 15:16:00",1,1,1,26,"Los piletones",87,26,"Piletones Mz 1 y 9",-34.652559,-58.428442,86
+88,87,"Red Electrica","Red eléctrica en Manzana 4","2014-09-15 15:20:00",1,1,1,17,"energy",88,17,"Fátima Mz 4",0,-58.452825,87
+88,87,"Red Electrica","Red eléctrica en Manzana 4","2014-09-15 15:20:00",1,1,1,23,"Fatima",88,23,"Fátima Mz 4",0,-58.452825,87
+89,88,"Vivienda","Construcción de vivienda Manzana 5 casa 69","2014-09-15 15:22:00",1,1,1,21,"infrastructure",89,21,"Piletones Mz 5 - Casa 69",-34.658913,-58.452825,88
+89,88,"Vivienda","Construcción de vivienda Manzana 5 casa 69","2014-09-15 15:22:00",1,1,1,26,"Los piletones",89,26,"Piletones Mz 5 - Casa 69",-34.658913,-58.452825,88
+90,89,"Red Electrica","Red eléctrica en Manzana 1","2014-09-15 15:25:00",1,1,1,17,"energy",90,17,"Fátima Mz 1",-34.658913,-58.452825,89
+90,89,"Red Electrica","Red eléctrica en Manzana 1","2014-09-15 15:25:00",1,1,1,23,"Fatima",90,23,"Fátima Mz 1",-34.658913,-58.452825,89
+91,90,"Vivienda","Construcción de vivienda Manzana 18 casa 30","2014-09-15 15:29:00",1,1,1,21,"infrastructure",91,21,"Villa 20 Mz 18 - Casa 30",-34.658913,-58.452825,90
+91,90,"Vivienda","Construcción de vivienda Manzana 18 casa 30","2014-09-15 15:29:00",1,1,1,24,"Villa 20",91,24,"Villa 20 Mz 18 - Casa 30",-34.658913,-58.452825,90
+92,91,"Vivienda","Construcción de vivienda Manzana 20 casa 103","2014-09-15 15:34:00",1,1,1,21,"infrastructure",92,21,"Villa 20 - Mz 20 - Casa 103",-34.658913,-58.452825,91
+92,91,"Vivienda","Construcción de vivienda Manzana 20 casa 103","2014-09-15 15:34:00",1,1,1,24,"Villa 20",92,24,"Villa 20 - Mz 20 - Casa 103",-34.658913,-58.452825,91
+93,92,"Vivienda","Construcción de vivienda Manzana 10 casa 91","2014-09-15 15:39:00",1,1,1,21,"infrastructure",93,21,"Villa 20 Mz 6 - casa 81",0,-58.452825,92
+93,92,"Vivienda","Construcción de vivienda Manzana 10 casa 91","2014-09-15 15:39:00",1,1,1,24,"Villa 20",93,24,"Villa 20 Mz 6 - casa 81",0,-58.452825,92
+94,93,"Vivienda","Construcción de vivienda Manzana 29 casa 126","2014-09-15 15:43:00",1,1,1,21,"infrastructure",94,21,"Villa 20 Mz 29 - Casa 126",-34.658913,-58.452825,93
+94,93,"Vivienda","Construcción de vivienda Manzana 29 casa 126","2014-09-15 15:43:00",1,1,1,24,"Villa 20",94,24,"Villa 20 Mz 29 - Casa 126",-34.658913,-58.452825,93
+95,94,"Red Eléctrica","Red eléctrica en Manzana 25 y 26","2014-09-15 15:45:00",1,1,1,17,"energy",95,17,"Villa 21 - 24 Mz 25 y 26",-34.658913,-58.452825,94
+95,94,"Red Eléctrica","Red eléctrica en Manzana 25 y 26","2014-09-15 15:45:00",1,1,1,25,"Villa 21-24",95,25,"Villa 21 - 24 Mz 25 y 26",-34.658913,-58.452825,94
+96,95,"Vivienda","Construcción de vivienda Manzana 19 casa 11 y 11 bis","2014-09-15 15:47:00",1,1,1,21,"infrastructure",96,21,"Villa 21-24 Mz 19 casa 11 y 11bis",-34.658913,-58.452825,95
+96,95,"Vivienda","Construcción de vivienda Manzana 19 casa 11 y 11 bis","2014-09-15 15:47:00",1,1,1,25,"Villa 21-24",96,25,"Villa 21-24 Mz 19 casa 11 y 11bis",-34.658913,-58.452825,95
+97,96,"Vivienda","Construcción de vivienda Manzana 10 casa 69 bis","2014-09-15 15:49:00",1,1,1,21,"infrastructure",97,21,"Piletones Mz 10 casa 69 bis",-34.658913,-58.452825,96
+97,96,"Vivienda","Construcción de vivienda Manzana 10 casa 69 bis","2014-09-15 15:49:00",1,1,1,26,"Los piletones",97,26,"Piletones Mz 10 casa 69 bis",-34.658913,-58.452825,96
+98,97,"Finalización de casas","Finalización de viviendas en Manzanas 11,012,13 y 15","2014-09-15 15:51:00",1,1,1,21,"infrastructure",98,21,"Villa 20 Manzanas 11, 12,13 y 15",-34.658913,-58.452825,97
+98,97,"Finalización de casas","Finalización de viviendas en Manzanas 11,012,13 y 15","2014-09-15 15:51:00",1,1,1,24,"Villa 20",98,24,"Villa 20 Manzanas 11, 12,13 y 15",-34.658913,-58.452825,97
+99,98,"Equipamento comunitario","Equipamento comunitario- Tercio central- manzana 5","2014-09-15 15:53:00",1,1,1,21,"infrastructure",99,21,"Fátima (ex Villa 3) Tercio central Manzana 5",0,-58.452825,98
+99,98,"Equipamento comunitario","Equipamento comunitario- Tercio central- manzana 5","2014-09-15 15:53:00",1,1,1,23,"Fatima",99,23,"Fátima (ex Villa 3) Tercio central Manzana 5",0,-58.452825,98
+100,99,"Reacondicionamiento y puesta en valor de calles","Reacondicionamiento y puesta en valor de calles","2014-09-15 16:03:00",1,1,1,19,"infrastructure",100,19,"Fátima",-34.652559,-58.428442,99
+100,99,"Reacondicionamiento y puesta en valor de calles","Reacondicionamiento y puesta en valor de calles","2014-09-15 16:03:00",1,1,1,23,"Fatima",100,23,"Fátima",-34.652559,-58.428442,99
+101,100,"Puesta en valor cancha de futbol","Puesta en valor cancha de fútbol","2014-09-15 16:07:00",1,1,1,21,"infrastructure",101,21,"Piletones Cancha de futbol",-34.658913,-58.452825,100
+101,100,"Puesta en valor cancha de futbol","Puesta en valor cancha de fútbol","2014-09-15 16:07:00",1,1,1,26,"Los piletones",101,26,"Piletones Cancha de futbol",-34.658913,-58.452825,100
+102,101,"Polideportivo Los Piletones","Polideportivo Los Piletones","2014-09-15 16:10:00",1,1,1,21,"infrastructure",102,21,"Piletones - Polideportivo Los Piletones",-34.664466,-58.45763,101
+102,101,"Polideportivo Los Piletones","Polideportivo Los Piletones","2014-09-15 16:10:00",1,1,1,26,"Los piletones",102,26,"Piletones - Polideportivo Los Piletones",-34.664466,-58.45763,101
+103,102,"Reacondicionamiento de Comedor de Lorenza","Reacondicionamiento y refuncionalización de Comedor de Lorenza","2014-09-15 16:13:00",1,1,1,21,"infrastructure",103,21,"Villa 20 - Comedor de Lorenza",-34.652559,-58.428442,102
+103,102,"Reacondicionamiento de Comedor de Lorenza","Reacondicionamiento y refuncionalización de Comedor de Lorenza","2014-09-15 16:13:00",1,1,1,24,"Villa 20",103,24,"Villa 20 - Comedor de Lorenza",-34.652559,-58.428442,102
+104,103,"Calle Celedonio Escalada","Celedonio Escalada","2014-09-15 16:23:00",1,1,1,21,"infrastructure",104,21,"Villa 20 Celedonio Escalada",-34.652559,-58.428442,103
+104,103,"Calle Celedonio Escalada","Celedonio Escalada","2014-09-15 16:23:00",1,1,1,24,"Villa 20",104,24,"Villa 20 Celedonio Escalada",-34.652559,-58.428442,103
+105,104,"Reacondicionamiento escuela","Reacondicionamiento y puesta en valor de la Escuela de artes escénicas integradas","2014-09-15 16:25:00",1,1,1,21,"infrastructure",105,21,"Villa 20 - Escuela de artes escénicas integradas",-34.652559,-58.428442,104
+105,104,"Reacondicionamiento escuela","Reacondicionamiento y puesta en valor de la Escuela de artes escénicas integradas","2014-09-15 16:25:00",1,1,1,24,"Villa 20",105,24,"Villa 20 - Escuela de artes escénicas integradas",-34.652559,-58.428442,104
+106,105,"Pintada en Villa 20","Pintada en Villa 20","2014-09-15 16:31:00",1,1,1,21,"infrastructure",106,21,"Villa 20 - Pintada en Villa 20",-34.652559,-58.428442,105
+106,105,"Pintada en Villa 20","Pintada en Villa 20","2014-09-15 16:31:00",1,1,1,24,"Villa 20",106,24,"Villa 20 - Pintada en Villa 20",-34.652559,-58.428442,105
+107,106,"Mejora Manzana 4","Mejora Manzana 4","2014-09-15 16:33:00",1,1,1,21,"infrastructure",107,21,"Villa 20 - Manzana 4",-34.664466,-58.45763,106
+107,106,"Mejora Manzana 4","Mejora Manzana 4","2014-09-15 16:33:00",1,1,1,24,"Villa 20",107,24,"Villa 20 - Manzana 4",-34.664466,-58.45763,106
+108,107,"Mejora de frentes","Mejora de frentes","2014-09-15 16:36:00",1,1,1,21,"infrastructure",108,21,"Villa 20 - No informado",-34.652559,-58.428442,107
+108,107,"Mejora de frentes","Mejora de frentes","2014-09-15 16:36:00",1,1,1,24,"Villa 20",108,24,"Villa 20 - No informado",-34.652559,-58.428442,107
+109,108,"Puesta en valor Plaza Zavaleta","Puesta en valor Plaza Zavaleta II","2014-09-15 16:37:00",1,1,1,19,"infrastructure",109,19,"Zavaleta - Plaza Zavaleta",-34.664466,-58.45763,108
+109,108,"Puesta en valor Plaza Zavaleta","Puesta en valor Plaza Zavaleta II","2014-09-15 16:37:00",1,1,1,27,"Zavaleta",109,27,"Zavaleta - Plaza Zavaleta",-34.664466,-58.45763,108
+110,109,"Puesta en valor Plaza Zavaleta","Puesta en valor Plaza Zavaleta","2014-09-15 16:41:00",1,1,1,19,"infrastructure",110,19,"Zavaleta - Plaza Zavaleta",-34.650869,-58.40262,109
+110,109,"Puesta en valor Plaza Zavaleta","Puesta en valor Plaza Zavaleta","2014-09-15 16:41:00",1,1,1,27,"Zavaleta",110,27,"Zavaleta - Plaza Zavaleta",-34.650869,-58.40262,109
+111,110,"Puesta en valor Cancha Los Changuitos","Puesta en valor Cancha Los Changuitos","2014-09-15 16:44:00",1,1,1,19,"infrastructure",111,19,"Villa 21-24 Cancha Los Changuitos",-34.657418,-58.394944,110
+111,110,"Puesta en valor Cancha Los Changuitos","Puesta en valor Cancha Los Changuitos","2014-09-15 16:44:00",1,1,1,25,"Villa 21-24",111,25,"Villa 21-24 Cancha Los Changuitos",-34.657418,-58.394944,110
+112,111,"Puesta en valor Espacios Comunitarios","Puesta en valor Espacios Comunitarios Adicionales Portal I","2014-09-15 16:46:00",1,1,1,19,"infrastructure",112,19,"Villa 21-24 No informado",-34.652559,-58.428442,111
+112,111,"Puesta en valor Espacios Comunitarios","Puesta en valor Espacios Comunitarios Adicionales Portal I","2014-09-15 16:46:00",1,1,1,25,"Villa 21-24",112,25,"Villa 21-24 No informado",-34.652559,-58.428442,111
+113,112,"Patio de Juego","Patio de Juego de 'La Salita'","2014-09-15 16:48:00",1,1,1,19,"infrastructure",113,19,"Villa 21-24 - La Salita",-34.652559,-58.428442,112
+113,112,"Patio de Juego","Patio de Juego de 'La Salita'","2014-09-15 16:48:00",1,1,1,25,"Villa 21-24",113,25,"Villa 21-24 - La Salita",-34.652559,-58.428442,112
+114,113,"Plaza Lacarra y Somellera","Plaza Lacarra y Somellera","2014-09-15 16:50:00",1,1,1,19,"infrastructure",114,19,"Fátima - Plaza Lacarra y Somellera",-34.659301,-58.457036,113
+114,113,"Plaza Lacarra y Somellera","Plaza Lacarra y Somellera","2014-09-15 16:50:00",1,1,1,23,"Fatima",114,23,"Fátima - Plaza Lacarra y Somellera",-34.659301,-58.457036,113
+115,114,"Tendido eléctrico","Tendido eléctrico","2014-08-14 17:05:00",1,1,1,17,"energy",115,17,"Villa 1-11-14 - Manzana 1, 2 y 3",-34.652559,-58.428442,114
+115,114,"Tendido eléctrico","Tendido eléctrico","2014-08-14 17:05:00",1,1,1,29,"Villa 1-11-14",115,29,"Villa 1-11-14 - Manzana 1, 2 y 3",-34.652559,-58.428442,114
+116,115,"Tendido eléctrico","Tendido eléctrico","2014-08-23 17:07:00",1,1,1,17,"energy",116,17,"Villa 1-11-14 -Manzana 10, 11, 12, 13, 22 y 23",-34.652559,-58.428442,115
+116,115,"Tendido eléctrico","Tendido eléctrico","2014-08-23 17:07:00",1,1,1,29,"Villa 1-11-14",116,29,"Villa 1-11-14 -Manzana 10, 11, 12, 13, 22 y 23",-34.652559,-58.428442,115
+117,116,"Tendido eléctrico","Tendido eléctrico","2014-08-16 17:11:00",1,1,1,17,"energy",117,17,"Villa 1-11-14 - Manzana 20 y 25",-34.652559,-58.428442,116
+117,116,"Tendido eléctrico","Tendido eléctrico","2014-08-16 17:11:00",1,1,1,29,"Villa 1-11-14",117,29,"Villa 1-11-14 - Manzana 20 y 25",-34.652559,-58.428442,116
+118,117,"Red cloacal","Red cloacal","2014-08-15 17:14:00",1,1,1,16,"sewer",118,16,"Villa 1-11-14 - Manzana 6 y 7",-34.652559,-58.428442,117
+118,117,"Red cloacal","Red cloacal","2014-08-15 17:14:00",1,1,1,29,"Villa 1-11-14",118,29,"Villa 1-11-14 - Manzana 6 y 7",-34.652559,-58.428442,117
+119,118,"Red Pluvial","Red pluvial","2014-08-22 17:23:00",1,1,1,16,"sewer",119,16,"Villa 15 - Manzanas 1 y 6",-34.652559,-58.428442,118
+119,118,"Red Pluvial","Red pluvial","2014-08-22 17:23:00",1,1,1,31,"Villa 15",119,31,"Villa 15 - Manzanas 1 y 6",-34.652559,-58.428442,118
+120,119,"Red Pluvial","Red pluvial","2014-08-09 17:25:00",1,1,1,16,"sewer",120,16,"Villa 15- Manzanas 1 y 6",-34.652559,-58.428442,119
+120,119,"Red Pluvial","Red pluvial","2014-08-09 17:25:00",1,1,1,31,"Villa 15",120,31,"Villa 15- Manzanas 1 y 6",-34.652559,-58.428442,119
+121,120,"Tendido eléctrico","Tendido eléctrico","2014-08-19 17:28:00",1,1,1,17,"energy",121,17,"Villa 15- Manzanas 7, 8, 9, 10, 13 y 14",-34.652559,-58.428442,120
+121,120,"Tendido eléctrico","Tendido eléctrico","2014-08-19 17:28:00",1,1,1,31,"Villa 15",121,31,"Villa 15- Manzanas 7, 8, 9, 10, 13 y 14",-34.652559,-58.428442,120
+122,121,"Red cloacal","Red cloacal","2014-08-16 17:29:00",1,1,1,16,"sewer",122,16,"Villa 1-11-14 - Manzana 11",-34.652559,-58.428442,121
+122,121,"Red cloacal","Red cloacal","2014-08-16 17:29:00",1,1,1,29,"Villa 1-11-14",122,29,"Villa 1-11-14 - Manzana 11",-34.652559,-58.428442,121
+123,122,"Red cloacal","Red cloacal","2014-08-15 17:31:00",1,1,1,16,"sewer",123,16,"Villa 1-11-14 - Manzana 21",-34.652559,-58.428442,122
+123,122,"Red cloacal","Red cloacal","2014-08-15 17:31:00",1,1,1,29,"Villa 1-11-14",123,29,"Villa 1-11-14 - Manzana 21",-34.652559,-58.428442,122
+124,123,"Red de agua potable","Red de agua potable","2014-08-15 17:33:00",1,1,1,15,"water",124,15,"Villa 1-11-14 - Manzana 3",-34.652559,-58.428442,123
+124,123,"Red de agua potable","Red de agua potable","2014-08-15 17:33:00",1,1,1,29,"Villa 1-11-14",124,29,"Villa 1-11-14 - Manzana 3",-34.652559,-58.428442,123
+125,124,"Red cloacal","Red cloacal","2014-08-22 17:34:00",1,1,1,16,"sewer",125,16,"Villa 15- Manzana 32",-34.652559,-58.428442,124
+125,124,"Red cloacal","Red cloacal","2014-08-22 17:34:00",1,1,1,31,"Villa 15",125,31,"Villa 15- Manzana 32",-34.652559,-58.428442,124
+126,125,"Refacciones viviendas","Refacciones viviendas","2014-08-16 17:36:00",1,1,1,21,"infrastructure",126,21,"Cildañez - Manzana C",-34.652559,-58.428442,125
+126,125,"Refacciones viviendas","Refacciones viviendas","2014-08-16 17:36:00",1,1,1,30,"Cildáñez",126,30,"Cildañez - Manzana C",-34.652559,-58.428442,125
+127,126,"Puesta en valor Plaza Chapatín","Puesta en valor Plaza Chapatín","2014-08-15 17:38:00",1,1,1,19,"infrastructure",127,19,"Villa 1-11-14 - Plaza Chapatín",-34.652559,-58.428442,126
+127,126,"Puesta en valor Plaza Chapatín","Puesta en valor Plaza Chapatín","2014-08-15 17:38:00",1,1,1,29,"Villa 1-11-14",127,29,"Villa 1-11-14 - Plaza Chapatín",-34.652559,-58.428442,126
+128,127,"Puesta en valor Plaza Espejo y Dársena","Puesta en valor Plaza Espejo y Dársena","2014-08-14 17:39:00",1,1,1,19,"infrastructure",128,19,"Villa 1-11-14 - Plaza Espejo",-34.652559,-58.428442,127
+128,127,"Puesta en valor Plaza Espejo y Dársena","Puesta en valor Plaza Espejo y Dársena","2014-08-14 17:39:00",1,1,1,29,"Villa 1-11-14",128,29,"Villa 1-11-14 - Plaza Espejo",-34.652559,-58.428442,127
+129,128,"Chancha Chuyff","Chancha Chuyff","2014-08-15 17:41:00",1,1,1,19,"infrastructure",129,19,"Ramón Carrillo - Chancha Chuyff",-34.652559,-58.428442,128
+129,128,"Chancha Chuyff","Chancha Chuyff","2014-08-15 17:41:00",1,1,1,28,"Ramón Carrillo",129,28,"Ramón Carrillo - Chancha Chuyff",-34.652559,-58.428442,128
+130,129,"Refacción en la Parroquia Maria Madre del Pueblo","Construcción de tinglado en la Parroquia Maria Madre del Pueblo","2014-08-16 17:43:00",1,1,1,21,"infrastructure",130,21,"Villa 1-11-14 - Parroquia María Madre del Pueblo",-34.652559,-58.428442,129
+130,129,"Refacción en la Parroquia Maria Madre del Pueblo","Construcción de tinglado en la Parroquia Maria Madre del Pueblo","2014-08-16 17:43:00",1,1,1,29,"Villa 1-11-14",130,29,"Villa 1-11-14 - Parroquia María Madre del Pueblo",-34.652559,-58.428442,129
+131,130,"Readecuación de Red Cloacal en Manzana 3","Readecuación de red cloacal","2014-08-12 17:45:00",1,1,1,16,"sewer",131,16,"Villa 1-11-14 - Manzana 3",-34.652559,-58.428442,130
+131,130,"Readecuación de Red Cloacal en Manzana 3","Readecuación de red cloacal","2014-08-12 17:45:00",1,1,1,29,"Villa 1-11-14",131,29,"Villa 1-11-14 - Manzana 3",-34.652559,-58.428442,130
+132,131,"Desobstrucción de Red Cloacal","Desobstrucción de Red Cloacal","2014-08-05 17:46:00",1,1,1,16,"sewer",132,16,"Villa 1-11-14",-34.652559,-58.428442,131
+132,131,"Desobstrucción de Red Cloacal","Desobstrucción de Red Cloacal","2014-08-05 17:46:00",1,1,1,29,"Villa 1-11-14",132,29,"Villa 1-11-14",-34.652559,-58.428442,131
+133,132,"Apertura de calle Oceania","Construcción de pavimentos, veredas, muro divisiorio, iluminación pública y desague cloacal de calle oceanía","2014-08-15 17:49:00",1,1,1,19,"infrastructure",133,19,"Villa 1-11-14 - Calle Oceanía",-34.652559,-58.428442,132
+133,132,"Apertura de calle Oceania","Construcción de pavimentos, veredas, muro divisiorio, iluminación pública y desague cloacal de calle oceanía","2014-08-15 17:49:00",1,1,1,29,"Villa 1-11-14",133,29,"Villa 1-11-14 - Calle Oceanía",-34.652559,-58.428442,132
+134,133,"Construcción de Plaza de la Rotonda","Construcción de Plaza de la Rotonda","2014-08-14 17:50:00",1,1,1,19,"infrastructure",134,19,"Villa 1-11-14 - Plaza la Rotonda",-34.652559,-58.428442,133
+134,133,"Construcción de Plaza de la Rotonda","Construcción de Plaza de la Rotonda","2014-08-14 17:50:00",1,1,1,29,"Villa 1-11-14",134,29,"Villa 1-11-14 - Plaza la Rotonda",-34.652559,-58.428442,133
+135,134,"Revalorización plaza Roxana","Revalorización plaza Roxana","2014-08-21 17:52:00",1,1,1,19,"infrastructure",135,19,"Villa 15- Manzana 3bis - Eva Perón 6550",-34.652559,-58.428442,134
+135,134,"Revalorización plaza Roxana","Revalorización plaza Roxana","2014-08-21 17:52:00",1,1,1,31,"Villa 15",135,31,"Villa 15- Manzana 3bis - Eva Perón 6550",-34.652559,-58.428442,134
+136,135,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-23 17:54:00",1,1,1,16,"sewer",136,16,"Ramón Carrillo - Barrio Ramón Carrillo",-34.652559,-58.428442,135
+136,135,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-23 17:54:00",1,1,1,28,"Ramón Carrillo",136,28,"Ramón Carrillo - Barrio Ramón Carrillo",-34.652559,-58.428442,135
+137,136,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-16 17:55:00",1,1,1,16,"sewer",137,16,"Barrio Ramón Carrillo",-34.652559,-58.428442,136
+137,136,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-16 17:55:00",1,1,1,28,"Ramón Carrillo",137,28,"Barrio Ramón Carrillo",-34.652559,-58.428442,136
+138,137,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-17 17:57:00",1,1,1,16,"sewer",138,16,"Barrio Ramón Carrillo",-34.652559,-58.428442,137
+138,137,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-17 17:57:00",1,1,1,28,"Ramón Carrillo",138,28,"Barrio Ramón Carrillo",-34.652559,-58.428442,137
+139,138,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-17 17:58:00",1,1,1,16,"sewer",139,16,"Barrio Ramón Carrillo",-34.652559,-58.428442,138
+139,138,"Red cloacal","Red cloacal secundaria y 1501 reconexiones domiciliarias","2014-08-17 17:58:00",1,1,1,28,"Ramón Carrillo",139,28,"Barrio Ramón Carrillo",-34.652559,-58.428442,138
+140,139,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 148 metros lineales","2014-08-10 18:00:00",1,1,1,16,"sewer",140,16,"Cildañez - Manzana C",-34.652559,-58.428442,139
+140,139,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 148 metros lineales","2014-08-10 18:00:00",1,1,1,30,"Cildáñez",140,30,"Cildañez - Manzana C",-34.652559,-58.428442,139
+141,140,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 160 metros lineales","2014-08-02 18:03:00",1,1,1,16,"sewer",141,16,"Cildañez - Manzana B",-34.652559,-58.428442,140
+141,140,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 160 metros lineales","2014-08-02 18:03:00",1,1,1,30,"Cildáñez",141,30,"Cildañez - Manzana B",-34.652559,-58.428442,140
+142,141,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 373 metros lineales","2014-08-09 18:04:00",1,1,1,16,"sewer",142,16,"Villa 1-11-14 - Manzana 4",-34.652559,-58.428442,141
+142,141,"Red cloacal y pluvial","Red cloacal, pluvial y agua. 373 metros lineales","2014-08-09 18:04:00",1,1,1,29,"Villa 1-11-14",142,29,"Villa 1-11-14 - Manzana 4",-34.652559,-58.428442,141
+143,142,"Red cloacal y pluvial","Red cloacal, pluvial y agua","2014-08-02 18:06:00",1,1,1,16,"sewer",143,16,"Ramón Carrillo - No informado",-34.652559,-58.428442,142
+143,142,"Red cloacal y pluvial","Red cloacal, pluvial y agua","2014-08-02 18:06:00",1,1,1,28,"Ramón Carrillo",143,28,"Ramón Carrillo - No informado",-34.652559,-58.428442,142
+145,144,"Denuncia","Calles y plazas &gt; Falta pavimentar
+
+ yo tengo que hacer mucha fuerza para subir con el carrito por la loma xq eswta muy rota y el pasillo tambien","2014-09-18 14:07:00",1,1,0,11,"infrastructure",145,11,"manzana 26 casa 5 la loma y osvaldo cruz",-34.656617,-58.398501,144
+145,144,"Denuncia","Calles y plazas &gt; Falta pavimentar
+
+ yo tengo que hacer mucha fuerza para subir con el carrito por la loma xq eswta muy rota y el pasillo tambien","2014-09-18 14:07:00",1,1,0,25,"Villa 21-24",145,25,"manzana 26 casa 5 la loma y osvaldo cruz",-34.656617,-58.398501,144
+147,146,"Denuncia","Basura &gt; No pasó el camión recolector
+Debería haber pasado: Todos los dias a la mañana","2014-09-26 14:35:00",1,1,1,12,"trash",147,12,"manzana 1 casa 38",-34.662712,-58.454091,146
+147,146,"Denuncia","Basura &gt; No pasó el camión recolector
+Debería haber pasado: Todos los dias a la mañana","2014-09-26 14:35:00",1,1,1,26,"Los piletones",147,26,"manzana 1 casa 38",-34.662712,-58.454091,146
+148,147,"Denuncia","Basura &gt; Contenedor sin tapa
+
+Los contenedores de basura no tienen tapa","2014-09-26 14:52:00",1,1,0,12,"trash",148,12,"Av. iriarte y Montesquiu",-34.651437,-58.396499,147
+148,147,"Denuncia","Basura &gt; Contenedor sin tapa
+
+Los contenedores de basura no tienen tapa","2014-09-26 14:52:00",1,1,0,25,"Villa 21-24",148,25,"Av. iriarte y Montesquiu",-34.651437,-58.396499,147
+149,148,"Denuncia","Agua &gt; Problemas con el agua
+Problema: mal sabor
+
+ el agua potable tiene mal sabor, color y presenta impurezas.","2014-09-26 15:00:00",1,1,1,7,"water",149,7,"manzana 1 casa 37",-58.455319,-34.662959,148
+149,148,"Denuncia","Agua &gt; Problemas con el agua
+Problema: mal sabor
+
+ el agua potable tiene mal sabor, color y presenta impurezas.","2014-09-26 15:00:00",1,1,1,26,"Los piletones",149,26,"manzana 1 casa 37",-58.455319,-34.662959,148
+150,149,"Denuncia","Calles y plazas &gt; Espacio verde en mal estado
+
+ Plaza en mal estado con respecto a los juegos infantiles deteriorados, falta de mantenimiento de los mismos, y  de iluminación.","2014-09-26 14:52:00",1,1,0,11,"infrastructure",150,11,"lacarra  y barros paso",-58.455319,-34.662959,149
+150,149,"Denuncia","Calles y plazas &gt; Espacio verde en mal estado
+
+ Plaza en mal estado con respecto a los juegos infantiles deteriorados, falta de mantenimiento de los mismos, y  de iluminación.","2014-09-26 14:52:00",1,1,0,26,"Los piletones",150,26,"lacarra  y barros paso",-58.455319,-34.662959,149
+151,150,"Denuncia","Basura &gt; No pasó el camión recolector
+Debería haber pasado: todos los dias
+
+ no se cumple la recoleccion de residuos casa x casa como deberia hacer.","2014-09-26 15:02:00",1,1,1,12,"trash",151,12,"manzana 1 casa 38",-34.662716,-58.454139,150
+151,150,"Denuncia","Basura &gt; No pasó el camión recolector
+Debería haber pasado: todos los dias
+
+ no se cumple la recoleccion de residuos casa x casa como deberia hacer.","2014-09-26 15:02:00",1,1,1,26,"Los piletones",151,26,"manzana 1 casa 38",-34.662716,-58.454139,150
+152,151,"Denuncia","Luz y electricidad &gt; Deberían hacer una obra
+Obra: cambio de postes","2014-09-26 15:06:00",1,1,1,9,"energy",152,9,"pasillo de la manzana 9 y 1",-34.662103,-58.454337,151
+152,151,"Denuncia","Luz y electricidad &gt; Deberían hacer una obra
+Obra: cambio de postes","2014-09-26 15:06:00",1,1,1,26,"Los piletones",152,26,"pasillo de la manzana 9 y 1",-34.662103,-58.454337,151
+153,152,"Denuncia","Agua &gt; No hay presión de agua
+
+ La semana pasada no habìa presion de agua.","2014-09-26 15:10:00",1,1,1,7,"water",153,7,"manzana 5, casa 2",-34.66415,-58.453935,152
+153,152,"Denuncia","Agua &gt; No hay presión de agua
+
+ La semana pasada no habìa presion de agua.","2014-09-26 15:10:00",1,1,1,26,"Los piletones",153,26,"manzana 5, casa 2",-34.66415,-58.453935,152
+154,153,"Denuncia","Agua &gt; Se cortó el agua
+Cuando se corto: esta mañana
+
+ mi reclamo es q hace 6 meses se nos corta el agua todos los dias..","2014-09-26 15:12:00",1,1,1,7,"water",154,7,"manzana9 casa 22",-34.662398,-58.454363,153
+154,153,"Denuncia","Agua &gt; Se cortó el agua
+Cuando se corto: esta mañana
+
+ mi reclamo es q hace 6 meses se nos corta el agua todos los dias..","2014-09-26 15:12:00",1,1,1,26,"Los piletones",154,26,"manzana9 casa 22",-34.662398,-58.454363,153
+156,155,"Denuncia","Obra de infraestructura &gt; Deberían hacer una obra &gt; Otra
+
+Tenemos necesidad de que nos repavimenten la cuadra indicada en el mapa ya que los pluviales estan practicamente tapados y los dias de lluvias que la calle con mucha agua por muchos dias sin poder secarse y las enfermedades que esto acarrea tanto para los chicos como para los grandes, les agradeceriamos se nos de importancia a nuestros reclamos. desde ya muchas gracias","2014-09-26 22:30:00",1,1,0,6,"infrastructure",156,6,"Pasaje San Jorge - Mz 57 - Casa 30",-34.655665,-58.400356,155
+156,155,"Denuncia","Obra de infraestructura &gt; Deberían hacer una obra &gt; Otra
+
+Tenemos necesidad de que nos repavimenten la cuadra indicada en el mapa ya que los pluviales estan practicamente tapados y los dias de lluvias que la calle con mucha agua por muchos dias sin poder secarse y las enfermedades que esto acarrea tanto para los chicos como para los grandes, les agradeceriamos se nos de importancia a nuestros reclamos. desde ya muchas gracias","2014-09-26 22:30:00",1,1,0,25,"Villa 21-24",156,25,"Pasaje San Jorge - Mz 57 - Casa 30",-34.655665,-58.400356,155
+157,156,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ Buenos dias,
+                      Tenemos muchos inconvenientes los dias de lluvias debido a que se tapan los sumideros y el agua queda estancada por muchos dias, tratando de darle una solucion a este inconveniente conseguimos con los vecinos pavimento recuperado pero no fui la mejor solucion, la calle esta muy deteriorada, necesitamos se nos de importancia a nuestro reclamo, en la cuadra hay muchos chicos y las enfermedades que esto acarrea.","2014-10-04 09:28:00",1,1,0,11,"infrastructure",157,11,"Pasaje San Jorge - Mz 57 - Casa 31",-34.655568,-58.40035,156
+157,156,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ Buenos dias,
+                      Tenemos muchos inconvenientes los dias de lluvias debido a que se tapan los sumideros y el agua queda estancada por muchos dias, tratando de darle una solucion a este inconveniente conseguimos con los vecinos pavimento recuperado pero no fui la mejor solucion, la calle esta muy deteriorada, necesitamos se nos de importancia a nuestro reclamo, en la cuadra hay muchos chicos y las enfermedades que esto acarrea.","2014-10-04 09:28:00",1,1,0,25,"Villa 21-24",157,25,"Pasaje San Jorge - Mz 57 - Casa 31",-34.655568,-58.40035,156
+158,157,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ Buenos Dias,
+                      El motivo de mi reclamo es por nuestra calle que se encuentra muy deteriorada y en los dias de lluvias queda el agua estancada en toda la cuadra y las posibilidades de traer enfermedades para los chicos, hace un tiempo con los vecinos tratamos de darle una solucion provisoria y se logro conseguir poner un relleno de asfalto recuperado pero esto no fue favorable ya que los sumideros se han tapado aun peor, estariamos muy agradecidos si   se nos repavimenta la misma, esta calle en su momento fue de adoquin pero con el transitar de los vehiculos se fue deteriorando, les adjunto algunas fotos del estado actual.
+Desde ya muchas Gracias y espero tangamos respuesta favorable a nuestro pedido.
+Un Saludo","2014-10-04 10:05:00",1,1,0,11,"infrastructure",158,11,"Pasaje San Jorge- Mz 57 - Casa 31",-34.655541,-58.400356,157
+158,157,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ Buenos Dias,
+                      El motivo de mi reclamo es por nuestra calle que se encuentra muy deteriorada y en los dias de lluvias queda el agua estancada en toda la cuadra y las posibilidades de traer enfermedades para los chicos, hace un tiempo con los vecinos tratamos de darle una solucion provisoria y se logro conseguir poner un relleno de asfalto recuperado pero esto no fue favorable ya que los sumideros se han tapado aun peor, estariamos muy agradecidos si   se nos repavimenta la misma, esta calle en su momento fue de adoquin pero con el transitar de los vehiculos se fue deteriorando, les adjunto algunas fotos del estado actual.
+Desde ya muchas Gracias y espero tangamos respuesta favorable a nuestro pedido.
+Un Saludo","2014-10-04 10:05:00",1,1,0,25,"Villa 21-24",158,25,"Pasaje San Jorge- Mz 57 - Casa 31",-34.655541,-58.400356,157
+159,158,"No vino el camión atmosférico","Clocacas / pluviales &gt; No vino el camión atmosférico
+Llamó el: 8 de octubre 2014
+
+ nesecito el camion para q me puedan desagotar el pozo ciego x fa ya q fui varias veces a pedir y nada x fa urgente estoy sobre las vias de tierra amarilla manzana 4 casa 37  flia GARCIA CRISTALDO  gracias","2014-10-14 21:14:00",1,1,1,8,"sewer",159,8,"iriarte 3700 casa 37 manzana 4",-34.649822,-58.399057,158
+159,158,"No vino el camión atmosférico","Clocacas / pluviales &gt; No vino el camión atmosférico
+Llamó el: 8 de octubre 2014
+
+ nesecito el camion para q me puedan desagotar el pozo ciego x fa ya q fui varias veces a pedir y nada x fa urgente estoy sobre las vias de tierra amarilla manzana 4 casa 37  flia GARCIA CRISTALDO  gracias","2014-10-14 21:14:00",1,1,1,25,"Villa 21-24",159,25,"iriarte 3700 casa 37 manzana 4",-34.649822,-58.399057,158
+160,159,"Deberían hacer una obra","Agua &gt; Deberían hacer una obra
+Obra: No hay agua se corto no hay pecio no! hay
+
+ Manzana 11 sobre calle montesquiu hase más de dos años se hiso una cañería que nunca tuvo precion todos los vesino dejaron una boca para cada casa pero no hay agua no hay","2014-10-21 22:39:00",1,1,1,7,"water",160,7,"padre Daniel de la sierra (ex montesquiu) manzana 11 y alrededores",-34.653716,-58.396305,159
+160,159,"Deberían hacer una obra","Agua &gt; Deberían hacer una obra
+Obra: No hay agua se corto no hay pecio no! hay
+
+ Manzana 11 sobre calle montesquiu hase más de dos años se hiso una cañería que nunca tuvo precion todos los vesino dejaron una boca para cada casa pero no hay agua no hay","2014-10-21 22:39:00",1,1,1,25,"Villa 21-24",160,25,"padre Daniel de la sierra (ex montesquiu) manzana 11 y alrededores",-34.653716,-58.396305,159
+163,162,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ Todos los días el contenedor rebalsa de basura, no tiene tapa y es un foco de contaminación. También hay plagas.","2014-10-30 10:19:00",1,1,1,12,"trash",163,12,"Pola y Barros Pasos",-34.676294,-58.466856,162
+163,162,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ Todos los días el contenedor rebalsa de basura, no tiene tapa y es un foco de contaminación. También hay plagas.","2014-10-30 10:19:00",1,1,1,24,"Villa 20",163,24,"Pola y Barros Pasos",-34.676294,-58.466856,162
+164,163,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa de basura, no tiene tapa
+y es un foco de contaminacion.tambin hay plagas.","2014-10-30 10:24:00",1,1,1,12,"trash",164,12,"pola y barros pasos",-34.676226,-58.466814,163
+164,163,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa de basura, no tiene tapa
+y es un foco de contaminacion.tambin hay plagas.","2014-10-30 10:24:00",1,1,1,24,"Villa 20",164,24,"pola y barros pasos",-34.676226,-58.466814,163
+165,164,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+Todos los dias el contenedor rebalsa de basura,tiene tapa y es un foco de contaminacion. tambien hay plagas.","2014-10-30 10:20:00",1,1,1,12,"trash",165,12,"Pola y Barros Pasos",-34.676177,-58.466776,164
+165,164,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+Todos los dias el contenedor rebalsa de basura,tiene tapa y es un foco de contaminacion. tambien hay plagas.","2014-10-30 10:20:00",1,1,1,24,"Villa 20",165,24,"Pola y Barros Pasos",-34.676177,-58.466776,164
+166,165,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ todos los dias el contenedor rebalsa la basura ,no tiene tapa y es un foco de contaminacion y tambien hay plagas","2014-10-30 10:19:00",1,1,1,12,"trash",166,12,"pola y barrros pasos",-34.673092,-58.457319,165
+166,165,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ todos los dias el contenedor rebalsa la basura ,no tiene tapa y es un foco de contaminacion y tambien hay plagas","2014-10-30 10:19:00",1,1,1,24,"Villa 20",166,24,"pola y barrros pasos",-34.673092,-58.457319,165
+166,165,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ todos los dias el contenedor rebalsa la basura ,no tiene tapa y es un foco de contaminacion y tambien hay plagas","2014-10-30 10:19:00",1,1,1,25,"Villa 21-24",166,25,"pola y barrros pasos",-34.673092,-58.457319,165
+166,165,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ todos los dias el contenedor rebalsa la basura ,no tiene tapa y es un foco de contaminacion y tambien hay plagas","2014-10-30 10:19:00",1,1,1,26,"Los piletones",166,26,"pola y barrros pasos",-34.673092,-58.457319,165
+167,166,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa la basura,no tiene tapa y es un foco de contaminacion .Tambien hay plagas","2014-10-30 10:19:00",1,1,1,12,"trash",167,12,"pola y barros pasos",-34.676313,-58.466824,166
+167,166,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa la basura,no tiene tapa y es un foco de contaminacion .Tambien hay plagas","2014-10-30 10:19:00",1,1,1,23,"Fatima",167,23,"pola y barros pasos",-34.676313,-58.466824,166
+167,166,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa la basura,no tiene tapa y es un foco de contaminacion .Tambien hay plagas","2014-10-30 10:19:00",1,1,1,24,"Villa 20",167,24,"pola y barros pasos",-34.676313,-58.466824,166
+167,166,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa la basura,no tiene tapa y es un foco de contaminacion .Tambien hay plagas","2014-10-30 10:19:00",1,1,1,25,"Villa 21-24",167,25,"pola y barros pasos",-34.676313,-58.466824,166
+167,166,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa la basura,no tiene tapa y es un foco de contaminacion .Tambien hay plagas","2014-10-30 10:19:00",1,1,1,26,"Los piletones",167,26,"pola y barros pasos",-34.676313,-58.466824,166
+168,167,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+Todos  los  dias  el  contenedores  redarsa  de basura y plagas","2014-10-30 10:19:00",1,1,1,12,"trash",168,12,"pola y barros  pasos",-58.465934,-34.675316,167
+168,167,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+Todos  los  dias  el  contenedores  redarsa  de basura y plagas","2014-10-30 10:19:00",1,1,1,24,"Villa 20",168,24,"pola y barros  pasos",-58.465934,-34.675316,167
+169,168,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa de basura, no tiene tapa","2014-10-30 10:19:00",1,1,1,12,"trash",169,12,"pola y barros pasos",-34.676269,-58.466814,168
+169,168,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa de basura, no tiene tapa","2014-10-30 10:19:00",1,1,1,24,"Villa 20",169,24,"pola y barros pasos",-34.676269,-58.466814,168
+170,169,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa de basura no tiene tapa y es contaminante","2014-10-30 10:19:00",1,1,1,12,"trash",170,12,"pola y barroz pasos",-34.676066,-58.465757,169
+170,169,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa de basura no tiene tapa y es contaminante","2014-10-30 10:19:00",1,1,1,24,"Villa 20",170,24,"pola y barroz pasos",-34.676066,-58.465757,169
+171,170,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa ,no tiene tapa y es un foco de contaminacion","2014-10-30 10:19:00",1,1,1,12,"trash",171,12,"pola y barros pazos",-58.465934,-34.675316,170
+171,170,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todos los dias el contenedor rebalsa ,no tiene tapa y es un foco de contaminacion","2014-10-30 10:19:00",1,1,1,24,"Villa 20",171,24,"pola y barros pazos",-58.465934,-34.675316,170
+172,171,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todo los dias el contenedor rebalsa de basura, no tiene tapa y es un foco de contaminacion.","2014-10-30 10:22:00",1,1,1,12,"trash",172,12,"pola y barros pasos",-58.465934,-34.675316,171
+172,171,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+todo los dias el contenedor rebalsa de basura, no tiene tapa y es un foco de contaminacion.","2014-10-30 10:22:00",1,1,1,24,"Villa 20",172,24,"pola y barros pasos",-58.465934,-34.675316,171
+173,172,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ la basura se revalsa no pasa el camion hay muchos bichos y ratas","2014-10-30 10:32:00",1,1,1,12,"trash",173,12,"pola y barros pasos",-58.465934,-34.675316,172
+173,172,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ la basura se revalsa no pasa el camion hay muchos bichos y ratas","2014-10-30 10:32:00",1,1,1,24,"Villa 20",173,24,"pola y barros pasos",-58.465934,-34.675316,172
+174,173,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ todos los dias rebalsa el contenedor de basura y alas personas le molesta mucho y qui sieramos  que agan lo que pedimos por fabor","2014-10-30 10:32:00",1,1,1,12,"trash",174,12,"pola y barrospasos",-58.465934,-34.675316,173
+174,173,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ todos los dias rebalsa el contenedor de basura y alas personas le molesta mucho y qui sieramos  que agan lo que pedimos por fabor","2014-10-30 10:32:00",1,1,1,24,"Villa 20",174,24,"pola y barrospasos",-58.465934,-34.675316,173
+175,174,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+siempre veo ratas y eso es muy feo","2014-10-30 10:29:00",1,1,1,12,"trash",175,12,"pola y barros pazos",-58.465934,-34.675316,174
+175,174,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+siempre veo ratas y eso es muy feo","2014-10-30 10:29:00",1,1,1,24,"Villa 20",175,24,"pola y barros pazos",-58.465934,-34.675316,174
+176,175,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ el 14 de octubre se corto la luz durante dos dias en la escuela 19","2014-10-30 10:58:00",1,1,1,9,"energy",176,9,"escuela 19 pola y chilavert",-34.676657,-58.466771,175
+176,175,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ el 14 de octubre se corto la luz durante dos dias en la escuela 19","2014-10-30 10:58:00",1,1,1,24,"Villa 20",176,24,"escuela 19 pola y chilavert",-34.676657,-58.466771,175
+177,176,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+El 14 de octubre se cortó la luz durante dos días en la Escuela 19.","2014-10-30 10:58:00",1,1,1,9,"energy",177,9,"Escuela 19 Pola Y Chilavert",-34.676779,-58.466535,176
+177,176,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+El 14 de octubre se cortó la luz durante dos días en la Escuela 19.","2014-10-30 10:58:00",1,1,1,24,"Villa 20",177,24,"Escuela 19 Pola Y Chilavert",-34.676779,-58.466535,176
+178,177,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ El 14 de octubre se corto la luz  durate todos el dia","2014-10-30 11:04:00",1,1,1,9,"energy",178,9,"escuela 19 pola y chilavert",-34.67708,-58.466599,177
+178,177,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ El 14 de octubre se corto la luz  durate todos el dia","2014-10-30 11:04:00",1,1,1,24,"Villa 20",178,24,"escuela 19 pola y chilavert",-34.67708,-58.466599,177
+179,178,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ el 14 de octubre se corto la luz durante dos dias en la Escuela 19","2014-10-30 11:02:00",1,1,1,9,"energy",179,9,"escuela 19 pola y chilavert",-34.676869,-58.466679,178
+179,178,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ el 14 de octubre se corto la luz durante dos dias en la Escuela 19","2014-10-30 11:02:00",1,1,1,24,"Villa 20",179,24,"escuela 19 pola y chilavert",-34.676869,-58.466679,178
+180,179,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ El 14 de octubre se corto la luz durante dos días en la Escuela 19","2014-10-30 10:58:00",1,1,1,9,"energy",180,9,"Escula 19 Pola y CHilavert",-34.676692,-58.466685,179
+180,179,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ El 14 de octubre se corto la luz durante dos días en la Escuela 19","2014-10-30 10:58:00",1,1,1,24,"Villa 20",180,24,"Escula 19 Pola y CHilavert",-34.676692,-58.466685,179
+181,180,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 de octubre se corto la luz durante dos dias en la escuela 19","2014-10-30 10:58:00",1,1,1,9,"energy",181,9,"escuela 19 pola y chilavert",-58.465934,-34.675316,180
+181,180,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 de octubre se corto la luz durante dos dias en la escuela 19","2014-10-30 10:58:00",1,1,1,24,"Villa 20",181,24,"escuela 19 pola y chilavert",-58.465934,-34.675316,180
+182,181,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ el 14 de octubre se corto la luz durante dos dias  en la escuela 19","2014-10-30 10:58:00",1,1,1,9,"energy",182,9,"escuela  19 pola y chiilabert",-34.676833,-58.466674,181
+182,181,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ el 14 de octubre se corto la luz durante dos dias  en la escuela 19","2014-10-30 10:58:00",1,1,1,24,"Villa 20",182,24,"escuela  19 pola y chiilabert",-34.676833,-58.466674,181
+183,182,"Hubo un incendio","Luz y electricidad &gt; Hubo un incendio
+
+ 14 de octubre se corto la luz en la Escuela","2014-10-30 10:59:00",1,1,1,9,"energy",183,9,"Escuela 19 pola y chilavert",-34.644958,-58.463037,182
+183,182,"Hubo un incendio","Luz y electricidad &gt; Hubo un incendio
+
+ 14 de octubre se corto la luz en la Escuela","2014-10-30 10:59:00",1,1,1,24,"Villa 20",183,24,"Escuela 19 pola y chilavert",-34.644958,-58.463037,182
+184,183,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 de octubre se corto la luz durante dos dias en la escuela 19","2014-10-30 11:03:00",1,1,1,9,"energy",184,9,"m26 c82",-34.677045,-58.466422,183
+184,183,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 de octubre se corto la luz durante dos dias en la escuela 19","2014-10-30 11:03:00",1,1,1,24,"Villa 20",184,24,"m26 c82",-34.677045,-58.466422,183
+185,184,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 octubre  se corto la luz durantes dos dias se corto laluz en lan escueala19","2014-10-30 10:58:00",1,1,1,9,"energy",185,9,"escuela19 pola y chilavert",-34.676791,-58.466599,184
+185,184,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 octubre  se corto la luz durantes dos dias se corto laluz en lan escueala19","2014-10-30 10:58:00",1,1,1,24,"Villa 20",185,24,"escuela19 pola y chilavert",-34.676791,-58.466599,184
+186,185,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ El 14 de octubre se corto la luz durante dos dias en la escuela 19.","2014-10-30 11:08:00",1,1,1,9,"energy",186,9,"escuela 19 pola y chilavert",-34.676833,-58.465827,185
+186,185,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ El 14 de octubre se corto la luz durante dos dias en la escuela 19.","2014-10-30 11:08:00",1,1,1,24,"Villa 20",186,24,"escuela 19 pola y chilavert",-34.676833,-58.465827,185
+187,186,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 de octubre se corto la luz durante dos días en la escuela 19 o hay veces tenemos muy baja tención y cuando estamos en la escuela se corta y nos quedamos sin luz y no se puede ver bien ,o no tenemos clases por que no hay luz","2014-10-30 11:03:00",1,1,1,9,"energy",187,9,"escuela 19 pola y chilavert",-34.677045,-58.466642,186
+187,186,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+el 14 de octubre se corto la luz durante dos días en la escuela 19 o hay veces tenemos muy baja tención y cuando estamos en la escuela se corta y nos quedamos sin luz y no se puede ver bien ,o no tenemos clases por que no hay luz","2014-10-30 11:03:00",1,1,1,24,"Villa 20",187,24,"escuela 19 pola y chilavert",-34.677045,-58.466642,186
+188,187,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 29/10/2014
+
+a las 19:00 se corta el agua y no buelve hasta el dia sigiente","2014-10-30 11:09:00",1,1,1,7,"water",188,7,"m23 c24",-34.673763,-58.465526,187
+188,187,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 29/10/2014
+
+a las 19:00 se corta el agua y no buelve hasta el dia sigiente","2014-10-30 11:09:00",1,1,1,24,"Villa 20",188,24,"m23 c24",-34.673763,-58.465526,187
+190,189,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ ESTO PASA SIEMPRE EN LOS FINDE SEMANAS","2014-11-04 15:00:00",1,1,0,12,"trash",190,12,"POLA Y BARROSPASOS",-34.67618,-58.46676,189
+190,189,"Contenedor rebalsa","Basura &gt; Contenedor rebalsa
+
+ ESTO PASA SIEMPRE EN LOS FINDE SEMANAS","2014-11-04 15:00:00",1,1,0,24,"Villa 20",190,24,"POLA Y BARROSPASOS",-34.67618,-58.46676,189
+191,190,"Hay un caño roto","Clocacas / pluviales &gt; Hay un caño roto","2014-11-04 14:58:00",1,1,0,8,"sewer",191,8,"MANZANA 22  CALLE CORVALAN",-34.67468,-58.464421,190
+191,190,"Hay un caño roto","Clocacas / pluviales &gt; Hay un caño roto","2014-11-04 14:58:00",1,1,0,24,"Villa 20",191,24,"MANZANA 22  CALLE CORVALAN",-34.67468,-58.464421,190
+192,191,"No pasó el camión recolector","Basura &gt; No pasó el camión recolector
+Debería haber pasado: todos los dias","2014-11-04 15:08:00",1,1,0,12,"trash",192,12,"avenida cruz 54 40 y pola",-34.677533,-58.464789,191
+192,191,"No pasó el camión recolector","Basura &gt; No pasó el camión recolector
+Debería haber pasado: todos los dias","2014-11-04 15:08:00",1,1,0,24,"Villa 20",192,24,"avenida cruz 54 40 y pola",-34.677533,-58.464789,191
+193,192,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: desague troncal
+
+ se inundan todas las manzanas sobre la calle chilavert las manzanas son 8,18,19,20,21,22,23,24,25,26. producto de que nuestra cañerias troncales se encuentra tapada en un 70 porciento dado que la ultima limpieza se realizo en el año 2007,por el IVC. Esto seria un  mientras tanto. Pero es indispensable que se realice las obras correspondientes.","2014-11-04 15:03:00",1,1,0,8,"sewer",193,8,"sobre calle chilavert entre av.escalada y pola",-34.675527,-58.464797,192
+193,192,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: desague troncal
+
+ se inundan todas las manzanas sobre la calle chilavert las manzanas son 8,18,19,20,21,22,23,24,25,26. producto de que nuestra cañerias troncales se encuentra tapada en un 70 porciento dado que la ultima limpieza se realizo en el año 2007,por el IVC. Esto seria un  mientras tanto. Pero es indispensable que se realice las obras correspondientes.","2014-11-04 15:03:00",1,1,0,24,"Villa 20",193,24,"sobre calle chilavert entre av.escalada y pola",-34.675527,-58.464797,192
+194,193,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ Apertura de calle Zabaleta desde Av. Iriarte hasta Santo Domingo.","2014-11-05 12:08:00",1,1,0,11,"infrastructure",194,11,"Calle Zabaleta desde Iriarte hasta Sto Domingo",-34.652638,-58.400361,193
+194,193,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ Apertura de calle Zabaleta desde Av. Iriarte hasta Santo Domingo.","2014-11-05 12:08:00",1,1,0,25,"Villa 21-24",194,25,"Calle Zabaleta desde Iriarte hasta Sto Domingo",-34.652638,-58.400361,193
+195,194,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 8 meses
+
+ hace 8 meses no tenemos agua en piletones , gracias a unos estudios  se  verifico que el agua que utilizabamos se encontraba contaminada . mi nombre es Ada margarita rojas mi tel es 1156921367  . ante esta situacion esperamos una pronta respuestas de quien corresponda","2014-11-11 10:12:00",1,1,0,7,"water",195,7,"manzana 10 casa 33 bis",-34.662209,-58.454375,194
+195,194,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 8 meses
+
+ hace 8 meses no tenemos agua en piletones , gracias a unos estudios  se  verifico que el agua que utilizabamos se encontraba contaminada . mi nombre es Ada margarita rojas mi tel es 1156921367  . ante esta situacion esperamos una pronta respuestas de quien corresponda","2014-11-11 10:12:00",1,1,0,26,"Los piletones",195,26,"manzana 10 casa 33 bis",-34.662209,-58.454375,194
+196,195,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace 8 meses
+
+ Fabiola Portillo 1134804550
+
+Desde hace 8 meses se cortò y solo muy cada tanto hay agua. Para colmo viene contaminada","2014-11-11 10:19:00",1,1,0,7,"water",196,7,"Manzana 10 casa 78",-34.662465,-58.454246,195
+196,195,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace 8 meses
+
+ Fabiola Portillo 1134804550
+
+Desde hace 8 meses se cortò y solo muy cada tanto hay agua. Para colmo viene contaminada","2014-11-11 10:19:00",1,1,0,26,"Los piletones",196,26,"Manzana 10 casa 78",-34.662465,-58.454246,195
+197,196,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 8 meses
+
+ no sale agua ni de noche y aparte de eso el agua sale contaminada  nadie nos da una solucion sobre este tema . mi cel 1155664037","2014-11-11 10:19:00",1,1,0,7,"water",197,7,"manzana 10 casa 32",-34.666347,-58.44635,196
+197,196,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 8 meses
+
+ no sale agua ni de noche y aparte de eso el agua sale contaminada  nadie nos da una solucion sobre este tema . mi cel 1155664037","2014-11-11 10:19:00",1,1,0,26,"Los piletones",197,26,"manzana 10 casa 32",-34.666347,-58.44635,196
+198,197,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 4 meses y medio
+
+ no tenemos agua . y cuando viene se vuelve a cortar solo de noche logramos recaudar agua y aparte de eso el agua  se encuentra contaminada mi nombre es  rosa tapia rabel . mi cel 1140248338 esperamos una solucion de quien corresponda","2014-11-11 10:24:00",1,1,1,7,"water",198,7,"manzana 10 casa 92",-34.662235,-58.454911,197
+198,197,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 4 meses y medio
+
+ no tenemos agua . y cuando viene se vuelve a cortar solo de noche logramos recaudar agua y aparte de eso el agua  se encuentra contaminada mi nombre es  rosa tapia rabel . mi cel 1140248338 esperamos una solucion de quien corresponda","2014-11-11 10:24:00",1,1,1,26,"Los piletones",198,26,"manzana 10 casa 92",-34.662235,-58.454911,197
+199,198,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1 año aprox,,
+
+ hace un año aproximadamente que no tenemos agua viene un solo camion que nos manda la ugis y no da a basto con todos los vecinos de la manzana 10 . mi es ceveriana sanabria mi cel es 1563601875","2014-11-11 10:28:00",1,1,1,7,"water",199,7,"manzana 10 casa 62 al fondo",-34.662147,-58.455469,198
+199,198,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1 año aprox,,
+
+ hace un año aproximadamente que no tenemos agua viene un solo camion que nos manda la ugis y no da a basto con todos los vecinos de la manzana 10 . mi es ceveriana sanabria mi cel es 1563601875","2014-11-11 10:28:00",1,1,1,26,"Los piletones",199,26,"manzana 10 casa 62 al fondo",-34.662147,-58.455469,198
+200,199,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace un año
+
+ No sale agua durante todo el dìa y solo aveces a la noche, a partir de las 2 o 3 de la mañana, podemos cargar algún balde. Es necesario hacer un caño directo hasta esta manzanas desde la fiscalia.
+
+1120009284
+NIlda","2014-11-11 10:30:00",1,1,1,7,"water",200,7,"Manzana 1 y 2",-34.661158,-58.455641,199
+200,199,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace un año
+
+ No sale agua durante todo el dìa y solo aveces a la noche, a partir de las 2 o 3 de la mañana, podemos cargar algún balde. Es necesario hacer un caño directo hasta esta manzanas desde la fiscalia.
+
+1120009284
+NIlda","2014-11-11 10:30:00",1,1,1,26,"Los piletones",200,26,"Manzana 1 y 2",-34.661158,-58.455641,199
+201,200,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1 año aprox,,
+
+se nos corta el agua todo el tiempo antes por lo menos salia algo de noche ahora a partir del comienzo de obras en el barrio no sale nada  de agua mi nombre es mariza chaparro mi cel 1161123323","2014-11-11 10:34:00",1,1,1,7,"water",201,7,"manzana 10 casa 57",-34.662359,-58.454418,200
+201,200,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1 año aprox,,
+
+se nos corta el agua todo el tiempo antes por lo menos salia algo de noche ahora a partir del comienzo de obras en el barrio no sale nada  de agua mi nombre es mariza chaparro mi cel 1161123323","2014-11-11 10:34:00",1,1,1,26,"Los piletones",201,26,"manzana 10 casa 57",-34.662359,-58.454418,200
+202,201,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ hace mas de 6 meses no tengo agua por favor una solucion me llamo zulma morel . cel 1131543320","2014-11-11 10:38:00",1,1,1,7,"water",202,7,"manzana 9 casa 3",-34.662164,-58.454847,201
+202,201,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ hace mas de 6 meses no tengo agua por favor una solucion me llamo zulma morel . cel 1131543320","2014-11-11 10:38:00",1,1,1,26,"Los piletones",202,26,"manzana 9 casa 3",-34.662164,-58.454847,201
+203,202,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ soy magdalena sanchez y no tengo agua hace 6 meses mi cel , 1568975184","2014-11-11 10:42:00",1,1,1,7,"water",203,7,"manzana 10 casa 91",-34.66227,-58.454482,202
+203,202,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ soy magdalena sanchez y no tengo agua hace 6 meses mi cel , 1568975184","2014-11-11 10:42:00",1,1,1,26,"Los piletones",203,26,"manzana 10 casa 91",-34.66227,-58.454482,202
+204,203,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ mi nombre es rosaura chipana garcia no tengo agua hace 9 meses desde el comienzo de obras en el barrio mi cel 1557983503","2014-11-11 10:44:00",1,1,1,7,"water",204,7,"manzana 9 casa 17",-34.662023,-58.454418,203
+204,203,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ mi nombre es rosaura chipana garcia no tengo agua hace 9 meses desde el comienzo de obras en el barrio mi cel 1557983503","2014-11-11 10:44:00",1,1,1,26,"Los piletones",204,26,"manzana 9 casa 17",-34.662023,-58.454418,203
+205,204,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace 9 meses
+
+ No hay agua durante el dìa, a lo sumo un goteo. A pesar de los reclamos no se soluciona.
+
+Miryan
+1154700988","2014-11-11 10:46:00",1,1,1,7,"water",205,7,"Manzana 10 casa 29",-34.662323,-58.454429,204
+205,204,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace 9 meses
+
+ No hay agua durante el dìa, a lo sumo un goteo. A pesar de los reclamos no se soluciona.
+
+Miryan
+1154700988","2014-11-11 10:46:00",1,1,1,26,"Los piletones",205,26,"Manzana 10 casa 29",-34.662323,-58.454429,204
+206,205,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Cuando llueve rebalsa la cloaca
+
+ Cuando llueve rebalsa la cloaca y sale los flujos para afuera. Deberian hacer una reforma porque se colapso la cloaca, quedo chica para la cantidad de gente que hay ahora en el barrio.","2014-11-11 10:48:00",1,1,1,8,"sewer",206,8,"mz 10 casa 29",-34.662535,-58.454364,205
+206,205,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Cuando llueve rebalsa la cloaca
+
+ Cuando llueve rebalsa la cloaca y sale los flujos para afuera. Deberian hacer una reforma porque se colapso la cloaca, quedo chica para la cantidad de gente que hay ahora en el barrio.","2014-11-11 10:48:00",1,1,1,26,"Los piletones",206,26,"mz 10 casa 29",-34.662535,-58.454364,205
+207,206,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1 año aprox,,
+
+ mi nombre es erlinda mitma y no tengo agua tengo 3 niños que no puedo hacerle la leche ni la comida a falta de agua","2014-11-11 10:48:00",1,1,1,7,"water",207,7,"manzana 9 casa 10",-34.661759,-58.455555,206
+207,206,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1 año aprox,,
+
+ mi nombre es erlinda mitma y no tengo agua tengo 3 niños que no puedo hacerle la leche ni la comida a falta de agua","2014-11-11 10:48:00",1,1,1,26,"Los piletones",207,26,"manzana 9 casa 10",-34.661759,-58.455555,206
+208,207,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ me llamo julia calani","2014-11-11 10:54:00",1,1,1,7,"water",208,7,"manzana 9 casa 41",-34.663453,-58.455019,207
+208,207,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ me llamo julia calani","2014-11-11 10:54:00",1,1,1,26,"Los piletones",208,26,"manzana 9 casa 41",-34.663453,-58.455019,207
+209,208,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace 8 meses
+
+ No sale una gota de agua y tampoco nos traen bidones. Tenemos que recorrer el barrio para buscar algo de agua.","2014-11-11 10:56:00",1,1,1,7,"water",209,7,"Manzana 10 casa 48",-34.662323,-58.454353,208
+209,208,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace 8 meses
+
+ No sale una gota de agua y tampoco nos traen bidones. Tenemos que recorrer el barrio para buscar algo de agua.","2014-11-11 10:56:00",1,1,1,26,"Los piletones",209,26,"Manzana 10 casa 48",-34.662323,-58.454353,208
+210,209,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ eva dueñas mi tel es 1532694744","2014-11-11 10:57:00",1,1,1,7,"water",210,7,"manzana 9 casa 22",-34.66167,-58.455104,209
+210,209,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses
+
+ eva dueñas mi tel es 1532694744","2014-11-11 10:57:00",1,1,1,26,"Los piletones",210,26,"manzana 9 casa 22",-34.66167,-58.455104,209
+211,210,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación
+
+ En los primeros dias de noviembre se inundo el barrio durante varios dias. Generò muchos problemas y perdidas para todos los vecinos. Faltan obras de pluviales","2014-11-11 10:57:00",1,1,1,8,"sewer",211,8,"Todo el barrio",-34.663735,-58.454504,210
+211,210,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación
+
+ En los primeros dias de noviembre se inundo el barrio durante varios dias. Generò muchos problemas y perdidas para todos los vecinos. Faltan obras de pluviales","2014-11-11 10:57:00",1,1,1,26,"Los piletones",211,26,"Todo el barrio",-34.663735,-58.454504,210
+212,211,"Hay peligro de riesgo eléctrico","Luz y electricidad &gt; Hay peligro de riesgo eléctrico
+Riesgo: sobre carga y cableado irregular
+
+ Reordenar cableado interno de toda la villa, puede haber  riesgo alto de descargas eléctricas y también de incendios. Ver el modelo de la 1-11-14","2014-11-11 11:37:00",1,1,1,9,"energy",212,9,"Todo el barrio",-34.659398,-58.453357,211
+212,211,"Hay peligro de riesgo eléctrico","Luz y electricidad &gt; Hay peligro de riesgo eléctrico
+Riesgo: sobre carga y cableado irregular
+
+ Reordenar cableado interno de toda la villa, puede haber  riesgo alto de descargas eléctricas y también de incendios. Ver el modelo de la 1-11-14","2014-11-11 11:37:00",1,1,1,23,"Fatima",212,23,"Todo el barrio",-34.659398,-58.453357,211
+213,212,"No hay luminaria en las calles","Luz y electricidad &gt; No hay luminaria en las calles
+
+ No hay luminaria publica en condiciones y el barrio es muy oscuro a la noche. Deberían hacer una obra integral para las calles principales y también para los pasillos internos","2014-11-11 11:40:00",1,1,1,9,"energy",213,9,"Calles principales y acceso al barrio",-34.656857,-58.453872,212
+213,212,"No hay luminaria en las calles","Luz y electricidad &gt; No hay luminaria en las calles
+
+ No hay luminaria publica en condiciones y el barrio es muy oscuro a la noche. Deberían hacer una obra integral para las calles principales y también para los pasillos internos","2014-11-11 11:40:00",1,1,1,23,"Fatima",213,23,"Calles principales y acceso al barrio",-34.656857,-58.453872,212
+214,213,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: cloacas
+
+ Hacer las cloacas de pasillos internos, porque están colapsadas. El crecimiento en cantidad de habitantes generó una saturación.","2014-11-11 11:41:00",1,1,1,8,"sewer",214,8,"toodo el barrio",-34.658728,-58.453357,213
+214,213,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: cloacas
+
+ Hacer las cloacas de pasillos internos, porque están colapsadas. El crecimiento en cantidad de habitantes generó una saturación.","2014-11-11 11:41:00",1,1,1,23,"Fatima",214,23,"toodo el barrio",-34.658728,-58.453357,213
+215,214,"Contenedor sin tapa","Basura &gt; Contenedor sin tapa
+
+ Los tachos de basura no tienen tapa y son pocos. Incluso deberían cambiarlos por que están mal hechos y se vuelcan, tirando toda la basura al piso. Es necesario ponerlos en condiciones y que el camión recolector pase dos veces por día. A igual que en otras villas de la ciudad como la 21-24","2014-11-11 11:43:00",1,1,1,12,"trash",215,12,"Todo el barrio",-34.658304,-58.453786,214
+215,214,"Contenedor sin tapa","Basura &gt; Contenedor sin tapa
+
+ Los tachos de basura no tienen tapa y son pocos. Incluso deberían cambiarlos por que están mal hechos y se vuelcan, tirando toda la basura al piso. Es necesario ponerlos en condiciones y que el camión recolector pase dos veces por día. A igual que en otras villas de la ciudad como la 21-24","2014-11-11 11:43:00",1,1,1,23,"Fatima",215,23,"Todo el barrio",-34.658304,-58.453786,214
+216,215,"No hay nombre de calles","Calles y plazas &gt; No hay nombre de calles
+
+ Cambiar los nombres de las calles mal puestos y poner los que faltan. La calle 17 de agosto fue vetada y también el pasillo las vegas.
+Ademas hay algunos pasillos  cambian de nombre al doblar mientras deberían mantenerlo en el pasillo que sigue recto.","2014-11-11 11:45:00",1,1,1,11,"infrastructure",216,11,"Todo el barrio",-34.659963,-58.452842,215
+216,215,"No hay nombre de calles","Calles y plazas &gt; No hay nombre de calles
+
+ Cambiar los nombres de las calles mal puestos y poner los que faltan. La calle 17 de agosto fue vetada y también el pasillo las vegas.
+Ademas hay algunos pasillos  cambian de nombre al doblar mientras deberían mantenerlo en el pasillo que sigue recto.","2014-11-11 11:45:00",1,1,1,23,"Fatima",216,23,"Todo el barrio",-34.659963,-58.452842,215
+217,216,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace un año
+
+ Ya no damos mas","2014-11-11 14:31:00",1,1,1,7,"water",217,7,"Manzana 10 casa 45",-34.662401,-58.454122,216
+217,216,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: Desde hace un año
+
+ Ya no damos mas","2014-11-11 14:31:00",1,1,1,26,"Los piletones",217,26,"Manzana 10 casa 45",-34.662401,-58.454122,216
+218,217,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: mayo abril
+
+ no nos resolvieron el problema","2014-11-14 11:41:00",1,1,1,7,"water",218,7,"manzana 4 casa",-34.650378,-58.397314,217
+218,217,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: mayo abril
+
+ no nos resolvieron el problema","2014-11-14 11:41:00",1,1,1,25,"Villa 21-24",218,25,"manzana 4 casa",-34.650378,-58.397314,217
+219,218,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 10/5/2014","2014-11-14 11:41:00",1,1,1,7,"water",219,7,"manzana 1",-34.650819,-58.396187,218
+219,218,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 10/5/2014","2014-11-14 11:41:00",1,1,1,25,"Villa 21-24",219,25,"manzana 1",-34.650819,-58.396187,218
+220,219,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ de calle1 zavaleta desde iriarte a santo domingo
+
+se inunda hay mucho barro,  es intransitable pasar x hay , y se inunda las casas.","2014-11-14 11:50:00",1,1,1,11,"infrastructure",220,11,"de calle1 zavaleta desde iriarte a santo domingo",-34.654544,-58.399889,219
+220,219,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ de calle1 zavaleta desde iriarte a santo domingo
+
+se inunda hay mucho barro,  es intransitable pasar x hay , y se inunda las casas.","2014-11-14 11:50:00",1,1,1,25,"Villa 21-24",220,25,"de calle1 zavaleta desde iriarte a santo domingo",-34.654544,-58.399889,219
+221,220,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ de calle1 zavaleta desde iriarte a santo domingo
+
+se inunda hay mucho barro,  es intransitable pasar x hay , y se inunda las casas.","2014-11-14 11:50:00",1,1,0,11,"infrastructure",221,11,"de calle1 zavaleta desde iriarte a santo domingo",-34.654544,-58.399889,220
+221,220,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ de calle1 zavaleta desde iriarte a santo domingo
+
+se inunda hay mucho barro,  es intransitable pasar x hay , y se inunda las casas.","2014-11-14 11:50:00",1,1,0,25,"Villa 21-24",221,25,"de calle1 zavaleta desde iriarte a santo domingo",-34.654544,-58.399889,220
+222,221,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+La calle Luna esta toda rota, con muchos baches ya que pasan muchos camiones y que pongan lomas de burros porque pasan rapidos autos, motos y hay muchos accidentes por ese problema tambien","2014-11-14 11:54:00",1,1,1,11,"infrastructure",222,11,"luna",-58.396391,-34.655673,221
+222,221,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+La calle Luna esta toda rota, con muchos baches ya que pasan muchos camiones y que pongan lomas de burros porque pasan rapidos autos, motos y hay muchos accidentes por ese problema tambien","2014-11-14 11:54:00",1,1,1,25,"Villa 21-24",222,25,"luna",-58.396391,-34.655673,221
+223,222,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2014-11-14 11:56:00",1,1,1,11,"infrastructure",223,11,"sobre manzana 56",-34.663245,-58.373389,222
+223,222,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2014-11-14 11:56:00",1,1,1,25,"Villa 21-24",223,25,"sobre manzana 56",-34.663245,-58.373389,222
+224,223,"No hay presión de agua","Agua &gt; No hay presión de agua
+
+ No hay presión de agua.","2014-11-14 11:52:00",1,1,1,7,"water",224,7,"M 12 C 58 Sto.  Domingo y Montesquiu",-34.654623,-58.395817,223
+224,223,"No hay presión de agua","Agua &gt; No hay presión de agua
+
+ No hay presión de agua.","2014-11-14 11:52:00",1,1,1,25,"Villa 21-24",224,25,"M 12 C 58 Sto.  Domingo y Montesquiu",-34.654623,-58.395817,223
+225,224,"No hay semáforo","Calles y plazas &gt; No hay semáforo
+
+ Faltan un semáforo y es de suma utilidad ya que hay varias instituciones públicas (escuelas, jardín, Sedronar, Ministerio del Interior, Anses, Desarrollo Social, Atajo, Casa de la Cultura, etc.) con mucho transito de personas como de vehículos.","2014-11-14 11:55:00",1,1,1,11,"infrastructure",225,11,"Iriarte 3500",-34.651331,-58.397786,224
+225,224,"No hay semáforo","Calles y plazas &gt; No hay semáforo
+
+ Faltan un semáforo y es de suma utilidad ya que hay varias instituciones públicas (escuelas, jardín, Sedronar, Ministerio del Interior, Anses, Desarrollo Social, Atajo, Casa de la Cultura, etc.) con mucho transito de personas como de vehículos.","2014-11-14 11:55:00",1,1,1,25,"Villa 21-24",225,25,"Iriarte 3500",-34.651331,-58.397786,224
+226,225,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2014-11-14 11:58:00",1,1,0,11,"infrastructure",226,11,"en lavarden desde iriarte hasta manzana 19",-34.652532,-58.402764,225
+226,225,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2014-11-14 11:58:00",1,1,0,25,"Villa 21-24",226,25,"en lavarden desde iriarte hasta manzana 19",-34.652532,-58.402764,225
+227,226,"No hay cestos","Basura &gt; No hay cestos
+
+ no hay cestos de basura en la calle, la gente tira todo la basura","2014-11-14 11:59:00",1,1,1,12,"trash",227,12,"luna",-58.396391,-34.655673,226
+227,226,"No hay cestos","Basura &gt; No hay cestos
+
+ no hay cestos de basura en la calle, la gente tira todo la basura","2014-11-14 11:59:00",1,1,1,25,"Villa 21-24",227,25,"luna",-58.396391,-34.655673,226
+228,227,"Deberían hacer una obra","Luz y electricidad &gt; Deberían hacer una obra
+Obra: Transformador y nuevos tendido
+
+Ocurren muchos cortes de luz muy frecuentemente. se sobre calientan los cable de luz , se necesitan nuevas lineas de suministro con subida a poste","2014-11-14 11:51:00",1,1,1,9,"energy",228,9,"Manzana 5-6",-58.396391,-34.655673,227
+228,227,"Deberían hacer una obra","Luz y electricidad &gt; Deberían hacer una obra
+Obra: Transformador y nuevos tendido
+
+Ocurren muchos cortes de luz muy frecuentemente. se sobre calientan los cable de luz , se necesitan nuevas lineas de suministro con subida a poste","2014-11-14 11:51:00",1,1,1,25,"Villa 21-24",228,25,"Manzana 5-6",-58.396391,-34.655673,227
+229,228,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ El pavimento de la calle Luna está roto en su totalidad.","2014-11-14 12:03:00",1,1,1,11,"infrastructure",229,11,"Luna e Iriarte",-58.396391,-34.655673,228
+229,228,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ El pavimento de la calle Luna está roto en su totalidad.","2014-11-14 12:03:00",1,1,1,25,"Villa 21-24",229,25,"Luna e Iriarte",-58.396391,-34.655673,228
+230,229,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ hay mucho barro cuando llueve, las casas se inunda y hay forma que el agua salga ,pasan muchos dias bajo el agua .","2014-11-14 12:00:00",1,1,1,11,"infrastructure",230,11,"en la loma desde osvaldo cruz hasta camino sirga",-34.656565,-58.397652,229
+230,229,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ hay mucho barro cuando llueve, las casas se inunda y hay forma que el agua salga ,pasan muchos dias bajo el agua .","2014-11-14 12:00:00",1,1,1,25,"Villa 21-24",230,25,"en la loma desde osvaldo cruz hasta camino sirga",-34.656565,-58.397652,229
+231,230,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: pluvial
+
+ EN CALIFORNIA Y LUNA LOS DIAS DE LLUVIA SE INUNDA POR  FALTA DE LIMPIEZA  NO SOLO DE LA CALLE CALIFORNIA DONDE SE ENCUENTRAN LOS CONTENEDORES  DE  DE BASURA  Y TAPA LOS DESAGOTES PLUVIALES  Y PARA COMPLETAR ESTO LOS VECINOS HICIERON UNA ESPECIE DE LOMO DE BURRO , EL CUAL HACE DE COMPUERTA   Y NO DEJA QUE EL AGUA TOME SU CURSO NATURAL","2014-11-14 12:00:00",1,1,1,8,"sewer",231,8,"california y luna",-34.650025,-58.395512,230
+231,230,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: pluvial
+
+ EN CALIFORNIA Y LUNA LOS DIAS DE LLUVIA SE INUNDA POR  FALTA DE LIMPIEZA  NO SOLO DE LA CALLE CALIFORNIA DONDE SE ENCUENTRAN LOS CONTENEDORES  DE  DE BASURA  Y TAPA LOS DESAGOTES PLUVIALES  Y PARA COMPLETAR ESTO LOS VECINOS HICIERON UNA ESPECIE DE LOMO DE BURRO , EL CUAL HACE DE COMPUERTA   Y NO DEJA QUE EL AGUA TOME SU CURSO NATURAL","2014-11-14 12:00:00",1,1,1,25,"Villa 21-24",231,25,"california y luna",-34.650025,-58.395512,230
+232,231,"Deberían hacer una obra","Luz y electricidad &gt; Deberían hacer una obra
+Obra: Subida de Poste y nuevo tendido
+
+Se necesita nuevo tendido eléctrico, subida de poste","2014-11-14 12:02:00",1,1,1,9,"energy",232,9,"Loma Alegre",-58.396391,-34.655673,231
+232,231,"Deberían hacer una obra","Luz y electricidad &gt; Deberían hacer una obra
+Obra: Subida de Poste y nuevo tendido
+
+Se necesita nuevo tendido eléctrico, subida de poste","2014-11-14 12:02:00",1,1,1,25,"Villa 21-24",232,25,"Loma Alegre",-58.396391,-34.655673,231
+233,232,"Hay peligro de riesgo eléctrico","Luz y electricidad &gt; Hay peligro de riesgo eléctrico
+Riesgo: Subida de poste y nuevo tendido
+
+ se solicita nuevo tendido , por el sobre calentamiento de cable y cortes frecuentes","2014-11-14 12:13:00",1,1,1,9,"energy",233,9,"Pavimento Alegre Manzana 8-9",-58.396391,-34.655673,232
+233,232,"Hay peligro de riesgo eléctrico","Luz y electricidad &gt; Hay peligro de riesgo eléctrico
+Riesgo: Subida de poste y nuevo tendido
+
+ se solicita nuevo tendido , por el sobre calentamiento de cable y cortes frecuentes","2014-11-14 12:13:00",1,1,1,25,"Villa 21-24",233,25,"Pavimento Alegre Manzana 8-9",-58.396391,-34.655673,232
+234,233,"Hay un basural","Basura &gt; Hay un basural","2014-12-04 10:35:00",1,1,1,12,"trash",234,12,"mza 27",-34.675923,-58.465832,233
+234,233,"Hay un basural","Basura &gt; Hay un basural","2014-12-04 10:35:00",1,1,1,24,"Villa 20",234,24,"mza 27",-34.675923,-58.465832,233
+235,234,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+tambien que el camion de basura no viene a retirar la basura","2014-12-04 10:35:00",1,1,1,7,"water",235,7,"manzana 30",-34.673675,-58.463155,234
+235,234,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+tambien que el camion de basura no viene a retirar la basura","2014-12-04 10:35:00",1,1,1,24,"Villa 20",235,24,"manzana 30",-34.673675,-58.463155,234
+236,235,"Plaza o Cancha en mal estado","Calles y plazas &gt; Plaza o Cancha en mal estado
+
+el piso de la cancha esta levantada i los arcos estan doblados y no hay  bebederos","2014-12-04 10:35:00",1,1,1,11,"infrastructure",236,11,"pola 121 8",-58.465934,-34.675316,235
+236,235,"Plaza o Cancha en mal estado","Calles y plazas &gt; Plaza o Cancha en mal estado
+
+el piso de la cancha esta levantada i los arcos estan doblados y no hay  bebederos","2014-12-04 10:35:00",1,1,1,24,"Villa 20",236,24,"pola 121 8",-58.465934,-34.675316,235
+237,236,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2014-12-04 10:41:00",1,1,1,9,"energy",237,9,"manzana 29 csa 85",-34.676875,-58.465357,236
+237,236,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2014-12-04 10:41:00",1,1,1,24,"Villa 20",237,24,"manzana 29 csa 85",-34.676875,-58.465357,236
+238,237,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1/12/14
+
+ se corta el agua U.U","2014-12-04 10:42:00",1,1,1,7,"water",238,7,"pola",-34.676922,-58.465151,237
+238,237,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1/12/14
+
+ se corta el agua U.U","2014-12-04 10:42:00",1,1,1,24,"Villa 20",238,24,"pola",-34.676922,-58.465151,237
+239,238,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1/12/14
+
+ se corta el agua U.U","2014-12-04 10:42:00",1,1,1,7,"water",239,7,"pola",-34.676922,-58.465151,238
+239,238,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 1/12/14
+
+ se corta el agua U.U","2014-12-04 10:42:00",1,1,1,24,"Villa 20",239,24,"pola",-34.676922,-58.465151,238
+240,239,"Escuela","Obra de infraestructura &gt; Obra no hecha &gt; Escuela
+
+ d","2014-12-05 00:44:00",1,1,1,6,"infrastructure",240,6,"saf",-34.660069,-58.455009,239
+240,239,"Escuela","Obra de infraestructura &gt; Obra no hecha &gt; Escuela
+
+ d","2014-12-05 00:44:00",1,1,1,23,"Fatima",240,23,"saf",-34.660069,-58.455009,239
+241,240,"No hay cestos","Basura &gt; No hay cestos
+
+ No hay cestos papeleros en todo el barrio","2014-12-11 17:59:00",1,1,1,12,"trash",241,12,"iriarte",-58.40206,-34.651603,240
+241,240,"No hay cestos","Basura &gt; No hay cestos
+
+ No hay cestos papeleros en todo el barrio","2014-12-11 17:59:00",1,1,1,26,"Los piletones",241,26,"iriarte",-58.40206,-34.651603,240
+243,242,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2015-03-05 02:35:00",1,1,1,11,"infrastructure",243,11,"Calle",-34.65788,-58.453121,242
+243,242,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2015-03-05 02:35:00",1,1,1,23,"Fatima",243,23,"Calle",-34.65788,-58.453121,242
+244,243,"Hay un caño roto","Agua &gt; Hay un caño roto","2015-05-13 16:16:00",1,1,1,7,"water",244,7,"Andalucia 1202 / Casa /",-34.656058,-58.447975,243
+244,243,"Hay un caño roto","Agua &gt; Hay un caño roto","2015-05-13 16:16:00",1,1,1,26,"Los piletones",244,26,"Andalucia 1202 / Casa /",-34.656058,-58.447975,243
+245,244,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses aprox..","2015-05-20 10:50:00",1,1,1,7,"water",245,7,"manzna 9 casa 22",-34.662217,-58.454568,244
+245,244,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 6 meses aprox..","2015-05-20 10:50:00",1,1,1,26,"Los piletones",245,26,"manzna 9 casa 22",-34.662217,-58.454568,244
+246,245,"Hay un caño roto","Agua &gt; Hay un caño roto","2015-05-20 10:59:00",1,1,1,7,"water",246,7,"manzana 1 casa 20",-34.662517,-58.453667,245
+246,245,"Hay un caño roto","Agua &gt; Hay un caño roto","2015-05-20 10:59:00",1,1,1,26,"Los piletones",246,26,"manzana 1 casa 20",-34.662517,-58.453667,245
+247,246,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Boca de tormeta y caidas","2015-05-20 11:05:00",1,1,1,8,"sewer",247,8,"manzana 2",-34.663418,-58.454504,246
+247,246,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Boca de tormeta y caidas","2015-05-20 11:05:00",1,1,1,26,"Los piletones",247,26,"manzana 2",-34.663418,-58.454504,246
+248,247,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-05-20 11:09:00",1,1,1,7,"water",248,7,"manzana 10",-34.66197,-58.45474,247
+248,247,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-05-20 11:09:00",1,1,1,26,"Los piletones",248,26,"manzana 10",-34.66197,-58.45474,247
+249,248,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: Viene color marron","2015-05-20 11:10:00",1,1,1,7,"water",249,7,"Manzana 10, casa 39",-34.6619,-58.454847,248
+249,248,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: Viene color marron","2015-05-20 11:10:00",1,1,1,26,"Los piletones",249,26,"Manzana 10, casa 39",-34.6619,-58.454847,248
+250,249,"Hay un caño roto","Clocacas / pluviales &gt; Hay un caño roto
+
+ Se inunda adentro de la pieza. Se filtra agua a la casa","2015-05-20 11:13:00",1,1,1,8,"sewer",250,8,"manzana 10 casa 39",-34.662112,-58.454675,249
+250,249,"Hay un caño roto","Clocacas / pluviales &gt; Hay un caño roto
+
+ Se inunda adentro de la pieza. Se filtra agua a la casa","2015-05-20 11:13:00",1,1,1,26,"Los piletones",250,26,"manzana 10 casa 39",-34.662112,-58.454675,249
+251,250,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: sale amarilla","2015-05-20 11:15:00",1,1,1,7,"water",251,7,"manzana 3, casa 7",-34.663881,-58.452315,250
+251,250,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: sale amarilla","2015-05-20 11:15:00",1,1,1,26,"Los piletones",251,26,"manzana 3, casa 7",-34.663881,-58.452315,250
+252,251,"Hay un caño roto","Clocacas / pluviales &gt; Hay un caño roto
+
+ se me levanto el piso y tengo filtracion de agua","2015-05-20 11:15:00",1,1,1,8,"sewer",252,8,"departamento1 piso1 torre1",-34.663912,-58.456864,251
+252,251,"Hay un caño roto","Clocacas / pluviales &gt; Hay un caño roto
+
+ se me levanto el piso y tengo filtracion de agua","2015-05-20 11:15:00",1,1,1,26,"Los piletones",252,26,"departamento1 piso1 torre1",-34.663912,-58.456864,251
+253,252,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Esta conectada la cloaca con la cañeria del agua","2015-05-20 11:19:00",1,1,1,8,"sewer",253,8,"manzana 3, casa 7",-34.663917,-58.452487,252
+253,252,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Esta conectada la cloaca con la cañeria del agua","2015-05-20 11:19:00",1,1,1,26,"Los piletones",253,26,"manzana 3, casa 7",-34.663917,-58.452487,252
+254,253,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: esta amarilla","2015-05-20 11:19:00",1,1,1,7,"water",254,7,"manzana 10 casa 1",-34.662076,-58.454611,253
+254,253,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: esta amarilla","2015-05-20 11:19:00",1,1,1,26,"Los piletones",254,26,"manzana 10 casa 1",-34.662076,-58.454611,253
+255,254,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: el agua es amarilla y no viene co precion","2015-05-20 11:21:00",1,1,1,7,"water",255,7,"manzana 3 casa 37",-34.663732,-58.454107,254
+255,254,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: el agua es amarilla y no viene co precion","2015-05-20 11:21:00",1,1,1,26,"Los piletones",255,26,"manzana 3 casa 37",-34.663732,-58.454107,254
+256,255,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: ase mas de 1 años","2015-05-20 11:23:00",1,1,1,7,"water",256,7,"manzana 10 casa 1",-34.66197,-58.454718,255
+256,255,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: ase mas de 1 años","2015-05-20 11:23:00",1,1,1,26,"Los piletones",256,26,"manzana 10 casa 1",-34.66197,-58.454718,255
+257,256,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación","2015-05-20 11:24:00",1,1,1,8,"sewer",257,8,"manzana 3 casa 37",-34.663718,-58.454117,256
+257,256,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación","2015-05-20 11:24:00",1,1,1,26,"Los piletones",257,26,"manzana 3 casa 37",-34.663718,-58.454117,256
+258,257,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-06-03 10:58:00",1,1,1,7,"water",258,7,"Manzana 9 , casa 22",-34.6613,-58.455587,257
+258,257,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-06-03 10:58:00",1,1,1,26,"Los piletones",258,26,"Manzana 9 , casa 22",-34.6613,-58.455587,257
+259,258,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: tiene color  amarronado","2015-06-03 11:00:00",1,1,1,7,"water",259,7,"Manzana 9, casa 22",-34.661264,-58.455491,258
+259,258,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: tiene color  amarronado","2015-06-03 11:00:00",1,1,1,26,"Los piletones",259,26,"Manzana 9, casa 22",-34.661264,-58.455491,258
+260,259,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ Se inunda cuando llueve","2015-06-03 11:01:00",1,1,1,7,"water",260,7,"Manzana 9, casa 22",-34.661194,-58.455576,259
+260,259,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ Se inunda cuando llueve","2015-06-03 11:01:00",1,1,1,26,"Los piletones",260,26,"Manzana 9, casa 22",-34.661194,-58.455576,259
+261,260,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: El desagüe no absatece a toda la manzana y cuando llueve se inunda","2015-06-03 10:58:00",1,1,1,8,"sewer",261,8,"Manzana 10",-34.6625,-58.454171,260
+261,260,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: El desagüe no absatece a toda la manzana y cuando llueve se inunda","2015-06-03 10:58:00",1,1,1,26,"Los piletones",261,26,"Manzana 10",-34.6625,-58.454171,260
+262,261,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Recomponer las clocas.
+
+ Se cayo un nene a los pozos cloacales que estan abiertos. Se generan inundaciones y se revalsa aun cuando no llueve.","2015-06-03 11:03:00",1,1,1,8,"sewer",262,8,"Manzana 3, casa 27",-58.455319,-34.662959,261
+262,261,"Deberían hacer una obra","Clocacas / pluviales &gt; Deberían hacer una obra
+Obra: Recomponer las clocas.
+
+ Se cayo un nene a los pozos cloacales que estan abiertos. Se generan inundaciones y se revalsa aun cuando no llueve.","2015-06-03 11:03:00",1,1,1,26,"Los piletones",262,26,"Manzana 3, casa 27",-58.455319,-34.662959,261
+263,262,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-06-03 11:05:00",1,1,1,7,"water",263,7,"Manzana 10",-34.662394,-58.454225,262
+263,262,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-06-03 11:05:00",1,1,1,26,"Los piletones",263,26,"Manzana 10",-34.662394,-58.454225,262
+264,263,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: Sale amarilla","2015-06-03 11:06:00",1,1,1,7,"water",264,7,"Manzana 3, casa 37",-34.664124,-58.454632,263
+264,263,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: Sale amarilla","2015-06-03 11:06:00",1,1,1,26,"Los piletones",264,26,"Manzana 3, casa 37",-34.664124,-58.454632,263
+265,264,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación
+
+ Se inunda la calle cuando llueve","2015-06-03 11:07:00",1,1,1,8,"sewer",265,8,"manzana 1",-58.455319,-34.662959,264
+265,264,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación
+
+ Se inunda la calle cuando llueve","2015-06-03 11:07:00",1,1,1,26,"Los piletones",265,26,"manzana 1",-58.455319,-34.662959,264
+266,265,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-06-03 11:32:00",1,1,1,7,"water",266,7,"Manzana 10, casa 70",-34.661847,-58.45519,265
+266,265,"No hay presión de agua","Agua &gt; No hay presión de agua","2015-06-03 11:32:00",1,1,1,26,"Los piletones",266,26,"Manzana 10, casa 70",-34.661847,-58.45519,265
+267,266,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: sale color rojizo","2015-06-03 11:35:00",1,1,1,7,"water",267,7,"Manzana 10, casa 70",-34.661653,-58.45519,266
+267,266,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: sale color rojizo","2015-06-03 11:35:00",1,1,1,26,"Los piletones",267,26,"Manzana 10, casa 70",-34.661653,-58.45519,266
+268,267,"No vino el camión atmosférico","Clocacas / pluviales &gt; No vino el camión atmosférico
+Llamó el: Hace 15 dias que no viene el camion atmosferico","2015-06-03 11:34:00",1,1,1,8,"sewer",268,8,"Manzana 4, casa 5 a 10",-34.663541,-58.454611,267
+268,267,"No vino el camión atmosférico","Clocacas / pluviales &gt; No vino el camión atmosférico
+Llamó el: Hace 15 dias que no viene el camion atmosferico","2015-06-03 11:34:00",1,1,1,26,"Los piletones",268,26,"Manzana 4, casa 5 a 10",-34.663541,-58.454611,267
+269,268,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ Hubo un corto circuito en la cámara de transformación de California y Luna y no hubo luz desde el domingo a la tarde al lunes a las 15 hs.","2015-06-16 17:36:00",1,1,1,9,"energy",269,9,"Osvaldo Cruz Mzas 11,12,13,14, 23",-34.654565,-58.395863,268
+269,268,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ Hubo un corto circuito en la cámara de transformación de California y Luna y no hubo luz desde el domingo a la tarde al lunes a las 15 hs.","2015-06-16 17:36:00",1,1,1,25,"Villa 21-24",269,25,"Osvaldo Cruz Mzas 11,12,13,14, 23",-34.654565,-58.395863,268
+270,269,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2015-06-23 14:13:00",1,1,1,9,"energy",270,9,"Todo Mz 30",-58.465934,-34.675316,269
+270,269,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2015-06-23 14:13:00",1,1,1,24,"Villa 20",270,24,"Todo Mz 30",-58.465934,-34.675316,269
+271,270,"Otra","Obra de infraestructura &gt; Deberían hacer una obra &gt; Otra","2015-07-27 11:47:00",1,1,0,6,"infrastructure",271,6,"martinez castro 500",-34.660528,-58.450937,270
+271,270,"Otra","Obra de infraestructura &gt; Deberían hacer una obra &gt; Otra","2015-07-27 11:47:00",1,1,0,23,"Fatima",271,23,"martinez castro 500",-34.660528,-58.450937,270
+272,271,"Cancha 'Los Changuitos'","Realización de Cancha 'Los Changuitos'","2015-08-11 13:39:00",1,1,1,19,"infrastructure",272,19,"No informa",-34.652674,-58.395998,271
+272,271,"Cancha 'Los Changuitos'","Realización de Cancha 'Los Changuitos'","2015-08-11 13:39:00",1,1,1,25,"Villa 21-24",272,25,"No informa",-34.652674,-58.395998,271
+273,272,"Cancha 'Los Changuitos'","Puesta en valor de Cancha 'Los Changuitos'","2015-08-11 13:48:00",1,1,1,19,"infrastructure",273,19,"Entre Manzana 23 y Manzana 24",-34.65736,-58.395655,272
+273,272,"Cancha 'Los Changuitos'","Puesta en valor de Cancha 'Los Changuitos'","2015-08-11 13:48:00",1,1,1,25,"Villa 21-24",273,25,"Entre Manzana 23 y Manzana 24",-34.65736,-58.395655,272
+274,273,"Cancha 'Los Changuitos'","Puesta en valor de Cancha 'Los Changuitos'","2015-08-11 15:24:00",1,1,1,19,"infrastructure",274,19,"Entre Manzana 23 y Manzana 24",-34.657713,-58.395483,273
+274,273,"Cancha 'Los Changuitos'","Puesta en valor de Cancha 'Los Changuitos'","2015-08-11 15:24:00",1,1,1,25,"Villa 21-24",274,25,"Entre Manzana 23 y Manzana 24",-34.657713,-58.395483,273
+275,274,"Manzana 18","Obra sobre la manzana 18","2015-08-13 12:03:00",1,1,1,19,"infrastructure",275,19,"Av. Iriarte al 3500",-34.651482,-58.3972,274
+275,274,"Manzana 18","Obra sobre la manzana 18","2015-08-13 12:03:00",1,1,1,25,"Villa 21-24",275,25,"Av. Iriarte al 3500",-34.651482,-58.3972,274
+276,275,"Plaza Triángulo","Realización de Plaza","2015-08-13 16:05:00",1,1,1,19,"infrastructure",276,19,"Osvaldo Cruz y Monteagudo",-34.656954,-58.400762,275
+276,275,"Plaza Triángulo","Realización de Plaza","2015-08-13 16:05:00",1,1,1,25,"Villa 21-24",276,25,"Osvaldo Cruz y Monteagudo",-34.656954,-58.400762,275
+277,276,"Patio de Juegos 'La Salita'","Patio de juegos","2015-08-13 16:07:00",1,1,1,19,"infrastructure",277,19,"Osvaldo Cruz 3650",-34.656407,-58.400204,276
+277,276,"Patio de Juegos 'La Salita'","Patio de juegos","2015-08-13 16:07:00",1,1,1,25,"Villa 21-24",277,25,"Osvaldo Cruz 3650",-34.656407,-58.400204,276
+278,277,"Plaza Zavaleta","Plaza","2015-08-13 16:11:00",1,1,1,19,"infrastructure",278,19,"Av. Amancio Alcorta 3100",-34.648535,-58.403723,277
+278,277,"Plaza Zavaleta","Plaza","2015-08-13 16:11:00",1,1,1,25,"Villa 21-24",278,25,"Av. Amancio Alcorta 3100",-34.648535,-58.403723,277
+279,278,"Cloacas Zabaleta (etapa 1)","Colocación de redes cloacales","2015-08-13 16:13:00",1,1,1,16,"sewer",279,16,"N.H.T. Zavaleta",-34.647828,-58.40235,278
+279,278,"Cloacas Zabaleta (etapa 1)","Colocación de redes cloacales","2015-08-13 16:13:00",1,1,1,25,"Villa 21-24",279,25,"N.H.T. Zavaleta",-34.647828,-58.40235,278
+280,279,"Acceso Changuitos","Acceso en la manzana 23","2015-08-13 16:18:00",1,1,1,19,"infrastructure",280,19,"Manzana 23. Pasaje Padre Daniel de la Sierra y Zepita",-34.656937,-58.397586,279
+280,279,"Acceso Changuitos","Acceso en la manzana 23","2015-08-13 16:18:00",1,1,1,25,"Villa 21-24",280,25,"Manzana 23. Pasaje Padre Daniel de la Sierra y Zepita",-34.656937,-58.397586,279
+281,280,"El Rancho","No especifica","2015-08-13 16:25:00",1,1,1,21,"infrastructure",281,21,"N.H.T. Zavaleta",-34.648817,-58.402951,280
+281,280,"El Rancho","No especifica","2015-08-13 16:25:00",1,1,1,27,"Zavaleta",281,27,"N.H.T. Zavaleta",-34.648817,-58.402951,280
+282,281,"El Rancho (Etapa 2)","No especifica","2015-08-13 16:34:00",1,1,1,21,"infrastructure",282,21,"N.H.T. Zavaleta",-34.649311,-58.403037,281
+282,281,"El Rancho (Etapa 2)","No especifica","2015-08-13 16:34:00",1,1,1,27,"Zavaleta",282,27,"N.H.T. Zavaleta",-34.649311,-58.403037,281
+283,282,"Plaza 21-24","Finalización de la plaza 21-24","2015-08-13 16:36:00",1,1,1,19,"infrastructure",283,19,"Manzana 23. Pasaje Padre Daniel de la Sierra y Zepita",-34.657148,-58.397565,282
+283,282,"Plaza 21-24","Finalización de la plaza 21-24","2015-08-13 16:36:00",1,1,1,25,"Villa 21-24",283,25,"Manzana 23. Pasaje Padre Daniel de la Sierra y Zepita",-34.657148,-58.397565,282
+284,283,"Cloacas Zavaleta  (Etapa 2)","Segunda etapa de colocación de cloacas","2015-08-13 16:48:00",1,1,1,16,"sewer",284,16,"N.H.T. Zavaleta",-34.648888,-58.40235,283
+284,283,"Cloacas Zavaleta  (Etapa 2)","Segunda etapa de colocación de cloacas","2015-08-13 16:48:00",1,1,1,27,"Zavaleta",284,27,"N.H.T. Zavaleta",-34.648888,-58.40235,283
+285,284,"Cancha y Plaza Iriarte","Cancha y Plaza Iriarte","2015-08-13 16:51:00",1,1,1,19,"infrastructure",285,19,"Av. Iriarte al 3800",-34.651006,-58.401749,284
+285,284,"Cancha y Plaza Iriarte","Cancha y Plaza Iriarte","2015-08-13 16:51:00",1,1,1,27,"Zavaleta",285,27,"Av. Iriarte al 3800",-34.651006,-58.401749,284
+286,285,"Cancha y Plaza Iriarte","Cancha y Plaza Iriarte","2015-08-13 16:54:00",1,1,1,19,"infrastructure",286,19,"Av. Iriarte al 3800",-34.650653,-58.402779,285
+286,285,"Cancha y Plaza Iriarte","Cancha y Plaza Iriarte","2015-08-13 16:54:00",1,1,1,27,"Zavaleta",286,27,"Av. Iriarte al 3800",-34.650653,-58.402779,285
+287,286,"Plaza Copacabana","Realización de Plaza","2015-08-13 16:58:00",1,1,1,19,"infrastructure",287,19,"Manzana 53. Monteagudo entre Santo Domingo y Osvaldo Cruz",-34.655613,-58.401749,286
+287,286,"Plaza Copacabana","Realización de Plaza","2015-08-13 16:58:00",1,1,1,25,"Villa 21-24",287,25,"Manzana 53. Monteagudo entre Santo Domingo y Osvaldo Cruz",-34.655613,-58.401749,286
+288,287,"Plaza La Jaulita","Realización de plaza","2015-08-13 16:59:00",1,1,1,19,"infrastructure",288,19,"Av. Lacarra 2901",-34.659778,-58.455908,287
+288,287,"Plaza La Jaulita","Realización de plaza","2015-08-13 16:59:00",1,1,1,23,"Fatima",288,23,"Av. Lacarra 2901",-34.659778,-58.455908,287
+289,288,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ Se corto la luz desde las 17:00hs","2015-08-17 19:27:00",1,1,0,9,"energy",289,9,"Mza 57 - casa 31",-58.396391,-34.655673,288
+289,288,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ Se corto la luz desde las 17:00hs","2015-08-17 19:27:00",1,1,0,25,"Villa 21-24",289,25,"Mza 57 - casa 31",-58.396391,-34.655673,288
+290,289,"Plaza La Jaulita (Etapa 2)","Segunda etapa de la construcción de Plaza La Jaulita","2015-09-01 14:43:00",1,1,1,19,"infrastructure",290,19,"Av. Lacarra 2901",-34.658578,-58.457797,289
+290,289,"Plaza La Jaulita (Etapa 2)","Segunda etapa de la construcción de Plaza La Jaulita","2015-09-01 14:43:00",1,1,1,23,"Fatima",290,23,"Av. Lacarra 2901",-34.658578,-58.457797,289
+291,290,"Plaza Lacarra y Somellera","Construcción de Plaza","2015-09-01 15:59:00",1,1,1,19,"infrastructure",291,19,"Av. Lacarra 2700",-34.652559,-58.428442,290
+291,290,"Plaza Lacarra y Somellera","Construcción de Plaza","2015-09-01 15:59:00",1,1,1,23,"Fatima",291,23,"Av. Lacarra 2700",-34.652559,-58.428442,290
+292,291,"Laguna y Somellera","No especifica","2015-09-01 16:11:00",1,1,1,19,"infrastructure",292,19,"Laguna y Pasaje K",-34.658419,-58.455307,291
+292,291,"Laguna y Somellera","No especifica","2015-09-01 16:11:00",1,1,1,23,"Fatima",292,23,"Laguna y Pasaje K",-34.658419,-58.455307,291
+293,292,"Centro Policultural Piletones","Construcción de Policultural","2015-09-01 16:13:00",1,1,1,21,"infrastructure",293,21,"Ana María Janer y Asturias",-34.663696,-58.454728,292
+293,292,"Centro Policultural Piletones","Construcción de Policultural","2015-09-01 16:13:00",1,1,1,26,"Los piletones",293,26,"Ana María Janer y Asturias",-34.663696,-58.454728,292
+294,293,"Puesta en valor de Poliderportivo Los Piletones","Puesta en valor de Poliderportivo","2015-09-01 16:20:00",1,1,1,21,"infrastructure",294,21,"Ana María Janer y Asturias",-34.664208,-58.45402,293
+294,293,"Puesta en valor de Poliderportivo Los Piletones","Puesta en valor de Poliderportivo","2015-09-01 16:20:00",1,1,1,26,"Los piletones",294,26,"Ana María Janer y Asturias",-34.664208,-58.45402,293
+295,294,"Plaza Guachito Gil","Construcción de Plaza","2015-09-01 16:24:00",1,1,1,19,"infrastructure",295,19,"Calle Sin Nombre Oficial (entre Pasaje A y Pasaje B)",-34.655401,-58.457539,294
+295,294,"Plaza Guachito Gil","Construcción de Plaza","2015-09-01 16:24:00",1,1,1,28,"Ramón Carrillo",295,28,"Calle Sin Nombre Oficial (entre Pasaje A y Pasaje B)",-34.655401,-58.457539,294
+296,295,"Pasaje K","Apertura del Pasaje K","2015-09-01 16:30:00",1,1,1,19,"infrastructure",296,19,"Somellera y Mariano Acosta",-34.656831,-58.453634,295
+296,295,"Pasaje K","Apertura del Pasaje K","2015-09-01 16:30:00",1,1,1,23,"Fatima",296,23,"Somellera y Mariano Acosta",-34.656831,-58.453634,295
+297,296,"Cancha Cruyff","Construcción de cancha Cruyff","2015-09-01 16:43:00",1,1,1,19,"infrastructure",297,19,"Mariano Acosta 2475",-34.656652,-58.453693,296
+297,296,"Cancha Cruyff","Construcción de cancha Cruyff","2015-09-01 16:43:00",1,1,1,23,"Fatima",297,23,"Mariano Acosta 2475",-34.656652,-58.453693,296
+298,297,"Pasaje I","No especifica","2015-09-01 16:45:00",1,1,1,19,"infrastructure",298,19,"Pasaje I (entre M. Acosta y Calle Sin Nombre Oficial)",-34.657113,-58.455994,297
+298,297,"Pasaje I","No especifica","2015-09-01 16:45:00",1,1,1,28,"Ramón Carrillo",298,28,"Pasaje I (entre M. Acosta y Calle Sin Nombre Oficial)",-34.657113,-58.455994,297
+299,298,"Remodelación Polideportivo  Piletones","Remodelación Poli","2015-09-01 16:58:00",1,1,1,21,"infrastructure",299,21,"Ana María Janer y Asturias",-34.664491,-58.454621,298
+299,298,"Remodelación Polideportivo  Piletones","Remodelación Poli","2015-09-01 16:58:00",1,1,1,26,"Los piletones",299,26,"Ana María Janer y Asturias",-34.664491,-58.454621,298
+300,299,"Camino Perilago Paseo Peatonal (etapa 1)","No especifica","2015-09-01 17:01:00",1,1,1,19,"infrastructure",300,19,"Lago Soldati",-34.662673,-58.454492,299
+301,300,"Paseo Perilago Módulo 1 y 2","No especifica","2015-09-01 17:32:00",1,1,1,19,"infrastructure",301,19,"Lago Soldati",-34.665197,-58.457282,300
+301,300,"Paseo Perilago Módulo 1 y 2","No especifica","2015-09-01 17:32:00",1,1,1,26,"Los piletones",301,26,"Lago Soldati",-34.665197,-58.457282,300
+302,301,"Bajo Autopista Castañares (Etapa 2)","No especifica","2015-09-01 17:42:00",1,1,1,21,"infrastructure",302,21,"Av. Lacarra y Au. Cámpora",-34.657184,-58.459299,301
+302,301,"Bajo Autopista Castañares (Etapa 2)","No especifica","2015-09-01 17:42:00",1,1,1,28,"Ramón Carrillo",302,28,"Av. Lacarra y Au. Cámpora",-34.657184,-58.459299,301
+303,302,"No pasó el camión recolector","Basura &gt; No pasó el camión recolector
+Debería haber pasado: ayer
+
+ no pasan","2015-09-09 10:51:00",1,1,0,12,"trash",303,12,"chilavert",-34.674716,-58.470247,302
+303,302,"No pasó el camión recolector","Basura &gt; No pasó el camión recolector
+Debería haber pasado: ayer
+
+ no pasan","2015-09-09 10:51:00",1,1,0,24,"Villa 20",303,24,"chilavert",-34.674716,-58.470247,302
+304,303,"Oficina Pública","Obra de infraestructura &gt; Obra no hecha &gt; Oficina Pública
+
+ prueba de formularios ...
+perdón. no responder !","2015-10-02 18:35:00",1,1,0,6,"infrastructure",304,6,"plumerillo y castro",-58.455319,-34.662959,303
+304,303,"Oficina Pública","Obra de infraestructura &gt; Obra no hecha &gt; Oficina Pública
+
+ prueba de formularios ...
+perdón. no responder !","2015-10-02 18:35:00",1,1,0,26,"Los piletones",304,26,"plumerillo y castro",-58.455319,-34.662959,303
+305,304,"Plaza Niño Jesus","Plaza","2015-10-05 10:32:00",1,1,1,19,"infrastructure",305,19,"Celedonio Escalada 4500",-34.652559,-58.428442,304
+305,304,"Plaza Niño Jesus","Plaza","2015-10-05 10:32:00",1,1,1,24,"Villa 20",305,24,"Celedonio Escalada 4500",-34.652559,-58.428442,304
+306,305,"Terraplen Chilavert (Manzana 30)","Terraplen Chilavert (Manzana 30)","2015-10-05 10:37:00",1,1,1,21,"infrastructure",306,21,"Chilavert y Av. Escalada",-34.652559,-58.428442,305
+307,306,"Barranca Villa 20 (etapa 2)","Barranca Villa 20 (etapa 2)","2015-10-05 10:42:00",1,1,1,21,"infrastructure",307,21,"Chilavert y Av. Escalada",-34.652559,-58.428442,306
+308,307,"Adicionales Terraplen al Puente (Villa 20)","Adicionales Terraplen al Puente (Villa 20)","2015-10-05 10:47:00",1,1,1,21,"infrastructure",308,21,"Chilavert y Av. Escalada",-34.652559,-58.428442,307
+309,308,"Cancha de Lorenza","Cancha de Lorenza","2015-10-05 10:53:00",1,1,1,19,"infrastructure",309,19,"Chilavert",-34.652559,-58.428442,308
+310,309,"Cancha Chilavert 2","Cancha Chilavert 2","2015-10-05 11:02:00",1,1,1,19,"infrastructure",310,19,"Chilavert",-34.652559,-58.428442,309
+311,310,"Celedonio Escalada (talud)","Celedonio Escalada (talud)","2015-10-05 11:06:00",1,1,1,21,"infrastructure",311,21,"Celedonio Escalada desde Miralla",-34.652559,-58.428442,310
+312,311,"Cancha Chilavert 1","Cancha Chilavert 1","2015-10-05 11:10:00",1,1,1,19,"infrastructure",312,19,"Chilavert",-34.652559,-58.428442,311
+313,312,"Cancha Chilavert 2 (2da etapa) + Piletones","Cancha Chilavert 2 (2da etapa) + Piletones","2015-10-05 11:13:00",1,1,1,19,"infrastructure",313,19,"Chilavert",-34.652559,-58.428442,312
+314,313,"Vereda y Darsena","Vereda y Darsena","2015-10-05 11:16:00",1,1,1,19,"infrastructure",314,19,"Av. Escalada desde Chilavert hasta Cruz",-34.652559,-58.428442,313
+315,314,"Infraestructura urbana","Ejecucion de Obras de Infraestructura Urbana en Asentamiento Los Piletones","2015-10-05 11:20:00",1,1,0,21,"infrastructure",315,21,"No informado",-34.652559,-58.428442,314
+316,315,"Finalización de edificios","Finalización de Edificios N°17, 18 y 19 Conjunto Habitacional Los Piletones","2015-10-05 11:47:00",1,1,1,21,"infrastructure",316,21,"Edificios 17, 18 y 19 - Conjunto habitacional Los Piletones",-34.652559,-58.428442,315
+317,316,"Finalización de edificios","Finalización de los edificios N°14, 15 y 16 del conjunto de viviendas del Barrio Los Piletones","2015-10-05 11:55:00",1,1,1,21,"infrastructure",317,21,"Edificios  14, 15 y 16 - Conjunto habitacional Los Piletones",-34.652559,-58.428442,316
+318,317,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 24/10/2015
+
+ Hola
+
+En el barrio hay agua, el problema es que a nuestra familia nos cortaron el agua porque hubo una discusión con un vecino que supuestamente el fue el que 'trajo el agua ' hasta el barrio, siempre tenemos problemas relacionados con el agua, poco presión, en verano casi ni hay agua hasta que se hace de noche, la gente que dice que puso el agua se aprovecha de esto y pone cuanto caño quiere así disminuyendo el caudal y la presión del agua. Hoy mi madre se quejo con ellos y nos cortaron el agua, por eso recurro a ustedes para tener una nueva instalación independiente de la que ya existe para que no tengamos que vivir de esta gente abusiva.
+
+Desde ya muchas gracias.","2015-10-24 19:10:00",1,1,0,7,"water",318,7,"Iguazu 1100 C67 M55",-58.396391,-34.655673,317
+318,317,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 24/10/2015
+
+ Hola
+
+En el barrio hay agua, el problema es que a nuestra familia nos cortaron el agua porque hubo una discusión con un vecino que supuestamente el fue el que 'trajo el agua ' hasta el barrio, siempre tenemos problemas relacionados con el agua, poco presión, en verano casi ni hay agua hasta que se hace de noche, la gente que dice que puso el agua se aprovecha de esto y pone cuanto caño quiere así disminuyendo el caudal y la presión del agua. Hoy mi madre se quejo con ellos y nos cortaron el agua, por eso recurro a ustedes para tener una nueva instalación independiente de la que ya existe para que no tengamos que vivir de esta gente abusiva.
+
+Desde ya muchas gracias.","2015-10-24 19:10:00",1,1,0,25,"Villa 21-24",318,25,"Iguazu 1100 C67 M55",-58.396391,-34.655673,317
+319,318,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ jdjf","2015-10-26 14:31:00",1,1,0,7,"water",319,7,"Hshs",-58.465934,-34.675316,318
+319,318,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ jdjf","2015-10-26 14:31:00",1,1,0,24,"Villa 20",319,24,"Hshs",-58.465934,-34.675316,318
+320,319,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ jdjf","2015-10-26 14:31:00",1,1,0,7,"water",320,7,"Hshs",-58.465934,-34.675316,319
+320,319,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ jdjf","2015-10-26 14:31:00",1,1,0,24,"Villa 20",320,24,"Hshs",-58.465934,-34.675316,319
+321,320,"Hay un caño roto","Agua &gt; Hay un caño roto","2015-10-28 20:31:00",1,1,0,7,"water",321,7,"Portela y Ana María",-34.657986,-58.448207,320
+321,320,"Hay un caño roto","Agua &gt; Hay un caño roto","2015-10-28 20:31:00",1,1,0,23,"Fatima",321,23,"Portela y Ana María",-34.657986,-58.448207,320
+322,321,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ Prueba","2015-10-30 21:21:00",1,1,0,11,"infrastructure",322,11,"Prueba",-34.662716,-58.449022,321
+322,321,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto
+
+ Prueba","2015-10-30 21:21:00",1,1,0,23,"Fatima",322,23,"Prueba",-34.662716,-58.449022,321
+323,322,"Deberían hacer una obra","Agua &gt; Deberían hacer una obra","2015-11-17 14:43:00",1,1,0,7,"water",323,7,"juan calou",-34.674751,-58.470547,322
+323,322,"Deberían hacer una obra","Agua &gt; Deberían hacer una obra","2015-11-17 14:43:00",1,1,0,24,"Villa 20",323,24,"juan calou",-34.674751,-58.470547,322
+324,323,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 2014
+
+ desde los primeros dias de 2014 no tenemos agua. ya hace casi 2 años vinieron de la ugis y no nos dan bola.","2015-11-19 18:00:00",1,1,0,7,"water",324,7,"manzana 18 CAsas 80 /72 /74 /70 /71",-58.396391,-34.655673,323
+324,323,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 2014
+
+ desde los primeros dias de 2014 no tenemos agua. ya hace casi 2 años vinieron de la ugis y no nos dan bola.","2015-11-19 18:00:00",1,1,0,25,"Villa 21-24",324,25,"manzana 18 CAsas 80 /72 /74 /70 /71",-58.396391,-34.655673,323
+325,324,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+Pruba de Rafa para el poster - eso no es un reclamo","2015-11-30 17:07:00",1,1,0,9,"energy",325,9,"Sayos",-34.674707,-58.473626,324
+325,324,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+Pruba de Rafa para el poster - eso no es un reclamo","2015-11-30 17:07:00",1,1,0,24,"Villa 20",325,24,"Sayos",-34.674707,-58.473626,324
+327,326,"No había turnos","Salud y ambulancias &gt; No había turnos","2016-01-22 02:24:00",1,1,0,10,"health",327,10,"wqr",-58.491749,-34.671732,326
+327,326,"No había turnos","Salud y ambulancias &gt; No había turnos","2016-01-22 02:24:00",1,1,0,31,"Villa 15",327,31,"wqr",-58.491749,-34.671732,326
+328,327,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación
+
+ kkklo","2016-02-07 22:01:00",1,1,0,8,"sewer",328,8,"m22 c 30",-34.58428,-58.456371,327
+328,327,"Hay una inundación","Clocacas / pluviales &gt; Hay una inundación
+
+ kkklo","2016-02-07 22:01:00",1,1,0,37,"Playón de Chacarita",328,37,"m22 c 30",-34.58428,-58.456371,327
+329,328,"Contenedor sin tapa","Basura &gt; Contenedor sin tapa","2016-02-11 11:40:00",1,1,0,12,"trash",329,12,"tuiytiuytiuytuytuyt",-58.43893,-34.649074,328
+329,328,"Contenedor sin tapa","Basura &gt; Contenedor sin tapa","2016-02-11 11:40:00",1,1,0,29,"Villa 1-11-14",329,29,"tuiytiuytiuytuytuyt",-58.43893,-34.649074,328
+330,329,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ m.,.m,.m,.","2016-03-05 21:10:00",1,1,0,11,"infrastructure",330,11,".mn.m,.",-58.465934,-34.675316,329
+330,329,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ m.,.m,.m,.","2016-03-05 21:10:00",1,1,0,24,"Villa 20",330,24,".mn.m,.",-58.465934,-34.675316,329
+332,331,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto","2016-05-13 10:26:00",1,1,0,11,"infrastructure",332,11,"villa lugano",-34.677327,-58.476856,331
+332,331,"El pavimento está roto","Calles y plazas &gt; El pavimento está roto","2016-05-13 10:26:00",1,1,0,24,"Villa 20",332,24,"villa lugano",-34.677327,-58.476856,331
+333,332,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+esta echo de tierra","2016-05-13 10:26:00",1,1,0,11,"infrastructure",333,11,"pola",-34.676782,-58.466068,332
+333,332,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+esta echo de tierra","2016-05-13 10:26:00",1,1,0,24,"Villa 20",333,24,"pola",-34.676782,-58.466068,332
+334,333,"No hay presión de agua","Agua &gt; No hay presión de agua","2016-05-13 10:26:00",1,1,0,7,"water",334,7,"manzana 7 casa 60",-34.652559,-58.428442,333
+334,333,"No hay presión de agua","Agua &gt; No hay presión de agua","2016-05-13 10:26:00",1,1,0,24,"Villa 20",334,24,"manzana 7 casa 60",-34.652559,-58.428442,333
+335,334,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ Cuando llueve se inunda la calle i es imposible pasar a pie.","2016-05-13 10:22:00",1,1,0,11,"infrastructure",335,11,"pola manzana 29 casa 112",-34.67568,-58.467548,334
+335,334,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ Cuando llueve se inunda la calle i es imposible pasar a pie.","2016-05-13 10:22:00",1,1,0,24,"Villa 20",335,24,"pola manzana 29 casa 112",-34.67568,-58.467548,334
+336,335,"No hay semáforo","Calles y plazas &gt; No hay semáforo
+
+no ningun semaforo","2016-05-13 10:31:00",1,1,0,11,"infrastructure",336,11,"pola",-34.676959,-58.465789,335
+336,335,"No hay semáforo","Calles y plazas &gt; No hay semáforo
+
+no ningun semaforo","2016-05-13 10:31:00",1,1,0,24,"Villa 20",336,24,"pola",-34.676959,-58.465789,335
+337,336,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ el reclamo es que no estan bien las calles y cuando llueve hay inundaciones  que perjudican a muchas personas  y lo malo que no hay seguridad","2016-05-13 10:22:00",1,1,0,11,"infrastructure",337,11,"casa 74bis  manzana 23",-34.677902,-58.468866,336
+337,336,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ el reclamo es que no estan bien las calles y cuando llueve hay inundaciones  que perjudican a muchas personas  y lo malo que no hay seguridad","2016-05-13 10:22:00",1,1,0,24,"Villa 20",337,24,"casa 74bis  manzana 23",-34.677902,-58.468866,336
+338,337,"No hay cestos","Basura &gt; No hay cestos
+
+ Tiran las basuras en el piso porque aveces el contenedor se llena.","2016-05-13 10:33:00",1,1,0,12,"trash",338,12,"´pola manzana 27 casa 60",-34.676518,-58.466441,337
+338,337,"No hay cestos","Basura &gt; No hay cestos
+
+ Tiran las basuras en el piso porque aveces el contenedor se llena.","2016-05-13 10:33:00",1,1,0,24,"Villa 20",338,24,"´pola manzana 27 casa 60",-34.676518,-58.466441,337
+339,338,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ la cancha esta sucia,es incegura,tiran basura, hay drogadictos,hay ladrones,le dan a los menores de edad bebida alcolica,hay muchos mosquitos,el pasto crece nunca lo cortan
+
+
+                                  Listo eso es todo","2016-05-13 10:30:00",1,1,0,11,"infrastructure",339,11,"pola",-34.675775,-58.467586,338
+339,338,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+ la cancha esta sucia,es incegura,tiran basura, hay drogadictos,hay ladrones,le dan a los menores de edad bebida alcolica,hay muchos mosquitos,el pasto crece nunca lo cortan
+
+
+                                  Listo eso es todo","2016-05-13 10:30:00",1,1,0,24,"Villa 20",339,24,"pola",-34.675775,-58.467586,338
+340,339,"El camión no pasa a horario","Basura &gt; El camión no pasa a horario
+Horario camión:: a las 23:00
+
+ se viene a joder","2016-05-13 10:39:00",1,1,0,12,"trash",340,12,"miralla",-58.465934,-34.675316,339
+340,339,"El camión no pasa a horario","Basura &gt; El camión no pasa a horario
+Horario camión:: a las 23:00
+
+ se viene a joder","2016-05-13 10:39:00",1,1,0,24,"Villa 20",340,24,"miralla",-58.465934,-34.675316,339
+341,340,"No se hizo el mantenimiento pluvial","Clocacas / pluviales &gt; No se hizo el mantenimiento pluvial
+Cuando debería hacerse: alas 5:03949
+
+ggtvfi","2016-05-13 10:42:00",1,1,0,8,"sewer",341,8,"pola",-34.674497,-58.465596,340
+341,340,"No se hizo el mantenimiento pluvial","Clocacas / pluviales &gt; No se hizo el mantenimiento pluvial
+Cuando debería hacerse: alas 5:03949
+
+ggtvfi","2016-05-13 10:42:00",1,1,0,24,"Villa 20",341,24,"pola",-34.674497,-58.465596,340
+342,341,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+Toda la calle coronel Martiniano chilavert y las demas calles estan sin padimentar","2016-05-13 10:22:00",1,1,0,11,"infrastructure",342,11,"manzana 72 casa 21",-34.672501,-58.462721,341
+342,341,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+Toda la calle coronel Martiniano chilavert y las demas calles estan sin padimentar","2016-05-13 10:22:00",1,1,0,24,"Villa 20",342,24,"manzana 72 casa 21",-34.672501,-58.462721,341
+343,342,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+Toda la calle coronel Martiniano chilavert y las demas calles estan sin padimentar","2016-05-13 10:22:00",1,1,0,11,"infrastructure",343,11,"manzana 72 casa 21",-34.672501,-58.462721,342
+343,342,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+Toda la calle coronel Martiniano chilavert y las demas calles estan sin padimentar","2016-05-13 10:22:00",1,1,0,24,"Villa 20",343,24,"manzana 72 casa 21",-34.672501,-58.462721,342
+344,343,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+hay muchos baches y si llueve se indunda todo","2016-05-13 10:52:00",1,1,0,11,"infrastructure",344,11,"pola y chilavert manzana 26 casa 73",-34.674017,-58.477757,343
+344,343,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar
+
+hay muchos baches y si llueve se indunda todo","2016-05-13 10:52:00",1,1,0,24,"Villa 20",344,24,"pola y chilavert manzana 26 casa 73",-34.674017,-58.477757,343
+345,344,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 07/2016","2016-07-01 17:22:00",1,1,0,7,"water",345,7,"Calle 10, Argentina",-58.486018,-34.683525,344
+345,344,"Se cortó el agua","Agua &gt; Se cortó el agua
+Cuando se corto: 07/2016","2016-07-01 17:22:00",1,1,0,33,"Villa 19 (INTA)",345,33,"Calle 10, Argentina",-58.486018,-34.683525,344
+346,345,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2016-07-18 19:36:00",1,1,1,9,"energy",346,9,"chilavert y corvalan manzana 21",-58.465934,-34.675316,345
+346,345,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2016-07-18 19:36:00",1,1,1,24,"Villa 20",346,24,"chilavert y corvalan manzana 21",-58.465934,-34.675316,345
+347,346,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ lore ipsum","2016-08-01 19:18:00",1,1,0,7,"water",347,7,"manzana a casa 10",-58.396391,-34.655673,346
+347,346,"Hay un caño roto","Agua &gt; Hay un caño roto
+
+ lore ipsum","2016-08-01 19:18:00",1,1,0,25,"Villa 21-24",347,25,"manzana a casa 10",-58.396391,-34.655673,346
+348,347,"Red de distribución eléctrica de la manzana 20","La obra implica el tendido de lineales, frente a la manzana 20.","2016-08-10 18:16:00",1,1,1,17,"energy",348,17,"Manzana 20",-34.648958,-58.443549,347
+348,347,"Red de distribución eléctrica de la manzana 20","La obra implica el tendido de lineales, frente a la manzana 20.","2016-08-10 18:16:00",1,1,1,29,"Villa 1-11-14",348,29,"Manzana 20",-34.648958,-58.443549,347
+349,348,"Red de agua potable","Prolongación del tendido nuevo, sobre el pasillo de la manzana 17, reemplazar el tendido existente sobre San Jorge, tramo entre la manzana 18 y manzana 19, girar y proseguir por calle Rivera Indarte y conectar con calle Oceanía.","2016-08-10 18:17:00",1,1,1,15,"water",349,15,"Manzana 17,18 y 19",-34.648888,-58.443892,348
+349,348,"Red de agua potable","Prolongación del tendido nuevo, sobre el pasillo de la manzana 17, reemplazar el tendido existente sobre San Jorge, tramo entre la manzana 18 y manzana 19, girar y proseguir por calle Rivera Indarte y conectar con calle Oceanía.","2016-08-10 18:17:00",1,1,1,29,"Villa 1-11-14",349,29,"Manzana 17,18 y 19",-34.648888,-58.443892,348
+350,349,"Red de agua potable","Ampliación de red de agua potable.","2016-08-10 18:19:00",1,1,1,15,"water",350,15,"Manzana 48",-34.64917,-58.444064,349
+350,349,"Red de agua potable","Ampliación de red de agua potable.","2016-08-10 18:19:00",1,1,1,29,"Villa 1-11-14",350,29,"Manzana 48",-34.64917,-58.444064,349
+351,350,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: la fedentina","2016-08-20 16:23:00",1,1,1,7,"water",351,7,"casa 69",-58.386195,-34.582065,350
+351,350,"Problemas con el agua","Agua &gt; Problemas con el agua
+Problema: la fedentina","2016-08-20 16:23:00",1,1,1,34,"Villa 31",351,34,"casa 69",-58.386195,-34.582065,350
+352,351,"Otra","Obra de infraestructura &gt; La obra está mal hecha &gt; Otra
+
+ En mi casa que tiene una pieza, baño y cocina todo en un cuadrito el techo de machimbre tiene pérdidas de agua y hay mucha humedad. Por esto, mi hija tiene broncoespasmo y se enferma continuamente. Necesito ayuda urgente para repararlo y no tengo como hacerlo.
+Me acerco al NIDO para que mi hija haga apoyo escolar, el telefono de Paz es 1166001207
+Muchas gracias","2016-09-20 16:31:00",1,1,1,6,"infrastructure",352,6,"m5 c.35",-34.656464,-58.44285,351
+352,351,"Otra","Obra de infraestructura &gt; La obra está mal hecha &gt; Otra
+
+ En mi casa que tiene una pieza, baño y cocina todo en un cuadrito el techo de machimbre tiene pérdidas de agua y hay mucha humedad. Por esto, mi hija tiene broncoespasmo y se enferma continuamente. Necesito ayuda urgente para repararlo y no tengo como hacerlo.
+Me acerco al NIDO para que mi hija haga apoyo escolar, el telefono de Paz es 1166001207
+Muchas gracias","2016-09-20 16:31:00",1,1,1,29,"Villa 1-11-14",352,29,"m5 c.35",-34.656464,-58.44285,351
+353,352,"Hospital","Obra de infraestructura &gt; Obra no hecha &gt; Hospital","2016-10-10 15:54:00",1,1,1,6,"infrastructure",353,6,"sdsd",-58.452091,-34.660139,352
+353,352,"Hospital","Obra de infraestructura &gt; Obra no hecha &gt; Hospital","2016-10-10 15:54:00",1,1,1,23,"Fatima",353,23,"sdsd",-58.452091,-34.660139,352
+354,353,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2016-12-19 08:17:00",1,1,0,11,"infrastructure",354,11,"Mz 1",-34.58405,-58.45635,353
+354,353,"Falta pavimentar","Calles y plazas &gt; Falta pavimentar","2016-12-19 08:17:00",1,1,0,37,"Playón de Chacarita",354,37,"Mz 1",-34.58405,-58.45635,353
+355,354,"Deberían hacer una obra","Agua &gt; Deberían hacer una obra
+Obra: agua","2017-04-26 21:24:00",1,0,0,7,"water",355,7,"manzana 6 casa 1",-34.584423,-58.456588,354
+355,354,"Deberían hacer una obra","Agua &gt; Deberían hacer una obra
+Obra: agua","2017-04-26 21:24:00",1,0,0,37,"Playón de Chacarita",355,37,"manzana 6 casa 1",-34.584423,-58.456588,354
+356,355,"Escuela","Obra de infraestructura &gt; Obra no hecha &gt; Escuela
+
+ Jhjh","2017-10-15 07:03:00",1,0,0,6,"infrastructure",356,6,"CildaneZ/2/2",-58.452091,-34.660139,355
+356,355,"Escuela","Obra de infraestructura &gt; Obra no hecha &gt; Escuela
+
+ Jhjh","2017-10-15 07:03:00",1,0,0,23,"Fatima",356,23,"CildaneZ/2/2",-58.452091,-34.660139,355
+357,356,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ No tenemos luz desde hace tres días.","2017-10-15 08:47:00",1,0,0,9,"energy",357,9,"nunez/2/22",-34.597396,-58.473455,356
+357,356,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ No tenemos luz desde hace tres días.","2017-10-15 08:47:00",1,0,0,36,"La carbonilla",357,36,"nunez/2/22",-34.597396,-58.473455,356
+358,357,"Problemas con el agua","Agua &gt; Problemas con el agua
+
+ esto es una prueba","2017-11-28 13:40:00",1,0,0,7,"water",358,7,"calle la manzana",-34.650862,-58.410922,357
+358,357,"Problemas con el agua","Agua &gt; Problemas con el agua
+
+ esto es una prueba","2017-11-28 13:40:00",1,0,0,27,"Zavaleta",358,27,"calle la manzana",-34.650862,-58.410922,357
+359,358,"No hay cestos","Basura &gt; No hay cestos
+
+ Fooo","2018-05-04 18:45:00",1,0,0,12,"trash",359,12,"Aaaa",-58.495325,-34.677017,358
+359,358,"No hay cestos","Basura &gt; No hay cestos
+
+ Fooo","2018-05-04 18:45:00",1,0,0,44,"Barrio Pirelli",359,44,"Aaaa",-58.495325,-34.677017,358
+360,359,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2018-06-25 15:50:00",1,0,0,9,"energy",360,9,"montesquieu  m10 c45 bis",-58.396391,-34.655673,359
+360,359,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2018-06-25 15:50:00",1,0,0,25,"Villa 21-24",360,25,"montesquieu  m10 c45 bis",-58.396391,-34.655673,359
+361,360,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2018-07-07 16:14:00",1,0,0,9,"energy",361,9,"montesquieu m10 c45bis",-34.652955,-58.399138,360
+361,360,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz","2018-07-07 16:14:00",1,0,0,25,"Villa 21-24",361,25,"montesquieu m10 c45bis",-34.652955,-58.399138,360
+362,361,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ buenas tardes disculpen las molestias , desde ayer que estamos sin luz y nadie nos dicen nada cuando podrian solucionar esto desde ya muchisima gracias","2018-07-07 16:32:00",1,0,0,9,"energy",362,9,"montesquieu m10 c45",-34.652955,-58.399481,361
+362,361,"Se cortó la luz","Luz y electricidad &gt; Se cortó la luz
+
+ buenas tardes disculpen las molestias , desde ayer que estamos sin luz y nadie nos dicen nada cuando podrian solucionar esto desde ya muchisima gracias","2018-07-07 16:32:00",1,0,0,25,"Villa 21-24",362,25,"montesquieu m10 c45",-34.652955,-58.399481,361
+363,362,"Hospital","Obra de infraestructura &gt; La obra está detina &gt; Hospital
+
+ No parece que sigan construyendo el hospital comprometido hace meses","2018-08-27 00:27:00",1,0,0,6,"infrastructure",363,6,"Arevalos 43",-34.668845,-58.49514,362
+363,362,"Hospital","Obra de infraestructura &gt; La obra está detina &gt; Hospital
+
+ No parece que sigan construyendo el hospital comprometido hace meses","2018-08-27 00:27:00",1,0,0,41,"Asentamiento Scapino",363,41,"Arevalos 43",-34.668845,-58.49514,362
