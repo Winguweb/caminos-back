@@ -7,13 +7,13 @@ class Asset < ApplicationRecord
 
   acts_as_taggable_on :categories
 
-  validates_presence_of :name,
-    :description,
-    :name,
+  validates_presence_of
     :category_list,
-    :lookup_address,
+    :description,
     :geo_geometry
     :geometry
+    :lookup_address,
+    :name,
 
   validate :valid_categories
 
