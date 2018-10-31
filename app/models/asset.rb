@@ -17,7 +17,17 @@ class Asset < ApplicationRecord
 
   validate :valid_categories
 
-  CATEGORIES =['cult', 'infrastructure', 'food_kitchen', 'public_organization', 'education', 'health', 'community_center'].freeze
+  CATEGORIES = %w(
+    community_center
+    cult
+    education
+    food_kitchen
+    health
+    infrastructure
+    public_organization
+  ).freeze
+
+  private_constant :CATEGORIES
 
   def self.categories
     CATEGORIES

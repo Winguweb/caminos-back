@@ -21,8 +21,27 @@ class Work < ApplicationRecord
 
   validate :valid_categories
 
-  CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure', 'home'].freeze
-  STATUS =['in_process','done', 'pending','expired','proyected'].freeze
+  CATEGORIES = %w(
+    energy
+    health
+    home
+    infrastructure
+    public
+    sewer
+    trash
+    water
+  ).freeze
+
+  STATUS = %w(
+    done
+    expired
+    in_process
+    pending
+    proyected
+  ).freeze
+
+  private_constant :CATEGORIES
+  private_constant :STATUS
 
   def self.status
     STATUS
