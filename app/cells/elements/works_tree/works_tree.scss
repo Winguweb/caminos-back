@@ -67,11 +67,11 @@
             &.category-infrastructure {background-image: image-url("icons/category-infrastructure.svg")}
           }
           > span:first-of-type {
-            @include type-setting(0);
+            @include type-setting(-1);
             vertical-align: middle;
           }
           > span:last-of-type {
-            @include type-setting(0);
+            @include type-setting(-1);
             float: right;
             font-weight: 600;
             vertical-align: middle;
@@ -81,7 +81,7 @@
       > ul {
         height: 0;
         overflow: hidden;
-        padding-left: $gutter*4;
+        padding-left: $gutter*3;
         &.opened {
           height: auto;
           margin-bottom: $gutter;
@@ -92,11 +92,16 @@
           }
           > a {
             > div:first-of-type {
+              @include type-setting(-3);
+              line-height: 14px;
+              margin-bottom: $gutter/3;
               i {
                 border-radius: 100%;
                 display: inline-block;
                 height: 12px;
                 margin-right: $gutter/2;
+                position: relative;
+                top: 1px;
                 width: 12px;
                 &.category-home {background-color: color($home, 1)}
                 &.category-water {background-color: color($water, 1)}
@@ -109,12 +114,15 @@
               }
               span {
                 @include text-color($black, 1);
+                display: inline-block;
+                vertical-align: top;
+                width: calc(100% - 12px - #{$gutter});
               }
             }
             > div:last-of-type {
-              @include type-setting(-2);
+              @include type-setting(-5);
               line-height: 1em;
-              margin-bottom: $gutter/2;
+              margin-bottom: $gutter;
               span {
                 @include text-color($black, 1);
                 &.status-in_process { @include text-color($status-in-process,1)}

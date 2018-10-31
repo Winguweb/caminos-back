@@ -6,7 +6,9 @@ module Admin
     end
 
     def is_responsible_for?
-      params[:id] == current_user.entity.id
+      return false if params[:id].blank?
+      @neighborhood = Neighborhood.friendly.find(params[:id])
+      @neighborhood.id == current_user.entity.id
     end
 
     def restrict_if_responsible

@@ -3,6 +3,19 @@ section
     section.with-gutter
       == cell('section/header', t('agreements.title'))
     section
+      p
+        = t('agreements.description_1')
+      p
+        = t('agreements.description_2')
+        = link_to "https://docs.google.com/document/d/1pCn-qeMhDuNtN-ED_D3hQYvvd6kXd7bA_KLsRiBgalo" , target:"_blank", noopener:'', noreferrer:'' do
+          = t('agreements.description_2_link')
+      p
+        = t('agreements.description_3')
+        = link_to '', target:"_blank", noopener:'', noreferrer:''
+        = link_to "http://acuerdoporlaurbanizacion.org" , target:"_blank", noopener:'', noreferrer:'' do
+          = t('agreements.description_3_link')
+
+    section
       - if @agreement_data.present?
         ul
           li

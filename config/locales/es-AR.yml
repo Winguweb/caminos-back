@@ -20,6 +20,11 @@ es-AR:
     agreement: Acuerdo
     general: Estado General
     description: A través de los Indicadores se realiza la medición del Acuerdo por la Urbanización.
+    description_1: "La formulación de estos indicadores esta basada en el Acuerdo por la Urbanización de Villas. Lanzado en 2016 y consensuado entre más de 80 organizaciones, el Acuerdo logró un amplio consenso sobre la necesidad de urbanizar las villas, y las condiciones en las que se deben llevar adelante estos procesos, con miras a que los/as habitantes de las villas vean garantizados sus derechos en condiciones de igualdad que los/as del resto de la ciudad. El objetivo de los indicadores es medir si los estandartes del Acuerdo están siendo respetados en los distintos proyectos llevados adelante por el Gobierno local y, de esta manera, evaluar la calidad de ejecución de cada uno de los procesos de urbanización."
+    description_2: "Conoce más sobre los indicadores "
+    description_2_link: "aquí"
+    description_3: "Accede al "
+    description_3_link: "Acuerdo por la Urbanización de Villas"
   common:
     files: Archivos
   categories:
@@ -29,10 +34,10 @@ es-AR:
     public_spaces: Espacios Públicos
     home: Vivienda
     energy: "Electricidad y Alumbrado"
-    health: Salud
+    health: Educación y Salud
     infrastructure: Equipamiento
     public: Calles y Plazas
-    sewer: Cloacas
+    sewer: Cloacas y Pluviales
     trash: Basura
     water: Agua
   documents:
@@ -72,6 +77,7 @@ es-AR:
     responsibles: Responsables
     urbanization_process: Proceso de urbanización
   pictures:
+    picture: Foto
     pictures: Fotos
     upload_photos: Subi Fotos
     no_pictures: No hay imágenes

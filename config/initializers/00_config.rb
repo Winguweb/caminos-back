@@ -8,7 +8,8 @@ AWS_REGION      = aws['region'].freeze
 AWS_S3_BUCKET   = aws['s3']['bucket'].freeze
 
 google = APP_CONFIG[env]['google'].freeze
-DRIVE_API_KEY = google['drive']['api_key']
+DRIVE_API_KEY = google['drive']['api_key'].freeze
+GOOGLE_ANALYTICS = google['analytics'].freeze
 
 HOSTNAME = APP_CONFIG[env]['hostname'].freeze
 

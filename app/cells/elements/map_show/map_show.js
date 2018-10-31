@@ -3,7 +3,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     _.bindAll(
       this,
       'changeCategoryFilter',
-      'changeStatusFilter',
+      'changeStatusFilter'
     )
 
     this.loadDefaults(options)
@@ -51,7 +51,8 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   createMap: function() {
     var mapContainer = this.$el.find('#map-container')[0]
-    this.map = L.mapbox.map(mapContainer, this.style)
+    this.map = L.mapbox.map(mapContainer, this.style, {scrollWheelZoom: false, maxZoom: 18})
+    L.mapbox.styleLayer('mapbox://styles/juanlacueva/cjn4oy3d40mfz2rnn6z5bngy1').addTo(this.map);
     this.baseGeometryFeature = new L.FeatureGroup()
     this.map.addLayer(this.baseGeometryFeature)
   },
@@ -79,14 +80,17 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   },
   filterFeatures: function() {
     var _this = this
-    return {
-      type: "FeatureCollection",
-      features: _this.features.features.filter(function(feature) {
-        passCategoryFilter = (feature.properties.category == _this.categoryFilter) || !_this.categoryFilter
-        passStatusFilter = (feature.properties.status == _this.statusFilter) || !_this.statusFilter
-        return passCategoryFilter && passStatusFilter
-      })
+    if (this.features.features) {
+      return {
+        type: "FeatureCollection",
+        features: _this.features.features.filter(function(feature) {
+          passCategoryFilter = (feature.properties.category == _this.categoryFilter) || !_this.categoryFilter
+          passStatusFilter = (feature.properties.status == _this.statusFilter) || !_this.statusFilter
+          return passCategoryFilter && passStatusFilter
+        })
+      }
     }
+    return {type: "FeatureCollection", features: []}
   },
   hidePopup: function() {
     this.popup.removeClass('visible')
@@ -114,8 +118,11 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     var _this = this
     var options = {
       style: function(feature) {
+        var category = feature.properties.category
+        var geometryType = feature.geometry.type
+        var className = "geometry-work " + category + " " + geometryType
         return {
-          className: "geometry-work " + feature.properties.category,
+          className: className,
           status: feature.properties.status
         }
       },

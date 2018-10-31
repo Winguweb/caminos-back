@@ -7,7 +7,13 @@ class Elements::MapReferencesCell < Cell::ViewModel
     factory = RGeo::GeoJSON::EntityFactory.instance
 
     features = model.map do |neighborhood|
-      factory.feature(neighborhood.geo_geometry, nil, { desc: neighborhood.description})
+      factory.feature(neighborhood.geo_geometry, nil, {
+        desc: neighborhood.description,
+        className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
+        abbreviation: neighborhood.abbreviation,
+        name: neighborhood.name,
+        url: neighborhood_path(neighborhood.slug)
+      })
     end
 
     geoJson = RGeo::GeoJSON.encode factory.feature_collection(features)

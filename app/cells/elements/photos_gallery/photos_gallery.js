@@ -22,7 +22,9 @@ CDLV.Components['photos/gallery'] = Backbone.View.extend({
           breakpoint: 1024,
           settings: {
             arrows: false,
-            dots: false
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
           }
         },
       ]

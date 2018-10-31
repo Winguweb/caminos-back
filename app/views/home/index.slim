@@ -11,14 +11,15 @@ section
       = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
         p
           strong = t('.link_to_v2_1')
-          = t('.link_to_v2_2')
+          strong
+            span = t('.link_to_v2_2')
     div
       div
-        = link_to "https://www.caminosdelavilla.org/reports/submit" , target:"_blank", noopener:'', noreferrer:''
+        = link_to "https://drive.google.com/drive/u/0/folders/15JbXsyfsXX0Mi7imrhAiFPIqLNMmRDnr", target:"_blank", noopener:'', noreferrer:''
           = t('.link_to_v1_2')
-        = link_to "https://www.caminosdelavilla.org/#mapanuevo", target:"_blank", noopener:'', noreferrer:''
+        = link_to "https://acuerdoporlaurbanizacion.org" , target:"_blank", noopener:'', noreferrer:''
           = t('.link_to_v1_3')
-        = link_to "https://www.caminosdelavilla.org", target:"_blank", noopener:'', noreferrer:''
+        = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
           = t('.link_to_v1_4')
   div
     p = t('.text_1_html')
@@ -35,19 +36,19 @@ section
     h1 = t('.section_2_header')
   p = t('.section_2_text')
   div
-    = image_tag image_path("home/section_1.jpg")
+    = image_tag image_path("home/section_2.jpg")
     i
 section
   header
     h1 = t('.section_3_header')
   p = t('.section_3_text')
   div
-    = image_tag image_path("home/section_1.jpg")
+    = image_tag image_path("home/section_3.jpg")
     i
 footer
   div
     = link_to '', target:"_blank", noopener:'', noreferrer:'' do
-      = image_tag image_path("logos/caminos_white_logo.png")
+      = image_tag image_path("logos/caminos_white_logo.svg")
       span = t('.footer_logo_text')
   div
     = link_to '', target:"_blank", noopener:'', noreferrer:'' do
