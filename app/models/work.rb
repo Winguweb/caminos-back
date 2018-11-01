@@ -10,14 +10,15 @@ class Work < ApplicationRecord
 
   acts_as_taggable_on :categories
 
-  validates_presence_of :name,
+  validates_presence_of(
+    :category_list,
     :description,
-    :status,
+    :geo_geometry,
+    :lookup_address,
     :manager,
     :name,
-    :category_list,
-    :lookup_address,
-    :geo_geometry
+    :status,
+  )
 
   validate :valid_categories
 
@@ -52,9 +53,7 @@ class Work < ApplicationRecord
   end
 
   def valid_categories
-    if category_list.nil? || category_list.empty?
-      errors.add(:category_list, "errors")
-    end
+    errors.add(:category_list, "errors") unless category_list.present?
   end
 
   def valid_dates
@@ -64,7 +63,7 @@ class Work < ApplicationRecord
   end
 
   def category
-    self.tags_on(:categories).first
+    tags_on(:categories).first
   end
 
   def category_icon

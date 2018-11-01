@@ -7,12 +7,14 @@ class Asset < ApplicationRecord
 
   acts_as_taggable_on :categories
 
-  validates_presence_of :category_list,
+  validates_presence_of(
+    :category_list,
     :description,
     :geo_geometry,
     :geometry,
     :lookup_address,
-    :name
+    :name,
+  )
 
   validate :valid_categories
 
@@ -33,13 +35,11 @@ class Asset < ApplicationRecord
   end
 
   def valid_categories
-    if category_list.nil? || category_list.empty?
-      errors.add(:category_list, "errors")
-    end
+    errors.add(:category_list, "errors") unless category_list.present?
   end
 
   def category
-    self.tags_on(:categories).first
+    tags_on(:categories).first
   end
 
   def category_icon
