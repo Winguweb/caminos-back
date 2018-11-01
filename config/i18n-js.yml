@@ -1,4 +1,4 @@
 fallbacks: false
 translations:
   - file: 'app/assets/javascripts/admin/translations.js'
-    only: ['*.js.filer.*', '*.js.admin.*', '*.js.filter.*', '*.js.status.*', '*.js.categories.*']
+    only: ['*.js.filer.*', '*.js.admin.*', '*.js.filter.*', '*.js.works.*', '*.js.neighborhoods.*', '*.js.categories.*']

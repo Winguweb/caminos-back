@@ -33,10 +33,19 @@ es-AR:
         error: Ocurrió un error al subir este archivo
     filter:
       no_results: No hay obras con estado
-    status:
-      all_status: Todos
-      done: Finalizada
-      expired: Vencida
-      in_process: En progreso
-      pending: Pendiente
-      proyected: Proyectada
+    neighborhoods:
+      popup:
+        urbanized: En proceso de urbanización
+        unurbanized: Sin proceso de urbanización
+        links:
+          asset: Sugerir un lugar
+          claim: Hacer un reclamo
+    works:
+      popup:
+        status:
+          all_status: Todos
+          done: Finalizada
+          expired: Vencida
+          in_process: En progreso
+          pending: Pendiente
+          proyected: Proyectada

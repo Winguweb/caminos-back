@@ -62,11 +62,11 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   featureMouseoverListener: function(feature) {
     var _this = this
     return function(evt) {
-      var statusLegend = I18n.t('js.status.' + feature.properties.status)
+      var statusLegend = I18n.t('js.works.popup.status.' + feature.properties.status)
       var name = feature.properties.name
       var status = feature.properties.status
       var popupOptions = {
-        position: {left: evt.layerPoint.x + 'px', top: evt.layerPoint.y + 'px'},
+        position: {left: evt.containerPoint.x + 'px', top: evt.containerPoint.y + 'px'},
         html: '<p>' + name + '</p><span class="status-' + status + '">' + statusLegend + '</span>'
       }
       _this.showPopup(popupOptions)
