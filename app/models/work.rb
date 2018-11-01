@@ -22,7 +22,7 @@ class Work < ApplicationRecord
 
   validate :valid_categories
 
-  CATEGORIES = %w(
+  CATEGORIES = %w[
     energy
     health
     home
@@ -31,15 +31,15 @@ class Work < ApplicationRecord
     sewer
     trash
     water
-  ).freeze
+  ].freeze
 
-  STATUS = %w(
+  STATUS = %w[
     done
     expired
     in_process
     pending
     proyected
-  ).freeze
+  ].freeze
 
   private_constant :CATEGORIES
   private_constant :STATUS

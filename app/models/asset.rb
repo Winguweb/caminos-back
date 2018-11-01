@@ -18,7 +18,7 @@ class Asset < ApplicationRecord
 
   validate :valid_categories
 
-  CATEGORIES = %w(
+  CATEGORIES = %w[
     community_center
     cult
     education
@@ -26,7 +26,7 @@ class Asset < ApplicationRecord
     health
     infrastructure
     public_organization
-  ).freeze
+  ].freeze
 
   private_constant :CATEGORIES
 
