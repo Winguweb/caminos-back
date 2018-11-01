@@ -115,13 +115,16 @@
     border-radius: 2px;
     box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
     display: none;
+    min-width: 350px;
     padding: $gutter;
     position: absolute;
     transform: translate3d(10px, -50%, 0);
     > p {
       float: left;
+      line-height: 1em;
       margin-bottom: $gutter;
       margin-right: $gutter/2;
+      max-width: 50%;
     }
     > span {
       &.status-urbanized {
