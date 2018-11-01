@@ -7,7 +7,8 @@ class Work < ApplicationRecord
   belongs_to :neighborhood
   has_and_belongs_to_many :meetings
   has_many :photos, as: :owner
-
+  has_many :claims
+  
   acts_as_taggable_on :categories
 
   validates_presence_of :name,

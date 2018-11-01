@@ -13,6 +13,7 @@ class Neighborhood < ApplicationRecord
   has_many :photos, as: :owner
   has_many :works
   has_one :agreement
+  has_many :claims
 
   validates_presence_of :name, :description, :geo_geometry, :geometry, :abbreviation
 
