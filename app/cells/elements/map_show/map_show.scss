@@ -13,9 +13,7 @@
   .leaflet-shadow-pane {
     opacity: 0.2;
   }
-  .geometry-marker,
-  .geometry-polygon,
-  .geometry-polyline {
+  .geometry-work {
     &.home {stroke: $home;}
     &.water {stroke: $water;}
     &.trash {stroke: $trash;}
@@ -24,23 +22,26 @@
     &.energy {stroke: $energy;}
     &.sewer {stroke: $sewer;}
     &.infrastructure {stroke: $infrastructure;}
-  }
-  .geometry-polygon {
-    &.home {fill: $home;}
-    &.water {fill: $water;}
-    &.trash {fill: $trash;}
-    &.public {fill: $public;}
-    &.health {fill: $health;}
-    &.energy {fill: $energy;}
-    &.sewer {fill: $sewer;}
-    &.infrastructure {fill: $infrastructure;}
-    &.base-geometry {
-      fill: $black;
-      fill-opacity: 0.1;
-      stroke: $black;
-      stroke-opacity: 0.4;
-      stroke-width: 2;
+
+    &.MultiPolygon,
+    &.Polygon {
+      &.home {fill: $home;}
+      &.water {fill: $water;}
+      &.trash {fill: $trash;}
+      &.public {fill: $public;}
+      &.health {fill: $health;}
+      &.energy {fill: $energy;}
+      &.sewer {fill: $sewer;}
+      &.infrastructure {fill: $infrastructure;}
     }
+  }
+
+  .base-geometry {
+    fill: $black;
+    fill-opacity: 0.1;
+    stroke: $black;
+    stroke-opacity: 0.4;
+    stroke-width: 2;
   }
 
   .map-show-popup {
