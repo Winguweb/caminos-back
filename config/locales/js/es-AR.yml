@@ -40,12 +40,10 @@ es-AR:
         links:
           asset: Sugerir un lugar
           claim: Reporte ciudadano
-    works:
-      popup:
-        status:
-          all_status: Todos
-          done: Finalizada
-          expired: Vencida
-          in_process: En progreso
-          pending: Pendiente
-          proyected: Proyectada
+    status:
+      all_status: Todos
+      done: Finalizada
+      expired: Vencida
+      in_process: En progreso
+      pending: Pendiente
+      proyected: Proyectada
