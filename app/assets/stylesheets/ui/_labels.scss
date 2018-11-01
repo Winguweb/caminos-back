@@ -32,29 +32,7 @@
 @mixin wired-label($color: $white) {
   @include label(transparent, $color);
   background: transparent;
-  border: 2px solid $color;
-  border-radius: 2px;
+  border-color: $color;
+  border-width: 1px;
   color: $color;
-  display: inline-block;
-  font-weight: 500;
-  line-height: 10px;
-  margin: 0;
-  padding: $gutter/4 $gutter/4;
-  text-align: center;
-  text-transform: uppercase;
-  &.danger-type {
-    @include background-color($red, 1);
-    @include text-color($white);
-    border: 2px solid $red;
-  }
-  &.warning-type {
-    @include background-color($yellow, 1);
-    @include text-color($white);
-    border: 2px solid $yellow;
-  }
-  &.success-type {
-    @include background-color($green, 1);
-    @include text-color($white);
-    border: 2px solid $green;
-  }
 }
