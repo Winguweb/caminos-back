@@ -1,0 +1,13 @@
+.filter-toggle-mapping-cell
+  ul
+    li.active
+      a.data-filter Assets
+    li
+      a.data-filter Claim
+
+javascript:
+  $(function() {
+    new CDLV.Components['elements/filter_toggle']({
+      el: $('.filter-toggle-mapping-cell')
+    })
+  });

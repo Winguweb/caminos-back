@@ -1,5 +1,5 @@
 class NeighborhoodsController < ApplicationController
-  before_action :check_for_mobile, only: %i[index show about]
+  before_action :check_for_mobile, only: %i[index show about mapping]
 
   def index
     @neighborhoods = Neighborhood.order('LOWER(name)')
@@ -23,6 +23,10 @@ class NeighborhoodsController < ApplicationController
     else
       @data = {}
     end
+  end
+
+  def mapping
+    load_neighborhood_or_redirect
   end
 
   private

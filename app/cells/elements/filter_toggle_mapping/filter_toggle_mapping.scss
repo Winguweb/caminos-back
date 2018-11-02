@@ -1,0 +1,36 @@
+@mixin filter-toggle-mapping() {
+  margin-top: $gutter;
+  > ul {
+    > li {
+      border-bottom: 2px solid transparent;
+      box-sizing: border-box;
+      display: inline-block;
+  min-width: 33%;
+      padding: $gutter/2;
+  text-align: center;
+      &.active {
+        border-color: color($blue, 1);
+        > a { @include text-color($blue, 1); }
+      }
+      > a {
+        @include text-color($black, 1);
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        &:hover {
+          @include text-color($blue, 1);
+        }
+      }
+    }
+  }
+}
+
+@mixin filter-toggle-mapping-mobile() {
+  box-sizing: border-box;
+  min-width: 25%;
+  text-align: center;
+}
+
+.filter-toggle-mapping-cell{@include filter-toggle-mapping;}
+
+.mobile-layout .filter-toggle-mapping-cell {@include filter-toggle-mapping-mobile; }
