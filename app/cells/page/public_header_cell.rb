@@ -13,11 +13,11 @@ class Page::PublicHeaderCell < Cell::ViewModel
   end
 
   def urbanized
-    options_from_collection_for_select(neighborhoods.where(urbanization: true), "slug", "name", neighborhood.slug)
+    options_from_collection_for_select(neighborhoods.where(urbanization: true), 'slug', 'name', neighborhood.slug)
   end
 
   def unurbanized
-    options_from_collection_for_select(neighborhoods.where(urbanization: false), "slug", "name", neighborhood.slug)
+    options_from_collection_for_select(neighborhoods.where(urbanization: false), 'slug', 'name', neighborhood.slug)
   end
 
   def grouped_neighborhoods

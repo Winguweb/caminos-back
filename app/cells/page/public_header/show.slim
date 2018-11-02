@@ -5,7 +5,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
   div
     nav
       - unless neighborhood.blank?
-        = select_tag "neighborhood", options_for_select([['Todos los barrios', '_all']]) + grouped_neighborhoods
+        = select_tag 'neighborhood', options_for_select([['Todos los barrios', '_all']]) + grouped_neighborhoods
     - unless neighborhood.blank?
       ul
         - if neighborhood.urbanization
