@@ -53,6 +53,12 @@
   }
 }
 
+@mixin small-button($color: $blue) {
+  @include button($color);
+  @include type-setting(-2);
+  padding: $gutter/3 $gutter/2;
+}
+
 @mixin text-button($color: $blue) {
   @include wired-button($color);
   border: none;

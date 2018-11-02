@@ -1,10 +1,10 @@
 .filter-toggle-cell
   ul
     li.active
-      =link_to t("status.all_status"), "#", {"data-filter":""}
+      = link_to t("status.all_status"), "#", {"data-filter":""}
     - Work.status.each do |status|
       li
-        =link_to t("status.#{status}"), "#", {"data-filter":"#{status}"}
+        = link_to t("status.#{status}"), "#", {"data-filter":"#{status}"}
 
 javascript:
   $(function() {

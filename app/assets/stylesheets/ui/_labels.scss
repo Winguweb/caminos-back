@@ -1,0 +1,38 @@
+@mixin label($bg-color: $blue, $color: $white) {
+  @include text-color($color, 1);
+  @include type-setting(-3);
+  background: $bg-color;
+  border: 2px solid $bg-color;
+  border-radius: 2px;
+  color: $white;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 10px;
+  margin: 0;
+  padding: $gutter/4 $gutter/4;
+  text-align: center;
+  text-transform: uppercase;
+  &.danger-type {
+    @include background-color($red, 1);
+    @include text-color($white);
+    border: 2px solid $red;
+  }
+  &.warning-type {
+    @include background-color($yellow, 1);
+    @include text-color($white);
+    border: 2px solid $yellow;
+  }
+  &.success-type {
+    @include background-color($green, 1);
+    @include text-color($white);
+    border: 2px solid $green;
+  }
+}
+
+@mixin wired-label($color: $white) {
+  @include label(transparent, $color);
+  background: transparent;
+  border-color: $color;
+  border-width: 1px;
+  color: $color;
+}

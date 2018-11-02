@@ -92,7 +92,7 @@
           }
           > a {
             > div:first-of-type {
-              @include type-setting(-3);
+              @include type-setting(-2);
               line-height: 14px;
               margin-bottom: $gutter/3;
               i {
@@ -120,7 +120,7 @@
               }
             }
             > div:last-of-type {
-              @include type-setting(-5);
+              @include type-setting(-3);
               line-height: 1em;
               margin-bottom: $gutter;
               span {

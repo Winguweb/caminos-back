@@ -16,6 +16,9 @@ header.page-public-header-cell class="#{'without-links' unless links}"
           = active_link_to agreement_neighborhood_path(neighborhood) do
             span= t('.agreement')
         li
+          = active_link_to mapping_neighborhood_path(neighborhood) do
+            span= t('.citizen_participation')
+        li
           = active_link_to about_neighborhood_path(neighborhood) do
             span= t('.about')
 

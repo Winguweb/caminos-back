@@ -8,11 +8,13 @@ class Elements::MapReferencesCell < Cell::ViewModel
 
     features = model.map do |neighborhood|
       factory.feature(neighborhood.geo_geometry, nil, {
-        desc: neighborhood.description,
         className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
         abbreviation: neighborhood.abbreviation,
         name: neighborhood.name,
-        url: neighborhood_path(neighborhood.slug)
+        url: neighborhood_path(neighborhood.slug),
+        urbanization_process: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
+        asset_url: neighborhood_path(neighborhood.slug),
+        claim_url: neighborhood_path(neighborhood.slug),
       })
     end
 

@@ -28,20 +28,44 @@ CDLV.Components['map_references'] = Backbone.View.extend({
   featureClickListener: function(feature) {
     return function() { window.location = feature.properties.url }
   },
+  featureMouseoverListener: function(feature) {
+    var _this = this
+    return function(evt) {
+      var urbanizationLegend = I18n.t('js.neighborhoods.popup.' + feature.properties.urbanization_process)
+      var name = feature.properties.name
+      var assetLinkLegend = I18n.t('js.neighborhoods.popup.links.asset')
+      var claimLinkLegend = I18n.t('js.neighborhoods.popup.links.claim')
+      var urbanizationProcess = feature.properties.urbanization_process
+      var nameTag = '<p>' + name + '</p>'
+      var statusTag = '<span class="status-' + urbanizationProcess + '">' + urbanizationLegend + '</span>'
+      var assetLinkTag = '<a href="' + feature.properties.asset_url + '">' + assetLinkLegend + '</a>'
+      var claimLinkTag = '<a href="' + feature.properties.claim_url + '">' + claimLinkLegend + '</a>'
+      var linksTag = '<div>' + assetLinkTag + claimLinkTag + '</div>'
+      var popupOptions = {
+        position: {left: evt.containerPoint.x + 'px', top: evt.containerPoint.y + 'px'},
+        html: nameTag + statusTag + linksTag
+      }
+      _this.showPopup(popupOptions)
+    }
+  },
+  featureMouseoutListener: function() {
+    var _this = this
+    return function() {
+      _this.hidePopup()
+    }
+  },
+  hidePopup: function() {
+    var _this = this
+    this.popupTimeout = setTimeout(function() {
+      _this.popup.removeClass('visible')
+    }, 300)
+  },
   loadDefaults: function(options) {
     this.base = options.base
     this.center = options.defaults.center
     this.style = options.defaults.style
     this.token = options.token
     this.zoom = options.defaults.zoom
-  },
-  setAccessToken: function() {
-    L.mapbox.accessToken = this.token
-  },
-  showBaseGeometry: function() {
-    var geoJSONFunctions = { onEachFeature: this.onEachFeature }
-    var geoJSON = L.geoJSON(this.base, geoJSONFunctions)
-    geoJSON.addTo(this.baseGeometryFeature)
   },
   onEachFeature: function(feature, layer){
     var _this = this
@@ -60,7 +84,24 @@ CDLV.Components['map_references'] = Backbone.View.extend({
 
       var marker = L.marker(coordinates, {icon: icon})
       marker.on('click', _this.featureClickListener(feature))
+      marker.on('mouseover', _this.featureMouseoverListener(feature))
+      marker.on('mouseout', _this.featureMouseoutListener(feature))
       marker.addTo(this.map)
     }
-  }
+  },
+  setAccessToken: function() {
+    L.mapbox.accessToken = this.token
+  },
+  showBaseGeometry: function() {
+    var geoJSONFunctions = { onEachFeature: this.onEachFeature }
+    var geoJSON = L.geoJSON(this.base, geoJSONFunctions)
+    geoJSON.addTo(this.baseGeometryFeature)
+  },
+  showPopup: function(options) {
+    clearTimeout(this.popupTimeout)
+    this.popup = this.popup || $('<div class="map-reference-popup"></div>').appendTo(this.$el)
+    this.popup.css(options.position)
+    this.popup.html(options.html)
+    this.popup.addClass('visible')
+  },
 })
