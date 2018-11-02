@@ -37,7 +37,6 @@ class Work < ApplicationRecord
     done
     expired
     in_process
-    pending
     proyected
   ].freeze
 
