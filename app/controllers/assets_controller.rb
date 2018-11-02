@@ -9,7 +9,7 @@ class AssetsController < ApplicationController
     service = CreateAsset.call(current_neighborhood, asset_params)
 
     if service.success?
-      redirect_to admin_neighborhood_assets_path
+      redirect_to neighborhood_assets_path
     else
       flash.now[:error] =  load_errors(service.errors)
       @categories = Asset.categories
@@ -31,12 +31,12 @@ class AssetsController < ApplicationController
 
   def asset_params
     params.require(:work).permit(
-    :category_list,
-    :description,
-    :geo_geometry
-    :geometry
-    :lookup_address,
-    :name,
+      :category_list,
+      :description,
+      :geo_geometry,
+      :geometry,
+      :lookup_address,
+      :name,
     )
   end
 end
