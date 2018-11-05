@@ -9,7 +9,23 @@ class Page::PublicHeaderCell < Cell::ViewModel
   end
 
   def neighborhoods
-    Neighborhood.all
+    Neighborhood.all.order('lower(name) ASC')
+  end
+
+  def urbanized
+    options_from_collection_for_select(neighborhoods.where(urbanization: true), 'slug', 'name', neighborhood.slug)
+  end
+
+  def unurbanized
+    options_from_collection_for_select(neighborhoods.where(urbanization: false), 'slug', 'name', neighborhood.slug)
+  end
+
+  def grouped_neighborhoods
+    grouped_options = {
+      'En proceso de urbanización' => urbanized,
+      'Sin proceso de urbanización' => unurbanized
+    }
+    grouped_options_for_select(grouped_options)
   end
 
   def links

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
         # TODO: It should be routed to agreements controller
         get  :agreement, action: :show, controller: :agreements, path: "acuerdo"
         get :about, path: "acerca-del-barrio"
+        get :mapping
       end
     end
 

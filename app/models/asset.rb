@@ -1,52 +1,34 @@
-class Work < ApplicationRecord
-  include DocumentRelatable
+class Asset < ApplicationRecord
 
   extend FriendlyId
   friendly_id :name, use: %i[slugged finders history]
 
   belongs_to :neighborhood
-  has_and_belongs_to_many :meetings
-  has_many :photos, as: :owner
-  has_many :claims
-  
+
   acts_as_taggable_on :categories
 
   validates_presence_of(
     :category_list,
     :description,
     :geo_geometry,
+    :geometry,
     :lookup_address,
-    :manager,
     :name,
-    :status,
   )
 
   validate :valid_categories
 
   CATEGORIES = %w[
-    energy
+    community_center
+    cult
+    education
+    food_kitchen
     health
-    home
     infrastructure
-    public
-    sewer
-    trash
-    water
-  ].freeze
-
-  STATUS = %w[
-    done
-    expired
-    in_process
-    proyected
+    public_organization
   ].freeze
 
   private_constant :CATEGORIES
-  private_constant :STATUS
-
-  def self.status
-    STATUS
-  end
 
   def self.categories
     CATEGORIES
@@ -54,12 +36,6 @@ class Work < ApplicationRecord
 
   def valid_categories
     errors.add(:category_list, "errors") unless category_list.present?
-  end
-
-  def valid_dates
-    if start_date && estimated_end_date && (estimated_end_date < start_date)
-      errors.add(:invalid_dates, "invalid_dates please check now")
-    end
   end
 
   def category

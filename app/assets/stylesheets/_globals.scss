@@ -25,6 +25,7 @@
   PURE MIXIN UI STUFF
 =================== */
 @import "ui/buttons";
+@import "ui/labels";
 @import "ui/checkbox";
 @import "ui/radiobutton";
 
@@ -44,6 +45,7 @@
 @import "documents_uploader";
 @import "error_messages";
 @import "filter_toggle";
+@import "filter_toggle_mapping";
 @import "map_edit";
 @import "map_references";
 @import "map_show";
