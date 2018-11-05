@@ -1,8 +1,8 @@
-.assets_form
- = form_for Asset.new,url:neighborhood_assets_path, html: { class: 'form', multipart: true } do |f|
+.claims_form
+ = form_for Claim.new, url:neighborhood_claims_path, html: { class: 'form', multipart: true } do |f|
   .page-section
     section
-      == cell('section/header',t('assets.asset_detail'), links: [{ title: t('claims.cancel') }, { title: t('claims.submit'), submit: true }])
+      == cell('section/header',t('claims.claim_detail'), links: [{ title: t('claims.cancel') }, { title: t('claims.submit'), submit: true }])
       .field
         label.required
           = f.label :name, t('claims.name')
@@ -18,6 +18,6 @@
     
     section
       == cell('section/header', t('claims.map_location'))
-      == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'asset')
-      input type="hidden" name="asset[geometry]" class="geometry-field"
-      input type="hidden" name="asset[geo_geometry]" class="geo_geometry-field"
+      == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'claim')
+      input type="hidden" name="claim[geometry]" class="geometry-field"
+      input type="hidden" name="claim[geo_geometry]" class="geo_geometry-field"
