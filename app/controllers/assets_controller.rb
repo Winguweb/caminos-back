@@ -23,6 +23,9 @@ class AssetsController < ApplicationController
     @neighborhood = @asset.neighborhood
   end
 
+  def new
+  end
+
   private
 
   def load_asset
@@ -33,10 +36,10 @@ class AssetsController < ApplicationController
     params.require(:work).permit(
     :category_list,
     :description,
-    :geo_geometry
-    :geometry
+    :geo_geometry,
+    :geometry,
     :lookup_address,
-    :name,
+    :name
     )
   end
 end

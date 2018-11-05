@@ -25,6 +25,16 @@ es-AR:
     description_2_link: "aquí"
     description_3: "Accede al "
     description_3_link: "Acuerdo por la Urbanización de Villas"
+  assets:
+    asset_detail: Detalle de la obra
+    header_title: Mapeo Participativo
+    name: Nombre
+    description: Descripcion
+    lookup_address: Dirección
+    submit: Guardar
+    cancel: Cancelar
+    map_location: Ubicacion en el mapa
+
   common:
     files: Archivos
   categories:
