@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181031174219) do
+ActiveRecord::Schema.define(version: 20181101131108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,18 +27,22 @@ ActiveRecord::Schema.define(version: 20181031174219) do
     t.index ["slug"], name: "index_agreements_on_slug"
   end
 
-  create_table "assets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "claims", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
+    t.uuid "work_id"
     t.string "name"
     t.text "description"
     t.string "lookup_address"
     t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
     t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
-    t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["neighborhood_id"], name: "index_assets_on_neighborhood_id"
-    t.index ["slug"], name: "index_assets_on_slug"
+    t.string "slug"
+    t.string "#<ActiveRecord::ConnectionAdapters::PostGIS::TableDefinition:0x"
+    t.index ["geo_geometry"], name: "index_claims_on_geo_geometry", using: :gist
+    t.index ["geometry"], name: "index_claims_on_geometry", using: :gist
+    t.index ["neighborhood_id"], name: "index_claims_on_neighborhood_id"
+    t.index ["slug"], name: "index_claims_on_slug"
   end
 
   create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
