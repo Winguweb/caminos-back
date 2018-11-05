@@ -1,0 +1,23 @@
+.assets_form
+ = form_for neighborhood_assets_path, html: { class: 'form', multipart: true } do |f|
+  .page-section
+    section
+      == cell('section/header',t('assets.asset_detail'), links: [{ title: t('assets.cancel') }, { title: t('assets.submit'), submit: true }])
+      .field
+        label.required
+          = f.label :name, t('assets.name')
+        =f.text_field :name, required: true
+      .field
+        label.required 
+          =f.label :description, t('assets.description')
+        =f.text_area :description, required: true
+      .field
+        label.required
+          = f.label :lookup_address, t('assets.lookup_address')
+        =f.text_field :lookup_address, required: true
+    
+    section
+      == cell('section/header', t('assets.map_location'))
+      == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'asset')
+       input type="hidden" name="asset[geometry]" class="geometry-field"
+      input type="hidden" name="asset[geo_geometry]" class="geo_geometry-field"
