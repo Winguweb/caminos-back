@@ -27,9 +27,10 @@ es-AR:
       username: Nombre de Usuario
   mobile_elements:
     mobile_menu:
-      works: Obras
       agreement: Acuerdo
       about: Información
+      citizen_participation: Participación ciudadana
+      works: Obras
     over_work_card:
   page:
     public_header:

@@ -14,16 +14,16 @@ nav class="mobile-menu-cell back-menu #{with_links}"
     ul.should-show
       li
         = link_to neighborhood_path(neighborhood) do
-          span="Obras"
+          span=t('.works')
       li
         = link_to agreement_neighborhood_path(neighborhood) do
-          span="Acuerdo"
+          span=t('.agreement')
       li
         = link_to about_neighborhood_path(neighborhood) do
-          span="Información"
+          span=t('.about')
       li 
         = link_to mapping_neighborhood_path(neighborhood) do
-          span="Mapeo"
+          span=t('.citizen_participation')
 
 javascript:
   $(function() {

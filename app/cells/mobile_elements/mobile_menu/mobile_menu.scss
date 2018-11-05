@@ -13,25 +13,11 @@
   > div:first-of-type {
     text-align: right;
     > button {
-      @include appearance(none);
-      background: none;
-      border: none;
-      padding: $gutter;
-      position: fixed;
-      right: 0;
-      top: 0;
-      z-index: 2001;
-      cursor: pointer;
       span {
-        background-image: image-url("icons/menu.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        cursor: pointer;
         display: inline-block;
-        height: 14px;
-        margin: 0;
-        width: 24px;
       }
     }
   }
@@ -70,7 +56,6 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        cursor: pointer;
         display: inline-block;
         height: 14px;
         margin: 0;
