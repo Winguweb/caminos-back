@@ -1,0 +1,12 @@
+- @with_links = true
+- @back_menu = t("neighborhoods.neighborhoods")
+section
+  aside
+    div
+      section
+        nav
+          == cell('elements/filter_toggle_mapping')
+
+  main
+    section
+      == cell('elements/map_show', @neighborhood)
