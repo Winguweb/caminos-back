@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 20181101131108) do
     t.index ["slug"], name: "index_agreements_on_slug"
   end
 
+  create_table "assets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
+    t.string "name"
+    t.text "description"
+    t.string "lookup_address"
+    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["neighborhood_id"], name: "index_assets_on_neighborhood_id"
+    t.index ["slug"], name: "index_assets_on_slug"
+  end
+
   create_table "claims", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
     t.uuid "work_id"

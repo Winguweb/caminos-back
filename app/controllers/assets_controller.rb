@@ -23,6 +23,9 @@ class AssetsController < ApplicationController
     @neighborhood = @asset.neighborhood
   end
 
+  def new
+  end
+
   private
 
   def load_asset
