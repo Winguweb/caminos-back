@@ -7,24 +7,26 @@ class Claim < ApplicationRecord
 
   acts_as_taggable_on :categories
 
-  validates_presence_of :name,
-    :description,
+  validates_presence_of(
     :category_list,
+    :description,
+    :geo_geometry,
+    :geometry,
     :lookup_address,
-    :geo_geometry
-    :geometry
+    :name,
+  )
 
   validate :valid_categories
    
-  CATEGORIES = %w(
-    streets_parks
-    trash
+  CATEGORIES = %w[
+    building_infrastructure
     health_ambulance
     light_electricity
     sewerage
+    streets_parks
+    trash
     water
-    building_infrastructure
-  ).freeze
+  ].freeze
 
   private_constant :CATEGORIES
 
@@ -33,13 +35,11 @@ class Claim < ApplicationRecord
   end
   
   def valid_categories
-    if category_list.nil? || category_list.empty?
-      errors.add(:category_list, "errors")
-    end
+    errors.add(:category_list, "errors") unless category_list.present?
   end
   
   def category
-    self.tags_on(:categories).first
+    tags_on(:categories).first
   end
   
   def category_icon

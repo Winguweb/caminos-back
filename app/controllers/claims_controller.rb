@@ -8,7 +8,7 @@ class ClaimsController < ApplicationController
      service = CreateClaim.call(current_neighborhood, asset_params)
      # service = CreateClaim.call(current_neighborhood, asset_params,some_work)
      if service.success?
-      redirect_to admin_neighborhood_claims_path
+      redirect_to neighborhood_claims_path
     else
       flash.now[:error] =  load_errors(service.errors)
       @categories = Claim.categories
@@ -30,12 +30,12 @@ class ClaimsController < ApplicationController
   
   def claim_params
     params.require(:claim).permit(
-    :category_list,
-    :description,
-    :geo_geometry,
-    :geometry,
-    :lookup_address,
-    :name,
+      :category_list,
+      :description,
+      :geo_geometry,
+      :geometry,
+      :lookup_address,
+      :name,
     )
   end
 end
