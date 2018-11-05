@@ -5,13 +5,57 @@
   height: $aside-height;
   overflow: auto;
   &.with-links {
-    height: $aside-links-height;
+    padding-bottom: $gutter;
   }
   &.with-links ~ main {
     height: calc(100% - #{$aside-links-height});
   }
   > div:first-of-type {
     text-align: right;
+    > button {
+      @include appearance(none);
+      background: none;
+      border: none;
+      padding: $gutter;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 2001;
+      cursor: pointer;
+      span {
+        background-image: image-url("icons/menu.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        display: inline-block;
+        height: 14px;
+        margin: 0;
+        width: 24px;
+      }
+    }
+  }
+}
+
+@mixin mobile-back-menu() {
+  overflow: hidden;
+  > div:first-of-type {
+    text-align: left;
+    > button {
+      position: static;
+      span {
+        background-image: image-url("icons/back.svg");
+        height: 15px;
+        vertical-align: middle;
+        width: 16px;
+      }
+    }
+    > span {
+      display: inline-block;
+      padding: $gutter $gutter $gutter 0;
+    }
+  }
+  > div:nth-of-type(2) {
     > button {
       @include appearance(none);
       background: none;
@@ -72,49 +116,6 @@
   }
   > ul + div {
     margin-top: $aside-height;
-    > ul {
-      text-align: center;
-      > li {
-        @include grid-column(1 of 3, $no-gutter);
-        > a {
-          @include text-color($text-grey, 1);
-          @include type-setting(0);
-          border-bottom: 2px solid transparent;
-          display: block;
-          margin-right: 0;
-          padding: $gutter 0 calc(#{$gutter} - 6px);
-          text-align: center;
-          &.active,
-          &:hover {
-            @include text-color($text-blue, 1);
-            border-bottom-color: color($text-blue, 1);
-          }
-        }
-      }
-    }
-  }
-}
-
-@mixin mobile-back-menu() {
-  overflow: hidden;
-  > div:first-of-type {
-    text-align: left;
-    > button {
-      position: static;
-      span {
-        background-image: image-url("icons/back.svg");
-        height: 15px;
-        vertical-align: middle;
-        width: 16px;
-      }
-    }
-    > span {
-      display: inline-block;
-      padding: $gutter $gutter $gutter 0;
-    }
-  }
-  > div:nth-of-type(2) {
-    margin-top: -4px;
     > ul {
       text-align: center;
       > li {
