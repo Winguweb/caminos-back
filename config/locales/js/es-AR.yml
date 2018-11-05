@@ -33,6 +33,13 @@ es-AR:
         error: Ocurrió un error al subir este archivo
     filter:
       no_results: No hay obras con estado
+    neighborhoods:
+      popup:
+        urbanized: En proceso de urbanización
+        unurbanized: Sin proceso de urbanización
+        links:
+          asset: Sugerir un lugar
+          claim: Reporte ciudadano
     status:
       all_status: Todos
       done: Finalizada
