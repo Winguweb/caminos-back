@@ -1,42 +1,95 @@
-@mixin map-references() {
+@mixin map-references {
   height: 100%;
+
   > div:first-of-type {
     border-radius: 8px;
     height: 100%;
     min-height: 400px;
     overflow: hidden;
   }
+
   .leaflet-tile-pane {
     opacity: 0.6;
   }
+
   .leaflet-shadow-pane {
     opacity: 0.2;
   }
+
   .leaflet-marker-icon {
     background-color: transparent;
     border: none;
   }
+
   .geometry-marker,
   .geometry-polygon,
   .geometry-polyline {
-    &.home {stroke: $home;}
-    &.water {stroke: $water;}
-    &.trash {stroke: $trash;}
-    &.public {stroke: $public;}
-    &.health {stroke: $health;}
-    &.energy {stroke: $energy;}
-    &.sewer {stroke: $sewer;}
-    &.infrastructure {stroke: $infrastructure;}
+    &.home {
+      stroke: $home;
+    }
+
+    &.water {
+      stroke: $water;
+    }
+
+    &.trash {
+      stroke: $trash;
+    }
+
+    &.public {
+      stroke: $public;
+    }
+
+    &.health {
+      stroke: $health;
+    }
+
+    &.energy {
+      stroke: $energy;
+    }
+
+    &.sewer {
+      stroke: $sewer;
+    }
+
+    &.infrastructure {
+      stroke: $infrastructure;
+    }
   }
+
   .geometry-polygon {
-    &.home {fill: $home;}
-    &.water {fill: $water;}
-    &.trash {fill: $trash;}
-    &.public {fill: $public;}
-    &.health {fill: $health;}
-    &.energy {fill: $energy;}
-    &.sewer {fill: $sewer;}
-    &.infrastructure {fill: $infrastructure;}
+    &.home {
+      fill: $home;
+    }
+
+    &.water {
+      fill: $water;
+    }
+
+    &.trash {
+      fill: $trash;
+    }
+
+    &.public {
+      fill: $public;
+    }
+
+    &.health {
+      fill: $health;
+    }
+
+    &.energy {
+      fill: $energy;
+    }
+
+    &.sewer {
+      fill: $sewer;
+    }
+
+    &.infrastructure {
+      fill: $infrastructure;
+    }
+
     &.base-geometry {
       fill: transparent;
       stroke: color($blue, 0.7);
@@ -44,26 +97,33 @@
       stroke-width: 1px;
     }
   }
+
   p.marker-name {
     @include transform(translate3d(calc(-50% - 7px), -50%, 0));
+
     @include background-color($white, 0.65);
+
     @include type-setting(-1);
+
     border-radius: 2px;
     box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
     left: 50%;
     line-height: 24px;
-    padding: $vgutter/4 $gutter/2;
+    padding: ($vgutter / 4) ($gutter / 2);
     position: absolute;
-    top: calc(#{$gutter*2} - #{$border});
+    top: calc(#{$gutter * 2} - #{$border});
     white-space: nowrap;
+
     &.unurbanized {
       display: none;
       left: calc(50% + 4px);
-      top: calc(#{$gutter*1.5} - #{$border});
+      top: calc(#{$gutter * 1.5} - #{$border});
     }
   }
+
   p.reference-marker {
     @include transform(translate3d(-50%, -50%, 0));
+
     border: $border solid $blue;
     border-radius: 100%;
     box-sizing: content-box;
@@ -74,20 +134,24 @@
     position: absolute;
     vertical-align: middle;
     width: $outer-diameter;
+
     &::before {
       background-color: $blue;
       border-radius: 100%;
       content: '';
       display: block;
       height: $inner-diameter;
-      left: #{($outer-diameter - $inner-diameter)/2};
+      left: #{($outer-diameter - $inner-diameter) / 2};
       position: relative;
-      top: #{($outer-diameter - $inner-diameter)/2};
+      top: #{($outer-diameter - $inner-diameter) / 2};
       width: $inner-diameter;
     }
+
     > span {
       @include text-color($white, 1);
+
       @include transform(translate3d(-50%, -50%, 0));
+
       font-size: 13px;
       font-weight: bold;
       left: 50%;
@@ -95,57 +159,81 @@
       text-transform: uppercase;
       top: 50%;
     }
+
     &.unurbanized {
       border: none;
-      height: $gutter/1.5;
-      width: $gutter/1.5;
+      height: $gutter / 1.5;
+      width: $gutter / 1.5;
+
       &::before {
         background-color: transparent;
         border: 2px solid color($blue);
         height: 100%;
         width: 100%;
       }
+
       > span {
         display: none;
       }
     }
   }
+
   .map-reference-popup {
     background-color: $white;
     border-radius: 2px;
-    box-shadow: 0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12);
     display: none;
-    min-width: 350px;
+    max-width: 350px;
+    min-width: 235px;
     padding: $gutter;
     position: absolute;
     transform: translate3d(10px, -50%, 0);
+
     > p {
-      float: left;
       line-height: 1em;
       margin-bottom: $gutter;
-      margin-right: $gutter/2;
-      max-width: 50%;
+      margin-right: $gutter / 2;
     }
+
     > span {
       &.status-urbanized {
-        @include wired-label($urbanization-in-process)
+        @include wired-label($urbanization-in-process);
       }
+
       &.status-unurbanized {
-        @include wired-label($urbanization-pending)
+        @include wired-label($urbanization-pending);
       }
+
       display: inline-block;
-      float: right;
       margin-bottom: $gutter;
     }
-    > div {
+
+    > div:first-of-type {
       clear: both;
+
       > a {
         @include small-button;
+
+        display: block;
+        margin-bottom: $gutter;
+      }
+    }
+
+    > div:last-of-type {
+      clear: both;
+      float: right;
+
+      > a {
+        @include small-text-button;
+
+        @include type-setting(-3);
+
         & + a {
-          margin-left: $gutter/2;
+          margin-left: $gutter / 2;
         }
       }
     }
+
     &:before {
       border-color: transparent $white transparent transparent;
       border-style: solid;
@@ -159,6 +247,7 @@
       transform: translate3d(-100%, -50%, 0);
       width: 0;
     }
+
     &.visible,
     &:hover {
       display: block;
@@ -166,6 +255,6 @@
   }
 }
 
-.map-references-cell{
-  @include map-references();
+.map-references-cell {
+  @include map-references;
 }

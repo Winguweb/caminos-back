@@ -33,17 +33,19 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     return function(evt) {
       var urbanizationLegend = I18n.t('js.neighborhoods.popup.' + feature.properties.urbanization_process)
       var name = feature.properties.name
+      var monitorLinkLegend = I18n.t('js.neighborhoods.popup.links.monitor')
       var assetLinkLegend = I18n.t('js.neighborhoods.popup.links.asset')
       var claimLinkLegend = I18n.t('js.neighborhoods.popup.links.claim')
       var urbanizationProcess = feature.properties.urbanization_process
       var nameTag = '<p>' + name + '</p>'
       var statusTag = '<span class="status-' + urbanizationProcess + '">' + urbanizationLegend + '</span>'
+      var monitorLinkTag = '<a href="' + feature.properties.url + '">' + monitorLinkLegend + '</a>'
       var assetLinkTag = '<a href="' + feature.properties.asset_url + '">' + assetLinkLegend + '</a>'
       var claimLinkTag = '<a href="' + feature.properties.claim_url + '">' + claimLinkLegend + '</a>'
-      var linksTag = '<div>' + assetLinkTag + claimLinkTag + '</div>'
+      var linksTag = '<div>' + monitorLinkTag + '</div><div>' + assetLinkTag + claimLinkTag + '</div>'
       var popupOptions = {
         position: {left: evt.containerPoint.x + 'px', top: evt.containerPoint.y + 'px'},
-        html: nameTag + statusTag + linksTag
+        html: nameTag + linksTag
       }
       _this.showPopup(popupOptions)
     }
