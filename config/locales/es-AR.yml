@@ -49,6 +49,15 @@ es-AR:
     sewer: Cloacas y Pluviales
     trash: Basura
     water: Agua
+  claims: 
+    header_title: Reporte Ciudadano
+    claim_detail: Detalle del reporte
+    cancel: Cancelar
+    description: Descripción
+    lookup_address: Dirección
+    map_location: Ubicacion en el mapa
+    name: Nombre
+    submit: Guardar
   documents:
     documents: Documentos
   entities:

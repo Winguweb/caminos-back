@@ -1,0 +1,10 @@
+button.floating-btn type="button"
+  span.floating-btn-text 
+
+javascript:
+  $(function() {
+    new CDLV.Components['elements/floating_button']({
+      el: $('.floating-btn'),
+      neighborhoodId: "#{neighborhood.slug}"
+    })
+  });

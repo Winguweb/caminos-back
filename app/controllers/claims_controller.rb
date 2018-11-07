@@ -5,14 +5,14 @@ class ClaimsController < ApplicationController
 
    def create
     ensure_neighborhood; return if performed?
-     service = CreateClaim.call(current_neighborhood, asset_params)
-     # service = CreateClaim.call(current_neighborhood, asset_params,some_work)
+     service = CreateClaim.call(current_neighborhood, claim_params)
+     # service = CreateClaim.call(current_neighborhood, claim_params,some_work)
      if service.success?
       redirect_to neighborhood_claims_path
     else
       flash.now[:error] =  load_errors(service.errors)
       @categories = Claim.categories
-      @claim = current_neighborhood.claims.new(asset_params)
+      @claim = current_neighborhood.claims.new(claim_params)
       render action: :new
     end
   end
@@ -20,6 +20,9 @@ class ClaimsController < ApplicationController
   def show
     load_claim
     @neighborhood = @claim.neighborhood
+  end
+
+  def new
   end
   
   private

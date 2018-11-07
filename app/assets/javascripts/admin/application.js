@@ -16,6 +16,8 @@
 //= require photos_list.js
 //= require mobile_menu.js
 //= require filter_toggle.js
+//= require filter_toggle_mapping.js
+//= require floating_button.js
 //= require photos_gallery.js
 //= require photos_uploader.js
 //= require public_header.js

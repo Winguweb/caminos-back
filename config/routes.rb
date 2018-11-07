@@ -9,7 +9,8 @@ Rails.application.routes.draw do
 
     resources :neighborhoods, only: %i[index show], path: "barrios" do
       resources :works, only: %i[show], path: "obras"
-      resources :assets
+      resources :assets, only: %i[new create]
+      resources :claims, only: %i[new create]
       resources :meetings, only: %i[index show], path: "reuniones"
       member do
         # TODO: It should be routed to agreements controller
