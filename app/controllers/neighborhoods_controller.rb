@@ -27,6 +27,7 @@ class NeighborhoodsController < ApplicationController
 
   def mapping
     load_neighborhood_or_redirect
+    load_assets_and_claims
   end
 
   private
@@ -37,6 +38,18 @@ class NeighborhoodsController < ApplicationController
 
   def load_meetings
     @meetings = @neighborhood.meetings.order(date: :desc).group_by { |x| x.date.year }
+  end
+
+  def load_assets_and_claims
+    @assets_and_claims = load_assets + load_claims
+  end
+
+  def load_assets
+    @assets = @neighborhood.assets
+  end
+
+  def load_claims
+    @claims = @neighborhood.claims
   end
 
 end
