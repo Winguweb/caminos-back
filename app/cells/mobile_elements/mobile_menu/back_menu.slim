@@ -19,11 +19,11 @@ nav class="mobile-menu-cell back-menu #{with_links}"
         = link_to agreement_neighborhood_path(neighborhood), class: section=='agreements-show' ? 'active' : nil do
           span=t('.agreement')
       li
-        = link_to about_neighborhood_path(neighborhood), class: section=='neighborhoods-about' ? 'active' : nil do
-          span=t('.about')
-      li 
         = link_to mapping_neighborhood_path(neighborhood), class: section=='neighborhoods-mapping' ? 'active' : nil do
           span=t('.citizen_participation')
+      li
+        = link_to about_neighborhood_path(neighborhood), class: section=='neighborhoods-about' ? 'active' : nil do
+          span=t('.about')
 
 javascript:
   $(function() {

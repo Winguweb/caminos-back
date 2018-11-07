@@ -27,8 +27,8 @@ es-AR:
       username: Nombre de Usuario
   mobile_elements:
     mobile_menu:
-      agreement: Acuerdo
-      about: Información
+      about: Sobre el barrio
+      agreement: Indicadores de Impacto
       citizen_participation: Participación ciudadana
       works: Obras
     over_work_card:
