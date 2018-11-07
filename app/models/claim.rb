@@ -17,7 +17,7 @@ class Claim < ApplicationRecord
   )
 
   validate :valid_categories
-   
+
   CATEGORIES = %w[
     building_infrastructure
     health_ambulance
@@ -33,16 +33,20 @@ class Claim < ApplicationRecord
   def self.categories
     CATEGORIES
   end
-  
+
   def valid_categories
     errors.add(:category_list, "errors") unless category_list.present?
   end
-  
+
   def category
     tags_on(:categories).first
   end
-  
+
   def category_icon
-    category.blank? ? 'icons/category-editable.svg' : "icons/category-#{category}.svg"
+    'icons/category-claim'
+  end
+
+  def category_icon_shadow
+    'icons/category-claim-shadow'
   end
  end
