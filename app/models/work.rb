@@ -71,7 +71,7 @@ class Work < ApplicationRecord
   end
 
   def category_icon_shadow
-    category.blank? ? 'icons/category-editable.svg' : "icons/category-#{category}-shadow.svg"
+    "icons/category-shadow.svg"
   end
 
 end
