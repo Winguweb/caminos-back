@@ -1,9 +1,10 @@
 button.floating-btn type="button"
-  span.floating-btn-text + agregar
+  span.floating-btn-text 
 
 javascript:
   $(function() {
     new CDLV.Components['elements/floating_button']({
-      el: $('.filter-toggle-mapping-cell')
+      el: $('.floating-btn'),
+      neighborhoodId: "#{neighborhood.slug}"
     })
   });

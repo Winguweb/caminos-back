@@ -3,6 +3,7 @@ class Elements::FloatingButtonCell < Cell::ViewModel
 
   private
 
-
-
+  def neighborhood
+    @neighborhood ||= model
+  end
 end
