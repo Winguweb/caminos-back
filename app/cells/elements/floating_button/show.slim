@@ -1,2 +1,9 @@
 button.floating-btn type="button"
   span.floating-btn-text + agregar
+
+javascript:
+  $(function() {
+    new CDLV.Components['elements/floating_button']({
+      el: $('.filter-toggle-mapping-cell')
+    })
+  });

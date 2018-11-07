@@ -23,6 +23,7 @@ CDLV.Components['elements/filter_toggle_mapping'] = Backbone.View.extend({
   _filterEmit: function(filter_name) {
     CDLV.pubSub.trigger('filter-toggle:changed', filter_name)
     CDLV.pubSub.trigger('map-show:filter:status', filter_name)
+    CDLV.pubSub.trigger('citizen-participation:add', filter_name)
   }
 })
 
