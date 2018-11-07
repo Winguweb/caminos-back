@@ -13,8 +13,8 @@ class Elements::MapReferencesCell < Cell::ViewModel
         name: neighborhood.name,
         url: neighborhood_path(neighborhood.slug),
         urbanization_process: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
-        asset_url: neighborhood_path(neighborhood.slug),
-        claim_url: neighborhood_path(neighborhood.slug),
+        asset_url: new_neighborhood_asset_path(neighborhood.slug),
+        claim_url: new_neighborhood_claim_path(neighborhood.slug),
       })
     end
 

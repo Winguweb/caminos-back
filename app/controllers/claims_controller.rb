@@ -1,7 +1,7 @@
 class ClaimsController < ApplicationController
   include CurrentAndEnsureDependencyLoader
 
-   helper_method :current_neighborhood
+  helper_method :current_neighborhood
 
    def create
     ensure_neighborhood; return if performed?
@@ -16,21 +16,33 @@ class ClaimsController < ApplicationController
       render action: :new
     end
   end
-  
+
   def show
     load_claim
     @neighborhood = @claim.neighborhood
   end
 
   def new
+    ensure_neighborhood; return if performed?
+
+    @categories = Claim.categories
+    @work = current_neighborhood.works.new
   end
-  
+
   private
-  
+
+  def load_errors(errors)
+    messages  = []
+    errors.each do |error|
+      messages << t('.errors', field: t(".#{error}"))
+    end
+    return messages
+  end
+
   def load_claim
     @claim = Claim.friendly.find(params[:id])
   end
-  
+
   def claim_params
     params.require(:claim).permit(
       :category_list,

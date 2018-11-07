@@ -24,16 +24,28 @@ class AssetsController < ApplicationController
   end
 
   def new
+    ensure_neighborhood; return if performed?
+
+    @categories = Asset.categories
+    @work = current_neighborhood.works.new
   end
 
   private
+
+  def load_errors(errors)
+    messages  = []
+    errors.each do |error|
+      messages << t('.errors', field: t(".#{error}"))
+    end
+    return messages
+  end
 
   def load_asset
     @asset = Asset.friendly.find(params[:id])
   end
 
   def asset_params
-    params.require(:work).permit(
+    params.require(:asset).permit(
       :category_list,
       :description,
       :geo_geometry,
