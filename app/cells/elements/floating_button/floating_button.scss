@@ -1,0 +1,16 @@
+.floating-btn{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2001;
+  margin: $gutter * 2;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: $blue;
+  color: $white;
+  box-shadow: 2px 2px 3px #999;
+  span {
+    font-size: 20px;
+  }
+}
