@@ -40,6 +40,7 @@ es-AR:
         links:
           asset: Sugerir un lugar
           claim: Reporte ciudadano
+          monitor: Monitoreá este barrio
     status:
       all_status: Todos
       done: Finalizada
