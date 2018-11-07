@@ -8,7 +8,7 @@ class Work < ApplicationRecord
   has_and_belongs_to_many :meetings
   has_many :photos, as: :owner
   has_many :claims
-  
+
   acts_as_taggable_on :categories
 
   validates_presence_of(
@@ -68,6 +68,10 @@ class Work < ApplicationRecord
 
   def category_icon
     category.blank? ? 'icons/category-editable.svg' : "icons/category-#{category}.svg"
+  end
+
+  def category_icon_shadow
+    category.blank? ? 'icons/category-editable.svg' : "icons/category-#{category}-shadow.svg"
   end
 
 end

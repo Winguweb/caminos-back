@@ -38,15 +38,20 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   configureMapForMobile: function() {
     if ($('html').hasClass('touchevents')) {this.map.dragging.disable()}
   },
-  createIcon: function(icon) {
+  createIcon: function(feature) {
+    var icon = feature.properties.icon
+    var iconShadow = feature.properties.iconShadow
+    var size = [feature.properties.size.width, feature.properties.size.height]
+    var anchor = [feature.properties.size.width / 2, feature.properties.size.height]
+    var shadowAnchor = [feature.properties.size.width / 2 - 1, feature.properties.size.height - 1]
     return L.icon({
       className: "geometry-marker",
-      iconAnchor: [20, 30],
-      iconSize: [40, 40],
+      iconAnchor: anchor,
+      iconSize: size,
       iconUrl: icon,
-      shadowAnchor: [19, 29],
-      shadowSize: [40, 40],
-      shadowUrl: this.markerShadowURL,
+      shadowAnchor: shadowAnchor,
+      shadowSize: size,
+      shadowUrl: iconShadow,
     })
   },
   createMap: function() {
@@ -127,7 +132,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
         }
       },
       pointToLayer: function(feature, latLng) {
-        return L.marker(latLng, {icon: _this.createIcon(feature.properties.icon)})
+        return L.marker(latLng, {icon: _this.createIcon(feature)})
       },
       onEachFeature: function(feature, layer) {
         layer.on({

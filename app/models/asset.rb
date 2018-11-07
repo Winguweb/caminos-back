@@ -43,7 +43,11 @@ class Asset < ApplicationRecord
   end
 
   def category_icon
-    category.blank? ? 'icons/category-editable.svg' : "icons/category-#{category}.svg"
+    category.blank? ? 'icons/category-asset-editable.svg' : "icons/category-asset-#{category}.svg"
+  end
+
+  def category_icon_shadow
+    category.blank? ? 'icons/category-asset-editable.svg' : "icons/category-asset-#{category}-shadow.svg"
   end
 
 end

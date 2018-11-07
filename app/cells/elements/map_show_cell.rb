@@ -23,16 +23,19 @@ class Elements::MapShowCell < Cell::ViewModel
   def features
     return [] if options[:features].blank?
     factory = RGeo::GeoJSON::EntityFactory.instance
-
+    _size_normal = {width: 40, height: 40}
+    _size_small = {width: 25, height: 25}
     features = options[:features].map do |feature|
       factory.feature(feature.geo_geometry, nil, {
         icon: image_path(feature.category_icon),
+        iconShadow: image_path(feature.category_icon_shadow),
         type: 'marker',
         url: neighborhood_work_path(feature.neighborhood, feature),
         show: true,
         category: feature.category.name,
-        status: feature.status,
-        name: feature.name
+        status: feature[:status],
+        name: feature[:name],
+        size: feature.class.name == 'Work' ? _size_normal : _size_small
       })
     end
 
