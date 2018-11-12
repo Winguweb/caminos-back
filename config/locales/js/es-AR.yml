@@ -5,15 +5,24 @@ es-AR:
         select_a_category: Seleccione una categoría
     categories:
       all_categories: Todas
-      public_services: Servicios Públicos
-      state_equipment: Equipamiento Estatal
-      public_spaces: Espacios Públicos
-      home: Vivienda
+      building_infrastructure: Edificio / Infraestructura
+      community_center: Centros comunitarios
+      cult: Culto
+      education: Educación
       energy: "Electricidad y Alumbrado"
+      food_kitchen: Comedores
       health: Educación y Salud
+      health_ambulance: Salud y Ambulancias
+      home: Vivienda
       infrastructure: Equipamiento
+      light_electricity: Luz y Electricidad
       public: Calles y Plazas
+      public_organization: Organismos Públicos
+      public_services: Servicios Públicos
+      public_spaces: Espacios Públicos
       sewer: Cloacas y Pluviales
+      state_equipment: Equipamiento Estatal
+      streets_parks: Calles y Plazas
       trash: Basura
       water: Agua
     filer:

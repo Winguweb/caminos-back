@@ -2,6 +2,7 @@ CDLV.Components['map_show'] = Backbone.View.extend({
   initialize: function(options) {
     _.bindAll(
       this,
+      'changeClassFilter',
       'changeCategoryFilter',
       'changeStatusFilter'
     )
@@ -15,12 +16,20 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     this.centerMap()
 
     CDLV.pubSub.on({
+      'map-show:filter:class': this.changeClassFilter,
       'map-show:filter:category': this.changeCategoryFilter,
       'map-show:filter:status': this.changeStatusFilter
     })
   },
   centerMap: function() {
     this.map.fitBounds(this.baseGeometryFeature.getBounds())
+  },
+  changeClassFilter: function(className) {
+    this.classFilter = className
+    this.categoryFilter = null
+    this.baseGeometryFeature.clearLayers()
+    this.showBaseGeometry()
+    this.showFeaturesGeometry()
   },
   changeCategoryFilter: function(categoryName) {
     this.categoryFilter = categoryName
@@ -89,9 +98,10 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       return {
         type: "FeatureCollection",
         features: _this.features.features.filter(function(feature) {
+          passClassFilter = (feature.properties.class == _this.classFilter) || !_this.classFilter
           passCategoryFilter = (feature.properties.category == _this.categoryFilter) || !_this.categoryFilter
           passStatusFilter = (feature.properties.status == _this.statusFilter) || !_this.statusFilter
-          return passCategoryFilter && passStatusFilter
+          return passClassFilter && passCategoryFilter && passStatusFilter
         })
       }
     }

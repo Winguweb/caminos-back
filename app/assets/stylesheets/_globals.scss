@@ -1,25 +1,27 @@
 /* ====================
   CSS RESET - MEYERWEB
 ==================== */
-@import 'globals/reset';
+@import "globals/reset";
 
 /* ===============================
   BOURBON & NEAT STYLES
 =============================== */
-@import 'bourbon';
-@import 'globals/variables';
-@import 'globals/fonts';
-@import 'neat';
-@import 'normalize'; // vendor library
+@import "bourbon";
+@import "globals/variables";
+@import "globals/fonts";
+@import "neat";
+@import "normalize";
+
+// vendor library
 
 /* ===============================
   CUSTOM MIXIN LIBRARIES & HELPERS
 =============================== */
-@import 'globals/mixins/utils';
-@import 'globals/mixins/colors';
-@import 'globals/mixins/typography';
-@import 'globals/mixins/helpers';
-@import 'globals/mixins/flex-grids';
+@import "globals/mixins/utils";
+@import "globals/mixins/colors";
+@import "globals/mixins/typography";
+@import "globals/mixins/helpers";
+@import "globals/mixins/flex-grids";
 
 /* ===================
   PURE MIXIN UI STUFF
@@ -44,6 +46,7 @@
 @import "documents_table";
 @import "documents_uploader";
 @import "error_messages";
+@import "features_tree";
 @import "filter_toggle";
 @import "filter_toggle_mapping";
 @import "floating_button";
@@ -64,20 +67,24 @@
 @import "users_table";
 @import "work_details";
 @import "works_list";
-@import "works_tree";
 @import "works_table";
+@import "works_tree";
+
 // FORM
 @import "form__user";
+
 // MOBILE ELEMENTS
 @import "mobile_menu";
 @import "meetings_list_mobile";
 @import "meeting_card_mobile";
 @import "over_work_card";
 @import "resources_card";
+
 // PAGE
 @import "page__header";
 @import "public_footer";
 @import "public_header";
+
 // SECTION
 @import "section__footer_link";
 @import "header";
@@ -91,4 +98,4 @@
 /* ===============================
   OTHER VENDORS STUFF
 =============================== */
-@import 'selectize/base';
+@import "selectize/base";

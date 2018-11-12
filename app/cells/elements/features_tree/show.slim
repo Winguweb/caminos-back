@@ -1,0 +1,29 @@
+.features-tree-cell
+  ul
+    - categories.each do | category |
+      li
+        div
+          button.open-list-button disabled=features[category].count==0 = "+"
+          div.filter-action data-category-name=category
+            i class="category-#{category}"
+            span = t("categories.#{category}")
+            span = features[category].count
+        ul
+          - features[category].each do |feature|
+            li = link_to neighborhood_work_path(feature.neighborhood, feature) do
+              div
+                i class="category-#{category}"
+                span = feature.name
+              - if feature[:status].present?
+                div
+                  span class="status-#{feature.status}" = t("status.#{feature.status}")
+
+javascript:
+  $(function() {
+    new CDLV.Components['features/tree']({
+      el: $('.features-tree-cell'),
+      categories: #{Asset.categories},
+      features: #{features.to_json},
+      neighborhood_slug: '#{neighborhood_slug}'
+    })
+  });

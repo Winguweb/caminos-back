@@ -4,11 +4,11 @@ section
       div
         section
           nav
-            -if !@neighborhood.works.empty?
+            - if @neighborhood.works.present?
               == cell('elements/filter_toggle')
               == cell('elements/works_tree' , @neighborhood.works)
 
-            -else
+            - else
               div
                 = t('.no_works')
 
