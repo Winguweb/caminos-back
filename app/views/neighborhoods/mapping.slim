@@ -3,9 +3,8 @@ section
     div
       section
         nav
-          - if @assets.present?
-            == cell('elements/filter_toggle_mapping')
-            == cell('elements/features_tree', @assets_and_claims)
+          - if @claims.present?
+            == cell('elements/features_tree', @claims)
 
           - else
             div
@@ -14,4 +13,4 @@ section
   main.page-section
     section
       == cell('elements/floating_button', @neighborhood)
-      == cell('elements/map_show', @neighborhood, features: @assets_and_claims)
+      == cell('elements/map_show', @neighborhood, features: @claims)

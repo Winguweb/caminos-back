@@ -8,15 +8,6 @@
             i class="category-#{category}"
             span = t("categories.#{category}")
             span = features[category].count
-        ul
-          - features[category].each do |feature|
-            li = link_to neighborhood_work_path(feature.neighborhood, feature) do
-              div
-                i class="category-#{category}"
-                span = feature.name
-              - if feature[:status].present?
-                div
-                  span class="status-#{feature.status}" = t("status.#{feature.status}")
 
 javascript:
   $(function() {

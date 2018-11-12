@@ -1,10 +1,3 @@
 button.floating-btn type="button"
   span.floating-btn-text 
-
-javascript:
-  $(function() {
-    new CDLV.Components['elements/floating_button']({
-      el: $('.floating-btn'),
-      neighborhoodId: "#{neighborhood.slug}"
-    })
-  });
+    =link_to "Generá un reclamo", new_neighborhood_claim_path(neighborhood)

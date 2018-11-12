@@ -12,7 +12,6 @@
 //= require documents_uploader.js
 //= require features_tree.js
 //= require filter_toggle.js
-//= require filter_toggle_mapping.js
 //= require floating_button.js
 //= require map_edit.js
 //= require map_references.js

@@ -27,7 +27,7 @@ class NeighborhoodsController < ApplicationController
 
   def mapping
     load_neighborhood_or_redirect
-    load_assets_and_claims
+    load_claims
   end
 
   private
