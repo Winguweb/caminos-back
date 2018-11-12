@@ -81,10 +81,17 @@ CDLV.Components['map_show'] = Backbone.View.extend({
       var status = feature.properties.status
       var popupOptions = {
         position: {left: evt.containerPoint.x + 'px', top: evt.containerPoint.y + 'px'},
-        html: '<p>' + name + '</p><span class="status-' + status + '">' + statusLegend + '</span>'
+        html: '<p>' + name + '</p>' + _this.toggleStatus(statusLegend, status)
       }
       _this.showPopup(popupOptions)
     }
+  },
+  toggleStatus: function(statusLegend, status){
+    if(!status){
+      return ''
+    }
+    console.log(statusLegend, status)
+    return '<span class="status-' + status + '">'+ statusLegend+'</span>'
   },
   featureMouseoutListener: function() {
     var _this = this
