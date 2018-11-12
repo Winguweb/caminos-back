@@ -8,6 +8,9 @@ CDLV.Components['elements/filter_toggle_mapping'] = Backbone.View.extend({
         'changeFilter'
     )
 
+    setTimeout(function() {
+      CDLV.pubSub.trigger('map-show:filter:class', 'Asset')
+    }, 0)
   },
   changeFilter: function(ev) {
     var clicked = $(ev.currentTarget)
@@ -21,8 +24,8 @@ CDLV.Components['elements/filter_toggle_mapping'] = Backbone.View.extend({
     clicked.parent().addClass('active')
   },
   _filterEmit: function(filter_name) {
-    CDLV.pubSub.trigger('filter-toggle:changed', filter_name)
-    CDLV.pubSub.trigger('map-show:filter:status', filter_name)
+    CDLV.pubSub.trigger('filter-toggle:changed:class', filter_name)
+    CDLV.pubSub.trigger('map-show:filter:class', filter_name)
     CDLV.pubSub.trigger('citizen-participation:add', filter_name)
   }
 })

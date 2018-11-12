@@ -3,7 +3,13 @@ section
     div
       section
         nav
-          == cell('elements/filter_toggle_mapping')
+          - if @assets.present?
+            == cell('elements/filter_toggle_mapping')
+            == cell('elements/features_tree', @assets_and_claims)
+
+          - else
+            div
+              = t('.no_data')
 
   main.page-section
     section

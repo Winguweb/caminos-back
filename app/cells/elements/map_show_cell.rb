@@ -35,7 +35,8 @@ class Elements::MapShowCell < Cell::ViewModel
         category: feature.category.name,
         status: feature[:status],
         name: feature[:name],
-        size: feature.class.name == 'Work' ? _size_normal : _size_small
+        size: feature.class.name == 'Work' ? _size_normal : _size_small,
+        class: feature.class.name
       })
     end
 
