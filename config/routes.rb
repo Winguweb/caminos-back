@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     resources :neighborhoods, only: %i[index show], path: "barrios" do
       resources :works, only: %i[show], path: "obras"
-      resources :assets, only: %i[new create]
+      resources :assets, only: %i[new create index]
       resources :claims, only: %i[new create]
       resources :meetings, only: %i[index show], path: "reuniones"
       member do

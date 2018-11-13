@@ -21,6 +21,9 @@ header.page-public-header-cell class="#{'without-links' unless links}"
         li
           = active_link_to about_neighborhood_path(neighborhood) do
             span= t('.about')
+        li 
+          = active_link_to neighborhood_assets_path(neighborhood) do
+           span= t('citizen_participation')
 
 javascript:
   $(function() {
