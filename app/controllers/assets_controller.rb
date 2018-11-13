@@ -4,7 +4,8 @@ class AssetsController < ApplicationController
   helper_method :current_neighborhood
 
   def index
-    load_all_assets
+    @neighborhood = current_neighborhood
+    load_assets
   end
 
   def create
@@ -48,7 +49,7 @@ class AssetsController < ApplicationController
     @asset = Asset.friendly.find(params[:id])
   end
 
-  def load_all_assets
+  def load_assets
     @assets = current_neighborhood.assets
   end
 

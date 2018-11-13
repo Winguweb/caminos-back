@@ -12,5 +12,7 @@ section
 
   main.page-section
     section
-      == cell('elements/floating_button', @neighborhood)
+      button.floating-btn type="button"
+        span.floating-btn-text 
+          = link_to "genera un reporte", new_neighborhood_claim_path(@neighborhood)
       == cell('elements/map_show', @neighborhood, features: @claims)

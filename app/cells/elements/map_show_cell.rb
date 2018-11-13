@@ -12,7 +12,8 @@ class Elements::MapShowCell < Cell::ViewModel
 
     feature = factory.feature(model.geo_geometry, nil, {
       className: 'base-geometry',
-      url: neighborhood_work_path(model)
+      #TO-DO watch this later
+      # url: neighborhood_work_path(model)
     })
 
     geoJson = RGeo::GeoJSON.encode feature

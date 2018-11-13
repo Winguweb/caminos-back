@@ -12,5 +12,8 @@ section
 
   main.page-section
     section
-      == cell('elements/floating_button', @neighborhood)
+      button.floating-btn type="button"
+        span.floating-btn-text 
+          = link_to "mapear", new_neighborhood_asset_path(@neighborhood)
+
       == cell('elements/map_show', @neighborhood, features: @assets)
