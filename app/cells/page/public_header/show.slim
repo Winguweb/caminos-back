@@ -23,7 +23,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
             span= t('.about')
         li 
           = active_link_to neighborhood_assets_path(neighborhood) do
-           span= t('citizen_participation')
+           span= t('.citizen_participation')
 
 javascript:
   $(function() {
@@ -31,3 +31,4 @@ javascript:
       el: $('.page-public-header-cell')
     })
   });
+
