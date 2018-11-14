@@ -1,1 +1,19 @@
-p show claim
+section
+  main.page-section
+    section.with-border
+      == cell('elements/map_show', @claim.neighborhood, features: [@claim])
+    section.with-border
+      == cell('section/header', @claim.name, header_type: 'main')
+    section
+      div
+        span = t('claims.description')
+        span = @claim.description
+      .half-input
+        div
+          span = t('claims.category')
+          - @claim.categories.each do |category|
+            span = t("categories.#{category}")
+      .half-input
+        div
+          span = t('claims.lookup_address')
+          span = @claim.lookup_address

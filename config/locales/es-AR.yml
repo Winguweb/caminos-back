@@ -28,6 +28,7 @@ es-AR:
   assets:
     asset_detail: Detalle de la obra
     cancel: Cancelar
+    category: Categoría
     description: Descripcion
     header_title: Mapeo Participativo
     lookup_address: Dirección
@@ -62,6 +63,7 @@ es-AR:
     header_title: Reporte Ciudadano
     claim_detail: Detalle del reporte
     cancel: Cancelar
+    category: Categoría
     description: Descripción
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
