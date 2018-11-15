@@ -20,6 +20,7 @@
 //= require photos_list.js
 //= require photos_uploader.js
 //= require public_header.js
+//= require public_photos_uploader.js
 //= require users_table.js
 //= require works_tree.js
 //

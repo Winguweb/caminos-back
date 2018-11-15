@@ -30,6 +30,19 @@ Rails.application.routes.draw do
     end
 
     get '/admin', to: redirect('/admin/dashboard')
+
+    # ╭─ AJAX Accesible URL's / Path's
+    namespace :ajax do
+      
+      resources :claims, only: [] do
+       
+        # Photos Resources routes
+        post '/photos/upload', action: :upload, controller: :public_photos
+        delete '/photos/:id', action: :destroy, controller: :public_photos, as: :photo
+      end
+      
+    end
+    # ╰─ End of AJAX Accesible URL's / Path's
   # ╰─  End of Public Accesible URL's / Path's
 
 

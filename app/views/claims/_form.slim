@@ -1,6 +1,8 @@
 .claims_form
- = form_for Claim.new, url:neighborhood_claims_path, html: { class: 'form', multipart: true } do |f|
+ = form_for [ current_neighborhood, @claim], html: { class: 'form' , multipart: true} do |f|
+
   .page-section
+
     section
       == cell('section/header',t('claims.claim_detail'), links: [{ title: t('claims.cancel') }, { title: t('claims.submit'), submit: true }])
       .field
@@ -27,3 +29,6 @@
       == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'claim')
       input type="hidden" name="claim[geometry]" class="geometry-field"
       input type="hidden" name="claim[geo_geometry]" class="geo_geometry-field"
+    section 
+      == cell('section/header',"Fotos")
+      == cell('elements/public_photos_uploader',"claim")
