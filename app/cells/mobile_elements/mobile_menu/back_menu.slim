@@ -24,6 +24,9 @@ nav class="mobile-menu-cell back-menu #{with_links}"
       li
         = link_to about_neighborhood_path(neighborhood), class: section=='neighborhoods-about' ? 'active' : nil do
           span=t('.about')
+      li
+        = link_to neighborhood_assets_path(neighborhood), class: section=='neighborhoods-asset' ? 'active' : nil do
+          span=t('.assets')
 
 javascript:
   $(function() {

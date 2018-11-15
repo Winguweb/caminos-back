@@ -1,11 +1,19 @@
 - @with_links = true
 - @back_menu = t("page.public_header.citizen_participation")
-section
-  aside
-    div
-      section
-        nav
 
-  main
-    section
-      == cell('elements/map_show', @neighborhood)
+main
+  section
+    == cell('elements/map_show', @neighborhood, features: @neighborhood.claims)
+
+  section
+  - if @neighborhood.urbanization
+    aside
+      div
+        section
+          nav
+          -if !@neighborhood.claims.empty?
+            == cell('elements/features_tree' , @neighborhood.claims)
+
+          -else
+            div
+              = t('.no_works')
