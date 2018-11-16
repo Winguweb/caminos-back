@@ -14,7 +14,7 @@ CDLV.Components['works/tree'] = Backbone.View.extend({
     this.neighborhoodSlug = this.options.neighborhood_slug
     this.render(this.options)
     CDLV.pubSub.on({
-      'filter-toggle:changed': this.changeFilter,
+      'filter-toggle:changed:status': this.changeFilter,
     })
   },
   render: function(data) {

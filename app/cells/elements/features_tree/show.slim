@@ -1,0 +1,20 @@
+.features-tree-cell
+  ul
+    - categories.each do | category |
+      li
+        div
+          button.open-list-button disabled=features[category].count==0 = "+"
+          div.filter-action data-category-name=category
+            i class="category-#{category}"
+            span = t("categories.#{category}")
+            span = features[category].count
+
+javascript:
+  $(function() {
+    new CDLV.Components['features/tree']({
+      el: $('.features-tree-cell'),
+      categories: #{Asset.categories},
+      features: #{features.to_json},
+      neighborhood_slug: '#{neighborhood_slug}'
+    })
+  });

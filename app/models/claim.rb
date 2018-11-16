@@ -22,7 +22,7 @@ class Claim < ApplicationRecord
     building_infrastructure
     health_ambulance
     light_electricity
-    sewerage
+    sewer
     streets_parks
     trash
     water

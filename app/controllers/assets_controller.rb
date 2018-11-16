@@ -3,6 +3,11 @@ class AssetsController < ApplicationController
 
   helper_method :current_neighborhood
 
+  def index
+    @neighborhood = current_neighborhood
+    load_assets
+  end
+
   def create
     ensure_neighborhood; return if performed?
 
@@ -42,6 +47,10 @@ class AssetsController < ApplicationController
 
   def load_asset
     @asset = Asset.friendly.find(params[:id])
+  end
+
+  def load_assets
+    @assets = current_neighborhood.assets
   end
 
   def asset_params

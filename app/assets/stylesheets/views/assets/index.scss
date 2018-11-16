@@ -1,4 +1,4 @@
-@mixin neighborhoods-mapping() {
+@mixin assets-index() {
   height: calc(100% - #{$navbar-height});
   > main {
     height: 100%;
@@ -44,7 +44,6 @@
             @include grid-column(16);
             height: 100%;
             left: auto;
-            //to do: create a mixing for the button i did this in a hurry
             .floating-btn{
               display: flex;
               position: absolute;
@@ -96,6 +95,6 @@
   }
 }
 
-#neighborhoods-mapping.neighborhoods-desktop {
-  @include neighborhoods-mapping();
+#assets-index.assets-desktop {
+  @include assets-index();
 }

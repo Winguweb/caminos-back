@@ -3,9 +3,16 @@ section
     div
       section
         nav
-          == cell('elements/filter_toggle_mapping')
+          - if @claims.present?
+            == cell('elements/features_tree', @claims)
+
+          - else
+            div
+              = t('.no_data')
 
   main.page-section
     section
-      == cell('elements/floating_button', @neighborhood)
-      == cell('elements/map_show', @neighborhood, features: @assets_and_claims)
+      button.floating-btn type="button"
+        span.floating-btn-text 
+          = link_to "genera un reporte", new_neighborhood_claim_path(@neighborhood)
+      == cell('elements/map_show', @neighborhood, features: @claims)
