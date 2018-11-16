@@ -31,7 +31,7 @@ class Elements::MapShowCell < Cell::ViewModel
         icon: image_path(feature.category_icon),
         iconShadow: image_path(feature.category_icon_shadow),
         type: 'marker',
-        url: neighborhood_work_path(feature.neighborhood, feature),
+        url: load_url(feature),
         show: true,
         category: feature.category.name,
         status: feature[:status],
@@ -44,6 +44,17 @@ class Elements::MapShowCell < Cell::ViewModel
     geoJson = RGeo::GeoJSON.encode factory.feature_collection(features)
 
     geoJson.to_json
+  end
+
+  def load_url(feature)
+    case feature.class.name
+    when 'Claim'
+      return neighborhood_claim_path(feature.neighborhood, feature)
+    when 'Work'
+      return neighborhood_work_path(feature.neighborhood, feature)
+    when 'Asset'
+      return neighborhood_asset_path(feature.neighborhood, feature)
+    end
   end
 
   def map_defaults
