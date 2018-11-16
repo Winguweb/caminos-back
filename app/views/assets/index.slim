@@ -14,6 +14,6 @@ section
     section
       button.floating-btn type="button"
         span.floating-btn-text 
-          = link_to "mapear", new_neighborhood_asset_path(@neighborhood)
+          = link_to t('.add_point'), new_neighborhood_asset_path(@neighborhood)
 
       == cell('elements/map_show', @neighborhood, features: @assets)

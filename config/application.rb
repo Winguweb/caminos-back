@@ -72,6 +72,7 @@ module CaminosBack
       elements/photos_gallery_cell
       elements/photos_list_cell
       elements/photos_uploader_cell
+      elements/public_photos_uploader_cell
       elements/ring_cell
       elements/users_table_cell
       elements/work_details_cell

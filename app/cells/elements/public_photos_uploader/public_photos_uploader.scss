@@ -1,0 +1,8 @@
+.form_photo{
+  .form_photo_cta{
+    @include wired-button();
+  }
+  .form_photo_invisible_input{
+    display: none;
+  }
+}

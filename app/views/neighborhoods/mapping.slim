@@ -3,6 +3,9 @@ section
     div
       section
         nav
+          =  "Si tenés problemas con los servicios públicos u obras en el barrio podes reportarlo acá "
+
+
           - if @claims.present?
             == cell('elements/features_tree', @claims)
 
@@ -14,5 +17,5 @@ section
     section
       button.floating-btn type="button"
         span.floating-btn-text 
-          = link_to "genera un reporte", new_neighborhood_claim_path(@neighborhood)
+          = link_to t('.report'), new_neighborhood_claim_path(@neighborhood)
       == cell('elements/map_show', @neighborhood, features: @claims)

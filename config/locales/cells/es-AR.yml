@@ -35,8 +35,15 @@ es-AR:
     over_work_card:
   page:
     public_header:
-      about: Sobre el barrio
+      about: El barrio
       agreement: Indicadores de Impacto
-      assets: Mapeo Participativo
-      claims: Reporte ciudadano
+      citizen_participation: Puntos de interés
+      claims: Reportes
       works: Obras
+
+  neighborhoods:
+    mapping:
+      report: sube tu reporte
+  assets:
+    index:
+      add_point: ¿Falta un lugar? Agregalo
