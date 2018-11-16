@@ -1,6 +1,6 @@
 class ClaimsController < ApplicationController
   include CurrentAndEnsureDependencyLoader
-  before_action :check_for_mobile, only: %i[show]
+  before_action :check_for_mobile, only: %i[show new]
   
   helper_method :current_neighborhood
 
