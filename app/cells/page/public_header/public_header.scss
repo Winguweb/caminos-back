@@ -131,6 +131,19 @@
           padding: $gutter ($gutter * 2);
           text-align: center;
 
+          @media (max-width: 1080px) {
+            @include type-setting(-1);
+
+            padding: $gutter;
+          }
+
+          @media (max-width: 800px) {
+            @include type-setting(-2);
+
+            line-height: 19px;
+            padding: $gutter ($gutter / 2);
+          }
+
           &.active,
           &:hover {
             @include text-color($text-blue, 1);
