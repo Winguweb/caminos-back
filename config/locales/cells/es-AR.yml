@@ -29,13 +29,14 @@ es-AR:
     mobile_menu:
       about: Sobre el barrio
       agreement: Indicadores de Impacto
-      citizen_participation: Participación ciudadana
+      assets: Mapeo Participativo
+      claims: Reporte ciudadano
       works: Obras
     over_work_card:
   page:
     public_header:
       about: Sobre el barrio
       agreement: Indicadores de Impacto
-      citizen_participation: Participación ciudadana
+      assets: Mapeo Participativo
       claims: Reporte ciudadano
       works: Obras

@@ -1,0 +1,20 @@
+- @with_links = true
+- @back_menu = t("page.public_header.assets")
+
+
+main
+  section
+  == cell('elements/map_show', @neighborhood, features: @neighborhood.assets)
+
+  section
+  - if @neighborhood.urbanization
+    aside
+      div
+        section
+          nav
+            -if !@neighborhood.assets.empty?
+              == cell('elements/features_tree' , @neighborhood.assets)
+
+            -else
+              div
+                = t('.no_works')
