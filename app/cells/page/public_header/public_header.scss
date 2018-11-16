@@ -113,8 +113,7 @@
     }
 
     > ul {
-      @include grid-column(10);
-      @include grid-push(1);
+      @include grid-column(12);
 
       text-align: center;
 
@@ -123,6 +122,7 @@
 
         > a {
           @include text-color($text-grey, 1);
+
           @include type-setting(0);
 
           border-bottom: 2px solid transparent;
@@ -130,6 +130,19 @@
           margin-right: 0;
           padding: $gutter ($gutter * 2);
           text-align: center;
+
+          @media (max-width: 1080px) {
+            @include type-setting(-1);
+
+            padding: $gutter;
+          }
+
+          @media (max-width: 800px) {
+            @include type-setting(-2);
+
+            line-height: 19px;
+            padding: $gutter ($gutter / 2);
+          }
 
           &.active,
           &:hover {
