@@ -1,0 +1,36 @@
+#assets-new.assets-mobile {
+  .main-section{
+    .asset-header{
+      .page-header-cell{
+        .content{
+          left: 0;
+        }
+      }
+    }
+    .assets_form{
+      .page-section{
+        > section{
+          padding: $gutter;
+          left: 0;
+          margin: 0;
+          width: 90%;
+        }
+        .form-section{
+          .field select{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .submit-asset-cta{
+      input{
+        background: $blue;
+        color: $white;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        padding: $gutter;
+      }
+    }
+  }
+}

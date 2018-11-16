@@ -1,13 +1,15 @@
-.claim-header {
-  padding-top: $gutter;
-}
-
-.claims_form{
-  .photo-updloader-container{
-    .form_photo_cta {
-      position: absolute;
-      top:0;
-      right: 0;
+#claims-new.claims-desktop{
+  .claim-header {
+    padding-top: $gutter;
+  }
+  
+  .claims_form{
+    .photo-updloader-container{
+      .form_photo_cta {
+        position: absolute;
+        top:0;
+        right: 0;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 class AssetsController < ApplicationController
   include CurrentAndEnsureDependencyLoader
-  before_action :check_for_mobile, only: %i[show index]
+  before_action :check_for_mobile, only: %i[show index new]
 
   helper_method :current_neighborhood
 

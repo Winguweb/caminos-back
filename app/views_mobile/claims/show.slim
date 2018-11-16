@@ -20,3 +20,6 @@ section
         div
           span = t('claims.lookup_address')
           span = @claim.lookup_address
+    section 
+      div
+        == cell('elements/photos_gallery', @claim.public_photos)

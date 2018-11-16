@@ -6,6 +6,10 @@ main
     == cell('elements/map_show', @neighborhood, features: @neighborhood.claims)
 
   section
+    =link_to new_neighborhood_claim_path(@neighborhood), class:"floating-btn" do 
+      = image_tag image_path("icons/close-white.svg")
+
+  section
   - if @neighborhood.urbanization
     aside
       div

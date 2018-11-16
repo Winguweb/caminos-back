@@ -1,10 +1,15 @@
+- @with_links = true
+- @back_menu = t("page.public_header.claims")
+
+.claim-header
+  == cell('page/header', t('claims.header_title'))
+
 .claims_form
  = form_for [ current_neighborhood, @claim], html: { class: 'form' , multipart: true} do |f|
 
   .page-section
 
-    section
-      == cell('section/header',t('claims.claim_detail'), links: [{ title: t('claims.cancel'), url:mapping_neighborhood_path(current_neighborhood) }, { title: t('claims.submit'), submit: true }])
+    section.form-section
       .field
         label.required
           = f.label :name, t('claims.name')
@@ -13,16 +18,14 @@
         label.required
           =f.label :description, t('claims.description')
         =f.text_area :description, required: true
-      .half-input
-        .field
-          label.required
-            = f.label :lookup_address, t('claims.lookup_address')
-          =f.text_field :lookup_address, required: true
-        .field
-          label.required
-            = f.label :category_list, t('claims.category')
-          span.category-parent = t(".select_a_category")
-          = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
+      .field
+        label.required
+          = f.label :lookup_address, t('claims.lookup_address')
+        =f.text_field :lookup_address, required: true
+      .field
+        label.required
+          = f.label :category_list, t('claims.category')
+        = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
 
     section
       == cell('section/header', t('claims.map_location'))
@@ -32,3 +35,5 @@
     section.photo-updloader-container 
       == cell('section/header',"Fotos")
       == cell('elements/public_photos_uploader',"claim")
+    section.submit-claim-cta
+      = f.submit "GUARDAR"
