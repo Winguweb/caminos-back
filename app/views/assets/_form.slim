@@ -2,7 +2,7 @@
  = form_for Asset.new,url:neighborhood_assets_path, html: { class: 'form', multipart: true } do |f|
   .page-section
     section
-      == cell('section/header',t('assets.asset_detail'), links: [{ title: t('claims.cancel') }, { title: t('claims.submit'), submit: true }])
+      == cell('section/header',t('assets.asset_detail'), links: [{ title: t('claims.cancel'), url:neighborhood_assets_path(current_neighborhood) }, { title: t('claims.submit'), submit: true }])
       .field
         label.required
           = f.label :name, t('claims.name')
