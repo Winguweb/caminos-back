@@ -14,30 +14,8 @@ CDLV.Components['public_photos/uploader'] = Backbone.View.extend({
       this.$addPhotoInput.click()
     }
     this.photoCount ++
-    console.log(this.photoCount)
   },
   addImageText: function(){
     this.$el.append('<p class="form_photo_item">'+this.$addPhotoInput[0].files[0].name+'</p>')
   }
 })
-
-
-
-// function addFieldsPhoto(owner){
-//   var container = document.getElementById("photos");
-//   var limit = 5;
-//   if(container.childElementCount/2 < limit ){
-
-//     container.appendChild(document.createTextNode("Foto"));
-//     var input = document.createElement("input");
-//     input.type = "file";
-//     input.name = owner + "[photos][]image" ;
-//     container.appendChild(input);
-//     container.appendChild(document.createElement("br"));
-    
-//   }
-//   else{
-//     console.log(container.childElementCount/2)
-//   }
-// }
-  

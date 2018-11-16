@@ -16,12 +16,11 @@ class CreateClaim
   def create_claim
     @claim = Claim.new(claim_params)
     @claim.neighborhood = @neighborhood
-    @claim.work = @work if @work != nil 
+    @claim.work = @work if @work != nil
 
-    
     if !photo_params.nil?
       save_photos(@claim) if !photo_params.nil?
-    
+
       return @claim if @claim.save
       errors.add_multiple_errors(@claim.errors.messages) && nil
 
@@ -30,9 +29,6 @@ class CreateClaim
       errors.add_multiple_errors(@claim.errors.messages) && nil
     end
 
-    # return @claim if @claim.save
-
-    # errors.add_multiple_errors(@claim.errors.messages) && nil
   end
 
   def save_photos(claim)
@@ -43,10 +39,9 @@ class CreateClaim
   end
 
   def photo_params
-    return  [] if @allowed_params[:photos].blank?
+    return [] if @allowed_params[:photos].blank?
     @allowed_params[:photos]
   end
-
 
   def claim_params
     {
@@ -63,5 +58,5 @@ end
 
 
 
- 
- 
+
+

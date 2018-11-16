@@ -90,7 +90,6 @@ CDLV.Components['map_show'] = Backbone.View.extend({
     if(!status){
       return ''
     }
-    console.log(statusLegend, status)
     return '<span class="status-' + status + '">'+ statusLegend+'</span>'
   },
   featureMouseoutListener: function() {
