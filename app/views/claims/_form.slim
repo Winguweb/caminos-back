@@ -13,11 +13,17 @@
         label.required
           =f.label :description, t('claims.description')
         =f.text_area :description, required: true
+      .field
+        label.required
+          = f.label :lookup_address, t('claims.lookup_address')
+        =f.text_field :lookup_address, required: true
+
       .half-input
         .field
-          label.required
-            = f.label :lookup_address, t('claims.lookup_address')
-          =f.text_field :lookup_address, required: true
+          label
+            =f.label :work_id, "obra"
+          span.work-parent seleccione una obra
+          = f.select :work_id, current_neighborhood.works.map {|w| [w.name, w.id]}, {include_blank: true}
         .field
           label.required
             = f.label :category_list, t('claims.category')

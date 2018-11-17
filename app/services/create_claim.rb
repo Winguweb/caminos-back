@@ -46,6 +46,7 @@ class CreateClaim
   def claim_params
     {
       category_list: @allowed_params[:category_list],
+      work_id: @allowed_params[:work_id],
       description: @allowed_params[:description],
       geo_geometry: @allowed_params[:geo_geometry],
       geometry: @allowed_params[:geometry],
