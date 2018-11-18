@@ -20,6 +20,7 @@
           label.required
             = f.label :category_list, t('assets.category')
           span.category-parent = t('assets.select_a_category')
+
           = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
 
     section

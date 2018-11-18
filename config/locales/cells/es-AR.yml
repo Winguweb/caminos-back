@@ -37,13 +37,15 @@ es-AR:
     public_header:
       about: El barrio
       agreement: Indicadores de Impacto
-      assets: Puntos de interés
+      assets: Mapeo participativo
       claims: Reportes
       works: Obras
 
   neighborhoods:
     mapping:
-      report: sube tu reporte
+      report: subí tu reporte
+    show:
+      report: subí tu reporte
   assets:
     index:
       add_point: ¿Falta un lugar? Agregalo
