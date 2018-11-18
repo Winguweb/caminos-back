@@ -34,6 +34,7 @@ es-AR:
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
+    select_a_category: Seleccione una categoría
     submit: Guardar
   common:
     files: Archivos
@@ -60,6 +61,7 @@ es-AR:
     trash: Basura
     water: Agua
   claims:
+    associated_work: Obra asociada
     header_title: Reporte Ciudadano
     claim_detail: Detalle del reporte
     cancel: Cancelar
@@ -68,6 +70,8 @@ es-AR:
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
+    select_a_category: Seleccione una categoría
+    select_a_work: Seleccione una obra
     submit: Guardar
   documents:
     documents: Documentos
