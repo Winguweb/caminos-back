@@ -49,6 +49,7 @@ class ClaimsController < ApplicationController
   def claim_params
     params.require(:claim).permit(
       :category_list,
+      :work_id,
       :description,
       :geo_geometry,
       :geometry,
