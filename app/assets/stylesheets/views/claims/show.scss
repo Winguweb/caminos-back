@@ -45,6 +45,12 @@
               > span + span {
                 display: block;
               }
+              a{
+                color: $black;
+                text-transform: uppercase;
+                font-weight: bold;
+                border-bottom: 2px solid $black;
+              }
             }
           }
         }
