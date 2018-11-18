@@ -44,10 +44,10 @@ class Claim < ApplicationRecord
   end
 
   def category_icon
-    'icons/category-claim'
+    'icons/category-claim.svg'
   end
 
   def category_icon_shadow
-    'icons/category-claim-shadow'
+    'icons/category-claim-shadow.svg'
   end
  end
