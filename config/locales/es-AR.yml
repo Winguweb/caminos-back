@@ -34,6 +34,7 @@ es-AR:
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
+    select_a_category: Seleccioná una categoría
     submit: Guardar
   common:
     files: Archivos
@@ -68,6 +69,7 @@ es-AR:
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
+    select_a_category: Seleccioná una categoría
     submit: Guardar
   documents:
     documents: Documentos

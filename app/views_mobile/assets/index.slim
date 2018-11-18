@@ -1,5 +1,5 @@
 - @with_links = true
-- @back_menu = t("page.public_header.assets")
+- @back_menu = t("mobile_elements.mobile_menu.assets")
 
 
 main
@@ -7,7 +7,7 @@ main
   == cell('elements/map_show', @neighborhood, features: @neighborhood.assets)
 
   section
-    =link_to new_neighborhood_asset_path(@neighborhood), class:"floating-btn" do 
+    =link_to new_neighborhood_asset_path(@neighborhood), class:"floating-btn" do
       = image_tag image_path("icons/close-white.svg")
 
   section
