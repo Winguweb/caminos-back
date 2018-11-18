@@ -1,127 +1,158 @@
-@mixin home-index() {
+@mixin home-index {
   * {
     box-sizing: border-box;
   }
+
   > main {
     > .main-section {
       @include small-diagonal-right-main-down;
+
       overflow-y: hidden;
       padding-bottom: 50px;
       position: relative;
+
       > nav {
         @include diagonal-left;
+
         @include clearfix;
+
         height: 140px;
-        padding: $gutter*3 $gutter*3 0 $gutter*3;
+        padding: ($gutter * 3) ($gutter * 3) 0 ($gutter * 3);
         position: relative;
         z-index: 4;
+
         > div:first-of-type {
           float: left;
           position: relative;
           width: 30%;
           z-index: 1;
+
           > img {
             vertical-align: top;
             width: 100%;
           }
         }
+
         > div:last-of-type {
           float: right;
           position: relative;
           text-align: right;
           width: 65%;
           z-index: 1;
+
           > span {
             @include type-setting(6);
+
             display: inline-block;
             width: 70%;
           }
         }
       }
+
       > section ~ section:nth-of-type(even) {
         > div {
           @include small-diagonal-left-up;
+
           position: relative;
+
           > img {
-            margin: 0 #{-$gutter*3};
+            margin: 0 #{-$gutter * 3};
             position: relative;
             vertical-align: top;
-            width: calc(100% + #{$gutter*6});
+            width: calc(100% + #{$gutter * 6});
             z-index: -3;
           }
+
           > i {
             right: $gutter;
+
             &:before {
-              transform: rotateZ(-49deg) translateY(-78px) translateX(-10px)
+              transform: rotateZ(-49deg) translateY(-78px) translateX(-10px);
             }
           }
         }
       }
+
       > section ~ section:nth-of-type(odd) {
         > div {
           @include small-diagonal-right-up;
+
           position: relative;
+
           > img {
-            margin: 0 #{-$gutter*3};
+            margin: 0 #{-$gutter * 3};
             position: relative;
             vertical-align: top;
-            width: calc(100% + #{$gutter*6});
+            width: calc(100% + #{$gutter * 6});
             z-index: -3;
           }
+
           > i {
             left: $gutter;
+
             &:before {
               transform: rotateZ(-41deg) translateY(-76px) translateX(-10px);
             }
           }
         }
       }
+
       > section:last-of-type {
         > div {
           height: 500px;
+
           > img {
             height: auto;
             margin-top: 10px;
             width: 100vw;
           }
+
           > i {
             top: -27px;
           }
         }
       }
+
       > section:first-of-type {
         font-family: 'Roboto Slab';
+
         > div:first-of-type {
           @include clearfix;
+
           background-image: image-url("home/landing_bg.jpg");
           background-size: cover;
           padding-top: 50px;
           position: relative;
           z-index: 3;
+
           > div:last-of-type {
-            background-color: rgba(255,255,255,0.8);
+            background-color: rgba(255, 255, 255, 0.8);
             bottom: 0;
-            left: $gutter*3;
-            margin-top: $gutter/4;
+            left: $gutter * 3;
+            margin-top: $gutter / 4;
             position: absolute;
             top: 0;
             width: 330px;
-            > div  {
+
+            > div {
               position: absolute;
               top: 50%;
               transform: translate3d(0, -50%, 0);
               width: 100%;
+
               > a {
                 @include type-setting(-1);
+
                 background-color: $white;
                 border-radius: 2px;
-                box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+                box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
                 color: $fuchsia;
                 display: block;
                 margin: $gutter;
                 max-width: 400px;
-                padding: $gutter/2 $gutter;
+                padding: ($gutter / 2) $gutter;
                 text-align: center;
+
                 &:hover {
                   background-color: $fuchsia;
                   color: $white;
@@ -129,42 +160,49 @@
               }
             }
           }
+
           > div:first-of-type {
             float: right;
+            max-width: 520px;
             width: 50%;
+
             > a {
               background-color: $fuchsia;
               border-radius: 2px;
+
               // box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
               box-shadow: 0 13px 8px -3px rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.14), 0 3px 9px 0 rgba(0, 0, 0, 0.12);
               display: block;
-              margin: $gutter*4 $gutter*3 $gutter*4;
-              padding: $gutter*2;
-              &:hover {
+              margin: ($gutter * 4) ($gutter * 3) ($gutter * 4);
+              padding: $gutter * 2;
 
-              }
+              &:hover {}
+
               > p {
                 > strong {
-                  @include type-setting(4);
+                  @include type-setting(5);
+
                   color: $white;
                   display: inline-block;
                   font-weight: 300;
-                  min-width: 240px;
                   vertical-align: middle;
                   width: 50%;
                 }
+
                 > strong:last-of-type {
                   text-align: right;
+
                   > span {
                     @include type-setting(5);
+
                     background-color: white;
                     border-radius: 2px;
                     color: $fuchsia;
                     display: inline-block;
-                    min-width: 208px;
                     padding: $gutter;
                     text-align: center;
                     vertical-align: middle;
+
                     &:hover {
                       color: $light-blue;
                     }
@@ -174,48 +212,61 @@
             }
           }
         }
+
         > div:last-of-type {
           @include small-diagonal-left-down;
+
           background-color: $light-blue;
-          box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
           color: $white;
-          padding: $gutter*2;
+          padding: $gutter * 2;
           position: relative;
           text-align: right;
+
           > p {
             @include type-setting(5);
+
             display: inline-block;
             margin-bottom: $gutter;
             position: relative;
             width: 87%;
             z-index: 2;
+
             & + p {
               margin-bottom: 0;
             }
           }
         }
       }
+
       > footer {
         @include small-diagonal-right-footer;
+
         @include clearfix;
+
         background: $light-blue;
-        box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
         position: relative;
+
         > div {
           float: left;
-          padding: $gutter*3;
+          padding: $gutter * 3;
           position: relative;
           width: 50%;
           z-index: 1;
+
           > a {
             @include clearfix;
+
             display: inline-block;
             width: 100%;
+
             > img {
               display: block;
               vertical-align: top;
               width: 50%;
             }
+
             > span {
               color: $white;
               display: inline-block;
@@ -223,9 +274,11 @@
             }
           }
         }
+
         > div:last-of-type {
           float: right;
           text-align: right;
+
           > a {
             > img {
               clear: both;
@@ -233,65 +286,76 @@
               vertical-align: top;
               width: 30%;
             }
+
             &:first-of-type {
-              margin-bottom: $gutter*2;
+              margin-bottom: $gutter * 2;
             }
           }
         }
       }
+
       > section:nth-of-type(2) {
         > header {
-          padding-top: $gutter*4;
-          > h1 {
-          }
+          padding-top: $gutter * 4;
+
+          > h1 {}
         }
       }
+
       > section + section {
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
         overflow: hidden;
-        padding: 0 $gutter*3;
+        padding: 0 ($gutter * 3);
         position: relative;
         z-index: 1;
+
         > header {
           > h1 {
             @include type-setting(2);
+
             font-family: 'Roboto Slab';
             font-weight: 600;
-            margin-bottom: $gutter*3;
-            margin-top: $gutter*3;
+            margin-bottom: $gutter * 3;
+            margin-top: $gutter * 3;
             position: relative;
+
             &:before, &:after {
               content: '';
               display: block;
-              height: $gutter*2;
+              height: $gutter * 2;
               opacity: 0.5;
               position: absolute;
               width: 61%;
               z-index: -1;
             }
+
             &:before {
               background-color: $light-blue;
               left: 0;
               top: 30px;
             }
+
             &:after {
               background-color: $fuchsia;
               bottom: 0;
               right: 0;
             }
-
           }
         }
+
         > p {
           @include type-setting(6);
-          margin-bottom: $gutter*3;
+
+          margin-bottom: $gutter * 3;
         }
+
         > div {
           > img {
-            margin: 0 #{-$gutter*3};
+            margin: 0 #{-$gutter * 3};
             vertical-align: top;
-            width: calc(100% + #{$gutter*6});
+            width: calc(100% + #{$gutter * 6});
           }
+
           > i {
             background-color: $white;
             box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
@@ -302,6 +366,7 @@
             transform: rotateZ(45deg);
             width: 80px;
             z-index: -1;
+
             &:before {
               background-color: $white;
               content: '';
@@ -318,63 +383,78 @@
       }
     }
   }
-  @media (max-width: 853px) {
+
+  @media (max-width: 1080px) {
     > main {
       > .main-section {
         > nav {
           > div:first-of-type {
-            > img {
-            }
+            > img {}
           }
+
           > div:last-of-type {
-            > span {
-            }
+            > span {}
           }
         }
+
         > section ~ section:nth-of-type(even) {
           > div {
-            > img {
-            }
+            > img {}
           }
         }
+
         > section ~ section:nth-of-type(odd) {
           > div {
-            > img {
-            }
+            > img {}
           }
         }
+
         > section:last-of-type {
           height: 730px;
+
           > div {
             height: 260px;
+
             > img {
               height: auto;
               margin-top: 10px;
               width: 100vw;
             }
+
             > i {
               top: -27px;
             }
           }
         }
+
         > section:first-of-type {
           > div:first-of-type {
-            > div {
-              width: 100%;
+            > div:first-of-type {
+              min-width: auto;
+              width: 50%;
+
               > a {
                 display: block;
-                margin: $gutter*6 auto;
+                margin: ($gutter * 6) auto;
                 max-width: 75%;
                 text-align: center;
                 width: 80%;
+
                 > p {
                   @include type-setting(5);
+
+                  > strong {
+                    display: inline-block;
+                    width: auto;
+                  }
+
                   > strong:last-of-type {
                     text-align: center;
                   }
                 }
               }
             }
+
             > div:first-of-type {
               > a {
                 > p {
@@ -386,51 +466,56 @@
               }
             }
           }
+
           > div:last-of-type {
             text-align: center;
+
             > p {
               text-align: justify;
-              & + p {
-              }
+
+              & + p {}
             }
           }
         }
+
         > footer {
           > div {
             > a {
-              > img {
-              }
-              > span {
-              }
+              > img {}
+
+              > span {}
             }
           }
+
           > div:last-of-type {
             > a {
-              > img {
-              }
-              &:first-of-type {
-              }
+              > img {}
+
+              &:first-of-type {}
             }
           }
         }
+
         > section + section {
           > header {
             > h1 {
               @include type-setting(3);
-              &:before, &:after {
-              }
-              &:before {
-              }
-              &:after {
-              }
+
+              &:before, &:after {}
+
+              &:before {}
+
+              &:after {}
             }
           }
+
           > p {
             @include type-setting(0);
           }
+
           > div {
-            > img {
-            }
+            > img {}
+
             > i {
               display: none;
             }
@@ -439,161 +524,192 @@
       }
     }
   }
-  @media (max-width: 640px) {
+
+  @media (max-width: 760px) {
     > main {
       > .main-section {
         > nav {
           height: auto;
+
           > div:first-of-type {
             display: block;
             float: none;
-            margin-bottom: $gutter*2;
+            margin-bottom: $gutter * 2;
             text-align: center;
             width: 100%;
+
             > img {
               max-width: 70%;
             }
           }
+
           > div:last-of-type {
             display: block;
             float: none;
             width: 100%;
+
             > span {
               text-align: center;
               width: auto;
+
               @include type-setting(0);
+
               > span {
                 display: block;
               }
             }
           }
         }
+
         > section ~ section:nth-of-type(1) {
           > div {
             @include small-diagonal-right-up;
+
             position: relative;
+
             > img {
-              margin: 0 #{-$gutter*3};
+              margin: 0 #{-$gutter * 3};
               position: relative;
               vertical-align: top;
-              width: calc(100% + #{$gutter*6});
+              width: calc(100% + #{$gutter * 6});
               z-index: -3;
             }
+
             > i {
               left: $gutter;
+
               &:before {
                 transform: rotateZ(-41deg) translateY(-76px) translateX(-10px);
               }
             }
           }
         }
+
         > section ~ section:nth-of-type(2) {
           > div {
             @include small-diagonal-right-up;
+
             height: auto;
             position: relative;
+
             > img {
-              margin: 0 #{-$gutter*3};
+              margin: 0 #{-$gutter * 3};
               position: relative;
               vertical-align: top;
-              width: calc(100% + #{$gutter*6});
+              width: calc(100% + #{$gutter * 6});
               z-index: -3;
             }
+
             > i {
               left: $gutter;
+
               &:before {
                 transform: rotateZ(-41deg) translateY(-76px) translateX(-10px);
               }
             }
           }
         }
+
         > section:last-of-type {
           height: 610px;
         }
+
         > section:first-of-type {
           > div:first-of-type {
             > div {
               float: none !important;
+              max-width: 100% !important;
               position: static !important;
               width: 100% !important;
+
               > a {
-                margin: $gutter*4 $gutter*2 $gutter*4 !important;
-                max-width: 100%;
-                width: auto;
-                > p {
-                }
+                margin: ($gutter * 4) ($gutter * 2) ($gutter * 4) !important;
+                max-width: 100% !important;
+                width: auto !important;
+
+                > p {}
               }
+
               > div {
-                padding: $gutter*2;
+                max-width: auto;
+                padding: $gutter * 2;
                 position: static !important;
                 transform: none !important;
+
                 > a {
                   margin: $gutter auto !important;
-                  > p {
-                  }
+
+                  > p {}
                 }
               }
             }
           }
+
           > div:last-of-type {
             > p {
               text-align: left;
+
               @include type-setting(0);
-              & + p {
-              }
+
+              & + p {}
             }
           }
         }
+
         > footer {
           > div {
             float: none;
             width: 100%;
+
             > a {
               text-align: center;
+
               > img {
                 float: none;
                 margin: 0 auto;
                 max-width: 300px;
                 width: 80%;
               }
-              > span {
 
-              }
+              > span {}
             }
           }
+
           > div:last-of-type {
             text-align: center;
             width: 100%;
+
             > a {
               > img {
                 float: none;
                 margin: 0 auto;
-                margin-bottom: $gutter*3;
+                margin-bottom: $gutter * 3;
                 max-width: 300px;
                 width: 80%;
               }
-              &:first-of-type {
-              }
+
+              &:first-of-type {}
             }
           }
         }
+
         > section + section {
           > header {
             > h1 {
               @include type-setting(4);
-              &:before, &:after {
-              }
-              &:before {
-              }
-              &:after {
-              }
+
+              &:before, &:after {}
+
+              &:before {}
+
+              &:after {}
             }
           }
-          > p {
-          }
+
+          > p {}
+
           > div {
-            > img {
-            }
+            > img {}
           }
         }
       }
@@ -605,127 +721,140 @@
       > .main-section {
         > nav {
           > div:first-of-type {
-            > img {
-            }
+            > img {}
           }
+
           > div:last-of-type {
             > span {
               @include type-setting(0);
-              > span {
-              }
+
+              > span {}
             }
           }
         }
+
         > section ~ section:nth-of-type(1) {
           > div {
-            > img {
-            }
+            > img {}
+
             > i {
-              &:before {
-              }
+              &:before {}
             }
           }
         }
+
         > section ~ section:nth-of-type(2) {
           > div {
-            > img {
-            }
+            > img {}
+
             > i {
-              &:before {
-              }
+              &:before {}
             }
           }
         }
+
         > section:last-of-type {
           height: 680px;
+
           > div {
             height: 140px;
           }
         }
+
         > section:first-of-type {
           > div:first-of-type {
             > div {
               float: none !important;
               position: static !important;
               width: 100% !important;
+
               > a {
-                margin: $gutter*4 $gutter*2 $gutter*4 !important;
+                margin: ($gutter * 4) ($gutter * 2) ($gutter * 4) !important;
                 max-width: 100%;
                 width: auto;
-                > p {
-                }
+
+                > p {}
               }
+
               > div {
-                padding: $gutter*2;
+                padding: $gutter * 2;
                 position: static !important;
                 transform: none !important;
+
                 > a {
                   margin: $gutter auto !important;
-                  > p {
-                  }
+
+                  > p {}
                 }
               }
             }
           }
+
           > div:last-of-type {
             > p {
               text-align: left;
+
               @include type-setting(0);
-              & + p {
-              }
+
+              & + p {}
             }
           }
         }
+
         > footer {
           > div {
             float: none;
             width: 100%;
+
             > a {
               text-align: center;
+
               > img {
                 float: none;
                 margin: 0 auto;
                 max-width: 300px;
                 width: 80%;
               }
-              > span {
 
-              }
+              > span {}
             }
           }
+
           > div:last-of-type {
             text-align: center;
             width: 100%;
+
             > a {
               > img {
                 float: none;
                 margin: 0 auto;
-                margin-bottom: $gutter*3;
+                margin-bottom: $gutter * 3;
                 max-width: 300px;
                 width: 80%;
               }
-              &:first-of-type {
-              }
+
+              &:first-of-type {}
             }
           }
         }
+
         > section + section {
           > header {
             > h1 {
               @include type-setting(4);
-              &:before, &:after {
-              }
-              &:before {
-              }
-              &:after {
-              }
+
+              &:before, &:after {}
+
+              &:before {}
+
+              &:after {}
             }
           }
-          > p {
-          }
+
+          > p {}
+
           > div {
-            > img {
-            }
+            > img {}
           }
         }
       }
@@ -733,30 +862,29 @@
   }
 }
 
-
 @mixin diagonal-left {
   &:before {
     background-color: $white;
     bottom: -45px;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     content: '';
     height: 200%;
     left: 0;
     position: absolute;
     right: 0;
-    transform: skew(0, -4deg)
+    transform: skew(0, -4deg);
   }
 }
 
 @mixin small-diagonal-left-up {
   &:before {
     background-color: $white;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     content: '';
     height: 501%;
-    left: -$gutter*3;
+    left: -$gutter * 3;
     position: absolute;
-    right: -$gutter*3;
+    right: -$gutter * 3;
     top: -490%;
     transform: skew(0, -4deg);
     z-index: -2;
@@ -766,12 +894,12 @@
 @mixin small-diagonal-right-up {
   &:before {
     background-color: $white;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     content: '';
     height: 501%;
-    left: -$gutter*3;
+    left: -$gutter * 3;
     position: absolute;
-    right: -$gutter*3;
+    right: -$gutter * 3;
     top: -490%;
     transform: skew(0, 4deg);
     z-index: -2;
@@ -782,7 +910,7 @@
   &:before {
     background-color: $light-blue;
     bottom: -23%;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     content: '';
     height: 190%;
     left: 0;
@@ -790,6 +918,7 @@
     right: 0;
     transform: skew(0, 4deg);
     z-index: 2;
+
     @media (max-width: 853px) {
       left: 0;
       right: 0;
@@ -800,7 +929,7 @@
 @mixin small-diagonal-right-footer {
   &:before {
     background-color: $light-blue;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     content: '';
     height: 160%;
     left: 0;
@@ -811,11 +940,12 @@
     z-index: 1;
   }
 }
+
 @mixin small-diagonal-right-main-down {
   &:before {
     background-color: $fuchsia;
     bottom: -46px;
-    box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
     content: '';
     height: 90px;
     left: 0;
@@ -825,6 +955,7 @@
     z-index: 2;
   }
 }
+
 #home-index.home-desktop {
-  @include home-index();
+  @include home-index;
 }
