@@ -43,7 +43,9 @@ es-AR:
 
   neighborhoods:
     mapping:
-      report: sube tu reporte
+      report: subí tu reporte
+    show:
+      report: subí tu reporte
   assets:
     index:
       add_point: ¿Falta un lugar? Agregalo

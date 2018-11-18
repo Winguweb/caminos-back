@@ -14,6 +14,9 @@ section
 
   main.page-section
     section
+      button.floating-btn type="button"
+        span.floating-btn-text 
+          = link_to t('.report'), new_neighborhood_claim_path(@neighborhood)
       == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
 
     - if !@neighborhood.urbanization
