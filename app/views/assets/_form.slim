@@ -25,7 +25,7 @@
 
     section
       == cell('section/header', t('assets.map_location'))
-      == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'asset')
+      == cell('elements/map_edit', current_neighborhood, controls: ['marker'], name: 'asset')
       input type="hidden" name="asset[geometry]" class="geometry-field"
       input type="hidden" name="asset[geo_geometry]" class="geo_geometry-field"
 

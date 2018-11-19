@@ -1,0 +1,4 @@
+es-AR:
+  admin:
+    assets:
+      errors: "%{field}: Este campo es obligatorio"

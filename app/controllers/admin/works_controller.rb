@@ -62,7 +62,7 @@ module Admin
         flash.now[:error] =  load_errors(service.errors)
         @categories = Work.categories
         @status = Work.status
-        @work = current_neighborhood.works.new(work_params)
+        load_work
         render action: :edit
       end
     end

@@ -26,16 +26,21 @@ es-AR:
     description_3: "Accede al "
     description_3_link: "Acuerdo por la Urbanización de Villas"
   assets:
+    assets: Puntos mapeados
     asset_detail: Detalle de la obra
     cancel: Cancelar
     category: Categoría
     description: Descripcion
+    geo_geometry: Geometría Geoespacial
+    geometry: Geometría
     header_title: Mapeo Participativo
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
     select_a_category: Seleccioná una categoría
+    select_a_verification_status: Verificación
     submit: Guardar
+    verification: Verificación
   common:
     files: Archivos
   categories:
@@ -46,7 +51,7 @@ es-AR:
     education: Educación
     energy: "Electricidad y Alumbrado"
     food_kitchen: Comedores
-    health: Educación y Salud
+    health: Salud
     health_ambulance: Salud y Ambulancias
     home: Vivienda
     infrastructure: Equipamiento
@@ -121,6 +126,10 @@ es-AR:
     in_process: En progreso
     pending: Pendiente
     proyected: Proyectada
+  verification:
+    verification_pending: Pendiente
+    verification_rejected: Rechazado
+    verification_approved: Aprobado
   time:
     formats:
       day: "%d"
@@ -135,6 +144,10 @@ es-AR:
       admin: Administrador
       ambassador: Embajador
       responsible: Responsable
+  verifications:
+    verification_approved: Aprobado
+    verification_pending: Pendiente
+    verification_rejected: Rechazado
   works:
     about_work: Sobre la obra
     budget: Presupuesto
