@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181114175906) do
+ActiveRecord::Schema.define(version: 20181118191446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20181114175906) do
   create_table "agreements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
     t.text "data"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.index ["neighborhood_id"], name: "index_agreements_on_neighborhood_id"
     t.index ["slug"], name: "index_agreements_on_slug"
@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "verification", default: 0
     t.index ["neighborhood_id"], name: "index_assets_on_neighborhood_id"
     t.index ["slug"], name: "index_assets_on_slug"
+    t.index ["verification"], name: "index_assets_on_verification"
   end
 
   create_table "claims", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -68,12 +70,11 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "file_type"
     t.integer "file_size"
     t.jsonb "data", default: {}, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
     t.integer "ancestry_depth", default: 0
     t.index ["ancestry"], name: "index_documents_on_ancestry"
-    t.index ["data"], name: "index_documents_on_data", using: :gin
     t.index ["neighborhood_id"], name: "index_documents_on_neighborhood_id"
   end
 
@@ -82,7 +83,7 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "relatable_type"
     t.uuid "relatable_id", null: false
     t.uuid "responsible_id", null: false
-    t.datetime "created_at"
+    t.datetime "created_at", precision: 6
     t.index ["document_id"], name: "index_documents_relations_on_document_id"
     t.index ["relatable_type", "relatable_id"], name: "index_documents_relations_on_relatable_type_and_relatable_id"
     t.index ["responsible_id"], name: "index_documents_relations_on_responsible_id"
@@ -102,17 +103,16 @@ ActiveRecord::Schema.define(version: 20181114175906) do
 
   create_table "meetings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "neighborhood_id", null: false
-    t.datetime "date"
+    t.datetime "date", precision: 6
     t.string "lookup_address"
-    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
+    t.geography "lookup_coordinates", limit: {:srid=>0, :type=>"geometry"}
     t.text "objectives"
     t.text "minute"
     t.string "organizer"
     t.string "participants"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
-    t.index ["lookup_coordinates"], name: "index_meetings_on_lookup_coordinates", using: :gist
     t.index ["neighborhood_id"], name: "index_meetings_on_neighborhood_id"
     t.index ["slug"], name: "index_meetings_on_slug"
   end
@@ -129,27 +129,24 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "name"
     t.text "description"
     t.string "lookup_address"
-    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
-    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geography "lookup_coordinates", limit: {:srid=>0, :type=>"geometry"}
+    t.geography "geo_geometry", limit: {:srid=>0, :type=>"geometry"}
     t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.boolean "urbanization", default: false
     t.jsonb "extras", default: {}
     t.float "urbanization_score"
     t.string "abbreviation"
     t.string "slug"
-    t.index ["geo_geometry"], name: "index_neighborhoods_on_geo_geometry", using: :gist
-    t.index ["geometry"], name: "index_neighborhoods_on_geometry", using: :gist
-    t.index ["lookup_coordinates"], name: "index_neighborhoods_on_lookup_coordinates", using: :gist
     t.index ["slug"], name: "index_neighborhoods_on_slug"
   end
 
   create_table "organizations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "photos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -160,8 +157,8 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "original_filename"
     t.string "content_type"
     t.integer "file_size"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["owner_type", "owner_id"], name: "index_photos_on_owner_type_and_owner_id"
   end
 
@@ -169,8 +166,8 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "first_name"
     t.string "last_name"
     t.uuid "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -193,7 +190,7 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "tagger_type"
     t.uuid "tagger_id"
     t.string "context"
-    t.datetime "created_at"
+    t.datetime "created_at", precision: 6
     t.index ["context"], name: "index_taggings_on_context"
     t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
@@ -225,23 +222,22 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.string "perishable_token"
     t.integer "login_count", default: 0, null: false
     t.integer "failed_login_count", default: 0, null: false
-    t.datetime "last_request_at"
-    t.datetime "current_login_at"
-    t.datetime "last_login_at"
+    t.datetime "last_request_at", precision: 6
+    t.datetime "current_login_at", precision: 6
+    t.datetime "last_login_at", precision: 6
     t.string "current_login_ip"
     t.string "last_login_ip"
     t.boolean "active", default: false
     t.boolean "approved", default: false
     t.boolean "confirmed", default: false
-    t.datetime "deleted_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "deleted_at", precision: 6
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["entity_type", "entity_id"], name: "index_users_on_entity_type_and_entity_id"
     t.index ["perishable_token"], name: "index_users_on_perishable_token", unique: true
     t.index ["persistence_token"], name: "index_users_on_persistence_token", unique: true
     t.index ["roles_mask"], name: "index_users_on_roles_mask"
-    t.index ["settings"], name: "index_users_on_settings", using: :gin
     t.index ["single_access_token"], name: "index_users_on_single_access_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
@@ -255,19 +251,16 @@ ActiveRecord::Schema.define(version: 20181114175906) do
     t.date "estimated_end_date"
     t.date "end_date"
     t.string "lookup_address"
-    t.geography "lookup_coordinates", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
-    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geography "lookup_coordinates", limit: {:srid=>0, :type=>"geometry"}
+    t.geography "geo_geometry", limit: {:srid=>0, :type=>"geometry"}
     t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
     t.string "budget"
     t.string "manager"
     t.text "execution_plan"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "company"
     t.string "slug"
-    t.index ["geo_geometry"], name: "index_works_on_geo_geometry", using: :gist
-    t.index ["geometry"], name: "index_works_on_geometry", using: :gist
-    t.index ["lookup_coordinates"], name: "index_works_on_lookup_coordinates", using: :gist
     t.index ["neighborhood_id"], name: "index_works_on_neighborhood_id"
     t.index ["slug"], name: "index_works_on_slug"
   end

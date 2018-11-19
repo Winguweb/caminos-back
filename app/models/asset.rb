@@ -2,6 +2,7 @@ class Asset < ApplicationRecord
 
   extend FriendlyId
   friendly_id :name, use: %i[slugged finders history]
+  enum verification: [:verification_pending, :verification_rejected, :verification_approved]
 
   belongs_to :neighborhood
 
@@ -32,6 +33,10 @@ class Asset < ApplicationRecord
 
   def self.categories
     CATEGORIES
+  end
+
+  def self.verification_status
+    verifications.keys
   end
 
   def valid_categories
