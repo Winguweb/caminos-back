@@ -17,7 +17,7 @@
           span = t("categories.#{category}")
       div
         span = t('assets.verification')
-        span = t("verifications.#{@asset[:verification]}")
+        span = t("verifications.#{@asset.verification}")
 
   section
     == cell('section/header', t('assets.map_location'))
