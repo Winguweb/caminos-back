@@ -39,6 +39,10 @@ class Asset < ApplicationRecord
     verifications.keys
   end
 
+  def self.icon(category)
+    ActionController::Base.helpers.image_url("icons/category-asset-#{category}.svg")
+  end
+
   def valid_categories
     errors.add(:category_list, "errors") unless category_list.present?
   end
@@ -48,7 +52,7 @@ class Asset < ApplicationRecord
   end
 
   def category_icon
-    category.blank? ? 'icons/category-asset-editable.svg' : "icons/category-asset-#{category}.svg"
+    category.blank? ? ActionController::Base.helpers.image_url('icons/category-asset-editable.svg') : ActionController::Base.helpers.image_url("icons/category-asset-#{category}.svg")
   end
 
   def category_icon_shadow

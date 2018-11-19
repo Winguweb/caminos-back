@@ -20,11 +20,11 @@ class Claim < ApplicationRecord
   validate :valid_categories
 
   CATEGORIES = %w[
-    building_infrastructure
-    health_ambulance
-    light_electricity
+    infrastructure
+    health
+    energy
     sewer
-    streets_parks
+    public
     trash
     water
   ].freeze
@@ -33,6 +33,10 @@ class Claim < ApplicationRecord
 
   def self.categories
     CATEGORIES
+  end
+
+  def self.icon(category)
+    ActionController::Base.helpers.image_url("icons/category-claim.svg")
   end
 
   def valid_categories
