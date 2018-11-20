@@ -21,6 +21,7 @@
 //= require photos_uploader.js
 //= require public_header.js
 //= require public_photos_uploader.js
+//= require toast.js
 //= require users_table.js
 //= require works_tree.js
 //

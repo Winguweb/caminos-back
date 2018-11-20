@@ -1,54 +1,74 @@
-@mixin neighborhoods-index() {
+@mixin neighborhoods-index {
   > main {
     $navbar-height: 74px;
+
     height: calc(100% - #{$navbar-height});
-    > div {
+
+    > div:first-of-type {
       height: 100%;
+
       > section {
         height: 100%;
+
         > aside {
           @include grid-column(4, $no-gutter);
+
           @include box-sizing(border-box);
+
           border-right: 1px solid color($black, 0.1);
           box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
           height: 100%;
           overflow: auto;
           position: relative;
           z-index: 1;
+
           > div {
             @include grid-column(16);
+
             > section {
               padding-top: $gutter;
+
               > header {
                 h1 {
                   @include text-color($text-black, 1);
+
                   @include type-setting(5);
+
                   font-weight: 800;
                   margin-bottom: $vgutter;
                 }
               }
+
               > section:first-of-type {
                 > header {
                   h2 {
                     @include text-color($text-grey, 1);
+
                     @include type-setting(-1);
+
                     text-transform: uppercase;
                   }
                 }
+
                 > nav {
                   @include grid-collapse;
+
                   > ol {
                     cursor: pointer;
-                    margin-bottom: $vgutter*4;
+                    margin-bottom: $vgutter * 4;
+
                     > li {
                       counter-increment: step-counter;
                       position: relative;
+
                       &:hover {
                         background-color: color($light-grey, 0.3);
                       }
+
                       &::before,
                       &::after {
                         @include background-color($grey, 0.3);
+
                         content: '';
                         height: 1px;
                         left: 0;
@@ -57,10 +77,12 @@
                         right: 0;
                         top: 0;
                       }
+
                       &::after {
                         bottom: 0;
                         top: auto;
                       }
+
                       > a > p {
                         border: $border solid $blue;
                         border-radius: 100%;
@@ -70,20 +92,24 @@
                         position: relative;
                         vertical-align: middle;
                         width: $outer-diameter;
+
                         &::before {
                           background-color: $blue;
                           border-radius: 100%;
                           content: '';
                           display: block;
                           height: $inner-diameter;
-                          left: #{($outer-diameter - $inner-diameter)/2};
+                          left: #{($outer-diameter - $inner-diameter) / 2};
                           position: relative;
-                          top: #{($outer-diameter - $inner-diameter)/2};
+                          top: #{($outer-diameter - $inner-diameter) / 2};
                           width: $inner-diameter;
                         }
+
                         > span {
                           @include text-color($white, 1);
+
                           @include transform(translate3d(-50%, -50%, 0));
+
                           font-size: 13px;
                           font-weight: bold;
                           left: 50%;
@@ -92,34 +118,44 @@
                           top: calc(50% + 1px);
                         }
                       }
+
                       > a > div {
                         display: inline-block;
                         padding: $gutter 0;
                         vertical-align: middle;
-                        width: calc(100% - #{$gutter*3} - #{$outer-diameter + $border*2});
+                        width: calc(100% - #{$gutter * 3} - #{$outer-diameter + $border * 2});
+
                         > h3 {
                           @include text-color($text-black, 1);
+
                           @include type-setting(0);
+
                           font-weight: bold;
                           overflow: hidden;
                           text-overflow: ellipsis;
                           white-space: nowrap;
                         }
+
                         > span {
                           @include text-color($text-grey, 1);
+
                           @include type-setting(-1);
-                          margin-bottom: $vgutter/2;
+
+                          margin-bottom: $vgutter / 2;
                         }
+
                         > span + span {
                           float: right;
                           font-weight: bold;
                         }
+
                         > div {
                           background-color: $light-grey;
                           border-radius: 4px;
                           height: 4px;
                           overflow: hidden;
                           width: 100%;
+
                           > div {
                             background-color: $blue;
                             height: 100%;
@@ -129,29 +165,37 @@
                     }
                   }
                 }
-
               }
+
               > section + section {
                 > header {
                   > h2 {
                     @include text-color($text-grey, 1);
+
                     @include type-setting(-1);
+
                     border-bottom: 1px solid color($grey, 0.3);
-                    margin-bottom: $vgutter*2;
+                    margin-bottom: $vgutter * 2;
                     text-transform: uppercase;
                   }
                 }
+
                 > nav {
                   > ul {
                     @include grid-collapse;
+
                     > li {
                       cursor: pointer;
-                      margin: $vgutter/2 0;
+                      margin: ($vgutter / 2) 0;
+
                       @include grid-column(1 of 2);
+
                       > div {
                         > a {
                           @include type-setting(-1);
+
                           @include ellipsis;
+
                           display: inline-block;
                           font-weight: bold;
                           width: 100%;
@@ -164,26 +208,33 @@
             }
           }
         }
+
         > main {
           @include grid-column(12, $no-gutter);
+
           height: 100%;
           position: relative;
+
           &::before {
             @include box-sizing(border-box);
+
             border-top: 1px solid color($black, 0.1);
             box-shadow: inset 0 4px 4px color($light-shadow, 0.1);
             content: '';
             height: 20px;
             pointer-events: none;
             position: absolute;
-            top:0;
+            top: 0;
             width: 100%;
             z-index: 1;
           }
+
           section {
             height: 100%;
+
             .map-references-cell {
               height: 100%;
+
               > div {
                 border-radius: 0;
               }
@@ -196,5 +247,5 @@
 }
 
 #neighborhoods-index.neighborhoods-desktop {
-  @include neighborhoods-index();
+  @include neighborhoods-index;
 }
