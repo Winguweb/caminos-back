@@ -27,10 +27,11 @@
   PURE MIXIN UI STUFF
 =================== */
 @import "ui/buttons";
-@import "ui/labels";
 @import "ui/checkbox";
-@import "ui/radiobutton";
 @import "ui/floating_button";
+@import "ui/labels";
+@import "ui/radiobutton";
+@import "ui/toasts";
 
 /* ===================
   CELLS UI
@@ -65,6 +66,7 @@
 @import "photos_uploader";
 @import "public_photos_uploader";
 @import "ring";
+@import "toast";
 @import "users_table";
 @import "work_details";
 @import "works_list";

@@ -1,0 +1,82 @@
+@mixin toast($color: $white) {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.1785);
+  max-width: 300px;
+  position: absolute;
+  right: $gutter;
+  top: $gutter;
+  z-index: 3000;
+
+  &.toast-success > div {
+    border-color: $success;
+  }
+
+  &.toast-warning > div {
+    border-color: $warning;
+  }
+
+  &.toast-danger > div {
+    border-color: $danger;
+  }
+
+  &.toast-info > div {
+    border-color: $info;
+  }
+
+  > div {
+    @include type-setting(-1);
+
+    border-top: 4px solid transparent;
+    padding: $gutter;
+
+    > strong {
+      margin-right: $gutter;
+    }
+
+    > p {
+      display: inline-block;
+    }
+  }
+}
+
+@mixin toast-large($color: $white) {
+  @include toast($color);
+
+  background-color: $color;
+  border-radius: 0;
+  left: 0;
+  max-width: none;
+  right: 0;
+  top: 0;
+
+  > div {
+    border-width: 0;
+  }
+
+  &.toast-success > div {
+    background-color: color($success, 0.5);
+  }
+
+  &.toast-warning > div {
+    background-color: color($warning, 0.5);
+  }
+
+  &.toast-danger > div {
+    background-color: color($danger, 0.5);
+  }
+
+  &.toast-info > div {
+    background-color: color($info, 0.5);
+  }
+
+  &.toast-top {
+    bottom: auto;
+    top: 0;
+  }
+
+  &.toast-bottom {
+    bottom: 0;
+    top: auto;
+  }
+}
