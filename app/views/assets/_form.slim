@@ -19,12 +19,13 @@
         .field
           label.required
             = f.label :category_list, t('assets.category')
-          span.category-parent = t("assets.select_a_category")
+          span.category-parent = t('assets.select_a_category')
+
           = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
 
     section
       == cell('section/header', t('assets.map_location'))
-      == cell('elements/map_edit', current_neighborhood, controls: ['marker', 'polygon', 'polyline'], name: 'asset')
+      == cell('elements/map_edit', current_neighborhood, controls: ['marker'], name: 'asset')
       input type="hidden" name="asset[geometry]" class="geometry-field"
       input type="hidden" name="asset[geo_geometry]" class="geo_geometry-field"
 

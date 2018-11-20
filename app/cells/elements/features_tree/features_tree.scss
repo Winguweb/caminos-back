@@ -31,7 +31,9 @@
             }
 
             > i {
-              background-image: image-url("icons/category-generic-white.svg") !important;
+              > img {
+                width: 24px;
+              }
             }
           }
         }
@@ -70,36 +72,8 @@
             vertical-align: middle;
             width: 24px;
 
-            &.category-home {
-              background-image: image-url("icons/category-home.svg");
-            }
-
-            &.category-water {
-              background-image: image-url("icons/category-water.svg");
-            }
-
-            &.category-trash {
-              background-image: image-url("icons/category-trash.svg");
-            }
-
-            &.category-public {
-              background-image: image-url("icons/category-public.svg");
-            }
-
-            &.category-health {
-              background-image: image-url("icons/category-health.svg");
-            }
-
-            &.category-energy {
-              background-image: image-url("icons/category-energy.svg");
-            }
-
-            &.category-sewer {
-              background-image: image-url("icons/category-sewer.svg");
-            }
-
-            &.category-infrastructure {
-              background-image: image-url("icons/category-infrastructure.svg");
+            > img {
+              width: 24px;
             }
           }
 

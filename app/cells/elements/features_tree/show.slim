@@ -6,6 +6,7 @@
           button.open-list-button disabled=features[category].count==0 = "+"
           div.filter-action data-category-name=category
             i class="category-#{category}"
+              = image_tag category_icons[category]
             span = t("categories.#{category}")
             span = features[category].count
 
@@ -13,7 +14,8 @@ javascript:
   $(function() {
     new CDLV.Components['features/tree']({
       el: $('.features-tree-cell'),
-      categories: #{Asset.categories},
+      categories: #{categories},
+      category_icons: #{category_icons.to_json},
       features: #{features.to_json},
       neighborhood_slug: '#{neighborhood_slug}'
     })

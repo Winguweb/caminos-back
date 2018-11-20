@@ -1,8 +1,7 @@
 nav class="mobile-menu-cell back-menu #{with_links}"
   div
-    button type="button"
-      = link_to back_url do
-        span
+    = link_to back_url do
+      span
     span
       = "#{back_menu}"
   - unless !with_links || neighborhood.blank?

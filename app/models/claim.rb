@@ -1,6 +1,6 @@
 class Claim < ApplicationRecord
   extend FriendlyId
-  friendly_id :name, use: %i[slugged finders history]
+  friendly_id :slug_candidates, use: %i[slugged finders history]
 
   belongs_to :neighborhood
   belongs_to :work, optional: true
@@ -20,11 +20,11 @@ class Claim < ApplicationRecord
   validate :valid_categories
 
   CATEGORIES = %w[
-    building_infrastructure
-    health_ambulance
-    light_electricity
+    infrastructure
+    health
+    energy
     sewer
-    streets_parks
+    public
     trash
     water
   ].freeze
@@ -33,6 +33,10 @@ class Claim < ApplicationRecord
 
   def self.categories
     CATEGORIES
+  end
+
+  def self.icon(category)
+    ActionController::Base.helpers.image_url("icons/category-claim.svg")
   end
 
   def valid_categories
@@ -49,5 +53,13 @@ class Claim < ApplicationRecord
 
   def category_icon_shadow
     'icons/category-claim-shadow.svg'
+  end
+
+  def slug_candidates
+    [
+        :name,
+        [:name, :description],
+        [:name, :description, :id]
+    ]
   end
  end

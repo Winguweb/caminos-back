@@ -1,0 +1,24 @@
+= content_for :main_header do
+  == cell('page/header', @asset.name, breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.assets'), href: admin_neighborhood_assets_path(current_neighborhood)}, {title: @asset.name} ])
+
+.page-section
+  section
+    == cell('section/header', t(".about_asset"), links: [{title:t('actions.edit'), href: edit_admin_neighborhood_asset_path(current_neighborhood, @asset)}])
+    div
+      span = t('assets.name')
+      span = @asset.name
+    div
+      span = t('.description')
+      span = @asset.description
+    .half-input
+      div
+        span = t('assets.category')
+        - @asset.categories.each do | category |
+          span = t("categories.#{category}")
+      div
+        span = t('assets.verification')
+        span = t("verifications.#{@asset.verification}")
+
+  section
+    == cell('section/header', t('assets.map_location'))
+    == cell('elements/map_show', current_neighborhood, features: [ @asset ])

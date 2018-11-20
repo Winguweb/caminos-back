@@ -6,6 +6,11 @@ es-AR:
       show:
         agreement: Indicadores del Acuerdo de Urbanización
         new_agreement: Crear Acuerdo
+    assets:
+      index:
+        assets_list: Puntos de interés
+      show:
+        about_asset: Sobre el punto de interés
     links:
       neighborhoods:
         show:
@@ -14,6 +19,7 @@ es-AR:
           meetings: Reuniones
           agreement: Acuerdo
           activity: Actividad reciente
+          assets: Puntos de interés
     meetings:
       show:
         meeting_date: Reunión %{date}
@@ -25,6 +31,7 @@ es-AR:
       neighborhoods: Barrios
       users: Usuarios
       works: Obras
+      assets: Puntos de interés
     works:
       show:
         about_work: Sobre la obra

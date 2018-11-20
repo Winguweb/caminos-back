@@ -48,6 +48,7 @@ module CaminosBack
     config.cells.with_assets = %w(
       elements/add_button_cell
       elements/alert_cell
+      elements/assets_table_cell
       elements/avatar_cell
       elements/breadcrumbs_cell
       elements/button_cell
