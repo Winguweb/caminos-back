@@ -4,13 +4,30 @@
     > div {
       height: 100%;
       > main {
-        @include floating-button-mobile();
+        .floatin-button-container{
+          display: flex;
+          justify-content: center;
+        }
+        @include floating-button-mobile-works();
         height: 100%;
         > section:first-of-type {
           height: 100%;
           .map-show-cell {
             > div {
               border-radius: 0;
+            }
+          }
+        }
+        >section {
+          >aside{
+            >div{
+              >section{
+                >nav{
+                  .works-tree-cell{
+                    margin-bottom: 60px;
+                  }
+                }
+              }
             }
           }
         }
