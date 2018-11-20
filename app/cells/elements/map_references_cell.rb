@@ -13,7 +13,7 @@ class Elements::MapReferencesCell < Cell::ViewModel
         name: neighborhood.name,
         url: neighborhood_path(neighborhood.slug),
         urbanization_process: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
-        asset_url: neighborhood_assets_path(neighborhood.slug),
+        asset_url: toggle_asset_url(neighborhood),
         claim_url: mapping_neighborhood_path(neighborhood.slug),
       })
     end
@@ -21,6 +21,14 @@ class Elements::MapReferencesCell < Cell::ViewModel
     geoJson = RGeo::GeoJSON.encode factory.feature_collection(features)
 
     geoJson.to_json
+  end
+
+  def toggle_asset_url(neighborhood)
+    if neighborhood.assets.count >= 3 
+      neighborhood_assets_path(neighborhood.slug)
+    else
+      new_neighborhood_asset_path(neighborhood.slug)
+    end
   end
 
   def map_defaults
