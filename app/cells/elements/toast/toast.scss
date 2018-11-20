@@ -1,5 +1,5 @@
 @mixin toast-message {
-  @include toast-large;
+  @include toast;
 }
 
 .toast-cell {
