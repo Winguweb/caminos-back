@@ -4,34 +4,31 @@ class Elements::MapReferencesCell < Cell::ViewModel
 
   def base
     return [] if model.blank?
-    model.map do |neighborhood|
-      case neighborhood.geometry.try(:geometry_type)
-      when RGeo::Feature::Polygon
-        {
-          coordinates: neighborhood.geometry.coordinates.first.map(&:reverse),
-          className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
-          name: neighborhood.name,
-          reference: neighborhood.abbreviation,
-          url: neighborhood_path(neighborhood.slug)
-        }
-      when RGeo::Feature::MultiPolygon
-        {
-          coordinates: neighborhood.geometry.coordinates.first.first.map(&:reverse),
-          className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
-          name: neighborhood.name,
-          reference: neighborhood.abbreviation,
-          url: neighborhood_path(neighborhood.slug)
-        }
-      else
-        {
-          coordinates: [],
-          className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
-          name: neighborhood.name,
-          reference: neighborhood.abbreviation,
-          url: neighborhood_path(neighborhood.slug)
-        }
-      end
-    end.to_json
+    factory = RGeo::GeoJSON::EntityFactory.instance
+
+    features = model.map do |neighborhood|
+      factory.feature(neighborhood.geo_geometry, nil, {
+        className: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
+        abbreviation: neighborhood.abbreviation,
+        name: neighborhood.name,
+        url: neighborhood_path(neighborhood.slug),
+        urbanization_process: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
+        asset_url: toggle_asset_url(neighborhood),
+        claim_url: mapping_neighborhood_path(neighborhood.slug),
+      })
+    end
+
+    geoJson = RGeo::GeoJSON.encode factory.feature_collection(features)
+
+    geoJson.to_json
+  end
+
+  def toggle_asset_url(neighborhood)
+    if neighborhood.assets.count >= 3 
+      neighborhood_assets_path(neighborhood.slug)
+    else
+      new_neighborhood_asset_path(neighborhood.slug)
+    end
   end
 
   def map_defaults

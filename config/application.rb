@@ -48,6 +48,7 @@ module CaminosBack
     config.cells.with_assets = %w(
       elements/add_button_cell
       elements/alert_cell
+      elements/assets_table_cell
       elements/avatar_cell
       elements/breadcrumbs_cell
       elements/button_cell
@@ -57,7 +58,9 @@ module CaminosBack
       elements/documents_table_cell
       elements/documents_uploader_cell
       elements/error_messages_cell
+      elements/features_tree_cell
       elements/filter_toggle_cell
+      elements/filter_toggle_mapping_cell
       elements/map_edit_cell
       elements/map_references_cell
       elements/map_show_cell
@@ -70,7 +73,9 @@ module CaminosBack
       elements/photos_gallery_cell
       elements/photos_list_cell
       elements/photos_uploader_cell
+      elements/public_photos_uploader_cell
       elements/ring_cell
+      elements/toast_cell
       elements/users_table_cell
       elements/work_details_cell
       elements/works_list_cell

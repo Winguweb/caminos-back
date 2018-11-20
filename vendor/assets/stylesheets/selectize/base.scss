@@ -5,7 +5,7 @@ $selectize-line-height: 18px !default;
 
 $selectize-color-text: #303030 !default;
 $selectize-color-border: #d0d0d0 !default;
-$selectize-color-highlight: rgba(125,168,208,0.2) !default;
+$selectize-color-highlight: rgba(125, 168, 208, 0.2) !default;
 $selectize-color-input: white !default;
 $selectize-color-input-full: $selectize-color-input !default;
 $selectize-color-disabled: #fafafa !default;
@@ -42,8 +42,8 @@ $selectize-padding-item-x: 1em !default;
 $selectize-padding-item-y: 0.678614em !default;
 $selectize-padding-dropdown-item-x: $selectize-padding-x !default;
 $selectize-padding-dropdown-item-y: 0.678614em !default;
-$selectize-margin-item-x: (0.678614em / 2) !default;
-$selectize-margin-item-y: (0.678614em / 2) !default;
+$selectize-margin-item-x: 0.678614em / 2 !default;
+$selectize-margin-item-y: 0.678614em / 2 !default;
 
 $selectize-arrow-size: 5px !default;
 $selectize-arrow-color: #808080 !default;
@@ -52,21 +52,23 @@ $selectize-arrow-offset: 15px !default;
 $selectize-caret-margin: 0 2px 0 0 !default;
 $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
 
-@mixin selectize-border-radius ($radii) {
-    -webkit-border-radius: $radii;
-    -moz-border-radius: $radii;
-    border-radius: $radii;
+@mixin selectize-border-radius($radii) {
+  -webkit-border-radius: $radii;
+  -moz-border-radius: $radii;
+  border-radius: $radii;
 }
-@mixin selectize-unselectable () {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+
+@mixin selectize-unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-@mixin selectize-box-sizing ($type: border-box) {
-    -webkit-box-sizing: $type;
-    -moz-box-sizing: $type;
-    box-sizing: $type;
+
+@mixin selectize-box-sizing($type: border-box) {
+  -webkit-box-sizing: $type;
+  -moz-box-sizing: $type;
+  box-sizing: $type;
 }
 
 @import "plugins/drag_drop";
@@ -75,198 +77,233 @@ $selectize-caret-margin-rtl: 0 4px 0 -2px !default;
 @import "plugins/remove_button";
 
 .selectize-control {
-    position: relative;
+  position: relative;
 }
 
 .selectize-dropdown, .selectize-input, .selectize-input input {
-    // color: $selectize-color-text;
-    // font-family: $selectize-font-family;
-    // font-size: $selectize-font-size;
-    line-height: $selectize-line-height;
-    -webkit-font-smoothing: $selectize-font-smoothing;
+  -webkit-font-smoothing: $selectize-font-smoothing;
+
+  // color: $selectize-color-text;
+  // font-family: $selectize-font-family;
+  // font-size: $selectize-font-size;
+  line-height: $selectize-line-height;
 }
 
 .selectize-input, .selectize-control.single .selectize-input.input-active {
-    background: $selectize-color-input;
-    cursor: text;
-    display: inline-block;
+  background: $selectize-color-input;
+  cursor: text;
+  display: inline-block;
 }
 
 .selectize-input {
-    border: $selectize-border;
-    padding: $selectize-padding-y $selectize-padding-x;
+  @include selectize-box-sizing(border-box);
+  @include selectize-border-radius($selectize-border-radius);
+
+  border: $selectize-border;
+  display: inline-block;
+  overflow: hidden;
+  padding: $selectize-padding-y $selectize-padding-x;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+
+  .selectize-control.multi &.has-items {
+    $padding-x: $selectize-padding-x;
+    $padding-top: $selectize-padding-y - $selectize-padding-item-y - $selectize-width-item-border;
+    $padding-bottom: $selectize-padding-y - $selectize-padding-item-y - $selectize-margin-item-y - $selectize-width-item-border;
+
+    padding: $padding-top $padding-x $padding-bottom;
+  }
+
+  &.full {
+    background-color: $selectize-color-input-full;
+  }
+
+  &.disabled, &.disabled * {
+    cursor: default !important;
+  }
+
+  &.focus {}
+
+  &.dropdown-active {
+    @include selectize-border-radius($selectize-border-radius $selectize-border-radius 0 0);
+  }
+
+  > * {
+    display: -moz-inline-stack;
     display: inline-block;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    @include selectize-box-sizing (border-box);
-    @include selectize-border-radius ($selectize-border-radius);
+    *display: inline;
+    vertical-align: baseline;
+    zoom: 1;
+  }
 
-    .selectize-control.multi &.has-items {
-        $padding-x: $selectize-padding-x;
-        $padding-top: $selectize-padding-y - $selectize-padding-item-y - $selectize-width-item-border;
-        $padding-bottom: $selectize-padding-y - $selectize-padding-item-y - $selectize-margin-item-y - $selectize-width-item-border;
-        padding: $padding-top $padding-x $padding-bottom;
+  .selectize-control.multi & > div {
+    background: $selectize-color-item;
+    border: $selectize-width-item-border solid $selectize-color-item-border;
+    color: $selectize-color-item-text;
+    cursor: pointer;
+    margin: 0 $selectize-margin-item-x $selectize-margin-item-y 0;
+    padding: $selectize-padding-item-y $selectize-padding-item-x;
+
+    &.active {
+      background: $selectize-color-item-active;
+      border: $selectize-width-item-border solid $selectize-color-item-active-border;
+      color: $selectize-color-item-active-text;
+    }
+  }
+
+  .selectize-control.multi &.disabled > div {
+    &, &.active {
+      background: lighten(desaturate($selectize-color-item, 100%), $selectize-lighten-disabled-item);
+      border: $selectize-width-item-border solid lighten(desaturate($selectize-color-item-border, 100%), $selectize-lighten-disabled-item-border);
+      color: lighten(desaturate($selectize-color-item-text, 100%), $selectize-lighten-disabled-item-text);
+    }
+  }
+
+  > input {
+    &::-ms-clear {
+      display: none;
     }
 
-    &.full {
-        background-color: $selectize-color-input-full;
-    }
-    &.disabled, &.disabled * {
-        cursor: default !important;
-    }
-    &.focus {}
-    &.dropdown-active {
-        @include selectize-border-radius ($selectize-border-radius $selectize-border-radius 0 0);
-    }
+    background: none !important;
+    border: 0 none !important;
+    display: inline-block !important;
+    line-height: inherit !important;
+    margin: $selectize-caret-margin !important;
+    max-height: none !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    text-indent: 0 !important;
+    -webkit-user-select: auto !important;
 
-    > * {
-        vertical-align: baseline;
-        display: -moz-inline-stack;
-        display: inline-block;
-        zoom: 1;
-        *display: inline;
+    &:focus {
+      outline: none !important;
     }
-    .selectize-control.multi & > div {
-        cursor: pointer;
-        margin: 0 $selectize-margin-item-x $selectize-margin-item-y 0;
-        padding: $selectize-padding-item-y $selectize-padding-item-x;
-        background: $selectize-color-item;
-        color: $selectize-color-item-text;
-        border: $selectize-width-item-border solid $selectize-color-item-border;
-
-        &.active {
-            background: $selectize-color-item-active;
-            color: $selectize-color-item-active-text;
-            border: $selectize-width-item-border solid $selectize-color-item-active-border;
-        }
-    }
-    .selectize-control.multi &.disabled > div {
-        &, &.active {
-            color: lighten(desaturate($selectize-color-item-text, 100%), $selectize-lighten-disabled-item-text);
-            background: lighten(desaturate($selectize-color-item, 100%), $selectize-lighten-disabled-item);
-            border: $selectize-width-item-border solid lighten(desaturate($selectize-color-item-border, 100%), $selectize-lighten-disabled-item-border);
-        }
-    }
-    > input {
-        &::-ms-clear {
-            display: none;
-        }
-        display: inline-block !important;
-        padding: 0 !important;
-        min-height: 0 !important;
-        max-height: none !important;
-        max-width: 100% !important;
-        margin: $selectize-caret-margin !important;
-        text-indent: 0 !important;
-        border: 0 none !important;
-        background: none !important;
-        line-height: inherit !important;
-        -webkit-user-select: auto !important;
-        &:focus { outline: none !important; }
-    }
+  }
 }
 
 .selectize-input::after {
-    content: ' ';
-    display: block;
-    clear: left;
+  clear: left;
+  content: ' ';
+  display: block;
 }
 
 .selectize-input.dropdown-active::before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    background: $selectize-color-dropdown-border-top;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  background: $selectize-color-dropdown-border-top;
+  bottom: 0;
+  content: ' ';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
 }
 
 .selectize-dropdown {
-    position: absolute;
-    z-index: 10;
-    border: $selectize-dropdown-border;
-    background: $selectize-color-dropdown;
-    margin: -1px 0 0 0;
-    border-top: 0 none;
-    @include selectize-box-sizing (border-box);
-    @include selectize-border-radius (0 0 $selectize-border-radius $selectize-border-radius);
+  background: $selectize-color-dropdown;
+  border: $selectize-dropdown-border;
+  border-top: 0 none;
+  margin: -1px 0 0 0;
+  position: absolute;
+  z-index: 10;
 
-    [data-selectable] {
-        cursor: pointer;
-        overflow: hidden;
-        .highlight {
-            background: $selectize-color-highlight;
-            @include selectize-border-radius (1px);
-        }
+  @include selectize-box-sizing(border-box);
+  @include selectize-border-radius(0 0 $selectize-border-radius $selectize-border-radius);
+
+  [data-selectable] {
+    cursor: pointer;
+    overflow: hidden;
+
+    .highlight {
+      background: $selectize-color-highlight;
+
+      @include selectize-border-radius(1px);
     }
-    [data-selectable], .optgroup-header {
-        padding: $selectize-padding-dropdown-item-y $selectize-padding-dropdown-item-x;
+  }
+
+  [data-selectable], .optgroup-header {
+    padding: $selectize-padding-dropdown-item-y $selectize-padding-dropdown-item-x;
+  }
+
+  .optgroup:first-child .optgroup-header {
+    border-top: 0 none;
+  }
+
+  .optgroup-header {
+    @include type-setting(-2);
+
+    background: $selectize-color-optgroup;
+    background-color: $light-grey;
+    color: $light-blue;
+    cursor: default;
+    font-weight: 600;
+    padding: ($gutter / 3) $gutter;
+    text-transform: uppercase;
+  }
+
+  .active {
+    background-color: $selectize-color-dropdown-item-active;
+    color: $selectize-color-dropdown-item-active-text;
+
+    &.create {
+      color: $selectize-color-dropdown-item-create-active-text;
     }
-    .optgroup:first-child .optgroup-header {
-        border-top: 0 none;
-    }
-    .optgroup-header {
-        color: $selectize-color-optgroup-text;
-        background: $selectize-color-optgroup;
-        cursor: default;
-    }
-    .active {
-        background-color: $selectize-color-dropdown-item-active;
-        color: $selectize-color-dropdown-item-active-text;
-        &.create {
-            color: $selectize-color-dropdown-item-create-active-text;
-        }
-    }
-    .create {
-        color: $selectize-color-dropdown-item-create-text;
-    }
+  }
+
+  .create {
+    color: $selectize-color-dropdown-item-create-text;
+  }
 }
 
 .selectize-dropdown-content {
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-height: $selectize-max-height-dropdown;
+  max-height: $selectize-max-height-dropdown;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .selectize-control.single .selectize-input {
-    &, input { cursor: pointer; }
-    &.input-active, &.input-active input { cursor: text; }
+  &, input {
+    cursor: pointer;
+  }
 
-    &:after {
-        content: ' ';
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: $selectize-arrow-offset;
-        margin-top: round((-1 * $selectize-arrow-size / 2));
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: $selectize-arrow-size $selectize-arrow-size 0 $selectize-arrow-size;
-        border-color: $selectize-arrow-color transparent transparent transparent;
-    }
-    &.dropdown-active:after {
-        margin-top: $selectize-arrow-size * -0.8;
-        border-width: 0 $selectize-arrow-size $selectize-arrow-size $selectize-arrow-size;
-        border-color: transparent transparent $selectize-arrow-color transparent;
-    }
+  &.input-active, &.input-active input {
+    cursor: text;
+  }
+
+  &:after {
+    border-color: $selectize-arrow-color transparent transparent transparent;
+    border-style: solid;
+    border-width: $selectize-arrow-size $selectize-arrow-size 0 $selectize-arrow-size;
+    content: ' ';
+    display: block;
+    height: 0;
+    margin-top: round(-1 * $selectize-arrow-size / 2);
+    position: absolute;
+    right: $selectize-arrow-offset;
+    top: 50%;
+    width: 0;
+  }
+
+  &.dropdown-active:after {
+    border-color: transparent transparent $selectize-arrow-color transparent;
+    border-width: 0 $selectize-arrow-size $selectize-arrow-size $selectize-arrow-size;
+    margin-top: $selectize-arrow-size * -0.8;
+  }
 }
 
 .selectize-control.rtl {
-    &.single .selectize-input:after {
-        left: $selectize-arrow-offset;
-        right: auto;
-    }
-    .selectize-input > input {
-        margin: $selectize-caret-margin-rtl !important;
-    }
+  &.single .selectize-input:after {
+    left: $selectize-arrow-offset;
+    right: auto;
+  }
+
+  .selectize-input > input {
+    margin: $selectize-caret-margin-rtl !important;
+  }
 }
 
 .selectize-control .selectize-input.disabled {
-    opacity: $selectize-opacity-disabled;
-    background-color: $selectize-color-disabled;
+  background-color: $selectize-color-disabled;
+  opacity: $selectize-opacity-disabled;
 }

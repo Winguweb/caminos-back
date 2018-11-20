@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180925231808) do
+ActiveRecord::Schema.define(version: 20181118191446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,40 @@ ActiveRecord::Schema.define(version: 20180925231808) do
     t.string "slug"
     t.index ["neighborhood_id"], name: "index_agreements_on_neighborhood_id"
     t.index ["slug"], name: "index_agreements_on_slug"
+  end
+
+  create_table "assets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
+    t.string "name"
+    t.text "description"
+    t.string "lookup_address"
+    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "verification", default: 0
+    t.index ["neighborhood_id"], name: "index_assets_on_neighborhood_id"
+    t.index ["slug"], name: "index_assets_on_slug"
+    t.index ["verification"], name: "index_assets_on_verification"
+  end
+
+  create_table "claims", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "neighborhood_id", null: false
+    t.uuid "work_id"
+    t.string "name"
+    t.text "description"
+    t.string "lookup_address"
+    t.geography "geo_geometry", limit: {:srid=>4326, :type=>"geometry", :geographic=>true}
+    t.geometry "geometry", limit: {:srid=>0, :type=>"geometry"}
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "slug"
+    t.string "#<ActiveRecord::ConnectionAdapters::PostGIS::TableDefinition:0x"
+    t.index ["geo_geometry"], name: "index_claims_on_geo_geometry", using: :gist
+    t.index ["geometry"], name: "index_claims_on_geometry", using: :gist
+    t.index ["neighborhood_id"], name: "index_claims_on_neighborhood_id"
+    t.index ["slug"], name: "index_claims_on_slug"
   end
 
   create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -135,6 +169,18 @@ ActiveRecord::Schema.define(version: 20180925231808) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "public_photos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "owner_type", null: false
+    t.uuid "owner_id", null: false
+    t.string "image"
+    t.string "original_filename"
+    t.string "content_type"
+    t.integer "file_size"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_type", "owner_id"], name: "index_public_photos_on_owner_type_and_owner_id"
   end
 
   create_table "taggings", force: :cascade do |t|

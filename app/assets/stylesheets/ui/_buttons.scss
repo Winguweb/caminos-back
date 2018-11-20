@@ -1,7 +1,10 @@
 @mixin button($color: $blue) {
   @include text-color($text-blue, 1);
+
   @include type-setting(-1);
+
   @include user-select(none);
+
   background: $color;
   border: 2px solid $color;
   border-radius: 2px;
@@ -11,42 +14,58 @@
   font-weight: 500;
   margin: 0;
   min-width: 64px;
-  padding: $gutter/2 $gutter;
+  padding: ($gutter / 2) $gutter;
   text-align: center;
   text-transform: uppercase;
+
   &:hover {
     opacity: 0.9;
   }
+
   &:active {
     position: relative;
     top: 1px;
   }
+
   &.danger-type {
     @include background-color($red, 1);
+
     @include text-color($white);
+
     border: 2px solid $red;
   }
+
   &.warning-type {
     @include background-color($yellow, 1);
+
     @include text-color($white);
+
     border: 2px solid $yellow;
   }
+
   &.success-type {
     @include background-color($green, 1);
+
     @include text-color($white);
+
     border: 2px solid $green;
   }
 }
 
 @mixin wired-button($color: $blue) {
   @include button($color);
+
   @include text-color($color, 1);
+
   background: transparent;
+
   &:hover,
-  &:hover a {;
+  &:hover a {
     @include text-color($color, 1);
+
     background-color: color($color, 0.1);
   }
+
   &:active {
     position: relative;
     top: 1px;
@@ -55,18 +74,38 @@
 
 @mixin text-button($color: $blue) {
   @include wired-button($color);
+
   border: none;
   border-radius: 0;
   font-weight: 500;
   min-width: auto;
   text-transform: uppercase;
+
   &:hover,
   &:hover a {
     @include text-color($color, 1);
+
     background: color($color, 0.1);
   }
+
   &:active {
     position: relative;
     top: 1px;
   }
+}
+
+@mixin small-button($color: $blue) {
+  @include button($color);
+
+  @include type-setting(-2);
+
+  padding: ($gutter / 3) ($gutter / 2);
+}
+
+@mixin small-text-button($color: $blue) {
+  @include text-button($color);
+
+  @include type-setting(-2);
+
+  padding: ($gutter / 3) ($gutter / 2);
 }

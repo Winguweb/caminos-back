@@ -69,6 +69,7 @@
           }
         }
         > main {
+          @include floating-button();
           @include grid-column(16, $no-gutter);
           height: 400px;
           position: relative;

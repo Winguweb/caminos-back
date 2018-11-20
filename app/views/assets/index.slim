@@ -1,0 +1,17 @@
+section
+  aside
+    div
+      section
+        nav
+          - if @assets.present?
+            == cell('elements/features_tree', @assets)
+
+          - else
+            div = t('.no_data')
+
+  main.page-section
+    section
+      button.floating-btn type="button"
+        span.floating-btn-text
+          = link_to t('.add_point'), new_neighborhood_asset_path(@neighborhood)
+      == cell('elements/map_show', @neighborhood, features: @assets)

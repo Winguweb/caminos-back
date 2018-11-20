@@ -1,0 +1,24 @@
+- @with_links = true
+- @back_menu = t("mobile_elements.mobile_menu.assets")
+
+
+main
+  section
+  == cell('elements/map_show', @neighborhood, features: @assets)
+
+  section
+    =link_to new_neighborhood_asset_path(@neighborhood), class:"floating-btn" do
+      = image_tag image_path("icons/close-white.svg")
+
+  section
+  - if @neighborhood.urbanization
+    aside
+      div
+        section
+          nav
+            -if !@neighborhood.assets.empty?
+              == cell('elements/features_tree' , @neighborhood.assets)
+
+            -else
+              div
+                = t('.no_works')

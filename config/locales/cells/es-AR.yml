@@ -27,12 +27,25 @@ es-AR:
       username: Nombre de Usuario
   mobile_elements:
     mobile_menu:
+      about: Sobre el barrio
+      agreement: Indicadores de Impacto
+      assets: Puntos de interés
+      claims: Reporte ciudadano
       works: Obras
-      agreement: Acuerdo
-      about: Información
     over_work_card:
   page:
     public_header:
-      about: Sobre el barrio
+      about: El barrio
       agreement: Indicadores de Impacto
+      assets: Puntos de interés
+      claims: Reportes
       works: Obras
+
+  neighborhoods:
+    mapping:
+      report: subí tu reporte
+    show:
+      report: subí tu reporte
+  assets:
+    index:
+      add_point: ¿Falta un lugar? Agregalo

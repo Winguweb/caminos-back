@@ -1,0 +1,7 @@
+@mixin toast-message {
+  @include toast;
+}
+
+.toast-cell {
+  @include toast-message;
+}

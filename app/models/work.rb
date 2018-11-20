@@ -7,25 +7,42 @@ class Work < ApplicationRecord
   belongs_to :neighborhood
   has_and_belongs_to_many :meetings
   has_many :photos, as: :owner
+  has_many :claims
 
   acts_as_taggable_on :categories
 
-  validates_presence_of :name,
+  validates_presence_of(
+    :category_list,
     :description,
-    :status,
+    :geo_geometry,
+    :lookup_address,
     :manager,
     :name,
-    :category_list,
-    :lookup_address,
-    :geo_geometry
+    :status,
+  )
 
   validate :valid_categories
 
-  # validate :valid_dates
+  CATEGORIES = %w[
+    energy
+    health
+    home
+    infrastructure
+    public
+    sewer
+    trash
+    water
+  ].freeze
 
-  # CATEGORIES =['Servicios Públicos','Equipamiento Estatal','Vivienda','Espacios Públicos'].freeze
-  CATEGORIES =['water', 'trash', 'public', 'health', 'energy', 'sewer', 'infrastructure', 'home'].freeze
-  STATUS =['in_process','done', 'pending','expired','proyected'].freeze
+  STATUS = %w[
+    done
+    expired
+    in_process
+    proyected
+  ].freeze
+
+  private_constant :CATEGORIES
+  private_constant :STATUS
 
   def self.status
     STATUS
@@ -36,9 +53,7 @@ class Work < ApplicationRecord
   end
 
   def valid_categories
-    if category_list.nil? || category_list.empty?
-      errors.add(:category_list, "errors")
-    end
+    errors.add(:category_list, "errors") unless category_list.present?
   end
 
   def valid_dates
@@ -48,12 +63,15 @@ class Work < ApplicationRecord
   end
 
   def category
-    self.tags_on(:categories).first
+    tags_on(:categories).first
   end
 
-  # TO-DO: Remove this after tags implementation
   def category_icon
     category.blank? ? 'icons/category-editable.svg' : "icons/category-#{category}.svg"
+  end
+
+  def category_icon_shadow
+    "icons/category-shadow.svg"
   end
 
 end

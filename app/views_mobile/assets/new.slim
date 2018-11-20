@@ -1,0 +1,37 @@
+- @with_links = true
+- @back_menu = t("page.public_header.assets")
+
+.asset-header
+  == cell('page/header', t('assets.header_title'))
+
+.assets_form
+ = form_for Asset.new,url:neighborhood_assets_path, html: { class: 'form', multipart: true } do |f|
+  .page-section
+    section.form-section
+      .field
+        label.required
+          = f.label :name, t('claims.name')
+        =f.text_field :name, required: true
+      .field
+        label.required
+          =f.label :description, t('claims.description')
+        =f.text_area :description, required: true
+      .field
+        label.required
+          = f.label :lookup_address, t('claims.lookup_address')
+        =f.text_field :lookup_address, required: true
+      .field
+        label.required
+          = f.label :category_list, t('claims.category')
+        = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
+
+    section
+      == cell('section/header', t('claims.map_location'))
+      == cell('elements/map_edit', current_neighborhood, controls: ['marker'], name: 'asset')
+      input type="hidden" name="asset[geometry]" class="geometry-field"
+      input type="hidden" name="asset[geo_geometry]" class="geo_geometry-field"
+    
+    section.submit-asset-cta
+      = f.submit "GUARDAR"
+
+

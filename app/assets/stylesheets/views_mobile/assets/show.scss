@@ -1,0 +1,77 @@
+#assets-show.assets-mobile{
+  > main {
+    height: 100%;
+    padding-top: $gutter*2;
+    > div {
+      height: 100%;
+      > section {
+        > main {
+          $navbar-height: calc( #{$gutter * 2 + $base-line-height} + 2px);
+          @include grid-column(16, $no-gutter);
+          height: 100%;
+          > section:first-of-type {
+            @include grid-column(16);
+            height: 100%;
+            left: auto;
+            margin-bottom: $gutter*2;
+            .map-show-cell {
+              @include grid-collapse;
+              height: 100%;
+              > div {
+                border-radius: 0;
+              }
+            }
+          }
+          > header {
+            @include grid-column(16);
+            margin-bottom: $gutter*2;
+            > span {
+              display: block;
+              &:nth-of-type(1) {
+                @include type-setting(-1);
+                line-height: 1.5em;
+                &.community_center {@include text-color($water, 1);}
+                &.cult {@include text-color($trash, 1);}
+                &.public_organization {@include text-color($public, 1);}
+                &.health {@include text-color($health, 1);}
+                &.food_kitchen {@include text-color($energy, 1);}
+                &.education {@include text-color($sewer, 1);}
+                &.infrastructure {@include text-color($infrastructure, 1);}
+              }
+            }
+            > h1 {
+              @include type-setting(5);
+              font-weight: bold;
+            }
+          }
+          > section + section {
+            @include grid-column(16);
+            &:first-of-type {
+              > div:first-of-type {
+                border-top: 1px solid color($light-grey, 1);
+                padding-top: $gutter;
+              }
+            }
+            > div {
+              border-bottom: 1px solid color($light-grey, 1);
+              padding-bottom: $gutter;
+              > span, > p {
+                @include text-color($black);
+                @include type-setting(0);
+              }
+              > p {
+                margin-bottom: $gutter/2;
+                &:last-of-type {
+                  margin-bottom: 0;
+                }
+                > span:first-of-type {
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

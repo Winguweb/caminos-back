@@ -1,0 +1,13 @@
+- @with_links = true
+- @back_menu = t("page.public_header.assets")
+
+section
+  main
+    header
+      span class=@asset.category = t("categories.#{@asset.category}")
+      h1 = @asset.name
+    section
+      == cell('elements/map_show', @asset.neighborhood, features: [@asset]).(){ cell('mobile_elements/over_work_card', @asset) }
+    section
+      div
+        span = @asset.description

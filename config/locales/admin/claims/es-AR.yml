@@ -1,0 +1,8 @@
+es-AR:
+  claims:
+    create:
+      errors: "%{field}: Este campo es obligatorio"
+      geo_geometry: Ubicación en el mapa
+      geometry: Ubicación en el mapa
+      success: El reporte se creó exitosamente
+      category_list: Categoría

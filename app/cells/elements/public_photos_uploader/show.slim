@@ -1,0 +1,11 @@
+.form_photo
+  a.form_photo_cta id="btnAdd" Agregar Foto
+  input.form_photo_invisible_input type="file" name="claim[photos][]image"
+
+javascript:
+  $(function() {
+      new CDLV.Components['public_photos/uploader']({
+      el: $('.form_photo'),
+      owner: '#{owner}'
+    })
+  });

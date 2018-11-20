@@ -1,6 +1,6 @@
 CDLV.Components['mobile_elements/mobile_menu'] = Backbone.View.extend({
   events: {
-    'click button': 'showMenu',
+    'click .hamburguer-menu button': 'showMenu',
   },
   initialize: function(options) {
 

@@ -1,0 +1,41 @@
+#claims-new.claims-mobile {
+  .main-section{
+    .claim-header{
+      .page-header-cell{
+        .content{
+          left: 0;
+        }
+      }
+    }
+    .claims_form{
+      .page-section{
+        .work-parent,
+        .category-parent{
+          @include type-setting(-1);
+          display: block;
+        }
+        > section{
+          padding: $gutter;
+          left: 0;
+          margin: 0;
+          width: 90%;
+        }
+        .form-section{
+          .field select{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .submit-claim-cta{
+      input{
+        background: $blue;
+        color: $white;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        padding: $gutter;
+      }
+    }
+  }
+}

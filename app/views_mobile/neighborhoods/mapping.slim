@@ -1,0 +1,23 @@
+- @with_links = true
+- @back_menu = t("page.public_header.claims")
+
+main
+  section
+    == cell('elements/map_show', @neighborhood, features: @neighborhood.claims)
+
+  section
+    =link_to new_neighborhood_claim_path(@neighborhood), class:"floating-btn" do 
+      = image_tag image_path("icons/close-white.svg")
+
+  section
+  - if @neighborhood.urbanization
+    aside
+      div
+        section
+          nav
+          -if !@neighborhood.claims.empty?
+            == cell('elements/features_tree' , @neighborhood.claims)
+
+          -else
+            div
+              = t('.no_works')

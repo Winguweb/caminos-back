@@ -1,0 +1,54 @@
+- @with_links = true
+- @back_menu = t("page.public_header.claims")
+
+section
+  main
+    header
+      span class=@claim.category = t("categories.#{@claim.category}")
+      h1 = @claim.name
+    section
+      == cell('elements/map_show', @claim.neighborhood, features: [@claim]).(){ cell('mobile_elements/over_work_card', @claim) }
+    section
+      div
+        span = @claim.description
+    section
+      == cell('section/header', t('pictures.pictures'))
+      - if !@claim.public_photos.empty? 
+        == cell('elements/photos_gallery', @claim.public_photos)
+      - else
+        span.section-content no hay fotos 
+
+    section
+      == cell('section/header', "Obras asociadas")
+      - if @claim.work
+        = link_to @claim.work.name, neighborhood_work_path(@claim.neighborhood, @claim.work), class:'section-content associated-work-cta'
+      -else
+        span.section-content no hay una obra asociada
+
+  /main.page-section
+    section.with-border
+      == cell('elements/map_show', @claim.neighborhood, features: [@claim])
+    section.with-border
+      == cell('section/header', @claim.name, header_type: 'main')
+    section
+      div
+        span = t('claims.description')
+        span = @claim.description
+      .half-input
+        div
+          span = t('claims.category')
+          - binding.pry
+          - @claim.categories.each do |category|
+            span = t("categories.#{category}")
+      .half-input
+        div
+          span = t('claims.lookup_address')
+          span = @claim.lookup_address
+      -if @claim.work
+        .half-input
+          div
+            span = t('claims.work')
+            =link_to "#{@claim.work.name}", neighborhood_work_path(@claim.neighborhood, @claim.work), class:"claim-works" 
+    section 
+      div
+        == cell('elements/photos_gallery', @claim.public_photos)

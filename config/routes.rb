@@ -4,13 +4,19 @@ Rails.application.routes.draw do
   # ╭─ Public Accesible URL's / Path's
     root to: 'home#index'
 
+    get '/datos/descarga/:model', action: :download, controller: :home, as: :data_download, constraints: { model: /(Neighborhood|Work)/ }
+    get '/datasets' => 'home#datasets', as: :datasets
+
     resources :neighborhoods, only: %i[index show], path: "barrios" do
       resources :works, only: %i[show], path: "obras"
+      resources :assets, only: %i[new create index show]
+      resources :claims, only: %i[new create show]
       resources :meetings, only: %i[index show], path: "reuniones"
       member do
         # TODO: It should be routed to agreements controller
         get  :agreement, action: :show, controller: :agreements, path: "acuerdo"
         get :about, path: "acerca-del-barrio"
+        get :mapping
       end
     end
 
@@ -24,6 +30,19 @@ Rails.application.routes.draw do
     end
 
     get '/admin', to: redirect('/admin/dashboard')
+
+    # ╭─ AJAX Accesible URL's / Path's
+    namespace :ajax do
+
+      resources :claims, only: [] do
+
+        # Photos Resources routes
+        post '/photos/upload', action: :upload, controller: :public_photos
+        delete '/photos/:id', action: :destroy, controller: :public_photos, as: :photo
+      end
+
+    end
+    # ╰─ End of AJAX Accesible URL's / Path's
   # ╰─  End of Public Accesible URL's / Path's
 
 
@@ -73,6 +92,7 @@ Rails.application.routes.draw do
       resources :neighborhoods, :as => "neighborhoods" do
         resources :works
         resources :meetings
+        resources :assets, except: %i[new create]
         resource :agreement, except: %i[destroy]
       end
     end
@@ -81,6 +101,8 @@ Rails.application.routes.draw do
       resources :neighborhoods, :as => "neighborhoods" do
         get '/works/status/:status', action: :by_status, controller: :works
         get '/works/status', action: :index, controller: :works
+        get '/assets', action: :index, controller: :assets
+        get '/claims', action: :index, controller: :claims
       end
     end
   end

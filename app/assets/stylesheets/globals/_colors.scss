@@ -5,11 +5,17 @@ $black: #505050;
 $blue: #009EE2;
 $red: #FF3E25;
 $white: #FFFFFF;
-$yellow: #FFC649  ;
+$dark-white: #FAFAFA;
+$yellow: #FFC649;
 $fuchsia: #DF225B;
 $light-blue: #009EE2;
 $background-white: $white;
 $category-green: #92c461;
+
+$success: #00c851;
+$danger: #ff4444;
+$warning: #ffbb33;
+$info: #33b5e5;
 
 // TEXT COLORS
 $text-light-grey: $light-grey;
@@ -35,3 +41,7 @@ $status-done: $green;
 $status-pending: $yellow;
 $status-expired: $red;
 $status-proyected: $grey;
+
+$urbanization-in-process: $yellow;
+$urbanization-pending: $red;
+$urbanization-done: $green;

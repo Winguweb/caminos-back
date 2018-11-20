@@ -1,5 +1,5 @@
 class NeighborhoodsController < ApplicationController
-  before_action :check_for_mobile, only: %i[index show about]
+  before_action :check_for_mobile, only: %i[index show about mapping]
 
   def index
     @neighborhoods = Neighborhood.order('LOWER(name)')
@@ -25,6 +25,11 @@ class NeighborhoodsController < ApplicationController
     end
   end
 
+  def mapping
+    load_neighborhood_or_redirect
+    load_claims
+  end
+
   private
 
   def load_neighborhood_or_redirect
@@ -33,6 +38,18 @@ class NeighborhoodsController < ApplicationController
 
   def load_meetings
     @meetings = @neighborhood.meetings.order(date: :desc).group_by { |x| x.date.year }
+  end
+
+  def load_assets_and_claims
+    @assets_and_claims = load_assets + load_claims
+  end
+
+  def load_assets
+    @assets = @neighborhood.assets
+  end
+
+  def load_claims
+    @claims = @neighborhood.claims
   end
 
 end

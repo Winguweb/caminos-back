@@ -4,16 +4,19 @@ section
       div
         section
           nav
-            -if !@neighborhood.works.empty?
+            - if @neighborhood.works.present?
               == cell('elements/filter_toggle')
               == cell('elements/works_tree' , @neighborhood.works)
 
-            -else
+            - else
               div
                 = t('.no_works')
 
   main.page-section
     section
+      button.floating-btn type="button"
+        span.floating-btn-text 
+          = link_to t('.report'), new_neighborhood_claim_path(@neighborhood)
       == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
 
     - if !@neighborhood.urbanization

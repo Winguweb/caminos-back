@@ -1,20 +1,35 @@
 nav class="mobile-menu-cell back-menu #{with_links}"
   div
-    button type="button"
-      = link_to back_url do
-        span
+    = link_to back_url do
+      span
     span
       = "#{back_menu}"
   - unless !with_links || neighborhood.blank?
-    div
-      ul
-        - if neighborhood.urbanization
-          li
-            = link_to neighborhood_path(neighborhood), class: section=='neighborhoods-show' ? 'active' : nil do
-              span= t('.works')
-        li
-          = link_to agreement_neighborhood_path(neighborhood), class: section=='agreements-show' ? 'active' : nil do
-            span= t('.agreement')
-        li
-          = link_to about_neighborhood_path(neighborhood), class: section=='neighborhoods-about' ? 'active' : nil do
-            span= t('.about')
+    div.hamburguer-menu
+      button.should-hide type="button"
+        span
+      button.should-show type="button"
+        span
+    ul.should-show
+      li
+        = link_to neighborhood_path(neighborhood), class: section=='neighborhoods-show' ? 'active' : nil do
+          span=t('.works')
+      li
+        = link_to agreement_neighborhood_path(neighborhood), class: section=='agreements-show' ? 'active' : nil do
+          span=t('.agreement')
+      li
+        = link_to mapping_neighborhood_path(neighborhood), class: section=='neighborhoods-mapping' ? 'active' : nil do
+          span=t('.claims')
+      li
+        = link_to about_neighborhood_path(neighborhood), class: section=='neighborhoods-about' ? 'active' : nil do
+          span=t('.about')
+      li
+        = link_to neighborhood_assets_path(neighborhood), class: section=='assets-index' ? 'active' : nil do
+          span=t('.assets')
+
+javascript:
+  $(function() {
+    new CDLV.Components['mobile_elements/mobile_menu']({
+      el: $('.mobile-menu-cell')
+    })
+  });

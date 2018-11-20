@@ -5,7 +5,7 @@ header.page-public-header-cell class="#{'without-links' unless links}"
   div
     nav
       - unless neighborhood.blank?
-        = select_tag "neighborhood", options_from_collection_for_select(neighborhoods, "slug", "name", neighborhood.slug)
+        = select_tag 'neighborhood', options_for_select([['Todos los barrios', '_all']]) + grouped_neighborhoods
     - unless neighborhood.blank?
       ul
         - if neighborhood.urbanization
@@ -16,8 +16,15 @@ header.page-public-header-cell class="#{'without-links' unless links}"
           = active_link_to agreement_neighborhood_path(neighborhood) do
             span= t('.agreement')
         li
+          = active_link_to mapping_neighborhood_path(neighborhood) do
+            span= t('.claims')
+        li
           = active_link_to about_neighborhood_path(neighborhood) do
             span= t('.about')
+        - if neighborhood.assets.count >= 3
+          li 
+            = active_link_to neighborhood_assets_path(neighborhood) do
+             span= t('.assets')
 
 javascript:
   $(function() {
@@ -25,3 +32,4 @@ javascript:
       el: $('.page-public-header-cell')
     })
   });
+

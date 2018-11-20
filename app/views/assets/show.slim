@@ -1,0 +1,19 @@
+section
+  main.page-section
+    section.with-border
+      == cell('elements/map_show', @asset.neighborhood, features: [@asset])
+    section.with-border
+      == cell('section/header', @asset.name, header_type: 'main')
+    section
+      div
+        span = t('assets.description')
+        span = @asset.description
+      .half-input
+        div
+          span = t('assets.category')
+          - @asset.categories.each do |category|
+            span = t("categories.#{category}")
+      .half-input
+        div
+          span = t('assets.lookup_address')
+          span = @asset.lookup_address

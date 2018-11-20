@@ -7,6 +7,7 @@ module CurrentAndEnsureDependencyLoader
     neighborhood
     work
     document
+    claim
   ).freeze
   private_constant :MODELS_TO_LOAD
 

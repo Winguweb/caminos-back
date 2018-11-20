@@ -1,0 +1,23 @@
+.assets-table-cell
+  table style="width:100%"
+    tbody
+      - assets.each do |asset|
+        tr
+          td
+            = link_to asset_url(id: asset) do
+              =image_tag asset.category_icon
+          td
+            = link_to asset_url(id: asset) do
+              span class=asset.category
+                = t("categories.#{asset.category}")
+              span= asset.name
+              span= asset.lookup_address
+
+          td
+            = link_to asset_url(id: asset) do
+              span = t("verification.#{asset.verification}")
+
+          td
+            = link_to asset_url(id: asset) do
+              span= t('labels.updated_at')
+              span= l(asset.updated_at, format: :slashes)

@@ -1,106 +1,44 @@
 // $aside-heigth defined at _variables.scss
-@mixin mobile-menu() {
+@mixin mobile-menu {
   @include background-color($white);
+
   box-shadow: 0 2px 12px 0px color($grey, 0.2);
   height: $aside-height;
   overflow: auto;
+
   &.with-links {
-    height: $aside-links-height;
+    padding-bottom: $gutter/2;
   }
+
   &.with-links ~ main {
     height: calc(100% - #{$aside-links-height});
   }
+
   > div:first-of-type {
     text-align: right;
-    > button {
-      @include appearance(none);
-      background: none;
-      border: none;
-      padding: $gutter;
-      position: fixed;
-      right: 0;
-      top: 0;
-      z-index: 2001;
+
+    > a {
       span {
-        background-image: image-url("icons/menu.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        cursor: pointer;
         display: inline-block;
-        height: 14px;
-        margin: 0;
-        width: 24px;
-      }
-    }
-    > button:nth-of-type(2) {
-      display: none;
-      span {
-        background-image: image-url("icons/close.svg");
-        height: 20px;
-        width: 20px;
-      }
-    }
-  }
-  > ul {
-    @include background-color($white, 0.95);
-    @include shadow-down($light-shadow, 1);
-    display: none;
-    left: $gutter;
-    padding-bottom: $gutter*2;
-    padding-top: $gutter*2;
-    position: fixed;
-    right: 0;
-    right: 0;
-    top: 0;
-    z-index: 2000;
-    > li {
-      > a {
-        @include text-color($text-black, 1);
-        @include type-setting(5);
-        border-bottom: 2px solid transparent;
-        display: block;
-        margin-right: 0;
-        padding: $gutter $gutter*2;
-        &.active,
-        &:hover {
-          @include text-color($text-blue, 1);
-          border-bottom-color: color($text-blue, 1);
-        }
-      }
-    }
-  }
-  > ul + div {
-    margin-top: $aside-height;
-    > ul {
-      text-align: center;
-      > li {
-        @include grid-column(1 of 3, $no-gutter);
-        > a {
-          @include text-color($text-grey, 1);
-          @include type-setting(0);
-          border-bottom: 2px solid transparent;
-          display: block;
-          margin-right: 0;
-          padding: $gutter 0 calc(#{$gutter} - 6px);
-          text-align: center;
-          &.active,
-          &:hover {
-            @include text-color($text-blue, 1);
-            border-bottom-color: color($text-blue, 1);
-          }
-        }
       }
     }
   }
 }
 
-@mixin mobile-back-menu() {
+@mixin mobile-back-menu {
   overflow: hidden;
+
   > div:first-of-type {
     text-align: left;
-    > button {
+
+    > a {
+      padding: $gutter;
+      display: inline-block;
       position: static;
+
       span {
         background-image: image-url("icons/back.svg");
         height: 15px;
@@ -108,28 +46,106 @@
         width: 16px;
       }
     }
+
     > span {
       display: inline-block;
       padding: $gutter $gutter $gutter 0;
     }
   }
+
   > div:nth-of-type(2) {
-    margin-top: -4px;
+    > button {
+      @include appearance(none);
+
+      background: none;
+      border: none;
+      padding: $gutter;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 2001;
+
+      span {
+        background-image: image-url("icons/menu.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: inline-block;
+        height: 14px;
+        margin: 0;
+        vertical-align: middle;
+        width: 24px;
+      }
+    }
+
+    > button:nth-of-type(2) {
+      display: none;
+
+      span {
+        background-image: image-url("icons/close.svg");
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  > ul {
+    @include background-color($white, 0.95);
+
+    @include shadow-down($light-shadow, 1);
+
+    display: none;
+    left: $gutter;
+    padding-bottom: $gutter * 2;
+    padding-top: $gutter * 2;
+    position: fixed;
+    right: 0;
+    right: 0;
+    top: 0;
+    z-index: 2000;
+
+    > li {
+      > a {
+        @include text-color($text-black, 1);
+
+        @include type-setting(0);
+
+        display: block;
+        margin-right: 0;
+        padding: $gutter ($gutter * 2);
+
+        &.active,
+        &:hover {
+          @include text-color($text-blue, 1);
+        }
+      }
+    }
+  }
+
+  > ul + div {
+    margin-top: $aside-height;
+
     > ul {
       text-align: center;
+
       > li {
         @include grid-column(1 of 3, $no-gutter);
+
         > a {
           @include text-color($text-grey, 1);
+
           @include type-setting(0);
+
           border-bottom: 2px solid transparent;
           display: block;
           margin-right: 0;
           padding: $gutter 0 calc(#{$gutter} - 6px);
           text-align: center;
+
           &.active,
           &:hover {
             @include text-color($text-blue, 1);
+
             border-bottom-color: color($text-blue, 1);
           }
         }
@@ -138,10 +154,12 @@
   }
 }
 
-@mixin mobile-menu-big() {
+@mixin mobile-menu-big {
   @include background-color($white);
+
   height: $aside-full-height;
-  padding: $gutter*2;
+  padding: $gutter * 2;
+
   > div:first-of-type {
     background-image: image-url("logos/caminos_logo.svg");
     background-position: center;
@@ -150,6 +168,7 @@
     height: 100%;
     width: 100%;
   }
+
   > div:first-of-type {
     > button:first-of-type {
       span {
@@ -160,13 +179,13 @@
 }
 
 .mobile-menu-cell {
-  @include mobile-menu();
+  @include mobile-menu;
 }
 
 .mobile-menu-cell.back-menu {
-  @include mobile-back-menu();
+  @include mobile-back-menu;
 }
 
 #neighborhoods-index .mobile-menu-cell {
-  @include mobile-menu-big();
+  @include mobile-menu-big;
 }

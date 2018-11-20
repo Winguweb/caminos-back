@@ -21,7 +21,7 @@ CDLV.Components['elements/filter_toggle'] = Backbone.View.extend({
     clicked.parent().addClass('active')
   },
   _filterEmit: function(filter_name) {
-    CDLV.pubSub.trigger('filter-toggle:changed', filter_name)
+    CDLV.pubSub.trigger('filter-toggle:changed:status', filter_name)
     CDLV.pubSub.trigger('map-show:filter:status', filter_name)
   }
 })

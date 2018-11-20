@@ -1,0 +1,13 @@
+.toast-cell.toast-top.toast-hidden class="toast-#{type}"
+  div
+    - if title
+      strong = "#{title}"
+    - if message
+      p = "#{message}"
+
+javascript:
+  $(function() {
+    new CDLV.Components['elements/toast']({
+      el: $('.toast-cell')
+    })
+  });

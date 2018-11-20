@@ -8,11 +8,13 @@ class Neighborhood < ApplicationRecord
 
   scope :with_gdrive_folder, -> { where('extras ?| array[:keys]', keys: ['gdrive_folder']) }
 
+  has_many :assets
   has_many :meetings
   has_many :users, as: :entity
   has_many :photos, as: :owner
   has_many :works
   has_one :agreement
+  has_many :claims
 
   validates_presence_of :name, :description, :geo_geometry, :geometry, :abbreviation
 

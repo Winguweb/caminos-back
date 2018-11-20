@@ -5,15 +5,24 @@ es-AR:
         select_a_category: Seleccione una categoría
     categories:
       all_categories: Todas
-      public_services: Servicios Públicos
-      state_equipment: Equipamiento Estatal
-      public_spaces: Espacios Públicos
-      home: Vivienda
+      building_infrastructure: Edificio / Infraestructura
+      community_center: Centros comunitarios
+      cult: Culto
+      education: Educación
       energy: "Electricidad y Alumbrado"
-      health: Educación y Salud
+      food_kitchen: Comedores
+      health: Salud
+      health_ambulance: Salud y Ambulancias
+      home: Vivienda
       infrastructure: Equipamiento
+      light_electricity: Luz y Electricidad
       public: Calles y Plazas
+      public_organization: Organismos Públicos
+      public_services: Servicios Públicos
+      public_spaces: Espacios Públicos
       sewer: Cloacas y Pluviales
+      state_equipment: Equipamiento Estatal
+      streets_parks: Calles y Plazas
       trash: Basura
       water: Agua
     filer:
@@ -33,6 +42,14 @@ es-AR:
         error: Ocurrió un error al subir este archivo
     filter:
       no_results: No hay obras con estado
+    neighborhoods:
+      popup:
+        urbanized: En proceso de urbanización
+        unurbanized: Sin proceso de urbanización
+        links:
+          asset: Puntos de interés
+          claim: Reporte ciudadano
+          monitor: Monitoreá este barrio
     status:
       all_status: Todos
       done: Finalizada
