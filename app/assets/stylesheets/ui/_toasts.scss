@@ -1,0 +1,92 @@
+@mixin toast {
+  box-shadow: 0 2px 4px rgba(112, 112, 112, 0.2);
+  color: $white;
+  left: 0;
+  max-width: none;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  transform: translateY(0%);
+  transition: transform 600ms linear, opacity 600ms linear;
+  z-index: 3000;
+
+  &.toast-success {
+    background-color: color($success, 1);
+
+    > div {
+      background-image: image-url("icons/success.svg");
+    }
+  }
+
+  &.toast-warning {
+    background-color: color($warning, 1);
+
+    > div {
+      background-image: image-url("icons/warning.svg");
+    }
+  }
+
+  &.toast-danger {
+    background-color: color($danger, 1);
+
+    > div {
+      background-image: image-url("icons/danger.svg");
+    }
+  }
+
+  &.toast-info {
+    background-color: color($info, 1);
+
+    > div {
+      background-image: image-url("icons/info.svg");
+    }
+  }
+
+  &.toast-hidden {
+    opacity: 0;
+  }
+
+  &.toast-visible {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+
+  &.toast-top {
+    bottom: auto;
+    top: 0;
+
+    &.toast-hidden {
+      transform: translateY(-100%);
+    }
+  }
+
+  &.toast-bottom {
+    bottom: 0;
+    top: auto;
+
+    &.toast-hidden {
+      transform: translateY(100%);
+    }
+  }
+
+  > div {
+    @include type-setting(-1);
+
+    background-position: center left $gutter;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    border-top: 4px solid transparent;
+    display: inline-block;
+    padding: $gutter;
+    padding-left: calc(#{$gutter * 2} + 30px);
+
+    > strong {
+      margin-right: $gutter;
+    }
+
+    > p {
+      display: inline-block;
+    }
+  }
+}

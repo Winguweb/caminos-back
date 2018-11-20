@@ -45,7 +45,12 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
       main
         .main-section
           =yield
-      / == cell('page/public_footer')
+
+      - if error_message = flash[:error]
+        == cell('elements/toast', {message: flash[:error].first, type: 'danger'})
+      - if error_message = flash[:success]
+        == cell('elements/toast', {message: flash[:success].first, type: 'success'})
+
 
       = yield :before_js
       = javascript_include_tag 'admin/application'

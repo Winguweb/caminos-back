@@ -7,8 +7,10 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+
   a {
     @include text-color($text-blue, 1);
+
     text-decoration: none;
   }
 }
@@ -23,39 +25,56 @@ h1, h2 {
   font-family: $font-heading;
 }
 
-body{
+body {
   @include type-setting(0);
+
   @include text-color($text-black);
 
-  @if $development { @include grid-visual };
+  @if $development {
+    @include grid-visual;
+  }
 
   @include grid-media($wide-grid) {
-    @if $development { @include grid-visual };
+    @if $development {
+      @include grid-visual;
+    }
   }
+
 
   @include grid-media($tablet-grid) {
-    @if $development { @include grid-visual };
+    @if $development {
+      @include grid-visual;
+    }
   }
 
+
   @include grid-media($mobile-grid) {
-    @if $development { @include grid-visual };
+    @if $development {
+      @include grid-visual;
+    }
   }
 }
 
-body > main {
-  @include grid-column(16);
-  .main-header, .main-section{
-    @include grid-collapse;
-  }
-  .main-header{
-    @include shadow-down($light-shadow, 1);
-    margin-bottom: $gutter*3;
-    padding: $gutter*1.5 0 0;
+body {
+  > main {
+    @include grid-column(16);
+
+    .main-header, .main-section {
+      @include grid-collapse;
+    }
+
+    .main-header {
+      @include shadow-down($light-shadow, 1);
+
+      margin-bottom: $gutter * 3;
+      padding: ($gutter * 1.5) 0 0;
+    }
   }
 }
 
 .half-input {
   @include grid-collapse;
+
   > div {
     @include grid-column(1 of 2);
   }
@@ -63,8 +82,10 @@ body > main {
 
 .two-thirds-one-third-input {
   @include grid-collapse;
+
   > div {
     @include grid-column(2 of 3);
+
     & + div {
       @include grid-column(1 of 3);
     }
@@ -72,10 +93,10 @@ body > main {
 }
 
 .section-with-gutter {
-  margin-top: $gutter*2;
+  margin-top: $gutter * 2;
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
