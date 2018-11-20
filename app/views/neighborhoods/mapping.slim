@@ -3,7 +3,7 @@ section
     div
       section
         nav
-          =  "Si tenés problemas con los servicios públicos u obras en el barrio podes reportarlo acá "
+          div =  "Si tenés problemas con los servicios públicos u obras en el barrio podes reportarlo acá "
 
           - if @claims.present?
             == cell('elements/features_tree', @claims)

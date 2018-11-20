@@ -4,7 +4,7 @@
 
 main
   section
-  == cell('elements/map_show', @neighborhood, features: @neighborhood.assets)
+  == cell('elements/map_show', @neighborhood, features: @assets)
 
   section
     =link_to new_neighborhood_asset_path(@neighborhood), class:"floating-btn" do

@@ -226,6 +226,8 @@
       > a {
         @include small-text-button;
 
+        background: color($light-blue, 0.1);
+
         @include type-setting(-3);
 
         & + a {
