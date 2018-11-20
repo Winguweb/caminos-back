@@ -58,7 +58,7 @@
               padding: $gutter/2 $gutter;
             
               a:before{
-                content: url('icons/close-white.svg');
+                content: image-url('icons/close-white.svg');
                 display: inline-block;
                 transform:rotate(45deg) scale(.6, .6);
                 margin-right: 10px;
