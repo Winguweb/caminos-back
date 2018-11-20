@@ -9,9 +9,11 @@
     border-radius: 50px;
     background-color: $blue;
     color: $white;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 0 2px 4px rgba(112,112,112,0.5);
     padding: $gutter/2 $gutter;
-  
+    border: none;
+    outline: none;
+    
     a:before{
       content: image-url('icons/close-white.svg');
       display: inline-block;
@@ -42,7 +44,9 @@
     height: 50px;
     background-color: $blue;
     color: $white;
-    box-shadow: 2px 2px 3px #999;
+    box-shadow: 0 2px 4px rgba(112,112,112,0.5);
+    border: none;
+    outline: none;
     img{
       padding: 15px;
       transform:rotate(45deg) scale(.6, .6);

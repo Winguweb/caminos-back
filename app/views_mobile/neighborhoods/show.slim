@@ -1,5 +1,5 @@
 - @with_links = true
-- @back_menu = t("page.public_header.agreement")
+- @back_menu = t("page.public_header.works")
 - @back_url = neighborhoods_path
 main
   div
@@ -12,7 +12,9 @@ main
                 == cell('elements/filter_toggle')
   section
     == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
-
+  section
+    =link_to new_neighborhood_claim_path(@neighborhood), class:"floating-btn" do 
+      = image_tag image_path("icons/close-white.svg") 
     main.page-section
 
       - if !@neighborhood.urbanization
