@@ -33,7 +33,7 @@ es-AR:
     description: Descripcion
     geo_geometry: Geometría Geoespacial
     geometry: Geometría
-    header_title: Mapeo Participativo
+    header_title: Puntos de interés
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
