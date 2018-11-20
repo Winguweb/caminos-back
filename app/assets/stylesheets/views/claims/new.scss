@@ -4,6 +4,18 @@
   }
   
   .claims_form{
+    .page-section{
+      .work-parent,
+      .category-parent{
+        @include type-setting(-1);
+        display: block;
+      }
+      .half-input{
+        select{
+          width: 80%;
+        }
+      }
+    }
     .photo-updloader-container{
       .form_photo_cta {
         position: absolute;

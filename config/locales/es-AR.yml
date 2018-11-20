@@ -70,9 +70,10 @@ es-AR:
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
-    select_a_category: Seleccione una categoría
-    select_a_work: Seleccione una obra
+    select_a_category: "Seleccione una categoría:"
+    select_a_work: "Si tu reclamo esta vinculado con una obra, seleccionala aquí:"
     submit: Guardar
+    work: Obras
   documents:
     documents: Documentos
   entities:
