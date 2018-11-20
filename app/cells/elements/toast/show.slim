@@ -1,11 +1,13 @@
-.toast-cell.toast-bottom class="toast-#{type}"
+.toast-cell.toast-top.toast-hidden class="toast-#{type}"
   div
-    strong = "#{title}"
-    p = "#{message}"
+    - if title
+      strong = "#{title}"
+    - if message
+      p = "#{message}"
 
 javascript:
   $(function() {
     new CDLV.Components['elements/toast']({
-      el: $('.toast')
+      el: $('.toast-cell')
     })
   });

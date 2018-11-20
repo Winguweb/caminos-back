@@ -16,6 +16,8 @@ class AssetsController < ApplicationController
 
     if service.success?
       redirect_to neighborhood_assets_path
+      flash.now[:success] = [t('.success')]
+      flash.keep
     else
       flash.now[:error] =  load_errors(service.errors)
       @categories = Asset.categories

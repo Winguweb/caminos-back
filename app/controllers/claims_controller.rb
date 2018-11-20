@@ -1,7 +1,7 @@
 class ClaimsController < ApplicationController
   include CurrentAndEnsureDependencyLoader
   before_action :check_for_mobile, only: %i[show new]
-  
+
   helper_method :current_neighborhood
 
    def create
@@ -9,6 +9,8 @@ class ClaimsController < ApplicationController
      service = CreateClaim.call(current_neighborhood, claim_params)
      # service = CreateClaim.call(current_neighborhood, claim_params,some_work)
     if service.success?
+      flash.now[:success] = [t('.success')]
+      flash.keep
       redirect_to mapping_neighborhood_path(current_neighborhood)
     else
       flash.now[:error] =  load_errors(service.errors)

@@ -1,34 +1,66 @@
 @mixin toast($color: $white) {
   background-color: $white;
   border-radius: 4px;
-  box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.1785);
+  box-shadow: 0 2px 4px rgba(112, 112, 112, 0.2);
   max-width: 300px;
-  position: absolute;
+  position: fixed;
   right: $gutter;
+  text-align: center;
   top: $gutter;
+  transform: translateY(0%);
+  transition: transform 600ms linear, opacity 600ms linear;
   z-index: 3000;
 
-  &.toast-success > div {
+  &.toast-success {
     border-color: $success;
+
+    > div {
+      background-image: image-url("icons/success.svg");
+    }
   }
 
-  &.toast-warning > div {
+  &.toast-warning {
     border-color: $warning;
+
+    > div {
+      background-image: image-url("icons/warning.svg");
+    }
   }
 
-  &.toast-danger > div {
+  &.toast-danger {
     border-color: $danger;
+
+    > div {
+      background-image: image-url("icons/danger.svg");
+    }
   }
 
-  &.toast-info > div {
+  &.toast-info {
     border-color: $info;
+
+    > div {
+      background-image: image-url("icons/info.svg");
+    }
+  }
+
+  &.toast-hidden {
+    opacity: 0;
+  }
+
+  &.toast-visible {
+    opacity: 1;
   }
 
   > div {
     @include type-setting(-1);
 
+    background-position: center left $gutter;
+    background-repeat: no-repeat;
+    background-size: 30px;
     border-top: 4px solid transparent;
+    display: inline-block;
     padding: $gutter;
+    padding-left: calc(#{$gutter * 2} + 30px);
 
     > strong {
       margin-right: $gutter;
@@ -45,6 +77,7 @@
 
   background-color: $color;
   border-radius: 0;
+  color: $white;
   left: 0;
   max-width: none;
   right: 0;
@@ -54,29 +87,42 @@
     border-width: 0;
   }
 
-  &.toast-success > div {
-    background-color: color($success, 0.5);
+  &.toast-visible {
+    opacity: 1;
+    transform: translateY(0%);
   }
 
-  &.toast-warning > div {
-    background-color: color($warning, 0.5);
+  &.toast-success {
+    background-color: color($success, 1);
   }
 
-  &.toast-danger > div {
-    background-color: color($danger, 0.5);
+  &.toast-warning {
+    background-color: color($warning, 1);
   }
 
-  &.toast-info > div {
-    background-color: color($info, 0.5);
+  &.toast-danger {
+    background-color: color($danger, 1);
+  }
+
+  &.toast-info {
+    background-color: color($info, 1);
   }
 
   &.toast-top {
     bottom: auto;
     top: 0;
+
+    &.toast-hidden {
+      transform: translateY(-100%);
+    }
   }
 
   &.toast-bottom {
     bottom: 0;
     top: auto;
+
+    &.toast-hidden {
+      transform: translateY(100%);
+    }
   }
 }
