@@ -61,41 +61,7 @@
 
             height: 100%;
             left: auto;
-
-            .floating-btn {
-              background-color: $blue;
-              border: none;
-              border-radius: 50px;
-              bottom: 0;
-              box-shadow: 0 2px 4px rgba(112, 112, 112, 0.5);
-              color: $white;
-              display: flex;
-              margin: $gutter * 2;
-              padding: ($gutter / 2) $gutter;
-              position: absolute;
-              right: 0;
-              z-index: 2001;
-
-              a:before {
-                content: url("icons/close-white.svg");
-                display: inline-block;
-                margin-right: 10px;
-                transform: rotate(45deg) scale(0.6, 0.6);
-              }
-
-              a {
-                color: $white;
-                font-size: 15px;
-                font-weight: bold;
-                text-decoration: none;
-                text-transform: uppercase;
-              }
-            }
-
-            .floating-btn:hover {
-              opacity: .8;
-            }
-
+            @include floating_button();
             .map-show-cell {
               @include grid-collapse;
 
