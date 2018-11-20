@@ -44,36 +44,7 @@
             @include grid-column(16);
             height: 100%;
             left: auto;
-            .floating-btn{
-              display: flex;
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              z-index: 2001;
-              margin: $gutter * 2;
-              border-radius: 50px;
-              background-color: $blue;
-              color: $white;
-              box-shadow: 2px 2px 3px #999;
-              padding: $gutter/2 $gutter;
-            
-              a:before{
-                content: image-url('icons/close-white.svg');
-                display: inline-block;
-                transform:rotate(45deg) scale(.6, .6);
-                margin-right: 10px;
-              }
-              a {
-                font-size: 15px;
-                font-weight: bold;
-                color: $white;
-                text-decoration: none;
-                text-transform: uppercase;
-              }
-            }
-            .floating-btn:hover{
-              opacity: .8;
-            }
+            @include floating_button();
             .map-show-cell {
               @include grid-collapse;
               height: 100%;
