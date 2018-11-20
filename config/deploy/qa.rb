@@ -1,4 +1,5 @@
 set :stage, :qa
+
 set :branch, :staging
 
 server 'qa.caminos.wingu.ong', user: 'deploy', roles: %w{ app }

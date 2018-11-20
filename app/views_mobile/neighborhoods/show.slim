@@ -12,7 +12,10 @@ main
                 == cell('elements/filter_toggle')
   section
     == cell('elements/map_show', @neighborhood, features: @neighborhood.works)
-
+  section.floatin-button-container
+    button.floating-btn type="button"
+        span.floating-btn-text 
+          = link_to t('.report'), new_neighborhood_claim_path(@neighborhood) 
     main.page-section
 
       - if !@neighborhood.urbanization

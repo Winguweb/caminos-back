@@ -20,15 +20,15 @@
 
       .half-input
         .field
-          label
-            =f.label :work_id, "obra"
-          span.work-parent = t('claims.select_a_work')
-          = f.select :work_id, current_neighborhood.works.map {|w| [w.name, w.id]}, {include_blank: true}
-        .field
           label.required
             = f.label :category_list, t('claims.category')
           span.category-parent = t("claims.select_a_category")
           = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
+        .field
+          label
+            =f.label :work_id, t('claims.work')
+          span.work-parent = t('claims.select_a_work')
+          = f.select :work_id, current_neighborhood.works.map {|w| [w.name, w.id]}, {include_blank: true}
 
     section
       == cell('section/header', t('claims.map_location'))
