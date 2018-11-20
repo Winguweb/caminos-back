@@ -1,7 +1,7 @@
 class Asset < ApplicationRecord
 
   extend FriendlyId
-  friendly_id :name, use: %i[slugged finders history]
+  friendly_id :slug_candidates, use: %i[slugged finders history]
   enum verification: [:verification_pending, :verification_rejected, :verification_approved]
 
   belongs_to :neighborhood
@@ -57,6 +57,14 @@ class Asset < ApplicationRecord
 
   def category_icon_shadow
     category.blank? ? 'icons/category-asset-editable.svg' : "icons/category-asset-#{category}-shadow.svg"
+  end
+
+  def slug_candidates
+    [
+        :name,
+        [:name, :description],
+        [:name, :description, :id]
+    ]
   end
 
 end

@@ -1,6 +1,6 @@
 class Claim < ApplicationRecord
   extend FriendlyId
-  friendly_id :name, use: %i[slugged finders history]
+  friendly_id :slug_candidates, use: %i[slugged finders history]
 
   belongs_to :neighborhood
   belongs_to :work, optional: true
@@ -53,5 +53,13 @@ class Claim < ApplicationRecord
 
   def category_icon_shadow
     'icons/category-claim-shadow.svg'
+  end
+
+  def slug_candidates
+    [
+        :name,
+        [:name, :description],
+        [:name, :description, :id]
+    ]
   end
  end
