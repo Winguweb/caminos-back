@@ -7,7 +7,7 @@
   overflow: auto;
 
   &.with-links {
-    padding-bottom: $gutter;
+    padding-bottom: $gutter/2;
   }
 
   &.with-links ~ main {
@@ -17,7 +17,7 @@
   > div:first-of-type {
     text-align: right;
 
-    > button {
+    > a {
       span {
         background-position: center;
         background-repeat: no-repeat;
@@ -34,8 +34,9 @@
   > div:first-of-type {
     text-align: left;
 
-    > button {
+    > a {
       padding: $gutter;
+      display: inline-block;
       position: static;
 
       span {

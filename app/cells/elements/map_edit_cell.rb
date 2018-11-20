@@ -23,7 +23,7 @@ class Elements::MapEditCell < Cell::ViewModel
     case options[:editable][:geometry].geometry_type
     when RGeo::Feature::Point
       {
-        coordinates: [options[:editable].geometry.coordinates],
+        coordinates: [options[:editable].geometry.coordinates].map(&:reverse),
         className: 'editable',
         type: 'Point',
       }.to_json

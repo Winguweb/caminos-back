@@ -1,0 +1,37 @@
+.asset-form
+
+  = form_for ['admin', current_neighborhood, @asset], html: { class: 'form', multipart: true } do |f|
+    .page-section
+      section
+        == cell('section/header',t('assets.asset_detail'), links: [{ title: t('assets.cancel'), url:neighborhood_assets_path(current_neighborhood) }, { title: t('assets.submit'), submit: true }])
+        .field
+          label.required
+            = f.label :name, t('assets.name')
+          =f.text_field :name, required: true
+        .field
+          label.required
+            =f.label :description, t('assets.description')
+          =f.text_area :description, required: true
+        .field
+          label.required
+            = f.label :lookup_address, t('assets.lookup_address')
+          =f.text_field :lookup_address, required: true
+        .half-input
+          .field
+            label.required
+              = f.label :category_list, t('assets.category')
+            span.category-parent = t('assets.select_a_category')
+
+            = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
+          .field
+            label.required
+              = f.label :verification, t('assets.verification')
+            span.verification-parent = t('assets.select_a_verification_status')
+
+            = f.select :verification, @verifications.collect {|v| [t("verifications.#{v}"), v]}, { include_blank: true }, required: true
+
+      section
+        == cell('section/header', t('assets.map_location'))
+        == cell('elements/map_edit', current_neighborhood, controls: ['marker'], name: 'asset', editable: @asset)
+        input type="hidden" name="asset[geometry]" class="geometry-field"
+        input type="hidden" name="asset[geo_geometry]" class="geo_geometry-field"

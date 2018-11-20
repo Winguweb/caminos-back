@@ -51,7 +51,7 @@ class AssetsController < ApplicationController
   end
 
   def load_assets
-    @assets = current_neighborhood.assets
+    @assets = current_neighborhood.assets.verification_approved
   end
 
   def asset_params
