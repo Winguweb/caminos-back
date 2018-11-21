@@ -1,9 +1,10 @@
 body {
-  &.single-header{
+  &.single-header {
     > header {
       box-shadow: 0 5px 5px -3px $light-shadow;
     }
   }
+
   > header {
     padding: $gutter;
     z-index: 0;
@@ -11,9 +12,13 @@ body {
     @include grid-media($tablet-grid) {
       @include grid-column(1 of 1);
     }
+
+
     > nav {
       @include grid-container;
+
       @include grid-collapse;
+
       > ul {
         > li {
           display: inline-block;
@@ -21,9 +26,10 @@ body {
         }
       }
 
-      .site-logo-wrapper{
+      .site-logo-wrapper {
         @include grid-column(3 of 12, $no-gutter);
       }
+
       .site-logo {
         background: transparent image-url("admin-logo.svg") no-repeat;
         background-size: contain;
@@ -33,20 +39,26 @@ body {
         overflow: hidden;
         padding: 0px;
         vertical-align: top;
-        span{
+
+        span {
           display: inline-block;
+
           @include hide-text;
         }
       }
+
       /* Links */
       .menu {
         @include grid-column(12 of 16);
+
         li.item {
           > a {
             @include text-color($text-grey, 1);
+
             display: inline-block;
             margin-right: $gutter;
-            padding: $gutter/2 0;
+            padding: ($gutter / 2) 0;
+
             &.active,
             &:hover {
               @include text-color($text-blue, 1);
@@ -54,15 +66,17 @@ body {
           }
         }
       }
+
       .actions {
         text-align: right;
+
         @include grid-column(4 of 16);
       }
     }
   }
 }
 
-@mixin user-menu() {
+@mixin user-menu {
   display: inline-block;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -70,6 +84,7 @@ body {
   user-select: none;
   vertical-align: top;
   width: 61px;
+
   > div {
     display: block;
     margin: 0 0 $vgutter 0;
@@ -77,25 +92,28 @@ body {
 
     > div {
       @include shadow($normal-shadow, 1);
+
       border-radius: 100%;
       float: right;
       overflow: hidden;
       vertical-align: top;
     }
   }
+
   > i {
     display: none;
     height: 10px;
     overflow: hidden;
     position: absolute;
     right: 26px;
-    top: calc(45px + #{$vgutter*3});
+    top: calc(45px + #{$vgutter * 3});
     transform: translateY(-100%);
     width: 20px;
     z-index: 101;
+
     &:before {
       background-color: $white;
-      box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
       content: '';
       display: block;
       height: 10px;
@@ -106,35 +124,42 @@ body {
       width: 10px;
     }
   }
+
   > ul {
     @include z-level(1);
+
     @include grid-column(3);
+
     background-color: $background-white;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     display: none;
     margin: 0;
-    padding: $gutter/2 0;
+    padding: ($gutter / 2) 0;
     position: absolute;
     right: $gutter;
     text-align: left;
-    top: calc(45px + #{$vgutter*3});
+    top: calc(45px + #{$vgutter * 3});
+
     > li {
       > a, input {
         @include text-color($text-grey, 1);
+
         background-color: $white;
-        border:none;
+        border: none;
         box-sizing: border-box;
         display: block;
-        margin: 0; // Todos los a tienen margin right, por que?
-        padding: $gutter/2 $gutter;
+        margin: 0;
+
+        // Todos los a tienen margin right, por que?
+        padding: ($gutter / 2) $gutter;
         text-align: left;
         white-space: nowrap;
         width: 100%;
 
         &:hover {
           @include background-color($text-grey, 0.1);
-          @include text-color($text-black, 1);
 
+          @include text-color($text-black, 1);
         }
       }
     }
@@ -142,6 +167,7 @@ body {
 
   &.user-menu--opened {
     overflow: visible;
+
     > i, > ul {
       display: block;
     }
@@ -151,7 +177,3 @@ body {
 .user-menu {
   @include user-menu;
 }
-
-
-
-

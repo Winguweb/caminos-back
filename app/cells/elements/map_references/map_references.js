@@ -74,6 +74,7 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     if (['MultiPolygon', 'Polygon'].indexOf(feature.geometry.type) > -1 ) {
       var icon = new L.divIcon({
         html: '<div><p class="marker-name ' + feature.properties.className + '">' + feature.properties.name + '</p><p class="reference-marker ' + feature.properties.className + '"><span>' + feature.properties.abbreviation + '</span></p></div>',
+        iconSize: [41, 41],
       })
       var centroid = turf.centroid(feature);
       var coordinates = new L.latLng(

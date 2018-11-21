@@ -1,35 +1,47 @@
-#users-show{
-  .user-info{
+#users-show {
+  .user-info {
     @include grid-collapse;
+
     @include grid-container;
-    .user-avatar{
+
+    .user-avatar {
       @include grid-column(4);
-      .avatar{
+
+      .avatar {
         border-radius: 75px;
         height: 120px;
         margin: 0px auto;
         width: 120px;
       }
+
       .fallback {
         font-size: 2.5em;
       }
     }
-    .information{
+
+    .information {
       @include grid-column(12);
-      h1{
+
+      h1 {
         @include type-setting(3);
-        margin-bottom: $vgutter/2;
+
+        margin-bottom: $vgutter / 2;
       }
-      .entity{
+
+      .entity {
         @include type-setting(5);
       }
-      .attributes{
-        @include display(flex);
+
+      .attributes {
+        display: flex;
         margin: $gutter 0;
+
         > div {
-          @include flex-grow(1);
-          .label{
+          flex-grow: 1;
+
+          .label {
             @include text-color($text-grey);
+
             @include type-setting(-1);
           }
         }

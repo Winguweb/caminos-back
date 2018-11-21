@@ -3,8 +3,6 @@
 
   @include type-setting(-1);
 
-  @include user-select(none);
-
   background: $color;
   border: 2px solid $color;
   border-radius: 2px;
@@ -17,6 +15,7 @@
   padding: ($gutter / 2) $gutter;
   text-align: center;
   text-transform: uppercase;
+  user-select: none;
 
   &:hover {
     opacity: 0.9;

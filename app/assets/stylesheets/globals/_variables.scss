@@ -1,32 +1,19 @@
 // Breakpoints
-$small-screen: em(640);
-$medium-screen: em(860);
-$large-screen: em(1016);
-$xlarge-screen: em(1200);
+$small-screen: 640px;
+$medium-screen: 860px;
+$large-screen: 1016px;
+$xlarge-screen: 1200px;
 $gutter: 1rem;
 $vgutter: 0.5rem;
 
 // Neat configs
-$mobile-grid:(
-  columns: 4,
-  gutter: $gutter,
-  media: "(max-width: #{$small-screen})",
-);
-$tablet-grid:(
-  columns: 8,
-  gutter: $gutter,
-  media: "(max-width: #{$medium-screen})",
-);
-$desktop-grid:(
-  columns: 12,
-  gutter: $gutter,
-  media: "(max-width: #{$large-screen})",
-);
-$wide-grid:(
-  columns: 16,
-  gutter: $gutter,
-  media: $xlarge-screen,
-);
+$mobile-grid: (columns: 4, gutter: $gutter, media: "(max-width: #{$small-screen})");
+
+$tablet-grid: (columns: 8, gutter: $gutter, media: "(max-width: #{$medium-screen})");
+
+$desktop-grid: (columns: 12, gutter: $gutter, media: "(max-width: #{$large-screen})");
+
+$wide-grid: (columns: 16, gutter: $gutter, media: $xlarge-screen);
 
 $neat-grid: $wide-grid;
 
