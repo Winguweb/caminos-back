@@ -33,6 +33,7 @@ class Asset < ApplicationRecord
     health
     infrastructure
     public_organization
+    public_spaces
   ].freeze
 
 
