@@ -13,11 +13,11 @@ main
   - if @neighborhood.urbanization
     aside
       div
-        section
+        section.content-section
           nav
           -if !@neighborhood.claims.empty?
             == cell('elements/features_tree' , @neighborhood.claims)
 
           -else
-            div
-              = t('.no_works')
+            .claims-empty-state
+              span = t('.no_data_mobile')

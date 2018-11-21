@@ -87,6 +87,8 @@ es-AR:
   labels:
     created_at: Creado en
     updated_at: Actualizado el
+  mapping:
+    no_data: loloo
   meetings:
     delete: Eliminar Reunión
     delete_info_html: "Si elimina esta reunión no podrá ser recuperada."

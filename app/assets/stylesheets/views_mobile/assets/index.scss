@@ -1,3 +1,9 @@
 #assets-index.assets-mobile{
   @include floating-button-mobile();
+  .assets-empty-state{
+    text-align: center;
+    padding:$gutter;
+    font-weight: bold;
+    align-self: center;
+  }
 }

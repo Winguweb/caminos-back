@@ -9,7 +9,8 @@ section
             == cell('elements/features_tree', @claims)
 
           - else
-            div = t('.no_data')
+            .empty-content
+              span = t('.no_data')
 
   main.page-section
     section
