@@ -8,6 +8,12 @@ class Asset < ApplicationRecord
 
   acts_as_taggable_on :categories
 
+  scope :within, -> (point) {
+    lat = point.coordinates[0]
+    lng = point.coordinates[1]
+    where("ST_Distance(geometry, 'POINT(#{lat} #{lng})') = 0" )
+  }
+
   validates_presence_of(
     :category_list,
     :description,
@@ -28,6 +34,7 @@ class Asset < ApplicationRecord
     infrastructure
     public_organization
   ].freeze
+
 
   private_constant :CATEGORIES
 

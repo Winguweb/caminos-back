@@ -172,10 +172,14 @@ ASSETS = [
 
 ASSETS.each do | asset |
   asset = Asset.new(asset)
+
+  next if Asset.within(asset.geometry).where(name: asset.name).present?
+
   asset.neighborhood = Neighborhood.all.select do | neighborhood |
     geographic_factory = RGeo::Geographic.spherical_factory
     asset_point = geographic_factory.point(asset.geometry.coordinates[0], asset.geometry.coordinates[1])
     neighborhood.geometry.intersects? asset_point
   end.first
+
   asset.save! if asset.neighborhood.present?
 end
