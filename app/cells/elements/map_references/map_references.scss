@@ -99,12 +99,6 @@
   }
 
   p.marker-name {
-    @include transform(translate3d(calc(-50% - 7px), -50%, 0));
-
-    @include background-color($white, 0.65);
-
-    @include type-setting(-1);
-
     border-radius: 2px;
     box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
     left: 50%;
@@ -112,7 +106,12 @@
     padding: ($vgutter / 4) ($gutter / 2);
     position: absolute;
     top: calc(#{$gutter * 2} - #{$border});
+    transform: translate3d(-50%, $gutter, 0);
     white-space: nowrap;
+
+    @include background-color($white, 0.65);
+
+    @include type-setting(-1);
 
     &.unurbanized {
       display: none;
@@ -122,8 +121,6 @@
   }
 
   p.reference-marker {
-    @include transform(translate3d(-50%, -50%, 0));
-
     border: $border solid $blue;
     border-radius: 100%;
     box-sizing: content-box;
@@ -150,25 +147,26 @@
     > span {
       @include text-color($white, 1);
 
-      @include transform(translate3d(-50%, -50%, 0));
-
       font-size: 13px;
       font-weight: bold;
       left: 50%;
       position: absolute;
       text-transform: uppercase;
       top: 50%;
+      transform: translate3d(-50%, -50%, 0);
     }
 
     &.unurbanized {
       border: none;
-      height: $gutter / 1.5;
-      width: $gutter / 1.5;
+      height: $small-outer-diameter;
+      width: $small-outer-diameter;
 
       &::before {
         background-color: transparent;
         border: 2px solid color($blue);
         height: 100%;
+        left: 0;
+        top: 0;
         width: 100%;
       }
 
@@ -187,7 +185,7 @@
     min-width: 235px;
     padding: $gutter;
     position: absolute;
-    transform: translate3d(10px, -50%, 0);
+    transform: translate3d(30px, -50%, 0);
 
     > p {
       line-height: 1em;

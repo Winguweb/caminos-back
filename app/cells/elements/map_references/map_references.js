@@ -43,8 +43,9 @@ CDLV.Components['map_references'] = Backbone.View.extend({
       var assetLinkTag = '<a href="' + feature.properties.asset_url + '">' + assetLinkLegend + '</a>'
       var claimLinkTag = '<a href="' + feature.properties.claim_url + '">' + claimLinkLegend + '</a>'
       var linksTag = '<div>' + monitorLinkTag + '</div><div>' + assetLinkTag + claimLinkTag + '</div>'
+      var xOffset = urbanizationProcess == 'urbanized' ? 0 : -15
       var popupOptions = {
-        position: {left: evt.containerPoint.x + 'px', top: evt.containerPoint.y + 'px'},
+        position: {left: evt.containerPoint.x + xOffset + 'px', top: evt.containerPoint.y + 'px'},
         html: nameTag + linksTag
       }
       _this.showPopup(popupOptions)
@@ -72,8 +73,10 @@ CDLV.Components['map_references'] = Backbone.View.extend({
   onEachFeature: function(feature, layer){
     var _this = this
     if (['MultiPolygon', 'Polygon'].indexOf(feature.geometry.type) > -1 ) {
+      var size = feature.properties.className == 'urbanized' ? [41, 41] : [11, 11]
       var icon = new L.divIcon({
         html: '<div><p class="marker-name ' + feature.properties.className + '">' + feature.properties.name + '</p><p class="reference-marker ' + feature.properties.className + '"><span>' + feature.properties.abbreviation + '</span></p></div>',
+        iconSize: size,
       })
       var centroid = turf.centroid(feature);
       var coordinates = new L.latLng(

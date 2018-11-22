@@ -7,7 +7,7 @@
   overflow: auto;
 
   &.with-links {
-    padding-bottom: $gutter/2;
+    padding-bottom: $gutter / 2;
   }
 
   &.with-links ~ main {
@@ -35,8 +35,8 @@
     text-align: left;
 
     > a {
-      padding: $gutter;
       display: inline-block;
+      padding: $gutter;
       position: static;
 
       span {
@@ -55,8 +55,7 @@
 
   > div:nth-of-type(2) {
     > button {
-      @include appearance(none);
-
+      appearance: none;
       background: none;
       border: none;
       padding: $gutter;

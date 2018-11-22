@@ -1,27 +1,34 @@
-@mixin photos-gallery() {
+@mixin photos-gallery {
   position: relative;
+
   @include grid-collapse;
+
   .slick-arrow::before,
   .slick-arrow::after {
     color: $black;
   }
+
   .slick-list {
     // padding: $gutter 0;
+
   }
+
   .slick-slide {
     background: $white;
-    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
     margin: 3px $gutter;
     padding-left: 0;
     padding-right: 0;
     text-align: center;
+
     > img {
       display: inline-block;
       height: 100px;
-      padding: $gutter*2;
+      padding: $gutter * 2;
       vertical-align: top;
     }
   }
+
   .photo-gallery-livebox {
     bottom: 0;
     display: none;
@@ -30,7 +37,9 @@
     right: 0;
     top: 0;
     z-index: 1000;
+
     @include background-color($white, 0.96);
+
     > i {
       background-clip: padding-box;
       background-image: image-url("icons/close.svg");
@@ -39,44 +48,50 @@
       cursor: pointer;
       display: block;
       height: 20px;
-      padding: $gutter/2;
+      padding: $gutter / 2;
       position: absolute;
       right: 0;
       top: 0;
       width: 20px;
     }
+
     > div {
       height: 100%;
       width: 100%;
+
       > img {
         background-color: $white;
-        box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         box-sizing: border-box;
         left: 50%;
         max-width: 100%;
         padding: $gutter;
         position: absolute;
         top: 50%;
-        @include transform(translate3d(-50%, -50%, 0));
+        transform: translate3d(-50%, -50%, 0);
       }
     }
+
     &.show {
       display: block;
     }
   }
+
   > span {
     background: color($white, 0.5);
     bottom: 3px;
     color: $black;
     display: none;
     font-weight: 600;
-    padding: $gutter/2 $gutter;
+    padding: ($gutter / 2) $gutter;
     position: absolute;
     right: 0;
   }
 }
-@mixin photos-gallery-mobile() {
+
+@mixin photos-gallery-mobile {
   @include grid-collapse;
+
   .slick-slide {
     > img {
       height: auto;
@@ -84,9 +99,11 @@
       width: 100vw;
     }
   }
+
   .slick-slide {
     margin: 3px 0;
   }
+
   > span {
     display: block;
   }

@@ -1,91 +1,97 @@
-@mixin floating-button(){
-  .floating-btn{
-    display: flex;
-    position: absolute;
+@mixin floating-button {
+  .floating-btn {
+    background-color: $blue;
+    border: none;
+    border-radius: 50px;
     bottom: 0;
+    box-shadow: 0 2px 4px rgba(112, 112, 112, 0.5);
+    color: $white;
+    display: flex;
+    margin: $gutter * 2;
+    outline: none;
+    padding: ($gutter / 2) $gutter;
+    position: absolute;
     right: 0;
     z-index: 2001;
-    margin: $gutter * 2;
-    border-radius: 50px;
-    background-color: $blue;
-    color: $white;
-    box-shadow: 0 2px 4px rgba(112,112,112,0.5);
-    padding: $gutter/2 $gutter;
-    border: none;
-    outline: none;
-    
-    a:before{
-      content: image-url('icons/close-white.svg');
+
+    a:before {
+      content: image-url("icons/close-white.svg");
       display: inline-block;
-      transform:rotate(45deg) scale(.6, .6);
       margin-right: 10px;
+      transform: rotate(45deg) scale(0.6, 0.6);
     }
+
     a {
+      color: $white;
       font-size: 15px;
       font-weight: bold;
-      color: $white;
       text-decoration: none;
       text-transform: uppercase;
     }
   }
-  .floating-btn:hover{
+
+  .floating-btn:hover {
     opacity: .8;
   }
 }
 
-@mixin floating-button-mobile(){
-  .floating-btn{
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 2001;
+@mixin floating-button-mobile {
+  .floating-btn {
+    background-color: $blue;
+    border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    background-color: $blue;
+    bottom: 15px;
+    box-shadow: 0 2px 4px rgba(112, 112, 112, 0.5);
     color: $white;
-    box-shadow: 0 2px 4px rgba(112,112,112,0.5);
-    border: none;
+    height: 50px;
     outline: none;
-    img{
+    position: fixed;
+    right: 15px;
+    width: 50px;
+    z-index: 2001;
+
+    img {
       padding: 15px;
-      transform:rotate(45deg) scale(.6, .6);
+      transform: rotate(45deg) scale(0.6, 0.6);
     }
   }
-  .floating-btn:hover{
+
+  .floating-btn:hover {
     opacity: .8;
   }
 }
 
-@mixin floating-button-mobile-works(){
-  .floating-btn{
-    display: flex;
-    position: fixed;
-    bottom: 10px;
-    z-index: 2001;
-    border-radius: 50px;
+@mixin floating-button-mobile-works {
+  .floating-btn {
     background-color: $blue;
-    color: $white;
-    box-shadow: 0 2px 4px rgba(112,112,112,0.5);
-    padding: $gutter/2 $gutter;
     border: none;
+    border-radius: 50px;
+    bottom: 10px;
+    box-shadow: 0 2px 4px rgba(112, 112, 112, 0.5);
+    color: $white;
+    display: flex;
     outline: none;
-    
-    a:before{
-      content: image-url('icons/close-white.svg');
+    padding: ($gutter / 2) $gutter;
+    position: fixed;
+    z-index: 2001;
+
+    a:before {
+      content: image-url("icons/close-white.svg");
       display: inline-block;
-      transform:rotate(45deg) scale(.6, .6);
       margin-right: 10px;
+      transform: rotate(45deg) scale(0.6, 0.6);
     }
+
     a {
+      color: $white;
       font-size: 15px;
       font-weight: bold;
-      color: $white;
       text-decoration: none;
       text-transform: uppercase;
     }
   }
-  .floating-btn:hover{
+
+  .floating-btn:hover {
     opacity: .8;
   }
 }

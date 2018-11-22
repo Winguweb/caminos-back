@@ -1,60 +1,79 @@
-@mixin neighborhoods-show() {
+@mixin neighborhoods-show {
   height: calc(100% - #{$navbar-height});
+
   > main {
     height: 100%;
+
     > div {
       height: 100%;
+
       > section {
         height: 100%;
+
         > aside {
           @include grid-column(4, $no-gutter);
-          @include box-sizing(border-box);
+
           border-right: 1px solid color($black, 0.1);
           box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
+          box-sizing: border-box;
           height: 100%;
           overflow: auto;
           position: relative;
           z-index: 1;
+
           > div {
             @include grid-column(16);
+
             > header {
               h1 {
                 @include text-color($text-black, 1);
+
                 @include type-setting(5);
+
                 font-weight: 800;
                 margin-bottom: $vgutter;
               }
             }
+
             > section:first-of-type {
               > header {
                 h2 {
                   @include text-color($text-grey, 1);
+
                   @include type-setting(-1);
+
                   text-transform: uppercase;
                 }
               }
             }
+
             > section + section {
               > header {
                 > h2 {
                   @include text-color($text-grey, 1);
+
                   @include type-setting(-1);
+
                   border-bottom: 1px solid color($grey, 0.3);
-                  margin-bottom: $vgutter*2;
+                  margin-bottom: $vgutter * 2;
                   text-transform: uppercase;
                 }
               }
+
               > nav {
                 > ul {
                   @include grid-collapse;
+
                   > li {
                     cursor: pointer;
-                    margin: $vgutter/2 0;
-                    @include grid-column(1 of 2);
-                    > div {
+                    margin: ($vgutter / 2) 0;
 
+                    @include grid-column(1 of 2);
+
+                    > div {
                       > p {
                         @include type-setting(-1);
+
                         font-weight: bold;
                         overflow: hidden;
                         text-overflow: ellipsis;
@@ -65,30 +84,40 @@
                 }
               }
             }
-
           }
         }
+
         > main {
-          @include floating-button();
+          @include floating-button;
+
           @include grid-column(16, $no-gutter);
+
           height: 400px;
           position: relative;
+
           > section:first-of-type {
             @include grid-column(16);
+
             height: 100%;
             left: auto;
+
             .map-show-cell {
               @include grid-collapse;
+
               height: 100%;
+
               > div:first-of-type {
                 border-radius: 0;
               }
             }
           }
         }
+
         > aside + main {
           @include grid-column(12, $no-gutter);
+
           height: 100%;
+
           > section:first-of-type {
             margin-bottom: 0;
           }
@@ -99,5 +128,5 @@
 }
 
 #neighborhoods-show.neighborhoods-desktop {
-  @include neighborhoods-show();
+  @include neighborhoods-show;
 }
