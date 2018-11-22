@@ -33,6 +33,7 @@ $development: true !default;
 $border: 2px;
 $outer-diameter: 37px;
 $inner-diameter: round($outer-diameter * 0.78);
+$small-outer-diameter: 11px;
 
 // Mobile Vars
 $aside-height: 50px;
