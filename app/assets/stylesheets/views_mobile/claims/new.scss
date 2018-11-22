@@ -4,6 +4,8 @@
       .page-header-cell{
         .content{
           left: 0;
+          width: 100%;
+          padding-top: $gutter;
         }
       }
     }
@@ -28,6 +30,8 @@
       }
     }
     .submit-claim-cta{
+      display: flex;
+      justify-content: center;
       input{
         background: $blue;
         color: $white;
@@ -35,6 +39,10 @@
         text-align: center;
         width: 100%;
         padding: $gutter;
+        border: none;
+        outline: none;
+        box-shadow: 0 2px 4px rgba(112,112,112,0.5);
+        border-radius: 6px;
       }
     }
   }

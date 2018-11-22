@@ -37,6 +37,14 @@
             }
 
             > section:first-of-type {
+              .empty-state{
+                margin-top: $gutter;
+                padding: $gutter;
+                background: $dark-white;
+                font-weight: bold;
+                @include type-setting(-1)
+
+              }
               > header {
                 h2 {
                   @include text-color($text-grey, 1);

@@ -44,8 +44,13 @@ es-AR:
   neighborhoods:
     mapping:
       report: subí tu reporte
+      no_data: Este barrio no posee ningún reporte
+      no_data_mobile: Este barrio no posee ningún reporte, aca podes agregar uno
     show:
       report: subí tu reporte
   assets:
     index:
       add_point: ¿Falta un lugar? Agregalo
+      no_data: Este barrio no posee ningún sitio de interés por el momento
+      no_data_mobile: Este barrio no posee ningún sitio de interés por el momento, agregá uno!
+
