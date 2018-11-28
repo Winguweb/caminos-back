@@ -7,6 +7,7 @@ nav
       = link_to t, target:"_blank", noopener:'', noreferrer:''('.link_to_v1_1')
 section
   div
+    div.diagonal = image_tag image_path("home/diagonal-open-close-header.png"), class: 'diagonal'
     div
       = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
         p
@@ -24,49 +25,59 @@ section
   div
     p = t('.text_1_html')
     p = t('.text_2')
-section
+  div.diagonal = image_tag image_path("home/diagonal-close-open-blue.png"), class: 'diagonal'
+section.section-1
   header
     h1 = t('.section_1_header')
   p = t('.section_1_text')
+  div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
   div
     = image_tag image_path("home/section_1.jpg")
-    i
-section
+
+section.section-2
   header
     h1 = t('.section_2_header')
   p = t('.section_2_text')
+  div.diagonal = image_tag image_path("home/diagonal-close-open.png"), class: 'diagonal'
   div
     = image_tag image_path("home/section_2.jpg")
-    i
-section
+
+section.section-3
   header
     h1 = t('.section_3_header')
   p = t('.section_3_text')
+  div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
   div
     = image_tag image_path("home/section_3.jpg")
-    i
-section
+
+section.section-4
   header
     h1 = t('.section_4_header')
   p = t('.section_4_text')
+  div.diagonal = image_tag image_path("home/diagonal-close-open.png"), class: 'diagonal'
   div
-    = image_tag image_path("home/section_4.png")
-    i
-section
+    = image_tag image_path("home/section_4.jpg")
+
+section.section-5
   header
     h1 = t('.section_5_header')
   p = t('.section_5_text')
+  div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
   div
     = image_tag image_path("home/section_5.png")
-    i
+  div.diagonal = image_tag image_path("home/diagonal-open-close-inverted.svg"), class: 'diagonal'
+
 
 footer
+  div.diagonal = image_tag image_path("home/diagonal-close-open-inverted.svg"), class: 'diagonal'
   div
     = link_to '', target:"_blank", noopener:'', noreferrer:'' do
       = image_tag image_path("logos/caminos_white_logo.svg")
       span = t('.footer_logo_text')
   div
-    = link_to '', target:"_blank", noopener:'', noreferrer:'' do
+    = link_to '//altec.lat/es/inicio/', target:"_blank", noopener:'', noreferrer:'' do
+      = image_tag image_path("logos/altec_white_logo.svg"), class: 'altec-logo'
+    = link_to '//acij.org.ar', target:"_blank", noopener:'', noreferrer:'' do
       = image_tag image_path("logos/acij_logo.png")
-    = link_to '', target:"_blank", noopener:'', noreferrer:'' do
+    = link_to '//winguweb.org', target:"_blank", noopener:'', noreferrer:'' do
       = image_tag image_path("logos/wingu_logo.png")

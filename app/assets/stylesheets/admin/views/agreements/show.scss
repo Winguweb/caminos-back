@@ -1,39 +1,47 @@
-@mixin agreement() {
+@mixin agreement {
   .page-section {
     > section {
       display: block;
       position: relative;
+
       > ul {
         list-style: none;
-        margin-bottom: $gutter*2;
+        margin-bottom: $gutter * 2;
         padding: 0;
+
         > li {
           &:first-of-type {
             border-bottom: 1px solid $light-grey;
-            margin-bottom: $gutter*2;
+            margin-bottom: $gutter * 2;
             padding-bottom: $gutter;
           }
+
           > label {
             border-top: 1px dotted #dce7eb;
             margin: 0;
             position: relative;
+
             &:last-of-type {
               padding-bottom: 0;
             }
+
             > section:first-of-type {
               cursor: initial;
             }
+
             > section {
               cursor: pointer;
               display: block;
               margin: 0;
               position: relative;
+
               > i {
                 margin-top: 10px;
                 position: absolute;
                 right: 0;
                 top: 0;
-                transform: translate(-6px, 0);
+                transform: translate3d(-6px, 0, 0);
+
                 &:before, &:after {
                   background-color: $text-blue;
                   content: "";
@@ -41,47 +49,63 @@
                   position: absolute;
                   width: 2px;
                 }
+
                 &:before {
                   transform: translate(2px, 0) rotate(45deg);
                 }
+
                 &:after {
                   transform: translate(-3px, 0) rotate(-45deg);
                 }
               }
+
               > header {
                 @include clearfix;
+
                 > div {
                   float: left;
                   margin-bottom: $vgutter;
-                  margin-top: $vgutter*2;
+                  margin-top: $vgutter * 2;
+
                   > h1 {
                     font-weight: 600;
                   }
+
                   > p {
                     @include text-color($text-black, 1);
+
                     @include type-setting(-1);
                   }
                 }
+
                 > h1 {
                   font-weight: 600;
                 }
+
                 > p {
                   @include text-color($text-black, 1);
+
                   @include type-setting(-1);
                 }
               }
+
               > main {
-                margin-bottom: $vgutter*2;
+                margin-bottom: $vgutter * 2;
+
                 > p {
                   @include text-color($text-grey, 1);
+
                   @include type-setting(-1);
+
                   margin-bottom: $vgutter;
                 }
+
                 > div {
                   height: 4px;
                   overflow: hidden;
                   position: relative;
                   width: 100%;
+
                   > div {
                     height: 100%;
                     left: 0;
@@ -89,42 +113,53 @@
                     top: 0;
                     width: 100%;
                   }
+
                   > div:nth-of-type(1) {
                     background-color: $light-grey;
                   }
+
                   > div:nth-of-type(2) {
                     background-color: $blue;
                   }
                 }
               }
             }
+
             > aside {
-              @include grid-container;
-              @include type-setting(-1);
               margin-top: 0;
               max-height: 0;
               overflow: hidden;
               position: relative;
               transform: translate(0, 50%);
               z-index: 2;
+
+              @include grid-container;
+
+              @include type-setting(-1);
+
               .two-thirds-one-third-input {
                 > div:nth-of-type(1) {
                   color: $text-black;
                 }
+
                 > div:nth-of-type(2) {
                   color: $text-grey;
                 }
+
                 > div {
                   @include grid-container;
-                  color: $text-black;
-                  margin-bottom: $vgutter*2;
-                  > span:first-of-type {
-                    @include type-setting(-1);
-                    display: block;
 
-                    margin-bottom: $gutter/7;
+                  color: $text-black;
+                  margin-bottom: $vgutter * 2;
+
+                  > span:first-of-type {
+                    display: block;
+                    margin-bottom: $gutter / 7;
                     text-transform: none;
+
+                    @include type-setting(-1);
                   }
+
                   > span + span {
                     display: block;
                   }
@@ -132,20 +167,24 @@
               }
             }
           }
+
           > input[type=checkbox] {
             cursor: pointer;
             display: none;
             z-index: 1;
+
             &:checked ~ label {
               > aside {
                 margin-top: 14px;
                 max-height: 800px;
                 transform: translate(0, 0);
               }
+
               > i {
                 &:before {
                   transform: translate(-3px, 0) rotate(45deg);
                 }
+
                 &:after {
                   transform: translate(2px, 0) rotate(-45deg);
                 }
@@ -159,5 +198,5 @@
 }
 
 #agreements-show {
-  @include agreement();
+  @include agreement;
 }

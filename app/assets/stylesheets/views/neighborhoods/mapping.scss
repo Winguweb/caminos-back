@@ -13,10 +13,9 @@
         > aside {
           @include grid-column(4, $no-gutter);
 
-          @include box-sizing(border-box);
-
           border-right: 1px solid color($black, 0.1);
           box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
+          box-sizing: border-box;
           height: 100%;
           overflow: auto;
           position: relative;
@@ -40,10 +39,14 @@
               > nav {
                 > div:first-of-type {
                   @include type-setting(-1);
-
                   background-color: $dark-white;
                   margin-top: $gutter;
                   padding: $gutter;
+                }
+                .empty-content{
+                  font-weight: bold;
+                  padding: $gutter;
+                  margin-top:$gutter;
                 }
               }
 
@@ -88,7 +91,6 @@
 
         > aside + main {
           @include grid-column(12, $no-gutter);
-
           height: 100%;
 
           > section:first-of-type {

@@ -27,7 +27,7 @@ es-AR:
     description_3_link: "Acuerdo por la Urbanización de Villas"
   assets:
     assets: Puntos mapeados
-    asset_detail: Detalle de la obra
+    asset_detail: Detalle del punto de interés
     cancel: Cancelar
     category: Categoría
     description: Descripcion
@@ -59,7 +59,7 @@ es-AR:
     public: Calles y Plazas
     public_organization: Organismos Públicos
     public_services: Servicios Públicos
-    public_spaces: Espacios Públicos
+    public_spaces: Espacios Recreativos
     sewer: Cloacas y Pluviales
     state_equipment: Equipamiento Estatal
     street_parks: Calles y Plazas

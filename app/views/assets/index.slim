@@ -7,7 +7,8 @@ section
             == cell('elements/features_tree', @assets)
 
           - else
-            div = t('.no_data')
+            .empty-state 
+              span = t('.no_data')
 
   main.page-section
     section

@@ -1,5 +1,8 @@
-@mixin public-footer() {
+@mixin public-footer {
   @include grid-container;
+
+  @include shadow($normal-shadow, 1);
+
   background: $white;
   border: 0;
   bottom: -90px;
@@ -11,10 +14,11 @@
   right: 0;
   transition: bottom 300ms ease;
   z-index: 1000;
-  @include shadow($normal-shadow, 1);
+
   &:hover {
     bottom: 0;
   }
+
   > i {
     background-color: color($black, 1);
     border-radius: 4px;
@@ -26,8 +30,9 @@
     transition: all 100ms ease;
     width: 4px;
   }
-  > div {
-  }
+
+  > div {}
+
   &:hover > i {
     background-color: color($black, 0.2);
     border-radius: 0px;
@@ -36,10 +41,9 @@
     position: absolute;
     top: 4px;
     transform: translateX(-50%);
-    width: $gutter*5;
+    width: $gutter * 5;
   }
 }
-
 
 .page-public-footer-cell {
   @include public-footer;

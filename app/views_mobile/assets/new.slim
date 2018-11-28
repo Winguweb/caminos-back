@@ -2,7 +2,7 @@
 - @back_menu = t("page.public_header.assets")
 
 .asset-header
-  == cell('page/header', t('assets.header_title'))
+  == cell('page/header', t('assets.asset_detail'))
 
 .assets_form
  = form_for Asset.new,url:neighborhood_assets_path, html: { class: 'form', multipart: true } do |f|

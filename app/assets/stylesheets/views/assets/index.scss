@@ -13,10 +13,9 @@
         > aside {
           @include grid-column(4, $no-gutter);
 
-          @include box-sizing(border-box);
-
           border-right: 1px solid color($black, 0.1);
           box-shadow: 8px 0 4px -4px color($light-shadow, 0.1);
+          box-sizing: border-box;
           height: 100%;
           overflow: auto;
           position: relative;
@@ -37,6 +36,14 @@
             }
 
             > section:first-of-type {
+              .empty-state{
+                margin-top: $gutter;
+                padding: $gutter;
+                background: $dark-white;
+                font-weight: bold;
+                @include type-setting(-1)
+
+              }
               > header {
                 h2 {
                   @include text-color($text-grey, 1);
@@ -61,7 +68,9 @@
 
             height: 100%;
             left: auto;
-            @include floating_button();
+
+            @include floating_button;
+
             .map-show-cell {
               @include grid-collapse;
 
