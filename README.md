@@ -22,3 +22,10 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+### PostGIS
+Reinstallation of PostGIS extension:
+```sql
+ALTER EXTENSION postgis UPDATE;
+```

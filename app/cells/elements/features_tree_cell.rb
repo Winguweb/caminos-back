@@ -26,6 +26,11 @@ class Elements::FeaturesTreeCell < Cell::ViewModel
     end
   end
 
+  def feature_url_parent
+    return 'assets' if model.first.class == Asset
+    return 'claims' if model.first.class == Claim
+  end
+
   def neighborhood_slug
     features.each do | category |
       first_feature = category[1].first
