@@ -265,19 +265,31 @@
           float: left;
           padding: $gutter * 3;
           position: relative;
-          width: 50%;
           z-index: 1;
+
+          &:nth-of-type(2) {
+            width: 30%;
+          }
+
+          &:nth-of-type(3) {
+            width: 70%;
+          }
 
           > a {
             @include clearfix;
 
             display: inline-block;
+            vertical-align: top;
 
             > img {
               display: block;
               max-height: 50px;
               vertical-align: top;
               width: auto;
+
+              &.altec-logo {
+                height: 30px;
+              }
             }
 
             > span {
@@ -558,6 +570,12 @@
           > div.diagonal {
             height: auto;
             position: absolute;
+
+            & ~ div:nth-of-type(2) {
+              &:nth-of-type(2) {
+                width: 100%;
+              }
+            }
 
             > img {
               width: 101%;

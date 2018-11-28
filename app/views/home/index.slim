@@ -75,7 +75,9 @@ footer
       = image_tag image_path("logos/caminos_white_logo.svg")
       span = t('.footer_logo_text')
   div
-    = link_to '', target:"_blank", noopener:'', noreferrer:'' do
+    = link_to '//altec.lat/es/inicio/', target:"_blank", noopener:'', noreferrer:'' do
+      = image_tag image_path("logos/altec_white_logo.svg"), class: 'altec-logo'
+    = link_to '//acij.org.ar', target:"_blank", noopener:'', noreferrer:'' do
       = image_tag image_path("logos/acij_logo.png")
-    = link_to '', target:"_blank", noopener:'', noreferrer:'' do
+    = link_to '//winguweb.org', target:"_blank", noopener:'', noreferrer:'' do
       = image_tag image_path("logos/wingu_logo.png")
