@@ -23,8 +23,7 @@ CDLV.Components['features/tree'] = Backbone.View.extend({
     })
   },
   render: function(data) {
-      console.error()
-      this.$el.html( this.feature_template({icons: data.category_icons, features: data.features, categories: data.categories, neighborhood_slug: this.neighborhoodSlug, filter_name: this.filter_name}));
+      this.$el.html( this.feature_template({icons: data.category_icons, features: data.features, categories: data.categories, neighborhood_slug: this.neighborhoodSlug, filter_name: this.filter_name, feature_url_parent: data.feature_url_parent}));
   },
   translate: function(data) {
     for (var c in data.categories) {
@@ -55,7 +54,6 @@ CDLV.Components['features/tree'] = Backbone.View.extend({
     axios.get('/api/neighborhoods/' + this.neighborhoodSlug + '/' + featureType)
     .then(function (response) {
       _self.options.features = response.data[featureType]
-      console.log(_self.options.features)
       _self.options.categories = response.data.categories
       _self.options = _self.translate(_self.options)
       _self.render(_self.options)
@@ -85,6 +83,6 @@ CDLV.Components['features/tree'] = Backbone.View.extend({
     categoryName = $(filterItem).data('category-name')
     CDLV.pubSub.trigger('map-show:filter:category', categoryName)
   },
-  feature_template: _.template('<% if(categories.length) { %><ul><% _.each(categories, function(category) { %><li><div><button class="open-list-button" <%= features[category.code].length == 0 ? "disabled" : "" %>>+</button><div class="filter-action" data-category-name="<%= category.code %>"><i class="category-<%= category.code %>"><img src="<%= icons[category.code] %>" alt="" /></i><span><%= category.name %></span><span><%= features[category.code].length %></span></div></div><ul><% _.each(features[category.code], function(feature) { %><li><a href="/barrios/<%= neighborhood_slug  %>/obras/<%= feature.slug %>"><div><i class="category-<%= category.code %>"></i><span><%= feature.name %></span></div><% if(feature.status) { %><div><span class="status-<%= feature.status.code %>"><%= feature.status.name %></span></div><% } %></a></li><% }); %></ul></li><% }); %></ul><% } else { %><span>'+ I18n.t('js.filter.no_results') + ' <%= I18n.t("js.status."+filter_name) %></span><% } %>')
+  feature_template: _.template('<% if(categories.length) { %><ul><% _.each(categories, function(category) { %><li><div><button class="open-list-button" <%= features[category.code].length == 0 ? "disabled" : "" %>>+</button><div class="filter-action" data-category-name="<%= category.code %>"><i class="category-<%= category.code %>"><img src="<%= icons[category.code] %>" alt="" /></i><span><%= category.name %></span><span><%= features[category.code].length %></span></div></div><ul><% _.each(features[category.code], function(feature) { %><li><a href="/barrios/<%= neighborhood_slug  %>/<%= feature_url_parent %>/<%= feature.slug %>"><div><i class="category-<%= category.code %>"></i><span><%= feature.name %></span></div><% if(feature.status) { %><div><span class="status-<%= feature.status.code %>"><%= feature.status.name %></span></div><% } %></a></li><% }); %></ul></li><% }); %></ul><% } else { %><span>'+ I18n.t('js.filter.no_results') + ' <%= I18n.t("js.status."+filter_name) %></span><% } %>')
 })
 
