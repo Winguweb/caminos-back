@@ -24,6 +24,7 @@ module Admin::Ajax
 
     def upload
       photo = current_owner.photos.new( extended_params )
+      photo.processed = true
 
       if photo.valid?
         if photo.save
