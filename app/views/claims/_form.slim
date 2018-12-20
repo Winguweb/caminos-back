@@ -37,4 +37,5 @@
       input type="hidden" name="claim[geo_geometry]" class="geo_geometry-field"
     section.photo-updloader-container
       == cell('section/header',"Fotos")
-      == cell('elements/public_photos_uploader',"claim")
+      == cell('elements/file_uploader',{id: 'claim_image', name: 'claim[photos][]', owner: 'claim', url: '/ajax/files/upload'})
+      == cell('elements/file_uploader_preview',{id: 'claim_image'})

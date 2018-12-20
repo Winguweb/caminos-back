@@ -6,9 +6,12 @@ class ClaimsController < ApplicationController
 
    def create
     ensure_neighborhood; return if performed?
-     service = CreateClaim.call(current_neighborhood, claim_params)
+    service = CreateClaim.call(current_neighborhood, claim_params)
+
      # service = CreateClaim.call(current_neighborhood, claim_params,some_work)
     if service.success?
+      link_photos(service.result)
+      photos_tasks(service.result)
       flash.now[:success] = [t('.success')]
       flash.keep
       redirect_to mapping_neighborhood_path(current_neighborhood)
@@ -31,7 +34,6 @@ class ClaimsController < ApplicationController
     @categories = Claim.categories
     @work = current_neighborhood.works.new
     @claim = current_neighborhood.claims.new
-    @claim.public_photos.build()
   end
 
   private
@@ -48,6 +50,18 @@ class ClaimsController < ApplicationController
     @claim = Claim.friendly.find(params[:id])
   end
 
+  def link_photos(claim)
+    photos = claim_params[:photos].map do | photo |
+      Photo.find_by(id: photo)
+    end
+    claim.photos << photos
+    claim.save!
+  end
+
+  def photos_tasks(claim)
+    PhotoProcessorWorker.perform_async(claim['id'])
+  end
+
   def claim_params
     params.require(:claim).permit(
       :category_list,
@@ -57,7 +71,7 @@ class ClaimsController < ApplicationController
       :geometry,
       :lookup_address,
       :name,
-      photos: [[:image]],
+      photos: [],
     )
   end
 end

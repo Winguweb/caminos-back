@@ -1,0 +1,13 @@
+.file-uploader
+  input id="#{id}" type="file" name="file[image][]"
+
+javascript:
+  $(function() {
+      new CDLV.Components['elements/file_uploader']({
+      el: $('.file-uploader'),
+      id: '#{id}',
+      name: '#{name}',
+      owner: '#{owner}',
+      url: '#{url}',
+    })
+  });

@@ -11,6 +11,8 @@
 //= require documents_table.js
 //= require documents_uploader.js
 //= require features_tree.js
+//= require file_uploader.js
+//= require file_uploader_preview.js
 //= require filter_toggle.js
 //= require map_edit.js
 //= require map_references.js

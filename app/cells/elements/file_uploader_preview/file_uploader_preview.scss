@@ -1,0 +1,33 @@
+.file-uploader-preview {
+  @include grid-collapse;
+  .thumbnail-wrapper {
+    @include grid-column(4);
+    border-radius: 4px;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    display: inline-block;
+    height: 120px;
+    margin-bottom: $gutter;
+    position: relative;
+
+    img {
+      left: 0;
+      left: 50%;
+      max-height: calc(100% - #{$gutter});
+      max-width: calc(100% - #{$gutter});
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .thumbnail-loader {
+      background-color: #ffffffdd;
+      border-radius: 4px;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+    }
+  }
+}

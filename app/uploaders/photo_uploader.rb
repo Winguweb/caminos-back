@@ -31,7 +31,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   def store_dir
-    "#{model.owner_type.underscore.pluralize}/#{model.owner_id}/#{model.class.to_s.underscore.pluralize}"
+    if model.processed?
+      "#{model.owner_type.underscore.pluralize}/#{model.owner_id}/#{model.class.to_s.underscore.pluralize}"
+    else
+      "tmp/#{model.class.to_s.underscore.pluralize}"
+    end
   end
 
   # Create different versions of your uploaded files:
@@ -44,6 +48,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fill => [400, 300]
   end
+
 
   def extension_white_list
     %w(jpg jpeg gif png bmp)

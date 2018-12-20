@@ -18,29 +18,8 @@ class CreateClaim
     @claim.neighborhood = @neighborhood
     @claim.work = @work if @work != nil
 
-    if !photo_params.nil?
-      save_photos(@claim) if !photo_params.nil?
-
-      return @claim if @claim.save
-      errors.add_multiple_errors(@claim.errors.messages) && nil
-
-    else
-      return @claim if @claim.save
-      errors.add_multiple_errors(@claim.errors.messages) && nil
-    end
-
-  end
-
-  def save_photos(claim)
-    photo_params.each do |photo|
-      new_photo =  claim.public_photos.new(photo)
-      new_photo.owner = claim
-    end
-  end
-
-  def photo_params
-    return [] if @allowed_params[:photos].blank?
-    @allowed_params[:photos]
+    return @claim if @claim.save
+    errors.add_multiple_errors(@claim.errors.messages) && nil
   end
 
   def claim_params

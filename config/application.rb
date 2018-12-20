@@ -59,6 +59,8 @@ module CaminosBack
       elements/documents_uploader_cell
       elements/error_messages_cell
       elements/features_tree_cell
+      elements/file_uploader_cell
+      elements/file_uploader_preview_cell
       elements/filter_toggle_cell
       elements/filter_toggle_mapping_cell
       elements/map_edit_cell

@@ -4,7 +4,7 @@ class Claim < ApplicationRecord
 
   belongs_to :neighborhood
   belongs_to :work, optional: true
-  has_many :public_photos, as: :owner
+  has_many :photos, as: :owner
 
   acts_as_taggable_on :categories
 
