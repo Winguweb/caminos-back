@@ -1,4 +1,4 @@
-module Admin::Ajax
+module Ajax
   class PhotosController < BaseController
     include CurrentAndEnsureDependencyLoader
 
@@ -23,8 +23,12 @@ module Admin::Ajax
     end
 
     def upload
-      photo = current_owner.photos.new( extended_params )
-      photo.processed = true
+      if current_owner.present?
+        photo = current_owner.photos.new( extended_params )
+        photo.processed = true
+      else
+        photo = Photo.new( extended_params )
+      end
 
       if photo.valid?
         if photo.save
@@ -60,7 +64,7 @@ module Admin::Ajax
       cloned_allowed_params = photo_params.deep_dup
       cloned_allowed_params.tap do |_hash|
         _hash[:image] = _hash[:image][0]
-        _hash[:uploader_id] = current_user.id
+        _hash[:uploader_id] = current_user.id if defined? current_user
       end
     end
 

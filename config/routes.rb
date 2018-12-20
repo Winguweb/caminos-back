@@ -35,14 +35,14 @@ Rails.application.routes.draw do
     namespace :ajax do
 
       # Files Resources routes
-      post '/files/upload', action: :upload, controller: :files
+      post '/files/upload', action: :upload, controller: :photos
 
-      resources :claims, only: [] do
+      # resources :claims, only: [] do
 
         # Photos Resources routes
-        post '/photos/upload', action: :upload, controller: :public_photos
-        delete '/photos/:id', action: :destroy, controller: :public_photos, as: :photo
-      end
+        # post '/photos/upload', action: :upload, controller: :public_photos
+        # delete '/photos/:id', action: :destroy, controller: :public_photos, as: :photo
+      # end
     end
     # ╰─ End of AJAX Accesible URL's / Path's
   # ╰─  End of Public Accesible URL's / Path's
@@ -63,8 +63,8 @@ Rails.application.routes.draw do
           resources :documents_relations, only: %i[create destroy]
 
           # Photos Resources routes
-          post '/photos/upload', action: :upload, controller: :photos
-          delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
+          post '/photos/upload', action: :upload, controller: '/ajax/photos'
+          delete '/photos/:id', action: :destroy, controller: '/ajax/photos', as: :photo
         end
         resources :works, only: [] do
           # Documents Resource routes
@@ -73,8 +73,8 @@ Rails.application.routes.draw do
           resources :documents_relations, only: %i[create destroy]
 
           # Photos Resources routes
-          post '/photos/upload', action: :upload, controller: :photos
-          delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
+          post '/photos/upload', action: :upload, controller: '/ajax/photos'
+          delete '/photos/:id', action: :destroy, controller: '/ajax/photos', as: :photo
         end
         resources :meetings, only: [] do
           # Documents Resource routes
