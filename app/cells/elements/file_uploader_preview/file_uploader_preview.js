@@ -4,6 +4,7 @@ CDLV.Components['elements/file_uploader_preview'] = Backbone.View.extend({
         this,
         'namespaced',
         'createThumbnail',
+        'uploadComplete',
         'updateImage',
     )
 
@@ -16,6 +17,7 @@ CDLV.Components['elements/file_uploader_preview'] = Backbone.View.extend({
     CDLV.pubSub.on({
       [ns(this.namespace + ':thumb:new', inputId)]: this.createThumbnail,
       [ns(this.namespace + ':thumb:end', inputId)]: this.updateImage,
+      [ns(this.namespace + ':photo:uploaded', inputId)]: this.uploadComplete,
     })
   },
   namespaced: function(action, channel) {
@@ -28,7 +30,8 @@ CDLV.Components['elements/file_uploader_preview'] = Backbone.View.extend({
     $thumbnail.attr('src', '/assets/thumbnail.svg')
     $thumbnail.attr('data-hash', fileObject.hash)
 
-    var $thumbnailLoader = $('<div>...</div>')
+    var $thumbnailLoader = $('<div><div class="loading-spinner indeterminate"><svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100"><circle cx="50%" cy="50%" r="45" class="ng-star-inserted"></circle></svg></div></div>')
+
     $thumbnailLoader.addClass('thumbnail-loader')
 
     var $thumbnailWrapper = $('<div></div>')
@@ -39,7 +42,9 @@ CDLV.Components['elements/file_uploader_preview'] = Backbone.View.extend({
   },
   updateImage: function(hash, image) {
     this.$el.find('[data-hash="' + hash + '"]').attr('src', image)
+  },
+  uploadComplete: function(hash) {
+    $thumbnailLoader = this.$el.find('[data-hash="' + hash + '"]').next()
+    $thumbnailLoader.addClass('hide')
   }
 })
-
-// CDLV.pubSub.on('all', function(data, d){console.info(data, d)})

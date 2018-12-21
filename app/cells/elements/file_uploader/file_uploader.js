@@ -42,7 +42,7 @@ CDLV.Components['elements/file_uploader'] = Backbone.View.extend({
         url: options.url,
         beforeSend: function(filerItem){ tg(ns(_this.namespace + ':before', inputId), filerItem) },
         error: function(filerItem){ tg(ns(_this.namespace + ':error', inputId), filerItem) },
-        success: function(data, filerItem){ console.log(ns(_this.namespace + ':success', inputId)); tg(ns(_this.namespace + ':success', inputId), data, filerItem) },
+        success: function(data, filerItem){ tg(ns(_this.namespace + ':success', inputId), data, filerItem) },
       },
       beforeShow: function(){ tg(ns(_this.namespace + ':add', inputId)); return true },
       onRemove: function(filerItem){ tg(ns(_this.namespace + ':remove'), filerItem); return true },
@@ -62,6 +62,9 @@ CDLV.Components['elements/file_uploader'] = Backbone.View.extend({
       lastModified: file.lastModified,
       hash: file.name + ';' + file.type + ';' + file.size + ';' + file.lastModified,
     }
+
+    filerItem.attr('data-hash', fileObject.hash)
+
     reader.onloadstart = function(data) {
       var event = _this.namespaced('file:uploader:preview:thumb:new', _this.inputId)
       CDLV.pubSub.trigger(event, fileObject)
@@ -79,8 +82,12 @@ CDLV.Components['elements/file_uploader'] = Backbone.View.extend({
     }
     reader.readAsDataURL(file)
   },
-  uploadSuccess: function(data) {
-    $photoInput = $('<input />')
+  uploadSuccess: function(data, filerItem) {
+    var event = this.namespaced('file:uploader:preview:photo:uploaded', this.inputId)
+    var hash = filerItem.data('hash')
+    CDLV.pubSub.trigger(event, hash)
+
+    var $photoInput = $('<input />')
     $photoInput.attr('type', 'hidden')
     $photoInput.attr('name', this.inputName)
     $photoInput.val(data.response.id)

@@ -1,22 +1,24 @@
 .file-uploader-preview {
   @include grid-collapse;
+
   .thumbnail-wrapper {
     @include grid-column(4);
+
     border-radius: 4px;
-    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
     display: inline-block;
     height: 120px;
     margin-bottom: $gutter;
     position: relative;
 
     img {
-      left: 0;
       left: 50%;
       max-height: calc(100% - #{$gutter});
       max-width: calc(100% - #{$gutter});
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
+      width: 100%;
     }
 
     .thumbnail-loader {
@@ -27,7 +29,142 @@
       position: absolute;
       right: 0;
       top: 0;
+      transition: opacity 300ms ease;
       z-index: 1;
+
+      &.hide {
+        opacity: 0;
+      }
+
+      .loading-spinner {
+        height: 30px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 30px;
+
+        &.indeterminate {
+          > svg {
+            > circle {
+              animation-name: mat-progress-spinner-stroke-rotate-100;
+            }
+          }
+        }
+
+        > svg {
+          animation: mat-progress-spinner-linear-rotate 2s linear infinite;
+          height: 100%;
+          width: 100%;
+
+          > circle {
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
+            fill: transparent;
+            stroke: $blue;
+            stroke-dasharray: 282.743px;
+            stroke-width: 10%;
+            transform-origin: center;
+            transition: stroke-dashoffset 225ms linear;
+            transition-property: stroke;
+
+          }
+        }
+      }
     }
+  }
+}
+
+
+@keyframes mat-progress-spinner-linear-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes mat-progress-spinner-stroke-rotate-100 {
+  0% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotate(0);
+  }
+
+  12.5% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotate(0);
+  }
+
+  12.5001% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotateX(180deg) rotate(72.5deg);
+  }
+
+  25% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotateX(180deg) rotate(72.5deg);
+  }
+
+  25.0001% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotate(270deg);
+  }
+
+  37.5% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotate(270deg);
+  }
+
+  37.5001% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotateX(180deg) rotate(161.5deg);
+  }
+
+  50% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotateX(180deg) rotate(161.5deg);
+  }
+
+  50.0001% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotate(180deg);
+  }
+
+  62.5% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotate(180deg);
+  }
+
+  62.5001% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotateX(180deg) rotate(251.5deg);
+  }
+
+  75% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotateX(180deg) rotate(251.5deg);
+  }
+
+  75.0001% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotate(90deg);
+  }
+
+  87.5% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotate(90deg);
+  }
+
+  87.5001% {
+    stroke-dashoffset: 56.54867px;
+    transform: rotateX(180deg) rotate(341.5deg);
+  }
+
+  100% {
+    stroke-dashoffset: 268.60617px;
+    transform: rotateX(180deg) rotate(341.5deg);
   }
 }
