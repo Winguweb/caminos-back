@@ -1,9 +1,10 @@
 CDLV.Components['elements/file_uploader'] = Backbone.View.extend({
   initialize: function(options){
     _.bindAll(
-        this,
-        'namespaced',
-        'uploadSuccess',
+      this,
+      'namespaced',
+      'uploadSuccess',
+      'removePhoto'
     )
 
     this.namespace = 'file:uploader'
@@ -23,7 +24,9 @@ CDLV.Components['elements/file_uploader'] = Backbone.View.extend({
       [ns(this.namespace + ':success', inputId)]: this.uploadSuccess,
     })
 
-    console.log(ns(this.namespace + ':success', inputId))
+    CDLV.pubSub.on({
+      [ns(this.namespace + ':photo:remove', inputId)]: this.removePhoto,
+    })
 
     this.fileInput = this.$el.find('#' + inputId).filer({
       addMore: true,
@@ -78,19 +81,36 @@ CDLV.Components['elements/file_uploader'] = Backbone.View.extend({
 
     reader.onloadend = function(data) {
       var event = _this.namespaced('file:uploader:preview:thumb:end', _this.inputId)
-      CDLV.pubSub.trigger(event, fileObject.hash, data.target.result )
+      CDLV.pubSub.trigger(event, fileObject, data.target.result )
     }
     reader.readAsDataURL(file)
   },
   uploadSuccess: function(data, filerItem) {
     var event = this.namespaced('file:uploader:preview:photo:uploaded', this.inputId)
     var hash = filerItem.data('hash')
-    CDLV.pubSub.trigger(event, hash)
+    CDLV.pubSub.trigger(event, hash, data.response.id)
 
     var $photoInput = $('<input />')
     $photoInput.attr('type', 'hidden')
     $photoInput.attr('name', this.inputName)
     $photoInput.val(data.response.id)
     this.$el.append($photoInput)
+  },
+  removePhoto: function(photoId) {
+    var _this = this
+
+    if( _.isEmpty(photoId) ) return true
+
+    var url = '/ajax/files/' + photoId
+
+    $.ajax({
+      url: url,
+      type: 'delete',
+      cache: false,
+    }).done(function(data){
+      return true
+    }).fail(function(xhr){
+      return false
+    })
   }
 })

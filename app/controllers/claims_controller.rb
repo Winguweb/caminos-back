@@ -54,7 +54,7 @@ class ClaimsController < ApplicationController
     photos = claim_params[:photos].map do | photo |
       Photo.find_by(id: photo)
     end
-    claim.photos << photos
+    claim.photos << photos.compact
     claim.save!
   end
 

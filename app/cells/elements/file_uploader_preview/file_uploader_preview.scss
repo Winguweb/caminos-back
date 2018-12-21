@@ -9,16 +9,16 @@
     display: inline-block;
     height: 120px;
     margin-bottom: $gutter;
+    overflow: hidden;
     position: relative;
 
     img {
       left: 50%;
-      max-height: calc(100% - #{$gutter});
-      max-width: calc(100% - #{$gutter});
+      max-height: calc(100%);
+      max-width: calc(100%);
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 100%;
     }
 
     .thumbnail-loader {
@@ -34,6 +34,10 @@
 
       &.hide {
         opacity: 0;
+
+        & + .thumbnail-actions {
+          display: block;
+        }
       }
 
       .loading-spinner {
@@ -69,6 +73,46 @@
             transition: stroke-dashoffset 225ms linear;
             transition-property: stroke;
 
+          }
+        }
+      }
+    }
+    .thumbnail-actions {
+      background-color: #ffffffdd;
+      border-radius: 4px;
+      bottom: 0;
+      display: none;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: opacity 300ms ease;
+      z-index: 1;
+
+      &:hover {
+        opacity: 1
+      }
+
+      .thumbnail-action {
+        cursor: pointer;
+        display: block;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        &.action-remove {
+          text-align: center;
+          i {
+            background-image: image-url("icons/trash.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            height: 25px;
+            margin: 0 auto;
+            width: 25px;
           }
         }
       }

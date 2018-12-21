@@ -3,7 +3,8 @@ module Ajax
     include CurrentAndEnsureDependencyLoader
 
     def destroy
-      if photo = current_owner.photos.find_by(id: params[:id])
+      binding.pry
+      if photo = Photos.find_by(id: params[:id])
         if photo.destroy
           render json: {
             response: {

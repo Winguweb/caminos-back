@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
       # Files Resources routes
       post '/files/upload', action: :upload, controller: :photos
+      delete '/files/:id', action: :destroy, controller: :photos, as: :photo
 
       # resources :claims, only: [] do
 
@@ -63,8 +64,8 @@ Rails.application.routes.draw do
           resources :documents_relations, only: %i[create destroy]
 
           # Photos Resources routes
-          post '/photos/upload', action: :upload, controller: '/ajax/photos'
-          delete '/photos/:id', action: :destroy, controller: '/ajax/photos', as: :photo
+          post '/photos/upload', action: :upload, controller: 'photos'
+          delete '/photos/:id', action: :destroy, controller: 'photos', as: :photo
         end
         resources :works, only: [] do
           # Documents Resource routes
@@ -73,8 +74,8 @@ Rails.application.routes.draw do
           resources :documents_relations, only: %i[create destroy]
 
           # Photos Resources routes
-          post '/photos/upload', action: :upload, controller: '/ajax/photos'
-          delete '/photos/:id', action: :destroy, controller: '/ajax/photos', as: :photo
+          post '/photos/upload', action: :upload, controller: 'photos'
+          delete '/photos/:id', action: :destroy, controller: 'photos', as: :photo
         end
         resources :meetings, only: [] do
           # Documents Resource routes
