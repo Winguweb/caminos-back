@@ -46,7 +46,8 @@ CDLV.Components['map_references'] = Backbone.View.extend({
       var xOffset = urbanizationProcess == 'urbanized' ? 0 : -15
       var popupOptions = {
         position: {left: evt.containerPoint.x + xOffset + 'px', top: evt.containerPoint.y + 'px'},
-        html: nameTag + linksTag
+        html: nameTag + linksTag,
+        leftAlign: evt.containerPoint.x > window.innerWidth * 0.75 / 2
       }
       _this.showPopup(popupOptions)
     }
@@ -108,5 +109,7 @@ CDLV.Components['map_references'] = Backbone.View.extend({
     this.popup.css(options.position)
     this.popup.html(options.html)
     this.popup.addClass('visible')
+    if (options.leftAlign) this.popup.addClass('align-left')
+    if (!options.leftAlign) this.popup.removeClass('align-left')
   },
 })
