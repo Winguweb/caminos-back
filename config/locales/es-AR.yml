@@ -66,8 +66,8 @@ es-AR:
     trash: Basura
     water: Agua
   claims:
-    associated_work: Obra asociada
-    header_title: Reporte Ciudadano
+    associated_works: Obras asociadas
+    header_title: Reporte
     claim_detail: Detalle del reporte
     cancel: Cancelar
     category: Categoría
