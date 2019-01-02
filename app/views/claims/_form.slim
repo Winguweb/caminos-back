@@ -7,16 +7,16 @@
       == cell('section/header',t('claims.claim_detail'), links: [{ title: t('claims.cancel'), url:mapping_neighborhood_path(current_neighborhood) }, { title: t('claims.submit'), submit: true }])
       .field
         label.required
-          = f.label :name, t('claims.name')
+          = f.label :name, t('claims.name_question')
         =f.text_field :name, required: true
       .field
         label.required
           =f.label :description, t('claims.description')
         =f.text_area :description, required: true
       .field
-        label.required
+        label
           = f.label :lookup_address, t('claims.lookup_address')
-        =f.text_field :lookup_address, required: true
+        =f.text_field :lookup_address
 
       .half-input
         .field

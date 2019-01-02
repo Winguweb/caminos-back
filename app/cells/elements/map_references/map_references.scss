@@ -187,6 +187,18 @@
     position: absolute;
     transform: translate3d(30px, -50%, 0);
 
+    &.align-left {
+      transform: translate3d(calc(-100% - 30px), -50%, 0);
+
+      &:before {
+        border-color: transparent transparent transparent $white;
+        border-width: 5px 0 5px 4px;
+        left: auto;
+        right: 0;
+        transform: translate3d(100%, -50%, 0);
+      }
+    }
+
     > p {
       line-height: 1em;
       margin-bottom: $gutter;

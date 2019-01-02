@@ -66,8 +66,8 @@ es-AR:
     trash: Basura
     water: Agua
   claims:
-    associated_work: Obra asociada
-    header_title: Reporte Ciudadano
+    associated_works: Obras asociadas
+    header_title: Reporte
     claim_detail: Detalle del reporte
     cancel: Cancelar
     category: Categoría
@@ -75,6 +75,7 @@ es-AR:
     lookup_address: Dirección
     map_location: Ubicacion en el mapa
     name: Nombre
+    name_question: "¿Qué te gustaría reportar?"
     select_a_category: "Seleccione una categoría:"
     select_a_work: "Si tu reclamo esta vinculado con una obra, seleccionala aquí:"
     submit: Guardar

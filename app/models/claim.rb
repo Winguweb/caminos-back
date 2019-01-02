@@ -13,7 +13,6 @@ class Claim < ApplicationRecord
     :description,
     :geo_geometry,
     :geometry,
-    :lookup_address,
     :name,
   )
 
