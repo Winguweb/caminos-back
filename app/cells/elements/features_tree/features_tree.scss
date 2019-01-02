@@ -31,16 +31,15 @@
             }
 
             > i {
-              > img {
-                width: 24px;
-              }
+              background-image: image-url("icons/category-claim-white.svg") !important;
             }
           }
         }
       }
 
       > div {
-        background-color: $dark-white;
+        @include background-color($light-grey, 0.3);
+
         padding: 0 $gutter;
 
         > button {
@@ -63,6 +62,7 @@
           width: calc(100% - #{$gutter} - 10px);
 
           > i {
+            background-image: image-url("icons/category-claim.svg");
             background-position: center;
             background-size: cover;
             display: inline-block;
@@ -70,10 +70,6 @@
             margin-right: $gutter / 2;
             vertical-align: middle;
             width: 24px;
-
-            > img {
-              width: 24px;
-            }
           }
 
           > span:first-of-type {
@@ -160,8 +156,9 @@
                 @include text-color($black, 1);
 
                 display: inline-block;
+                line-height: 13px;
                 vertical-align: top;
-                width: calc(100% - 12px - #{$gutter});
+                width: calc(100% - 15px - #{$gutter});
               }
             }
 
@@ -194,7 +191,6 @@
                   @include text-color($status-proyected, 1);
                 }
 
-                padding-left: calc(12px + #{$gutter / 2});
                 text-transform: uppercase;
               }
             }
