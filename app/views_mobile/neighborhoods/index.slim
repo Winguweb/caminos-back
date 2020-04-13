@@ -9,28 +9,15 @@ aside
         h1="Elegí tu barrio"
       section
         header
-          h2="Barrios en proceso de urbanización"
+          h2="Barrios"
         nav
           ol
-            - @urbanized.each do |neighborhood|
+            - @neighborhoods.each do |neighborhood|
               li
-                = link_to neighborhood_path(neighborhood) do
+                = link_to about_neighborhood_path(neighborhood) do
                   p
                     span
                   div
                     h3=neighborhood.name
-                    span="Proceso de urbanización"
-                    span="#{to_fixed_percentage(average(neighborhood))}%"
-                    div
-                      div style="width:#{to_fixed_percentage(average(neighborhood))}%"
 
-      section
-          header
-            h2="Otros barrios"
-          nav
-            ul
-              - @unurbanized.each do |neighborhood|
-                li
-                  div
-                    = link_to neighborhood.name, about_neighborhood_path(neighborhood)
 
