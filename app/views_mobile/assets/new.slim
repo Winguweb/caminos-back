@@ -15,7 +15,7 @@
       .field
         label.required
           =f.label :description, t('claims.description')
-        =f.text_area :description, required: true
+        =f.text_area :description, required: true, placeholder: t('assets.description_placeholder'), rows: 6
       .field
         label.required
           = f.label :lookup_address, t('claims.lookup_address')
