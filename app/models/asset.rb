@@ -30,10 +30,15 @@ class Asset < ApplicationRecord
     cult
     education
     food_kitchen
+    gas_bottle
+    groceries
+    hardware_store
     health
+    hygiene_products_sell
     infrastructure
     public_organization
-    public_spaces
+    pharmacy
+    veterinary
   ].freeze
 
 
