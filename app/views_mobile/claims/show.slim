@@ -12,12 +12,16 @@ section
       div
         span = @claim.description
     section
+      == cell('section/header', t('claims.date'))
+      span  = l(@claim.date, format: :slashes).titleize
+    section
       == cell('section/header', t('pictures.pictures'))
       - if !@claim.public_photos.empty? 
         == cell('elements/photos_gallery', @claim.public_photos)
       - else
         span.section-content no hay fotos 
 
+    
   /main.page-section
     section.with-border
       == cell('elements/map_show', @claim.neighborhood, features: [@claim])

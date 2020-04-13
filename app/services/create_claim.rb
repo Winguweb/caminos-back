@@ -52,6 +52,7 @@ class CreateClaim
       geometry: @allowed_params[:geometry],
       lookup_address: @allowed_params[:lookup_address],
       name: @allowed_params[:name],
+      date: @allowed_params[:date]
     }
   end
 end

@@ -14,16 +14,20 @@ es-AR:
       health: Salud
       health_ambulance: Salud y Ambulancias
       home: Vivienda
+      income: Ingresos
       infrastructure: Equipamiento
+      internet: Acceso a Internet
       light_electricity: Luz y Electricidad
+      nutrition: Alimentación
       public: Calles y Plazas
       public_organization: Organismos Públicos
       public_services: Servicios Públicos
       public_spaces: Espacios Recreativos
       sewer: Cloacas y Pluviales
       state_equipment: Equipamiento Estatal
-      streets_parks: Calles y Plazas
-      trash: Basura
+      street_parks: Calles y Plazas
+      trash: Limpieza
+      violence: Violencia institucional
       water: Agua
     filer:
       button: Elegir archivos

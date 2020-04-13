@@ -57,6 +57,7 @@ class ClaimsController < ApplicationController
       :geometry,
       :lookup_address,
       :name,
+      :date,
       photos: [[:image]],
     )
   end
