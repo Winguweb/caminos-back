@@ -19,13 +19,16 @@ class Claim < ApplicationRecord
   validate :valid_categories
 
   CATEGORIES = %w[
-    infrastructure
     health
     energy
     sewer
-    public
     trash
     water
+    home
+    nutrition
+    violence
+    internet
+    income
   ].freeze
 
   private_constant :CATEGORIES

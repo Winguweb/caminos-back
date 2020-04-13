@@ -11,6 +11,11 @@
         =f.text_field :name, required: true
       .field
         label.required
+          = f.label :category_list, t('claims.category')
+        span.category-parent = t("claims.select_a_category")
+        = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
+      .field
+        label.required
           =f.label :description, t('claims.description')
         =f.text_area :description, required: true
       .field
@@ -18,17 +23,7 @@
           = f.label :lookup_address, t('claims.lookup_address')
         =f.text_field :lookup_address
 
-      .half-input
-        .field
-          label.required
-            = f.label :category_list, t('claims.category')
-          span.category-parent = t("claims.select_a_category")
-          = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
-        .field
-          label
-            =f.label :work_id, t('claims.work')
-          span.work-parent = t('claims.select_a_work')
-          = f.select :work_id, current_neighborhood.works.map {|w| [w.name, w.id]}, {include_blank: true}
+      
 
     section
       == cell('section/header', t('claims.map_location'))

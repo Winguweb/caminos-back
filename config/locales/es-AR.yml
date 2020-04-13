@@ -54,8 +54,11 @@ es-AR:
     health: Salud
     health_ambulance: Salud y Ambulancias
     home: Vivienda
+    income: Ingresos
     infrastructure: Equipamiento
+    internet: Acceso a Internet
     light_electricity: Luz y Electricidad
+    nutrition: Alimentación
     public: Calles y Plazas
     public_organization: Organismos Públicos
     public_services: Servicios Públicos
@@ -63,7 +66,8 @@ es-AR:
     sewer: Cloacas y Pluviales
     state_equipment: Equipamiento Estatal
     street_parks: Calles y Plazas
-    trash: Basura
+    trash: Limpieza
+    violence: Violencia institucional
     water: Agua
   claims:
     associated_works: Obras asociadas
@@ -73,9 +77,9 @@ es-AR:
     category: Categoría
     description: Descripción
     lookup_address: Dirección
-    map_location: Ubicacion en el mapa
+    map_location: Ubicación en el mapa
     name: Nombre
-    name_question: "¿Qué te gustaría reportar?"
+    name_question: "¿Qué problemática vinculada al contexto de COVID-19 te gustaría reportar?"
     select_a_category: "Seleccione una categoría:"
     select_a_work: "Si tu reclamo esta vinculado con una obra, seleccionala aquí:"
     submit: Guardar
