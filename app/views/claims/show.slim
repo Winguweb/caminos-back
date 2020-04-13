@@ -19,11 +19,8 @@ section
           span = @claim.lookup_address
       .half-input
         div
-          span = t('claims.associated_works')
-          - if @claim.work
-            = link_to @claim.work.name, neighborhood_work_path(@claim.neighborhood, @claim.work)
-          -else
-            span no hay una obra asociada
+          span = t('claims.date')
+          span = l(@claim.date, format: :slashes).titleize
     section
       div
         == cell('elements/photos_gallery', @claim.public_photos)

@@ -12,8 +12,13 @@
     section.form-section
       .field
         label.required
-          = f.label :name, t('claims.name')
+          = f.label :name, t('claims.name_question')
         =f.text_field :name, required: true
+      .field
+        label.required
+          = f.label :category_list, t('claims.category')
+        span.category-parent = t("claims.select_a_category")
+        = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
       .field
         label.required
           =f.label :description, t('claims.description')
@@ -23,15 +28,10 @@
           = f.label :lookup_address, t('claims.lookup_address')
         =f.text_field :lookup_address
       .field
-        label.required
-          = f.label :category_list, t('claims.category')
-        span.category-parent = t("claims.select_a_category")
-        = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
-      .field
-        label
-          = f.label :work_id, t('claims.associated_work')
-        span.category-parent = t("claims.select_a_work")
-        = f.select :work_id, current_neighborhood.works.map {|w| [w.name, w.id]}, {include_blank: true}
+          label
+            = f.label :date, t('claims.date')
+          = f.date_field :date
+      
 
     section
       == cell('section/header', t('claims.map_location'))
