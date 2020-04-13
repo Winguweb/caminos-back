@@ -18,13 +18,6 @@ section
       - else
         span.section-content no hay fotos 
 
-    section
-      == cell('section/header', "Obras asociadas")
-      - if @claim.work
-        = link_to @claim.work.name, neighborhood_work_path(@claim.neighborhood, @claim.work), class:'section-content associated-work-cta'
-      -else
-        span.section-content no hay una obra asociada
-
   /main.page-section
     section.with-border
       == cell('elements/map_show', @claim.neighborhood, features: [@claim])

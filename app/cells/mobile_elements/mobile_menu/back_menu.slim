@@ -12,12 +12,6 @@ nav class="mobile-menu-cell back-menu #{with_links}"
         span
     ul.should-show
       li
-        = link_to neighborhood_path(neighborhood), class: section=='neighborhoods-show' ? 'active' : nil do
-          span=t('.works')
-      li
-        = link_to agreement_neighborhood_path(neighborhood), class: section=='agreements-show' ? 'active' : nil do
-          span=t('.agreement')
-      li
         = link_to mapping_neighborhood_path(neighborhood), class: section=='neighborhoods-mapping' ? 'active' : nil do
           span=t('.claims')
       li
