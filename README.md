@@ -1,28 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is made with ruby, backbone, postgres and redis
 
 Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+* run bundle install
+* make sure pg and redis server are running
+* create caminos.yml and databse.yml with the corrects env variables
+* rake db:create db:migrate db:seed
+* rails s
 
 ### PostGIS
 Reinstallation of PostGIS extension:
