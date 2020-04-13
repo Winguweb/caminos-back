@@ -36,6 +36,14 @@
             }
 
             > section:first-of-type {
+              > nav {
+                > div:first-of-type {
+                  @include type-setting(-1);
+                  background-color: $dark-white;
+                  margin-top: $gutter;
+                  padding: $gutter;
+                }
+              }
               .empty-state{
                 margin-top: $gutter;
                 padding: $gutter;
