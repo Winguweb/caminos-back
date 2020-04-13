@@ -3,6 +3,8 @@ section
     div
       section
         nav
+          div =  "Acá podes encontrar y agregar lugares claves dentro del barrio que brindan apoyo o servicios indispensables en el contexto de emergencia por COVID-19"
+
           - if @assets.present?
             == cell('elements/features_tree', @assets)
 
