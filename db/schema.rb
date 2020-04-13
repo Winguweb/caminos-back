@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181118191446) do
+ActiveRecord::Schema.define(version: 20200413201629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20181118191446) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.string "#<ActiveRecord::ConnectionAdapters::PostGIS::TableDefinition:0x"
+    t.datetime "date"
     t.index ["geo_geometry"], name: "index_claims_on_geo_geometry", using: :gist
     t.index ["geometry"], name: "index_claims_on_geometry", using: :gist
     t.index ["neighborhood_id"], name: "index_claims_on_neighborhood_id"

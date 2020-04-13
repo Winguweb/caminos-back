@@ -9,11 +9,17 @@
         label.required
           = f.label :name, t('claims.name_question')
         =f.text_field :name, required: true
-      .field
-        label.required
-          = f.label :category_list, t('claims.category')
-        span.category-parent = t("claims.select_a_category")
-        = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
+      .half-input
+        .field
+          label.required
+            = f.label :category_list, t('claims.category')
+          span.category-parent = t("claims.select_a_category")
+          = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
+      .half-input  
+        .field
+          label
+            = f.label :date, t('claims.date')
+          = f.date_field :date
       .field
         label.required
           =f.label :description, t('claims.description')

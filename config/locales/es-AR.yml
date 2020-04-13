@@ -75,6 +75,7 @@ es-AR:
     claim_detail: Detalle del reporte
     cancel: Cancelar
     category: Categoría
+    date: Fecha
     description: Descripción
     lookup_address: Dirección
     map_location: Ubicación en el mapa
