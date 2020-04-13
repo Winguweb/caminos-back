@@ -3,8 +3,6 @@ class NeighborhoodsController < ApplicationController
 
   def index
     @neighborhoods = Neighborhood.order('LOWER(name)')
-    @urbanized = @neighborhoods.where(urbanization: true).order('LOWER(name)')
-    @unurbanized= @neighborhoods.where(urbanization: false).order('LOWER(name)')
   end
 
   def show
