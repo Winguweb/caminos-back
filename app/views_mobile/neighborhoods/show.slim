@@ -18,7 +18,6 @@ main
           = link_to t('.report'), new_neighborhood_claim_path(@neighborhood) 
     main.page-section
 
-      - if !@neighborhood.urbanization
         section
           == cell('section/header', @neighborhood.name, header_type: 'main')
           .content
@@ -34,27 +33,3 @@ main
             span=t('pictures.no_pictures')
           - else
             == cell('elements/photos_gallery', @neighborhood.photos)
-
-        section
-          == cell('section/header', t('meetings.meetings'))
-          - if @meetings.blank?
-            span=t('meetings.no_meetings')
-          - else
-            - @meetings.keys.each do |year|
-              - if year ==@meetings.keys.first
-                == cell('section/header', year, header_type: 'sub-section')
-              - else
-                == cell('section/header', year, header_type: 'sub-section')
-              == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)
-  section
-    - if @neighborhood.urbanization
-      aside
-        div
-          section
-            nav
-              -if !@neighborhood.works.empty?
-                == cell('elements/works_tree' , @neighborhood.works)
-
-              -else
-                div
-                  = t('.no_works')

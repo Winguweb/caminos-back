@@ -23,16 +23,3 @@ main
     div
       == cell('section/header', t('pictures.pictures'))
       == cell('elements/photos_gallery', @neighborhood.photos)
-
-  section
-    div
-      == cell('section/header', t('meetings.meetings'))
-      - if @meetings.blank?
-        span=t('.no_meetings')
-      - else
-        - @meetings.keys.each do |year|
-          - if year ==@meetings.keys.first
-            == cell('section/header', year)
-          - else
-            == cell('section/header', year)
-          == cell('mobile_elements/meetings_list_mobile', @meetings[year], current_meetable: @neighborhood)

@@ -36,14 +36,3 @@ section
         - else
           == cell('elements/photos_gallery', @neighborhood.photos)
 
-      section
-        == cell('section/header', t('meetings.meetings'))
-        - if @meetings.blank?
-          span=t('meetings.no_meetings')
-        - else
-          - @meetings.keys.each do |year|
-            - if year ==@meetings.keys.first
-              == cell('section/header', year, header_type: 'sub-section')
-            - else
-              == cell('section/header', year, header_type: 'sub-section')
-            == cell('elements/meetings_list', @meetings[year], neighborhood: @neighborhood)
