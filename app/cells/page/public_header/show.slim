@@ -9,12 +9,6 @@ header.page-public-header-cell class="#{'without-links' unless links}"
     - unless neighborhood.blank?
       ul
         - if neighborhood.urbanization
-          li
-            = active_link_to neighborhood_path(neighborhood), class: controller.controller_name == 'works' ? 'active':'' do
-              span= t('.works')
-        li
-          = active_link_to agreement_neighborhood_path(neighborhood) do
-            span= t('.agreement')
         li
           = active_link_to mapping_neighborhood_path(neighborhood) do
             span= t('.claims')
