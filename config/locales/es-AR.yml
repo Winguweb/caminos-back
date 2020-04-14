@@ -106,7 +106,7 @@ es-AR:
     delete: Eliminar Barrio
     delete_info_html: "Si elimina un barrio, todas sus obras y acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
     delete_neighborhood: "Está seguro de que realmente quiere eliminar %{neighborhood}?"
-    description: Sobre el Barrio
+    description: Información general
     documents: Documentos
     gdrive_folder: Carpeta de Google Drive
     has_urbanization_process: Tiene proceso de urbanización

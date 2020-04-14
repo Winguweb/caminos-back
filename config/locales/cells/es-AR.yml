@@ -27,7 +27,7 @@ es-AR:
       username: Nombre de Usuario
   mobile_elements:
     mobile_menu:
-      about: Sobre el barrio
+      about: Información general
       agreement: Indicadores de Impacto
       assets: Puntos de interés
       claims: Reporte
@@ -35,7 +35,7 @@ es-AR:
     over_work_card:
   page:
     public_header:
-      about: El barrio
+      about: Información general
       agreement: Indicadores de Impacto
       assets: Puntos de interés
       claims: Reportes

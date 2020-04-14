@@ -18,7 +18,7 @@ es-AR:
         create: Crear Barrio
         new_neighborhood: Nuevo Barrio
       show:
-        about_neighborhood: Sobre el barrio %{neighborhood}
+        about_neighborhood: Información general - %{neighborhood}
         activity: Actividad reciente
         add_new_responsible: Agregar Nuevo
         add_new_photo: Agregar Nueva
