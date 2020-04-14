@@ -5,6 +5,21 @@
   
   .claims_form{
     .page-section{
+      .alert {
+        align-items: center;
+        background-color: color($warning, 0.3);
+        border: 2px solid $yellow;
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+        padding: $gutter;
+
+        > div:first-of-type {
+          margin-right: $gutter * 2;
+        }
+      }
       .work-parent,
       .category-parent{
         @include type-setting(-1);
