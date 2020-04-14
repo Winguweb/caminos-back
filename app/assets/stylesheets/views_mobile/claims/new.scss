@@ -10,6 +10,20 @@
       }
     }
     .claims_form{
+      .alert {
+        align-items: flex-start;
+        background-color: color($warning, 0.3);
+        border: 2px solid $yellow;
+        display: flex;
+        font-size: 14px;
+        font-weight: 500;
+        margin: $gutter;
+        padding: $gutter;
+
+        > div:first-of-type {
+          margin-right: $gutter;
+        }
+      }
       .page-section{
         .work-parent,
         .category-parent{
