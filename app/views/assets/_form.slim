@@ -10,7 +10,7 @@
       .field
         label.required
           =f.label :description, t('assets.description')
-        =f.text_area :description, required: true
+        =f.text_area :description, required: true, placeholder: t('assets.description_placeholder'), rows: 6
       .half-input
         .field
           label.required

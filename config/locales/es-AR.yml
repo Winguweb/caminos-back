@@ -30,12 +30,13 @@ es-AR:
     asset_detail: Detalle del punto de interés
     cancel: Cancelar
     category: Categoría
-    description: Descripcion
+    description: Descripción
+    description_placeholder: "¿Cuál es la función de este lugar? ¿Ofrece algún servicio de apoyo en el contexto de COVID19? (Por ejemplo: viandas, centros de distanciamiento social para adultos mayores), ¿Están tomando algunas medidas especiales? (Por ejemplo: cambio de horarios, medidas de higiene, restricción de personas en el local). ¿Cómo está funcionando?"
     geo_geometry: Geometría Geoespacial
     geometry: Geometría
     header_title: Puntos de interés
     lookup_address: Dirección
-    map_location: Ubicacion en el mapa
+    map_location: Ubicación en el mapa
     name: Nombre
     select_a_category: Seleccioná una categoría
     select_a_verification_status: Verificación
@@ -47,11 +48,15 @@ es-AR:
     all_categories: Todas
     building_infrastructure: Edificio / Infraestructura
     community_center: Centros comunitarios
-    cult: Culto
+    cult: Iglesias
     education: Educación
     energy: "Electricidad y Alumbrado"
     food_kitchen: Comedores
+    gas_bottle: "Venta de garrafas"
+    groceries: "Venta de alimentos"
+    hardware_store: "Ferreterías"
     health: Salud
+    hygiene_products_sell: "Venta de productos de higiene"
     health_ambulance: Salud y Ambulancias
     home: Vivienda
     income: Ingresos
@@ -59,6 +64,7 @@ es-AR:
     internet: Acceso a Internet
     light_electricity: Luz y Electricidad
     nutrition: Alimentación
+    pharmacy: Farmacias
     public: Calles y Plazas
     public_organization: Organismos Públicos
     public_services: Servicios Públicos
@@ -68,7 +74,9 @@ es-AR:
     street_parks: Calles y Plazas
     trash: Limpieza
     violence: Violencia institucional
+    veterinary: Veterinarias
     water: Agua
+
   claims:
     associated_works: Obras asociadas
     header_title: Reporte

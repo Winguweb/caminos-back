@@ -7,11 +7,15 @@ es-AR:
       all_categories: Todas
       building_infrastructure: Edificio / Infraestructura
       community_center: Centros comunitarios
-      cult: Culto
+      cult: Iglesias
       education: Educación
       energy: "Electricidad y Alumbrado"
       food_kitchen: Comedores
+      gas_bottle: "Venta de garrafas"
+      groceries: "Venta de alimentos"
+      hardware_store: "Ferreterías"
       health: Salud
+      hygiene_products_sell: "Venta de productos de higiene"
       health_ambulance: Salud y Ambulancias
       home: Vivienda
       income: Ingresos
@@ -19,6 +23,7 @@ es-AR:
       internet: Acceso a Internet
       light_electricity: Luz y Electricidad
       nutrition: Alimentación
+      pharmacy: Farmacias
       public: Calles y Plazas
       public_organization: Organismos Públicos
       public_services: Servicios Públicos
@@ -28,6 +33,7 @@ es-AR:
       street_parks: Calles y Plazas
       trash: Limpieza
       violence: Violencia institucional
+      veterinary: Veterinarias
       water: Agua
     filer:
       button: Elegir archivos

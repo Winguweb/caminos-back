@@ -15,3 +15,9 @@ Reinstallation of PostGIS extension:
 ```sql
 ALTER EXTENSION postgis UPDATE;
 ```
+
+### I18n
+To generate i18n strings used in javascript files run
+```
+rake i18n:js:export
+```
