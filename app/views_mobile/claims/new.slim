@@ -8,7 +8,11 @@
  = form_for [ current_neighborhood, @claim], html: { class: 'form' , multipart: true} do |f|
 
   .page-section
-
+    .alert
+        div
+          span ⚠️
+        div
+          span = t("claims.disclaimer")
     section.form-section
       .field
         label.required

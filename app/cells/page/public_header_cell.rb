@@ -22,8 +22,7 @@ class Page::PublicHeaderCell < Cell::ViewModel
 
   def grouped_neighborhoods
     grouped_options = {
-      'En proceso de urbanización' => urbanized,
-      'Sin proceso de urbanización' => unurbanized
+      'Barrios' => options_from_collection_for_select(neighborhoods, 'slug', 'name', neighborhood.slug)
     }
     grouped_options_for_select(grouped_options)
   end

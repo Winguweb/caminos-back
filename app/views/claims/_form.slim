@@ -5,6 +5,11 @@
 
     section
       == cell('section/header',t('claims.claim_detail'), links: [{ title: t('claims.cancel'), url:mapping_neighborhood_path(current_neighborhood) }, { title: t('claims.submit'), submit: true }])
+      .alert
+        div
+          span ⚠️
+        div
+          span = t("claims.disclaimer")
       .field
         label.required
           = f.label :name, t('claims.name_question')

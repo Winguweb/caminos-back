@@ -77,6 +77,7 @@ es-AR:
     category: Categoría
     date: Fecha
     description: Descripción
+    disclaimer: "Tu reporte permitirá que medios de comunicación y personas tomadoras de decisión puedan identificar las problemáticas principales en las villas de la Ciudad en el contexto de COVID-19."
     lookup_address: Dirección
     map_location: Ubicación en el mapa
     name: Nombre
@@ -106,7 +107,7 @@ es-AR:
     delete: Eliminar Barrio
     delete_info_html: "Si elimina un barrio, todas sus obras y acuerdos serán eliminados. <br />Nada de esto podrá ser recuperado."
     delete_neighborhood: "Está seguro de que realmente quiere eliminar %{neighborhood}?"
-    description: Sobre el Barrio
+    description: Información general
     documents: Documentos
     exporter: Exportar Reportes
     gdrive_folder: Carpeta de Google Drive
