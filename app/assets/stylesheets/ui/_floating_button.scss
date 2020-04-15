@@ -1,6 +1,6 @@
 @mixin floating-button {
   .floating-btn {
-    background-color: $blue;
+    background-color: $red-covid;
     border: none;
     border-radius: 50px;
     bottom: 0;
@@ -37,7 +37,7 @@
 
 @mixin floating-button-mobile {
   .floating-btn {
-    background-color: $blue;
+    background-color: $red-covid;
     border: none;
     border-radius: 50%;
     bottom: 15px;
@@ -63,7 +63,7 @@
 
 @mixin floating-button-mobile-works {
   .floating-btn {
-    background-color: $blue;
+    background-color: $red-covid;
     border: none;
     border-radius: 50px;
     bottom: 10px;

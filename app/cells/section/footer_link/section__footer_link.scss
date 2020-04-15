@@ -5,7 +5,7 @@
     text-align: right;
   }
   > a {
-    @include text-color($text-blue, 1);
+    @include text-color($text-red, 1);
   }
 }
 .section__footer-link-cell{

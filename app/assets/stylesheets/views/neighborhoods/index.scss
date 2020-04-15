@@ -83,7 +83,7 @@
                       }
 
                       > a > p {
-                        border: $border solid $blue;
+                        border: $border solid $red-covid;
                         border-radius: 100%;
                         display: inline-block;
                         height: $outer-diameter;
@@ -93,7 +93,7 @@
                         width: $outer-diameter;
 
                         &::before {
-                          background-color: $blue;
+                          background-color: $red-covid;
                           border-radius: 100%;
                           content: '';
                           display: block;
@@ -155,7 +155,7 @@
                           width: 100%;
 
                           > div {
-                            background-color: $blue;
+                            background-color: $red-covid;
                             height: 100%;
                           }
                         }

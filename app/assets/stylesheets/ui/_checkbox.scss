@@ -19,7 +19,7 @@
     border-radius: 2px;
     visibility: visible;
     position: absolute;
-    background-color: $blue;
+    background-color: $red-covid;
     opacity: 0;
   }
   & + label.check-label::after {
@@ -36,6 +36,6 @@
     opacity: 1;
   }
   &:checked + label.check-label::after {
-    border-color: $blue;
+    border-color: $red-covid;
   }
 }

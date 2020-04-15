@@ -6,7 +6,7 @@
       &.active {
         position: relative;
         &:before {
-          background-color: $blue;
+          background-color: $red-covid;
           bottom: 0;
           content: '';
           height: 40px;

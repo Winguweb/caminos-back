@@ -10,10 +10,10 @@
       text-align: center;
 
       &.active {
-        border-color: color($blue, 1);
+        border-color: color($red-covid, 1);
 
         > a {
-          @include text-color($blue, 1);
+          @include text-color($red-covid, 1);
         }
       }
 
@@ -28,7 +28,7 @@
         width: 100%;
 
         &:hover {
-          @include text-color($blue, 1);
+          @include text-color($red-covid, 1);
         }
       }
     }

@@ -33,9 +33,9 @@
   }
   &:hover {
     > a > article{
-      border-color: color($text-blue, 1);
+      border-color: color($text-red, 1);
       > header > h1 {
-        @include text-color($text-blue, 1);
+        @include text-color($text-red, 1);
       }
     }
   }
