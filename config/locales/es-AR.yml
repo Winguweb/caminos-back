@@ -27,14 +27,14 @@ es-AR:
     description_3_link: "Acuerdo por la Urbanización de Villas"
   assets:
     assets: Puntos mapeados
-    asset_detail: Detalle del punto de interés
+    asset_detail: Detalle del lugar
     cancel: Cancelar
     category: Categoría
     description: Descripción
     description_placeholder: "¿Cuál es la función de este lugar? ¿Ofrece algún servicio de apoyo en el contexto de COVID19? (Por ejemplo: viandas, centros de distanciamiento social para adultos mayores), ¿Están tomando algunas medidas especiales? (Por ejemplo: cambio de horarios, medidas de higiene, restricción de personas en el local). ¿Cómo está funcionando?"
     geo_geometry: Geometría Geoespacial
     geometry: Geometría
-    header_title: Puntos de interés
+    header_title: Lugares útiles
     lookup_address: Dirección
     map_location: Ubicación en el mapa
     name: Nombre
