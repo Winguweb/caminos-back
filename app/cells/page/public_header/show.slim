@@ -14,10 +14,9 @@ header.page-public-header-cell class="#{'without-links' unless links}"
         li
           = active_link_to about_neighborhood_path(neighborhood) do
             span= t('.about')
-        - if neighborhood.assets.verification_approved.count >= 3
-          li
-            = active_link_to neighborhood_assets_path(neighborhood) do
-             span= t('.assets')
+        li
+          = active_link_to neighborhood_assets_path(neighborhood) do
+            span= t('.assets')
 
 javascript:
   $(function() {
