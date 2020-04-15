@@ -42,6 +42,10 @@ class Claim < ApplicationRecord
     ActionController::Base.helpers.image_url("icons/category-claim.svg")
   end
 
+  def self.verification_status
+    verifications.keys
+  end
+
   def valid_categories
     errors.add(:category_list, "errors") unless category_list.present?
   end

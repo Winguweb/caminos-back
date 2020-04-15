@@ -14,6 +14,8 @@ es-AR:
     claims:
       index:
         claims_list: Reportes
+      show:
+        about_claim: Sobre el reporte
     links:
       neighborhoods:
         show:
@@ -31,6 +33,7 @@ es-AR:
       admin: Administrador
       responsible: Responsable
     sections:
+      claims: Reportes
       dashboard: Dashboard
       neighborhoods: Barrios
       users: Usuarios

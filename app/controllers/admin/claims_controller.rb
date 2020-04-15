@@ -9,6 +9,7 @@ module Admin
     def edit
       ensure_neighborhood; return if performed?
 
+      @categories = Claim.categories
       @verifications = Claim.verification_status
       load_claim
     end

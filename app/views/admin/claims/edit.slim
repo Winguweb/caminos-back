@@ -1,0 +1,10 @@
+= content_for :main_header do
+  == cell('page/header', @claim.name, breadcrumbs: [{title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.claims'), href: admin_neighborhood_claims_path}, {title: @claim.name, href: admin_neighborhood_claim_path(current_neighborhood, @claim)}, {title: t('actions.edit')}])
+
+= render 'form'
+
+- if is_admin?
+  .page-section
+    section
+      == cell('section/header', t('actions.danger_zone'), header_type: 'danger')
+      == cell('section/header', t('actions.delete'), subtitle: t('claims.delete_info_html'), buttons: [{title: t('claims.delete'), extra_classes: 'danger-type', action: {type: 'alert:show', title: t('claims.delete'), message: t("claims.delete_claim", claim: @claim.name), url: admin_neighborhood_claim_path, method: 'DELETE'}}])

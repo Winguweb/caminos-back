@@ -1,0 +1,24 @@
+= content_for :main_header do
+  == cell('page/header', @claim.name, breadcrumbs: [ {title: t('admin.sections.dashboard'), href: admin_dashboard_path}, {title: t('admin.sections.neighborhoods'), href: admin_neighborhoods_path}, {title: current_neighborhood.name, href: admin_neighborhood_path(current_neighborhood)}, {title: t('admin.sections.claims'), href: admin_neighborhood_claims_path(current_neighborhood)}, {title: @claim.name} ])
+
+.page-section
+  section
+    == cell('section/header', t(".about_claim"), links: [{title:t('actions.edit'), href: edit_admin_neighborhood_claim_path(current_neighborhood, @claim)}])
+    div
+      span = t('claims.name')
+      span = @claim.name
+    div
+      span = t('claims.description')
+      span = @claim.description
+    .half-input
+      div
+        span = t('claims.category')
+        - @claim.categories.each do | category |
+          span = t("categories.#{category}")
+      div
+        span = t('claims.verification')
+        span = t("verifications.#{@claim.verification}")
+
+  section
+    == cell('section/header', t('claims.map_location'))
+    == cell('elements/map_show', current_neighborhood, features: [ @claim ])

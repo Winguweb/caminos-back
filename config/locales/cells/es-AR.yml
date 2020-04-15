@@ -30,7 +30,7 @@ es-AR:
       about: Información general
       agreement: Indicadores de Impacto
       assets: Lugares útiles
-      claims: Reporte
+      claims: Reportes
       works: Obras
     over_work_card:
   page:
@@ -45,7 +45,7 @@ es-AR:
     mapping:
       report: subí tu reporte
       no_data: Este barrio no posee ningún reporte
-      no_data_mobile: Este barrio no posee ningún reporte, aca podes agregar uno
+      no_data_mobile: Este barrio no posee ningún reporte, acá podés agregar uno
     show:
       report: subí tu reporte
   assets:
