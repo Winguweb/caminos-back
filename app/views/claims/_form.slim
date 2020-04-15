@@ -22,9 +22,9 @@
           = f.select :category_list, @categories.collect {|c| [t("categories.#{c}"), c]}, { include_blank: true }, required: true
       .half-input  
         .field
-          label
+          label.required
             = f.label :date, t('claims.date')
-          = f.date_field :date
+          = f.date_field :date, required: true
       .field
         label.required
           =f.label :description, t('claims.description')

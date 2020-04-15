@@ -84,6 +84,7 @@ es-AR:
     name: Nombre
     name_question: "¿Qué problemática vinculada al contexto de COVID-19 te gustaría reportar?"
     select_a_category: "Seleccione una categoría:"
+    select_a_verification_status: "Verificación"
     select_a_work: "Si tu reclamo esta vinculado con una obra, seleccionala aquí:"
     submit: Guardar
     verification: Verificación
