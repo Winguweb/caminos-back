@@ -11,6 +11,11 @@ es-AR:
         assets_list: Puntos de interés
       show:
         about_asset: Sobre el punto de interés
+    claims:
+      index:
+        claims_list: Reportes
+      show:
+        about_claim: Sobre el reporte
     links:
       neighborhoods:
         show:
@@ -20,6 +25,7 @@ es-AR:
           agreement: Acuerdo
           activity: Actividad reciente
           assets: Puntos de interés
+          claims: Reportes
     meetings:
       show:
         meeting_date: Reunión %{date}
@@ -27,6 +33,7 @@ es-AR:
       admin: Administrador
       responsible: Responsable
     sections:
+      claims: Reportes
       dashboard: Dashboard
       neighborhoods: Barrios
       users: Usuarios

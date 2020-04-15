@@ -1,0 +1,26 @@
+#claims-show {
+  .page-section {
+    > section {
+      > div,
+      .half-input > div,
+      .two-thirds-one-third-input > div {
+        @include grid-container;
+
+        margin-bottom: $vgutter * 2;
+
+        > span:first-of-type {
+          @include type-setting(-1);
+
+          color: $grey;
+          display: block;
+          margin-bottom: $gutter / 7;
+          text-transform: none;
+        }
+
+        > span + span {
+          display: block;
+        }
+      }
+    }
+  }
+}

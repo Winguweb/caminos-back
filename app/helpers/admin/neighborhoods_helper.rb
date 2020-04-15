@@ -9,12 +9,8 @@ module Admin
           href: admin_neighborhood_path(neighborhood),
           _show: true
         },{
-          title: t('admin.links.neighborhoods.show.meetings'),
-          href: admin_neighborhood_meetings_path(neighborhood),
-          _show: true
-        },{
-          title: t('admin.links.neighborhoods.show.agreement'),
-          href: admin_neighborhood_agreement_path(neighborhood),
+          title: 'Reportes',
+          href: admin_neighborhood_claims_path(neighborhood),
           _show: true
         },{
           title: t('admin.links.neighborhoods.show.assets'),

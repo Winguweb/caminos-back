@@ -53,6 +53,7 @@ module CaminosBack
       elements/breadcrumbs_cell
       elements/button_cell
       elements/button_for_cell
+      elements/claims_table_cell
       elements/description_cell
       elements/documents_relatable_cell
       elements/documents_table_cell

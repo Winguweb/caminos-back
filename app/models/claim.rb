@@ -1,6 +1,7 @@
 class Claim < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: %i[slugged finders history]
+  enum verification: [:verification_pending, :verification_rejected, :verification_approved]
 
   belongs_to :neighborhood
   belongs_to :work, optional: true
@@ -39,6 +40,10 @@ class Claim < ApplicationRecord
 
   def self.icon(category)
     ActionController::Base.helpers.image_url("icons/category-claim.svg")
+  end
+
+  def self.verification_status
+    verifications.keys
   end
 
   def valid_categories
