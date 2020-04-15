@@ -3,41 +3,55 @@ module Reporting
   module Streamable
     include ActiveSupport::Concern
 
-    def stream_csv(exporter, *args)
-      raise MistypeError.new(self, Exporter, __method__) unless exporter.ancestors.include? Exporter
-      
-      exporter = exporter.new(*args)
+    def stream_xlsx()
+      buffer = StringIO.new
+      xlsx = Xlsxtream::Workbook.new(buffer)
 
-      set_file_headers(exporter.filename)
+      xlsx.write_worksheet 'Reportes' do |sheet|
+        sheet << get_char_headers
+        claims = current_neighborhood.claims
+
+        claims.each do |claim|
+          sheet << [
+            claim.name,
+            claim.description,
+            claim.category.name,
+            claim.date
+          ]
+        end
+      end
+
+      xlsx.close
+      buffer.rewind
+
+      set_xlsx_file_headers("reportes")
       set_streaming_headers
 
-      response.status = 200
-
-      self.response_body = exporter.csv_stream
+      self.response_body = buffer.read
+      
     end
 
     private
-    
-    def set_file_headers(filename)
-      file_name = "#{filename}.csv"
-      headers['Content-Type'] = 'text/csv; charset=utf-8; header=present'
-      headers['Content-Disposition'] = "attachment; filename=\"#{file_name}\""
-      headers["X-Accel-Buffering"] = "no"
-    end
 
+    def set_xlsx_file_headers(filename)
+      file_name = "#{filename}.xlsx"
+      headers['Content-Type'] = 'application/vnd.ms-excel; charset=utf-8; header=present'
+      headers['Content-Disposition'] = "attachment; filename=\"#{file_name}\""
+    end
+  
     def set_streaming_headers
       headers['Cache-Control'] = 'no-cache'
       headers['X-Accel-Buffering'] = 'no'
       headers.delete('Content-Length')
     end
-  end
 
-  class MistypeError < StandardError
-    attr_reader :object
-
-    def initialize(object, expected_class, method_name)
-      @object = object
-      super("The Method ##{method_name} called in #{object.class.name} was expecting an exporter kind of: #{expected_class.to_s} Class.")
+    def get_char_headers
+      return [
+        "Nombre", 
+        "Descripcion",
+        "categoria",
+        "fecha"
+      ]
     end
   end
 end

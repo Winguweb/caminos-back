@@ -59,7 +59,6 @@ Rails.application.routes.draw do
           post '/documents/upload', action: :upload, controller: :documents
           delete '/documents/:id', action: :destroy, controller: :documents, as: :document
           resources :documents_relations, only: %i[create destroy]
-
           # Photos Resources routes
           post '/photos/upload', action: :upload, controller: :photos
           delete '/photos/:id', action: :destroy, controller: :photos, as: :photo
@@ -103,6 +102,7 @@ Rails.application.routes.draw do
         get '/works/status', action: :index, controller: :works
         get '/assets', action: :index, controller: :assets
         get '/claims', action: :index, controller: :claims
+        get '/exporter',action: :exporter, controller: :claims
       end
     end
   end

@@ -7,6 +7,11 @@ div.page-section
     .content
       == cell('elements/description', text: @neighborhood.description)
 
+  section.with-borde
+    == cell('section/header', t('neighborhoods.exporter'))
+    .content
+      = link_to "descargar", api_neighborhood_exporter_path(@neighborhood) 
+        
   section.with-border
     == cell('section/header', t('neighborhoods.urbanization_process'))
     .content

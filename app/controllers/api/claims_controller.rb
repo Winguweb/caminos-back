@@ -1,6 +1,7 @@
 module Api
   class ClaimsController < BaseController
     include CurrentAndEnsureDependencyLoader
+    include Reporting::Streamable
     helper_method :current_neighborhood
 
     def index
@@ -9,6 +10,10 @@ module Api
       categories = Claim.categories
       neighborhood_slug = current_neighborhood.slug
       render :json => {claims: sort_by_category(unordered_claims, all: true), categories: categories, neighborhood_slug: neighborhood_slug}
+    end
+
+    def exporter
+      stream_xlsx()
     end
 
     private

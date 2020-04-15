@@ -9,10 +9,6 @@ module Admin
           href: admin_neighborhood_path(neighborhood),
           _show: true
         },{
-          title: t('admin.links.neighborhoods.show.works'),
-          href: admin_neighborhood_works_path(neighborhood),
-          _show: neighborhood.urbanization
-        },{
           title: t('admin.links.neighborhoods.show.meetings'),
           href: admin_neighborhood_meetings_path(neighborhood),
           _show: true
