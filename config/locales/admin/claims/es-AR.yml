@@ -4,5 +4,5 @@ es-AR:
       errors: "%{field}: Este campo es obligatorio"
       geo_geometry: Ubicación en el mapa
       geometry: Ubicación en el mapa
-      success: El reporte se creó exitosamente
+      success: El reporte se creó exitosamente. Un administrador lo deberá aprobar antes de mostrarlo.
       category_list: Categoría
