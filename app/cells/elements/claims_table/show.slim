@@ -1,0 +1,23 @@
+.claims-table-cell
+  table style="width:100%"
+    tbody
+      - claims.each do |claim|
+        tr
+          td
+            = link_to claim_url(id: claim) do
+              =image_tag claim.category_icon
+          td
+            = link_to claim_url(id: claim) do
+              span class=claim.category
+                = t("categories.#{claim.category}")
+              span= claim.name
+              span= claim.lookup_address
+
+          td
+            = link_to claim_url(id: claim) do
+              span = t("verification.#{claim.verification}")
+
+          td
+            = link_to claim_url(id: claim) do
+              span= t('labels.updated_at')
+              span= l(claim.updated_at, format: :slashes)

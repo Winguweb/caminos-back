@@ -92,6 +92,7 @@ Rails.application.routes.draw do
         resources :works
         resources :meetings
         resources :assets, except: %i[new create]
+        resources :claims, except: %i[new create] 
         resource :agreement, except: %i[destroy]
       end
     end

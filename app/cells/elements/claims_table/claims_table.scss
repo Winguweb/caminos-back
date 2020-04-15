@@ -1,0 +1,192 @@
+@mixin assets-table {
+  > table {
+    > thead {
+      > tr {
+        > th {
+          > select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: white;
+            background-image: image-url("icons/down-arrow.svg");
+            background-position: center right;
+            background-repeat: no-repeat;
+            border-color: white;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 15px;
+            margin-right: 10px;
+            padding-right: 25px;
+          }
+
+          &:nth-of-type(1) {
+            @include grid-column(1);
+          }
+
+          &:nth-of-type(2) {
+            @include grid-column(3);
+          }
+
+          &:nth-of-type(3) {
+            @include grid-column(3);
+          }
+        }
+      }
+    }
+
+    > tbody {
+      padding-top: 10px;
+
+      > tr {
+        border-bottom: 1px solid $light-grey;
+
+        &:first-of-type {
+          border-top: 1px solid $light-grey;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+        }
+
+        > td {
+          @include text-color($text-black, 1);
+
+          padding: ($vgutter * 2) 0;
+
+          > a {
+            display: inline-block;
+
+            > img {
+              width: 22px;
+            }
+
+            > span {
+              display: block;
+            }
+          }
+
+          &:nth-of-type(1) {
+            @include grid-column(1);
+
+            display: table-cell;
+            vertical-align: middle;
+
+            > a {
+              &:nth-of-type(1) {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: block;
+                height: 48px;
+                margin-top: 20px;
+                width: 48px;
+              }
+            }
+          }
+
+          &:nth-of-type(2) {
+            margin-top: 0px;
+
+            @include grid-column(7);
+
+            > a {
+              width: 100%;
+
+              > span {
+                @include text-color($text-black, 1);
+
+                margin-left: 0px;
+                padding-left: 0px;
+
+                &:nth-of-type(1) {
+                  @include type-setting(-2);
+
+                  line-height: 1em;
+                  margin-bottom: 4px;
+
+                  &.home {
+                    @include text-color($home, 1);
+                  }
+
+                  &.water {
+                    @include text-color($water, 1);
+                  }
+
+                  &.trash {
+                    @include text-color($trash, 1);
+                  }
+
+                  &.public {
+                    @include text-color($public, 1);
+                  }
+
+                  &.health {
+                    @include text-color($health, 1);
+                  }
+
+                  &.energy {
+                    @include text-color($energy, 1);
+                  }
+
+                  &.sewer {
+                    @include text-color($sewer, 1);
+                  }
+
+                  &.infrastructure {
+                    @include text-color($infrastructure, 1);
+                  }
+                }
+
+                &:nth-of-type(2) {
+                  @include type-setting(5);
+                }
+
+                &:nth-of-type(3) {
+                  @include type-setting(-1);
+
+                  @include ellipsis;
+                }
+              }
+            }
+          }
+
+          &:nth-of-type(3) {
+            @include grid-column(3);
+
+            display: table-cell;
+            padding-bottom: 0px;
+            padding-top: $gutter * 2 * 1.25;
+            vertical-align: middle;
+
+            > a {
+              @include type-setting(-2);
+
+              @include text-color($text-grey, 1);
+            }
+          }
+
+          &:nth-of-type(4) {
+            display: table-cell;
+            margin-bottom: 0px;
+            padding-top: $gutter * 2 * 1.25;
+            text-align: right;
+            vertical-align: middle;
+
+            @include grid-column(5);
+
+            > a {
+              @include text-color($text-grey, 1);
+            }
+          }
+
+          > a, > span, > i {
+            @include grid-collapse;
+          }
+        }
+      }
+    }
+  }
+}
+
+.claims-table-cell {
+  @include assets-table;
+}
