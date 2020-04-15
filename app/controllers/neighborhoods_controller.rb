@@ -7,7 +7,7 @@ class NeighborhoodsController < ApplicationController
 
   def show
     load_neighborhood_or_redirect; return if performed?
-    redirect_to mapping_neighborhood_path(@neighborhood)
+    redirect_to about_neighborhood_path(@neighborhood)
   end
 
   def about
