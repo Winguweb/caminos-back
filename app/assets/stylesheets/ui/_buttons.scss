@@ -1,5 +1,5 @@
-@mixin button($color: $blue) {
-  @include text-color($text-blue, 1);
+@mixin button($color: $red-covid) {
+  @include text-color($text-red, 1);
 
   @include type-setting(-1);
 
@@ -51,7 +51,7 @@
   }
 }
 
-@mixin wired-button($color: $blue) {
+@mixin wired-button($color: $red-covid) {
   @include button($color);
 
   @include text-color($color, 1);
@@ -71,7 +71,7 @@
   }
 }
 
-@mixin text-button($color: $blue) {
+@mixin text-button($color: $red-covid) {
   @include wired-button($color);
 
   border: none;
@@ -93,7 +93,7 @@
   }
 }
 
-@mixin small-button($color: $blue) {
+@mixin small-button($color: $red-covid) {
   @include button($color);
 
   @include type-setting(-2);
@@ -101,7 +101,7 @@
   padding: ($gutter / 3) ($gutter / 2);
 }
 
-@mixin small-text-button($color: $blue) {
+@mixin small-text-button($color: $red-covid) {
   @include text-button($color);
 
   @include type-setting(-2);

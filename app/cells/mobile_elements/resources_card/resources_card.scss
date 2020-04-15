@@ -1,13 +1,13 @@
 // $aside-heigth defined at _variables.scss
 @mixin resources-card() {
   > a {
-    border: 2px solid $blue;
+    border: 2px solid $red-covid;
     border-radius: 6px;
     display: block;
     margin-bottom: $gutter;
     padding: $vgutter*2 $gutter;
     > p {
-      @include text-color($blue);
+      @include text-color($red-covid);
       @include type-setting(5);
     }
     > span {

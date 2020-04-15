@@ -8,7 +8,7 @@
     .cls-1 {
       fill: none;
       height: 100%;
-      stroke: $blue;
+      stroke: $red-covid;
       stroke-width: 2px;
       width: 100%;
 
@@ -19,7 +19,7 @@
   }
 
   > span {
-    color: $blue;
+    color: $red-covid;
     left: 50%;
     position: absolute;
     top: 50%;
