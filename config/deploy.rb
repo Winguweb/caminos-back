@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.1"
 
-set :application, "caminos"
+set :application, "covid"
 set :repo_url,    "git@github.com:Winguweb/caminos-back.git"
 set :user,        "deploy"
 
@@ -14,7 +14,7 @@ set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh
 
 ## Defaults:
 # set :scm,           :git
-# set :branch,        :master
+set :branch,          'covid-19'
 # set :format,        :pretty
 # set :log_level,     :debug
 # set :keep_releases, 5
