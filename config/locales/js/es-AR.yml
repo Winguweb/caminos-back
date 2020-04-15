@@ -57,9 +57,9 @@ es-AR:
         urbanized: En proceso de urbanización
         unurbanized: Sin proceso de urbanización
         links:
-          asset: Puntos de interés
+          asset: Lugares útiles
           claim: Reporte
-          monitor: Monitoreá este barrio
+          about: Información general
     status:
       all_status: Todos
       done: Finalizada
