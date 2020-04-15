@@ -47,7 +47,7 @@ class NeighborhoodsController < ApplicationController
   end
 
   def load_claims
-    @claims = @neighborhood.claims
+    @claims = @neighborhood.claims.verification_approved
   end
 
 end

@@ -1,6 +1,7 @@
 class Claim < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: %i[slugged finders history]
+  enum verification: [:verification_pending, :verification_rejected, :verification_approved]
 
   belongs_to :neighborhood
   belongs_to :work, optional: true
