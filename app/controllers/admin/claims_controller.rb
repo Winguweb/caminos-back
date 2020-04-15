@@ -16,7 +16,7 @@ module Admin
     def index
       ensure_neighborhood; return if performed?
 
-      @claims = current_neighborhood.claims
+      @claims = current_neighborhood.claims.order(verification: :asc)
     end
 
     def show
