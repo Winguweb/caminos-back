@@ -108,6 +108,7 @@ es-AR:
     delete_neighborhood: "Está seguro de que realmente quiere eliminar %{neighborhood}?"
     description: Sobre el Barrio
     documents: Documentos
+    exporter: Exportar Reportes
     gdrive_folder: Carpeta de Google Drive
     has_urbanization_process: Tiene proceso de urbanización
     hasnt_urbanization_process: Sin proceso de urbanicación

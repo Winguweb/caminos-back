@@ -14,6 +14,7 @@ gem 'cells-slim', git: "git@github.com:trailblazer/cells-slim", branch: :master
 gem 'friendly_id', '~> 5.2.0'
 gem 'google-api-client', '~> 0.22'
 gem 'i18n-js'
+gem 'xlsxtream'
 gem 'jwt' # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
 gem 'mini_magick' #gem for resize images
 gem 'neat' # A lightweight and flexible Sass grid
