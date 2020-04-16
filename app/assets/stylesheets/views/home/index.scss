@@ -53,6 +53,9 @@
       }
 
       > section ~ section {
+        background: $red-covid;
+        color: $text-white;
+
         > div.diagonal {
           height: 0;
           position: relative;
@@ -65,6 +68,7 @@
         }
 
         > div.diagonal:last-of-type {
+          height: 960px;
           position: relative;
           top: 0;
           z-index: 2;
@@ -105,7 +109,6 @@
       > section:last-of-type {
         > div {
           > img {
-            height: auto;
             margin-top: 10px;
             width: 100vw;
           }
@@ -219,6 +222,14 @@
         }
       }
 
+      > section.section-1 {
+        background: $blue-covid;
+      }
+
+      > section.section-2 {
+        background: $green-covid;
+      }
+
       > footer {
         @include clearfix;
 
@@ -327,7 +338,7 @@
 
         > header {
           > h1 {
-            @include type-setting(2);
+            @include type-setting(3);
 
             font-family: 'Roboto Slab';
             font-weight: 600;
@@ -335,27 +346,6 @@
             margin-top: $gutter * 3;
             position: relative;
 
-            &:before, &:after {
-              content: '';
-              display: block;
-              height: $gutter * 2;
-              opacity: 0.5;
-              position: absolute;
-              width: 61%;
-              z-index: -1;
-            }
-
-            &:before {
-              background-color: $red-covid;
-              left: 0;
-              top: 30px;
-            }
-
-            &:after {
-              background-color: $fuchsia;
-              bottom: 0;
-              right: 0;
-            }
           }
         }
 

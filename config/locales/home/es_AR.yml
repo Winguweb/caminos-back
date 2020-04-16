@@ -3,9 +3,9 @@ es-AR:
     index:
       link_to_covid_1: "Acceder al Monitor de obras"
       text_1_html: "Adaptamos Caminos de la Villa para que puedas georreferenciar problemáticas vinculadas al COVID-19 y acceder a información relevante, además de seguir accediendo a información vinculada a los procesos de urbanización de las villas de CABA."
-      text_to_v1_html: "<span>¿Buscas realizar un reclamo sobre infraestructura y servicios públicos?</span> Hacé click "
-      section_1_header: "Herramienta para el monitoreo en procesos de urbanización"
-      section_1_text: "Haciendo click en cada uno de los barrios que están atravesando procesos de urbanización puede verse en detalle cada una de las obras involucradas en dichas intervenciones, mejorando la transparencia en la ejecución de la obra pública y promoviendo el acceso a la información para mejorar los canales de participación"
+      section_1_header: "Lugares útiles"
+      section_1_text_1: "Podés acceder al mapa de tu barrio y ver la ubicación de centros comunitarios, iglesias, comedores, centros de salud, organismos públicos, farmacias, lugares de venta de alimentos, ferreterías, veterinarias venta de garrafas y venta de productos de limpieza. Si falta un lugar, podés sumarlo al mapa."
+      section_1_text_2: "De esta manera, promovemos utilizar los locales comerciales y centros comunitarios más cercanos a tu casa y ayudamos a mantener el aislamiento social."
       section_2_header: "Información clara y actualizada de los procesos de urbanización"
       section_2_text: "Además de poder ver las obras de manera georreferenciadas, la plataforma también centraliza información referida a reuniones vecinales y gubernamentales y documentación importante. Esto, permite a los vecinos y vecinas contar con más información y mejorar su participación en los procesos de urbanización."
       section_3_header: "Mirá cuánto y con qué calidad se avanzó en cada uno de los barrios"
