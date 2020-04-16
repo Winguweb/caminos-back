@@ -505,10 +505,10 @@
             float: none;
             margin-bottom: $gutter * 2;
             text-align: center;
-            width: 100%;
+            max-width: 70%;
 
             > img {
-              max-width: 70%;
+              width: 100%;
             }
           }
 
