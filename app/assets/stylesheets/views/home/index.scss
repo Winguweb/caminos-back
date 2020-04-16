@@ -599,7 +599,6 @@
           }
         }
 
-        > section:last-of-type {}
 
         > section:first-of-type {
           > div:first-of-type {
@@ -686,9 +685,23 @@
         }
 
         > section + section {
+          padding: 0 $gutter;
           > header {
             > h1 {
               @include type-setting(4);
+            }
+          }
+
+          > div:first-of-type:not(.diagonal):not(.cta) { 
+            grid-template-columns: 1fr;
+
+            > div {
+              > p {
+                @include type-setting(0);
+      
+                margin-bottom: 0;
+                text-align: left;
+              }
             }
           }
         }
@@ -707,12 +720,11 @@
           }
         }
 
-        > section:last-of-type {
-          > div {}
-        }
 
         > section:first-of-type {
           > div:first-of-type {
+            min-height: 300px;
+
             > div {
               float: none !important;
               position: static !important;
@@ -743,10 +755,43 @@
               @include type-setting(0);
             }
           }
+
+          > div:nth-of-type(2) {
+            > p {
+              font-weight: 500;
+              text-align: left;
+              width: 100%;
+
+              @include type-setting(0);
+            }
+          }
+        }
+
+        > section + section {
+          > div:first-of-type:not(.diagonal):not(.cta) {
+            > div {
+              > div {
+                > div {
+                  justify-content: center;
+
+                  button {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+
+          > div.cta {
+            padding: 0;
+          }
         }
 
         > footer {
           > div {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
             float: right;
             width: 100%;
 
@@ -758,6 +803,10 @@
                 margin: 0 auto;
                 max-width: 300px;
                 width: 80%;
+
+                &.acij-logo {
+                  margin: 0 auto $gutter * 2;
+                }
               }
             }
           }
@@ -789,10 +838,15 @@
         }
 
         > section + section {
+          padding: 0 ($gutter);
           > header {
             > h1 {
               @include type-setting(4);
             }
+          }
+
+          > p {
+            padding: 0;
           }
         }
       }
