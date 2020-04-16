@@ -27,7 +27,7 @@ class Asset < ApplicationRecord
   validate :valid_categories
 
   CATEGORIES = %w[
-    community_center
+    community_equipment
     cult
     education
     food_kitchen
@@ -35,11 +35,11 @@ class Asset < ApplicationRecord
     groceries
     hardware_store
     health
-    hygiene_products_sell
-    infrastructure
+    hygiene_products_sell    
     public_organization
     pharmacy
     veterinary
+    recreation
   ].freeze
 
 

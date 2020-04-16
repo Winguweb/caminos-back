@@ -47,7 +47,8 @@ es-AR:
   categories:
     all_categories: Todas
     building_infrastructure: Edificio / Infraestructura
-    community_center: Centros comunitarios
+    community_equipment: Equipamiento comunitario
+    recreation: Recreacion
     cult: Iglesias
     education: Educación
     energy: "Electricidad y Alumbrado"
@@ -60,7 +61,6 @@ es-AR:
     health_ambulance: Salud y Ambulancias
     home: Vivienda
     income: Ingresos
-    infrastructure: Equipamiento
     internet: Acceso a Internet
     light_electricity: Luz y Electricidad
     nutrition: Alimentación
