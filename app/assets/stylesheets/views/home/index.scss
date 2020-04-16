@@ -118,47 +118,14 @@
         > div:first-of-type {
           @include clearfix;
 
-          background-image: image-url("home/landing_bg.jpg");
+          background-image: image-url("home/bg-image-01.jpg");
+          background-repeat: no-repeat;
           background-size: cover;
+          min-height: 860px;
           position: relative;
           z-index: 3;
 
-          > div:last-of-type {
-            background-color: rgba(255, 255, 255, 0.8);
-            bottom: 0;
-            left: $gutter * 3;
-            position: absolute;
-            top: 0;
-            width: 330px;
-            z-index: -1;
-
-            > div {
-              position: absolute;
-              top: 50%;
-              transform: translate3d(0, -50%, 0);
-              width: 100%;
-
-              > a {
-                @include type-setting(-1);
-
-                background-color: $white;
-                border-radius: 2px;
-                box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-                color: $fuchsia;
-                display: block;
-                margin: $gutter;
-                max-width: 400px;
-                padding: ($gutter / 2) $gutter;
-                text-align: center;
-
-                &:hover {
-                  background-color: $fuchsia;
-                  color: $white;
-                }
-              }
-            }
-          }
-
+          
           > div.diagonal {
             position: relative;
             top: -1px;
@@ -229,19 +196,20 @@
         }
 
         > div:nth-of-type(2) {
-          background-color: $blue;
+          background-color: $red-covid;
           color: $white;
           padding: $gutter * 2;
           position: relative;
-          text-align: right;
+          text-align: center;
 
           > p {
-            @include type-setting(5);
+            @include type-setting(6);
 
             display: inline-block;
+            font-family: $font-sans;
             margin-bottom: $gutter;
             position: relative;
-            width: 87%;
+            width: 80%;
             z-index: 2;
 
             & + p {

@@ -2,14 +2,7 @@ es-AR:
   home:
     index:
       link_to_covid_1: "Acceder al Monitor de obras"
-      link_to_v1_1: "aquí"
-      link_to_v1_2: "Descargá el mapa de tu barrio"
-      link_to_v1_3: "Accedé al Acuerdo por la Urbanización"
-      link_to_v1_4: "Explorá los procesos de urbanización"
-      link_to_v2_1: "Monitoreá los procesos de urbanización"
-      link_to_v2_2: "Ingresá aquí"
-      text_1_html: "Caminos de la Villa es una plataforma de acción ciudadana que permite acceder de manera sencilla a la información vinculada con los procesos de urbanización en las villas de la Ciudad de Buenos Aires y ver de qué manera se están llevando adelante. "
-      text_2: "¡Sumate!"
+      text_1_html: "Adaptamos Caminos de la Villa para que puedas georreferenciar problemáticas vinculadas al COVID-19 y acceder a información relevante, además de seguir accediendo a información vinculada a los procesos de urbanización de las villas de CABA."
       text_to_v1_html: "<span>¿Buscas realizar un reclamo sobre infraestructura y servicios públicos?</span> Hacé click "
       section_1_header: "Herramienta para el monitoreo en procesos de urbanización"
       section_1_text: "Haciendo click en cada uno de los barrios que están atravesando procesos de urbanización puede verse en detalle cada una de las obras involucradas en dichas intervenciones, mejorando la transparencia en la ejecución de la obra pública y promoviendo el acceso a la información para mejorar los canales de participación"

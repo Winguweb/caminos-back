@@ -7,23 +7,9 @@ nav
 section
   div
     div.diagonal = image_tag image_path("home/diagonal-open-close-header.png"), class: 'diagonal'
-    div
-      = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
-        p
-          strong = t('.link_to_v2_1')
-          strong
-            span = t('.link_to_v2_2')
-    div
-      div
-        = link_to "https://drive.google.com/drive/u/0/folders/15JbXsyfsXX0Mi7imrhAiFPIqLNMmRDnr", target:"_blank", noopener:'', noreferrer:''
-          = t('.link_to_v1_2')
-        = link_to "https://acuerdoporlaurbanizacion.org" , target:"_blank", noopener:'', noreferrer:''
-          = t('.link_to_v1_3')
-        = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
-          = t('.link_to_v1_4')
+
   div
     p = t('.text_1_html')
-    p = t('.text_2')
   div.diagonal = image_tag image_path("home/diagonal-close-open-blue.png"), class: 'diagonal'
 section.section-1
   header
