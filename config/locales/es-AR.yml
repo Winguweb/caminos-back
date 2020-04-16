@@ -121,6 +121,7 @@ es-AR:
     description: Información general
     documents: Documentos
     exporter: Descargar Reportes ciudadanos
+    public_exporter: Descargar Reportes
     gdrive_folder: Carpeta de Google Drive
     has_urbanization_process: Tiene proceso de urbanización
     hasnt_urbanization_process: Sin proceso de urbanicación
