@@ -5,7 +5,8 @@ class Asset < ApplicationRecord
   enum verification: [:verification_pending, :verification_rejected, :verification_approved]
 
   belongs_to :neighborhood
-
+  has_many :public_photos, as: :owner
+  
   acts_as_taggable_on :categories
 
   scope :within, -> (point) {
