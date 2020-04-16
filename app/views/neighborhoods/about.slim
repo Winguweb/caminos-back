@@ -19,7 +19,7 @@ section
         == cell('elements/photos_gallery', @neighborhood.photos)
     
     section
-      == cell('section/header', t('exporter'))
+      == cell('section/header', t('neighborhoods.public_exporter'))
       .content
         .link
           = link_to "Reportes ciudadanos del barrio", api_neighborhood_export_path(@neighborhood) 
