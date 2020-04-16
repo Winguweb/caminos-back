@@ -19,7 +19,12 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
     meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"
     meta name="locale" content=I18n.locale.to_s
 
-
+    meta property="og:title" name="og:title" content="Caminos de la villa | Covid-19"
+    meta property="og:type" name="og:type" content="website"
+    meta property="og:url" name="og:url" content="http://covid19.caminosdelavilla.org/"
+    meta property="og:image" name="og:image" itemprop="image" content="#{image_url('/logos/caminos_red_logo.png')}"
+    meta property="og:description" name="og:description" content="Adaptamos Caminos de la Villa para que puedas georreferenciar problemáticas vinculadas al COVID-19 y acceder a información relevante, además de seguir accediendo a información vinculada a los procesos de urbanización de las villas de CABA."
+    meta property="og:site_name" name="og:site_name" content="Covid-19 Caminos de la Villa"
 
     = stylesheet_link_tag 'public', media: 'all'
     = stylesheet_link_tag 'https://api.mapbox.com/mapbox.js/v3.1.1/mapbox.css'
