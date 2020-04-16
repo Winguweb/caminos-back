@@ -1,10 +1,9 @@
 nav
   div
-    = image_tag image_path("logos/caminos_logo.svg")
+    = image_tag image_path("logos/covid-logo.svg")
   div
-    / span
-      = t('.text_to_v1_html')
-      = link_to t, target:"_blank", noopener:'', noreferrer:''('.link_to_v1_1')
+    = link_to "https://caminosdelavilla.org/", target:"_blank", noopener:'', noreferrer:''
+      span = t('.link_to_covid_1')
 section
   div
     div.diagonal = image_tag image_path("home/diagonal-open-close-header.png"), class: 'diagonal'

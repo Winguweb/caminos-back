@@ -11,6 +11,7 @@
       > nav {
         @include clearfix;
 
+        background-color: $red-covid;
         padding: ($gutter * 3) ($gutter * 3) 0 ($gutter * 3);
         position: relative;
         z-index: 4;
@@ -28,17 +29,25 @@
         }
 
         > div:last-of-type {
+          color: $text-white;
           float: right;
           position: relative;
           text-align: right;
           width: 65%;
           z-index: 1;
 
-          > span {
-            @include type-setting(6);
+          > a {
+            @include button();
 
-            display: inline-block;
-            width: 70%;
+            border-color: $white;
+            text-transform: none;
+
+            > span {
+              @include type-setting(6);
+
+              color: $text-white;
+              display: inline-block;
+            }
           }
         }
       }

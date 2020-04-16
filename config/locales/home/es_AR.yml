@@ -1,6 +1,7 @@
 es-AR:
   home:
     index:
+      link_to_covid_1: "Acceder al Monitor de obras"
       link_to_v1_1: "aquí"
       link_to_v1_2: "Descargá el mapa de tu barrio"
       link_to_v1_3: "Accedé al Acuerdo por la Urbanización"
