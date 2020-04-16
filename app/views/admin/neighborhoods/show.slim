@@ -11,9 +11,9 @@ div.page-section
     == cell('section/header', t('neighborhoods.exporter'))
     .content
       .link
-        = link_to "descargar", api_neighborhood_export_path(@neighborhood) 
+        = link_to "Descargar reportes ciudadanos del barrio", api_neighborhood_export_path(@neighborhood) 
       .link
-        = link_to "descargar todos los reportes", api_neighborhood_export_all_path(@neighborhood)
+        = link_to "Descargar todos los reportes ciudadanos", api_neighborhood_export_all_path(@neighborhood)
         
   section.with-border
     == cell('section/header', t('neighborhoods.urbanization_process'))

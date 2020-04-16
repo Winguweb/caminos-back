@@ -15,7 +15,8 @@ module Reporting
           sheet << [
             claim.name,
             claim.description,
-            claim.category.name,
+            t("categories.#{claim.category}"),
+            claim.lookup_address,
             claim.date
           ]
         end
@@ -42,7 +43,8 @@ module Reporting
           sheet << [
             claim.name,
             claim.description,
-            claim.category.name,
+            t("categories.#{claim.category}"),
+            claim.lookup_address,
             claim.neighborhood.name,
             claim.date
           ]
@@ -76,8 +78,9 @@ module Reporting
       return [
         "Nombre", 
         "Descripcion",
-        "categoria",
-        "fecha"
+        "Categoria",
+        "Direccion",
+        "Fecha"
       ]
     end
 
@@ -86,6 +89,7 @@ module Reporting
         "Nombre",
         "Descripcion",
         "Categoria",
+        "Direccion",
         "Barrio",
         "Fecha"
       ]
