@@ -59,11 +59,10 @@
         > div.diagonal {
           height: 0;
           position: relative;
-          top: -1px;
+          top: -10px;
           z-index: 2;
 
           > img {
-            display: none;
             width: 100%;
           }
         }
@@ -132,68 +131,19 @@
           
           > div.diagonal {
             position: relative;
-            top: -1px;
+            top: -10px;
 
             > img {
-              display: none;
               width: 100%;
             }
           }
 
-          > div:nth-of-type(2) {
-            float: right;
-            max-width: 520px;
-            width: 50%;
-
-            > a {
-              background-color: $fuchsia;
-              border-radius: 2px;
-
-              // box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-              box-shadow: 0 13px 8px -3px rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.14), 0 3px 9px 0 rgba(0, 0, 0, 0.12);
-              display: block;
-              margin: ($gutter * 4) ($gutter * 3) ($gutter * 4);
-              padding: $gutter * 2;
-
-              > p {
-                > strong {
-                  @include type-setting(5);
-
-                  color: $white;
-                  display: inline-block;
-                  font-weight: 300;
-                  vertical-align: middle;
-                  width: 50%;
-                }
-
-                > strong:last-of-type {
-                  text-align: right;
-
-                  > span {
-                    @include type-setting(5);
-
-                    background-color: white;
-                    border-radius: 2px;
-                    color: $fuchsia;
-                    display: inline-block;
-                    padding: $gutter;
-                    text-align: center;
-                    vertical-align: middle;
-
-                    &:hover {
-                      color: $red-covid;
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
 
         > div.diagonal {
           height: 0;
           position: relative;
-          top: -1px;
+          top: -10px;
 
           > img {
             width: 100%;
@@ -219,6 +169,19 @@
 
             & + p {
               margin-bottom: 0;
+            }
+          }
+
+          > .diagonal {
+            bottom: 0;
+            height: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            z-index: 10;
+
+            > img {
+              transform: translateY(-300%);
             }
           }
         }
