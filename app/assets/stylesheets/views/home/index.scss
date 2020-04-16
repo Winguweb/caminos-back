@@ -63,6 +63,7 @@
           z-index: 2;
 
           > img {
+            display: none;
             width: 100%;
           }
         }
@@ -134,6 +135,7 @@
             top: -1px;
 
             > img {
+              display: none;
               width: 100%;
             }
           }
@@ -224,10 +226,36 @@
 
       > section.section-1 {
         background: $blue-covid;
+
+        > div {
+          > div {
+            > div {
+              padding: $gutter 0;
+
+              > select {
+                border: 2px solid darken($blue-covid, 5%);
+                background-color: lighten($blue-covid, 10%);
+              }
+            }
+          }
+        }
       }
 
       > section.section-2 {
         background: $green-covid;
+
+        > div {
+          > div {
+            > div {
+              padding-top: $gutter;
+              
+              > select {
+                border: 2px solid darken($green-covid, 5%);
+                background-color: lighten($green-covid, 10%);
+              }
+            }
+          }
+        }
       }
 
       > footer {
@@ -368,13 +396,49 @@
         > div:first-of-type:not(.diagonal):not(.cta) {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          column-gap: $gutter * 4;
+          column-gap: $gutter * 6;
 
-          > p {
-            @include type-setting(6);
-  
-            margin-bottom: $gutter * 3;
-            text-align: justify;
+          > div {
+            > p {
+              @include type-setting(6);
+    
+              margin-bottom: $gutter * 3;
+              text-align: justify;
+            }
+
+            > div {
+              display: flex;
+              flex-direction: column;
+
+              > select {
+                border-radius: 4px;
+                box-shadow: none;
+                color: $white;
+                margin: $gutter 0;
+                padding: $gutter / 2;
+              }
+
+              > div{
+                display: flex;
+                justify-content: flex-end;
+                margin: $gutter 0;
+
+                > button {
+                  @include button();
+
+                  border-radius: 4px;
+                  min-width: 250px;
+                  text-transform: none;
+      
+                  > span {
+                    @include type-setting(6);
+      
+                    color: $text-white;
+                    display: inline-block;
+                  }
+                }
+              }
+            }
           }
         }
 
@@ -467,7 +531,7 @@
     }
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 768px) {
     > main {
       > .main-section {
         > nav {
@@ -489,6 +553,10 @@
             display: block;
             float: none;
             width: 100%;
+
+            > a {
+              display: none;
+            }
 
             > span {
               text-align: center;

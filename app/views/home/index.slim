@@ -15,8 +15,18 @@ section.section-1
   header
     h1 = t('.section_1_header')
   div
-    p = t('.section_1_text_1')
-    p = t('.section_1_text_2')
+    div
+      p = t('.section_1_text_1')
+    div
+      p
+        = t('.section_1_text_2')
+      div.neighborhood-select
+        span = t('.select')
+        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.id ] }), include_blank: false
+        div
+          button
+            span = t('.section_1_cta')
+
   div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
   div
     = image_tag image_path("home/bg-image-02.png")
@@ -25,8 +35,19 @@ section.section-2
   header
     h1 = t('.section_2_header')
   div
-    p = t('.section_2_text_1')
-    p = t('.section_2_text_2')
+    div
+      p = t('.section_2_text_1')
+    div
+      p 
+        = t('.section_2_text_2')
+      div.neighborhood-select
+        span = t('.select')
+        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.id ] }), include_blank: false
+        div
+          button
+            span = t('.section_2_cta')
+
+      
   div.diagonal = image_tag image_path("home/diagonal-close-open.png"), class: 'diagonal'
   div
     = image_tag image_path("home/bg-image-03.jpg")
