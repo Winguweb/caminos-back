@@ -22,3 +22,7 @@
   section
     == cell('section/header', t('assets.map_location'))
     == cell('elements/map_show', current_neighborhood, features: [ @asset ])
+  
+  section
+      div
+        == cell('elements/photos_gallery', @asset.public_photos)

@@ -17,3 +17,6 @@ section
         div
           span = t('assets.lookup_address')
           span = @asset.lookup_address
+    section
+      div
+        == cell('elements/photos_gallery', @asset.public_photos)
