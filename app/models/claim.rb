@@ -30,6 +30,7 @@ class Claim < ApplicationRecord
     violence
     internet
     income
+    other
   ].freeze
 
   private_constant :CATEGORIES
