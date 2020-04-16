@@ -20,7 +20,7 @@
     vertical-align: top;
 
     &:focus {
-      border-color: $blue;
+      border-color: $red-covid;
     }
 
     &.disabled {
@@ -61,7 +61,7 @@
       width: 100%;
 
       &:focus {
-        border-color: $blue;
+        border-color: $red-covid;
       }
 
       &.disabled {
@@ -91,7 +91,7 @@
     width: 100%;
 
     &:focus {
-      border-color: $blue;
+      border-color: $red-covid;
     }
 
     &.disabled {

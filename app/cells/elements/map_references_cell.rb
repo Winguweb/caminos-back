@@ -15,6 +15,7 @@ class Elements::MapReferencesCell < Cell::ViewModel
         urbanization_process: neighborhood.urbanization ? 'urbanized' : 'unurbanized',
         asset_url: toggle_asset_url(neighborhood),
         claim_url: mapping_neighborhood_path(neighborhood.slug),
+        about_url: about_neighborhood_path(neighborhood)
       })
     end
 

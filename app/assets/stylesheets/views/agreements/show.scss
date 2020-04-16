@@ -55,7 +55,7 @@
                 transform: translate(-6px, 0);
 
                 &:before, &:after {
-                  background-color: $text-blue;
+                  background-color: $text-red;
                   content: "";
                   height: 9px;
                   position: absolute;
@@ -131,7 +131,7 @@
                   }
 
                   > div:nth-of-type(2) {
-                    background-color: $blue;
+                    background-color: $red-covid;
                   }
                 }
               }
