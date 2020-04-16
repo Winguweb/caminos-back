@@ -353,6 +353,8 @@
           @include type-setting(6);
 
           margin-bottom: $gutter * 3;
+          padding: 0 $gutter;
+          text-align: left;
         }
 
         > div {
@@ -360,6 +362,38 @@
             margin: 0 #{-$gutter * 3};
             vertical-align: top;
             width: calc(100% + #{$gutter * 6});
+          }
+        }
+
+        > div:first-of-type:not(.diagonal):not(.cta) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: $gutter * 4;
+
+          > p {
+            @include type-setting(6);
+  
+            margin-bottom: $gutter * 3;
+            text-align: justify;
+          }
+        }
+
+        > div.cta {
+          margin-bottom: $gutter;
+          padding: 0 $gutter;
+
+          > a {
+            @include button();
+
+            border-color: $white;
+            text-transform: none;
+
+            > span {
+              @include type-setting(6);
+
+              color: $text-white;
+              display: inline-block;
+            }
           }
         }
       }
