@@ -48,7 +48,7 @@ module Admin
       load_claim
 
       if @claim.destroy
-        redirect_to admin_neighborhood_claim_path(current_neighborhood)
+          redirect_to admin_neighborhood_path(current_neighborhood)
       else
         redirect_back(fallback_location: admin_dashboard_path)
       end
