@@ -103,7 +103,8 @@ Rails.application.routes.draw do
         get '/works/status', action: :index, controller: :works
         get '/assets', action: :index, controller: :assets
         get '/claims', action: :index, controller: :claims
-        get '/exporter',action: :exporter, controller: :claims
+        get '/export',action: :download_claims, controller: :claims
+        get '/export_all',action: :download_all_claims, controller: :claims
       end
     end
   end
