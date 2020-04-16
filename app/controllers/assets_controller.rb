@@ -53,7 +53,7 @@ class AssetsController < ApplicationController
   end
 
   def load_assets
-    @assets = current_neighborhood.assets.verification_approved
+    @assets = current_neighborhood.assets.select{ |asset| asset.verification != 'verification_rejected'}
   end
 
   def asset_params
