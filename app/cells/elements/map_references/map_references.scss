@@ -92,7 +92,7 @@
 
     &.base-geometry {
       fill: transparent;
-      stroke: color($blue, 0.7);
+      stroke: color($red-covid, 0.7);
       stroke-dasharray: 5 2;
       stroke-width: 1px;
     }
@@ -121,7 +121,7 @@
   }
 
   p.reference-marker {
-    border: $border solid $blue;
+    border: $border solid $red-covid;
     border-radius: 100%;
     box-sizing: content-box;
     display: inline-block;
@@ -133,7 +133,7 @@
     width: $outer-diameter;
 
     &::before {
-      background-color: $blue;
+      background-color: $red-covid;
       border-radius: 100%;
       content: '';
       display: block;
@@ -163,7 +163,7 @@
 
       &::before {
         background-color: transparent;
-        border: 2px solid color($blue);
+        border: 2px solid color($red-covid);
         height: 100%;
         left: 0;
         top: 0;
@@ -236,7 +236,7 @@
       > a {
         @include small-text-button;
 
-        background: color($light-blue, 0.1);
+        background: color($red-covid, 0.1);
 
         @include type-setting(-3);
 

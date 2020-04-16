@@ -6,11 +6,6 @@ div.page-section
     == cell('section/header', t('.about_neighborhood', neighborhood: @neighborhood.name ), links: [{title:t('actions.edit'), href:edit_admin_neighborhood_path(@neighborhood)}])
     .content
       == cell('elements/description', text: @neighborhood.description)
-
-  section.with-borde
-    == cell('section/header', t('neighborhoods.exporter'))
-    .content
-      = link_to "descargar", api_neighborhood_exporter_path(@neighborhood) 
         
   section.with-border
     == cell('section/header', t('neighborhoods.urbanization_process'))
@@ -35,3 +30,11 @@ div.page-section
     - file_input_id = 'photo_file_input'
     == cell('section/header', t('pictures.pictures'), buttons_for: [{ title: t('pictures.upload_photos'), for: file_input_id }])
     == cell('elements/photos_uploader', @neighborhood.photos, { owner: @neighborhood, file_input_id: file_input_id })
+
+  section.with-border
+    == cell('section/header', t('neighborhoods.exporter'))
+    .content
+      .link
+        = link_to "Reportes ciudadanos del barrio", api_neighborhood_export_path(@neighborhood) 
+      .link
+        = link_to "Todos los reportes ciudadanos", api_neighborhood_export_all_path(@neighborhood)

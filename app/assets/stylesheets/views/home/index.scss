@@ -200,7 +200,7 @@
                     vertical-align: middle;
 
                     &:hover {
-                      color: $light-blue;
+                      color: $red-covid;
                     }
                   }
                 }
@@ -220,7 +220,7 @@
         }
 
         > div:nth-of-type(2) {
-          background-color: $light-blue;
+          background-color: $blue;
           color: $white;
           padding: $gutter * 2;
           position: relative;
@@ -245,7 +245,7 @@
       > footer {
         @include clearfix;
 
-        background: $light-blue;
+        background: $blue;
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
         position: relative;
 
@@ -367,7 +367,7 @@
             }
 
             &:before {
-              background-color: $light-blue;
+              background-color: $red-covid;
               left: 0;
               top: 30px;
             }

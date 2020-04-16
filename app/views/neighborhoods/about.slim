@@ -17,5 +17,11 @@ section
         span=t('pictures.no_pictures')
       - else
         == cell('elements/photos_gallery', @neighborhood.photos)
+    
+    section
+      == cell('section/header', t('exporter'))
+      .content
+        .link
+          = link_to "Reportes ciudadanos del barrio", api_neighborhood_export_path(@neighborhood) 
 
 

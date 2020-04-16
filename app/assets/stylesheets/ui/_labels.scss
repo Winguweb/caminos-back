@@ -1,4 +1,4 @@
-@mixin label($bg-color: $blue, $color: $white) {
+@mixin label($bg-color: $red-covid, $color: $white) {
   @include text-color($color, 1);
   @include type-setting(-3);
   background: $bg-color;

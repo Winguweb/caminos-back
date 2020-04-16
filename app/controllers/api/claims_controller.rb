@@ -12,8 +12,12 @@ module Api
       render :json => {claims: sort_by_category(unordered_claims, all: true), categories: categories, neighborhood_slug: neighborhood_slug}
     end
 
-    def exporter
-      stream_xlsx()
+    def download_claims
+      stream_claims_by_neighborhood
+    end
+
+    def download_all_claims
+      stream_all_claims
     end
 
     private
