@@ -64,6 +64,8 @@ class AssetsController < ApplicationController
       :geometry,
       :lookup_address,
       :name,
+      :date,
+      photos: [[:image]]
     )
   end
 end

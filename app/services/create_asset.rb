@@ -16,9 +16,32 @@ class CreateAsset
     @asset = Asset.new(asset_params)
     @asset.neighborhood = @neighborhood
 
-    return @asset if @asset.save
+    if !photo_params.nil?
+      save_photos(@asset) if !photo_params.nil?
 
-    errors.add_multiple_errors(@asset.errors.messages) && nil
+      return @asset if @asset.save
+      errors.add_multiple_errors(@asset.errors.messages) && nil
+    else
+      return @asset if @asset.save
+      errors.add_multiple_errors(@asset.errors.messages) && nil
+    end
+
+
+    # return @asset if @asset.save
+
+    # errors.add_multiple_errors(@asset.errors.messages) && nil
+  end
+
+  def save_photos(claim)
+    photo_params.each do |photo|
+      new_photo =  claim.public_photos.new(photo)
+      new_photo.owner = claim
+    end
+  end
+
+  def photo_params
+    return [] if @allowed_params[:photos].blank?
+    @allowed_params[:photos]
   end
 
   def asset_params

@@ -11,3 +11,9 @@ section
     section
       div
         span = @asset.description
+    section
+      == cell('section/header', t('pictures.pictures'))
+      - if !@asset.public_photos.empty? 
+        == cell('elements/photos_gallery', @asset.public_photos)
+      - else
+        span.section-content no hay fotos 
