@@ -22,9 +22,9 @@ section.section-1
         = t('.section_1_text_2')
       div.neighborhood-select
         span = t('.select')
-        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.id ] }), include_blank: false
+        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.slug ] }), include_blank: false, id: 'assets_select'
         div
-          button
+          button.assets-btn
             span = t('.section_1_cta')
 
   div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
@@ -42,9 +42,9 @@ section.section-2
         = t('.section_2_text_2')
       div.neighborhood-select
         span = t('.select')
-        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.id ] }), include_blank: false
+        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.slug ] }), include_blank: false, id: 'claims_select'
         div
-          button
+          button.claims-btn
             span = t('.section_2_cta')
 
       
@@ -80,3 +80,16 @@ footer
       = image_tag image_path("logos/acij-logo.svg"), class: 'acij-logo'
     = link_to '//winguweb.org', target:"_blank", noopener:'', noreferrer:'' do
       = image_tag image_path("logos/wingu-logo.svg")
+
+javascript:
+  $(function() {
+    $(".claims-btn").on("click", function(){
+      const neighborhood = document.getElementById('claims_select').value
+      window.open('/barrios/' + neighborhood + '/mapping', '_blank')
+    });
+
+    $(".assets-btn").on("click", function(){
+      const neighborhood = document.getElementById('assets_select').value
+      window.open('/barrios/' + neighborhood + '/assets', '_blank')
+    });
+  });
