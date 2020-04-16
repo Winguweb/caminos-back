@@ -1,83 +1,95 @@
 nav
   div
-    = image_tag image_path("logos/caminos_logo.svg")
+    = image_tag image_path("logos/covid-logo.svg")
   div
-    / span
-      = t('.text_to_v1_html')
-      = link_to t, target:"_blank", noopener:'', noreferrer:''('.link_to_v1_1')
+    = link_to "https://caminosdelavilla.org/", target:"_blank", noopener:'', noreferrer:''
+      span = t('.link_to_covid_1')
 section
   div
-    div.diagonal = image_tag image_path("home/diagonal-open-close-header.png"), class: 'diagonal'
-    div
-      = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
-        p
-          strong = t('.link_to_v2_1')
-          strong
-            span = t('.link_to_v2_2')
-    div
-      div
-        = link_to "https://drive.google.com/drive/u/0/folders/15JbXsyfsXX0Mi7imrhAiFPIqLNMmRDnr", target:"_blank", noopener:'', noreferrer:''
-          = t('.link_to_v1_2')
-        = link_to "https://acuerdoporlaurbanizacion.org" , target:"_blank", noopener:'', noreferrer:''
-          = t('.link_to_v1_3')
-        = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
-          = t('.link_to_v1_4')
+    div.diagonal = image_tag image_path("home/desktop/diagonal_01.svg"), class: 'diagonal'
+
   div
     p = t('.text_1_html')
-    p = t('.text_2')
-  div.diagonal = image_tag image_path("home/diagonal-close-open-blue.png"), class: 'diagonal'
+    div.diagonal = image_tag image_path("home/desktop/diagonal_02.svg"), class: 'diagonal'
 section.section-1
   header
     h1 = t('.section_1_header')
-  p = t('.section_1_text')
-  div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
   div
-    = image_tag image_path("home/section_1.jpg")
+    div
+      p = t('.section_1_text_1')
+    div
+      p
+        = t('.section_1_text_2')
+      div.neighborhood-select
+        span = t('.select')
+        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.slug ] }), include_blank: false, id: 'assets_select'
+        div
+          button.assets-btn
+            span = t('.section_1_cta')
+
+  div.diagonal = image_tag image_path("home/desktop/diagonal_03.svg"), class: 'diagonal'
+  div
+    = image_tag image_path("home/bg-image-02.png")
 
 section.section-2
   header
     h1 = t('.section_2_header')
-  p = t('.section_2_text')
-  div.diagonal = image_tag image_path("home/diagonal-close-open.png"), class: 'diagonal'
   div
-    = image_tag image_path("home/section_2.jpg")
+    div
+      p = t('.section_2_text_1')
+    div
+      p 
+        = t('.section_2_text_2')
+      div.neighborhood-select
+        span = t('.select')
+        = select_tag 'neighborhood', options_for_select(@neighborhoods.map { |o| [ o.name, o.slug ] }), include_blank: false, id: 'claims_select'
+        div
+          button.claims-btn
+            span = t('.section_2_cta')
+
+      
+  div.diagonal = image_tag image_path("home/desktop/diagonal_04.svg"), class: 'diagonal'
+  div
+    = image_tag image_path("home/bg-image-03.jpg")
 
 section.section-3
   header
     h1 = t('.section_3_header')
   p = t('.section_3_text')
-  div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
+  div.cta
+    = link_to "https://acij.org.ar/coronavirus-informacion-legal-sobre-circulacion-en-barrios-populares/", target:"_blank", noopener:'', noreferrer:''
+      span = t('.section_4_cta')
+  div.diagonal = image_tag image_path("home/desktop/diagonal_05.png"), class: 'diagonal'
   div
-    = image_tag image_path("home/section_3.jpg")
+    = image_tag image_path("home/bg-image-04.jpg")
 
 section.section-4
   header
     h1 = t('.section_4_header')
   p = t('.section_4_text')
-  div.diagonal = image_tag image_path("home/diagonal-close-open.png"), class: 'diagonal'
+  div.cta
+    = link_to "https://covid19.caminosdelavilla.org/barrios", target:"_blank", noopener:'', noreferrer:''
+      span = t('.section_4_cta')
+  div.diagonal = image_tag image_path("home/desktop/diagonal_05.png"), class: 'diagonal'
   div
-    = image_tag image_path("home/section_4.jpg")
-
-section.section-5
-  header
-    h1 = t('.section_5_header')
-  p = t('.section_5_text')
-  div.diagonal = image_tag image_path("home/diagonal-open-close.png"), class: 'diagonal'
-  div
-    = image_tag image_path("home/section_5.png")
-  div.diagonal = image_tag image_path("home/diagonal-open-close-inverted.svg"), class: 'diagonal'
-
+    = image_tag image_path("home/bg-image-05.png")
 
 footer
-  div.diagonal = image_tag image_path("home/diagonal-close-open-inverted.svg"), class: 'diagonal'
   div
-    = link_to '', target:"_blank", noopener:'', noreferrer:'' do
-      = image_tag image_path("logos/caminos_white_logo.svg")
-      span = t('.footer_logo_text')
-  div
-    = link_to '//altec.lat/es/inicio/', target:"_blank", noopener:'', noreferrer:'' do
-      = image_tag image_path("logos/altec_white_logo.svg"), class: 'altec-logo'
     = link_to '//acij.org.ar', target:"_blank", noopener:'', noreferrer:'' do
-      = image_tag image_path("logos/acij_logo.png")
+      = image_tag image_path("logos/acij-logo.svg"), class: 'acij-logo'
     = link_to '//winguweb.org', target:"_blank", noopener:'', noreferrer:'' do
-      = image_tag image_path("logos/wingu_logo.png")
+      = image_tag image_path("logos/wingu-logo.svg")
+
+javascript:
+  $(function() {
+    $(".claims-btn").on("click", function(){
+      const neighborhood = document.getElementById('claims_select').value
+      window.open('/barrios/' + neighborhood + '/mapping', '_blank')
+    });
+
+    $(".assets-btn").on("click", function(){
+      const neighborhood = document.getElementById('assets_select').value
+      window.open('/barrios/' + neighborhood + '/assets', '_blank')
+    });
+  });

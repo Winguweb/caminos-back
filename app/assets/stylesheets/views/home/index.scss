@@ -11,6 +11,7 @@
       > nav {
         @include clearfix;
 
+        background-color: $red-covid;
         padding: ($gutter * 3) ($gutter * 3) 0 ($gutter * 3);
         position: relative;
         z-index: 4;
@@ -28,26 +29,37 @@
         }
 
         > div:last-of-type {
+          color: $text-white;
           float: right;
           position: relative;
           text-align: right;
           width: 65%;
           z-index: 1;
 
-          > span {
-            @include type-setting(6);
+          > a {
+            @include button();
 
-            display: inline-block;
-            width: 70%;
+            border-color: $white;
+            text-transform: none;
+
+            > span {
+              @include type-setting(6);
+
+              color: $text-white;
+              display: inline-block;
+            }
           }
         }
       }
 
       > section ~ section {
+        background: $red-covid;
+        color: $text-white;
+
         > div.diagonal {
           height: 0;
           position: relative;
-          top: -1px;
+          top: -10px;
           z-index: 2;
 
           > img {
@@ -56,6 +68,7 @@
         }
 
         > div.diagonal:last-of-type {
+          height: 960px;
           position: relative;
           top: 0;
           z-index: 2;
@@ -96,7 +109,6 @@
       > section:last-of-type {
         > div {
           > img {
-            height: auto;
             margin-top: 10px;
             width: 100vw;
           }
@@ -109,110 +121,29 @@
         > div:first-of-type {
           @include clearfix;
 
-          background-image: image-url("home/landing_bg.jpg");
+          background-image: image-url("home/bg-image-01.jpg");
+          background-repeat: no-repeat;
           background-size: cover;
+          min-height: 860px;
           position: relative;
           z-index: 3;
 
-          > div:last-of-type {
-            background-color: rgba(255, 255, 255, 0.8);
-            bottom: 0;
-            left: $gutter * 3;
-            position: absolute;
-            top: 0;
-            width: 330px;
-            z-index: -1;
-
-            > div {
-              position: absolute;
-              top: 50%;
-              transform: translate3d(0, -50%, 0);
-              width: 100%;
-
-              > a {
-                @include type-setting(-1);
-
-                background-color: $white;
-                border-radius: 2px;
-                box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-                color: $fuchsia;
-                display: block;
-                margin: $gutter;
-                max-width: 400px;
-                padding: ($gutter / 2) $gutter;
-                text-align: center;
-
-                &:hover {
-                  background-color: $fuchsia;
-                  color: $white;
-                }
-              }
-            }
-          }
-
+          
           > div.diagonal {
             position: relative;
-            top: -1px;
+            top: -10px;
 
             > img {
               width: 100%;
             }
           }
 
-          > div:nth-of-type(2) {
-            float: right;
-            max-width: 520px;
-            width: 50%;
-
-            > a {
-              background-color: $fuchsia;
-              border-radius: 2px;
-
-              // box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-              box-shadow: 0 13px 8px -3px rgba(0, 0, 0, 0.2), 0 8px 8px 0 rgba(0, 0, 0, 0.14), 0 3px 9px 0 rgba(0, 0, 0, 0.12);
-              display: block;
-              margin: ($gutter * 4) ($gutter * 3) ($gutter * 4);
-              padding: $gutter * 2;
-
-              > p {
-                > strong {
-                  @include type-setting(5);
-
-                  color: $white;
-                  display: inline-block;
-                  font-weight: 300;
-                  vertical-align: middle;
-                  width: 50%;
-                }
-
-                > strong:last-of-type {
-                  text-align: right;
-
-                  > span {
-                    @include type-setting(5);
-
-                    background-color: white;
-                    border-radius: 2px;
-                    color: $fuchsia;
-                    display: inline-block;
-                    padding: $gutter;
-                    text-align: center;
-                    vertical-align: middle;
-
-                    &:hover {
-                      color: $red-covid;
-                    }
-                  }
-                }
-              }
-            }
-          }
         }
 
         > div.diagonal {
           height: 0;
           position: relative;
-          top: -1px;
+          top: -10px;
 
           > img {
             width: 100%;
@@ -220,23 +151,71 @@
         }
 
         > div:nth-of-type(2) {
-          background-color: $blue;
+          background-color: $red-covid;
           color: $white;
           padding: $gutter * 2;
           position: relative;
-          text-align: right;
+          text-align: center;
 
           > p {
-            @include type-setting(5);
+            @include type-setting(6);
 
             display: inline-block;
+            font-family: $font-sans;
             margin-bottom: $gutter;
             position: relative;
-            width: 87%;
+            width: 80%;
             z-index: 2;
 
             & + p {
               margin-bottom: 0;
+            }
+          }
+
+          > .diagonal {
+            bottom: 0;
+            height: 0;
+            left: 0;
+            position: absolute;
+            right: 0;
+            z-index: 10;
+
+            > img {
+              transform: translateY(-300%);
+            }
+          }
+        }
+      }
+
+      > section.section-1 {
+        background: $blue-covid;
+
+        > div {
+          > div {
+            > div {
+              padding: $gutter 0;
+
+              > select {
+                border: 2px solid darken($blue-covid, 5%);
+                background-color: lighten($blue-covid, 10%);
+              }
+            }
+          }
+        }
+      }
+
+      > section.section-2 {
+        background: $green-covid;
+
+        > div {
+          > div {
+            > div {
+              padding-top: $gutter;
+              
+              > select {
+                border: 2px solid darken($green-covid, 5%);
+                background-color: lighten($green-covid, 10%);
+              }
             }
           }
         }
@@ -245,8 +224,11 @@
       > footer {
         @include clearfix;
 
-        background: $blue;
+        background: $red-covid;
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+        display: flex;
+        justify-content: flex-end;
+        padding: $gutter;
         position: relative;
 
         > div.diagonal {
@@ -261,7 +243,7 @@
           }
         }
 
-        > div.diagonal ~ div {
+        >  div {
           float: left;
           padding: $gutter * 3;
           position: relative;
@@ -284,11 +266,10 @@
             > img {
               display: block;
               max-height: 50px;
-              vertical-align: top;
               width: auto;
 
-              &.altec-logo {
-                height: 30px;
+              &.acij-logo {
+                margin-right: $gutter * 2;
               }
             }
 
@@ -348,7 +329,7 @@
 
         > header {
           > h1 {
-            @include type-setting(2);
+            @include type-setting(3);
 
             font-family: 'Roboto Slab';
             font-weight: 600;
@@ -356,27 +337,6 @@
             margin-top: $gutter * 3;
             position: relative;
 
-            &:before, &:after {
-              content: '';
-              display: block;
-              height: $gutter * 2;
-              opacity: 0.5;
-              position: absolute;
-              width: 61%;
-              z-index: -1;
-            }
-
-            &:before {
-              background-color: $red-covid;
-              left: 0;
-              top: 30px;
-            }
-
-            &:after {
-              background-color: $fuchsia;
-              bottom: 0;
-              right: 0;
-            }
           }
         }
 
@@ -384,6 +344,8 @@
           @include type-setting(6);
 
           margin-bottom: $gutter * 3;
+          padding: 0 $gutter;
+          text-align: left;
         }
 
         > div {
@@ -391,6 +353,74 @@
             margin: 0 #{-$gutter * 3};
             vertical-align: top;
             width: calc(100% + #{$gutter * 6});
+          }
+        }
+
+        > div:first-of-type:not(.diagonal):not(.cta) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: $gutter * 6;
+
+          > div {
+            > p {
+              @include type-setting(6);
+    
+              margin-bottom: $gutter * 3;
+              text-align: justify;
+            }
+
+            > div {
+              display: flex;
+              flex-direction: column;
+
+              > select {
+                border-radius: 4px;
+                box-shadow: none;
+                color: $white;
+                margin: $gutter 0;
+                padding: $gutter / 2;
+              }
+
+              > div{
+                display: flex;
+                justify-content: flex-end;
+                margin: $gutter 0;
+
+                > button {
+                  @include button();
+
+                  border-radius: 4px;
+                  min-width: 250px;
+                  text-transform: none;
+      
+                  > span {
+                    @include type-setting(6);
+      
+                    color: $text-white;
+                    display: inline-block;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > div.cta {
+          margin-bottom: $gutter;
+          padding: 0 $gutter;
+
+          > a {
+            @include button();
+
+            border-color: $white;
+            text-transform: none;
+
+            > span {
+              @include type-setting(6);
+
+              color: $text-white;
+              display: inline-block;
+            }
           }
         }
       }
@@ -464,7 +494,7 @@
     }
   }
 
-  @media (max-width: 760px) {
+  @media (max-width: 768px) {
     > main {
       > .main-section {
         > nav {
@@ -486,6 +516,10 @@
             display: block;
             float: none;
             width: 100%;
+
+            > a {
+              display: none;
+            }
 
             > span {
               text-align: center;
@@ -528,7 +562,6 @@
           }
         }
 
-        > section:last-of-type {}
 
         > section:first-of-type {
           > div:first-of-type {
@@ -615,9 +648,23 @@
         }
 
         > section + section {
+          padding: 0 $gutter;
           > header {
             > h1 {
               @include type-setting(4);
+            }
+          }
+
+          > div:first-of-type:not(.diagonal):not(.cta) { 
+            grid-template-columns: 1fr;
+
+            > div {
+              > p {
+                @include type-setting(0);
+      
+                margin-bottom: 0;
+                text-align: left;
+              }
             }
           }
         }
@@ -636,12 +683,11 @@
           }
         }
 
-        > section:last-of-type {
-          > div {}
-        }
 
         > section:first-of-type {
           > div:first-of-type {
+            min-height: 300px;
+
             > div {
               float: none !important;
               position: static !important;
@@ -672,11 +718,44 @@
               @include type-setting(0);
             }
           }
+
+          > div:nth-of-type(2) {
+            > p {
+              font-weight: 500;
+              text-align: left;
+              width: 100%;
+
+              @include type-setting(0);
+            }
+          }
+        }
+
+        > section + section {
+          > div:first-of-type:not(.diagonal):not(.cta) {
+            > div {
+              > div {
+                > div {
+                  justify-content: center;
+
+                  button {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+
+          > div.cta {
+            padding: 0;
+          }
         }
 
         > footer {
           > div {
-            float: none;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            float: right;
             width: 100%;
 
             > a {
@@ -687,6 +766,10 @@
                 margin: 0 auto;
                 max-width: 300px;
                 width: 80%;
+
+                &.acij-logo {
+                  margin: 0 auto $gutter * 2;
+                }
               }
             }
           }
@@ -718,10 +801,15 @@
         }
 
         > section + section {
+          padding: 0 ($gutter);
           > header {
             > h1 {
               @include type-setting(4);
             }
+          }
+
+          > p {
+            padding: 0;
           }
         }
       }

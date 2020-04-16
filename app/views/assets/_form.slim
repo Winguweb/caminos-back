@@ -28,4 +28,7 @@
       == cell('elements/map_edit', current_neighborhood, controls: ['marker'], name: 'asset')
       input type="hidden" name="asset[geometry]" class="geometry-field"
       input type="hidden" name="asset[geo_geometry]" class="geo_geometry-field"
+    section.photo-updloader-container
+      == cell('section/header',"Fotos")
+      == cell('elements/public_photos_uploader',"asset")
 

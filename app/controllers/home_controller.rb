@@ -1,7 +1,9 @@
 class HomeController < ApplicationController
   layout 'landing'
   include Reporting::Streamable
-  def index; end
+  def index
+    @neighborhoods = Neighborhood.order('LOWER(name)')
+  end
 
   def datasets; end
 
