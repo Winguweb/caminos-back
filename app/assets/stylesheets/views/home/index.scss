@@ -254,8 +254,11 @@
       > footer {
         @include clearfix;
 
-        background: $blue;
+        background: $red-covid;
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+        display: flex;
+        justify-content: flex-end;
+        padding: $gutter;
         position: relative;
 
         > div.diagonal {
@@ -270,7 +273,7 @@
           }
         }
 
-        > div.diagonal ~ div {
+        >  div {
           float: left;
           padding: $gutter * 3;
           position: relative;
@@ -293,11 +296,10 @@
             > img {
               display: block;
               max-height: 50px;
-              vertical-align: top;
               width: auto;
 
-              &.altec-logo {
-                height: 30px;
+              &.acij-logo {
+                margin-right: $gutter * 2;
               }
             }
 
@@ -685,7 +687,7 @@
 
         > footer {
           > div {
-            float: none;
+            float: right;
             width: 100%;
 
             > a {
