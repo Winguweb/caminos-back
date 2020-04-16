@@ -30,7 +30,7 @@
               &:nth-of-type(1) {
                 @include type-setting(-1);
                 line-height: 1.5em;
-                &.community_center {@include text-color($water, 1);}
+                &.community_equipment {@include text-color($water, 1);}
                 &.cult {@include text-color($trash, 1);}
                 &.public_organization {@include text-color($public, 1);}
                 &.health {@include text-color($health, 1);}
