@@ -48,7 +48,7 @@ class NeighborhoodsController < ApplicationController
   end
 
   def load_claims
-    @claims = @neighborhood.claims
+    @claims = @neighborhood.claims.select{ |claim| claim.verification != 'verification_rejected'}
   end
 
 end
