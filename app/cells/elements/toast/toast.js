@@ -10,7 +10,7 @@ CDLV.Components['elements/toast'] = Backbone.View.extend({
         'showComponent'
     )
     setTimeout(this.showComponent, 0)
-    // setTimeout(this.hideComponent, 10000)
+    setTimeout(this.hideComponent, 10000)
   },
   buttonTrigger: function(trigger) {
     var type = this.action.type
