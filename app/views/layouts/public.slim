@@ -55,6 +55,8 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
         == cell('elements/toast', {message: flash[:error].first, type: 'danger'})
       - if error_message = flash[:success]
         == cell('elements/toast', {message: flash[:success].first, type: 'success'})
+      - if error_message = flash[:claim_success]
+        == cell('elements/toast', {message: flash[:claim_success].first, type: 'claim-success'})
 
 
       = yield :before_js

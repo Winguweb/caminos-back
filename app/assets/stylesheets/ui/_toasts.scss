@@ -18,6 +18,16 @@
       background-image: image-url("icons/success.svg");
     }
   }
+  &.toast-claim-success {
+    background-color: color($success, 1);
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-40%, -50%) !important;
+    border-radius: 0.50rem;
+    > div {
+      background-image: image-url("icons/success.svg");
+    }
+  }
 
   &.toast-warning {
     background-color: color($warning, 1);
