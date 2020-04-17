@@ -2,14 +2,14 @@ nav
   div
     = image_tag image_path("logos/covid-logo.svg")
   div
-    = link_to "https://caminosdelavilla.org/", target:"_blank", noopener:'', noreferrer:''
+    = link_to neighborhoods_path, target:"_blank", noopener:'', noreferrer:''
       span = t('.link_to_covid_1')
 section
   div
     div.diagonal = image_tag image_path("home/desktop/diagonal_01.svg"), class: 'diagonal'
 
   div
-    p = t('.text_1_html')
+    p = t('.text_1_html', href: link_to(t('.text_1_href'), 'https://caminosdelavilla.org/', target:"_blank", noopener:'', noreferrer:''))
     div.diagonal = image_tag image_path("home/desktop/diagonal_02.svg"), class: 'diagonal'
 section.section-1
   header
