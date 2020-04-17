@@ -36,6 +36,7 @@
           width: 65%;
           z-index: 1;
 
+
           > a {
             @include button();
 
@@ -169,6 +170,12 @@
 
             & + p {
               margin-bottom: 0;
+            }
+
+            > a {
+              color: $white;
+              text-decoration: underline;
+              cursor: pointer;
             }
           }
 

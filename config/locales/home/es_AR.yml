@@ -1,8 +1,9 @@
 es-AR:
   home:
     index:
-      link_to_covid_1: "Acceder al Monitor de obras"
-      text_1_html: "Adaptamos Caminos de la Villa para que puedas georreferenciar problemáticas vinculadas al COVID-19 y acceder a información relevante, además de seguir accediendo a información vinculada a los procesos de urbanización de las villas de CABA."
+      link_to_covid_1: "Ver todos los barrios"
+      text_1_html: "Adaptamos Caminos de la Villa para que puedas georreferenciar problemáticas vinculadas al COVID-19 y acceder a información relevante, además de seguir %{href} vinculados a los procesos de urbanización de las villas de CABA."
+      text_1_href: "monitoreando datos"
       select: "Seleccioná tu barrio"
       section_1_header: "Lugares útiles."
       section_1_text_1: "Podés acceder al mapa de tu barrio y ver la ubicación de centros comunitarios, iglesias, comedores, centros de salud, organismos públicos, farmacias, lugares de venta de alimentos, ferreterías, veterinarias, venta de garrafas y venta de productos de limpieza. Si falta un lugar, podés sumarlo al mapa."
