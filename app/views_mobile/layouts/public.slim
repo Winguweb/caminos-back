@@ -42,8 +42,11 @@ html.desktop.no-js lang=I18n.locale.to_s xmlns="http://www.w3.org/1999/xhtml" xm
       .main-header
         == cell('mobile_elements/mobile_menu', @neighborhood, with_links: @with_links, back_menu: @back_menu, back_url: @back_url)
       main
-        .main-section
+        .main-section 
           =yield
+      
+      - if error_message = flash[:claim_success]
+        == cell('elements/toast', {message: flash[:claim_success].first, type: 'claim-success-mobile'})
 
       = yield :before_js
       = javascript_include_tag 'admin/application'
