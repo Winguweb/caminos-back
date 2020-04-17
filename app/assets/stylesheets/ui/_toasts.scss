@@ -19,13 +19,14 @@
     }
   }
   &.toast-claim-success {
-    background-color: color($success, 1);
+    background-color: #fafafa;
+    color: $text-black;
     top: 50% !important;
     left: 50% !important;
     transform: translate(-40%, -50%) !important;
     border-radius: 0.50rem;
     > div {
-      background-image: image-url("icons/success.svg");
+      background-image: image-url("icons/claim-success.svg");
     }
   }
 
