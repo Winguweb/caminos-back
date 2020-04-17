@@ -27,8 +27,6 @@ class NeighborhoodsController < ApplicationController
   def mapping
     load_neighborhood_or_redirect
     load_claims
-    flash.now[:claim_success] = [t('.success')]
-    flash.keep
   end
 
   private
