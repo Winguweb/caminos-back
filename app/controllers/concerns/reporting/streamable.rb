@@ -9,7 +9,7 @@ module Reporting
 
       xlsx.write_worksheet 'Problematicas' do |sheet|
         sheet << get_char_headers
-        claims = current_neighborhood.claims
+        claims = current_neighborhood.claims.select{ |claim| claim.verification != 'verification_rejected'}
 
         claims.each do |claim|
           sheet << [
@@ -38,7 +38,8 @@ module Reporting
 
       xlsx.write_worksheet 'Problematicas' do |sheet|
         sheet << get_all_claims_headers
-        claims = Claim.all 
+        claims = Claim.all.select{ |claim| claim.verification != 'verification_rejected'}
+        
         claims.each do |claim|
           sheet << [
             claim.name,
