@@ -9,7 +9,7 @@ class ClaimsController < ApplicationController
      service = CreateClaim.call(current_neighborhood, claim_params)
      # service = CreateClaim.call(current_neighborhood, claim_params,some_work)
     if service.success?
-      flash.now[:success] = [t('.success')]
+      flash.now[:claim_success] = [t('.success')]
       flash.keep
       redirect_to mapping_neighborhood_path(current_neighborhood)
     else

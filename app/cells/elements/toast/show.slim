@@ -1,5 +1,7 @@
 .toast-cell.toast-top.toast-hidden class="toast-#{type}"
   div
+    - if type == 'claim-success-mobile'
+      .success-mobile-icon
     - if title
       strong = "#{title}"
     - if message

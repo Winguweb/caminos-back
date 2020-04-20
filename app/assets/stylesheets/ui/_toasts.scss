@@ -18,6 +18,17 @@
       background-image: image-url("icons/success.svg");
     }
   }
+  &.toast-claim-success {
+    background-color: #fafafa;
+    color: $text-black;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-40%, -50%) !important;
+    border-radius: 0.50rem;
+    > div {
+      background-image: image-url("icons/claim-success.svg");
+    }
+  }
 
   &.toast-warning {
     background-color: color($warning, 1);
@@ -70,7 +81,7 @@
     }
   }
 
-  > div {
+  > div{
     @include type-setting(-1);
 
     background-position: center left $gutter;
@@ -87,6 +98,31 @@
 
     > p {
       display: inline-block;
+    }
+  }
+  &.toast-claim-success-mobile {
+  
+    .success-mobile-icon{
+      background-image: image-url("icons/claim-success.svg");
+      background-position: center left $gutter;
+      background-repeat: no-repeat;
+      background-size: 40px;
+      border-top: 4px solid transparent;
+      display: inline-block;
+      padding: $gutter;
+      padding-left: calc(#{$gutter * 2} + 30px);
+      padding-bottom: $gutter * 3;
+    }
+
+    background-color: #fafafa;
+    color: $text-black;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0!important;
+    padding: 1rem 0.5rem !important;
+    >div{
+      padding-left: 0 !important;
     }
   }
 }
