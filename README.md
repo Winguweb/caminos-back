@@ -96,11 +96,11 @@ $ rvm install 2.4.1
 ```
 
 
-### Instalación para Windows
+### Instalación
 
 - Empezaremos por clonar el repositorio:
 ```sh
-$ git clone https://github.com/sandrahfiestas/caminos-back.git
+$ https://github.com/Winguweb/caminos-back.git
 $ cd caminos-back/
 ```
 - Instalamos el proyecto y las diferentes versiones de gemas *(es como se llama en Ruby a las librerías)* necesarias:
@@ -108,7 +108,7 @@ $ cd caminos-back/
 ```sh
 $ bundle install
 ```
-- Copiar archivo(**modificar**)
+- Copiar archivo
 ```sh
 config/database.yml.example
 ```
@@ -117,7 +117,7 @@ a
 config/database.yml
 ```
 
-- Copiar archivo(**modificar**)
+- Copiar archivo
 ```sh
 config/caminos.yml.example
 ```
@@ -142,7 +142,7 @@ bundle exec rake db:migrate
 bundle exec rails s
 ```
 
-¡Y listo! El proyecto se iniciará en la dirección http://localhost:3300 de tu navegador predeterminado
+¡Y listo! El proyecto se iniciará en la dirección http://localhost:3300 de tu navegador predeterminado.
 
 
 [//]: # (Estos son enlaces de referencia utilizados en el cuerpo del readme)
